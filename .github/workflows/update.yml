@@ -1,0 +1,50 @@
+name: Daily Game8 → Discord
+
+on:
+  schedule:
+    # Runs at 08:00 America/Sao_Paulo daily.
+    # GitHub cron is UTC; São Paulo is UTC-03 (no DST), so 11:00 UTC == 08:00 BRT.
+    - cron: "0 11 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write   # allow pushing message_ids.json changes back
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install deps
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run scraper
+        env:
+          WEBHOOK_URL_WUWA: ${{ secrets.WEBHOOK_URL_WUWA }}
+          WEBHOOK_URL_HSR:  ${{ secrets.WEBHOOK_URL_HSR }}
+          WEBHOOK_URL_UMA:  ${{ secrets.WEBHOOK_URL_UMA }}
+          WEBHOOK_URL_GI:   ${{ secrets.WEBHOOK_URL_GI }}
+        run: python scraper.py
+
+      - name: Commit and push message_ids.json if changed
+        run: |
+          if [[ `git status --porcelain` ]]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add message_ids.json
+            git commit -m "chore: update Discord message IDs"
+            git push
+          else
+            echo "No changes to commit."
+          fi
