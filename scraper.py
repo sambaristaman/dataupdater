@@ -294,63 +294,105 @@ def extract_genshin_events(soup: BeautifulSoup, base_url: str) -> List[str]:
     """
     Genshin page: restrict to 'List of Current Events' and 'List of Upcoming Events' sections,
     gather h3 event blocks, attach a near 'Event Guide' link (filtered to Genshin),
-    and clean dates.
+    and clean dates. This version correctly *skips* meta 'Version ...' headings
+    but keeps scanning the section for real event h3s.
     """
-    bullets: List[str] = []
+    SECTION_TITLES = ["List of Current Events", "List of Upcoming Events"]
+    section_roots = _find_section_roots(soup, SECTION_TITLES)
+    if not section_roots:
+        return []  # fall back to generic
+
+    bullets: List[str] = ["__List of Current/Upcoming Events__"]
     seen = set()
 
-    section_roots = _find_section_roots(soup, ["List of Current Events", "List of Upcoming Events"])
-    if not section_roots:
-        # Fallback to generic if we can't find the sections
-        return []
-
-    # Add a common heading for our Discord message
-    bullets.append("__List of Current/Upcoming Events__")
+    def is_section_title(tag: Tag) -> bool:
+        if not hasattr(tag, "get_text"):
+            return False
+        txt = _clean(tag.get_text(" ", strip=True)).lower()
+        return txt in {t.lower() for t in SECTION_TITLES}
 
     for root in section_roots:
-        # Walk forward from the section root; collect h3 headings until next h2/h3 that looks like a new section meta
-        for h in root.find_all_next("h3"):
-            # Stop when we hit the next high-level section title or version block
-            txt = _clean(h.get_text(" ", strip=True))
-            low = txt.lower()
-            if any(marker in low for marker in ["version", "events calendar", "new archives", "upcoming archives"]):
+        # Walk forward until we hit the *next* section title (or a major h2 that clearly ends the area)
+        for sib in root.next_siblings:
+            if not isinstance(sib, Tag):
+                continue
+
+            # Hard stop: next section header
+            if sib.name in ("h2", "h3") and is_section_title(sib) and sib is not root:
                 break
 
-            # Skip junk/misc headings
-            if _is_junk_text(txt):
-                continue
-            if len(txt.split()) < 2:
-                continue
+            # Collect event headings within the section
+            if sib.name == "h3":
+                txt = _clean(sib.get_text(" ", strip=True))
+                low = txt.lower()
 
-            link = _find_nearby_link_for_event(h, base_url)
-            if link and not _is_good_genshin_url(link):
-                link = None
+                # skip meta headings, but DO NOT stop the section
+                if "events calendar" in low or "new archives" in low or "upcoming archives" in low:
+                    continue
+                if "version" in low and "event" in low:
+                    # meta like "Version 6.0 ... Current Events" — just skip
+                    continue
+                if _is_junk_text(low) or len(txt.split()) < 2:
+                    continue
 
-            dates = _collect_dates_after(h)
-            # Filter out lines with just promos
-            if not link and not dates and _is_junk_text(txt):
-                continue
+                link = _find_nearby_link_for_event(sib, base_url)
+                if link and not _is_good_genshin_url(link):
+                    link = None
 
-            key = (low, link or "")
-            if key in seen:
-                continue
-            seen.add(key)
+                dates = _collect_dates_after(sib)
 
-            if link and dates:
-                bullets.append(f"• [{txt}]({link}) — {dates}")
-            elif link:
-                bullets.append(f"• [{txt}]({link})")
-            elif dates:
-                bullets.append(f"• {txt} — {dates}")
-            else:
-                # Still allow plain title if it looks like an event name (two+ words, no account/tool keywords)
-                if not _is_junk_text(txt):
+                key = (low, link or "")
+                if key in seen:
+                    continue
+                seen.add(key)
+
+                if link and dates:
+                    bullets.append(f"• [{txt}]({link}) — {dates}")
+                elif link:
+                    bullets.append(f"• [{txt}]({link})")
+                elif dates:
+                    bullets.append(f"• {txt} — {dates}")
+                else:
                     bullets.append(f"• {txt}")
 
-            if len(bullets) >= 14:  # incl. the section header at index 0
-                return bullets
+                if len(bullets) >= 14:  # incl. the header
+                    return bullets
+
+            # Some pages wrap h3s inside divs; scan nested h3s too
+            for h in sib.find_all("h3"):
+                txt = _clean(h.get_text(" ", strip=True))
+                low = txt.lower()
+                if "events calendar" in low or "new archives" in low or "upcoming archives" in low:
+                    continue
+                if "version" in low and "event" in low:
+                    continue
+                if _is_junk_text(low) or len(txt.split()) < 2:
+                    continue
+
+                link = _find_nearby_link_for_event(h, base_url)
+                if link and not _is_good_genshin_url(link):
+                    link = None
+                dates = _collect_dates_after(h)
+
+                key = (low, link or "")
+                if key in seen:
+                    continue
+                seen.add(key)
+
+                if link and dates:
+                    bullets.append(f"• [{txt}]({link}) — {dates}")
+                elif link:
+                    bullets.append(f"• [{txt}]({link})")
+                elif dates:
+                    bullets.append(f"• {txt} — {dates}")
+                else:
+                    bullets.append(f"• {txt}")
+
+                if len(bullets) >= 14:
+                    return bullets
 
     return bullets
+
 
 
 # --- Generic extractor (other games) ---
