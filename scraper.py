@@ -2,7 +2,7 @@ import json
 import os
 import re
 from pathlib import Path
-from typing import Dict, Tuple, List, Optional
+from typing import Dict, List, Optional
 from urllib.parse import urljoin
 
 import requests
@@ -157,7 +157,100 @@ def _collect_items_near_head(head: Tag, base_url: str, max_items: int = 12) -> L
 
     return items
 
-def extract_events_with_links(soup: BeautifulSoup, base_url: str) -> List[str]:
+# --- Genshin-specific helpers ---
+
+def _find_nearby_link_for_event(head: Tag, base_url: str) -> Optional[str]:
+    """After a '### <Event Name>' heading, find the first reasonable link (usually '... Event Guide')."""
+    for sib in head.find_all_next(limit=40):
+        if sib is head:
+            continue
+        # stop if we hit another event heading at the same depth
+        if sib.name in ["h3"] and sib is not head:
+            break
+        a = sib.find("a", href=True)
+        if a and a.get_text(strip=True):
+            return urljoin(base_url, a["href"])
+    return None
+
+_date_pat = re.compile(
+    r"(?:Event )?(?:Start|End)?\s*("
+    r"\w{3,9}\.? ?\d{1,2},? ?\d{4}"           # e.g., Sep 12, 2025
+    r"|\d{1,2}/\d{1,2}"                        # or 9/12
+    r")(?: ?[-–—] ?(\d{1,2}/\d{1,2}))?",       # optional range like 9/12 - 9/29
+    re.I
+)
+
+def _collect_dates_after(head: Tag) -> Optional[str]:
+    """Look for Event Start/End or a compact '9/12 - 9/29' line near the heading."""
+    texts = []
+    for sib in head.find_all_next(limit=20):
+        if sib.name in ["h3"] and sib is not head:
+            break
+        t = _clean(sib.get_text(" ", strip=True))
+        if not t:
+            continue
+        m = _date_pat.search(t)
+        if "Event Start" in t or "Event End" in t or m:
+            texts.append(t)
+    if not texts:
+        return None
+    # Prefer compact M/D - M/D ranges
+    for t in texts:
+        if re.search(r"\d{1,2}/\d{1,2}\s*[-–—]\s*\d{1,2}/\d{1,2}", t):
+            return t
+    # Else join first Start/End lines if present
+    starts = [t for t in texts if "Event Start" in t]
+    ends   = [t for t in texts if "Event End" in t]
+    if starts or ends:
+        return " / ".join([starts[0] if starts else "", ends[0] if ends else ""]).strip(" /")
+    return texts[0]
+
+def extract_genshin_events(soup: BeautifulSoup, base_url: str) -> List[str]:
+    """Genshin page: event headings (###) + nearby dates + a later 'Event Guide' link."""
+    bullets: List[str] = []
+    seen = set()
+
+    # Prefer scanning all h3, which usually denote event blocks
+    for h in soup.find_all("h3"):
+        name = _clean(h.get_text(" ", strip=True))
+        if not name or len(name.split()) < 2:
+            continue
+        # skip meta headings like "Version 6.0 ... Events"
+        lower = name.lower()
+        if "version" in lower and "event" in lower:
+            continue
+        if "list of current events" in lower or "list of upcoming events" in lower:
+            continue
+        if "events calendar" in lower:
+            continue
+
+        link = _find_nearby_link_for_event(h, base_url)
+        dates = _collect_dates_after(h)
+
+        key = (name.lower(), link or "")
+        if key in seen:
+            continue
+        seen.add(key)
+
+        if link and dates:
+            bullets.append(f"• [{name}]({link}) — {dates}")
+        elif link:
+            bullets.append(f"• [{name}]({link})")
+        elif dates:
+            bullets.append(f"• {name} — {dates}")
+        else:
+            bullets.append(f"• {name}")
+
+        if len(bullets) >= 12:
+            break
+
+    if bullets:
+        bullets.insert(0, "__List of Current/Upcoming Events__")
+    return bullets
+
+# --- Generic extractor (other games) ---
+
+def extract_events_with_links_generic(soup: BeautifulSoup, base_url: str) -> List[str]:
     """Target sections like Current/Ongoing/Upcoming/Featured and collect linked bullets."""
     headings = soup.find_all(["h2", "h3", "h4"])
     key_heads = [h for h in headings if any(
@@ -204,6 +297,15 @@ def extract_events_with_links(soup: BeautifulSoup, base_url: str) -> List[str]:
             final.append(b)
             seen_line.add(b)
     return final[:40]
+
+def extract_events_with_links(soup: BeautifulSoup, base_url: str) -> List[str]:
+    """Router: use Genshin-specific logic first for that page, else generic."""
+    if "/Genshin-Impact/" in base_url:
+        gs = extract_genshin_events(soup, base_url)
+        if len(gs) >= 3:  # good enough result
+            return gs
+        # fall back if page layout shifts
+    return extract_events_with_links_generic(soup, base_url)
 
 def build_discord_message(title: str, url: str, last_updated: str, bullets: List[str]) -> str:
     header = f"**{title}**\n<{url}>\n_Last updated on Game8: **{last_updated}**_\n\n"
