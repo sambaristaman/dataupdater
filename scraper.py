@@ -35,17 +35,16 @@ PAGES = {
 
 MESSAGE_IDS_PATH = Path("message_ids.json")
 DISCORD_LIMIT = 2000  # characters
+SUMMARY_WEBHOOK_ENV = "WEBHOOK_URL_SUMMARY"  # summary channel webhook
 
-SUMMARY_WEBHOOK_ENV = "WEBHOOK_URL_SUMMARY"  # <— add this secret in your repo
-
-# Optional flags for manual runs (leave unset in normal schedule)
+# Optional flags for manual runs
 ONLY_KEY = os.getenv("ONLY_KEY", "").strip().lower()
 DRY_RUN = os.getenv("DRY_RUN", "false").lower() == "true"
 FORCE_NEW = os.getenv("FORCE_NEW", "false").lower() == "true"
 
 # --- HTTP session (reuse connection) ---
 SESSION = requests.Session()
-SESSION.headers.update({"User-Agent": "game8-discord-updater/1.0 (+github-actions)"})
+SESSION.headers.update({"User-Agent": "game8-discord-updater/1.1 (+github-actions)"})
 
 
 # --- Discord webhook helpers ---
@@ -66,7 +65,6 @@ def discord_webhook_post_or_edit(webhook_url: str, message_id: str, content: str
         r = SESSION.patch(edit_url, headers=headers, json={"content": content})
         if r.status_code == 200:
             return message_id, "edited"
-        # If edit fails (deleted message, etc.), fall through to create
 
     post_url = f"{webhook_url}?wait=true"
     r = SESSION.post(post_url, headers=headers, json={"content": content})
@@ -121,11 +119,10 @@ def _anchor_text(a: Tag) -> str:
 
 
 def _collect_items_near_head(head: Tag, base_url: str, max_items: int = 12) -> List[str]:
-    """Walk the section after a heading and collect lines with [link] + optional duration/info."""
+    """Generic: after a heading, collect list rows / table rows with a link + optional duration/info."""
     items: List[str] = []
     seen_links = set()
 
-    # Scan siblings until next h2/h3
     for sib in head.find_all_next():
         if sib is head:
             continue
@@ -155,7 +152,6 @@ def _collect_items_near_head(head: Tag, base_url: str, max_items: int = 12) -> L
                 continue
             seen_links.add(key)
 
-            # Try to harvest a nearby duration/info line
             info: Optional[str] = None
             block_text = _clean(block.get_text(" ", strip=True))
             if block_text and block_text.lower() != label.lower():
@@ -189,93 +185,171 @@ def _collect_items_near_head(head: Tag, base_url: str, max_items: int = 12) -> L
     return items
 
 
-# --- Genshin-specific helpers ---
+# --- Genshin-specific helpers (tight filters) ---
+
+_SKIP_TEXT_PATTERNS = [
+    "create your free account",
+    "save articles to your watchlist",
+    "save your favorite games",
+    "receive instant notifications",
+    "convenient features in the comments",
+    "site interface",
+    "game tools",
+]
+def _is_junk_text(s: str) -> bool:
+    s_low = s.lower()
+    return any(p in s_low for p in _SKIP_TEXT_PATTERNS)
+
+def _is_good_genshin_url(u: str) -> bool:
+    u = u.lower()
+    if "genshin-impact" not in u:
+        return False
+    if any(x in u for x in ["/account", "/login", "/register", "/tools", "site-interface"]):
+        return False
+    return True
+
+def _find_section_roots(soup: BeautifulSoup, titles: List[str]) -> List[Tag]:
+    """Find containers that contain anchors/headings matching the given titles."""
+    roots = []
+    tlow = [t.lower() for t in titles]
+    # Prefer exact titled headings
+    for h in soup.find_all(["h2", "h3"]):
+        txt = _clean(h.get_text(" ", strip=True)).lower()
+        if txt in tlow:
+            roots.append(h)
+    if roots:
+        return roots
+    # Fallback: any anchor with the text
+    for a in soup.find_all("a"):
+        txt = _clean(a.get_text(" ", strip=True)).lower()
+        if txt in tlow:
+            roots.append(a)
+    return roots
 
 def _find_nearby_link_for_event(head: Tag, base_url: str) -> Optional[str]:
-    """After a '### <Event Name>' heading, find the first reasonable link (usually '... Event Guide')."""
+    """After an event h3, find a reasonable link (prefer 'Guide' or same name) within a short window."""
+    name = _clean(head.get_text(" ", strip=True)).lower()
     for sib in head.find_all_next(limit=40):
         if sib is head:
             continue
-        if sib.name in ["h3"] and sib is not head:
+        if sib.name == "h3":  # next event block starts
             break
-        a = sib.find("a", href=True)
-        if a and a.get_text(strip=True):
-            return urljoin(base_url, a["href"])
+        for a in sib.find_all("a", href=True):
+            label = _anchor_text(a).lower()
+            href = urljoin(base_url, a["href"])
+            if not _is_good_genshin_url(href):
+                continue
+            # Prefer something that looks like a guide or references the event name
+            if "guide" in label or name.split("—")[0].strip() in label:
+                return href
     return None
 
-
-_date_pat = re.compile(
-    r"(?:Event )?(?:Start|End)?\s*("
-    r"\w{3,9}\.? ?\d{1,2},? ?\d{4}"           # e.g., Sep 12, 2025
-    r"|\d{1,2}/\d{1,2}"                        # or 9/12
-    r")(?: ?[-–—] ?(\d{1,2}/\d{1,2}))?",       # optional range like 9/12 - 9/29
-    re.I
-)
-
+# Dates like:
+#   Event Start September 12, 2025
+#   Event End   September 29, 2025
+#   or compact 9/12 - 9/29
+_DATE_WORD = r"(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec)[a-z]*\.?\s+\d{1,2},\s*\d{4}"
+_DATE_RANGE = re.compile(r"(\d{1,2}/\d{1,2})\s*[-–—]\s*(\d{1,2}/\d{1,2})", re.I)
+_DATE_LINE = re.compile(r"(event start|event end)[:\s]*(" + _DATE_WORD + ")", re.I)
 
 def _collect_dates_after(head: Tag) -> Optional[str]:
-    """Look for Event Start/End or a compact '9/12 - 9/29' line near the heading."""
-    texts = []
+    start = end = None
+    compact = None
     for sib in head.find_all_next(limit=20):
-        if sib.name in ["h3"] and sib is not head:
+        if sib is head:
+            continue
+        if sib.name == "h3":
             break
         t = _clean(sib.get_text(" ", strip=True))
         if not t:
             continue
-        m = _date_pat.search(t)
-        if "Event Start" in t or "Event End" in t or m:
-            texts.append(t)
-    if not texts:
-        return None
-    for t in texts:
-        if re.search(r"\d{1,2}/\d{1,2}\s*[-–—]\s*\d{1,2}/\d{1,2}", t):
-            return t
-    starts = [t for t in texts if "Event Start" in t]
-    ends = [t for t in texts if "Event End" in t]
-    if starts or ends:
-        return " / ".join([starts[0] if starts else "", ends[0] if ends else ""]).strip(" /")
-    return texts[0]
+        # Skip junk text quickly
+        if _is_junk_text(t):
+            continue
+        # Compact M/D - M/D
+        m = _DATE_RANGE.search(t)
+        if m:
+            compact = f"{m.group(1)} - {m.group(2)}"
+            break
+        # Start/End lines
+        for part in t.split(" / "):  # handle "Event Start ... / Event End ..."
+            m2 = _DATE_LINE.search(part)
+            if m2:
+                kind = m2.group(1).lower()
+                date_str = m2.group(2)
+                if "start" in kind and not start:
+                    start = date_str
+                elif "end" in kind and not end:
+                    end = date_str
+        if start and end:
+            break
 
+    if compact:
+        return compact
+    if start or end:
+        return f"Start {start}" if start and not end else (f"End {end}" if end and not start else f"{start} → {end}")
+    return None
 
 def extract_genshin_events(soup: BeautifulSoup, base_url: str) -> List[str]:
-    """Genshin page: event headings (###) + nearby dates + a later 'Event Guide' link."""
+    """
+    Genshin page: restrict to 'List of Current Events' and 'List of Upcoming Events' sections,
+    gather h3 event blocks, attach a near 'Event Guide' link (filtered to Genshin),
+    and clean dates.
+    """
     bullets: List[str] = []
     seen = set()
 
-    for h in soup.find_all("h3"):
-        name = _clean(h.get_text(" ", strip=True))
-        if not name or len(name.split()) < 2:
-            continue
-        lower = name.lower()
-        if "version" in lower and "event" in lower:
-            continue
-        if "list of current events" in lower or "list of upcoming events" in lower:
-            continue
-        if "events calendar" in lower:
-            continue
+    section_roots = _find_section_roots(soup, ["List of Current Events", "List of Upcoming Events"])
+    if not section_roots:
+        # Fallback to generic if we can't find the sections
+        return []
 
-        link = _find_nearby_link_for_event(h, base_url)
-        dates = _collect_dates_after(h)
+    # Add a common heading for our Discord message
+    bullets.append("__List of Current/Upcoming Events__")
 
-        key = (name.lower(), link or "")
-        if key in seen:
-            continue
-        seen.add(key)
+    for root in section_roots:
+        # Walk forward from the section root; collect h3 headings until next h2/h3 that looks like a new section meta
+        for h in root.find_all_next("h3"):
+            # Stop when we hit the next high-level section title or version block
+            txt = _clean(h.get_text(" ", strip=True))
+            low = txt.lower()
+            if any(marker in low for marker in ["version", "events calendar", "new archives", "upcoming archives"]):
+                break
 
-        if link and dates:
-            bullets.append(f"• [{name}]({link}) — {dates}")
-        elif link:
-            bullets.append(f"• [{name}]({link})")
-        elif dates:
-            bullets.append(f"• {name} — {dates}")
-        else:
-            bullets.append(f"• {name}")
+            # Skip junk/misc headings
+            if _is_junk_text(txt):
+                continue
+            if len(txt.split()) < 2:
+                continue
 
-        if len(bullets) >= 12:
-            break
+            link = _find_nearby_link_for_event(h, base_url)
+            if link and not _is_good_genshin_url(link):
+                link = None
 
-    if bullets:
-        bullets.insert(0, "__List of Current/Upcoming Events__")
+            dates = _collect_dates_after(h)
+            # Filter out lines with just promos
+            if not link and not dates and _is_junk_text(txt):
+                continue
+
+            key = (low, link or "")
+            if key in seen:
+                continue
+            seen.add(key)
+
+            if link and dates:
+                bullets.append(f"• [{txt}]({link}) — {dates}")
+            elif link:
+                bullets.append(f"• [{txt}]({link})")
+            elif dates:
+                bullets.append(f"• {txt} — {dates}")
+            else:
+                # Still allow plain title if it looks like an event name (two+ words, no account/tool keywords)
+                if not _is_junk_text(txt):
+                    bullets.append(f"• {txt}")
+
+            if len(bullets) >= 14:  # incl. the section header at index 0
+                return bullets
+
     return bullets
 
 
@@ -376,7 +450,6 @@ def make_summary_embed(results: List[Dict]) -> Dict:
     skipped = sum(1 for r in results if r["status"] == "skipped")
     ok = sum(1 for r in results if r["status"] == "ok")
 
-    # Discord embeds use integer colors (e.g., 0x2ecc71)
     color = 0x2ECC71 if ok else 0xE67E22
 
     fields = []
@@ -397,8 +470,8 @@ def make_summary_embed(results: List[Dict]) -> Dict:
         "title": "Game8 → Discord: Daily Update",
         "description": f"✅ OK: **{ok}** · 🆕 Created: **{created}** · ✏️ Edited: **{edited}** · ⏭️ Skipped: **{skipped}** · Total: **{total}**",
         "color": color,
-        "fields": fields[:25],  # max 25 fields in an embed
-        "footer": {"text": "GitHub Actions · game8-discord-updater"},
+        "fields": fields[:25],
+        "footer": {"text": ""},  # no custom footer text
         "timestamp": datetime.now(timezone.utc).isoformat(),
     }
     return embed
@@ -409,7 +482,6 @@ def main():
     changed = False
     results: List[Dict] = []
 
-    # Filter by ONLY_KEY if set
     items = [(k, v) for k, v in PAGES.items() if not ONLY_KEY or k.lower() == ONLY_KEY]
     if not items:
         print(f"No matching keys for ONLY_KEY='{ONLY_KEY}'. Valid keys:", ", ".join(PAGES.keys()))
@@ -444,14 +516,19 @@ def main():
             ids[key] = new_id
             changed = True
 
+        # compute item count sans our injected section header
+        items_count = len(bullets)
+        if items_count and bullets[0].startswith("__"):
+            items_count -= 1
+
         results.append({
             "key": key,
             "title": nice_title,
             "url": url,
             "secret": secret_name,
             "status": "ok",
-            "action": action,               # "created" or "edited"
-            "items": max(0, len(bullets) - 1) if bullets and bullets[0].startswith("__") else len(bullets),
+            "action": action,
+            "items": max(0, items_count),
             "last_updated": last_updated,
         })
 
@@ -461,13 +538,10 @@ def main():
     else:
         print("No message ID changes." if not DRY_RUN else "Dry run complete (no writes).")
 
-    # Send summary embed to a separate channel
     summary_url = os.environ.get(SUMMARY_WEBHOOK_ENV, "").strip()
     if summary_url:
         embed = make_summary_embed(results)
-        # Optional content line at top of embed (empty is fine)
-        content = None
-        discord_webhook_post_embed(summary_url, embed, content)
+        discord_webhook_post_embed(summary_url, embed, None)
         print("Summary embed sent.")
     else:
         print(f"No summary webhook found in env {SUMMARY_WEBHOOK_ENV}; skipping summary.")
