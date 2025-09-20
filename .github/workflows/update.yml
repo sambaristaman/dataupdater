@@ -35,6 +35,7 @@ jobs:
           WEBHOOK_URL_HSR:  ${{ secrets.WEBHOOK_URL_HSR }}
           WEBHOOK_URL_UMA:  ${{ secrets.WEBHOOK_URL_UMA }}
           WEBHOOK_URL_GI:   ${{ secrets.WEBHOOK_URL_GI }}
+          WEBHOOK_URL_SUMMARY: ${{ secrets.WEBHOOK_URL_SUMMARY }}
         run: python scraper.py
 
       - name: Commit and push message_ids.json if changed

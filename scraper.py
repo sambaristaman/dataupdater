@@ -1,8 +1,9 @@
 import json
 import os
 import re
+from datetime import datetime, timezone
 from pathlib import Path
-from typing import Dict, List, Optional
+from typing import Dict, List, Optional, Tuple
 from urllib.parse import urljoin
 
 import requests
@@ -35,30 +36,64 @@ PAGES = {
 MESSAGE_IDS_PATH = Path("message_ids.json")
 DISCORD_LIMIT = 2000  # characters
 
+SUMMARY_WEBHOOK_ENV = "WEBHOOK_URL_SUMMARY"  # <— add this secret in your repo
+
+# Optional flags for manual runs (leave unset in normal schedule)
+ONLY_KEY = os.getenv("ONLY_KEY", "").strip().lower()
+DRY_RUN = os.getenv("DRY_RUN", "false").lower() == "true"
+FORCE_NEW = os.getenv("FORCE_NEW", "false").lower() == "true"
+
+# --- HTTP session (reuse connection) ---
+SESSION = requests.Session()
+SESSION.headers.update({"User-Agent": "game8-discord-updater/1.0 (+github-actions)"})
+
+
 # --- Discord webhook helpers ---
 
-def discord_webhook_post_or_edit(webhook_url: str, message_id: str, content: str) -> str:
-    session = requests.Session()
+def discord_webhook_post_or_edit(webhook_url: str, message_id: str, content: str) -> Tuple[str, str]:
+    """
+    Post or edit a message via webhook.
+    Returns: (message_id, action) where action is "edited" or "created".
+    """
+    if DRY_RUN:
+        action = "edited" if message_id and not FORCE_NEW else "created"
+        return (message_id or "DRY_RUN_MESSAGE_ID", action)
+
     headers = {"Content-Type": "application/json"}
 
-    if message_id:
+    if message_id and not FORCE_NEW:
         edit_url = f"{webhook_url}/messages/{message_id}"
-        r = session.patch(edit_url, headers=headers, json={"content": content})
+        r = SESSION.patch(edit_url, headers=headers, json={"content": content})
         if r.status_code == 200:
-            return message_id
+            return message_id, "edited"
+        # If edit fails (deleted message, etc.), fall through to create
 
     post_url = f"{webhook_url}?wait=true"
-    r = session.post(post_url, headers=headers, json={"content": content})
+    r = SESSION.post(post_url, headers=headers, json={"content": content})
     r.raise_for_status()
     data = r.json()
-    return data["id"]
+    return data["id"], "created"
+
+
+def discord_webhook_post_embed(webhook_url: str, embed: Dict, content: Optional[str] = None):
+    """Send an embed to a webhook (summary channel)."""
+    if DRY_RUN:
+        print("[DRY_RUN] Would send summary embed.")
+        return
+    payload: Dict = {"embeds": [embed]}
+    if content:
+        payload["content"] = content
+    r = SESSION.post(f"{webhook_url}?wait=true", headers={"Content-Type": "application/json"}, json=payload)
+    r.raise_for_status()
+
 
 # --- Scraping helpers ---
 
 def fetch(url: str) -> str:
-    r = requests.get(url, timeout=30)
+    r = SESSION.get(url, timeout=30)
     r.raise_for_status()
     return r.text
+
 
 def extract_last_updated(soup: BeautifulSoup) -> str:
     text = soup.get_text(" ", strip=True)
@@ -68,18 +103,22 @@ def extract_last_updated(soup: BeautifulSoup) -> str:
     m2 = re.search(r"Last updated on:\s*([^|]+?)(?=\s{2,}|$)", text)
     return m2.group(1).strip() if m2 else "unknown"
 
+
 def _clean(s: str) -> str:
     s = re.sub(r"\s+", " ", s).strip()
     # Prevent accidental Markdown injection
     s = s.replace("**", "").replace("__", "").replace("`", "")
     return s
 
+
 def _durationish(s: str) -> bool:
     return any(k in s for k in ["Duration", "Event Duration", "期間", "to ", "–", "—", "-"]) or bool(re.search(r"\b\d{4}\b", s))
+
 
 def _anchor_text(a: Tag) -> str:
     t = a.get_text(" ", strip=True)
     return _clean(t)
+
 
 def _collect_items_near_head(head: Tag, base_url: str, max_items: int = 12) -> List[str]:
     """Walk the section after a heading and collect lines with [link] + optional duration/info."""
@@ -93,7 +132,6 @@ def _collect_items_near_head(head: Tag, base_url: str, max_items: int = 12) -> L
         if sib.name in ["h2", "h3"]:
             break
 
-        # capture list rows / table rows / paragraphs
         candidate_blocks: List[Tag] = []
         if sib.name in ["ul", "ol"]:
             candidate_blocks.extend(sib.find_all("li", recursive=False))
@@ -103,7 +141,6 @@ def _collect_items_near_head(head: Tag, base_url: str, max_items: int = 12) -> L
             candidate_blocks.append(sib)
 
         for block in candidate_blocks:
-            # Find the best anchor (prefer first meaningful <a>)
             a = block.find("a", href=True)
             if not a:
                 continue
@@ -120,7 +157,6 @@ def _collect_items_near_head(head: Tag, base_url: str, max_items: int = 12) -> L
 
             # Try to harvest a nearby duration/info line
             info: Optional[str] = None
-            # 1) text inside the same block (minus the anchor label)
             block_text = _clean(block.get_text(" ", strip=True))
             if block_text and block_text.lower() != label.lower():
                 bt = block_text
@@ -130,7 +166,6 @@ def _collect_items_near_head(head: Tag, base_url: str, max_items: int = 12) -> L
                 if _durationish(bt):
                     info = bt
 
-            # 2) look at a following small tag or sibling
             if not info:
                 small = block.find(["small", "span", "em"])
                 if small:
@@ -138,7 +173,6 @@ def _collect_items_near_head(head: Tag, base_url: str, max_items: int = 12) -> L
                     if _durationish(small_text):
                         info = small_text
 
-            # 3) fallback: scan the next paragraph
             if not info:
                 nxt = block.find_next_sibling(["p", "div"])
                 if nxt:
@@ -146,16 +180,14 @@ def _collect_items_near_head(head: Tag, base_url: str, max_items: int = 12) -> L
                     if _durationish(nt) and len(nt) < 140:
                         info = nt
 
-            if info:
-                line = f"• [{label}]({abs_href}) — {info}"
-            else:
-                line = f"• [{label}]({abs_href})"
+            line = f"• [{label}]({abs_href})" + (f" — {info}" if info else "")
             items.append(line)
 
             if len(items) >= max_items:
                 return items
 
     return items
+
 
 # --- Genshin-specific helpers ---
 
@@ -164,13 +196,13 @@ def _find_nearby_link_for_event(head: Tag, base_url: str) -> Optional[str]:
     for sib in head.find_all_next(limit=40):
         if sib is head:
             continue
-        # stop if we hit another event heading at the same depth
         if sib.name in ["h3"] and sib is not head:
             break
         a = sib.find("a", href=True)
         if a and a.get_text(strip=True):
             return urljoin(base_url, a["href"])
     return None
+
 
 _date_pat = re.compile(
     r"(?:Event )?(?:Start|End)?\s*("
@@ -179,6 +211,7 @@ _date_pat = re.compile(
     r")(?: ?[-–—] ?(\d{1,2}/\d{1,2}))?",       # optional range like 9/12 - 9/29
     re.I
 )
+
 
 def _collect_dates_after(head: Tag) -> Optional[str]:
     """Look for Event Start/End or a compact '9/12 - 9/29' line near the heading."""
@@ -194,28 +227,25 @@ def _collect_dates_after(head: Tag) -> Optional[str]:
             texts.append(t)
     if not texts:
         return None
-    # Prefer compact M/D - M/D ranges
     for t in texts:
         if re.search(r"\d{1,2}/\d{1,2}\s*[-–—]\s*\d{1,2}/\d{1,2}", t):
             return t
-    # Else join first Start/End lines if present
     starts = [t for t in texts if "Event Start" in t]
-    ends   = [t for t in texts if "Event End" in t]
+    ends = [t for t in texts if "Event End" in t]
     if starts or ends:
         return " / ".join([starts[0] if starts else "", ends[0] if ends else ""]).strip(" /")
     return texts[0]
+
 
 def extract_genshin_events(soup: BeautifulSoup, base_url: str) -> List[str]:
     """Genshin page: event headings (###) + nearby dates + a later 'Event Guide' link."""
     bullets: List[str] = []
     seen = set()
 
-    # Prefer scanning all h3, which usually denote event blocks
     for h in soup.find_all("h3"):
         name = _clean(h.get_text(" ", strip=True))
         if not name or len(name.split()) < 2:
             continue
-        # skip meta headings like "Version 6.0 ... Events"
         lower = name.lower()
         if "version" in lower and "event" in lower:
             continue
@@ -248,6 +278,7 @@ def extract_genshin_events(soup: BeautifulSoup, base_url: str) -> List[str]:
         bullets.insert(0, "__List of Current/Upcoming Events__")
     return bullets
 
+
 # --- Generic extractor (other games) ---
 
 def extract_events_with_links_generic(soup: BeautifulSoup, base_url: str) -> List[str]:
@@ -265,7 +296,6 @@ def extract_events_with_links_generic(soup: BeautifulSoup, base_url: str) -> Lis
             bullets.append(f"__{title}__")
             bullets.extend(_collect_items_near_head(head, base_url, max_items=10))
     else:
-        # Fallback: harvest any anchor + nearby duration anywhere on the page (top 12)
         seen = set()
         for a in soup.find_all("a", href=True):
             label = _anchor_text(a)
@@ -289,7 +319,6 @@ def extract_events_with_links_generic(soup: BeautifulSoup, base_url: str) -> Lis
             if len(bullets) >= 12:
                 break
 
-    # compact dedupe and trim
     final: List[str] = []
     seen_line = set()
     for b in bullets:
@@ -298,21 +327,21 @@ def extract_events_with_links_generic(soup: BeautifulSoup, base_url: str) -> Lis
             seen_line.add(b)
     return final[:40]
 
+
 def extract_events_with_links(soup: BeautifulSoup, base_url: str) -> List[str]:
     """Router: use Genshin-specific logic first for that page, else generic."""
     if "/Genshin-Impact/" in base_url:
         gs = extract_genshin_events(soup, base_url)
-        if len(gs) >= 3:  # good enough result
+        if len(gs) >= 3:
             return gs
-        # fall back if page layout shifts
     return extract_events_with_links_generic(soup, base_url)
+
 
 def build_discord_message(title: str, url: str, last_updated: str, bullets: List[str]) -> str:
     header = f"**{title}**\n<{url}>\n_Last updated on Game8: **{last_updated}**_\n\n"
     body = "\n".join(bullets) if bullets else "_No parseable items found today (site layout may have changed)._"
     content = header + body
 
-    # Respect Discord 2000 char limit
     if len(content) > DISCORD_LIMIT:
         extra_note = "\n…and more on the page."
         max_len = DISCORD_LIMIT - len(header) - len(extra_note)
@@ -328,22 +357,78 @@ def build_discord_message(title: str, url: str, last_updated: str, bullets: List
         content = header + "\n".join(trimmed) + extra_note
     return content
 
+
 def load_ids() -> Dict[str, str]:
     if MESSAGE_IDS_PATH.exists():
         return json.loads(MESSAGE_IDS_PATH.read_text())
     return {}
 
+
 def save_ids(ids: Dict[str, str]):
     MESSAGE_IDS_PATH.write_text(json.dumps(ids, indent=2))
+
+
+def make_summary_embed(results: List[Dict]) -> Dict:
+    """Build a nice summary embed of what happened this run."""
+    total = len(results)
+    created = sum(1 for r in results if r["action"] == "created")
+    edited = sum(1 for r in results if r["action"] == "edited")
+    skipped = sum(1 for r in results if r["status"] == "skipped")
+    ok = sum(1 for r in results if r["status"] == "ok")
+
+    # Discord embeds use integer colors (e.g., 0x2ecc71)
+    color = 0x2ECC71 if ok else 0xE67E22
+
+    fields = []
+    for r in results:
+        name = r["title"]
+        if r["status"] == "skipped":
+            value = f"⚠️ Skipped (missing secret `{r['secret']}`)"
+        else:
+            value = (
+                f"**{r['action'].capitalize()}** message\n"
+                f"Items: **{r['items']}**\n"
+                f"Last updated: `{r['last_updated']}`\n"
+                f"[Source]({r['url']})"
+            )
+        fields.append({"name": name, "value": value, "inline": True})
+
+    embed = {
+        "title": "Game8 → Discord: Daily Update",
+        "description": f"✅ OK: **{ok}** · 🆕 Created: **{created}** · ✏️ Edited: **{edited}** · ⏭️ Skipped: **{skipped}** · Total: **{total}**",
+        "color": color,
+        "fields": fields[:25],  # max 25 fields in an embed
+        "footer": {"text": "GitHub Actions · game8-discord-updater"},
+        "timestamp": datetime.now(timezone.utc).isoformat(),
+    }
+    return embed
+
 
 def main():
     ids = load_ids()
     changed = False
+    results: List[Dict] = []
 
-    for key, (url, secret_name, nice_title) in PAGES.items():
+    # Filter by ONLY_KEY if set
+    items = [(k, v) for k, v in PAGES.items() if not ONLY_KEY or k.lower() == ONLY_KEY]
+    if not items:
+        print(f"No matching keys for ONLY_KEY='{ONLY_KEY}'. Valid keys:", ", ".join(PAGES.keys()))
+        return
+
+    for key, (url, secret_name, nice_title) in items:
         webhook_url = os.environ.get(secret_name, "").strip()
         if not webhook_url:
             print(f"Missing webhook for {key} (env {secret_name}); skipping.")
+            results.append({
+                "key": key,
+                "title": nice_title,
+                "url": url,
+                "secret": secret_name,
+                "status": "skipped",
+                "action": "none",
+                "items": 0,
+                "last_updated": "n/a",
+            })
             continue
 
         html = fetch(url)
@@ -354,16 +439,39 @@ def main():
         content = build_discord_message(nice_title, url, last_updated, bullets)
 
         old_id = ids.get(key, "")
-        new_id = discord_webhook_post_or_edit(webhook_url, old_id, content)
+        new_id, action = discord_webhook_post_or_edit(webhook_url, old_id, content)
         if new_id != old_id:
             ids[key] = new_id
             changed = True
 
-    if changed:
+        results.append({
+            "key": key,
+            "title": nice_title,
+            "url": url,
+            "secret": secret_name,
+            "status": "ok",
+            "action": action,               # "created" or "edited"
+            "items": max(0, len(bullets) - 1) if bullets and bullets[0].startswith("__") else len(bullets),
+            "last_updated": last_updated,
+        })
+
+    if changed and not DRY_RUN:
         save_ids(ids)
         print("message_ids.json updated.")
     else:
-        print("No message ID changes.")
+        print("No message ID changes." if not DRY_RUN else "Dry run complete (no writes).")
+
+    # Send summary embed to a separate channel
+    summary_url = os.environ.get(SUMMARY_WEBHOOK_ENV, "").strip()
+    if summary_url:
+        embed = make_summary_embed(results)
+        # Optional content line at top of embed (empty is fine)
+        content = None
+        discord_webhook_post_embed(summary_url, embed, content)
+        print("Summary embed sent.")
+    else:
+        print(f"No summary webhook found in env {SUMMARY_WEBHOOK_ENV}; skipping summary.")
+
 
 if __name__ == "__main__":
     main()
