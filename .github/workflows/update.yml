@@ -49,6 +49,7 @@ jobs:
 
       - name: Install deps
         run: |
+          set -euo pipefail
           python -m pip install --upgrade pip
           if [[ -f requirements.txt ]]; then
             pip install -r requirements.txt
@@ -59,11 +60,18 @@ jobs:
 
       - name: Run scraper
         env:
+          # Per-game webhooks
           WEBHOOK_URL_WUWA:    ${{ secrets.WEBHOOK_URL_WUWA }}
           WEBHOOK_URL_HSR:     ${{ secrets.WEBHOOK_URL_HSR }}
           WEBHOOK_URL_UMA:     ${{ secrets.WEBHOOK_URL_UMA }}
           WEBHOOK_URL_GI:      ${{ secrets.WEBHOOK_URL_GI }}
+          # Summary webhook
           WEBHOOK_URL_SUMMARY: ${{ secrets.WEBHOOK_URL_SUMMARY }}
+          # Role IDs for summary mentions (Discord roles)
+          ROLE_ID_WUWA:        ${{ secrets.ROLE_ID_WUWA }}
+          ROLE_ID_HSR:         ${{ secrets.ROLE_ID_HSR }}
+          ROLE_ID_UMA:         ${{ secrets.ROLE_ID_UMA }}
+          ROLE_ID_GI:          ${{ secrets.ROLE_ID_GI }}
           # Optional runtime flags
           ONLY_KEY:  ${{ github.event.inputs.ONLY_KEY }}
           FORCE_NEW: ${{ github.event.inputs.FORCE_NEW }}

@@ -1,3 +1,30 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Game8 → Discord daily scraper with per-game channels and a summary channel.
+
+Features
+- Scrapes multiple Game8 pages, extracts key event lines with links/dates.
+- Posts to per-game Discord webhooks; edits message(s) when possible.
+- Splits long outputs into multiple Discord messages (<= 2000 chars).
+- Persists message IDs in message_ids.json.
+- Persists normalized scrape state in state.json and computes diffs.
+- Sends a summary embed to a summary channel webhook.
+- NEW: Pings game-specific Discord roles (by ID from GitHub Secrets) in the summary
+       ONLY when changes are detected for that game.
+
+Env / Secrets
+- WEBHOOK_URL_* : per-game Discord webhook URLs.
+- WEBHOOK_URL_SUMMARY : summary Discord webhook URL.
+- ROLE_ID_* : per-game Discord Role IDs (used only in summary mentions).
+- ONLY_KEY, FORCE_NEW, DRY_RUN: optional runtime flags (see below).
+
+CLI / Runtime flags via env
+- ONLY_KEY   : run only for this key (e.g. "genshin-impact").
+- FORCE_NEW  : if "true", always post new messages instead of editing.
+- DRY_RUN    : if "true", do not POST/EDIT/DELETE or write files.
+"""
+
 import json
 import os
 import re
@@ -9,32 +36,36 @@ from urllib.parse import urljoin
 import requests
 from bs4 import BeautifulSoup, Tag
 
-# --- Config: pages -> (url, secret_name_for_webhook, pretty_title) ---
+# --- Config: pages -> (url, secret_name_for_webhook, pretty_title, secret_name_for_role_id) ---
 PAGES = {
     "wuthering-waves": (
         "https://game8.co/games/Wuthering-Waves/archives/453473",
         "WEBHOOK_URL_WUWA",
         "Wuthering Waves — Events & Schedule",
+        "ROLE_ID_WUWA",
     ),
     "honkai-star-rail": (
         "https://game8.co/games/Honkai-Star-Rail/archives/408749",
         "WEBHOOK_URL_HSR",
         "Honkai: Star Rail — Events & Schedule",
+        "ROLE_ID_HSR",
     ),
     "umamusume": (
         "https://game8.co/games/Umamusume-Pretty-Derby/archives/539612",
         "WEBHOOK_URL_UMA",
         "Umamusume: Pretty Derby — Events & Choices",
+        "ROLE_ID_UMA",
     ),
     "genshin-impact": (
         "https://game8.co/games/Genshin-Impact/archives/301601",
         "WEBHOOK_URL_GI",
         "Genshin Impact — Archives & Updates",
+        "ROLE_ID_GI",
     ),
 }
 
 MESSAGE_IDS_PATH = Path("message_ids.json")
-STATE_PATH = Path("state.json")  # <— persisted scrape state (for change tracking)
+STATE_PATH = Path("state.json")  # persisted scrape state (for change tracking)
 DISCORD_LIMIT = 2000  # characters
 SUMMARY_WEBHOOK_ENV = "WEBHOOK_URL_SUMMARY"  # summary channel webhook
 
@@ -48,7 +79,7 @@ CLEANUP_OLD_MESSAGES = True
 
 # --- HTTP session (reuse connection) ---
 SESSION = requests.Session()
-SESSION.headers.update({"User-Agent": "game8-discord-updater/1.3 (+github-actions)"})
+SESSION.headers.update({"User-Agent": "game8-discord-updater/1.4 (+github-actions)"})
 
 
 # --- Discord webhook helpers ---
@@ -64,7 +95,10 @@ def webhook_edit(webhook_url: str, message_id: str, content: str) -> bool:
         json={"content": content},
         timeout=30,
     )
-    return r.status_code == 200
+    if r.status_code == 200:
+        return True
+    print(f"[WARN] Edit failed (status {r.status_code}): {r.text[:200]}")
+    return False
 
 
 def webhook_post(webhook_url: str, content: str) -> str:
@@ -88,19 +122,22 @@ def webhook_delete(webhook_url: str, message_id: str) -> None:
         print(f"[DRY_RUN] Would DELETE message {message_id[:6]}...")
         return
     try:
-        SESSION.delete(f"{webhook_url}/messages/{message_id}", timeout=10)
-    except Exception:
-        pass
+        r = SESSION.delete(f"{webhook_url}/messages/{message_id}", timeout=10)
+        if r.status_code not in (200, 204):
+            print(f"[WARN] Delete {message_id[:6]} returned status {r.status_code}")
+    except Exception as e:
+        print(f"[WARN] Delete failed for {message_id[:6]}: {e}")
 
 
 def discord_webhook_post_embed(webhook_url: str, embed: Dict, content: Optional[str] = None):
     """Send an embed to a webhook (summary channel)."""
     if DRY_RUN:
-        print("[DRY_RUN] Would send summary embed.")
+        print("[DRY_RUN] Would send summary embed." + (f" Content: {content}" if content else ""))
         return
     payload: Dict = {"embeds": [embed]}
     if content:
         payload["content"] = content
+        # Allow role mentions (Discord allows it by default for webhooks; no parse needed)
     r = SESSION.post(f"{webhook_url}?wait=true", headers={"Content-Type": "application/json"}, json=payload, timeout=30)
     r.raise_for_status()
 
@@ -114,10 +151,12 @@ def fetch(url: str) -> str:
 
 
 def extract_last_updated(soup: BeautifulSoup) -> str:
+    # Try precise form first
     text = soup.get_text(" ", strip=True)
-    m = re.search(r"Last updated on:\s*([A-Za-z]+\s+\d{1,2},\s+\d{4}\s+\d{1,2}:\d{2}\s*[AP]M)", text)
+    m = re.search(r"Last updated on:\s*([A-Za-z]+\s+\d{1,2},\s*\d{4}\s+\d{1,2}:\d{2}\s*[AP]M)", text)
     if m:
         return m.group(1)
+    # Fallback: line after label
     m2 = re.search(r"Last updated on:\s*([^|]+?)(?=\s{2,}|$)", text)
     return m2.group(1).strip() if m2 else "unknown"
 
@@ -495,6 +534,9 @@ def load_ids() -> Dict[str, Union[str, List[str]]]:
     return {}
 
 def save_ids(ids: Dict[str, Union[str, List[str]]]):
+    if DRY_RUN:
+        print("[DRY_RUN] Would write message_ids.json")
+        return
     MESSAGE_IDS_PATH.write_text(json.dumps(ids, indent=2))
 
 def load_state() -> Dict[str, Dict]:
@@ -506,6 +548,9 @@ def load_state() -> Dict[str, Dict]:
     return {}
 
 def save_state(state: Dict[str, Dict]):
+    if DRY_RUN:
+        print("[DRY_RUN] Would write state.json")
+        return
     STATE_PATH.write_text(json.dumps(state, indent=2))
 
 
@@ -621,7 +666,7 @@ def make_summary_embed(results: List[Dict]) -> Dict:
         fields.append({"name": name, "value": value, "inline": True})
 
     embed = {
-        "title": "Game8 → Discord: Daily Update",
+        "title": "The Mimicky, The Librarian Updates",
         "description": f"✅ OK: **{ok}** · 🆕 Created: **{created}** · ✏️ Edited: **{edited}** · ⏭️ Skipped: **{skipped}** · Total: **{total}**",
         "color": color,
         "fields": fields[:25],
@@ -640,13 +685,17 @@ def main():
     state_changed = False
     results: List[Dict] = []
 
+    # Filter by ONLY_KEY if provided
     items = [(k, v) for k, v in PAGES.items() if not ONLY_KEY or k.lower() == ONLY_KEY]
     if not items:
         print(f"No matching keys for ONLY_KEY='{ONLY_KEY}'. Valid keys:", ", ".join(PAGES.keys()))
         return
 
-    for key, (url, secret_name, nice_title) in items:
+    for key, (url, secret_name, nice_title, role_secret) in items:
         webhook_url = os.environ.get(secret_name, "").strip()
+        role_id = os.environ.get(role_secret, "").strip() if role_secret else ""
+        role_mention = f"<@&{role_id}>" if role_id else ""
+
         if not webhook_url:
             print(f"Missing webhook for {key} (env {secret_name}); skipping.")
             results.append({
@@ -659,6 +708,8 @@ def main():
                 "items": 0,
                 "last_updated": "n/a",
                 "delta_summary": "n/a",
+                "has_changes": False,
+                "role_mention": role_mention,
             })
             continue
 
@@ -677,6 +728,9 @@ def main():
         delta = diff_items(prev_items, normalized_now)
         last_updated_changed = (str(prev_last) != str(last_updated))
         delta_summary = format_delta(delta, last_updated_changed)
+        has_changes = (
+                bool(delta["added"]) or bool(delta["removed"]) or bool(delta["modified"]) or last_updated_changed
+        )
 
         # Build possibly multiple messages (chunks)
         messages = build_messages(nice_title, url, last_updated, bullets)
@@ -729,6 +783,8 @@ def main():
             "items": max(0, items_count),
             "last_updated": last_updated,
             "delta_summary": delta_summary,
+            "has_changes": has_changes,
+            "role_mention": role_mention,
             "_normalized_now": normalized_now,  # temp for state write
         })
 
@@ -754,12 +810,14 @@ def main():
         save_state(state)
         print("state.json updated.")
 
-    # Send summary
+    # Send summary (with role mentions if changes detected)
     summary_url = os.environ.get(SUMMARY_WEBHOOK_ENV, "").strip()
     if summary_url:
         embed = make_summary_embed(results)
-        discord_webhook_post_embed(summary_url, embed, None)
-        print("Summary embed sent.")
+        mentions = sorted({r["role_mention"] for r in results if r.get("has_changes") and r.get("role_mention")})
+        mention_content = " ".join(mentions) if mentions else None
+        discord_webhook_post_embed(summary_url, embed, mention_content)
+        print("Summary embed sent." + (f" Mentions: {mention_content}" if mention_content else ""))
     else:
         print(f"No summary webhook found in env {SUMMARY_WEBHOOK_ENV}; skipping summary.")
 
