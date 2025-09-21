@@ -5,46 +5,97 @@ on:
     # Runs at 08:00 America/Sao_Paulo daily.
     # GitHub cron is UTC; São Paulo is UTC-03 (no DST), so 11:00 UTC == 08:00 BRT.
     - cron: "0 11 * * *"
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      ONLY_KEY:
+        description: "Run only for this key (e.g. genshin-impact). Leave blank for all."
+        required: false
+        default: ""
+      FORCE_NEW:
+        description: "Force posting new messages instead of editing."
+        required: false
+        type: boolean
+        default: false
+      DRY_RUN:
+        description: "Do not send or write anything; log what would happen."
+        required: false
+        type: boolean
+        default: false
 
 permissions:
-  contents: write   # allow pushing message_ids.json changes back
+  contents: write   # allow pushing message_ids.json/state.json changes back
+
+concurrency:
+  group: game8-discord
+  cancel-in-progress: false
 
 jobs:
   run:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
+
     steps:
       - name: Check out
         uses: actions/checkout@v4
         with:
           persist-credentials: true
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
+          cache: "pip"
 
       - name: Install deps
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt
+          if [[ -f requirements.txt ]]; then
+            pip install -r requirements.txt
+          else
+            # Fallback if no requirements file is present
+            pip install requests beautifulsoup4
+          fi
 
       - name: Run scraper
         env:
-          WEBHOOK_URL_WUWA: ${{ secrets.WEBHOOK_URL_WUWA }}
-          WEBHOOK_URL_HSR:  ${{ secrets.WEBHOOK_URL_HSR }}
-          WEBHOOK_URL_UMA:  ${{ secrets.WEBHOOK_URL_UMA }}
-          WEBHOOK_URL_GI:   ${{ secrets.WEBHOOK_URL_GI }}
+          WEBHOOK_URL_WUWA:    ${{ secrets.WEBHOOK_URL_WUWA }}
+          WEBHOOK_URL_HSR:     ${{ secrets.WEBHOOK_URL_HSR }}
+          WEBHOOK_URL_UMA:     ${{ secrets.WEBHOOK_URL_UMA }}
+          WEBHOOK_URL_GI:      ${{ secrets.WEBHOOK_URL_GI }}
           WEBHOOK_URL_SUMMARY: ${{ secrets.WEBHOOK_URL_SUMMARY }}
-        run: python scraper.py
-
-      - name: Commit and push message_ids.json if changed
+          # Optional runtime flags
+          ONLY_KEY:  ${{ github.event.inputs.ONLY_KEY }}
+          FORCE_NEW: ${{ github.event.inputs.FORCE_NEW }}
+          DRY_RUN:   ${{ github.event.inputs.DRY_RUN }}
         run: |
-          if [[ `git status --porcelain` ]]; then
-            git config user.name "github-actions[bot]"
-            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          set -euo pipefail
+          python scraper.py
+
+      - name: Commit and push state if changed
+        if: ${{ github.event.inputs.DRY_RUN != 'true' }}  # don't commit during dry runs
+        run: |
+          set -euo pipefail
+          # Show what changed
+          git status --porcelain
+
+          # Stage files if they changed
+          CHANGED=0
+          if [[ -n "$(git status --porcelain -- message_ids.json)" ]]; then
             git add message_ids.json
-            git commit -m "chore: update Discord message IDs"
+            CHANGED=1
+          fi
+          if [[ -n "$(git status --porcelain -- state.json)" ]]; then
+            git add state.json
+            CHANGED=1
+          fi
+
+          if [[ "$CHANGED" -eq 1 ]]; then
+            git config user.name  "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            # Rebase in case the repo moved forward
+            git pull --rebase
+            git commit -m "chore: update Discord message IDs and scrape state"
             git push
           else
             echo "No changes to commit."

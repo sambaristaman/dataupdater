@@ -34,6 +34,7 @@ PAGES = {
 }
 
 MESSAGE_IDS_PATH = Path("message_ids.json")
+STATE_PATH = Path("state.json")  # <— persisted scrape state (for change tracking)
 DISCORD_LIMIT = 2000  # characters
 SUMMARY_WEBHOOK_ENV = "WEBHOOK_URL_SUMMARY"  # summary channel webhook
 
@@ -47,7 +48,7 @@ CLEANUP_OLD_MESSAGES = True
 
 # --- HTTP session (reuse connection) ---
 SESSION = requests.Session()
-SESSION.headers.update({"User-Agent": "game8-discord-updater/1.2 (+github-actions)"})
+SESSION.headers.update({"User-Agent": "game8-discord-updater/1.3 (+github-actions)"})
 
 
 # --- Discord webhook helpers ---
@@ -61,6 +62,7 @@ def webhook_edit(webhook_url: str, message_id: str, content: str) -> bool:
         f"{webhook_url}/messages/{message_id}",
         headers={"Content-Type": "application/json"},
         json={"content": content},
+        timeout=30,
     )
     return r.status_code == 200
 
@@ -74,6 +76,7 @@ def webhook_post(webhook_url: str, content: str) -> str:
         f"{webhook_url}?wait=true",
         headers={"Content-Type": "application/json"},
         json={"content": content},
+        timeout=30,
     )
     r.raise_for_status()
     return r.json()["id"]
@@ -98,7 +101,7 @@ def discord_webhook_post_embed(webhook_url: str, embed: Dict, content: Optional[
     payload: Dict = {"embeds": [embed]}
     if content:
         payload["content"] = content
-    r = SESSION.post(f"{webhook_url}?wait=true", headers={"Content-Type": "application/json"}, json=payload)
+    r = SESSION.post(f"{webhook_url}?wait=true", headers={"Content-Type": "application/json"}, json=payload, timeout=30)
     r.raise_for_status()
 
 
@@ -458,7 +461,6 @@ def chunk_lines_to_messages(header: str, lines: List[str], limit: int = DISCORD_
                 push()
         # If a single line is too long, hard-wrap it
         if len(add) > limit - len(current):
-            # conservative split at ~1800 chars
             start = 0
             max_chunk = max(100, limit - len(current) - 1)
             while start < len(add):
@@ -482,7 +484,7 @@ def build_messages(title: str, url: str, last_updated: str, bullets: List[str]) 
     return chunk_lines_to_messages(header, body_lines, DISCORD_LIMIT)
 
 
-# --- Persistence helpers ---
+# --- Persistence helpers (IDs + state) ---
 
 def load_ids() -> Dict[str, Union[str, List[str]]]:
     if MESSAGE_IDS_PATH.exists():
@@ -495,13 +497,107 @@ def load_ids() -> Dict[str, Union[str, List[str]]]:
 def save_ids(ids: Dict[str, Union[str, List[str]]]):
     MESSAGE_IDS_PATH.write_text(json.dumps(ids, indent=2))
 
+def load_state() -> Dict[str, Dict]:
+    if STATE_PATH.exists():
+        try:
+            return json.loads(STATE_PATH.read_text())
+        except Exception:
+            return {}
+    return {}
 
-# --- Summary embed ---
+def save_state(state: Dict[str, Dict]):
+    STATE_PATH.write_text(json.dumps(state, indent=2))
+
+
+# --- Diff helpers ---
+
+_BULLET_RE = re.compile(
+    r"^\s*•\s*(?:\[(?P<label>[^\]]+)\]\((?P<link>[^)]+)\)|(?P<label2>[^—]+?))\s*(?:—\s*(?P<info>.+))?\s*$"
+)
+
+def parse_bullet(line: str) -> Tuple[str, Optional[str], Optional[str]]:
+    """
+    Return (label, link, info). Works for:
+      • [Event](url) — dates/info
+      • [Event](url)
+      • Event — dates/info
+      • Event
+    """
+    m = _BULLET_RE.match(line.strip())
+    if not m:
+        return (line.strip().lstrip("• ").strip(), None, None)
+    label = (m.group("label") or m.group("label2") or "").strip()
+    link = (m.group("link") or None)
+    info = (m.group("info") or None)
+    return (label, link, info)
+
+
+def normalize_bullets(bullets: List[str]) -> List[Dict[str, Optional[str]]]:
+    out = []
+    for b in bullets:
+        if b.strip().startswith("__"):  # skip section headers
+            continue
+        label, link, info = parse_bullet(b)
+        if not label:
+            continue
+        out.append({"label": label, "link": link, "info": info})
+    return out
+
+
+def diff_items(old: List[Dict], new: List[Dict]) -> Dict:
+    """
+    Compute added/removed/modified:
+    - key by label (case-insensitive). If link/info changed, count as modified.
+    """
+    old_by_label = {i["label"].lower(): i for i in old}
+    new_by_label = {i["label"].lower(): i for i in new}
+
+    added = []
+    removed = []
+    modified = []
+
+    for lbl, n in new_by_label.items():
+        if lbl not in old_by_label:
+            added.append(n)
+        else:
+            o = old_by_label[lbl]
+            if (o.get("link") != n.get("link")) or (o.get("info") != n.get("info")):
+                modified.append({"before": o, "after": n})
+
+    for lbl, o in old_by_label.items():
+        if lbl not in new_by_label:
+            removed.append(o)
+
+    return {"added": added, "removed": removed, "modified": modified}
+
+
+def format_delta(delta: Dict, last_updated_changed: bool) -> str:
+    a, r, m = len(delta["added"]), len(delta["removed"]), len(delta["modified"])
+    parts = []
+    if a or r or m or last_updated_changed:
+        if a or r or m:
+            parts.append(f"Δ Items: +{a} / −{r} / ~{m}")
+        if last_updated_changed:
+            parts.append("Game8 timestamp changed")
+        notable = []
+        for it in delta["added"][:2]:
+            notable.append(f"+ {it['label']}")
+        for it in delta["removed"][:2]:
+            notable.append(f"− {it['label']}")
+        for it in delta["modified"][:2]:
+            notable.append(f"~ {it['after']['label']}")
+        if notable:
+            parts.append(" · ".join(notable))
+        return " | ".join(parts)
+    return "No detected changes"
+
+
+# --- Summary embed (augmented with delta line) ---
 
 def make_summary_embed(results: List[Dict]) -> Dict:
     total = len(results)
-    created = sum(1 for r in results if r["action"] == "created")
-    edited = sum(1 for r in results if r["action"] == "edited")
+    created = sum(1 for r in results if r.get("action") == "created")
+    edited = sum(1 for r in results if r.get("action") == "edited")
     skipped = sum(1 for r in results if r["status"] == "skipped")
     ok = sum(1 for r in results if r["status"] == "ok")
 
@@ -514,10 +610,12 @@ def make_summary_embed(results: List[Dict]) -> Dict:
             value = f"⚠️ Skipped (missing secret `{r['secret']}`)"
         else:
             msginfo = f"Messages: **{r.get('messages', 1)}**"
+            delta_line = r.get("delta_summary", "No detected changes")
             value = (
                 f"**{r['action'].capitalize()}** {msginfo}\n"
                 f"Items: **{r['items']}**\n"
                 f"Last updated: `{r['last_updated']}`\n"
+                f"{delta_line}\n"
                 f"[Source]({r['url']})"
             )
         fields.append({"name": name, "value": value, "inline": True})
@@ -537,7 +635,9 @@ def make_summary_embed(results: List[Dict]) -> Dict:
 
 def main():
     ids = load_ids()
-    changed = False
+    state = load_state()
+    changed_ids = False
+    state_changed = False
     results: List[Dict] = []
 
     items = [(k, v) for k, v in PAGES.items() if not ONLY_KEY or k.lower() == ONLY_KEY]
@@ -558,6 +658,7 @@ def main():
                 "action": "none",
                 "items": 0,
                 "last_updated": "n/a",
+                "delta_summary": "n/a",
             })
             continue
 
@@ -566,6 +667,16 @@ def main():
 
         last_updated = extract_last_updated(soup)
         bullets = extract_events_with_links(soup, url)
+
+        # Normalize for diffing
+        normalized_now = normalize_bullets(bullets)
+        prev_state = state.get(key, {"last_updated": None, "items": []})
+        prev_items = prev_state.get("items", [])
+        prev_last = prev_state.get("last_updated")
+
+        delta = diff_items(prev_items, normalized_now)
+        last_updated_changed = (str(prev_last) != str(last_updated))
+        delta_summary = format_delta(delta, last_updated_changed)
 
         # Build possibly multiple messages (chunks)
         messages = build_messages(nice_title, url, last_updated, bullets)
@@ -576,9 +687,6 @@ def main():
         else:
             prev_ids = list(prev_ids_raw)
 
-        # Decide behavior:
-        # - If single chunk AND not FORCE_NEW -> try to edit the first existing message.
-        # - If multiple chunks OR FORCE_NEW -> post fresh messages, then optionally delete old ones.
         new_ids: List[str] = []
         action = "edited"
 
@@ -588,15 +696,12 @@ def main():
                 new_ids = [prev_ids[0]]
                 action = "edited"
             else:
-                # if edit failed, post fresh
                 new_ids = [webhook_post(webhook_url, messages[0])]
                 action = "created"
         else:
-            # Over page limit or we're forcing new: post new messages
             for content in messages:
                 new_ids.append(webhook_post(webhook_url, content))
             action = "created"
-            # Clean up old messages (best-effort)
             if CLEANUP_OLD_MESSAGES:
                 for mid in prev_ids:
                     if mid not in new_ids:
@@ -606,11 +711,11 @@ def main():
         store_value: Union[str, List[str]] = new_ids[0] if len(new_ids) == 1 else new_ids
         if store_value != ids.get(key):
             ids[key] = store_value
-            changed = True
+            changed_ids = True
 
         # compute item count sans our injected section header
         items_count = len(bullets)
-        if items_count and bullets[0].startswith("__"):
+        if items_count and bullets and bullets[0].startswith("__"):
             items_count -= 1
 
         results.append({
@@ -623,14 +728,33 @@ def main():
             "messages": len(new_ids),
             "items": max(0, items_count),
             "last_updated": last_updated,
+            "delta_summary": delta_summary,
+            "_normalized_now": normalized_now,  # temp for state write
         })
 
-    if changed and not DRY_RUN:
+    if changed_ids and not DRY_RUN:
         save_ids(ids)
         print("message_ids.json updated.")
     else:
         print("No message ID changes." if not DRY_RUN else "Dry run complete (no writes).")
 
+    # Persist scrape state for all ok results
+    for r in results:
+        if r.get("status") != "ok":
+            continue
+        k = r["key"]
+        state[k] = {
+            "last_updated": r["last_updated"],
+            "items": r["_normalized_now"],
+        }
+        r.pop("_normalized_now", None)
+        state_changed = True
+
+    if state_changed and not DRY_RUN:
+        save_state(state)
+        print("state.json updated.")
+
+    # Send summary
     summary_url = os.environ.get(SUMMARY_WEBHOOK_ENV, "").strip()
     if summary_url:
         embed = make_summary_embed(results)
