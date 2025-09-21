@@ -3,7 +3,7 @@ import os
 import re
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Dict, List, Optional, Tuple
+from typing import Dict, List, Optional, Tuple, Union
 from urllib.parse import urljoin
 
 import requests
@@ -42,35 +42,52 @@ ONLY_KEY = os.getenv("ONLY_KEY", "").strip().lower()
 DRY_RUN = os.getenv("DRY_RUN", "false").lower() == "true"
 FORCE_NEW = os.getenv("FORCE_NEW", "false").lower() == "true"
 
+# Whether to delete old messages if we decide to re-post new chunked ones
+CLEANUP_OLD_MESSAGES = True
+
 # --- HTTP session (reuse connection) ---
 SESSION = requests.Session()
-SESSION.headers.update({"User-Agent": "game8-discord-updater/1.1 (+github-actions)"})
+SESSION.headers.update({"User-Agent": "game8-discord-updater/1.2 (+github-actions)"})
 
 
 # --- Discord webhook helpers ---
 
-def discord_webhook_post_or_edit(webhook_url: str, message_id: str, content: str) -> Tuple[str, str]:
-    """
-    Post or edit a message via webhook.
-    Returns: (message_id, action) where action is "edited" or "created".
-    """
+def webhook_edit(webhook_url: str, message_id: str, content: str) -> bool:
+    """Try to edit a single existing message. Return True if edited."""
     if DRY_RUN:
-        action = "edited" if message_id and not FORCE_NEW else "created"
-        return (message_id or "DRY_RUN_MESSAGE_ID", action)
+        print(f"[DRY_RUN] Would EDIT message {message_id[:6]}... via {webhook_url[:40]}...")
+        return True
+    r = SESSION.patch(
+        f"{webhook_url}/messages/{message_id}",
+        headers={"Content-Type": "application/json"},
+        json={"content": content},
+    )
+    return r.status_code == 200
 
-    headers = {"Content-Type": "application/json"}
 
-    if message_id and not FORCE_NEW:
-        edit_url = f"{webhook_url}/messages/{message_id}"
-        r = SESSION.patch(edit_url, headers=headers, json={"content": content})
-        if r.status_code == 200:
-            return message_id, "edited"
-
-    post_url = f"{webhook_url}?wait=true"
-    r = SESSION.post(post_url, headers=headers, json={"content": content})
+def webhook_post(webhook_url: str, content: str) -> str:
+    """Post a new message and return its ID."""
+    if DRY_RUN:
+        print(f"[DRY_RUN] Would POST new message via {webhook_url[:40]}...")
+        return "DRY_RUN_MESSAGE_ID"
+    r = SESSION.post(
+        f"{webhook_url}?wait=true",
+        headers={"Content-Type": "application/json"},
+        json={"content": content},
+    )
     r.raise_for_status()
-    data = r.json()
-    return data["id"], "created"
+    return r.json()["id"]
+
+
+def webhook_delete(webhook_url: str, message_id: str) -> None:
+    """Delete a message (best-effort; ignore failures)."""
+    if DRY_RUN:
+        print(f"[DRY_RUN] Would DELETE message {message_id[:6]}...")
+        return
+    try:
+        SESSION.delete(f"{webhook_url}/messages/{message_id}", timeout=10)
+    except Exception:
+        pass
 
 
 def discord_webhook_post_embed(webhook_url: str, embed: Dict, content: Optional[str] = None):
@@ -209,17 +226,14 @@ def _is_good_genshin_url(u: str) -> bool:
     return True
 
 def _find_section_roots(soup: BeautifulSoup, titles: List[str]) -> List[Tag]:
-    """Find containers that contain anchors/headings matching the given titles."""
     roots = []
     tlow = [t.lower() for t in titles]
-    # Prefer exact titled headings
     for h in soup.find_all(["h2", "h3"]):
         txt = _clean(h.get_text(" ", strip=True)).lower()
         if txt in tlow:
             roots.append(h)
     if roots:
         return roots
-    # Fallback: any anchor with the text
     for a in soup.find_all("a"):
         txt = _clean(a.get_text(" ", strip=True)).lower()
         if txt in tlow:
@@ -227,7 +241,6 @@ def _find_section_roots(soup: BeautifulSoup, titles: List[str]) -> List[Tag]:
     return roots
 
 def _find_nearby_link_for_event(head: Tag, base_url: str) -> Optional[str]:
-    """After an event h3, find a reasonable link (prefer 'Guide' or same name) within a short window."""
     name = _clean(head.get_text(" ", strip=True)).lower()
     for sib in head.find_all_next(limit=40):
         if sib is head:
@@ -239,15 +252,10 @@ def _find_nearby_link_for_event(head: Tag, base_url: str) -> Optional[str]:
             href = urljoin(base_url, a["href"])
             if not _is_good_genshin_url(href):
                 continue
-            # Prefer something that looks like a guide or references the event name
             if "guide" in label or name.split("—")[0].strip() in label:
                 return href
     return None
 
-# Dates like:
-#   Event Start September 12, 2025
-#   Event End   September 29, 2025
-#   or compact 9/12 - 9/29
 _DATE_WORD = r"(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec)[a-z]*\.?\s+\d{1,2},\s*\d{4}"
 _DATE_RANGE = re.compile(r"(\d{1,2}/\d{1,2})\s*[-–—]\s*(\d{1,2}/\d{1,2})", re.I)
 _DATE_LINE = re.compile(r"(event start|event end)[:\s]*(" + _DATE_WORD + ")", re.I)
@@ -263,16 +271,13 @@ def _collect_dates_after(head: Tag) -> Optional[str]:
         t = _clean(sib.get_text(" ", strip=True))
         if not t:
             continue
-        # Skip junk text quickly
         if _is_junk_text(t):
             continue
-        # Compact M/D - M/D
         m = _DATE_RANGE.search(t)
         if m:
             compact = f"{m.group(1)} - {m.group(2)}"
             break
-        # Start/End lines
-        for part in t.split(" / "):  # handle "Event Start ... / Event End ..."
+        for part in t.split(" / "):
             m2 = _DATE_LINE.search(part)
             if m2:
                 kind = m2.group(1).lower()
@@ -291,12 +296,6 @@ def _collect_dates_after(head: Tag) -> Optional[str]:
     return None
 
 def extract_genshin_events(soup: BeautifulSoup, base_url: str) -> List[str]:
-    """
-    Genshin page: restrict to 'List of Current Events' and 'List of Upcoming Events' sections,
-    gather h3 event blocks, attach a near 'Event Guide' link (filtered to Genshin),
-    and clean dates. This version correctly *skips* meta 'Version ...' headings
-    but keeps scanning the section for real event h3s.
-    """
     SECTION_TITLES = ["List of Current Events", "List of Upcoming Events"]
     section_roots = _find_section_roots(soup, SECTION_TITLES)
     if not section_roots:
@@ -312,40 +311,28 @@ def extract_genshin_events(soup: BeautifulSoup, base_url: str) -> List[str]:
         return txt in {t.lower() for t in SECTION_TITLES}
 
     for root in section_roots:
-        # Walk forward until we hit the *next* section title (or a major h2 that clearly ends the area)
         for sib in root.next_siblings:
             if not isinstance(sib, Tag):
                 continue
-
-            # Hard stop: next section header
             if sib.name in ("h2", "h3") and is_section_title(sib) and sib is not root:
                 break
-
-            # Collect event headings within the section
             if sib.name == "h3":
                 txt = _clean(sib.get_text(" ", strip=True))
                 low = txt.lower()
-
-                # skip meta headings, but DO NOT stop the section
-                if "events calendar" in low or "new archives" in low or "upcoming archives" in low:
+                if any(k in low for k in ["events calendar", "new archives", "upcoming archives"]):
                     continue
                 if "version" in low and "event" in low:
-                    # meta like "Version 6.0 ... Current Events" — just skip
                     continue
                 if _is_junk_text(low) or len(txt.split()) < 2:
                     continue
-
                 link = _find_nearby_link_for_event(sib, base_url)
                 if link and not _is_good_genshin_url(link):
                     link = None
-
                 dates = _collect_dates_after(sib)
-
                 key = (low, link or "")
                 if key in seen:
                     continue
                 seen.add(key)
-
                 if link and dates:
                     bullets.append(f"• [{txt}]({link}) — {dates}")
                 elif link:
@@ -354,31 +341,25 @@ def extract_genshin_events(soup: BeautifulSoup, base_url: str) -> List[str]:
                     bullets.append(f"• {txt} — {dates}")
                 else:
                     bullets.append(f"• {txt}")
-
-                if len(bullets) >= 14:  # incl. the header
+                if len(bullets) >= 14:
                     return bullets
-
-            # Some pages wrap h3s inside divs; scan nested h3s too
             for h in sib.find_all("h3"):
                 txt = _clean(h.get_text(" ", strip=True))
                 low = txt.lower()
-                if "events calendar" in low or "new archives" in low or "upcoming archives" in low:
+                if any(k in low for k in ["events calendar", "new archives", "upcoming archives"]):
                     continue
                 if "version" in low and "event" in low:
                     continue
                 if _is_junk_text(low) or len(txt.split()) < 2:
                     continue
-
                 link = _find_nearby_link_for_event(h, base_url)
                 if link and not _is_good_genshin_url(link):
                     link = None
                 dates = _collect_dates_after(h)
-
                 key = (low, link or "")
                 if key in seen:
                     continue
                 seen.add(key)
-
                 if link and dates:
                     bullets.append(f"• [{txt}]({link}) — {dates}")
                 elif link:
@@ -387,18 +368,15 @@ def extract_genshin_events(soup: BeautifulSoup, base_url: str) -> List[str]:
                     bullets.append(f"• {txt} — {dates}")
                 else:
                     bullets.append(f"• {txt}")
-
                 if len(bullets) >= 14:
                     return bullets
 
     return bullets
 
 
-
 # --- Generic extractor (other games) ---
 
 def extract_events_with_links_generic(soup: BeautifulSoup, base_url: str) -> List[str]:
-    """Target sections like Current/Ongoing/Upcoming/Featured and collect linked bullets."""
     headings = soup.find_all(["h2", "h3", "h4"])
     key_heads = [h for h in headings if any(
         t in h.get_text(strip=True).lower()
@@ -453,39 +431,74 @@ def extract_events_with_links(soup: BeautifulSoup, base_url: str) -> List[str]:
     return extract_events_with_links_generic(soup, base_url)
 
 
-def build_discord_message(title: str, url: str, last_updated: str, bullets: List[str]) -> str:
-    header = f"**{title}**\n<{url}>\n_Last updated on Game8: **{last_updated}**_\n\n"
-    body = "\n".join(bullets) if bullets else "_No parseable items found today (site layout may have changed)._"
-    content = header + body
+# --- Message building & chunking ---
 
-    if len(content) > DISCORD_LIMIT:
-        extra_note = "\n…and more on the page."
-        max_len = DISCORD_LIMIT - len(header) - len(extra_note)
-        trimmed = []
-        total = 0
-        for line in bullets:
-            ln = line.strip()
-            add = len(ln) + 1
-            if total + add > max_len:
-                break
-            trimmed.append(ln)
-            total += add
-        content = header + "\n".join(trimmed) + extra_note
-    return content
+def build_header(title: str, url: str, last_updated: str) -> str:
+    return f"**{title}**\n<{url}>\n_Last updated on Game8: **{last_updated}**_\n"
+
+def chunk_lines_to_messages(header: str, lines: List[str], limit: int = DISCORD_LIMIT) -> List[str]:
+    """
+    Split header + bullet lines into multiple Discord messages, each <= limit chars.
+    First message starts with header, later messages start with '(continued)' line.
+    """
+    messages: List[str] = []
+    current = header.strip() + "\n\n"
+    cont_prefix = "_(continued)_\n\n"
+
+    def push():
+        nonlocal current
+        messages.append(current.rstrip())
+        current = cont_prefix
+
+    for ln in lines:
+        ln = ln.rstrip()
+        add = (ln + "\n")
+        if len(current) + len(add) > limit:
+            if current.strip():
+                push()
+        # If a single line is too long, hard-wrap it
+        if len(add) > limit - len(current):
+            # conservative split at ~1800 chars
+            start = 0
+            max_chunk = max(100, limit - len(current) - 1)
+            while start < len(add):
+                chunk = add[start:start + max_chunk]
+                if len(current) + len(chunk) > limit:
+                    push()
+                current += chunk
+                start += max_chunk
+        else:
+            current += add
+
+    if current.strip():
+        messages.append(current.rstrip())
+
+    return messages
 
 
-def load_ids() -> Dict[str, str]:
+def build_messages(title: str, url: str, last_updated: str, bullets: List[str]) -> List[str]:
+    header = build_header(title, url, last_updated)
+    body_lines = bullets if bullets else ["_No parseable items found today (site layout may have changed)._"]
+    return chunk_lines_to_messages(header, body_lines, DISCORD_LIMIT)
+
+
+# --- Persistence helpers ---
+
+def load_ids() -> Dict[str, Union[str, List[str]]]:
     if MESSAGE_IDS_PATH.exists():
-        return json.loads(MESSAGE_IDS_PATH.read_text())
+        try:
+            return json.loads(MESSAGE_IDS_PATH.read_text())
+        except Exception:
+            return {}
     return {}
 
-
-def save_ids(ids: Dict[str, str]):
+def save_ids(ids: Dict[str, Union[str, List[str]]]):
     MESSAGE_IDS_PATH.write_text(json.dumps(ids, indent=2))
 
 
+# --- Summary embed ---
+
 def make_summary_embed(results: List[Dict]) -> Dict:
-    """Build a nice summary embed of what happened this run."""
     total = len(results)
     created = sum(1 for r in results if r["action"] == "created")
     edited = sum(1 for r in results if r["action"] == "edited")
@@ -500,8 +513,9 @@ def make_summary_embed(results: List[Dict]) -> Dict:
         if r["status"] == "skipped":
             value = f"⚠️ Skipped (missing secret `{r['secret']}`)"
         else:
+            msginfo = f"Messages: **{r.get('messages', 1)}**"
             value = (
-                f"**{r['action'].capitalize()}** message\n"
+                f"**{r['action'].capitalize()}** {msginfo}\n"
                 f"Items: **{r['items']}**\n"
                 f"Last updated: `{r['last_updated']}`\n"
                 f"[Source]({r['url']})"
@@ -513,11 +527,13 @@ def make_summary_embed(results: List[Dict]) -> Dict:
         "description": f"✅ OK: **{ok}** · 🆕 Created: **{created}** · ✏️ Edited: **{edited}** · ⏭️ Skipped: **{skipped}** · Total: **{total}**",
         "color": color,
         "fields": fields[:25],
-        "footer": {"text": ""},  # no custom footer text
+        "footer": {"text": ""},  # only timestamp in Discord UI
         "timestamp": datetime.now(timezone.utc).isoformat(),
     }
     return embed
 
+
+# --- Main flow ---
 
 def main():
     ids = load_ids()
@@ -550,12 +566,46 @@ def main():
 
         last_updated = extract_last_updated(soup)
         bullets = extract_events_with_links(soup, url)
-        content = build_discord_message(nice_title, url, last_updated, bullets)
 
-        old_id = ids.get(key, "")
-        new_id, action = discord_webhook_post_or_edit(webhook_url, old_id, content)
-        if new_id != old_id:
-            ids[key] = new_id
+        # Build possibly multiple messages (chunks)
+        messages = build_messages(nice_title, url, last_updated, bullets)
+
+        prev_ids_raw = ids.get(key, [])
+        if isinstance(prev_ids_raw, str):
+            prev_ids = [prev_ids_raw]
+        else:
+            prev_ids = list(prev_ids_raw)
+
+        # Decide behavior:
+        # - If single chunk AND not FORCE_NEW -> try to edit the first existing message.
+        # - If multiple chunks OR FORCE_NEW -> post fresh messages, then optionally delete old ones.
+        new_ids: List[str] = []
+        action = "edited"
+
+        if len(messages) == 1 and prev_ids and not FORCE_NEW:
+            success = webhook_edit(webhook_url, prev_ids[0], messages[0])
+            if success:
+                new_ids = [prev_ids[0]]
+                action = "edited"
+            else:
+                # if edit failed, post fresh
+                new_ids = [webhook_post(webhook_url, messages[0])]
+                action = "created"
+        else:
+            # Over page limit or we're forcing new: post new messages
+            for content in messages:
+                new_ids.append(webhook_post(webhook_url, content))
+            action = "created"
+            # Clean up old messages (best-effort)
+            if CLEANUP_OLD_MESSAGES:
+                for mid in prev_ids:
+                    if mid not in new_ids:
+                        webhook_delete(webhook_url, mid)
+
+        # Persist IDs (store list when >1, else single string for readability)
+        store_value: Union[str, List[str]] = new_ids[0] if len(new_ids) == 1 else new_ids
+        if store_value != ids.get(key):
+            ids[key] = store_value
             changed = True
 
         # compute item count sans our injected section header
@@ -570,6 +620,7 @@ def main():
             "secret": secret_name,
             "status": "ok",
             "action": action,
+            "messages": len(new_ids),
             "items": max(0, items_count),
             "last_updated": last_updated,
         })
