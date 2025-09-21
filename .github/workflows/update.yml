@@ -76,26 +76,23 @@ jobs:
         if: ${{ github.event.inputs.DRY_RUN != 'true' }}  # don't commit during dry runs
         run: |
           set -euo pipefail
+
           # Show what changed
           git status --porcelain
 
-          # Stage files if they changed
-          CHANGED=0
-          if [[ -n "$(git status --porcelain -- message_ids.json)" ]]; then
-            git add message_ids.json
-            CHANGED=1
-          fi
-          if [[ -n "$(git status --porcelain -- state.json)" ]]; then
-            git add state.json
-            CHANGED=1
-          fi
+          # Stage the state files (ok if they don't exist yet)
+          git add -A -- message_ids.json state.json
 
-          if [[ "$CHANGED" -eq 1 ]]; then
+          # Commit only if there is something staged
+          if ! git diff --cached --quiet; then
             git config user.name  "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            # Rebase in case the repo moved forward
-            git pull --rebase
+
+            # Create the commit first so the index is clean
             git commit -m "chore: update Discord message IDs and scrape state"
+
+            # Rebase our commit onto the latest remote, then push
+            git pull --rebase
             git push
           else
             echo "No changes to commit."
