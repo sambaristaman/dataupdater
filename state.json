@@ -115,43 +115,8 @@
     ]
   },
   "umamusume": {
-    "last_updated": "September 22, 2025 06:11 AM",
+    "last_updated": "September 8, 2025 05:57 AM",
     "items": [
-      {
-        "label": "Sign Up",
-        "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/539612",
-        "info": null
-      },
-      {
-        "label": "Log In",
-        "link": "https://game8.co/users/sign_in",
-        "info": null
-      },
-      {
-        "label": "Learn more",
-        "link": "https://game8.co/members?utm_source=game8&utm_medium=gamewiki_header&utm_campaign=learnmore_click&utm_content=membership_modal",
-        "info": null
-      },
-      {
-        "label": "[Continue as a guest](javascript:void(0))",
-        "link": null,
-        "info": null
-      },
-      {
-        "label": "Join now",
-        "link": "https://game8.co/users/sign_up?utm_campaign=signup_click&utm_content=membership_modal&utm_medium=gamewiki_header&utm_source=game8",
-        "info": null
-      },
-      {
-        "label": "Game8",
-        "link": "https://game8.co/",
-        "info": null
-      },
-      {
-        "label": "Umamusume: Pretty Derby Walkthrough & Guides Wiki",
-        "link": "https://game8.co/games/Umamusume-Pretty-Derby",
-        "info": null
-      },
       {
         "label": "Best Characters",
         "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/536352",
@@ -175,6 +140,41 @@
       {
         "label": "Bamboo Memory",
         "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/550080",
+        "info": null
+      },
+      {
+        "label": "Shinko Windy",
+        "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/550085",
+        "info": null
+      },
+      {
+        "label": "El Condor Pasa",
+        "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/547832",
+        "info": null
+      },
+      {
+        "label": "Grass Wonder",
+        "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/547831",
+        "info": null
+      },
+      {
+        "label": "Seiun Sky",
+        "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/550086",
+        "info": null
+      },
+      {
+        "label": "King Halo",
+        "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/550087",
+        "info": null
+      },
+      {
+        "label": "Gold Ship",
+        "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/550088",
+        "info": null
+      },
+      {
+        "label": "Cancer Cup Champions Meeting",
+        "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/550078",
         "info": null
       }
     ]
