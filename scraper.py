@@ -3,26 +3,11 @@
 """
 Game8 → Discord daily scraper with per-game channels and a summary channel.
 
-Features
-- Scrapes multiple Game8 pages, extracts key event lines with links/dates.
-- Posts to per-game Discord webhooks; edits message(s) when possible.
-- Splits long outputs into multiple Discord messages (<= 2000 chars).
-- Persists message IDs in message_ids.json.
-- Persists normalized scrape state in state.json and computes diffs.
-- Sends a summary embed to a summary channel webhook.
-- NEW: Pings game-specific Discord roles (by ID from GitHub Secrets) in the summary
-       ONLY when changes are detected for that game.
-
-Env / Secrets
-- WEBHOOK_URL_* : per-game Discord webhook URLs.
-- WEBHOOK_URL_SUMMARY : summary Discord webhook URL.
-- ROLE_ID_* : per-game Discord Role IDs (used only in summary mentions).
-- ONLY_KEY, FORCE_NEW, DRY_RUN: optional runtime flags (see below).
-
-CLI / Runtime flags via env
-- ONLY_KEY   : run only for this key (e.g. "genshin-impact").
-- FORCE_NEW  : if "true", always post new messages instead of editing.
-- DRY_RUN    : if "true", do not POST/EDIT/DELETE or write files.
+Split architecture:
+- main.py (this file): orchestration, Discord I/O, state/diffing, and routing
+- extractors/genshin_extractor.py: Genshin-specific extraction
+- extractors/uma_extractor.py: Umamusume-specific extraction
+- extractors/generic_extractor.py: Fallback extraction used by other games
 """
 
 import json
@@ -31,10 +16,14 @@ import re
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Dict, List, Optional, Tuple, Union
-from urllib.parse import urljoin
 
 import requests
-from bs4 import BeautifulSoup, Tag
+from bs4 import BeautifulSoup
+
+# --- Import extractors ---
+from extractors.genshin_extractor import extract_genshin_events
+from extractors.uma_extractor import extract_umamusume_events
+from extractors.generic_extractor import extract_events_with_links_generic
 
 # --- Config: pages -> (url, secret_name_for_webhook, pretty_title, secret_name_for_role_id) ---
 PAGES = {
@@ -51,7 +40,7 @@ PAGES = {
         "ROLE_ID_HSR",
     ),
     "umamusume": (
-        # UPDATED: use the specific Umamusume events/choices page you provided
+        # UPDATED to the page you specified
         "https://game8.co/games/Umamusume-Pretty-Derby/archives/549992",
         "WEBHOOK_URL_UMA",
         "Umamusume: Pretty Derby — Events & Choices",
@@ -80,7 +69,7 @@ CLEANUP_OLD_MESSAGES = True
 
 # --- HTTP session (reuse connection) ---
 SESSION = requests.Session()
-SESSION.headers.update({"User-Agent": "game8-discord-updater/1.4 (+github-actions)"})
+SESSION.headers.update({"User-Agent": "game8-discord-updater/1.5 (+github-actions)"})
 
 
 # --- Discord webhook helpers ---
@@ -138,7 +127,6 @@ def discord_webhook_post_embed(webhook_url: str, embed: Dict, content: Optional[
     payload: Dict = {"embeds": [embed]}
     if content:
         payload["content"] = content
-        # Allow role mentions (Discord allows it by default for webhooks; no parse needed)
     r = SESSION.post(f"{webhook_url}?wait=true", headers={"Content-Type": "application/json"}, json=payload, timeout=30)
     r.raise_for_status()
 
@@ -162,448 +150,11 @@ def extract_last_updated(soup: BeautifulSoup) -> str:
     return m2.group(1).strip() if m2 else "unknown"
 
 
-def _clean(s: str) -> str:
-    s = re.sub(r"\s+", " ", s).strip()
-    # Prevent accidental Markdown injection
-    s = s.replace("**", "").replace("__", "").replace("`", "")
-    return s
-
-
-def _durationish(s: str) -> bool:
-    return any(k in s for k in ["Duration", "Event Duration", "期間", "to ", "–", "—", "-"]) or bool(re.search(r"\b\d{4}\b", s))
-
-
-def _anchor_text(a: Tag) -> str:
-    t = a.get_text(" ", strip=True)
-    return _clean(t)
-
-
-def _bad_href(u: str) -> bool:
-    if not u:
-        return True
-    ul = u.lower().strip()
-    if ul.startswith("javascript:") or ul.startswith("mailto:") or ul.endswith("#"):
-        return True
-    if any(p in ul for p in ["/login", "/register", "/signup", "/account"]):
-        return True
-    return False
-
-
-def _collect_items_near_head(head: Tag, base_url: str, max_items: int = 12) -> List[str]:
-    """Generic: after a heading, collect list rows / table rows with a link + optional duration/info."""
-    items: List[str] = []
-    seen_links = set()
-
-    for sib in head.find_all_next():
-        if sib is head:
-            continue
-        if sib.name in ["h2", "h3"]:
-            break
-
-        candidate_blocks: List[Tag] = []
-        if sib.name in ["ul", "ol"]:
-            candidate_blocks.extend(sib.find_all("li", recursive=False))
-        elif sib.name == "table":
-            candidate_blocks.extend(sib.find_all("tr"))
-        elif sib.name in ["p", "div"]:
-            candidate_blocks.append(sib)
-
-        for block in candidate_blocks:
-            a = block.find("a", href=True)
-            if not a:
-                continue
-            href = a.get("href", "")
-            if _bad_href(href):
-                continue
-
-            label = _anchor_text(a)
-            if not label or len(label) < 2:
-                continue
-
-            abs_href = urljoin(base_url, href)
-            key = (label.lower(), abs_href)
-            if key in seen_links:
-                continue
-            seen_links.add(key)
-
-            info: Optional[str] = None
-            block_text = _clean(block.get_text(" ", strip=True))
-            if block_text and block_text.lower() != label.lower():
-                bt = block_text
-                if bt.lower().startswith(label.lower()):
-                    bt = bt[len(label):]
-                bt = _clean(bt.strip(":-—– "))
-                if _durationish(bt):
-                    info = bt
-
-            if not info:
-                small = block.find(["small", "span", "em"])
-                if small:
-                    small_text = _clean(small.get_text(" ", strip=True))
-                    if _durationish(small_text):
-                        info = small_text
-
-            if not info:
-                nxt = block.find_next_sibling(["p", "div"])
-                if nxt:
-                    nt = _clean(nxt.get_text(" ", strip=True))
-                    if _durationish(nt) and len(nt) < 140:
-                        info = nt
-
-            line = f"• [{label}]({abs_href})" + (f" — {info}" if info else "")
-            items.append(line)
-
-            if len(items) >= max_items:
-                return items
-
-    return items
-
-
-# --- Genshin-specific helpers (tight filters) ---
-
-_SKIP_TEXT_PATTERNS = [
-    "create your free account",
-    "save articles to your watchlist",
-    "save your favorite games",
-    "receive instant notifications",
-    "convenient features in the comments",
-    "site interface",
-    "game tools",
-]
-def _is_junk_text(s: str) -> bool:
-    s_low = s.lower()
-    return any(p in s_low for p in _SKIP_TEXT_PATTERNS)
-
-def _is_good_genshin_url(u: str) -> bool:
-    u = u.lower()
-    if "genshin-impact" not in u:
-        return False
-    if any(x in u for x in ["/account", "/login", "/register", "/tools", "site-interface"]):
-        return False
-    return True
-
-def _find_section_roots(soup: BeautifulSoup, titles: List[str]) -> List[Tag]:
-    roots = []
-    tlow = [t.lower() for t in titles]
-    for h in soup.find_all(["h2", "h3"]):
-        txt = _clean(h.get_text(" ", strip=True)).lower()
-        if txt in tlow:
-            roots.append(h)
-    if roots:
-        return roots
-    for a in soup.find_all("a"):
-        txt = _clean(a.get_text(" ", strip=True)).lower()
-        if txt in tlow:
-            roots.append(a)
-    return roots
-
-def _find_nearby_link_for_event(head: Tag, base_url: str) -> Optional[str]:
-    name = _clean(head.get_text(" ", strip=True)).lower()
-    for sib in head.find_all_next(limit=40):
-        if sib is head:
-            continue
-        if sib.name == "h3":  # next event block starts
-            break
-        for a in sib.find_all("a", href=True):
-            label = _anchor_text(a).lower()
-            href = urljoin(base_url, a["href"])
-            if not _is_good_genshin_url(href):
-                continue
-            if "guide" in label or name.split("—")[0].strip() in label:
-                return href
-    return None
-
-_DATE_WORD = r"(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec)[a-z]*\.?\s+\d{1,2},\s*\d{4}"
-_DATE_RANGE = re.compile(r"(\d{1,2}/\d{1,2})\s*[-–—]\s*(\d{1,2}/\d{1,2})", re.I)
-_DATE_LINE = re.compile(r"(event start|event end)[:\s]*(" + _DATE_WORD + ")", re.I)
-
-def _collect_dates_after(head: Tag) -> Optional[str]:
-    start = end = None
-    compact = None
-    for sib in head.find_all_next(limit=20):
-        if sib is head:
-            continue
-        if sib.name == "h3":
-            break
-        t = _clean(sib.get_text(" ", strip=True))
-        if not t:
-            continue
-        if _is_junk_text(t):
-            continue
-        m = _DATE_RANGE.search(t)
-        if m:
-            compact = f"{m.group(1)} - {m.group(2)}"
-            break
-        for part in t.split(" / "):
-            m2 = _DATE_LINE.search(part)
-            if m2:
-                kind = m2.group(1).lower()
-                date_str = m2.group(2)
-                if "start" in kind and not start:
-                    start = date_str
-                elif "end" in kind and not end:
-                    end = date_str
-        if start and end:
-            break
-
-    if compact:
-        return compact
-    if start or end:
-        return f"Start {start}" if start and not end else (f"End {end}" if end and not start else f"{start} → {end}")
-    return None
-
-def extract_genshin_events(soup: BeautifulSoup, base_url: str) -> List[str]:
-    SECTION_TITLES = ["List of Current Events", "List of Upcoming Events"]
-    section_roots = _find_section_roots(soup, SECTION_TITLES)
-    if not section_roots:
-        return []  # fall back to generic
-
-    bullets: List[str] = ["__List of Current/Upcoming Events__"]
-    seen = set()
-
-    def is_section_title(tag: Tag) -> bool:
-        if not hasattr(tag, "get_text"):
-            return False
-        txt = _clean(tag.get_text(" ", strip=True)).lower()
-        return txt in {t.lower() for t in SECTION_TITLES}
-
-    for root in section_roots:
-        for sib in root.next_siblings:
-            if not isinstance(sib, Tag):
-                continue
-            if sib.name in ("h2", "h3") and is_section_title(sib) and sib is not root:
-                break
-            if sib.name == "h3":
-                txt = _clean(sib.get_text(" ", strip=True))
-                low = txt.lower()
-                if any(k in low for k in ["events calendar", "new archives", "upcoming archives"]):
-                    continue
-                if "version" in low and "event" in low:
-                    continue
-                if _is_junk_text(low) or len(txt.split()) < 2:
-                    continue
-                link = _find_nearby_link_for_event(sib, base_url)
-                if link and not _is_good_genshin_url(link):
-                    link = None
-                dates = _collect_dates_after(sib)
-                key = (low, link or "")
-                if key in seen:
-                    continue
-                seen.add(key)
-                if link and dates:
-                    bullets.append(f"• [{txt}]({link}) — {dates}")
-                elif link:
-                    bullets.append(f"• [{txt}]({link})")
-                elif dates:
-                    bullets.append(f"• {txt} — {dates}")
-                else:
-                    bullets.append(f"• {txt}")
-                if len(bullets) >= 14:
-                    return bullets
-            for h in sib.find_all("h3"):
-                txt = _clean(h.get_text(" ", strip=True))
-                low = txt.lower()
-                if any(k in low for k in ["events calendar", "new archives", "upcoming archives"]):
-                    continue
-                if "version" in low and "event" in low:
-                    continue
-                if _is_junk_text(low) or len(txt.split()) < 2:
-                    continue
-                link = _find_nearby_link_for_event(h, base_url)
-                if link and not _is_good_genshin_url(link):
-                    link = None
-                dates = _collect_dates_after(h)
-                key = (low, link or "")
-                if key in seen:
-                    continue
-                seen.add(key)
-                if link and dates:
-                    bullets.append(f"• [{txt}]({link}) — {dates}")
-                elif link:
-                    bullets.append(f"• [{txt}]({link})")
-                elif dates:
-                    bullets.append(f"• {txt} — {dates}")
-                else:
-                    bullets.append(f"• {txt}")
-                if len(bullets) >= 14:
-                    return bullets
-
-    return bullets
-
-
-# --- Umamusume-specific extractor ---
-
-def _is_good_umamusume_url(u: str) -> bool:
-    if _bad_href(u):
-        return False
-    ul = u.lower()
-    if "umamusume-pretty-derby" not in ul:
-        return False
-    if any(x in ul for x in ["/login", "/register", "/signup", "/account", "javascript:void(0)"]):
-        return False
-    return True
-
-def _find_article_root(soup: BeautifulSoup) -> Tag:
-    """
-    Game8 pages generally wrap the main content in an article/body container.
-    We constrain our search to this area to avoid global nav/footers.
-    """
-    # Try common IDs/classes first
-    candidates = [
-        soup.find(id=re.compile(r"(article|content).*(body|main)", re.I)),
-        soup.find(class_=re.compile(r"(article|content).*(body|main)", re.I)),
-        soup.find("article"),
-        soup.find("main"),
-    ]
-    for c in candidates:
-        if isinstance(c, Tag):
-            return c
-    return soup  # fallback
-
-def extract_umamusume_events(soup: BeautifulSoup, base_url: str) -> List[str]:
-    """
-    Focus on sections likely present on the Umamusume Events/Choices page and
-    ignore site-chrome links like 'Sign Up' / 'Log In'.
-    """
-    root = _find_article_root(soup)
-    SECTION_HINTS = [
-        "ongoing events",
-        "current events",
-        "event list",
-        "event choices",
-        "story events",
-        "campaigns",
-        "races",
-        "training events",
-        "latest events",
-        "featured events",
-    ]
-
-    # Find section heads within the article root only
-    heads: List[Tag] = []
-    for h in root.find_all(["h2", "h3"]):
-        txt = _clean(h.get_text(" ", strip=True)).lower()
-        if any(hint in txt for hint in SECTION_HINTS):
-            heads.append(h)
-
-    bullets: List[str] = []
-    if heads:
-        # Grouped under their headings to keep context tidy
-        for head in heads[:4]:
-            title = _clean(head.get_text(" ", strip=True))
-            bullets.append(f"__{title}__")
-            for line in _collect_items_near_head(head, base_url, max_items=10):
-                # Tighten to Umamusume-specific links only
-                label, link, info = parse_bullet(line)
-                if link and not _is_good_umamusume_url(link):
-                    continue
-                bullets.append(line)
-    else:
-        # Conservative fallback: scan anchors in article root only and whitelist the game path
-        seen = set()
-        for a in root.find_all("a", href=True):
-            href = a["href"]
-            if not _is_good_umamusume_url(href):
-                continue
-            label = _anchor_text(a)
-            if not label or len(label) < 3:
-                continue
-            abs_href = urljoin(base_url, href)
-            key = (label.lower(), abs_href)
-            if key in seen:
-                continue
-            seen.add(key)
-
-            # Try to capture short duration/info from the nearest text
-            info = None
-            parent = a.find_parent(["li", "p", "div", "tr"])
-            if parent:
-                pt = _clean(parent.get_text(" ", strip=True))
-                if _durationish(pt) and len(pt) < 160:
-                    info = pt
-            bullets.append(f"• [{label}]({abs_href})" + (f" — {info}" if info else ""))
-            if len(bullets) >= 12:
-                break
-
-    # De-dup and trim
-    final: List[str] = []
-    seen_line = set()
-    for b in bullets:
-        if b not in seen_line:
-            final.append(b)
-            seen_line.add(b)
-    return final[:40]
-
-
-# --- Generic extractor (other games) ---
-
-def extract_events_with_links_generic(soup: BeautifulSoup, base_url: str) -> List[str]:
-    headings = soup.find_all(["h2", "h3", "h4"])
-    key_heads = [h for h in headings if any(
-        t in h.get_text(strip=True).lower()
-        for t in ["current events", "ongoing events", "events calendar", "upcoming", "featured events", "new archives", "upcoming archives"]
-    )]
-
-    bullets: List[str] = []
-    if key_heads:
-        for head in key_heads:
-            title = _clean(head.get_text(" ", strip=True))
-            bullets.append(f"__{title}__")
-            bullets.extend(_collect_items_near_head(head, base_url, max_items=10))
-    else:
-        seen = set()
-        for a in soup.find_all("a", href=True):
-            href = a.get("href", "")
-            if _bad_href(href):
-                continue
-            label = _anchor_text(a)
-            if not label or len(label) < 3:
-                continue
-            abs_href = urljoin(base_url, href)
-            key = (label.lower(), abs_href)
-            if key in seen:
-                continue
-            info = None
-            parent = a.find_parent(["li", "p", "div", "tr"])
-            if parent:
-                pt = _clean(parent.get_text(" ", strip=True))
-                if _durationish(pt) and len(pt) < 160:
-                    info = pt
-            line = f"• [{label}]({abs_href})" + (f" — {info}" if info else "")
-            bullets.append(line)
-            seen.add(key)
-            if len(bullets) >= 12:
-                break
-
-    final: List[str] = []
-    seen_line = set()
-    for b in bullets:
-        if b not in seen_line:
-            final.append(b)
-            seen_line.add(b)
-    return final[:40]
-
-
-def extract_events_with_links(soup: BeautifulSoup, base_url: str) -> List[str]:
-    """
-    Router: use game-specific logic when needed, else generic.
-    Order matters: check Genshin and Umamusume first; others fall back.
-    """
-    if "/Genshin-Impact/" in base_url:
-        gs = extract_genshin_events(soup, base_url)
-        if len(gs) >= 3:
-            return gs
-    if "/Umamusume-Pretty-Derby/" in base_url:
-        uma = extract_umamusume_events(soup, base_url)
-        if len(uma) >= 1:
-            return uma
-    return extract_events_with_links_generic(soup, base_url)
-
-
 # --- Message building & chunking ---
 
 def build_header(title: str, url: str, last_updated: str) -> str:
     return f"**{title}**\n<{url}>\n_Last updated on Game8: **{last_updated}**_\n"
+
 
 def chunk_lines_to_messages(header: str, lines: List[str], limit: int = DISCORD_LIMIT) -> List[str]:
     """
@@ -660,11 +211,13 @@ def load_ids() -> Dict[str, Union[str, List[str]]]:
             return {}
     return {}
 
+
 def save_ids(ids: Dict[str, Union[str, List[str]]]):
     if DRY_RUN:
         print("[DRY_RUN] Would write message_ids.json")
         return
     MESSAGE_IDS_PATH.write_text(json.dumps(ids, indent=2))
+
 
 def load_state() -> Dict[str, Dict]:
     if STATE_PATH.exists():
@@ -673,6 +226,7 @@ def load_state() -> Dict[str, Dict]:
         except Exception:
             return {}
     return {}
+
 
 def save_state(state: Dict[str, Dict]):
     if DRY_RUN:
@@ -687,7 +241,7 @@ _BULLET_RE = re.compile(
     r"^\s*•\s*(?:\[(?P<label>[^\]]+)\]\((?P<link>[^)]+)\)|(?P<label2>[^—]+?))\s*(?:—\s*(?P<info>.+))?\s*$"
 )
 
-def parse_bullet(line: str) -> Tuple[str, Optional[str], Optional[str]]:
+def parse_bullet(line: str):
     """
     Return (label, link, info). Works for:
       • [Event](url) — dates/info
@@ -724,9 +278,7 @@ def diff_items(old: List[Dict], new: List[Dict]) -> Dict:
     old_by_label = {i["label"].lower(): i for i in old}
     new_by_label = {i["label"].lower(): i for i in new}
 
-    added = []
-    removed = []
-    modified = []
+    added, removed, modified = [], [], []
 
     for lbl, n in new_by_label.items():
         if lbl not in old_by_label:
@@ -801,6 +353,24 @@ def make_summary_embed(results: List[Dict]) -> Dict:
         "timestamp": datetime.now(timezone.utc).isoformat(),
     }
     return embed
+
+
+# --- Router ---
+
+def extract_events_with_links(soup: BeautifulSoup, base_url: str) -> List[str]:
+    """
+    Router: use game-specific logic when needed, else generic.
+    Order matters: check Genshin and Umamusume first; others fall back.
+    """
+    if "/Genshin-Impact/" in base_url:
+        gs = extract_genshin_events(soup, base_url)
+        if len(gs) >= 3:
+            return gs
+    if "/Umamusume-Pretty-Derby/" in base_url:
+        uma = extract_umamusume_events(soup, base_url)
+        if len(uma) >= 1:
+            return uma
+    return extract_events_with_links_generic(soup, base_url)
 
 
 # --- Main flow ---
