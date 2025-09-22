@@ -115,31 +115,66 @@
     ]
   },
   "umamusume": {
-    "last_updated": "September 18, 2025 04:04 AM",
+    "last_updated": "September 22, 2025 06:11 AM",
     "items": [
       {
-        "label": "El Condor Pasa (Monk)",
-        "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/547832",
+        "label": "Sign Up",
+        "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/539612",
         "info": null
       },
       {
-        "label": "Grass Wonder (Healer)",
-        "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/547831",
+        "label": "Log In",
+        "link": "https://game8.co/users/sign_in",
         "info": null
       },
       {
-        "label": "Seiun Sky Wit SSR",
-        "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/550086",
+        "label": "Learn more",
+        "link": "https://game8.co/members?utm_source=game8&utm_medium=gamewiki_header&utm_campaign=learnmore_click&utm_content=membership_modal",
         "info": null
       },
       {
-        "label": "King Halo Power SSR",
-        "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/550087",
+        "label": "[Continue as a guest](javascript:void(0))",
+        "link": null,
         "info": null
       },
       {
-        "label": "Gold Ship Speed SSR",
-        "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/550088",
+        "label": "Join now",
+        "link": "https://game8.co/users/sign_up?utm_campaign=signup_click&utm_content=membership_modal&utm_medium=gamewiki_header&utm_source=game8",
+        "info": null
+      },
+      {
+        "label": "Game8",
+        "link": "https://game8.co/",
+        "info": null
+      },
+      {
+        "label": "Umamusume: Pretty Derby Walkthrough & Guides Wiki",
+        "link": "https://game8.co/games/Umamusume-Pretty-Derby",
+        "info": null
+      },
+      {
+        "label": "Best Characters",
+        "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/536352",
+        "info": null
+      },
+      {
+        "label": "Best Support",
+        "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/536715",
+        "info": null
+      },
+      {
+        "label": "Best Skills",
+        "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/536805",
+        "info": null
+      },
+      {
+        "label": "Hishi Amazon",
+        "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/547833",
+        "info": null
+      },
+      {
+        "label": "Bamboo Memory",
+        "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/550080",
         "info": null
       }
     ]
