@@ -51,7 +51,8 @@ PAGES = {
         "ROLE_ID_HSR",
     ),
     "umamusume": (
-        "https://game8.co/games/Umamusume-Pretty-Derby/archives/539612",
+        # UPDATED: use the specific Umamusume events/choices page you provided
+        "https://game8.co/games/Umamusume-Pretty-Derby/archives/549992",
         "WEBHOOK_URL_UMA",
         "Umamusume: Pretty Derby — Events & Choices",
         "ROLE_ID_UMA",
@@ -156,7 +157,7 @@ def extract_last_updated(soup: BeautifulSoup) -> str:
     m = re.search(r"Last updated on:\s*([A-Za-z]+\s+\d{1,2},\s*\d{4}\s+\d{1,2}:\d{2}\s*[AP]M)", text)
     if m:
         return m.group(1)
-    # Fallback: line after label
+    # Fallback: line after label (matches also "Last updated on Game8:")
     m2 = re.search(r"Last updated on:\s*([^|]+?)(?=\s{2,}|$)", text)
     return m2.group(1).strip() if m2 else "unknown"
 
@@ -175,6 +176,17 @@ def _durationish(s: str) -> bool:
 def _anchor_text(a: Tag) -> str:
     t = a.get_text(" ", strip=True)
     return _clean(t)
+
+
+def _bad_href(u: str) -> bool:
+    if not u:
+        return True
+    ul = u.lower().strip()
+    if ul.startswith("javascript:") or ul.startswith("mailto:") or ul.endswith("#"):
+        return True
+    if any(p in ul for p in ["/login", "/register", "/signup", "/account"]):
+        return True
+    return False
 
 
 def _collect_items_near_head(head: Tag, base_url: str, max_items: int = 12) -> List[str]:
@@ -200,11 +212,14 @@ def _collect_items_near_head(head: Tag, base_url: str, max_items: int = 12) -> L
             a = block.find("a", href=True)
             if not a:
                 continue
+            href = a.get("href", "")
+            if _bad_href(href):
+                continue
+
             label = _anchor_text(a)
             if not label or len(label) < 2:
                 continue
 
-            href = a.get("href")
             abs_href = urljoin(base_url, href)
             key = (label.lower(), abs_href)
             if key in seen_links:
@@ -416,6 +431,110 @@ def extract_genshin_events(soup: BeautifulSoup, base_url: str) -> List[str]:
     return bullets
 
 
+# --- Umamusume-specific extractor ---
+
+def _is_good_umamusume_url(u: str) -> bool:
+    if _bad_href(u):
+        return False
+    ul = u.lower()
+    if "umamusume-pretty-derby" not in ul:
+        return False
+    if any(x in ul for x in ["/login", "/register", "/signup", "/account", "javascript:void(0)"]):
+        return False
+    return True
+
+def _find_article_root(soup: BeautifulSoup) -> Tag:
+    """
+    Game8 pages generally wrap the main content in an article/body container.
+    We constrain our search to this area to avoid global nav/footers.
+    """
+    # Try common IDs/classes first
+    candidates = [
+        soup.find(id=re.compile(r"(article|content).*(body|main)", re.I)),
+        soup.find(class_=re.compile(r"(article|content).*(body|main)", re.I)),
+        soup.find("article"),
+        soup.find("main"),
+    ]
+    for c in candidates:
+        if isinstance(c, Tag):
+            return c
+    return soup  # fallback
+
+def extract_umamusume_events(soup: BeautifulSoup, base_url: str) -> List[str]:
+    """
+    Focus on sections likely present on the Umamusume Events/Choices page and
+    ignore site-chrome links like 'Sign Up' / 'Log In'.
+    """
+    root = _find_article_root(soup)
+    SECTION_HINTS = [
+        "ongoing events",
+        "current events",
+        "event list",
+        "event choices",
+        "story events",
+        "campaigns",
+        "races",
+        "training events",
+        "latest events",
+        "featured events",
+    ]
+
+    # Find section heads within the article root only
+    heads: List[Tag] = []
+    for h in root.find_all(["h2", "h3"]):
+        txt = _clean(h.get_text(" ", strip=True)).lower()
+        if any(hint in txt for hint in SECTION_HINTS):
+            heads.append(h)
+
+    bullets: List[str] = []
+    if heads:
+        # Grouped under their headings to keep context tidy
+        for head in heads[:4]:
+            title = _clean(head.get_text(" ", strip=True))
+            bullets.append(f"__{title}__")
+            for line in _collect_items_near_head(head, base_url, max_items=10):
+                # Tighten to Umamusume-specific links only
+                label, link, info = parse_bullet(line)
+                if link and not _is_good_umamusume_url(link):
+                    continue
+                bullets.append(line)
+    else:
+        # Conservative fallback: scan anchors in article root only and whitelist the game path
+        seen = set()
+        for a in root.find_all("a", href=True):
+            href = a["href"]
+            if not _is_good_umamusume_url(href):
+                continue
+            label = _anchor_text(a)
+            if not label or len(label) < 3:
+                continue
+            abs_href = urljoin(base_url, href)
+            key = (label.lower(), abs_href)
+            if key in seen:
+                continue
+            seen.add(key)
+
+            # Try to capture short duration/info from the nearest text
+            info = None
+            parent = a.find_parent(["li", "p", "div", "tr"])
+            if parent:
+                pt = _clean(parent.get_text(" ", strip=True))
+                if _durationish(pt) and len(pt) < 160:
+                    info = pt
+            bullets.append(f"• [{label}]({abs_href})" + (f" — {info}" if info else ""))
+            if len(bullets) >= 12:
+                break
+
+    # De-dup and trim
+    final: List[str] = []
+    seen_line = set()
+    for b in bullets:
+        if b not in seen_line:
+            final.append(b)
+            seen_line.add(b)
+    return final[:40]
+
+
 # --- Generic extractor (other games) ---
 
 def extract_events_with_links_generic(soup: BeautifulSoup, base_url: str) -> List[str]:
@@ -434,14 +553,15 @@ def extract_events_with_links_generic(soup: BeautifulSoup, base_url: str) -> Lis
     else:
         seen = set()
         for a in soup.find_all("a", href=True):
+            href = a.get("href", "")
+            if _bad_href(href):
+                continue
             label = _anchor_text(a)
             if not label or len(label) < 3:
                 continue
-            href = urljoin(base_url, a["href"])
-            key = (label.lower(), href)
+            abs_href = urljoin(base_url, href)
+            key = (label.lower(), abs_href)
             if key in seen:
-                continue
-            if href.endswith("#") or href.startswith("mailto:"):
                 continue
             info = None
             parent = a.find_parent(["li", "p", "div", "tr"])
@@ -449,7 +569,7 @@ def extract_events_with_links_generic(soup: BeautifulSoup, base_url: str) -> Lis
                 pt = _clean(parent.get_text(" ", strip=True))
                 if _durationish(pt) and len(pt) < 160:
                     info = pt
-            line = f"• [{label}]({href})" + (f" — {info}" if info else "")
+            line = f"• [{label}]({abs_href})" + (f" — {info}" if info else "")
             bullets.append(line)
             seen.add(key)
             if len(bullets) >= 12:
@@ -465,11 +585,18 @@ def extract_events_with_links_generic(soup: BeautifulSoup, base_url: str) -> Lis
 
 
 def extract_events_with_links(soup: BeautifulSoup, base_url: str) -> List[str]:
-    """Router: use Genshin-specific logic first for that page, else generic."""
+    """
+    Router: use game-specific logic when needed, else generic.
+    Order matters: check Genshin and Umamusume first; others fall back.
+    """
     if "/Genshin-Impact/" in base_url:
         gs = extract_genshin_events(soup, base_url)
         if len(gs) >= 3:
             return gs
+    if "/Umamusume-Pretty-Derby/" in base_url:
+        uma = extract_umamusume_events(soup, base_url)
+        if len(uma) >= 1:
+            return uma
     return extract_events_with_links_generic(soup, base_url)
 
 
