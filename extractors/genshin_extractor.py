@@ -184,3 +184,51 @@ def extract_genshin_events(soup: BeautifulSoup, base_url: str) -> List[str]:
                     return bullets
 
     return bullets
+
+# --- Gacha (Banners) ---
+def extract_genshin_gachas(soup: BeautifulSoup, base_url: str) -> List[str]:
+    """
+    Parse "List of Current Event Gachas" on the main hub page.
+    """
+    bullets: List[str] = ["__List of Current Event Gachas__"]
+    heads = _find_section_roots(soup, ["List of Current Event Gachas"])
+    if not heads:
+        return bullets + ["• _No parseable banners found (layout may have changed)._"]
+    root = heads[0]
+
+    seen = set()
+    count = 0
+    for sib in root.find_all_next(limit=120):
+        if sib is root:
+            continue
+        if getattr(sib, "name", None) in ["h2","h3"]:
+            break
+        for a in getattr(sib, "find_all", lambda *a, **k: [])("a", href=True):
+            label = _clean(a.get_text(" ", strip=True))
+            if not label or len(label) < 2:
+                continue
+            href = urljoin(base_url, a["href"])
+            if not _is_good_genshin_url(href):
+                continue
+            key = (label.lower(), href)
+            if key in seen:
+                continue
+            seen.add(key)
+            # pull short info from surrounding text if looks like a date range
+            info = None
+            parent = a.find_parent(["li","tr","p","div"])
+            if parent:
+                txt = _clean(parent.get_text(" ", strip=True))
+                if len(txt) < 180 and ((" - " in txt) or ("–" in txt) or ("—" in txt) or (" to " in txt.lower()) or re.search(r"\b\d{4}\b", txt)):
+                    if len(txt) > len(label)+3:
+                        info = _clean(txt.replace(label, "")).strip(": -—–")
+            bullets.append(f"• [{label}]({href})" + (f" — {info}" if info else ""))
+            count += 1
+            if count >= 8:
+                break
+        if count >= 8:
+            break
+
+    if len(bullets) == 1:
+        bullets.append("• _No parseable banners found (layout may have changed)._")
+    return bullets

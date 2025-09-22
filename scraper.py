@@ -21,9 +21,11 @@ import requests
 from bs4 import BeautifulSoup
 
 # --- Import extractors ---
-from extractors.genshin_extractor import extract_genshin_events
+from extractors.genshin_extractor import extract_genshin_events, extract_genshin_gachas
 from extractors.uma_extractor import extract_umamusume_events
 from extractors.generic_extractor import extract_events_with_links_generic
+from extractors.wuwa_extractor import extract_wuwa_gachas
+from extractors.hsr_extractor import extract_hsr_gachas
 
 # --- Config: pages -> (url, secret_name_for_webhook, pretty_title, secret_name_for_role_id) ---
 PAGES = {
@@ -52,6 +54,24 @@ PAGES = {
         "Genshin Impact — Archives & Updates",
         "ROLE_ID_GI",
     ),
+}
+
+# --- Gacha sources (per game) ---
+# key matches PAGES key for channel/webhook routing.
+GACHA_PAGES = {
+    "genshin-impact": (
+        "https://game8.co/games/Genshin-Impact",  # List of Current Event Gachas on main hub
+        "genshin",  # type tag for router
+    ),
+    "wuthering-waves": (
+        "https://game8.co/games/Wuthering-Waves/archives/453303",  # Wish/Banner Schedule
+        "wuwa",
+    ),
+    "honkai-star-rail": (
+        "https://game8.co/games/Honkai-Star-Rail/archives/408381",  # Warp/Banner Schedule
+        "hsr",
+    ),
+    # Uma deliberately omitted (events already cover banners)
 }
 
 MESSAGE_IDS_PATH = Path("message_ids.json")
@@ -373,12 +393,111 @@ def extract_events_with_links(soup: BeautifulSoup, base_url: str) -> List[str]:
     return extract_events_with_links_generic(soup, base_url)
 
 
+def extract_gacha_for(key: str, soup, url: str) -> list[str]:
+    """Route to the correct gacha extractor for a game key."""
+    if key == "genshin-impact":
+        return extract_genshin_gachas(soup, url)
+    if key == "wuthering-waves":
+        return extract_wuwa_gachas(soup, url)
+    if key == "honkai-star-rail":
+        return extract_hsr_gachas(soup, url)
+    return []
+
+
+def run_flow(*, key: str, url: str, secret_name: str, nice_title: str, role_secret: str, ids: Dict, state: Dict, extractor, section_tag: str) -> Dict:
+    """Generic runner for either events or gacha. section_tag is used to namespace message IDs and state keys."""
+    webhook_url = os.environ.get(secret_name, "").strip()
+    role_id = os.environ.get(role_secret, "").strip() if role_secret else ""
+    role_mention = f"<@&{role_id}>" if role_id else ""
+
+    if not webhook_url:
+        print(f"Missing webhook for {key} (env {secret_name}); skipping {section_tag}.")
+        return {
+            "key": f"{key}::{section_tag}",
+            "title": f"{nice_title} — {section_tag.capitalize()}",
+            "url": url,
+            "secret": secret_name,
+            "status": "skipped",
+            "action": "none",
+            "items": 0,
+            "last_updated": "n/a",
+            "delta_summary": "n/a",
+            "has_changes": False,
+            "role_mention": role_mention,
+        }
+
+    html = fetch(url)
+    soup = BeautifulSoup(html, "html.parser")
+
+    last_updated = extract_last_updated(soup)
+    bullets = extractor(soup, url)
+
+    normalized_now = normalize_bullets(bullets)
+    state_key = f"{key}::{section_tag}"
+    prev_state = state.get(state_key, {"last_updated": None, "items": []})
+    prev_items = prev_state.get("items", [])
+    prev_last = prev_state.get("last_updated")
+
+    delta = diff_items(prev_items, normalized_now)
+    last_updated_changed = (str(prev_last) != str(last_updated))
+    delta_summary = format_delta(delta, last_updated_changed)
+    has_changes = bool(delta["added"] or delta["removed"] or delta["modified"] or last_updated_changed)
+
+    messages = build_messages(f"{nice_title} — {section_tag.capitalize()}", url, last_updated, bullets)
+
+    ids_key = f"{key}::{section_tag}"
+    prev_ids_raw = ids.get(ids_key, [])
+    prev_ids = [prev_ids_raw] if isinstance(prev_ids_raw, str) else list(prev_ids_raw)
+
+    new_ids = []
+    action = "edited"
+    if len(messages) == 1 and prev_ids and not FORCE_NEW:
+        success = webhook_edit(webhook_url, prev_ids[0], messages[0])
+        if success:
+            new_ids = [prev_ids[0]]
+            action = "edited"
+        else:
+            new_ids = [webhook_post(webhook_url, messages[0])]
+            action = "created"
+    else:
+        for content in messages:
+            new_ids.append(webhook_post(webhook_url, content))
+        action = "created"
+        if CLEANUP_OLD_MESSAGES:
+            for mid in prev_ids:
+                if mid not in new_ids:
+                    webhook_delete(webhook_url, mid)
+
+    store_value = new_ids[0] if len(new_ids) == 1 else new_ids
+    if store_value != ids.get(ids_key):
+        ids[ids_key] = store_value
+
+    items_count = len(bullets)
+    if items_count and bullets and bullets[0].startswith("__"):
+        items_count -= 1
+
+    result = {
+        "key": ids_key,
+        "title": f"{nice_title} — {section_tag.capitalize()}",
+        "url": url,
+        "secret": secret_name,
+        "status": "ok",
+        "action": action,
+        "messages": len(new_ids),
+        "items": max(0, items_count),
+        "last_updated": last_updated,
+        "delta_summary": delta_summary,
+        "has_changes": has_changes,
+        "role_mention": role_mention,
+        "_normalized_now": normalized_now,
+    }
+    return result
+
 # --- Main flow ---
 
 def main():
     ids = load_ids()
     state = load_state()
-    changed_ids = False
     state_changed = False
     results: List[Dict] = []
 
@@ -388,136 +507,49 @@ def main():
         print(f"No matching keys for ONLY_KEY='{ONLY_KEY}'. Valid keys:", ", ".join(PAGES.keys()))
         return
 
+    # EVENTS
     for key, (url, secret_name, nice_title, role_secret) in items:
-        webhook_url = os.environ.get(secret_name, "").strip()
-        role_id = os.environ.get(role_secret, "").strip() if role_secret else ""
-        role_mention = f"<@&{role_id}>" if role_id else ""
-
-        if not webhook_url:
-            print(f"Missing webhook for {key} (env {secret_name}); skipping.")
-            results.append({
-                "key": key,
-                "title": nice_title,
-                "url": url,
-                "secret": secret_name,
-                "status": "skipped",
-                "action": "none",
-                "items": 0,
-                "last_updated": "n/a",
-                "delta_summary": "n/a",
-                "has_changes": False,
-                "role_mention": role_mention,
-            })
-            continue
-
-        html = fetch(url)
-        soup = BeautifulSoup(html, "html.parser")
-
-        last_updated = extract_last_updated(soup)
-        bullets = extract_events_with_links(soup, url)
-
-        # Normalize for diffing
-        normalized_now = normalize_bullets(bullets)
-        prev_state = state.get(key, {"last_updated": None, "items": []})
-        prev_items = prev_state.get("items", [])
-        prev_last = prev_state.get("last_updated")
-
-        delta = diff_items(prev_items, normalized_now)
-        last_updated_changed = (str(prev_last) != str(last_updated))
-        delta_summary = format_delta(delta, last_updated_changed)
-        has_changes = (
-                bool(delta["added"]) or bool(delta["removed"]) or bool(delta["modified"]) or last_updated_changed
+        res = run_flow(
+            key=key, url=url, secret_name=secret_name, nice_title=nice_title, role_secret=role_secret,
+            ids=ids, state=state, extractor=lambda soup, u: extract_events_with_links(soup, u), section_tag="events"
         )
+        results.append(res)
 
-        # Build possibly multiple messages (chunks)
-        messages = build_messages(nice_title, url, last_updated, bullets)
+    # GACHAS
+    gacha_items = [(k, v) for k, v in GACHA_PAGES.items() if not ONLY_KEY or k.lower() == ONLY_KEY]
+    for key, (url, type_tag) in gacha_items:
+        if key not in PAGES:
+            continue
+        _, secret_name, nice_title, role_secret = PAGES[key]
+        res = run_flow(
+            key=key, url=url, secret_name=secret_name, nice_title=nice_title, role_secret=role_secret,
+            ids=ids, state=state, extractor=lambda soup, u, _k=key: extract_gacha_for(_k, soup, u), section_tag="gacha"
+        )
+        results.append(res)
 
-        prev_ids_raw = ids.get(key, [])
-        if isinstance(prev_ids_raw, str):
-            prev_ids = [prev_ids_raw]
-        else:
-            prev_ids = list(prev_ids_raw)
-
-        new_ids: List[str] = []
-        action = "edited"
-
-        if len(messages) == 1 and prev_ids and not FORCE_NEW:
-            success = webhook_edit(webhook_url, prev_ids[0], messages[0])
-            if success:
-                new_ids = [prev_ids[0]]
-                action = "edited"
-            else:
-                new_ids = [webhook_post(webhook_url, messages[0])]
-                action = "created"
-        else:
-            for content in messages:
-                new_ids.append(webhook_post(webhook_url, content))
-            action = "created"
-            if CLEANUP_OLD_MESSAGES:
-                for mid in prev_ids:
-                    if mid not in new_ids:
-                        webhook_delete(webhook_url, mid)
-
-        # Persist IDs (store list when >1, else single string for readability)
-        store_value: Union[str, List[str]] = new_ids[0] if len(new_ids) == 1 else new_ids
-        if store_value != ids.get(key):
-            ids[key] = store_value
-            changed_ids = True
-
-        # compute item count sans our injected section header
-        items_count = len(bullets)
-        if items_count and bullets and bullets[0].startswith("__"):
-            items_count -= 1
-
-        results.append({
-            "key": key,
-            "title": nice_title,
-            "url": url,
-            "secret": secret_name,
-            "status": "ok",
-            "action": action,
-            "messages": len(new_ids),
-            "items": max(0, items_count),
-            "last_updated": last_updated,
-            "delta_summary": delta_summary,
-            "has_changes": has_changes,
-            "role_mention": role_mention,
-            "_normalized_now": normalized_now,  # temp for state write
-        })
-
-    if changed_ids and not DRY_RUN:
-        save_ids(ids)
-        print("message_ids.json updated.")
-    else:
-        print("No message ID changes." if not DRY_RUN else "Dry run complete (no writes).")
-
-    # Persist scrape state for all ok results
+    # Persist IDs/state
+    save_ids(ids) if not DRY_RUN else None
     for r in results:
         if r.get("status") != "ok":
             continue
-        k = r["key"]
-        state[k] = {
+        state[r["key"]] = {
             "last_updated": r["last_updated"],
             "items": r["_normalized_now"],
         }
         r.pop("_normalized_now", None)
         state_changed = True
-
     if state_changed and not DRY_RUN:
         save_state(state)
-        print("state.json updated.")
 
-    # Send summary (with role mentions if changes detected)
+    # Summary
     summary_url = os.environ.get(SUMMARY_WEBHOOK_ENV, "").strip()
     if summary_url:
         embed = make_summary_embed(results)
         mentions = sorted({r["role_mention"] for r in results if r.get("has_changes") and r.get("role_mention")})
         mention_content = " ".join(mentions) if mentions else None
         discord_webhook_post_embed(summary_url, embed, mention_content)
-        print("Summary embed sent." + (f" Mentions: {mention_content}" if mention_content else ""))
     else:
         print(f"No summary webhook found in env {SUMMARY_WEBHOOK_ENV}; skipping summary.")
-
 
 if __name__ == "__main__":
     main()
