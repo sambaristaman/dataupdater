@@ -5,5 +5,15 @@
   ],
   "honkai-star-rail": "1419148469934882827",
   "umamusume": "1419148473881591851",
-  "genshin-impact": "1419148476574470285"
+  "genshin-impact": "1419148476574470285",
+  "wuthering-waves::events": [
+    "1419811142926205080",
+    "1419811144666710238"
+  ],
+  "honkai-star-rail::events": "1419811146193698896",
+  "umamusume::events": "1419811149305745418",
+  "genshin-impact::events": "1419811151318876200",
+  "genshin-impact::gacha": "1419811153751707750",
+  "wuthering-waves::gacha": "1419811158151401584",
+  "honkai-star-rail::gacha": "1419811159653220474"
 }
