@@ -1,4 +1,5 @@
-# -*- coding: utf-8 -*-
+# wuwa_extractor.py
+
 from typing import List, Optional
 import re
 from urllib.parse import urljoin
@@ -14,7 +15,6 @@ def _durationish(s: str) -> bool:
     return any(k in s for k in ["Duration", "Event Duration", "期間", " to ", "–", "—", "-"]) or bool(re.search(r"\b\d{4}\b", s))
 
 def _find_article_root(soup: BeautifulSoup) -> Tag:
-    # Keep parsing constrained to the article/main content area
     for cand in [
         soup.find(id=re.compile(r"(article|content).*(body|main)", re.I)),
         soup.find(class_=re.compile(r"(article|content).*(body|main)", re.I)),
@@ -25,7 +25,6 @@ def _find_article_root(soup: BeautifulSoup) -> Tag:
             return cand
     return soup
 
-# Patterns we consider as the "current banners" section on Game8 WuWa
 _CURRENT_HEAD_HINTS = [
     "available convene banners",
     "all active convene banners",
@@ -37,8 +36,15 @@ _CURRENT_HEAD_HINTS = [
     "rate-up",
 ]
 
-# Heads that indicate the NEXT section boundary
+_UPCOMING_HEAD_HINTS = [
+    "upcoming banners",
+    "upcoming convene banners",
+    "next banners",
+    "future banners",
+]
+
 _SECTION_BREAK_HINTS = [
+    # keep things that should end the CURRENT scan; upcoming will be parsed separately
     "upcoming banners",
     "permanent banners",
     "all convene (gacha) simulators",
@@ -47,7 +53,6 @@ _SECTION_BREAK_HINTS = [
     "related guides",
 ]
 
-# Light sanity check to reject obvious site-chrome/junk hrefs
 def _bad_href(u: str) -> bool:
     if not u:
         return True
@@ -63,7 +68,6 @@ def _is_section_break(tag: Tag) -> bool:
     return any(h in txt for h in _SECTION_BREAK_HINTS)
 
 def _gather_date_near(head: Tag) -> Optional[str]:
-    # Scan a modest window after the section for a date range line
     MONTH = r"(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec)[a-z]*\.?"
     RANGE = re.compile(rf"{MONTH}\s+\d{{1,2}},\s*\d{{4}}\s*[-–—]\s*{MONTH}\s+\d{{1,2}},\s*\d{{4}}", re.I)
     for sib in head.find_all_next(limit=80):
@@ -77,7 +81,6 @@ def _gather_date_near(head: Tag) -> Optional[str]:
         m = RANGE.search(text)
         if m:
             return m.group(0)
-        # Also accept short duration lines (kept brief)
         if _durationish(text) and 8 < len(text) < 80 and re.search(r"\b\d{4}\b", text):
             return text
     return None
@@ -89,11 +92,9 @@ def _collect_links_in_section(head: Tag, base_url: str, max_items: int = 12) -> 
     for sib in head.find_all_next():
         if sib is head:
             continue
-        # Stop when a new major section starts
         if getattr(sib, "name", "") in ("h2", "h3") and _is_section_break(sib):
             break
 
-        # Consider common block containers near Game8 tables/cards
         blocks: List[Tag] = []
         if sib.name in ("ul", "ol"):
             blocks.extend(sib.find_all("li", recursive=False))
@@ -103,7 +104,6 @@ def _collect_links_in_section(head: Tag, base_url: str, max_items: int = 12) -> 
             blocks.append(sib)
 
         for blk in blocks:
-            # Collect multiple anchors per block — character banners + weapon banners
             for a in blk.find_all("a", href=True):
                 label = _clean(a.get_text(" ", strip=True))
                 if not label or len(label) < 2:
@@ -117,11 +117,9 @@ def _collect_links_in_section(head: Tag, base_url: str, max_items: int = 12) -> 
                     continue
                 seen.add(key)
 
-                # Try to pull short context from the immediate block text (exclude duplicate label)
                 info = None
                 bt = _clean(blk.get_text(" ", strip=True))
                 if bt and bt.lower() != label.lower() and _durationish(bt):
-                    # avoid echoing the label twice
                     pruned = _clean(bt.replace(label, "")).strip(": -—–")
                     if pruned and pruned != label and len(pruned) < 140:
                         info = pruned
@@ -132,65 +130,45 @@ def _collect_links_in_section(head: Tag, base_url: str, max_items: int = 12) -> 
 
     return items
 
-def extract_wuwa_gachas(soup: BeautifulSoup, base_url: str) -> List[str]:
-    """Parse the Wuthering Waves banner schedule page for current/active banners."""
-    bullets: List[str] = ["__Current Banners / Gacha__"]
-
-    root = _find_article_root(soup)
-
-    # Find the first heading that looks like the "current/available" section
-    heads: List[Tag] = []
+def _first_head_with_hints(root: Tag, hints: list[str]) -> Optional[Tag]:
     for h in root.find_all(["h2", "h3", "h4"]):
         t = _clean(h.get_text(" ", strip=True)).lower()
-        if any(k in t for k in _CURRENT_HEAD_HINTS):
-            heads.append(h)
-    # Fallback: use the first H2 on the page if nothing matched (keeps old behavior)
-    if not heads:
-        heads = list(root.find_all(["h2", "h3"])[:1])
+        if any(k in t for k in hints):
+            return h
+    return None
 
-    if not heads:
-        # Ultra-conservative fallback: give a friendly failure line
-        return bullets + ["• _No parseable banners found (layout may have changed)._"]
+def extract_wuwa_gachas(soup: BeautifulSoup, base_url: str) -> List[str]:
+    """Parse the Wuthering Waves banner schedule page for current AND upcoming banners."""
+    bullets: List[str] = []
+    root = _find_article_root(soup)
 
-    # We only need the first "current/available" section
-    head = heads[0]
+    # CURRENT
+    current_head = _first_head_with_hints(root, _CURRENT_HEAD_HINTS)
+    cur_lines: List[str] = ["__Current Banners / Gacha__"]
+    if current_head:
+        shared_dates = _gather_date_near(current_head)
+        items = _collect_links_in_section(current_head, base_url, max_items=12)
 
-    # Pull a shared date range once (applies to all current banners shown together)
-    shared_dates = _gather_date_near(head)
+        # Prefer likely banner titles
+        NICE = [line for line in items if any(k in line.lower() for k in ["banner", "convene", "pulsation", "waxes", "rhythms"])]
+        chosen = NICE or items
 
-    # Collect anchors for banners under this section
-    items = _collect_links_in_section(head, base_url, max_items=12)
-
-    # Heuristic: keep only likely banner titles (contain known banner words or are capitalized phrases)
-    NICE = []
-    for line in items:
-        # keep Absolute Pulsation / weapon/character banner names / featured names
-        if any(k in line.lower() for k in ["banner", "convene", "pulsation", "waxes", "rhythms"]):
-            NICE.append(line)
-
-    chosen = NICE or items
-
-    # If we found a common date window, append it to items missing info
-    if shared_dates:
-        fixed = []
-        for line in chosen:
-            if " — " in line:
-                fixed.append(line)  # already has info
-            else:
-                fixed.append(f"{line} — {shared_dates}")
-        chosen = fixed
-
-    # Safety: de-dup while preserving order
-    final: List[str] = []
-    seen = set()
-    for b in chosen:
-        if b not in seen:
-            final.append(b)
-            seen.add(b)
-
-    if len(final) == 0:
-        bullets.append("• _No parseable banners found (layout may have changed)._")
+        if shared_dates:
+            fixed = []
+            for line in chosen:
+                fixed.append(line if " — " in line else f"{line} — {shared_dates}")
+            chosen = fixed
+        cur_lines.extend(chosen[:12])
     else:
-        bullets.extend(final[:12])
+        cur_lines.append("• _No parseable banners found (layout may have changed)._")
+    bullets.extend(cur_lines)
+
+    # UPCOMING
+    upcoming_head = _first_head_with_hints(root, _UPCOMING_HEAD_HINTS)
+    if upcoming_head:
+        up_items = _collect_links_in_section(upcoming_head, base_url, max_items=12)
+        if up_items:
+            bullets.append("__Upcoming Banners / Gacha__")
+            bullets.extend(up_items[:12])
 
     return bullets
