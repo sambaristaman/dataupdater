@@ -250,27 +250,22 @@
     ]
   },
   "wuthering-waves::events": {
-    "last_updated": "September 16, 2025 10:28 PM",
+    "last_updated": "September 24, 2025 11:33 PM",
     "items": [
-      {
-        "label": "Ascendant Aces",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/456482",
-        "info": "August 28, 2025 - September 17, 2025 Unlocked by default"
-      },
-      {
-        "label": "Bountiful Crescendo",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/458244",
-        "info": "September 11, 2025 - September 18, 2025 Reach Union Level 14"
-      },
-      {
-        "label": "Marks of the Wild",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/544751",
-        "info": "September 4, 2025 - September 22, 2025 Reach Union Level 14 and complete the first hunt in Main Quest Chapter II Act VIII \"By Sun's Burning Hand.\""
-      },
       {
         "label": "Second Coming of Solaris (Ultra)",
         "link": "https://game8.co/games/Wuthering-Waves/archives/544726",
         "info": "September 17, 2025 - October 6, 2025 Reach Union Level 14"
+      },
+      {
+        "label": "Ascendant Aces",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/456482",
+        "info": "September 17, 2025 - October 8, 2025 Unlocked by default"
+      },
+      {
+        "label": "Beyond the Waves",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/484720",
+        "info": "September 25, 2025 - October 8, 2025 Reach Union Level 14"
       },
       {
         "label": "Tidal Defense Simulator",
@@ -298,6 +293,11 @@
         "info": "August 28, 2025 - October 8, 2025 Log in during Version 2.6"
       },
       {
+        "label": "Moonlit Revelation",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/544975",
+        "info": "September 25, 2025 - October 8, 2025 Reach Union Level 8"
+      },
+      {
         "label": "Gifts of the Moon Roamer",
         "link": "https://game8.co/games/Wuthering-Waves/archives/544974",
         "info": "September 17, 2025 - October 8, 2025 Reach Union Level 8 and log in between September 17, 2025 to October 8, 2025"
@@ -306,16 +306,6 @@
         "label": "Chord Cleansing",
         "link": "https://game8.co/games/Wuthering-Waves/archives/457211",
         "info": "October 1, 2025 - October 8, 2025 Earn double echo and echo leveling material drops during this event!"
-      },
-      {
-        "label": "Beyond the Waves",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/484720",
-        "info": "September 25, 2025 - October 8, 2025 Log-in daily and complete tasks to win random rewards by revealing tiles on a board!"
-      },
-      {
-        "label": "Moonlit Revelation",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/544975",
-        "info": "September 25, 2025 - October 8, 2025 Log-in daily to reveal lunar secrets which grant you rewards and a daily exploration buff!"
       }
     ]
   },
@@ -585,7 +575,7 @@
     ]
   },
   "honkai-star-rail::gacha": {
-    "last_updated": "September 23, 2025 10:34 PM",
+    "last_updated": "September 24, 2025 10:28 PM",
     "items": [
       {
         "label": "Evernight Banner",
