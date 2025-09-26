@@ -358,21 +358,6 @@
         "info": null
       },
       {
-        "label": "Hishi Amazon",
-        "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/547833",
-        "info": null
-      },
-      {
-        "label": "Bamboo Memory",
-        "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/550080",
-        "info": null
-      },
-      {
-        "label": "Shinko Windy",
-        "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/550085",
-        "info": null
-      },
-      {
         "label": "El Condor Pasa",
         "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/547832",
         "info": null
@@ -401,11 +386,26 @@
         "label": "Cancer Cup Champions Meeting",
         "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/550078",
         "info": null
+      },
+      {
+        "label": "Event Checker",
+        "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/539000",
+        "info": null
+      },
+      {
+        "label": "Support Card Comparison",
+        "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/541233",
+        "info": null
+      },
+      {
+        "label": "Friend ID Sharing Board",
+        "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/537104",
+        "info": null
       }
     ]
   },
   "genshin-impact::events": {
-    "last_updated": "September 19, 2025 05:19 AM",
+    "last_updated": "September 26, 2025 05:18 AM",
     "items": [
       {
         "label": "Clink Clank Clash",
@@ -423,14 +423,9 @@
         "info": "September 10, 2025 \u2192 October 21, 2025"
       },
       {
-        "label": "It Starts in Nod-Krai Web Event",
-        "link": "https://game8.co/games/Genshin-Impact/archives/547853",
-        "info": "August 29, 2025 \u2192 September 24, 2025"
-      },
-      {
         "label": "Dodoco's Blow-Up-Erative Bomb-Nanza",
         "link": "https://game8.co/games/Genshin-Impact/archives/546845",
-        "info": "Start September 29, 2025"
+        "info": "September 29, 2025 \u2192 October 13, 2025"
       },
       {
         "label": "Silvery Flux Daily Login",
@@ -470,6 +465,11 @@
       {
         "label": "Repertoire of Myriad Melodies",
         "link": "https://game8.co/games/Genshin-Impact/archives/406198",
+        "info": null
+      },
+      {
+        "label": "Daily Check-In",
+        "link": "https://game8.co/games/Genshin-Impact/archives/321404",
         "info": null
       }
     ]
