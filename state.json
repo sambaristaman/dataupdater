@@ -520,7 +520,7 @@
     ]
   },
   "wuthering-waves::gacha": {
-    "last_updated": "September 17, 2025 02:24 AM",
+    "last_updated": "September 26, 2025 09:53 AM",
     "items": [
       {
         "label": "Across Time's Waxes and Wanes",
@@ -538,38 +538,63 @@
         "info": "September 17, 2025 - October 8, 2025"
       },
       {
+        "label": "From Ashes",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/553579",
+        "info": "Roar of Triumph Limited 5\u2605 Galbrena (Debut) Lupa Rate-up 4\u2605 Mortefi Sanhua Lumi Featured Weapon(s): Lux \uff06 Umbra Wildfire Mark"
+      },
+      {
+        "label": "Roar of Triumph",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/524283",
+        "info": "From Ashes Limited 5\u2605 Galbrena (Debut) Lupa Rate-up 4\u2605 Mortefi Sanhua Lumi Featured Weapon(s): Lux \uff06 Umbra Wildfire Mark"
+      },
+      {
         "label": "Galbrena",
         "link": "https://game8.co/games/Wuthering-Waves/archives/524888",
+        "info": "From Ashes Roar of Triumph Limited 5\u2605 (Debut) Lupa Rate-up 4\u2605 Mortefi Sanhua Lumi Featured Weapon(s): Lux \uff06 Umbra Wildfire Mark"
+      },
+      {
+        "label": "Lupa",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/520661",
+        "info": "From Ashes Roar of Triumph Limited 5\u2605 Galbrena (Debut) Rate-up 4\u2605 Mortefi Sanhua Lumi Featured Weapon(s): Lux \uff06 Umbra Wildfire Mark"
+      },
+      {
+        "label": "Mortefi",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/454222",
+        "info": "From Ashes Roar of Triumph Limited 5\u2605 Galbrena (Debut) Lupa Rate-up 4\u2605 Sanhua Lumi Featured Weapon(s): Lux \uff06 Umbra Wildfire Mark"
+      },
+      {
+        "label": "Sanhua",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/454225",
+        "info": "From Ashes Roar of Triumph Limited 5\u2605 Galbrena (Debut) Lupa Rate-up 4\u2605 Mortefi Lumi Featured Weapon(s): Lux \uff06 Umbra Wildfire Mark"
+      },
+      {
+        "label": "Lumi",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/473488",
+        "info": "From Ashes Roar of Triumph Limited 5\u2605 Galbrena (Debut) Lupa Rate-up 4\u2605 Mortefi Sanhua Featured Weapon(s): Lux \uff06 Umbra Wildfire Mark"
+      },
+      {
+        "label": "Lux \uff06 Umbra",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/553561",
+        "info": "From Ashes Roar of Triumph Limited 5\u2605 Galbrena (Debut) Lupa Rate-up 4\u2605 Mortefi Sanhua Lumi Featured Weapon(s): Wildfire Mark"
+      },
+      {
+        "label": "Wildfire Mark",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/524869",
+        "info": "From Ashes Roar of Triumph Limited 5\u2605 Galbrena (Debut) Lupa Rate-up 4\u2605 Mortefi Sanhua Lumi Featured Weapon(s): Lux \uff06 Umbra"
+      },
+      {
+        "label": "2.6 Release Date, Banners, and Summary",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/506009",
         "info": null
       },
       {
-        "label": "Qiuyuan",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/524882",
+        "label": "Wanderer Knows No Far and Near",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/553597",
         "info": null
       },
       {
-        "label": "2.7 Banners, Release Date, and Info",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/549584",
-        "info": null
-      },
-      {
-        "label": "Beginner's Choice Convene Banner",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/453554",
-        "info": null
-      },
-      {
-        "label": "Utterance of Marvels",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/455422",
-        "info": null
-      },
-      {
-        "label": "Tidal Chorus",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/455430",
-        "info": null
-      },
-      {
-        "label": "Weapon Permanent Convene",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/455431",
+        "label": "Between Light and Shadow",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/514607",
         "info": null
       }
     ]
