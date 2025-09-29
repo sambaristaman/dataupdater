@@ -250,27 +250,22 @@
     ]
   },
   "wuthering-waves::events": {
-    "last_updated": "September 16, 2025 10:28 PM",
+    "last_updated": "September 24, 2025 11:33 PM",
     "items": [
-      {
-        "label": "Ascendant Aces",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/456482",
-        "info": "August 28, 2025 - September 17, 2025 Unlocked by default"
-      },
-      {
-        "label": "Bountiful Crescendo",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/458244",
-        "info": "September 11, 2025 - September 18, 2025 Reach Union Level 14"
-      },
-      {
-        "label": "Marks of the Wild",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/544751",
-        "info": "September 4, 2025 - September 22, 2025 Reach Union Level 14 and complete the first hunt in Main Quest Chapter II Act VIII \"By Sun's Burning Hand.\""
-      },
       {
         "label": "Second Coming of Solaris (Ultra)",
         "link": "https://game8.co/games/Wuthering-Waves/archives/544726",
         "info": "September 17, 2025 - October 6, 2025 Reach Union Level 14"
+      },
+      {
+        "label": "Ascendant Aces",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/456482",
+        "info": "September 17, 2025 - October 8, 2025 Unlocked by default"
+      },
+      {
+        "label": "Beyond the Waves",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/484720",
+        "info": "September 25, 2025 - October 8, 2025 Reach Union Level 14"
       },
       {
         "label": "Tidal Defense Simulator",
@@ -298,6 +293,11 @@
         "info": "August 28, 2025 - October 8, 2025 Log in during Version 2.6"
       },
       {
+        "label": "Moonlit Revelation",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/544975",
+        "info": "September 25, 2025 - October 8, 2025 Reach Union Level 8"
+      },
+      {
         "label": "Gifts of the Moon Roamer",
         "link": "https://game8.co/games/Wuthering-Waves/archives/544974",
         "info": "September 17, 2025 - October 8, 2025 Reach Union Level 8 and log in between September 17, 2025 to October 8, 2025"
@@ -306,27 +306,12 @@
         "label": "Chord Cleansing",
         "link": "https://game8.co/games/Wuthering-Waves/archives/457211",
         "info": "October 1, 2025 - October 8, 2025 Earn double echo and echo leveling material drops during this event!"
-      },
-      {
-        "label": "Beyond the Waves",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/484720",
-        "info": "September 25, 2025 - October 8, 2025 Log-in daily and complete tasks to win random rewards by revealing tiles on a board!"
-      },
-      {
-        "label": "Moonlit Revelation",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/544975",
-        "info": "September 25, 2025 - October 8, 2025 Log-in daily to reveal lunar secrets which grant you rewards and a daily exploration buff!"
       }
     ]
   },
   "honkai-star-rail::events": {
-    "last_updated": "September 15, 2025 02:26 AM",
+    "last_updated": "September 23, 2025 10:27 PM",
     "items": [
-      {
-        "label": "Nice Weather for Dromases",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/550766",
-        "info": "Duration: 09/24 - 11/03/2025 Become a dromas caretaker and facilitate their development as they grow!"
-      },
       {
         "label": "Colorful Mayhem",
         "link": "https://game8.co/games/Honkai-Star-Rail/archives/550770",
@@ -348,19 +333,9 @@
         "info": "Duration: 10/24 - 11/03/2025 Get double the relics when challenging Caverns of Corrosion!"
       },
       {
-        "label": "3.6 Gift of Odyssey",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/413645",
-        "info": "Duration: 09/24 - 11/04/2025 Log in a total of 7 days to claim up 10 Star Rail Special Passes!"
-      },
-      {
         "label": "Pact of Permansor Terrae",
         "link": "https://game8.co/games/Honkai-Star-Rail/archives/550750",
         "info": "Duration: 10/15/2025 - End of 4.0 Log in during the event to claim a free copy of Permansor Terrae and his upgrade materials!"
-      },
-      {
-        "label": "Conductor's Special Treat",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/550773",
-        "info": "Duration: 09/24/2025 - Before End of 3.7 Log in during the event to receive an Interference Key, Lone Stardust, and Jade Feathers in the mail!"
       }
     ]
   },
@@ -380,21 +355,6 @@
       {
         "label": "Best Skills",
         "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/536805",
-        "info": null
-      },
-      {
-        "label": "Hishi Amazon",
-        "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/547833",
-        "info": null
-      },
-      {
-        "label": "Bamboo Memory",
-        "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/550080",
-        "info": null
-      },
-      {
-        "label": "Shinko Windy",
-        "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/550085",
         "info": null
       },
       {
@@ -426,11 +386,26 @@
         "label": "Cancer Cup Champions Meeting",
         "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/550078",
         "info": null
+      },
+      {
+        "label": "Event Checker",
+        "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/539000",
+        "info": null
+      },
+      {
+        "label": "Support Card Comparison",
+        "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/541233",
+        "info": null
+      },
+      {
+        "label": "Friend ID Sharing Board",
+        "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/537104",
+        "info": null
       }
     ]
   },
   "genshin-impact::events": {
-    "last_updated": "September 19, 2025 05:19 AM",
+    "last_updated": "September 26, 2025 05:18 AM",
     "items": [
       {
         "label": "Clink Clank Clash",
@@ -448,14 +423,9 @@
         "info": "September 10, 2025 \u2192 October 21, 2025"
       },
       {
-        "label": "It Starts in Nod-Krai Web Event",
-        "link": "https://game8.co/games/Genshin-Impact/archives/547853",
-        "info": "August 29, 2025 \u2192 September 24, 2025"
-      },
-      {
         "label": "Dodoco's Blow-Up-Erative Bomb-Nanza",
         "link": "https://game8.co/games/Genshin-Impact/archives/546845",
-        "info": "Start September 29, 2025"
+        "info": "September 29, 2025 \u2192 October 13, 2025"
       },
       {
         "label": "Silvery Flux Daily Login",
@@ -495,6 +465,11 @@
       {
         "label": "Repertoire of Myriad Melodies",
         "link": "https://game8.co/games/Genshin-Impact/archives/406198",
+        "info": null
+      },
+      {
+        "label": "Daily Check-In",
+        "link": "https://game8.co/games/Genshin-Impact/archives/321404",
         "info": null
       }
     ]
@@ -545,7 +520,7 @@
     ]
   },
   "wuthering-waves::gacha": {
-    "last_updated": "September 17, 2025 02:24 AM",
+    "last_updated": "September 26, 2025 09:53 AM",
     "items": [
       {
         "label": "Across Time's Waxes and Wanes",
@@ -563,83 +538,198 @@
         "info": "September 17, 2025 - October 8, 2025"
       },
       {
+        "label": "From Ashes",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/553579",
+        "info": "Roar of Triumph Limited 5\u2605 Galbrena (Debut) Lupa Rate-up 4\u2605 Mortefi Sanhua Lumi Featured Weapon(s): Lux \uff06 Umbra Wildfire Mark"
+      },
+      {
+        "label": "Roar of Triumph",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/524283",
+        "info": "From Ashes Limited 5\u2605 Galbrena (Debut) Lupa Rate-up 4\u2605 Mortefi Sanhua Lumi Featured Weapon(s): Lux \uff06 Umbra Wildfire Mark"
+      },
+      {
         "label": "Galbrena",
         "link": "https://game8.co/games/Wuthering-Waves/archives/524888",
+        "info": "From Ashes Roar of Triumph Limited 5\u2605 (Debut) Lupa Rate-up 4\u2605 Mortefi Sanhua Lumi Featured Weapon(s): Lux \uff06 Umbra Wildfire Mark"
+      },
+      {
+        "label": "Lupa",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/520661",
+        "info": "From Ashes Roar of Triumph Limited 5\u2605 Galbrena (Debut) Rate-up 4\u2605 Mortefi Sanhua Lumi Featured Weapon(s): Lux \uff06 Umbra Wildfire Mark"
+      },
+      {
+        "label": "Mortefi",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/454222",
+        "info": "From Ashes Roar of Triumph Limited 5\u2605 Galbrena (Debut) Lupa Rate-up 4\u2605 Sanhua Lumi Featured Weapon(s): Lux \uff06 Umbra Wildfire Mark"
+      },
+      {
+        "label": "Sanhua",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/454225",
+        "info": "From Ashes Roar of Triumph Limited 5\u2605 Galbrena (Debut) Lupa Rate-up 4\u2605 Mortefi Lumi Featured Weapon(s): Lux \uff06 Umbra Wildfire Mark"
+      },
+      {
+        "label": "Lumi",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/473488",
+        "info": "From Ashes Roar of Triumph Limited 5\u2605 Galbrena (Debut) Lupa Rate-up 4\u2605 Mortefi Sanhua Featured Weapon(s): Lux \uff06 Umbra Wildfire Mark"
+      },
+      {
+        "label": "Lux \uff06 Umbra",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/553561",
+        "info": "From Ashes Roar of Triumph Limited 5\u2605 Galbrena (Debut) Lupa Rate-up 4\u2605 Mortefi Sanhua Lumi Featured Weapon(s): Wildfire Mark"
+      },
+      {
+        "label": "Wildfire Mark",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/524869",
+        "info": "From Ashes Roar of Triumph Limited 5\u2605 Galbrena (Debut) Lupa Rate-up 4\u2605 Mortefi Sanhua Lumi Featured Weapon(s): Lux \uff06 Umbra"
+      },
+      {
+        "label": "2.6 Release Date, Banners, and Summary",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/506009",
         "info": null
       },
       {
-        "label": "Qiuyuan",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/524882",
+        "label": "Wanderer Knows No Far and Near",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/553597",
         "info": null
       },
       {
-        "label": "2.7 Banners, Release Date, and Info",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/549584",
-        "info": null
-      },
-      {
-        "label": "Beginner's Choice Convene Banner",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/453554",
-        "info": null
-      },
-      {
-        "label": "Utterance of Marvels",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/455422",
-        "info": null
-      },
-      {
-        "label": "Tidal Chorus",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/455430",
-        "info": null
-      },
-      {
-        "label": "Weapon Permanent Convene",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/455431",
+        "label": "Between Light and Shadow",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/514607",
         "info": null
       }
     ]
   },
   "honkai-star-rail::gacha": {
-    "last_updated": "September 16, 2025 02:30 AM",
+    "last_updated": "September 24, 2025 10:28 PM",
     "items": [
       {
-        "label": "Cerydra Banner",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/530053",
-        "info": "(Ver. 3.5 Phase 2) Silver Wolf Banner (Ver. 3.5 Phase 2) Banner Dates: Sep. 02, 2025 - Sep. 23, 2025 Featured 5-Star: Cerydra ( Harmony , Wind ) Silver Wolf ( Nihility , Quantum ) Featured 4-Star: Sampo ( Nihility , Wind ) Qingque ( Erudition , Quantum ) Dan Heng ( Hunt , Wind )"
+        "label": "Evernight Banner",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/539568",
+        "info": "(Ver. 3.6 Phase 1) The Herta Banner (Ver. 3.6 Phase 1) Banner Dates: Sep. 23, 2025 - Oct. 15, 2025 Featured 5-Star: Evernight ( Remembrance , Ice ) The Herta ( Erudition , Ice ) Featured 4-Star: Misha ( Destruction , Ice ) Guinaifen ( Nihility , Fire ) Xueyi ( Destruction , Quantum )"
       },
       {
-        "label": "Epoch Etched in Golden Blood Banner",
+        "label": "The Herta Banner",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/485793",
+        "info": "Evernight Banner (Ver. 3.6 Phase 1) (Ver. 3.6 Phase 1) Banner Dates: Sep. 23, 2025 - Oct. 15, 2025 Featured 5-Star: Evernight ( Remembrance , Ice ) The Herta ( Erudition , Ice ) Featured 4-Star: Misha ( Destruction , Ice ) Guinaifen ( Nihility , Fire ) Xueyi ( Destruction , Quantum )"
+      },
+      {
+        "label": "Evernight",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/513418",
+        "info": "Banner (Ver. 3.6 Phase 1) The Herta Banner (Ver. 3.6 Phase 1) Banner Dates: Sep. 23, 2025 - Oct. 15, 2025 Featured 5-Star: ( Remembrance , Ice ) The Herta ( Erudition , Ice ) Featured 4-Star: Misha ( Destruction , Ice ) Guinaifen ( Nihility , Fire ) Xueyi ( Destruction , Quantum )"
+      },
+      {
+        "label": "The Herta",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/485784",
+        "info": "Evernight Banner (Ver. 3.6 Phase 1) Banner (Ver. 3.6 Phase 1) Banner Dates: Sep. 23, 2025 - Oct. 15, 2025 Featured 5-Star: Evernight ( Remembrance , Ice ) ( Erudition , Ice ) Featured 4-Star: Misha ( Destruction , Ice ) Guinaifen ( Nihility , Fire ) Xueyi ( Destruction , Quantum )"
+      },
+      {
+        "label": "To Evernight's Stars Banner",
         "link": "https://game8.co/games/Honkai-Star-Rail/archives/408767",
-        "info": "(Ver. 3.5 Phase 2) Incessant Rain Banner (Ver. 3.5 Phase 2) Banner Dates : Sep. 02, 2025 - Sep. 23, 2025 Featured 5-Star: Epoch Etched in Golden Blood ( Harmony ) Incessant Rain ( Nihility ) Featured 4-Star: Swordplay ( Hunt ) The Birth of the Self ( Erudition ) Good Night and Sleep Well ( Nihility )"
+        "info": "(Ver. 3.6 Phase 1) Into the Unreachable Veil Banner (Ver. 3.6 Phase 1) Banner Dates : Sep. 23, 2025 - Oct. 15, 2025 Featured 5-Star: To Evernight's Stars ( Remembrance ) Into the Unreachable Veil ( Erudition ) Featured 4-Star: Dance! Dance! Dance! ( Harmony ) After the Charmony Fall ( Erudition ) Dream's Montage ( Abundance )"
+      },
+      {
+        "label": "Into the Unreachable Veil Banner",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/429241",
+        "info": "To Evernight's Stars Banner (Ver. 3.6 Phase 1) (Ver. 3.6 Phase 1) Banner Dates : Sep. 23, 2025 - Oct. 15, 2025 Featured 5-Star: To Evernight's Stars ( Remembrance ) Into the Unreachable Veil ( Erudition ) Featured 4-Star: Dance! Dance! Dance! ( Harmony ) After the Charmony Fall ( Erudition ) Dream's Montage ( Abundance )"
+      },
+      {
+        "label": "To Evernight's Stars",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/550755",
+        "info": "Banner (Ver. 3.6 Phase 1) Into the Unreachable Veil Banner (Ver. 3.6 Phase 1) Banner Dates : Sep. 23, 2025 - Oct. 15, 2025 Featured 5-Star: ( Remembrance ) Into the Unreachable Veil ( Erudition ) Featured 4-Star: Dance! Dance! Dance! ( Harmony ) After the Charmony Fall ( Erudition ) Dream's Montage ( Abundance )"
       },
       {
         "label": "Saber Banner",
         "link": "https://game8.co/games/Honkai-Star-Rail/archives/519871",
-        "info": "(Version 3.5) Archer Banner (Version 3.5) Banner Dates: Jul. 11, 2025 - TBD Featured 5-Star: Saber ( Destruction , Wind ) Archer ( Hunt , Quantum )"
+        "info": "(Version 3.6) Archer Banner (Version 3.6) Banner Dates: Jul. 11, 2025 - TBD Featured 5-Star: Saber ( Destruction , Wind ) Archer ( Hunt , Quantum )"
+      },
+      {
+        "label": "Archer Banner",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/519880",
+        "info": "Saber Banner (Version 3.6) (Version 3.6) Banner Dates: Jul. 11, 2025 - TBD Featured 5-Star: Saber ( Destruction , Wind ) Archer ( Hunt , Quantum )"
+      },
+      {
+        "label": "Saber",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/519564",
+        "info": "Banner (Version 3.6) Archer Banner (Version 3.6) Banner Dates: Jul. 11, 2025 - TBD Featured 5-Star: ( Destruction , Wind ) Archer ( Hunt , Quantum )"
+      },
+      {
+        "label": "Archer",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/519877",
+        "info": "Saber Banner (Version 3.6) Banner (Version 3.6) Banner Dates: Jul. 11, 2025 - TBD Featured 5-Star: Saber ( Destruction , Wind ) ( Hunt , Quantum )"
       },
       {
         "label": "Fate Collab Light Cone Banners",
         "link": "https://game8.co/games/Honkai-Star-Rail/archives/462460",
-        "info": "(Version 3.5) Banner Dates : Jul. 11, 2025 - TBD Featured 5-Star: A Thankless Coronation ( Destruction ) The Hell Where Ideals Burn ( Hunt )"
+        "info": "(Version 3.6) Banner Dates : Jul. 11, 2025 - TBD Featured 5-Star: A Thankless Coronation ( Destruction ) The Hell Where Ideals Burn ( Hunt )"
       },
       {
-        "label": "Cerydra",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/530015",
+        "label": "Brilliant Fixation",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/408767",
         "info": null
       },
       {
-        "label": "Silver Wolf",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/405757",
+        "label": "Bygone Reminiscence",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/429241",
         "info": null
       },
       {
-        "label": "Sampo",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/405761",
+        "label": "Permansor Terrae Banner",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/541446",
+        "info": "(Ver. 3.6 Phase 2) Anaxa Banner (Ver. 3.6 Phase 2) Banner Dates: Oct. 15, 2025 - Nov. 04, 2025 Featured 5-Star: Permansor Terrae ( Preservation , Physical ) Anaxa ( Erudition , Wind ) Featured 4-Star: Sushang ( Hunt , Physical ) Hanya ( Harmony , Physical ) Serval ( Erudition , Lightning )"
+      },
+      {
+        "label": "Anaxa Banner",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/499049",
+        "info": "Permansor Terrae Banner (Ver. 3.6 Phase 2) (Ver. 3.6 Phase 2) Banner Dates: Oct. 15, 2025 - Nov. 04, 2025 Featured 5-Star: Permansor Terrae ( Preservation , Physical ) Anaxa ( Erudition , Wind ) Featured 4-Star: Sushang ( Hunt , Physical ) Hanya ( Harmony , Physical ) Serval ( Erudition , Lightning )"
+      },
+      {
+        "label": "Permansor Terrae",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/541483",
+        "info": "Banner (Ver. 3.6 Phase 2) Anaxa Banner (Ver. 3.6 Phase 2) Banner Dates: Oct. 15, 2025 - Nov. 04, 2025 Featured 5-Star: ( Preservation , Physical ) Anaxa ( Erudition , Wind ) Featured 4-Star: Sushang ( Hunt , Physical ) Hanya ( Harmony , Physical ) Serval ( Erudition , Lightning )"
+      },
+      {
+        "label": "Anaxa",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/486296",
+        "info": "Permansor Terrae Banner (Ver. 3.6 Phase 2) Banner (Ver. 3.6 Phase 2) Banner Dates: Oct. 15, 2025 - Nov. 04, 2025 Featured 5-Star: Permansor Terrae ( Preservation , Physical ) ( Erudition , Wind ) Featured 4-Star: Sushang ( Hunt , Physical ) Hanya ( Harmony , Physical ) Serval ( Erudition , Lightning )"
+      },
+      {
+        "label": "Though Worlds Apart Banner",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/408767",
+        "info": "(Ver. 3.6 Phase 2) Life Should Be Cast to Flames Banner (Ver. 3.6 Phase 2) Banner Dates : Oct. 15, 2025 - Nov. 04, 2025 Featured 5-Star: Though Worlds Apart ( Preservation ) Life Should Be Cast to Flames ( Erudition ) Featured 4-Star: Landau's Choice ( Preservation ) Only Silence Remains ( Hunt ) Perfect Timing ( Abundance )"
+      },
+      {
+        "label": "Life Should Be Cast to Flames Banner",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/429241",
+        "info": "Though Worlds Apart Banner (Ver. 3.6 Phase 2) (Ver. 3.6 Phase 2) Banner Dates : Oct. 15, 2025 - Nov. 04, 2025 Featured 5-Star: Though Worlds Apart ( Preservation ) Life Should Be Cast to Flames ( Erudition ) Featured 4-Star: Landau's Choice ( Preservation ) Only Silence Remains ( Hunt ) Perfect Timing ( Abundance )"
+      },
+      {
+        "label": "Brilliant Fixation",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/408767",
+        "info": "Permansor Terrae's banner will run from October 15, 2025 until November 4, 2025 (Server Time) . His Light Cone, Though Worlds Apart , will also be available at the same time in the banner."
+      },
+      {
+        "label": "Permansor Terrae Banner Schedule and Rates",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/541446",
         "info": null
       },
       {
-        "label": "Qingque",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/405759",
+        "label": "Bygone Reminiscence",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/429241",
+        "info": "Anaxa's rerun banner will be available from October 15, 2025 until November 4, 2025 (Server Time) . His Light Cone, Life Should Be Cast to Flames , will also available through the banner."
+      },
+      {
+        "label": "Anaxa Banner Schedule and Rates",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/499049",
+        "info": null
+      },
+      {
+        "label": "Cyrene Banner",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/550105",
+        "info": "(Ver. 3.7 Phase 1) Banner Dates: Nov. 04, 2025 - Nov. 26, 2025 Featured 5-Star: Cyrene ( Remembrance , Ice ) Featured 4-Star: TBA TBA TBA"
+      },
+      {
+        "label": "Cyrene Banner Schedule and Rates",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/550105",
         "info": null
       }
     ]
