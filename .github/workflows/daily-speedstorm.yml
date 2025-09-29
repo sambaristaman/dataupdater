@@ -51,7 +51,9 @@ jobs:
       - name: Run Speedstorm scraper
         env:
           WEBHOOK_URL_CODEX: ${{ secrets.WEBHOOK_URL_CODEX }}
-          DRY_RUN: ${{ github.event.inputs.DRY_RUN }}
+          WEBHOOK_URL_SUMMARY:    ${{ secrets.WEBHOOK_URL_SUMMARY }}
+          ROLE_ID_SPEEDSTORM:     ${{ secrets.ROLE_ID_SPEEDSTORM }}
+          DRY_RUN:                ${{ github.event.inputs.DRY_RUN }}
         run: |
           set -euo pipefail
           python speedstorm_codes_scraper.py

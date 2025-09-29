@@ -3,25 +3,25 @@
 """
 Disney Speedstorm → Discord webhook notifier (PocketGamer).
 - Scrapes active codes from: https://www.pocketgamer.com/disney-speedstorm/codes/
-- Persists 'seen' codes in a JSON file.
 - Posts ONE webhook message per newly discovered active code.
+- Optional role ping per new code.
+- Weekly health ping to a separate summary webhook when there's no new code.
 
 Env:
-  WEBHOOK_URL_CODEX   -> Discord webhook URL (required)
+  WEBHOOK_URL_CODEX   -> Discord webhook URL for Speedstorm alerts (required)
+  WEBHOOK_URL_SUMMARY      -> Discord webhook URL for health pings (optional but recommended)
+  ROLE_ID_SPEEDSTORM       -> Discord role ID to @mention on new codes (optional)
   DRY_RUN=true             -> don't post, just print (optional)
-
-Usage:
-  python speedstorm_codes_scraper.py
-  # or on Windows PowerShell:
-  #   $env:WEBHOOK_URL_CODEX='https://discord.com/api/webhooks/...'
-  #   python .\speedstorm_codes_scraper.py
 """
 
 import json
 import os
 import re
+import time
 from pathlib import Path
 from typing import List, Dict, Optional
+from datetime import datetime, timedelta
+from zoneinfo import ZoneInfo
 
 import requests
 from bs4 import BeautifulSoup
@@ -29,7 +29,7 @@ from bs4 import BeautifulSoup
 PAGE_URL = "https://www.pocketgamer.com/disney-speedstorm/codes/"
 STATE_PATH = Path("speedstorm_codes_state.json")
 SESSION = requests.Session()
-SESSION.headers.update({"User-Agent": "speedstorm-codes/1.0 (+discord-webhook)"})
+SESSION.headers.update({"User-Agent": "speedstorm-codes/1.1 (+discord-webhook)"})
 
 
 def fetch_html(url: str) -> str:
@@ -41,18 +41,14 @@ def fetch_html(url: str) -> str:
 def extract_codes(html: str) -> List[Dict]:
     """
     Extract active codes from the PocketGamer article.
-    We look for list items/paragraphs that contain a CODE token and optional reward text.
+    Heuristics target list items / short paragraphs that contain code-like tokens.
     Returns list of dicts: {code, reward, expires, source_line}
     """
     soup = BeautifulSoup(html, "html.parser")
 
-    # Heuristics:
-    # - Most pages list codes as bullet points or short paragraphs.
-    # - Code shape: uppercase letters/digits, ~6–16 chars. Examples: M1SSP1GGY3, M4DT34P4RTY, PRIDE2025
     CODE_RE = re.compile(r"\b[A-Z0-9]{6,16}\b")
     EXPIRED_HINTS = re.compile(r"\b(expired|inactive|ended)\b", re.I)
 
-    # Gather candidate text blocks
     blocks = []
     for tag in soup.find_all(["li", "p", "div"]):
         txt = tag.get_text(" ", strip=True)
@@ -62,35 +58,37 @@ def extract_codes(html: str) -> List[Dict]:
     items: List[Dict] = []
     for line in blocks:
         if EXPIRED_HINTS.search(line or ""):
-            continue  # skip obvious expired lines
+            continue
 
-        # find codes in the line
         codes = [m.group(0) for m in CODE_RE.finditer(line)]
         if not codes:
             continue
 
-        # PocketGamer often formats like: "M1SSP1GGY3 - 3 Miss Piggy Shards (new!)"
-        # Split reward on the first dash/colon if present.
         reward = None
         m = re.search(r"\b[A-Z0-9]{6,16}\b\s*[-–—:]\s*(.+)$", line)
         if m:
             reward = m.group(1).strip()
 
-        # Sometimes they show an explicit expiry date in text.
         exp = None
-        m2 = re.search(r"(?:valid|expires?|until)\s*[:\-]?\s*([A-Za-z]{3,9}\.?\s+\d{1,2},\s*\d{4}|[0-9]{1,2}/[0-9]{1,2}/[0-9]{2,4})", line, re.I)
+        m2 = re.search(
+            r"(?:valid|expires?|until)\s*[:\-]?\s*([A-Za-z]{3,9}\.?\s+\d{1,2},\s*\d{4}|[0-9]{1,2}/[0-9]{1,2}/[0-9]{2,4})",
+            line,
+            re.I,
+        )
         if m2:
             exp = m2.group(1).strip()
 
         for c in codes:
-            items.append({
-                "code": c,
-                "reward": reward,
-                "expires": exp,
-                "source_line": line,
-            })
+            items.append(
+                {
+                    "code": c,
+                    "reward": reward,
+                    "expires": exp,
+                    "source_line": line,
+                }
+            )
 
-    # De-dupe by code, keep the first occurrence & trim noise
+    # De-dupe by code
     seen = set()
     deduped = []
     for it in items:
@@ -98,45 +96,70 @@ def extract_codes(html: str) -> List[Dict]:
             continue
         seen.add(it["code"])
         deduped.append(it)
-
     return deduped
 
 
 def load_state() -> Dict:
     if STATE_PATH.exists():
         try:
-            return json.loads(STATE_PATH.read_text())
+            return json.loads(STATE_PATH.read_text(encoding="utf-8"))
         except Exception:
             return {}
     return {}
 
 
 def save_state(state: Dict):
-    STATE_PATH.write_text(json.dumps(state, indent=2, ensure_ascii=False))
+    STATE_PATH.write_text(json.dumps(state, indent=2, ensure_ascii=False), encoding="utf-8")
 
 
-def post_webhook(webhook_url: str, content: str) -> Optional[str]:
-    if os.getenv("DRY_RUN", "false").lower() == "true":
-        print("[DRY_RUN] Would POST:", content)
+def post_webhook(webhook_url: str, content: str, retries: int = 4) -> Optional[str]:
+    """
+    Post to Discord webhook with basic retry/backoff.
+    - Handles 429 with Retry-After
+    - Retries on 5xx and common transient network errors
+    """
+    is_dry = (os.getenv("DRY_RUN", "false").lower() == "true")
+    if is_dry:
+        print("[DRY_RUN] Would POST:", content.replace("\n", " | "))
         return "DRY_RUN_MSG_ID"
-    r = SESSION.post(
-        f"{webhook_url}?wait=true",
-        headers={"Content-Type": "application/json"},
-        json={"content": content},
-        timeout=30,
-    )
-    if r.status_code in (200, 204):
+
+    backoff = 1.5
+    for attempt in range(1, retries + 1):
         try:
-            return r.json().get("id")
-        except Exception:
-            return None
-    else:
-        print(f"[WARN] Webhook POST failed: {r.status_code} {r.text[:200]}")
-        return None
+            r = SESSION.post(
+                f"{webhook_url}?wait=true",
+                headers={"Content-Type": "application/json"},
+                json={"content": content},
+                timeout=30,
+            )
+            if r.status_code in (200, 204):
+                try:
+                    return r.json().get("id")
+                except Exception:
+                    return None
+            if r.status_code == 429:
+                retry_after = float(r.headers.get("Retry-After", "1"))
+                print(f"[429] Rate limited. Sleeping {retry_after}s…")
+                time.sleep(min(retry_after, 10))
+            elif 500 <= r.status_code < 600:
+                print(f"[{r.status_code}] Discord server error. Attempt {attempt}/{retries}.")
+                time.sleep(backoff ** attempt)
+            else:
+                snippet = r.text[:200].replace("\n", " ")
+                print(f"[WARN] Webhook POST failed: {r.status_code} {snippet}")
+                return None
+        except requests.RequestException as e:
+            print(f"[ERR] Network error: {e}. Attempt {attempt}/{retries}.")
+            time.sleep(backoff ** attempt)
+    return None
 
 
-def format_discord_message(item: Dict) -> str:
-    parts = [f"**Disney Speedstorm — New Code Found!**", f"`{item['code']}`"]
+def format_new_code_message(item: Dict, role_id: Optional[str]) -> str:
+    parts = []
+    if role_id:
+        parts.append(f"<@&{role_id}>")
+    parts.append("**Disney Speedstorm — New Code Found!**")
+    parts.append(f"`{item['code']}`")
     if item.get("reward"):
         parts.append(f"**Reward:** {item['reward']}")
     if item.get("expires"):
@@ -145,10 +168,38 @@ def format_discord_message(item: Dict) -> str:
     return "\n".join(parts)
 
 
+def format_health_message(total_seen: int) -> str:
+    return (
+        "✅ **Speedstorm scraper health check**\n"
+        "No new codes today.\n"
+        f"Seen codes tracked: **{total_seen}**\n"
+        f"Source: <{PAGE_URL}>"
+    )
+
+
+def should_health_ping(state: Dict, now_sp: datetime) -> bool:
+    """
+    Fire health ping if last ping is ≥ 7 days ago AND there are no new codes.
+    """
+    last = state.get("last_health_ping_iso")
+    if not last:
+        return True
+    try:
+        prev = datetime.fromisoformat(last)
+    except Exception:
+        return True
+    return (now_sp - prev) >= timedelta(days=7)
+
+
 def main():
-    webhook = (os.getenv("WEBHOOK_URL_CODEX") or "").strip()
-    if not webhook:
+    tz = ZoneInfo("America/Sao_Paulo")
+    now_sp = datetime.now(tz)
+
+    webhook_codes = (os.getenv("WEBHOOK_URL_CODEX") or "").strip()
+    if not webhook_codes:
         raise SystemExit("Missing WEBHOOK_URL_CODEX env var.")
+    webhook_summary = (os.getenv("WEBHOOK_URL_SUMMARY") or "").strip()
+    role_id = (os.getenv("ROLE_ID_SPEEDSTORM") or "").strip() or None
 
     html = fetch_html(PAGE_URL)
     items = extract_codes(html)
@@ -158,21 +209,36 @@ def main():
 
     new_items = [it for it in items if it["code"] not in seen_codes]
 
-    # Only announce NEW codes
+    # Announce NEW codes
     for it in new_items:
-        content = format_discord_message(it)
-        mid = post_webhook(webhook, content)
+        content = format_new_code_message(it, role_id)
+        mid = post_webhook(webhook_codes, content)
         if mid:
             print(f"[OK] Announced new code {it['code']} (message id={mid})")
         else:
             print(f"[WARN] Failed to announce code {it['code']}")
 
-    # Persist union of seen codes
+    # Update state if new codes
     if new_items:
         seen_codes.update(it["code"] for it in new_items)
         state["seen_codes"] = sorted(seen_codes)
         save_state(state)
-    else:
+
+    # Health ping (only if no new codes and weekly cadence)
+    if not new_items and webhook_summary:
+        if should_health_ping(state, now_sp):
+            msg = format_health_message(total_seen=len(seen_codes))
+            mid = post_webhook(webhook_summary, msg)
+            if mid:
+                print(f"[OK] Health ping sent (message id={mid})")
+                state["last_health_ping_iso"] = now_sp.isoformat()
+                # Persist health timestamp unless dry run
+                if os.getenv("DRY_RUN", "false").lower() != "true":
+                    save_state(state)
+            else:
+                print("[WARN] Failed to send health ping.")
+
+    if not new_items:
         print("[Info] No new codes.")
 
 if __name__ == "__main__":
