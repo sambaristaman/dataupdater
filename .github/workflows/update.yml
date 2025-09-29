@@ -4,7 +4,7 @@ on:
   schedule:
     # Runs at 08:00 America/Sao_Paulo daily.
     # GitHub cron is UTC; São Paulo is UTC-03 (no DST), so 11:00 UTC == 08:00 BRT.
-    - cron: "0 11 * * *"
+    - cron: "0 12 * * *"
   workflow_dispatch:
     inputs:
       ONLY_KEY:

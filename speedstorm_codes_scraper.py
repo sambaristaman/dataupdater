@@ -4,13 +4,13 @@
 Disney Speedstorm → Discord webhook notifier (PocketGamer).
 - Scrapes active codes from: https://www.pocketgamer.com/disney-speedstorm/codes/
 - Posts ONE webhook message per newly discovered active code.
-- Optional role ping per new code.
-- Weekly health ping to a separate summary webhook when there's no new code.
+- Optional role ping, but **only once per run** (first successfully posted new-code message).
+- Weekly health ping to a separate summary webhook when there's no new code for ≥ 7 days.
 
 Env:
-  WEBHOOK_URL_CODEX   -> Discord webhook URL for Speedstorm alerts (required)
-  WEBHOOK_URL_SUMMARY      -> Discord webhook URL for health pings (optional but recommended)
-  ROLE_ID_SPEEDSTORM       -> Discord role ID to @mention on new codes (optional)
+  WEBHOOK_URL_SPEEDSTORM   -> Discord webhook URL for Speedstorm alerts (required)
+  WEBHOOK_URL_SUMMARY      -> Discord webhook URL for health pings (optional)
+  ROLE_ID_SPEEDSTORM       -> Discord role ID to @mention on new codes (optional; ping once/run)
   DRY_RUN=true             -> don't post, just print (optional)
 """
 
@@ -29,7 +29,7 @@ from bs4 import BeautifulSoup
 PAGE_URL = "https://www.pocketgamer.com/disney-speedstorm/codes/"
 STATE_PATH = Path("speedstorm_codes_state.json")
 SESSION = requests.Session()
-SESSION.headers.update({"User-Agent": "speedstorm-codes/1.1 (+discord-webhook)"})
+SESSION.headers.update({"User-Agent": "speedstorm-codes/1.2 (+discord-webhook)"})
 
 
 def fetch_html(url: str) -> str:
@@ -154,10 +154,10 @@ def post_webhook(webhook_url: str, content: str, retries: int = 4) -> Optional[s
     return None
 
 
-def format_new_code_message(item: Dict, role_id: Optional[str]) -> str:
+def format_new_code_message(item: Dict, role_mention: Optional[str]) -> str:
     parts = []
-    if role_id:
-        parts.append(f"<@&{role_id}>")
+    if role_mention:
+        parts.append(role_mention)
     parts.append("**Disney Speedstorm — New Code Found!**")
     parts.append(f"`{item['code']}`")
     if item.get("reward"):
@@ -195,11 +195,13 @@ def main():
     tz = ZoneInfo("America/Sao_Paulo")
     now_sp = datetime.now(tz)
 
-    webhook_codes = (os.getenv("WEBHOOK_URL_CODEX") or "").strip()
+    webhook_codes = (os.getenv("WEBHOOK_URL_SPEEDSTORM") or "").strip()
     if not webhook_codes:
-        raise SystemExit("Missing WEBHOOK_URL_CODEX env var.")
+        raise SystemExit("Missing WEBHOOK_URL_SPEEDSTORM env var.")
     webhook_summary = (os.getenv("WEBHOOK_URL_SUMMARY") or "").strip()
-    role_id = (os.getenv("ROLE_ID_SPEEDSTORM") or "").strip() or None
+
+    role_id_env = (os.getenv("ROLE_ID_SPEEDSTORM") or "").strip()
+    role_mention_template = f"<@&{role_id_env}>" if role_id_env else None
 
     html = fetch_html(PAGE_URL)
     items = extract_codes(html)
@@ -209,12 +211,20 @@ def main():
 
     new_items = [it for it in items if it["code"] not in seen_codes]
 
+    # ---- Ping-once-per-run control ----
+    # We'll only include the role mention on the **first successfully posted** new-code message.
+    ping_available = bool(role_mention_template)
+
     # Announce NEW codes
     for it in new_items:
-        content = format_new_code_message(it, role_id)
+        role_for_this_message = role_mention_template if ping_available else None
+        content = format_new_code_message(it, role_for_this_message)
         mid = post_webhook(webhook_codes, content)
         if mid:
             print(f"[OK] Announced new code {it['code']} (message id={mid})")
+            # Mark that we've used the ping for this run only after a successful send
+            if ping_available:
+                ping_available = False
         else:
             print(f"[WARN] Failed to announce code {it['code']}")
 
@@ -232,7 +242,6 @@ def main():
             if mid:
                 print(f"[OK] Health ping sent (message id={mid})")
                 state["last_health_ping_iso"] = now_sp.isoformat()
-                # Persist health timestamp unless dry run
                 if os.getenv("DRY_RUN", "false").lower() != "true":
                     save_state(state)
             else:
