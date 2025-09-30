@@ -310,13 +310,8 @@
     ]
   },
   "honkai-star-rail::events": {
-    "last_updated": "September 23, 2025 10:27 PM",
+    "last_updated": "September 30, 2025 05:52 AM",
     "items": [
-      {
-        "label": "Colorful Mayhem",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/550770",
-        "info": "Duration: 09/30 - 11/03/2025 Play familiar bumper fight and match-3 mini-games to earn points and receive rewards!"
-      },
       {
         "label": "3.6 Planar Fissure",
         "link": "https://game8.co/games/Honkai-Star-Rail/archives/413440",
@@ -405,7 +400,7 @@
     ]
   },
   "genshin-impact::events": {
-    "last_updated": "September 28, 2025 11:36 PM",
+    "last_updated": "September 30, 2025 06:00 AM",
     "items": [
       {
         "label": "Dodoco's Blow-Up-Erative Bomb-Nanza",
@@ -475,47 +470,47 @@
     ]
   },
   "genshin-impact::gacha": {
-    "last_updated": "September 12, 2025 01:11 AM",
+    "last_updated": "September 30, 2025 06:54 AM",
     "items": [
       {
-        "label": "Moonsong of the Groves",
-        "link": "https://game8.co/games/Genshin-Impact/archives/546711",
+        "label": "The Lone Light Knocks at Night",
+        "link": "https://game8.co/games/Genshin-Impact/archives/546714",
         "info": null
       },
       {
-        "label": "Lauma",
-        "link": "https://game8.co/games/Genshin-Impact/archives/538066",
+        "label": "Flins",
+        "link": "https://game8.co/games/Genshin-Impact/archives/538451",
         "info": null
       },
       {
-        "label": "Kaveh",
-        "link": "https://game8.co/games/Genshin-Impact/archives/Kaveh-Best-Builds",
+        "label": "Aino",
+        "link": "https://game8.co/games/Genshin-Impact/archives/537903",
         "info": null
       },
       {
-        "label": "Shinobu",
-        "link": "https://game8.co/games/Genshin-Impact/archives/346199",
+        "label": "Sucrose",
+        "link": "https://game8.co/games/Genshin-Impact/archives/297525",
         "info": null
       },
       {
-        "label": "Barbara",
-        "link": "https://game8.co/games/Genshin-Impact/archives/297517",
+        "label": "Dori",
+        "link": "https://game8.co/games/Genshin-Impact/archives/380569",
         "info": null
       },
       {
-        "label": "Roving Chalice of Dewgrass",
-        "link": "https://game8.co/games/Genshin-Impact/archives/546784",
+        "label": "Discerner of Enigmas",
+        "link": "https://game8.co/games/Genshin-Impact/archives/377475",
         "info": null
       },
       {
-        "label": "Dehya",
-        "link": "https://game8.co/games/Genshin-Impact/archives/Dehya-Best-Builds",
+        "label": "Yelan",
+        "link": "https://game8.co/games/Genshin-Impact/archives/372781",
         "info": null
       },
       {
-        "label": "Alhaitham",
-        "link": "https://game8.co/games/Genshin-Impact/archives/383712",
-        "info": null
+        "label": "Epitome Invocation",
+        "link": "https://game8.co/games/Genshin-Impact/archives/304758",
+        "info": "Start: 2025/09/30 End: 2025/10/21 Bloodsoaked Ruins Aqua Simulacra Lion's Roar Favonius Greatsword Favonius Lance Favonius Codex Sacrificial Bow"
       }
     ]
   },
