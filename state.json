@@ -250,7 +250,7 @@
     ]
   },
   "wuthering-waves::events": {
-    "last_updated": "September 24, 2025 11:33 PM",
+    "last_updated": "October 1, 2025 05:09 AM",
     "items": [
       {
         "label": "Second Coming of Solaris (Ultra)",
@@ -400,8 +400,13 @@
     ]
   },
   "genshin-impact::events": {
-    "last_updated": "September 30, 2025 06:00 AM",
+    "last_updated": "September 30, 2025 09:04 PM",
     "items": [
+      {
+        "label": "Silvery Flux Daily Login",
+        "link": "https://game8.co/games/Genshin-Impact/archives/550057",
+        "info": "October 1, 2025 \u2192 October 21, 2025"
+      },
       {
         "label": "Dodoco's Blow-Up-Erative Bomb-Nanza",
         "link": "https://game8.co/games/Genshin-Impact/archives/546845",
@@ -421,11 +426,6 @@
         "label": "Free Standard Banner 5-Star Selector",
         "link": "https://game8.co/games/Genshin-Impact/archives/387957",
         "info": "September 10, 2025 \u2192 October 21, 2025"
-      },
-      {
-        "label": "Silvery Flux Daily Login",
-        "link": "https://game8.co/games/Genshin-Impact/archives/550057",
-        "info": "October 1, 2025 \u2192 October 21, 2025"
       },
       {
         "label": "Overflowing Favor",
