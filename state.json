@@ -250,7 +250,7 @@
     ]
   },
   "wuthering-waves::events": {
-    "last_updated": "October 1, 2025 05:09 AM",
+    "last_updated": "October 2, 2025 12:12 AM",
     "items": [
       {
         "label": "Second Coming of Solaris (Ultra)",
@@ -261,6 +261,11 @@
         "label": "Ascendant Aces",
         "link": "https://game8.co/games/Wuthering-Waves/archives/456482",
         "info": "September 17, 2025 - October 8, 2025 Unlocked by default"
+      },
+      {
+        "label": "Chord Cleansing",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/457211",
+        "info": "October 1, 2025 - October 8, 2025 Reach Union Level 19"
       },
       {
         "label": "Beyond the Waves",
@@ -296,16 +301,6 @@
         "label": "Moonlit Revelation",
         "link": "https://game8.co/games/Wuthering-Waves/archives/544975",
         "info": "September 25, 2025 - October 8, 2025 Reach Union Level 8"
-      },
-      {
-        "label": "Gifts of the Moon Roamer",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/544974",
-        "info": "September 17, 2025 - October 8, 2025 Reach Union Level 8 and log in between September 17, 2025 to October 8, 2025"
-      },
-      {
-        "label": "Chord Cleansing",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/457211",
-        "info": "October 1, 2025 - October 8, 2025 Earn double echo and echo leveling material drops during this event!"
       }
     ]
   },
