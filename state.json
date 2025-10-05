@@ -250,7 +250,7 @@
     ]
   },
   "wuthering-waves::events": {
-    "last_updated": "September 24, 2025 11:33 PM",
+    "last_updated": "October 2, 2025 12:12 AM",
     "items": [
       {
         "label": "Second Coming of Solaris (Ultra)",
@@ -261,6 +261,11 @@
         "label": "Ascendant Aces",
         "link": "https://game8.co/games/Wuthering-Waves/archives/456482",
         "info": "September 17, 2025 - October 8, 2025 Unlocked by default"
+      },
+      {
+        "label": "Chord Cleansing",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/457211",
+        "info": "October 1, 2025 - October 8, 2025 Reach Union Level 19"
       },
       {
         "label": "Beyond the Waves",
@@ -296,27 +301,12 @@
         "label": "Moonlit Revelation",
         "link": "https://game8.co/games/Wuthering-Waves/archives/544975",
         "info": "September 25, 2025 - October 8, 2025 Reach Union Level 8"
-      },
-      {
-        "label": "Gifts of the Moon Roamer",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/544974",
-        "info": "September 17, 2025 - October 8, 2025 Reach Union Level 8 and log in between September 17, 2025 to October 8, 2025"
-      },
-      {
-        "label": "Chord Cleansing",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/457211",
-        "info": "October 1, 2025 - October 8, 2025 Earn double echo and echo leveling material drops during this event!"
       }
     ]
   },
   "honkai-star-rail::events": {
-    "last_updated": "September 23, 2025 10:27 PM",
+    "last_updated": "September 30, 2025 05:52 AM",
     "items": [
-      {
-        "label": "Colorful Mayhem",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/550770",
-        "info": "Duration: 09/30 - 11/03/2025 Play familiar bumper fight and match-3 mini-games to earn points and receive rewards!"
-      },
       {
         "label": "3.6 Planar Fissure",
         "link": "https://game8.co/games/Honkai-Star-Rail/archives/413440",
@@ -358,6 +348,11 @@
         "info": null
       },
       {
+        "label": "Fuji Kiseki",
+        "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/553122",
+        "info": null
+      },
+      {
         "label": "El Condor Pasa",
         "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/547832",
         "info": null
@@ -368,18 +363,13 @@
         "info": null
       },
       {
-        "label": "Seiun Sky",
-        "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/550086",
+        "label": "Mejiro Ryan Guts SSR",
+        "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/554965",
         "info": null
       },
       {
-        "label": "King Halo",
-        "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/550087",
-        "info": null
-      },
-      {
-        "label": "Gold Ship",
-        "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/550088",
+        "label": "Mejiro Ardan Wit SR",
+        "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/554966",
         "info": null
       },
       {
@@ -388,29 +378,39 @@
         "info": null
       },
       {
-        "label": "Event Checker",
-        "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/539000",
-        "info": null
-      },
-      {
-        "label": "Support Card Comparison",
-        "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/541233",
-        "info": null
-      },
-      {
         "label": "Friend ID Sharing Board",
         "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/537104",
         "info": null
+      },
+      {
+        "label": "Training the Trainer Skills and Epithets",
+        "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/554996",
+        "info": null
+      },
+      {
+        "label": "Seiun Sky",
+        "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/547840",
+        "info": "Seiun Sky Silence Suzuka and Tamamo Cross 9/17/2025 - 9/25/2025"
       }
     ]
   },
   "genshin-impact::events": {
-    "last_updated": "September 26, 2025 05:18 AM",
+    "last_updated": "September 30, 2025 09:04 PM",
     "items": [
       {
-        "label": "Clink Clank Clash",
-        "link": "https://game8.co/games/Genshin-Impact/archives/546843",
-        "info": "September 12, 2025 \u2192 September 29, 2025"
+        "label": "Silvery Flux Daily Login",
+        "link": "https://game8.co/games/Genshin-Impact/archives/550057",
+        "info": "October 1, 2025 \u2192 October 21, 2025"
+      },
+      {
+        "label": "Dodoco's Blow-Up-Erative Bomb-Nanza",
+        "link": "https://game8.co/games/Genshin-Impact/archives/546845",
+        "info": "September 29, 2025 \u2192 October 13, 2025"
+      },
+      {
+        "label": "Tracing the Heart's Journey Web Event",
+        "link": "https://game8.co/games/Genshin-Impact/archives/553668",
+        "info": "September 28, 2025 \u2192 October 12, 2025"
       },
       {
         "label": "To Temper Thyself and Journey Far",
@@ -421,16 +421,6 @@
         "label": "Free Standard Banner 5-Star Selector",
         "link": "https://game8.co/games/Genshin-Impact/archives/387957",
         "info": "September 10, 2025 \u2192 October 21, 2025"
-      },
-      {
-        "label": "Dodoco's Blow-Up-Erative Bomb-Nanza",
-        "link": "https://game8.co/games/Genshin-Impact/archives/546845",
-        "info": "September 29, 2025 \u2192 October 13, 2025"
-      },
-      {
-        "label": "Silvery Flux Daily Login",
-        "link": "https://game8.co/games/Genshin-Impact/archives/550057",
-        "info": "October 1, 2025 \u2192 October 21, 2025"
       },
       {
         "label": "Overflowing Favor",
@@ -475,47 +465,47 @@
     ]
   },
   "genshin-impact::gacha": {
-    "last_updated": "September 12, 2025 01:11 AM",
+    "last_updated": "September 30, 2025 06:54 AM",
     "items": [
       {
-        "label": "Moonsong of the Groves",
-        "link": "https://game8.co/games/Genshin-Impact/archives/546711",
+        "label": "The Lone Light Knocks at Night",
+        "link": "https://game8.co/games/Genshin-Impact/archives/546714",
         "info": null
       },
       {
-        "label": "Lauma",
-        "link": "https://game8.co/games/Genshin-Impact/archives/538066",
+        "label": "Flins",
+        "link": "https://game8.co/games/Genshin-Impact/archives/538451",
         "info": null
       },
       {
-        "label": "Kaveh",
-        "link": "https://game8.co/games/Genshin-Impact/archives/Kaveh-Best-Builds",
+        "label": "Aino",
+        "link": "https://game8.co/games/Genshin-Impact/archives/537903",
         "info": null
       },
       {
-        "label": "Shinobu",
-        "link": "https://game8.co/games/Genshin-Impact/archives/346199",
+        "label": "Sucrose",
+        "link": "https://game8.co/games/Genshin-Impact/archives/297525",
         "info": null
       },
       {
-        "label": "Barbara",
-        "link": "https://game8.co/games/Genshin-Impact/archives/297517",
+        "label": "Dori",
+        "link": "https://game8.co/games/Genshin-Impact/archives/380569",
         "info": null
       },
       {
-        "label": "Roving Chalice of Dewgrass",
-        "link": "https://game8.co/games/Genshin-Impact/archives/546784",
+        "label": "Discerner of Enigmas",
+        "link": "https://game8.co/games/Genshin-Impact/archives/377475",
         "info": null
       },
       {
-        "label": "Dehya",
-        "link": "https://game8.co/games/Genshin-Impact/archives/Dehya-Best-Builds",
+        "label": "Yelan",
+        "link": "https://game8.co/games/Genshin-Impact/archives/372781",
         "info": null
       },
       {
-        "label": "Alhaitham",
-        "link": "https://game8.co/games/Genshin-Impact/archives/383712",
-        "info": null
+        "label": "Epitome Invocation",
+        "link": "https://game8.co/games/Genshin-Impact/archives/304758",
+        "info": "Start: 2025/09/30 End: 2025/10/21 Bloodsoaked Ruins Aqua Simulacra Lion's Roar Favonius Greatsword Favonius Lance Favonius Codex Sacrificial Bow"
       }
     ]
   },
