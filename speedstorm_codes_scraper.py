@@ -8,7 +8,7 @@ Disney Speedstorm → Discord webhook notifier (PocketGamer).
 - Weekly health ping to a separate summary webhook when there's no new code for ≥ 7 days.
 
 Env:
-  WEBHOOK_URL_SPEEDSTORM   -> Discord webhook URL for Speedstorm alerts (required)
+  WEBHOOK_URL_CODEX   -> Discord webhook URL for Speedstorm alerts (required)
   WEBHOOK_URL_SUMMARY      -> Discord webhook URL for health pings (optional)
   ROLE_ID_SPEEDSTORM       -> Discord role ID to @mention on new codes (optional; ping once/run)
   DRY_RUN=true             -> don't post, just print (optional)
@@ -195,9 +195,9 @@ def main():
     tz = ZoneInfo("America/Sao_Paulo")
     now_sp = datetime.now(tz)
 
-    webhook_codes = (os.getenv("WEBHOOK_URL_SPEEDSTORM") or "").strip()
+    webhook_codes = (os.getenv("WEBHOOK_URL_CODEX") or "").strip()
     if not webhook_codes:
-        raise SystemExit("Missing WEBHOOK_URL_SPEEDSTORM env var.")
+        raise SystemExit("Missing WEBHOOK_URL_CODEX env var.")
     webhook_summary = (os.getenv("WEBHOOK_URL_SUMMARY") or "").strip()
 
     role_id_env = (os.getenv("ROLE_ID_SPEEDSTORM") or "").strip()
