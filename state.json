@@ -250,7 +250,7 @@
     ]
   },
   "wuthering-waves::events": {
-    "last_updated": "October 6, 2025 01:04 AM",
+    "last_updated": "October 7, 2025 03:04 AM",
     "items": [
       {
         "label": "Second Coming of Solaris (Ultra)",
@@ -303,19 +303,34 @@
         "info": "September 25, 2025 - October 8, 2025 Reach Union Level 8"
       },
       {
+        "label": "Lollo Campaign",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/458245",
+        "info": "November 6, 2025 - November 19, 2025 Earn Lollo Stamps daily and spin the roulette in exchange for rewards!"
+      },
+      {
+        "label": "Septimont Weather Forecast",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/556210",
+        "info": "October 16, 2025 - October 30, 2025 Ready, Set, Go! Another platforming event graces Solaris-3, this time in Septimont! Complete all challenges to get Astrites and other rewards!"
+      },
+      {
+        "label": "Lament Recon: Solaris Soldier",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/555963",
+        "info": "October 11, 2025 - November 19, 2025 Defend Septimont from the Dark Tide in a simulated environment as you through waves of enemies in a bullet hell rogue-like event!"
+      },
+      {
         "label": "Freeze Frame: Action Highlights",
         "link": "https://game8.co/games/Wuthering-Waves/archives/555926",
-        "info": "Releases in Version 2.7 Take snap shots of characters in game while fulfilling certain criteria to get Astrites and other premium materials!"
+        "info": "October 30, 2025 - November 19, 2025 Take snap shots of characters in game while fulfilling certain criteria to get Astrites and other premium materials!"
       },
       {
         "label": "Gifts of Approaching Dawn",
         "link": "https://game8.co/games/Wuthering-Waves/archives/458199",
-        "info": "Releases in Version 2.7 Log-in for 7 days to claim Radiant and Lustrous Tides!"
+        "info": "October 9, 2025 - November 19, 2025 Log-in for 7 days to claim Radiant and Lustrous Tides!"
       },
       {
         "label": "Gifts of Ink Song",
         "link": "https://game8.co/games/Wuthering-Waves/archives/555920",
-        "info": "Releases in Version 2.7 Log-in for 7 days within the event period to claim Astrites and Premium materials!"
+        "info": "October 30, 2025 - November 19, 2025 Log-in for 7 days within the event period to claim Astrites and Premium materials!"
       }
     ]
   },
@@ -368,6 +383,16 @@
         "info": null
       },
       {
+        "label": "Gold City",
+        "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/555980",
+        "info": null
+      },
+      {
+        "label": "Narita Brian SSR",
+        "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/556309",
+        "info": null
+      },
+      {
         "label": "Mejiro Ryan Guts SSR",
         "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/554965",
         "info": null
@@ -396,16 +421,6 @@
         "label": "Seiun Sky",
         "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/547840",
         "info": "Seiun Sky Silence Suzuka and Tamamo Cross 9/17/2025 - 9/25/2025"
-      },
-      {
-        "label": "Silence Suzuka and Tamamo Cross",
-        "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/550056",
-        "info": "Seiun Sky Silence Suzuka and Tamamo Cross 9/17/2025 - 9/25/2025"
-      },
-      {
-        "label": "Hishi Amazon",
-        "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/547833",
-        "info": "Hishi Amazon Bamboo Memory and Shinko Windy 9/17/2025 - 9/25/2025"
       }
     ]
   },
