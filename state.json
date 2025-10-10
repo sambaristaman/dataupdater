@@ -348,18 +348,23 @@
         "info": null
       },
       {
-        "label": "Mejiro Ryan Guts SSR",
-        "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/554965",
+        "label": "Maruzensky",
+        "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/556411",
         "info": null
       },
       {
-        "label": "Mejiro Ardan Wit SR",
-        "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/554966",
+        "label": "Special Week",
+        "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/556853",
         "info": null
       },
       {
-        "label": "Cancer Cup Champions Meeting",
+        "label": "Cancer Cup",
         "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/550078",
+        "info": null
+      },
+      {
+        "label": "Leo Cup",
+        "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/554738",
         "info": null
       },
       {
@@ -371,17 +376,17 @@
         "label": "Training the Trainer Skills and Epithets",
         "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/554996",
         "info": null
-      },
-      {
-        "label": "Seiun Sky",
-        "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/547840",
-        "info": "Seiun Sky Silence Suzuka and Tamamo Cross 9/17/2025 - 9/25/2025"
       }
     ]
   },
   "genshin-impact::events": {
-    "last_updated": "October 8, 2025 02:20 AM",
+    "last_updated": "October 10, 2025 03:01 AM",
     "items": [
+      {
+        "label": "Lightgleaner's Journey",
+        "link": "https://game8.co/games/Genshin-Impact/archives/546846",
+        "info": "October 10, 2025 \u2192 October 21, 2025"
+      },
       {
         "label": "Overflowing Favor",
         "link": "https://game8.co/games/Genshin-Impact/archives/504840",
@@ -411,11 +416,6 @@
         "label": "Free Standard Banner 5-Star Selector",
         "link": "https://game8.co/games/Genshin-Impact/archives/387957",
         "info": "September 10, 2025 \u2192 October 21, 2025"
-      },
-      {
-        "label": "Lightgleaner's Journey",
-        "link": "https://game8.co/games/Genshin-Impact/archives/546846",
-        "info": "October 10, 2025 \u2192 October 21, 2025"
       },
       {
         "label": "Stygian Onslaught",
@@ -495,12 +495,12 @@
     ]
   },
   "wuthering-waves::gacha": {
-    "last_updated": "October 8, 2025 11:12 PM",
+    "last_updated": "October 10, 2025 02:18 AM",
     "items": [
       {
         "label": "Absolute Pulsation (Lux & Umbra)",
         "link": "https://game8.co/games/Wuthering-Waves/archives/455400",
-        "info": "October 9, 2025 - October 30, 2025"
+        "info": null
       },
       {
         "label": "Wanderer Knows No Far and Near",
