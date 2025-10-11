@@ -250,7 +250,7 @@
     ]
   },
   "wuthering-waves::events": {
-    "last_updated": "October 8, 2025 11:02 PM",
+    "last_updated": "October 11, 2025 02:07 AM",
     "items": [
       {
         "label": "Ascendant Aces",
@@ -263,14 +263,29 @@
         "info": "October 9, 2025 - November 19, 2025 Reach Union Level 8 and Log in during Version 2.7"
       },
       {
-        "label": "Lollo Campaign: Ice Savior",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/458245",
-        "info": "November 6, 2025 - November 19, 2025 Earn Lollo Stamps daily and spin the roulette in exchange for rewards!"
+        "label": "Lament Recon: Solaris Soldier",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/555963",
+        "info": "October 11, 2025 - November 19, 2025 Reach Union Level 14 and unlock the Resonance Nexus in Ragunna City during Main Quest \"The Sacred Breeze So Often Breathes\""
       },
       {
-        "label": "Chord Cleansing",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/457211",
-        "info": "November 12, 2025 - November 19, 2025 Earn double echo and echo leveling material drops during this event!"
+        "label": "Galbrena",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/524888",
+        "info": "The first phase features Galbrena and Lupa as trial characters for the 1st phase of the Ascendant Aces event. Get to try their kits and the feel for their gameplay in this event!"
+      },
+      {
+        "label": "Ascendant Aces Event Guide",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/456482",
+        "info": "Log-in for 7 days to get 5 Lustrous Tides and 5 Radiant Tides!"
+      },
+      {
+        "label": "Gifts of Approaching Dawn Event Guide",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/458199",
+        "info": null
+      },
+      {
+        "label": "Lament Recon: Solaris Soldier Event Guide",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/555963",
+        "info": null
       },
       {
         "label": "Septimont Weather Forecast",
@@ -278,9 +293,9 @@
         "info": "October 16, 2025 - October 30, 2025 Ready, Set, Go! Another platforming event graces Solaris-3, this time in Septimont! Complete all challenges to get Astrites and other rewards!"
       },
       {
-        "label": "Lament Recon: Solaris Soldier",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/555963",
-        "info": "October 11, 2025 - November 19, 2025 Defend Septimont from the Dark Tide in a simulated environment as you through waves of enemies in a bullet hell rogue-like event!"
+        "label": "Bountiful Crescendo",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/458244",
+        "info": "October 23, 2025 - October 30, 2025 Earn double leveling material drops during this event!"
       },
       {
         "label": "Freeze Frame: Action Highlights",
@@ -291,6 +306,36 @@
         "label": "Gifts of Ink Song",
         "link": "https://game8.co/games/Wuthering-Waves/archives/555920",
         "info": "October 30, 2025 - November 19, 2025 Log-in for 7 days within the event period to claim Astrites and Premium materials!"
+      },
+      {
+        "label": "Lollo Campaign: Ice Savior",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/458245",
+        "info": "November 6, 2025 - November 19, 2025 Earn Lollo Stamps daily and spin the roulette in exchange for rewards!"
+      },
+      {
+        "label": "Chord Cleansing",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/457211",
+        "info": "November 12, 2025 - November 19, 2025 Earn double echo and echo leveling material drops during this event!"
+      },
+      {
+        "label": "Septimont Weather Forecast Event Guide",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/556210",
+        "info": "Spend waveplates at Forgery Domains and Simulation Challenges to reap double their rewards for a limited time!"
+      },
+      {
+        "label": "Forgery Domains",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/457328",
+        "info": "Spend waveplates at Forgery Domains and Simulation Challenges to reap double their rewards for a limited time!"
+      },
+      {
+        "label": "Bountiful Crescendo Event Guide",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/458244",
+        "info": "Get ready to take photos of the characters in-game all while fulfilling certain criterias to get Astrites and other premium materials!"
+      },
+      {
+        "label": "Freeze Frame: Action Highlights Event Guide",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/555926",
+        "info": "Log in daily to participate in this event and earn various rewards!"
       }
     ]
   },
@@ -380,7 +425,7 @@
     ]
   },
   "genshin-impact::events": {
-    "last_updated": "October 10, 2025 03:01 AM",
+    "last_updated": "October 10, 2025 11:26 AM",
     "items": [
       {
         "label": "Lightgleaner's Journey",
@@ -418,6 +463,26 @@
         "info": "September 10, 2025 \u2192 October 21, 2025"
       },
       {
+        "label": "Saurian Sojourn",
+        "link": "https://game8.co/games/Genshin-Impact/archives/557050",
+        "info": "October 24, 2025 \u2192 November 03, 2025"
+      },
+      {
+        "label": "Ruins Exploration: Fieldwise Center",
+        "link": "https://game8.co/games/Genshin-Impact/archives/557049",
+        "info": "November 07, 2025 \u2192 November 24, 2025"
+      },
+      {
+        "label": "Dance Dance Dynamic Disco",
+        "link": "https://game8.co/games/Genshin-Impact/archives/538064",
+        "info": "November 17, 2025 \u2192 November 26, 2025"
+      },
+      {
+        "label": "Overflowing Abundance",
+        "link": "https://game8.co/games/Genshin-Impact/archives/491944",
+        "info": "November 24, 2025 \u2192 December 01, 2025"
+      },
+      {
         "label": "Stygian Onslaught",
         "link": "https://game8.co/games/Genshin-Impact/archives/527266",
         "info": "September 17, 2025 \u2192 October 21, 2025"
@@ -426,31 +491,11 @@
         "label": "Character Test Runs",
         "link": null,
         "info": null
-      },
-      {
-        "label": "Battle Pass - Glacial Moon",
-        "link": "https://game8.co/games/Genshin-Impact/archives/301612",
-        "info": null
-      },
-      {
-        "label": "Travelers' Tales",
-        "link": "https://game8.co/games/Genshin-Impact/archives/495326",
-        "info": null
-      },
-      {
-        "label": "Repertoire of Myriad Melodies",
-        "link": "https://game8.co/games/Genshin-Impact/archives/406198",
-        "info": null
-      },
-      {
-        "label": "Daily Check-In",
-        "link": "https://game8.co/games/Genshin-Impact/archives/321404",
-        "info": null
       }
     ]
   },
   "genshin-impact::gacha": {
-    "last_updated": "October 8, 2025 11:30 PM",
+    "last_updated": "October 10, 2025 09:15 AM",
     "items": [
       {
         "label": "The Lone Light Knocks at Night",
