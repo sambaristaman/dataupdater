@@ -340,22 +340,12 @@
     ]
   },
   "honkai-star-rail::events": {
-    "last_updated": "October 8, 2025 09:14 PM",
+    "last_updated": "October 15, 2025 01:02 AM",
     "items": [
-      {
-        "label": "Try-Not-to-Laugh Challenge",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/550775",
-        "info": "Duration: 10/15 - 11/03/2025 Challenge various combat stages with the help of buffs from Suprise Gifts!"
-      },
       {
         "label": "3.6 Realm of the Strange",
         "link": "https://game8.co/games/Honkai-Star-Rail/archives/417674",
         "info": "Duration: 10/24 - 11/03/2025 Get double the relics when challenging Caverns of Corrosion!"
-      },
-      {
-        "label": "Pact of Permansor Terrae",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/550750",
-        "info": "Duration: 10/15/2025 - End of 4.0 Log in during the event to claim a free copy of Permansor Terrae and his upgrade materials!"
       }
     ]
   },
@@ -378,16 +368,6 @@
         "info": null
       },
       {
-        "label": "Gold City",
-        "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/555980",
-        "info": null
-      },
-      {
-        "label": "Narita Brian SSR",
-        "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/556309",
-        "info": null
-      },
-      {
         "label": "Maruzensky",
         "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/556411",
         "info": null
@@ -395,6 +375,21 @@
       {
         "label": "Special Week",
         "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/556853",
+        "info": null
+      },
+      {
+        "label": "Sweep Tosho",
+        "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/557354",
+        "info": null
+      },
+      {
+        "label": "Winning Ticket",
+        "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/557355",
+        "info": null
+      },
+      {
+        "label": "Daiwa Scarlet",
+        "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/557356",
         "info": null
       },
       {
@@ -416,11 +411,6 @@
         "label": "Training the Trainer Event Missions",
         "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/554996",
         "info": null
-      },
-      {
-        "label": "Seiun Sky",
-        "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/547840",
-        "info": "Seiun Sky Silence Suzuka and Tamamo Cross 9/17/2025 - 9/25/2025"
       }
     ]
   },
@@ -610,42 +600,37 @@
     ]
   },
   "honkai-star-rail::gacha": {
-    "last_updated": "September 24, 2025 10:28 PM",
+    "last_updated": "October 15, 2025 12:45 AM",
     "items": [
       {
-        "label": "Evernight Banner",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/539568",
-        "info": "(Ver. 3.6 Phase 1) The Herta Banner (Ver. 3.6 Phase 1) Banner Dates: Sep. 23, 2025 - Oct. 15, 2025 Featured 5-Star: Evernight ( Remembrance , Ice ) The Herta ( Erudition , Ice ) Featured 4-Star: Misha ( Destruction , Ice ) Guinaifen ( Nihility , Fire ) Xueyi ( Destruction , Quantum )"
+        "label": "Permansor Terrae Banner",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/541446",
+        "info": "(Ver. 3.6 Phase 2) Anaxa Banner (Ver. 3.6 Phase 2) Banner Dates: Oct. 15, 2025 - Nov. 04, 2025 Featured 5-Star: Permansor Terrae ( Preservation , Physical ) Anaxa ( Erudition , Wind ) Featured 4-Star: Sushang ( Hunt , Physical ) Hanya ( Harmony , Physical ) Serval ( Erudition , Lightning )"
       },
       {
-        "label": "The Herta Banner",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/485793",
-        "info": "Evernight Banner (Ver. 3.6 Phase 1) (Ver. 3.6 Phase 1) Banner Dates: Sep. 23, 2025 - Oct. 15, 2025 Featured 5-Star: Evernight ( Remembrance , Ice ) The Herta ( Erudition , Ice ) Featured 4-Star: Misha ( Destruction , Ice ) Guinaifen ( Nihility , Fire ) Xueyi ( Destruction , Quantum )"
+        "label": "Anaxa Banner",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/499049",
+        "info": "Permansor Terrae Banner (Ver. 3.6 Phase 2) (Ver. 3.6 Phase 2) Banner Dates: Oct. 15, 2025 - Nov. 04, 2025 Featured 5-Star: Permansor Terrae ( Preservation , Physical ) Anaxa ( Erudition , Wind ) Featured 4-Star: Sushang ( Hunt , Physical ) Hanya ( Harmony , Physical ) Serval ( Erudition , Lightning )"
       },
       {
-        "label": "Evernight",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/513418",
-        "info": "Banner (Ver. 3.6 Phase 1) The Herta Banner (Ver. 3.6 Phase 1) Banner Dates: Sep. 23, 2025 - Oct. 15, 2025 Featured 5-Star: ( Remembrance , Ice ) The Herta ( Erudition , Ice ) Featured 4-Star: Misha ( Destruction , Ice ) Guinaifen ( Nihility , Fire ) Xueyi ( Destruction , Quantum )"
+        "label": "Permansor Terrae",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/541483",
+        "info": "Banner (Ver. 3.6 Phase 2) Anaxa Banner (Ver. 3.6 Phase 2) Banner Dates: Oct. 15, 2025 - Nov. 04, 2025 Featured 5-Star: ( Preservation , Physical ) Anaxa ( Erudition , Wind ) Featured 4-Star: Sushang ( Hunt , Physical ) Hanya ( Harmony , Physical ) Serval ( Erudition , Lightning )"
       },
       {
-        "label": "The Herta",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/485784",
-        "info": "Evernight Banner (Ver. 3.6 Phase 1) Banner (Ver. 3.6 Phase 1) Banner Dates: Sep. 23, 2025 - Oct. 15, 2025 Featured 5-Star: Evernight ( Remembrance , Ice ) ( Erudition , Ice ) Featured 4-Star: Misha ( Destruction , Ice ) Guinaifen ( Nihility , Fire ) Xueyi ( Destruction , Quantum )"
+        "label": "Anaxa",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/486296",
+        "info": "Permansor Terrae Banner (Ver. 3.6 Phase 2) Banner (Ver. 3.6 Phase 2) Banner Dates: Oct. 15, 2025 - Nov. 04, 2025 Featured 5-Star: Permansor Terrae ( Preservation , Physical ) ( Erudition , Wind ) Featured 4-Star: Sushang ( Hunt , Physical ) Hanya ( Harmony , Physical ) Serval ( Erudition , Lightning )"
       },
       {
-        "label": "To Evernight's Stars Banner",
+        "label": "Though Worlds Apart Banner",
         "link": "https://game8.co/games/Honkai-Star-Rail/archives/408767",
-        "info": "(Ver. 3.6 Phase 1) Into the Unreachable Veil Banner (Ver. 3.6 Phase 1) Banner Dates : Sep. 23, 2025 - Oct. 15, 2025 Featured 5-Star: To Evernight's Stars ( Remembrance ) Into the Unreachable Veil ( Erudition ) Featured 4-Star: Dance! Dance! Dance! ( Harmony ) After the Charmony Fall ( Erudition ) Dream's Montage ( Abundance )"
+        "info": "(Ver. 3.6 Phase 2) Life Should Be Cast to Flames Banner (Ver. 3.6 Phase 2) Banner Dates : Oct. 15, 2025 - Nov. 04, 2025 Featured 5-Star: Though Worlds Apart ( Preservation ) Life Should Be Cast to Flames ( Erudition ) Featured 4-Star: Landau's Choice ( Preservation ) Only Silence Remains ( Hunt ) Perfect Timing ( Abundance )"
       },
       {
-        "label": "Into the Unreachable Veil Banner",
+        "label": "Life Should Be Cast to Flames Banner",
         "link": "https://game8.co/games/Honkai-Star-Rail/archives/429241",
-        "info": "To Evernight's Stars Banner (Ver. 3.6 Phase 1) (Ver. 3.6 Phase 1) Banner Dates : Sep. 23, 2025 - Oct. 15, 2025 Featured 5-Star: To Evernight's Stars ( Remembrance ) Into the Unreachable Veil ( Erudition ) Featured 4-Star: Dance! Dance! Dance! ( Harmony ) After the Charmony Fall ( Erudition ) Dream's Montage ( Abundance )"
-      },
-      {
-        "label": "To Evernight's Stars",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/550755",
-        "info": "Banner (Ver. 3.6 Phase 1) Into the Unreachable Veil Banner (Ver. 3.6 Phase 1) Banner Dates : Sep. 23, 2025 - Oct. 15, 2025 Featured 5-Star: ( Remembrance ) Into the Unreachable Veil ( Erudition ) Featured 4-Star: Dance! Dance! Dance! ( Harmony ) After the Charmony Fall ( Erudition ) Dream's Montage ( Abundance )"
+        "info": "Though Worlds Apart Banner (Ver. 3.6 Phase 2) (Ver. 3.6 Phase 2) Banner Dates : Oct. 15, 2025 - Nov. 04, 2025 Featured 5-Star: Though Worlds Apart ( Preservation ) Life Should Be Cast to Flames ( Erudition ) Featured 4-Star: Landau's Choice ( Preservation ) Only Silence Remains ( Hunt ) Perfect Timing ( Abundance )"
       },
       {
         "label": "Saber Banner",
@@ -683,53 +668,8 @@
         "info": null
       },
       {
-        "label": "Permansor Terrae Banner",
+        "label": "Permansor Terrae Banner Schedule",
         "link": "https://game8.co/games/Honkai-Star-Rail/archives/541446",
-        "info": "(Ver. 3.6 Phase 2) Anaxa Banner (Ver. 3.6 Phase 2) Banner Dates: Oct. 15, 2025 - Nov. 04, 2025 Featured 5-Star: Permansor Terrae ( Preservation , Physical ) Anaxa ( Erudition , Wind ) Featured 4-Star: Sushang ( Hunt , Physical ) Hanya ( Harmony , Physical ) Serval ( Erudition , Lightning )"
-      },
-      {
-        "label": "Anaxa Banner",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/499049",
-        "info": "Permansor Terrae Banner (Ver. 3.6 Phase 2) (Ver. 3.6 Phase 2) Banner Dates: Oct. 15, 2025 - Nov. 04, 2025 Featured 5-Star: Permansor Terrae ( Preservation , Physical ) Anaxa ( Erudition , Wind ) Featured 4-Star: Sushang ( Hunt , Physical ) Hanya ( Harmony , Physical ) Serval ( Erudition , Lightning )"
-      },
-      {
-        "label": "Permansor Terrae",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/541483",
-        "info": "Banner (Ver. 3.6 Phase 2) Anaxa Banner (Ver. 3.6 Phase 2) Banner Dates: Oct. 15, 2025 - Nov. 04, 2025 Featured 5-Star: ( Preservation , Physical ) Anaxa ( Erudition , Wind ) Featured 4-Star: Sushang ( Hunt , Physical ) Hanya ( Harmony , Physical ) Serval ( Erudition , Lightning )"
-      },
-      {
-        "label": "Anaxa",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/486296",
-        "info": "Permansor Terrae Banner (Ver. 3.6 Phase 2) Banner (Ver. 3.6 Phase 2) Banner Dates: Oct. 15, 2025 - Nov. 04, 2025 Featured 5-Star: Permansor Terrae ( Preservation , Physical ) ( Erudition , Wind ) Featured 4-Star: Sushang ( Hunt , Physical ) Hanya ( Harmony , Physical ) Serval ( Erudition , Lightning )"
-      },
-      {
-        "label": "Though Worlds Apart Banner",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/408767",
-        "info": "(Ver. 3.6 Phase 2) Life Should Be Cast to Flames Banner (Ver. 3.6 Phase 2) Banner Dates : Oct. 15, 2025 - Nov. 04, 2025 Featured 5-Star: Though Worlds Apart ( Preservation ) Life Should Be Cast to Flames ( Erudition ) Featured 4-Star: Landau's Choice ( Preservation ) Only Silence Remains ( Hunt ) Perfect Timing ( Abundance )"
-      },
-      {
-        "label": "Life Should Be Cast to Flames Banner",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/429241",
-        "info": "Though Worlds Apart Banner (Ver. 3.6 Phase 2) (Ver. 3.6 Phase 2) Banner Dates : Oct. 15, 2025 - Nov. 04, 2025 Featured 5-Star: Though Worlds Apart ( Preservation ) Life Should Be Cast to Flames ( Erudition ) Featured 4-Star: Landau's Choice ( Preservation ) Only Silence Remains ( Hunt ) Perfect Timing ( Abundance )"
-      },
-      {
-        "label": "Brilliant Fixation",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/408767",
-        "info": "Permansor Terrae's banner will run from October 15, 2025 until November 4, 2025 (Server Time) . His Light Cone, Though Worlds Apart , will also be available at the same time in the banner."
-      },
-      {
-        "label": "Permansor Terrae Banner Schedule and Rates",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/541446",
-        "info": null
-      },
-      {
-        "label": "Bygone Reminiscence",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/429241",
-        "info": "Anaxa's rerun banner will be available from October 15, 2025 until November 4, 2025 (Server Time) . His Light Cone, Life Should Be Cast to Flames , will also available through the banner."
-      },
-      {
-        "label": "Anaxa Banner Schedule and Rates",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/499049",
         "info": null
       },
       {
@@ -741,6 +681,11 @@
         "label": "Cyrene Banner Schedule and Rates",
         "link": "https://game8.co/games/Honkai-Star-Rail/archives/550105",
         "info": null
+      },
+      {
+        "label": "Evernight",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/513418",
+        "info": "Remembrance characters such as Castorice and Hyacine might see reruns in the future due to the recent release of , who buffs memosprite usage."
       }
     ]
   }
