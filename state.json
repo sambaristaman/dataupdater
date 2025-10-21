@@ -340,7 +340,7 @@
     ]
   },
   "honkai-star-rail::events": {
-    "last_updated": "October 15, 2025 01:02 AM",
+    "last_updated": "October 20, 2025 09:12 PM",
     "items": [
       {
         "label": "3.6 Realm of the Strange",
@@ -530,7 +530,7 @@
     ]
   },
   "wuthering-waves::gacha": {
-    "last_updated": "October 10, 2025 02:18 AM",
+    "last_updated": "October 21, 2025 04:01 AM",
     "items": [
       {
         "label": "Absolute Pulsation (Lux & Umbra)",
@@ -600,7 +600,7 @@
     ]
   },
   "honkai-star-rail::gacha": {
-    "last_updated": "October 15, 2025 12:45 AM",
+    "last_updated": "October 21, 2025 02:50 AM",
     "items": [
       {
         "label": "Permansor Terrae Banner",
@@ -683,9 +683,14 @@
         "info": null
       },
       {
-        "label": "Evernight",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/513418",
-        "info": "Remembrance characters such as Castorice and Hyacine might see reruns in the future due to the recent release of , who buffs memosprite usage."
+        "label": "The Dahlia Banner",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/559660",
+        "info": "(Ver. 3.8 Phase 1) Banner Dates: Dec. 16, 2025 - Jan. 07, 2026 Featured 5-Star: The Dahlia ( Nihility , Fire ) Featured 4-Star: TBA TBA TBA"
+      },
+      {
+        "label": "The Dahlia Banner Schedule and Rates",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/559660",
+        "info": null
       }
     ]
   }
