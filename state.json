@@ -368,6 +368,11 @@
         "info": null
       },
       {
+        "label": "Meisho Doto",
+        "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/557789",
+        "info": null
+      },
+      {
         "label": "Maruzensky",
         "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/556411",
         "info": null
@@ -406,41 +411,21 @@
         "label": "Training the Trainer Event Missions",
         "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/554996",
         "info": null
-      },
-      {
-        "label": "Seiun Sky",
-        "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/547840",
-        "info": "Seiun Sky Silence Suzuka and Tamamo Cross 9/17/2025 - 9/25/2025"
       }
     ]
   },
   "genshin-impact::events": {
-    "last_updated": "October 13, 2025 02:43 AM",
+    "last_updated": "October 22, 2025 06:18 AM",
     "items": [
-      {
-        "label": "Starbound Oath Web Event",
-        "link": "https://game8.co/games/Genshin-Impact/archives/557193",
-        "info": "October 10, 2025 \u2192 October 21, 2025"
-      },
-      {
-        "label": "Lightgleaner's Journey",
-        "link": "https://game8.co/games/Genshin-Impact/archives/546846",
-        "info": "October 10, 2025 \u2192 October 21, 2025"
-      },
-      {
-        "label": "Silvery Flux Daily Login",
-        "link": "https://game8.co/games/Genshin-Impact/archives/550057",
-        "info": "October 1, 2025 \u2192 October 21, 2025"
-      },
       {
         "label": "To Temper Thyself and Journey Far",
         "link": "https://game8.co/games/Genshin-Impact/archives/546841",
         "info": "September 10, 2025 \u2192 December 01, 2025"
       },
       {
-        "label": "Free Standard Banner 5-Star Selector",
-        "link": "https://game8.co/games/Genshin-Impact/archives/387957",
-        "info": "September 10, 2025 \u2192 October 21, 2025"
+        "label": "Starbound Oath Web Event",
+        "link": "https://game8.co/games/Genshin-Impact/archives/557193",
+        "info": "October 10, 2025 \u2192 October 21, 2025"
       },
       {
         "label": "Saurian Sojourn",
@@ -465,7 +450,7 @@
       {
         "label": "Stygian Onslaught",
         "link": "https://game8.co/games/Genshin-Impact/archives/527266",
-        "info": "September 17, 2025 \u2192 October 21, 2025"
+        "info": "October 30, 2025 \u2192 December 2, 2025"
       },
       {
         "label": "Character Test Runs",
@@ -473,7 +458,7 @@
         "info": null
       },
       {
-        "label": "Battle Pass - Glacial Moon",
+        "label": "Battle Pass - Ruins Chronicle",
         "link": "https://game8.co/games/Genshin-Impact/archives/301612",
         "info": null
       },
@@ -481,11 +466,26 @@
         "label": "Travelers' Tales",
         "link": "https://game8.co/games/Genshin-Impact/archives/495326",
         "info": null
+      },
+      {
+        "label": "Repertoire of Myriad Melodies",
+        "link": "https://game8.co/games/Genshin-Impact/archives/406198",
+        "info": null
+      },
+      {
+        "label": "Daily Check-In",
+        "link": "https://game8.co/games/Genshin-Impact/archives/321404",
+        "info": null
+      },
+      {
+        "label": "Stellar Reunion",
+        "link": "https://game8.co/games/Genshin-Impact/archives/315013",
+        "info": null
       }
     ]
   },
   "genshin-impact::gacha": {
-    "last_updated": "October 10, 2025 09:15 AM",
+    "last_updated": "October 21, 2025 10:09 PM",
     "items": [
       {
         "label": "The Lone Light Knocks at Night",
