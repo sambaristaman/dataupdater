@@ -345,12 +345,37 @@
     ]
   },
   "honkai-star-rail::events": {
-    "last_updated": "October 20, 2025 09:12 PM",
+    "last_updated": "October 24, 2025 02:04 PM",
     "items": [
       {
-        "label": "3.6 Realm of the Strange",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/417674",
-        "info": "Duration: 10/24 - 11/03/2025 Get double the relics when challenging Caverns of Corrosion!"
+        "label": "3.7",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/549138",
+        "info": "Snack Dash Duration: Sometime in 3.7 Bet on winning contestants in a special obstacle race to earn various rewards!"
+      },
+      {
+        "label": "Free Golden Companion Spirit",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/560882",
+        "info": "Duration: Start of 3.7 - End of 4.0 Log in from 3.7 to the end of 4.0 to get a Golden Companion Spirit, which can be exchanged for a free 5-Star!"
+      },
+      {
+        "label": "Cherished Recollection",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/507548",
+        "info": "Duration: Sometime in 3.7 Purchase Oneiric Shards to reach top-up milestones and earn special rewards like Cyrene's bow skin!"
+      },
+      {
+        "label": "3.7 Gift of Odyssey",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/413645",
+        "info": "Duration: Sometime in 3.7 Log in a total of 7 days to claim up 10 Star Rail Special Passes!"
+      },
+      {
+        "label": "3.7 Planar Fissure",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/413440",
+        "info": "Duration: Sometime in 3.7 Get double the planar ornaments when challenging Worlds in the Simulated Universe!"
+      },
+      {
+        "label": "3.7 Garden of Plenty",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/413423",
+        "info": "Duration: Sometime in 3.7 Get double the rewards when completing Crimson and Golden Calyx stages!"
       }
     ]
   },
@@ -605,7 +630,7 @@
     ]
   },
   "honkai-star-rail::gacha": {
-    "last_updated": "October 21, 2025 02:50 AM",
+    "last_updated": "October 24, 2025 12:28 PM",
     "items": [
       {
         "label": "Permansor Terrae Banner",
@@ -680,7 +705,17 @@
       {
         "label": "Cyrene Banner",
         "link": "https://game8.co/games/Honkai-Star-Rail/archives/550105",
-        "info": "(Ver. 3.7 Phase 1) Banner Dates: Nov. 04, 2025 - Nov. 26, 2025 Featured 5-Star: Cyrene ( Remembrance , Ice ) Featured 4-Star: TBA TBA TBA"
+        "info": "(Ver. 3.7) Banner Dates : Nov. 04, 2025 - Dec. 16, 2025 Featured 5-Star: Cyrene ( Remembrance , Ice ) Featured 4-Star: Moze ( Hunt , Lightning ) Lynx ( Abundance , Quantum ) Pela ( Nihility , Ice )"
+      },
+      {
+        "label": "This Love, Forever Banner",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/408767",
+        "info": "(Ver. 3.7) Banner Dates : Nov. 04, 2025 - Dec. 16, 2025 Featured 5-Star: This Love, Forever ( Remembrance ) Featured 4-Star: Concert for Two ( Preservation ) Boundless Choreo ( Nihility ) The Story's Next Page ( Remembrance )"
+      },
+      {
+        "label": "Brilliant Fixation",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/408767",
+        "info": "Cyrene's banner will run from November 4, 2025 (UTC-5) until December 16, 2025 . Her signature Light Cone, This Love, Forever , will run at the same time through the banner."
       },
       {
         "label": "Cyrene Banner Schedule and Rates",
@@ -688,9 +723,24 @@
         "info": null
       },
       {
+        "label": "Indelible Coterie Banner Schedule and Rates",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/470223",
+        "info": null
+      },
+      {
         "label": "The Dahlia Banner",
         "link": "https://game8.co/games/Honkai-Star-Rail/archives/559660",
         "info": "(Ver. 3.8 Phase 1) Banner Dates: Dec. 16, 2025 - Jan. 07, 2026 Featured 5-Star: The Dahlia ( Nihility , Fire ) Featured 4-Star: TBA TBA TBA"
+      },
+      {
+        "label": "Indelible Coterie Banner Schedule and Rates",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/470223",
+        "info": null
+      },
+      {
+        "label": "Brilliant Fixation",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/408767",
+        "info": null
       },
       {
         "label": "The Dahlia Banner Schedule and Rates",
