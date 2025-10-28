@@ -403,28 +403,18 @@
         "info": null
       },
       {
-        "label": "Maruzensky",
-        "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/556411",
+        "label": "Eishin Flash",
+        "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/558104",
         "info": null
       },
       {
-        "label": "Special Week",
-        "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/556853",
+        "label": "Nice Nature",
+        "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/558833",
         "info": null
       },
       {
-        "label": "Sweep Tosho",
-        "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/557354",
-        "info": null
-      },
-      {
-        "label": "Winning Ticket",
-        "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/557355",
-        "info": null
-      },
-      {
-        "label": "Daiwa Scarlet",
-        "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/557356",
+        "label": "Tosen Jordan",
+        "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/558835",
         "info": null
       },
       {
@@ -438,9 +428,19 @@
         "info": null
       },
       {
-        "label": "Training the Trainer Event Missions",
-        "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/554996",
+        "label": "Half Anniversary Event Rewards",
+        "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/554733",
         "info": null
+      },
+      {
+        "label": "Seiun Sky",
+        "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/547840",
+        "info": "Seiun Sky Silence Suzuka and Tamamo Cross 9/17/2025 - 9/25/2025"
+      },
+      {
+        "label": "Silence Suzuka and Tamamo Cross",
+        "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/550056",
+        "info": "Seiun Sky Silence Suzuka and Tamamo Cross 9/17/2025 - 9/25/2025"
       }
     ]
   },
@@ -630,7 +630,7 @@
     ]
   },
   "honkai-star-rail::gacha": {
-    "last_updated": "October 24, 2025 12:28 PM",
+    "last_updated": "October 28, 2025 05:20 AM",
     "items": [
       {
         "label": "Permansor Terrae Banner",
