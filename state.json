@@ -250,12 +250,12 @@
     ]
   },
   "wuthering-waves::events": {
-    "last_updated": "October 23, 2025 04:15 AM",
+    "last_updated": "October 30, 2025 02:04 AM",
     "items": [
       {
         "label": "Ascendant Aces",
         "link": "https://game8.co/games/Wuthering-Waves/archives/456482",
-        "info": "October 9, 2025 - October 30, 2025 Unlocked by default"
+        "info": "October 30, 2025 - November 19, 2025 Unlocked by default"
       },
       {
         "label": "Gifts of Approaching Dawn",
@@ -268,19 +268,19 @@
         "info": "October 11, 2025 - November 19, 2025 Reach Union Level 14 and unlock the Resonance Nexus in Ragunna City during Main Quest \"The Sacred Breeze So Often Breathes\""
       },
       {
-        "label": "Septimont Weather Forecast",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/556210",
-        "info": "October 16, 2025 - October 30, 2025 Reach Union Level 14 and successfully \"collapse the experimental unit\" during Main Quest Chapter II Act V \"Shadow of Glory\""
+        "label": "Freeze Frame: Action Highlights",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/555926",
+        "info": "October 30, 2025 - November 19, 2025 Reach Union Level 14 and complete Main Quest Chapter II Prologue \"Through the Sea Thou Break\""
       },
       {
-        "label": "Bountiful Crescendo",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/458244",
-        "info": "October 23, 2025 - October 30, 2025 Reach Union Level 14"
+        "label": "Gifts of Ink Song",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/555920",
+        "info": "October 30, 2025 - November 19, 2025 Reach Union Level 8 and Log in during phase two of Version 2.7"
       },
       {
-        "label": "Galbrena",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/524888",
-        "info": "The first phase features Galbrena and Lupa as trial characters for the 1st phase of the Ascendant Aces event. Get to try their kits and the feel for their gameplay in this event!"
+        "label": "Qiuyuan",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/524882",
+        "info": "The second phase features Qiuyuan as a new character, and a Zani rerun! Head into the Ascendant Aces event to get a preview of these characters in a trial stage."
       },
       {
         "label": "Ascendant Aces Event Guide",
@@ -295,22 +295,12 @@
       {
         "label": "Lament Recon: Solaris Soldier Event Guide",
         "link": "https://game8.co/games/Wuthering-Waves/archives/555963",
-        "info": null
+        "info": "Get ready to take photos of the characters in-game all while fulfilling certain criterias to get Astrites and other premium materials!"
       },
       {
-        "label": "Septimont Weather Forecast Event Guide",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/556210",
-        "info": "Spend waveplates at Forgery Domains and Simulation Challenges to reap double their rewards for a limited time!"
-      },
-      {
-        "label": "Freeze Frame: Action Highlights",
+        "label": "Freeze Frame: Action Highlights Event Guide",
         "link": "https://game8.co/games/Wuthering-Waves/archives/555926",
-        "info": "October 30, 2025 - November 19, 2025 Take snap shots of characters in game while fulfilling certain criteria to get Astrites and other premium materials!"
-      },
-      {
-        "label": "Gifts of Ink Song",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/555920",
-        "info": "October 30, 2025 - November 19, 2025 Log-in for 7 days within the event period to claim Astrites and Premium materials!"
+        "info": "Log in daily to participate in this event and earn various rewards!"
       },
       {
         "label": "Lollo Campaign: Ice Savior",
@@ -321,16 +311,6 @@
         "label": "Chord Cleansing",
         "link": "https://game8.co/games/Wuthering-Waves/archives/457211",
         "info": "November 12, 2025 - November 19, 2025 Earn double echo and echo leveling material drops during this event!"
-      },
-      {
-        "label": "Freeze Frame: Action Highlights Event Guide",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/555926",
-        "info": "Log in daily to participate in this event and earn various rewards!"
-      },
-      {
-        "label": "Gifts of Ink Song Event Guide",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/555920",
-        "info": "Login daily to earn Lollo Stamps! Be sure to spin the roulette in exchange for rewards!"
       },
       {
         "label": "Tacet Fields",
@@ -345,37 +325,42 @@
     ]
   },
   "honkai-star-rail::events": {
-    "last_updated": "October 24, 2025 02:04 PM",
+    "last_updated": "October 29, 2025 11:43 PM",
     "items": [
       {
-        "label": "3.7",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/549138",
-        "info": "Snack Dash Duration: Sometime in 3.7 Bet on winning contestants in a special obstacle race to earn various rewards!"
+        "label": "Snack Dash",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/560902",
+        "info": "Duration: 11/05 - 12/15/2025 Bet on winning contestants in a special obstacle race to earn various rewards!"
       },
       {
-        "label": "Free Golden Companion Spirit",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/560882",
-        "info": "Duration: Start of 3.7 - End of 4.0 Log in from 3.7 to the end of 4.0 to get a Golden Companion Spirit, which can be exchanged for a free 5-Star!"
+        "label": "Relic Recon",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/560903",
+        "info": "Duration: 11/05 - 12/15/2025 Clear objectives in Version 3.7 to unbox fully enhanced 5-Star Relics for your characters!"
       },
       {
         "label": "Cherished Recollection",
         "link": "https://game8.co/games/Honkai-Star-Rail/archives/507548",
-        "info": "Duration: Sometime in 3.7 Purchase Oneiric Shards to reach top-up milestones and earn special rewards like Cyrene's bow skin!"
+        "info": "Duration: 11/05 - 12/16/2025 Purchase Oneiric Shards to reach top-up milestones and earn special rewards like Cyrene's bow skin!"
+      },
+      {
+        "label": "Stellar Companions",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/560882",
+        "info": "Duration: 11/05 - End of 4.0 Log in from 3.7 to the end of 4.0 to get a Golden Companion Spirit, which can be exchanged for a free 5-Star!"
       },
       {
         "label": "3.7 Gift of Odyssey",
         "link": "https://game8.co/games/Honkai-Star-Rail/archives/413645",
-        "info": "Duration: Sometime in 3.7 Log in a total of 7 days to claim up 10 Star Rail Special Passes!"
+        "info": "Duration: 11/05 - 12/16/2025 Log in a total of 7 days to claim up 10 Star Rail Special Passes!"
       },
       {
         "label": "3.7 Planar Fissure",
         "link": "https://game8.co/games/Honkai-Star-Rail/archives/413440",
-        "info": "Duration: Sometime in 3.7 Get double the planar ornaments when challenging Worlds in the Simulated Universe!"
+        "info": "Duration: 11/17 - 12/01/2025 Get double the planar ornaments when challenging Worlds in the Simulated Universe!"
       },
       {
         "label": "3.7 Garden of Plenty",
         "link": "https://game8.co/games/Honkai-Star-Rail/archives/413423",
-        "info": "Duration: Sometime in 3.7 Get double the rewards when completing Crimson and Golden Calyx stages!"
+        "info": "Duration: 12/05 - 12/15/2025 Get double the rewards when completing Crimson and Golden Calyx stages!"
       }
     ]
   },
@@ -560,57 +545,12 @@
     ]
   },
   "wuthering-waves::gacha": {
-    "last_updated": "October 21, 2025 04:01 AM",
+    "last_updated": "October 29, 2025 10:53 PM",
     "items": [
       {
-        "label": "Absolute Pulsation (Lux & Umbra)",
+        "label": "Absolute Pulsation (Emerald Sentence)",
         "link": "https://game8.co/games/Wuthering-Waves/archives/455400",
-        "info": null
-      },
-      {
-        "label": "Wanderer Knows No Far and Near",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/553597",
-        "info": null
-      },
-      {
-        "label": "Between Light and Shadow",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/514607",
-        "info": null
-      },
-      {
-        "label": "Qiuyuan",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/524882",
-        "info": null
-      },
-      {
-        "label": "Zani",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/486248",
-        "info": null
-      },
-      {
-        "label": "Yangyang",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/454215",
-        "info": null
-      },
-      {
-        "label": "Danjin",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/454227",
-        "info": null
-      },
-      {
-        "label": "Taoqi",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/454226",
-        "info": null
-      },
-      {
-        "label": "Emerald Sentence",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/553562",
-        "info": null
-      },
-      {
-        "label": "Blazing Justice",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/514609",
-        "info": null
+        "info": "October 30, 2025 - November 19, 2025"
       },
       {
         "label": "Beginner's Choice Convene Banner",
@@ -625,6 +565,11 @@
       {
         "label": "Tidal Chorus",
         "link": "https://game8.co/games/Wuthering-Waves/archives/455430",
+        "info": null
+      },
+      {
+        "label": "Weapon Permanent Convene",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/455431",
         "info": null
       }
     ]
