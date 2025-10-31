@@ -383,28 +383,38 @@
         "info": null
       },
       {
-        "label": "Meisho Doto",
-        "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/557789",
-        "info": null
-      },
-      {
         "label": "Eishin Flash",
         "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/558104",
         "info": null
       },
       {
-        "label": "Nice Nature",
+        "label": "Nice Nature SSR",
         "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/558833",
         "info": null
       },
       {
-        "label": "Tosen Jordan",
+        "label": "Tosen Jordan SR",
         "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/558835",
+        "info": null
+      },
+      {
+        "label": "Riko Kashimoto SSR",
+        "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/561497",
+        "info": null
+      },
+      {
+        "label": "Rice Shower SSR",
+        "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/561494",
         "info": null
       },
       {
         "label": "Champions Meeting: Leo Cup",
         "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/554738",
+        "info": null
+      },
+      {
+        "label": "Virgo Cup",
+        "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/561655",
         "info": null
       },
       {
@@ -416,16 +426,6 @@
         "label": "Half Anniversary Event Rewards",
         "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/554733",
         "info": null
-      },
-      {
-        "label": "Seiun Sky",
-        "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/547840",
-        "info": "Seiun Sky Silence Suzuka and Tamamo Cross 9/17/2025 - 9/25/2025"
-      },
-      {
-        "label": "Silence Suzuka and Tamamo Cross",
-        "link": "https://game8.co/games/Umamusume-Pretty-Derby/archives/550056",
-        "info": "Seiun Sky Silence Suzuka and Tamamo Cross 9/17/2025 - 9/25/2025"
       }
     ]
   },
