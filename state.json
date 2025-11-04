@@ -430,7 +430,7 @@
     ]
   },
   "genshin-impact::events": {
-    "last_updated": "October 23, 2025 10:32 PM",
+    "last_updated": "November 3, 2025 08:23 PM",
     "items": [
       {
         "label": "To Temper Thyself and Journey Far",
@@ -441,11 +441,6 @@
         "label": "Artful Odyssey Web Event",
         "link": "https://game8.co/games/Genshin-Impact/archives/560474",
         "info": "October 22, 2025 \u2192 December 03, 2025"
-      },
-      {
-        "label": "Saurian Sojourn",
-        "link": "https://game8.co/games/Genshin-Impact/archives/557050",
-        "info": "October 24, 2025 \u2192 November 3, 2025"
       },
       {
         "label": "Ruins Exploration: Fieldwise Center",
@@ -465,7 +460,7 @@
       {
         "label": "Stygian Onslaught",
         "link": "https://game8.co/games/Genshin-Impact/archives/527266",
-        "info": "October 30, 2025 \u2192 December 2, 2025"
+        "info": "October 29, 2025 \u2192 December 2, 2025"
       },
       {
         "label": "Character Test Runs",
@@ -495,6 +490,11 @@
       {
         "label": "Stellar Reunion",
         "link": "https://game8.co/games/Genshin-Impact/archives/315013",
+        "info": null
+      },
+      {
+        "label": "Fate Foretold",
+        "link": null,
         "info": null
       }
     ]
