@@ -1,0 +1,76 @@
+name: Daily MTG Arena → Discord
+
+on:
+  schedule:
+    # Runs at 08:00 America/Sao_Paulo daily.
+    # GitHub cron uses UTC; São Paulo is UTC-03 (no DST), so 11:00 UTC == 08:00 BRT.
+    - cron: "0 11 * * *"
+  workflow_dispatch:
+    inputs:
+      DRY_RUN:
+        description: "Do not send or write anything; log what would happen."
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: write   # allow pushing mtga_codes_state.json changes back
+
+concurrency:
+  group: mtga-discord
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Check out
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install deps
+        run: |
+          set -euo pipefail
+          python -m pip install --upgrade pip
+          if [[ -f requirements.txt ]]; then
+            pip install -r requirements.txt
+          else
+            pip install requests beautifulsoup4
+          fi
+
+      - name: Run MTG Arena scraper
+        env:
+          WEBHOOK_URL_CODEX:   ${{ secrets.WEBHOOK_URL_CODEX }}
+          WEBHOOK_URL_SUMMARY: ${{ secrets.WEBHOOK_URL_SUMMARY }}
+          ROLE_ID_MTGA:        ${{ secrets.ROLE_ID_MTGA }}
+          DRY_RUN:             ${{ github.event.inputs.DRY_RUN }}
+        run: |
+          set -euo pipefail
+          python mtga_codes_scraper.py
+
+      - name: Commit and push state if changed
+        if: ${{ github.event.inputs.DRY_RUN != 'true' }}  # don't commit during dry runs
+        run: |
+          set -euo pipefail
+          git status --porcelain
+          # Stage the state file (ok if it doesn't exist yet)
+          git add -A -- mtga_codes_state.json
+          if ! git diff --cached --quiet; then
+            git config user.name  "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit -m "chore: update MTG Arena codes scrape state"
+            git pull --rebase
+            git push
+          else
+            echo "No changes to commit."
+          fi
