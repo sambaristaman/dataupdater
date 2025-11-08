@@ -106,8 +106,15 @@ def is_article_url(url: str) -> bool:
     if not url.startswith(BASE_URL):
         return False
     path = url[len(BASE_URL):].strip("/")
+
     if not path:
+        return False  # homepage
+
+    # ✨ block all pagination like /page/2/ (and similar)
+    if path.startswith("page/") or "/page/" in path:
         return False
+
+    # Don’t use /news/ feed or other sections
     non_articles = {
         "cards","decks","collection","builder","tier-list","events",
         "articles","classes","guides","meta","sets","tournaments",
@@ -116,7 +123,10 @@ def is_article_url(url: str) -> bool:
     first = path.split("/")[0]
     if first in non_articles:
         return False
+
+    # Likely post: single or two-level slug (e.g. foo-bar or foo-bar/baz)
     return bool(re.match(r"^[a-z0-9-]+(?:/[a-z0-9-]+)?/?$", path))
+
 
 def find_news_links_from_home_html(html: str) -> List[str]:
     soup = BeautifulSoup(html, "html.parser")
@@ -138,6 +148,8 @@ def find_news_links_from_home_html(html: str) -> List[str]:
     else:
         for a in soup.find_all("a", href=True):
             href = a["href"].split("?")[0].split("#")[0]
+            if "/page/" in href:
+                continue
             if is_article_url(href):
                 links.append(href)
     out, seen = [], set()
