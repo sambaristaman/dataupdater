@@ -84,6 +84,10 @@ ONLY_KEY = os.getenv("ONLY_KEY", "").strip().lower()
 DRY_RUN = os.getenv("DRY_RUN", "false").lower() == "true"
 FORCE_NEW = os.getenv("FORCE_NEW", "false").lower() == "true"
 
+# New: disable Umamusume events entirely (won't appear in updates/summary when disabled)
+# Set DISABLE_UMA_EVENTS=true to skip scraping and reporting Uma events.
+DISABLE_UMA_EVENTS = os.getenv("DISABLE_UMA_EVENTS", "false").strip().lower() == "true"
+
 # Whether to delete old messages if we decide to re-post new chunked ones
 CLEANUP_OLD_MESSAGES = True
 
@@ -503,6 +507,18 @@ def main():
 
     # Filter by ONLY_KEY if provided
     items = [(k, v) for k, v in PAGES.items() if not ONLY_KEY or k.lower() == ONLY_KEY]
+
+    # Apply DISABLE_UMA_EVENTS: remove 'umamusume' events entirely so it doesn't appear in updates
+    if DISABLE_UMA_EVENTS:
+        # If the user explicitly asked ONLY_KEY=umamusume, inform and return early (no results added).
+        if ONLY_KEY == "umamusume":
+            print("Umamusume events scraping is disabled via DISABLE_UMA_EVENTS; skipping 'umamusume'.")
+            # Still allow gacha for other keys if ONLY_KEY strictly equals 'umamusume'—there are none, so exit.
+            # No summary entry will be created.
+            return
+        # Otherwise, drop 'umamusume' from the items list.
+        items = [(k, v) for (k, v) in items if k != "umamusume"]
+
     if not items:
         print(f"No matching keys for ONLY_KEY='{ONLY_KEY}'. Valid keys:", ", ".join(PAGES.keys()))
         return

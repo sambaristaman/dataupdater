@@ -72,6 +72,9 @@ jobs:
           ROLE_ID_HSR:         ${{ secrets.ROLE_ID_HSR }}
           ROLE_ID_UMA:         ${{ secrets.ROLE_ID_UMA }}
           ROLE_ID_GI:          ${{ secrets.ROLE_ID_GI }}
+          # Toggle: disable Umamusume events scraping (kept ENABLED by default)
+          # Set repository/environment variable DISABLE_UMA_EVENTS=true to disable.
+          DISABLE_UMA_EVENTS:  ${{ vars.DISABLE_UMA_EVENTS }}
           # Optional runtime flags
           ONLY_KEY:  ${{ github.event.inputs.ONLY_KEY }}
           FORCE_NEW: ${{ github.event.inputs.FORCE_NEW }}
