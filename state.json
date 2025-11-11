@@ -400,7 +400,7 @@
     ]
   },
   "genshin-impact::events": {
-    "last_updated": "November 9, 2025 11:04 PM",
+    "last_updated": "November 11, 2025 05:03 AM",
     "items": [
       {
         "label": "Ruins Exploration: Fieldwise Center",
@@ -470,52 +470,52 @@
     ]
   },
   "genshin-impact::gacha": {
-    "last_updated": "November 4, 2025 08:08 PM",
+    "last_updated": "November 11, 2025 04:55 AM",
     "items": [
       {
-        "label": "Temptation of the Crimson Sands",
-        "link": "https://game8.co/games/Genshin-Impact/archives/557053",
+        "label": "The Hearth's Ashen Shadow",
+        "link": "https://game8.co/games/Genshin-Impact/archives/451033",
         "info": null
       },
       {
-        "label": "Nefer",
-        "link": "https://game8.co/games/Genshin-Impact/archives/538448",
+        "label": "Arlecchino",
+        "link": "https://game8.co/games/Genshin-Impact/archives/382103",
         "info": null
       },
       {
-        "label": "Yaoyao",
-        "link": "https://game8.co/games/Genshin-Impact/archives/314174",
+        "label": "Lan Yan",
+        "link": "https://game8.co/games/Genshin-Impact/archives/486709",
         "info": null
       },
       {
-        "label": "Collei",
-        "link": "https://game8.co/games/Genshin-Impact/archives/382079",
+        "label": "Yun Jin",
+        "link": "https://game8.co/games/Genshin-Impact/archives/314345",
         "info": null
       },
       {
-        "label": "Xingqiu",
-        "link": "https://game8.co/games/Genshin-Impact/archives/297531",
+        "label": "Rosaria",
+        "link": "https://game8.co/games/Genshin-Impact/archives/314177",
         "info": null
       },
       {
-        "label": "Chanson of Many Waters",
-        "link": "https://game8.co/games/Genshin-Impact/archives/431867",
+        "label": "Gentry of Hermitage",
+        "link": "https://game8.co/games/Genshin-Impact/archives/311297",
         "info": null
       },
       {
-        "label": "Furina",
-        "link": "https://game8.co/games/Genshin-Impact/archives/Furina-Best-Builds",
+        "label": "Zhongli",
+        "link": "https://game8.co/games/Genshin-Impact/archives/305858",
         "info": null
       },
       {
         "label": "Epitome Invocation",
         "link": "https://game8.co/games/Genshin-Impact/archives/304758",
-        "info": "Start: 2025/09/30 End: 2025/10/21 Reliquary of Truth Splendor of Tranquil Waters Dawning Frost Sacrificer's Staff Moonweaver's Dawn The Bell Favonius Warbow"
+        "info": null
       }
     ]
   },
   "wuthering-waves::gacha": {
-    "last_updated": "October 29, 2025 10:53 PM",
+    "last_updated": "November 11, 2025 02:34 AM",
     "items": [
       {
         "label": "Absolute Pulsation (Emerald Sentence)",
