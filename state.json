@@ -250,7 +250,7 @@
     ]
   },
   "wuthering-waves::events": {
-    "last_updated": "November 5, 2025 10:33 PM",
+    "last_updated": "November 12, 2025 04:58 AM",
     "items": [
       {
         "label": "Ascendant Aces",
@@ -283,6 +283,11 @@
         "info": "November 6, 2025 - November 19, 2025 Reach Union Level 14 and talk to Maji"
       },
       {
+        "label": "Chord Cleansing",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/457211",
+        "info": "November 12, 2025 - November 19, 2025 Reach Union Level 19"
+      },
+      {
         "label": "Qiuyuan",
         "link": "https://game8.co/games/Wuthering-Waves/archives/524882",
         "info": "The second phase features Qiuyuan as a new character, and a Zani rerun! Head into the Ascendant Aces event to get a preview of these characters in a trial stage."
@@ -295,26 +300,6 @@
       {
         "label": "Gifts of Approaching Dawn Event Guide",
         "link": "https://game8.co/games/Wuthering-Waves/archives/458199",
-        "info": null
-      },
-      {
-        "label": "Lament Recon: Solaris Soldier Event Guide",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/555963",
-        "info": "Get ready to take photos of the characters in-game all while fulfilling certain criterias to get Astrites and other premium materials!"
-      },
-      {
-        "label": "Chord Cleansing",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/457211",
-        "info": "November 12, 2025 - November 19, 2025 Earn double echo and echo leveling material drops during this event!"
-      },
-      {
-        "label": "Tacet Fields",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/457265",
-        "info": "Earn double echo and echo leveling material drops by clearing out Tacet Fields around Solaris-3!"
-      },
-      {
-        "label": "Chord Cleansing Guide",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/457211",
         "info": null
       }
     ]
@@ -515,7 +500,7 @@
     ]
   },
   "wuthering-waves::gacha": {
-    "last_updated": "November 11, 2025 02:34 AM",
+    "last_updated": "November 11, 2025 11:43 PM",
     "items": [
       {
         "label": "Absolute Pulsation (Emerald Sentence)",
