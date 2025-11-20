@@ -250,47 +250,32 @@
     ]
   },
   "wuthering-waves::events": {
-    "last_updated": "November 18, 2025 05:04 AM",
+    "last_updated": "November 20, 2025 06:04 AM",
     "items": [
       {
         "label": "Ascendant Aces",
         "link": "https://game8.co/games/Wuthering-Waves/archives/456482",
-        "info": "October 30, 2025 - November 19, 2025 Unlocked by default"
+        "info": "November 20, 2025 - December 11, 2025 Unlocked by default"
       },
       {
-        "label": "Gifts of Approaching Dawn",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/458199",
-        "info": "October 9, 2025 - November 19, 2025 Reach Union Level 8 and Log in during Version 2.7"
+        "label": "Stranger Things in Honami",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/564989",
+        "info": "November 20, 2025 - December 24, 2025 Reach Union Level 14 and complete Main Quest Chapter II Segue \"Flowering Starlight in the Iris\""
       },
       {
-        "label": "Lament Recon: Solaris Soldier",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/555963",
-        "info": "October 11, 2025 - November 19, 2025 Reach Union Level 14 and unlock the Resonance Nexus in Ragunna City during Main Quest \"The Sacred Breeze So Often Breathes\""
+        "label": "Gifts of Amber",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/564802",
+        "info": "November 20, 2025 - December 24, 2025 Reach Union Level 8"
       },
       {
-        "label": "Freeze Frame: Action Highlights",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/555926",
-        "info": "October 30, 2025 - November 19, 2025 Reach Union Level 14 and complete Main Quest Chapter II Prologue \"Through the Sea Thou Break\""
+        "label": "Whispers of the Waves",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/564957",
+        "info": "November 20, 2025 - December 24, 2025 Complete Main Chapter 2 Segue \u201cFlowing Starlight in the Iris\u201d and Side Quest \"Scale of Past.\""
       },
       {
-        "label": "Gifts of Ink Song",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/555920",
-        "info": "October 30, 2025 - November 19, 2025 Reach Union Level 8 and Log in during phase two of Version 2.7"
-      },
-      {
-        "label": "Lollo Campaign: Ice Savior",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/458245",
-        "info": "November 6, 2025 - November 19, 2025 Reach Union Level 14 and talk to Maji"
-      },
-      {
-        "label": "Chord Cleansing",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/457211",
-        "info": "November 12, 2025 - November 19, 2025 Reach Union Level 19"
-      },
-      {
-        "label": "Qiuyuan",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/524882",
-        "info": "The second phase features Qiuyuan as a new character, and a Zani rerun! Head into the Ascendant Aces event to get a preview of these characters in a trial stage."
+        "label": "Chisa",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/524880",
+        "info": "The first phase of 2.8 features Chisa as a new character, and a Phoebe rerun! Head into the Ascendant Aces event to get a preview of these characters in a trial stage."
       },
       {
         "label": "Ascendant Aces Event Guide",
@@ -298,129 +283,49 @@
         "info": "Log-in for 7 days to get 5 Lustrous Tides and 5 Radiant Tides!"
       },
       {
-        "label": "Gifts of Approaching Dawn Event Guide",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/458199",
+        "label": "Gifts of Amber Event Guide",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/564802",
+        "info": null
+      },
+      {
+        "label": "Stranger Things in Honami Event Guide",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/564989",
+        "info": "Explore the new area in 2.8 to reach a target location or snap a photo. This will progress Completion Tasks, which give rewards."
+      },
+      {
+        "label": "new area",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/564813",
+        "info": "Explore the new area in 2.8 to reach a target location or snap a photo. This will progress Completion Tasks, which give rewards."
+      },
+      {
+        "label": "Whispers of the Waves Event Guide",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/564957",
         "info": null
       },
       {
         "label": "Tactical Simulacra IV: Off Tune",
         "link": "https://game8.co/games/Wuthering-Waves/archives/484753",
-        "info": null
+        "info": "November 27, 2025 - December 15, 2025 Defeat multiple waves of enemies with the help of special buffs in this combat event!."
       },
       {
-        "label": "Stranger Things in Honami",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/564989",
-        "info": "November 20, 2025 - December 24, 2025 Investigate strange occurences in Honami City and renovate Shashou Cafe in this exploration-combat event!"
+        "label": "Bountiful Crescendo",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/458244",
+        "info": "December 1, 2025 - December 8, 2025 Earn double leveling material drops during this event!"
       },
       {
-        "label": "Gifts of Amber",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/564802",
-        "info": "Releases in Version 2.8 Log-in for 7 days to claim Radiant and Lustrous Tides!"
-      },
-      {
-        "label": "Whispers of the Waves",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/564957",
-        "info": "Releases in Version 2.8 Take and collect photos within Chronorift Metropolis (Honami) to earn various rewards!"
+        "label": "Lollo Campaign: Rising Anew",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/494823",
+        "info": "December 8, 2025 - December 22, 2025 Earn Lollo Stamps and draw from Maji's lottery daily to earn rewards such as Lustrous Tides and Astrites!"
       },
       {
         "label": "Search for It! Bits of Lahai-Roi",
         "link": "https://game8.co/games/Wuthering-Waves/archives/564986",
-        "info": "Releases in Version 2.8 Mysterious items from Lahai-Roi have appeared in Honami City. Collect them all and earn rewards for investigating!"
+        "info": "December 11, 2025 - December 24, 2025 Mysterious items from Lahai-Roi have appeared in Honami City. Collect them all and earn rewards for investigating!"
       },
       {
-        "label": "Lollo Campaign: Rising Anew",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/494823",
-        "info": "Releases in Version 2.8 Earn Lollo Stamps and draw from Maji's lottery daily to earn rewards such as Lustrous Tides and Astrites!"
-      },
-      {
-        "label": "Stranger Things in Honami",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/564989",
-        "info": null
-      },
-      {
-        "label": "Gifts of Amber",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/564802",
-        "info": null
-      },
-      {
-        "label": "Whispers of the Waves",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/564957",
-        "info": null
-      },
-      {
-        "label": "Search for It! Bits of Lahai-Roi!",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/564986",
-        "info": null
-      },
-      {
-        "label": "Lollo Campaign: Rising Anew",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/494823",
-        "info": null
-      },
-      {
-        "label": "Tidal Defense Simulator",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/544504",
-        "info": null
-      },
-      {
-        "label": "Windrider Project",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/544880",
-        "info": null
-      },
-      {
-        "label": "Phantasma Dreamland",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/538468",
-        "info": null
-      },
-      {
-        "label": "Banners Never Fall",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/526028",
-        "info": null
-      },
-      {
-        "label": "Chronorift Metropolis (Honami)",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/564813",
-        "info": null
-      },
-      {
-        "label": "Jinzhou",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/453577",
-        "info": null
-      },
-      {
-        "label": "Central Plains",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/456160",
-        "info": null
-      },
-      {
-        "label": "Dim Forest",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/456157",
-        "info": null
-      },
-      {
-        "label": "Gorges of Spirits",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/456161",
-        "info": null
-      },
-      {
-        "label": "Desorock Highland",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/456159",
-        "info": null
-      },
-      {
-        "label": "Port City of Guixu",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/456158",
-        "info": null
-      },
-      {
-        "label": "Wuming Bay",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/456156",
-        "info": null
-      },
-      {
-        "label": "Norfall Barrens",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/456155",
-        "info": null
+        "label": "Chord Cleansing",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/457211",
+        "info": "December 17, 2025 - December 24, 2025 Earn double echo and echo leveling material drops during this event!"
       }
     ]
   },
@@ -620,62 +525,12 @@
     ]
   },
   "wuthering-waves::gacha": {
-    "last_updated": "November 14, 2025 08:24 AM",
+    "last_updated": "November 19, 2025 10:24 PM",
     "items": [
       {
-        "label": "Absolute Pulsation (Emerald Sentence)",
+        "label": "Absolute Pulsation (Kumokiri)",
         "link": "https://game8.co/games/Wuthering-Waves/archives/455400",
-        "info": "October 30, 2025 - November 19, 2025"
-      },
-      {
-        "label": "Horizon of Dawnbreak",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/564697",
-        "info": "With Hushed Whispers Limited 5\u2605 Chisa (Debut) Phoebe Rate-up 4\u2605 Aalto Yuanwu Taoqi Featured Weapon(s): Kumokiri Luminous Hymn"
-      },
-      {
-        "label": "With Hushed Whispers",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/498494",
-        "info": "Horizon of Dawnbreak Limited 5\u2605 Chisa (Debut) Phoebe Rate-up 4\u2605 Aalto Yuanwu Taoqi Featured Weapon(s): Kumokiri Luminous Hymn"
-      },
-      {
-        "label": "Chisa",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/524880",
-        "info": null
-      },
-      {
-        "label": "Phoebe",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/486244",
-        "info": "Horizon of Dawnbreak With Hushed Whispers Limited 5\u2605 Chisa (Debut) Rate-up 4\u2605 Aalto Yuanwu Taoqi Featured Weapon(s): Kumokiri Luminous Hymn"
-      },
-      {
-        "label": "Aalto",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/454214",
-        "info": null
-      },
-      {
-        "label": "Yuanwu",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/454219",
-        "info": "Horizon of Dawnbreak With Hushed Whispers Limited 5\u2605 Chisa (Debut) Phoebe Rate-up 4\u2605 Aalto Taoqi Featured Weapon(s): Kumokiri Luminous Hymn"
-      },
-      {
-        "label": "Taoqi",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/454226",
-        "info": null
-      },
-      {
-        "label": "Kumokiri",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/565517",
-        "info": "Horizon of Dawnbreak With Hushed Whispers Limited 5\u2605 Chisa (Debut) Phoebe Rate-up 4\u2605 Aalto Yuanwu Taoqi Featured Weapon(s): Luminous Hymn"
-      },
-      {
-        "label": "Luminous Hymn",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/498527",
-        "info": "Horizon of Dawnbreak With Hushed Whispers Limited 5\u2605 Chisa (Debut) Phoebe Rate-up 4\u2605 Aalto Yuanwu Taoqi Featured Weapon(s): Kumokiri"
-      },
-      {
-        "label": "2.8 Banners, Release Date, and Details",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/558449",
-        "info": null
+        "info": "November 20, 2025 - December 11, 2025"
       },
       {
         "label": "Requiem Without End",
@@ -685,6 +540,56 @@
       {
         "label": "Neptune's Lullaby",
         "link": "https://game8.co/games/Wuthering-Waves/archives/506481",
+        "info": null
+      },
+      {
+        "label": "Phrolova",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/524877",
+        "info": null
+      },
+      {
+        "label": "Cantarella",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/500493",
+        "info": null
+      },
+      {
+        "label": "Buling",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/557981",
+        "info": null
+      },
+      {
+        "label": "Chixia",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/454220",
+        "info": null
+      },
+      {
+        "label": "Danjin",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/454227",
+        "info": null
+      },
+      {
+        "label": "Lethean Elegy",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/537943",
+        "info": null
+      },
+      {
+        "label": "Whispers of Sirens",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/506482",
+        "info": null
+      },
+      {
+        "label": "2.8 Banners, Release Date, and Details",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/558449",
+        "info": null
+      },
+      {
+        "label": "Beginner's Choice Convene Banner",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/453554",
+        "info": null
+      },
+      {
+        "label": "Utterance of Marvels",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/455422",
         "info": null
       }
     ]
