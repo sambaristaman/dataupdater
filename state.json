@@ -250,7 +250,7 @@
     ]
   },
   "wuthering-waves::events": {
-    "last_updated": "November 21, 2025 04:34 AM",
+    "last_updated": "November 22, 2025 03:34 AM",
     "items": [
       {
         "label": "Ascendant Aces",
@@ -410,7 +410,7 @@
     ]
   },
   "genshin-impact::events": {
-    "last_updated": "November 16, 2025 11:52 PM",
+    "last_updated": "November 21, 2025 10:43 AM",
     "items": [
       {
         "label": "Dance Dance Dynamic Disco",
@@ -438,6 +438,26 @@
         "info": "November 24, 2025 \u2192 December 01, 2025"
       },
       {
+        "label": "Soulblazers' Snowbound Journey",
+        "link": "https://game8.co/games/Genshin-Impact/archives/567326",
+        "info": "December 19, 2025 \u2192 January 5, 2025"
+      },
+      {
+        "label": "Bing-Bang Finchball 6.2 Rerun",
+        "link": "https://game8.co/games/Genshin-Impact/archives/460309",
+        "info": "December 5, 2025 \u2192 December 15, 2025"
+      },
+      {
+        "label": "Heroic Clash: Saurian Brawl",
+        "link": "https://game8.co/games/Genshin-Impact/archives/567327",
+        "info": "December 29, 2025 \u2192 January 7, 2025"
+      },
+      {
+        "label": "Marvelous Merchandise 6.2 Rerun",
+        "link": "https://game8.co/games/Genshin-Impact/archives/305633",
+        "info": "January 5, 2026 \u2192 January 12, 2026"
+      },
+      {
         "label": "Stygian Onslaught",
         "link": "https://game8.co/games/Genshin-Impact/archives/527266",
         "info": "October 29, 2025 \u2192 December 2, 2025"
@@ -456,31 +476,11 @@
         "label": "Travelers' Tales",
         "link": "https://game8.co/games/Genshin-Impact/archives/495326",
         "info": null
-      },
-      {
-        "label": "Repertoire of Myriad Melodies",
-        "link": "https://game8.co/games/Genshin-Impact/archives/406198",
-        "info": null
-      },
-      {
-        "label": "Daily Check-In",
-        "link": "https://game8.co/games/Genshin-Impact/archives/321404",
-        "info": null
-      },
-      {
-        "label": "Stellar Reunion",
-        "link": "https://game8.co/games/Genshin-Impact/archives/315013",
-        "info": null
-      },
-      {
-        "label": "Fate Foretold",
-        "link": null,
-        "info": null
       }
     ]
   },
   "genshin-impact::gacha": {
-    "last_updated": "November 14, 2025 05:23 AM",
+    "last_updated": "November 21, 2025 08:40 AM",
     "items": [
       {
         "label": "The Hearth's Ashen Shadow",
