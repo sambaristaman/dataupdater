@@ -250,7 +250,7 @@
     ]
   },
   "wuthering-waves::events": {
-    "last_updated": "November 22, 2025 03:34 AM",
+    "last_updated": "November 27, 2025 01:23 AM",
     "items": [
       {
         "label": "Ascendant Aces",
@@ -273,6 +273,11 @@
         "info": "November 20, 2025 - December 24, 2025 Complete Main Chapter 2 Segue \u201cFlowing Starlight in the Iris\u201d and Side Quest \"Scale of Past.\""
       },
       {
+        "label": "Tactical Simulacra IV: Off Tune",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/484753",
+        "info": "November 27, 2025 - December 15, 2025 Reach Union Level 14"
+      },
+      {
         "label": "Chisa",
         "link": "https://game8.co/games/Wuthering-Waves/archives/524880",
         "info": "The first phase of 2.8 features Chisa as a new character, and a Phoebe rerun! Head into the Ascendant Aces event to get a preview of these characters in a trial stage."
@@ -280,32 +285,22 @@
       {
         "label": "Ascendant Aces Event Guide",
         "link": "https://game8.co/games/Wuthering-Waves/archives/456482",
-        "info": "Log-in for 7 days to get 5 Lustrous Tides and 5 Radiant Tides!"
-      },
-      {
-        "label": "Gifts of Amber Event Guide",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/564802",
         "info": null
       },
       {
         "label": "Stranger Things in Honami Event Guide",
         "link": "https://game8.co/games/Wuthering-Waves/archives/564989",
+        "info": "Log-in for 7 days to get 5 Lustrous Tides and 5 Radiant Tides!"
+      },
+      {
+        "label": "Gifts of Amber Event Guide",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/564802",
         "info": "Explore the new area in 2.8 to reach a target location or snap a photo. This will progress Completion Tasks, which give rewards."
       },
       {
         "label": "new area",
         "link": "https://game8.co/games/Wuthering-Waves/archives/564813",
         "info": "Explore the new area in 2.8 to reach a target location or snap a photo. This will progress Completion Tasks, which give rewards."
-      },
-      {
-        "label": "Whispers of the Waves Event Guide",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/564957",
-        "info": null
-      },
-      {
-        "label": "Tactical Simulacra IV: Off Tune",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/484753",
-        "info": "November 27, 2025 - December 15, 2025 Defeat multiple waves of enemies with the help of special buffs in this combat event!."
       },
       {
         "label": "Bountiful Crescendo",
@@ -645,7 +640,7 @@
     ]
   },
   "honkai-star-rail::gacha": {
-    "last_updated": "November 4, 2025 09:52 PM",
+    "last_updated": "November 27, 2025 05:34 AM",
     "items": [
       {
         "label": "Cyrene Banner",
@@ -695,16 +690,6 @@
       {
         "label": "Archer Banner Schedule and Rates",
         "link": "https://game8.co/games/Honkai-Star-Rail/archives/519880",
-        "info": null
-      },
-      {
-        "label": "Indelible Coterie Banner Schedule and Rates",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/470223",
-        "info": null
-      },
-      {
-        "label": "Brilliant Fixation",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/408767",
         "info": null
       },
       {
