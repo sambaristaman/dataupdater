@@ -375,8 +375,44 @@
     ]
   },
   "honkai-star-rail::events": {
-    "last_updated": "December 5, 2025 03:01 AM",
-    "items": []
+    "last_updated": "December 5, 2025 11:22 AM",
+    "items": [
+      {
+        "label": "Chrysos Awoo Championship",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/569749",
+        "info": "Duration: Sometime in 3.8 Build your team lineup and defeat other trainers in the Chimera World Tournament!"
+      },
+      {
+        "label": "Remnants of Twilight",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/569767",
+        "info": "Duration: Sometime in 3.8 Clear combat challenges of various difficulties to win various rewards!"
+      },
+      {
+        "label": "Treasure Hunt",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/569768",
+        "info": "Duration: Sometime in 3.8 Consume Trailblaze Power to hunt for treasure and obtain valuable rewards like Self-Modeling Resin and Stellar Jades!"
+      },
+      {
+        "label": "3.8 Gift of Odyssey",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/413645",
+        "info": "Duration: Sometime in 3.8 Log in a total of 7 days to claim up 10 Star Rail Special Passes!"
+      },
+      {
+        "label": "3.8 Planar Fissure",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/413440",
+        "info": "Duration: Sometime in 3.8 Get double the planar ornaments when challenging Worlds in the Simulated Universe!"
+      },
+      {
+        "label": "3.8 Garden of Plenty",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/413423",
+        "info": "Duration: Sometime in 3.8 Get double the rewards when completing Crimson and Golden Calyx stages!"
+      },
+      {
+        "label": "3.8 Realm of the Strange",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/417674",
+        "info": "Duration: Sometime in 3.8 Get double the relics when challenging Caverns of Corrosion!"
+      }
+    ]
   },
   "umamusume::events": {
     "last_updated": "September 8, 2025 05:57 AM",
@@ -629,7 +665,7 @@
     ]
   },
   "honkai-star-rail::gacha": {
-    "last_updated": "December 4, 2025 01:42 AM",
+    "last_updated": "December 5, 2025 11:27 AM",
     "items": [
       {
         "label": "Cyrene Banner",
@@ -684,11 +720,106 @@
       {
         "label": "The Dahlia Banner",
         "link": "https://game8.co/games/Honkai-Star-Rail/archives/559660",
-        "info": "(Ver. 3.8 Phase 1) Banner Dates: Dec. 16, 2025 - Jan. 07, 2026 Featured 5-Star: The Dahlia ( Nihility , Fire ) Featured 4-Star: TBA TBA TBA"
+        "info": "(Ver. 3.8 Phase 1) Firefly Banner (Ver. 3.8 Phase 1) Banner Dates: Dec. 16, 2025 - Jan. 07, 2026 Featured 5-Star: The Dahlia ( Nihility , Fire ) Firefly ( Destruction , Fire ) Featured 4-Star: Gallagher ( Abundance , Fire ) Luka ( Nihility , Physical ) March 7th ( Preservation , Ice )"
+      },
+      {
+        "label": "Firefly Banner",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/451736",
+        "info": "The Dahlia Banner (Ver. 3.8 Phase 1) (Ver. 3.8 Phase 1) Banner Dates: Dec. 16, 2025 - Jan. 07, 2026 Featured 5-Star: The Dahlia ( Nihility , Fire ) Firefly ( Destruction , Fire ) Featured 4-Star: Gallagher ( Abundance , Fire ) Luka ( Nihility , Physical ) March 7th ( Preservation , Ice )"
+      },
+      {
+        "label": "Never Forget Her Flame Banner",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/408767",
+        "info": "(Ver. 3.8 Phase 1) Whereabouts Should Dreams Rest Banner (Ver. 3.8 Phase 1) Banner Dates : Dec. 16, 2025 - Jan. 07, 2026 Featured 5-Star: Never Forget Her Flame ( Nihility ) Whereabouts Should Dreams Rest ( Destruction ) Featured 4-Star: Memories of the Past ( Harmony ) Good Night and Sleep Well ( Nihility ) Concert for Two ( Preservation )"
+      },
+      {
+        "label": "Whereabouts Should Dreams Rest Banner",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/429241",
+        "info": "Never Forget Her Flame Banner (Ver. 3.8 Phase 1) (Ver. 3.8 Phase 1) Banner Dates : Dec. 16, 2025 - Jan. 07, 2026 Featured 5-Star: Never Forget Her Flame ( Nihility ) Whereabouts Should Dreams Rest ( Destruction ) Featured 4-Star: Memories of the Past ( Harmony ) Good Night and Sleep Well ( Nihility ) Concert for Two ( Preservation )"
+      },
+      {
+        "label": "Brilliant Fixation",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/408767",
+        "info": "The Dahlia's banner will run from December 16, 2025 until January 07, 2026 (UTC-5). Her Light Cone, Never Forget Her Flame , will also be available at the same time through the banner."
       },
       {
         "label": "The Dahlia Banner Schedule and Rates",
         "link": "https://game8.co/games/Honkai-Star-Rail/archives/559660",
+        "info": null
+      },
+      {
+        "label": "Bygone Reminiscence",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/429241",
+        "info": "Firefly's rerun banner will be available from December 16, 2025 until January 07, 2026 (UTC-5). Her Light Cone, Whereabouts Should Dreams Rest , will also be available through the banner."
+      },
+      {
+        "label": "Firefly Rerun Banner Date and Info",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/451736",
+        "info": null
+      },
+      {
+        "label": "Fugue Banner",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/477868",
+        "info": "(Ver. 3.8 Phase 2) Lingsha Banner (Ver. 3.8 Phase 2) Banner Dates: Jan. 07, 2026 - Jan. 28, 2026 Featured 5-Star: Fugue ( Nihility , Fire ) Lingsha ( Abundance , Fire ) Featured 4-Star: Sampo ( Nihility , Wind ) Natasha ( Abundance , Physical ) Arlan ( Destruction , Lightning )"
+      },
+      {
+        "label": "Lingsha Banner",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/462271",
+        "info": "Fugue Banner (Ver. 3.8 Phase 2) (Ver. 3.8 Phase 2) Banner Dates: Jan. 07, 2026 - Jan. 28, 2026 Featured 5-Star: Fugue ( Nihility , Fire ) Lingsha ( Abundance , Fire ) Featured 4-Star: Sampo ( Nihility , Wind ) Natasha ( Abundance , Physical ) Arlan ( Destruction , Lightning )"
+      },
+      {
+        "label": "Long Road Leads Home Banner",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/429241",
+        "info": "(Ver. 3.8 Phase 2) Scent Alone Stays True Banner (Ver. 3.8 Phase 2) Banner Dates : Jan. 07, 2026 - Jan. 28, 2026 Featured 5-Star: Long Road Leads Home ( Nihility ) Scent Alone Stays True ( Abundance ) Featured 4-Star: The Moles Welcome You ( Destruction ) Post-Op Conversation ( Abundance ) Geniuses' Repose ( Erudition )"
+      },
+      {
+        "label": "Scent Alone Stays True Banner",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/429241",
+        "info": "Long Road Leads Home Banner (Ver. 3.8 Phase 2) (Ver. 3.8 Phase 2) Banner Dates : Jan. 07, 2026 - Jan. 28, 2026 Featured 5-Star: Long Road Leads Home ( Nihility ) Scent Alone Stays True ( Abundance ) Featured 4-Star: The Moles Welcome You ( Destruction ) Post-Op Conversation ( Abundance ) Geniuses' Repose ( Erudition )"
+      },
+      {
+        "label": "Aglaea Banner",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/485941",
+        "info": "(Ver. 3.8 Phase 3) Sunday Banner (Ver. 3.8 Phase 3) Banner Dates: Jan. 28, 2026 - Feb. 12, 2026 Featured 5-Star: Aglaea ( Remembrance , Lightning ) Sunday ( Harmony , Imaginary ) Featured 4-Star: Tingyun ( Harmony , Lightning ) Yukong ( Harmony , Imaginary ) Dan Heng ( Hunt , Wind )"
+      },
+      {
+        "label": "Sunday Banner",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/477691",
+        "info": "Aglaea Banner (Ver. 3.8 Phase 3) (Ver. 3.8 Phase 3) Banner Dates: Jan. 28, 2026 - Feb. 12, 2026 Featured 5-Star: Aglaea ( Remembrance , Lightning ) Sunday ( Harmony , Imaginary ) Featured 4-Star: Tingyun ( Harmony , Lightning ) Yukong ( Harmony , Imaginary ) Dan Heng ( Hunt , Wind )"
+      },
+      {
+        "label": "Time Woven Into Gold Banner",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/429241",
+        "info": "(Ver. 3.8 Phase 3) A Grounded Ascent Banner (Ver. 3.8 Phase 3) Banner Dates : Jan. 28, 2026 - Feb. 12, 2026 Featured 5-Star: Time Woven into Gold ( Remembrance ) A Grounded Ascent ( Harmony ) Featured 4-Star: Geniuses' Greetings ( Remembrance ) Trend of the Universal Market ( Preservation ) Dance! Dance! Dance! ( Harmony )"
+      },
+      {
+        "label": "A Grounded Ascent Banner",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/429241",
+        "info": "Time Woven Into Gold Banner (Ver. 3.8 Phase 3) (Ver. 3.8 Phase 3) Banner Dates : Jan. 28, 2026 - Feb. 12, 2026 Featured 5-Star: Time Woven into Gold ( Remembrance ) A Grounded Ascent ( Harmony ) Featured 4-Star: Geniuses' Greetings ( Remembrance ) Trend of the Universal Market ( Preservation ) Dance! Dance! Dance! ( Harmony )"
+      },
+      {
+        "label": "Bygone Reminiscence",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/429241",
+        "info": "Fugue's rerun banner will be available from January 07, 2026 until January 28, 2026 (Server Time). Her Light Cone, Long Road Leads Home , will also be available through the banner."
+      },
+      {
+        "label": "Fugue Rerun Banner Schedule and Rates",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/477868",
+        "info": null
+      },
+      {
+        "label": "Lingsha Rerun Banner Schedule and Rates",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/462271",
+        "info": null
+      },
+      {
+        "label": "Aglaea Rerun Banner Schedule and Rates",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/485941",
+        "info": null
+      },
+      {
+        "label": "Sunday Rerun Banner Schedule and Rates",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/477691",
         "info": null
       }
     ]
