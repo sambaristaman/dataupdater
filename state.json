@@ -250,7 +250,7 @@
     ]
   },
   "wuthering-waves::events": {
-    "last_updated": "November 27, 2025 01:23 AM",
+    "last_updated": "December 9, 2025 01:56 AM",
     "items": [
       {
         "label": "Ascendant Aces",
@@ -278,6 +278,11 @@
         "info": "November 27, 2025 - December 15, 2025 Reach Union Level 14"
       },
       {
+        "label": "Lollo Campaign: Rising Anew",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/494823",
+        "info": "December 8, 2025 - December 22, 2025 Reach Union Level 14 and complete Main Quest Chapter II Prologue \"Through the Sea Thou Break.\""
+      },
+      {
         "label": "Chisa",
         "link": "https://game8.co/games/Wuthering-Waves/archives/524880",
         "info": "The first phase of 2.8 features Chisa as a new character, and a Phoebe rerun! Head into the Ascendant Aces event to get a preview of these characters in a trial stage."
@@ -296,21 +301,6 @@
         "label": "Gifts of Amber Event Guide",
         "link": "https://game8.co/games/Wuthering-Waves/archives/564802",
         "info": "Explore the new area in 2.8 to reach a target location or snap a photo. This will progress Completion Tasks, which give rewards."
-      },
-      {
-        "label": "new area",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/564813",
-        "info": "Explore the new area in 2.8 to reach a target location or snap a photo. This will progress Completion Tasks, which give rewards."
-      },
-      {
-        "label": "Bountiful Crescendo",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/458244",
-        "info": "December 1, 2025 - December 8, 2025 Earn double leveling material drops during this event!"
-      },
-      {
-        "label": "Lollo Campaign: Rising Anew",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/494823",
-        "info": "December 8, 2025 - December 22, 2025 Earn Lollo Stamps and draw from Maji's lottery daily to earn rewards such as Lustrous Tides and Astrites!"
       },
       {
         "label": "Search for It! Bits of Lahai-Roi",
@@ -480,17 +470,17 @@
     ]
   },
   "genshin-impact::events": {
-    "last_updated": "December 3, 2025 09:52 PM",
+    "last_updated": "December 8, 2025 10:28 PM",
     "items": [
-      {
-        "label": "To Temper Thyself and Journey Far",
-        "link": "https://game8.co/games/Genshin-Impact/archives/546841",
-        "info": "December 01, 2025 \u2192 February 23, 2026"
-      },
       {
         "label": "Bing-Bang Finchball 6.2 Rerun",
         "link": "https://game8.co/games/Genshin-Impact/archives/460309",
         "info": "December 5, 2025 \u2192 December 15, 2025"
+      },
+      {
+        "label": "To Temper Thyself and Journey Far",
+        "link": "https://game8.co/games/Genshin-Impact/archives/546841",
+        "info": "December 01, 2025 \u2192 February 23, 2026"
       },
       {
         "label": "Soulblazers' Snowbound Journey",
@@ -510,7 +500,7 @@
       {
         "label": "Stygian Onslaught",
         "link": "https://game8.co/games/Genshin-Impact/archives/527266",
-        "info": "October 29, 2025 \u2192 December 2, 2025"
+        "info": "December 10, 2025 \u2192 January 13, 2026"
       },
       {
         "label": "Character Test Runs",
@@ -518,7 +508,7 @@
         "info": null
       },
       {
-        "label": "Battle Pass - Ruins Chronicle",
+        "label": "Battle Pass - Snowblaze",
         "link": "https://game8.co/games/Genshin-Impact/archives/301612",
         "info": null
       },
