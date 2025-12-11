@@ -250,13 +250,8 @@
     ]
   },
   "wuthering-waves::events": {
-    "last_updated": "December 9, 2025 01:56 AM",
+    "last_updated": "December 11, 2025 12:28 AM",
     "items": [
-      {
-        "label": "Ascendant Aces",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/456482",
-        "info": "November 20, 2025 - December 11, 2025 Unlocked by default"
-      },
       {
         "label": "Stranger Things in Honami",
         "link": "https://game8.co/games/Wuthering-Waves/archives/564989",
@@ -283,9 +278,19 @@
         "info": "December 8, 2025 - December 22, 2025 Reach Union Level 14 and complete Main Quest Chapter II Prologue \"Through the Sea Thou Break.\""
       },
       {
-        "label": "Chisa",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/524880",
-        "info": "The first phase of 2.8 features Chisa as a new character, and a Phoebe rerun! Head into the Ascendant Aces event to get a preview of these characters in a trial stage."
+        "label": "Ascendant Aces",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/456482",
+        "info": "December 11, 2025 - December 24, 2025 Unlocked by default"
+      },
+      {
+        "label": "Search for It! Bits of Lahai-Roi",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/564986",
+        "info": "December 11, 2025 - December 24, 2025 Complete Main Chapter 2 Segue \u201cFlowing Starlight in the Iris\u201d"
+      },
+      {
+        "label": "Phrolova",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/537901",
+        "info": "The second phase of 2.8 features the reruns of Phrolova and Cantarella ! Head into the Ascendant Aces event to get a preview of these characters in a trial stage."
       },
       {
         "label": "Ascendant Aces Event Guide",
@@ -296,16 +301,6 @@
         "label": "Stranger Things in Honami Event Guide",
         "link": "https://game8.co/games/Wuthering-Waves/archives/564989",
         "info": "Log-in for 7 days to get 5 Lustrous Tides and 5 Radiant Tides!"
-      },
-      {
-        "label": "Gifts of Amber Event Guide",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/564802",
-        "info": "Explore the new area in 2.8 to reach a target location or snap a photo. This will progress Completion Tasks, which give rewards."
-      },
-      {
-        "label": "Search for It! Bits of Lahai-Roi",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/564986",
-        "info": "December 11, 2025 - December 24, 2025 Mysterious items from Lahai-Roi have appeared in Honami City. Collect them all and earn rewards for investigating!"
       },
       {
         "label": "Chord Cleansing",
@@ -365,42 +360,42 @@
     ]
   },
   "honkai-star-rail::events": {
-    "last_updated": "December 5, 2025 11:22 AM",
+    "last_updated": "December 10, 2025 11:30 PM",
     "items": [
       {
         "label": "Chrysos Awoo Championship",
         "link": "https://game8.co/games/Honkai-Star-Rail/archives/569749",
-        "info": "Duration: Sometime in 3.8 Build your team lineup and defeat other trainers in the Chimera World Tournament!"
+        "info": "Duration: 12/17/2025 - 02/09/2026 Build your team lineup and defeat other trainers in the Chimera World Tournament!"
       },
       {
         "label": "Remnants of Twilight",
         "link": "https://game8.co/games/Honkai-Star-Rail/archives/569767",
-        "info": "Duration: Sometime in 3.8 Clear combat challenges of various difficulties to win various rewards!"
+        "info": "Duration: 01/07 - 02/09/2026 Clear combat challenges of various difficulties to win various rewards!"
       },
       {
         "label": "Treasure Hunt",
         "link": "https://game8.co/games/Honkai-Star-Rail/archives/569768",
-        "info": "Duration: Sometime in 3.8 Consume Trailblaze Power to hunt for treasure and obtain valuable rewards like Self-Modeling Resin and Stellar Jades!"
+        "info": "Duration: 01/28 - 02/12/2026 Consume Trailblaze Power to hunt for treasure and obtain valuable rewards like Self-Modeling Resin and Stellar Jades!"
       },
       {
         "label": "3.8 Gift of Odyssey",
         "link": "https://game8.co/games/Honkai-Star-Rail/archives/413645",
-        "info": "Duration: Sometime in 3.8 Log in a total of 7 days to claim up 10 Star Rail Special Passes!"
+        "info": "Duration: 12/17/2025 - 02/12/2026 Log in a total of 7 days to claim up 10 Star Rail Special Passes!"
       },
       {
         "label": "3.8 Planar Fissure",
         "link": "https://game8.co/games/Honkai-Star-Rail/archives/413440",
-        "info": "Duration: Sometime in 3.8 Get double the planar ornaments when challenging Worlds in the Simulated Universe!"
-      },
-      {
-        "label": "3.8 Garden of Plenty",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/413423",
-        "info": "Duration: Sometime in 3.8 Get double the rewards when completing Crimson and Golden Calyx stages!"
+        "info": "Duration: 12/29/2025 - 01/12/2026 Get double the planar ornaments when challenging Worlds in the Simulated Universe!"
       },
       {
         "label": "3.8 Realm of the Strange",
         "link": "https://game8.co/games/Honkai-Star-Rail/archives/417674",
-        "info": "Duration: Sometime in 3.8 Get double the relics when challenging Caverns of Corrosion!"
+        "info": "Duration: 01/16 - 02/12/2026 Get double the relics when challenging Caverns of Corrosion!"
+      },
+      {
+        "label": "3.8 Garden of Plenty",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/413423",
+        "info": "Duration: 01/28 - 02/12/2026 Get double the rewards when completing Crimson and Golden Calyx stages!"
       }
     ]
   },
@@ -540,7 +535,7 @@
     ]
   },
   "genshin-impact::gacha": {
-    "last_updated": "December 10, 2025 05:23 AM",
+    "last_updated": "December 11, 2025 05:17 AM",
     "items": [
       {
         "label": "Rubedo, of White Stone Born",
@@ -585,61 +580,26 @@
     ]
   },
   "wuthering-waves::gacha": {
-    "last_updated": "November 19, 2025 10:24 PM",
+    "last_updated": "December 10, 2025 10:04 PM",
     "items": [
       {
-        "label": "Absolute Pulsation (Kumokiri)",
+        "label": "Absolute Pulsation (Lethean Elegy)",
         "link": "https://game8.co/games/Wuthering-Waves/archives/455400",
-        "info": "November 20, 2025 - December 11, 2025"
+        "info": "December 11, 2025 - December 24, 2025"
       },
       {
-        "label": "Requiem Without End",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/537901",
+        "label": "Lynae",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/568211",
         "info": null
       },
       {
-        "label": "Neptune's Lullaby",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/506481",
+        "label": "Mornye",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/568193",
         "info": null
       },
       {
-        "label": "Phrolova",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/524877",
-        "info": null
-      },
-      {
-        "label": "Cantarella",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/500493",
-        "info": null
-      },
-      {
-        "label": "Buling",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/557981",
-        "info": null
-      },
-      {
-        "label": "Chixia",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/454220",
-        "info": null
-      },
-      {
-        "label": "Danjin",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/454227",
-        "info": null
-      },
-      {
-        "label": "Lethean Elegy",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/537943",
-        "info": null
-      },
-      {
-        "label": "Whispers of Sirens",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/506482",
-        "info": null
-      },
-      {
-        "label": "2.8 Banners, Release Date, and Details",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/558449",
+        "label": "3.0 Characters, Release Date, and Details",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/567978",
         "info": null
       },
       {
@@ -650,6 +610,16 @@
       {
         "label": "Utterance of Marvels",
         "link": "https://game8.co/games/Wuthering-Waves/archives/455422",
+        "info": null
+      },
+      {
+        "label": "Tidal Chorus",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/455430",
+        "info": null
+      },
+      {
+        "label": "Weapon Permanent Convene",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/455431",
         "info": null
       }
     ]
