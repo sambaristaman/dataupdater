@@ -250,7 +250,7 @@
     ]
   },
   "wuthering-waves::events": {
-    "last_updated": "December 16, 2025 06:56 AM",
+    "last_updated": "December 17, 2025 05:34 AM",
     "items": [
       {
         "label": "Stranger Things in Honami",
@@ -268,11 +268,6 @@
         "info": "November 20, 2025 - December 24, 2025 Complete Main Chapter 2 Segue \u201cFlowing Starlight in the Iris\u201d and Side Quest \"Scale of Past.\""
       },
       {
-        "label": "Tactical Simulacra IV: Off Tune",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/484753",
-        "info": "November 27, 2025 - December 15, 2025 Reach Union Level 14"
-      },
-      {
         "label": "Lollo Campaign: Rising Anew",
         "link": "https://game8.co/games/Wuthering-Waves/archives/494823",
         "info": "December 8, 2025 - December 22, 2025 Reach Union Level 14 and complete Main Quest Chapter II Prologue \"Through the Sea Thou Break.\""
@@ -286,6 +281,11 @@
         "label": "Search for It! Bits of Lahai-Roi",
         "link": "https://game8.co/games/Wuthering-Waves/archives/564986",
         "info": "December 11, 2025 - December 24, 2025 Complete Main Chapter 2 Segue \u201cFlowing Starlight in the Iris\u201d"
+      },
+      {
+        "label": "Chord Cleansing",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/457211",
+        "info": "December 17, 2025 - December 24, 2025 Reach Union Level 19"
       },
       {
         "label": "Phrolova",
@@ -303,9 +303,34 @@
         "info": "Log-in for 7 days to get 5 Lustrous Tides and 5 Radiant Tides!"
       },
       {
-        "label": "Chord Cleansing",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/457211",
-        "info": "December 17, 2025 - December 24, 2025 Earn double echo and echo leveling material drops during this event!"
+        "label": "Beyond the Waves",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/484720",
+        "info": "Releases in Version 3.0 Log-in daily and complete tasks to win random rewards by revealing tiles on a board!"
+      },
+      {
+        "label": "Back to Solaris",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/546269",
+        "info": "Releases in Version 3.0 Invite your former companions back and complete tasks together to receive Astrite, Shell Credits and more! Returning Rovers who also link their accounts will also receive bonus gifts!"
+      },
+      {
+        "label": "Lahai-Roi Pioneers",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/571458",
+        "info": "December 25, 2025 - Complete various exploration tasks in the new Lahai-Roi region for various rewards!"
+      },
+      {
+        "label": "Gifts of Freshers Week",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/571436",
+        "info": "December 25, 2025 - Log-in for 7 days to claim Radiant and Lustrous Tides!"
+      },
+      {
+        "label": "Let's Go, to Startorch Academy!",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/571457",
+        "info": "December 25, 2025 - Log-in from December 25, 2025 to collect 10x Radiant Tide and 10x Forging Tides!"
+      },
+      {
+        "label": "Capturing Starlight",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/571522",
+        "info": "December 25, 2025 - Take photos of special targets to receive Astrite and development materials as rewards!"
       },
       {
         "label": "Lahai-Roi Release Date and Info",
@@ -360,13 +385,8 @@
     ]
   },
   "honkai-star-rail::events": {
-    "last_updated": "December 10, 2025 11:30 PM",
+    "last_updated": "December 16, 2025 09:36 PM",
     "items": [
-      {
-        "label": "Chrysos Awoo Championship",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/569749",
-        "info": "Duration: 12/17/2025 - 02/09/2026 Build your team lineup and defeat other trainers in the Chimera World Tournament!"
-      },
       {
         "label": "Remnants of Twilight",
         "link": "https://game8.co/games/Honkai-Star-Rail/archives/569767",
@@ -376,11 +396,6 @@
         "label": "Treasure Hunt",
         "link": "https://game8.co/games/Honkai-Star-Rail/archives/569768",
         "info": "Duration: 01/28 - 02/12/2026 Consume Trailblaze Power to hunt for treasure and obtain valuable rewards like Self-Modeling Resin and Stellar Jades!"
-      },
-      {
-        "label": "3.8 Gift of Odyssey",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/413645",
-        "info": "Duration: 12/17/2025 - 02/12/2026 Log in a total of 7 days to claim up 10 Star Rail Special Passes!"
       },
       {
         "label": "3.8 Planar Fissure",
@@ -465,7 +480,7 @@
     ]
   },
   "genshin-impact::events": {
-    "last_updated": "December 15, 2025 02:29 AM",
+    "last_updated": "December 17, 2025 03:20 AM",
     "items": [
       {
         "label": "Genshin x Duolingo 2025 Collab",
@@ -650,58 +665,8 @@
     ]
   },
   "honkai-star-rail::gacha": {
-    "last_updated": "December 5, 2025 11:27 AM",
+    "last_updated": "December 16, 2025 09:50 PM",
     "items": [
-      {
-        "label": "Cyrene Banner",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/550105",
-        "info": "(Ver. 3.7) Banner Dates : Nov. 04, 2025 - Dec. 16, 2025 Featured 5-Star: Cyrene ( Remembrance , Ice ) Featured 4-Star: Moze ( Hunt , Lightning ) Lynx ( Abundance , Quantum ) Pela ( Nihility , Ice )"
-      },
-      {
-        "label": "This Love, Forever Banner",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/408767",
-        "info": "(Ver. 3.7) Banner Dates : Nov. 04, 2025 - Dec. 16, 2025 Featured 5-Star: This Love, Forever ( Remembrance ) Featured 4-Star: Concert for Two ( Preservation ) Boundless Choreo ( Nihility ) The Story's Next Page ( Remembrance )"
-      },
-      {
-        "label": "Brilliant Fixation",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/408767",
-        "info": null
-      },
-      {
-        "label": "Saber",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/519564",
-        "info": null
-      },
-      {
-        "label": "Archer",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/519877",
-        "info": null
-      },
-      {
-        "label": "Cyrene Banner Schedule and Rates",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/550105",
-        "info": null
-      },
-      {
-        "label": "Indelible Coterie Banner Schedule and Rates",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/470223",
-        "info": null
-      },
-      {
-        "label": "Collab Light Cone Banner",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/462460",
-        "info": "Saber's banner has been available since July 11, 2025 , in Phase 1 of Version 3.4. It doesn't have a fixed end date yet. Her Light Cone, A Thankless Coronation , is available at the same time through the ."
-      },
-      {
-        "label": "Saber Banner Schedule and Rates",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/519871",
-        "info": null
-      },
-      {
-        "label": "Archer Banner Schedule and Rates",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/519880",
-        "info": null
-      },
       {
         "label": "The Dahlia Banner",
         "link": "https://game8.co/games/Honkai-Star-Rail/archives/559660",
@@ -723,9 +688,39 @@
         "info": "Never Forget Her Flame Banner (Ver. 3.8 Phase 1) (Ver. 3.8 Phase 1) Banner Dates : Dec. 16, 2025 - Jan. 07, 2026 Featured 5-Star: Never Forget Her Flame ( Nihility ) Whereabouts Should Dreams Rest ( Destruction ) Featured 4-Star: Memories of the Past ( Harmony ) Good Night and Sleep Well ( Nihility ) Concert for Two ( Preservation )"
       },
       {
+        "label": "Saber Banner",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/519871",
+        "info": "(Version 3.8) Archer Banner (Version 3.8) Banner Dates: Jul. 11, 2025 - TBD Featured 5-Star: Saber ( Destruction , Wind ) Archer ( Hunt , Quantum )"
+      },
+      {
+        "label": "Archer Banner",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/519880",
+        "info": "Saber Banner (Version 3.8) (Version 3.8) Banner Dates: Jul. 11, 2025 - TBD Featured 5-Star: Saber ( Destruction , Wind ) Archer ( Hunt , Quantum )"
+      },
+      {
+        "label": "Saber",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/519564",
+        "info": "Banner (Version 3.8) Archer Banner (Version 3.8) Banner Dates: Jul. 11, 2025 - TBD Featured 5-Star: ( Destruction , Wind ) Archer ( Hunt , Quantum )"
+      },
+      {
+        "label": "Archer",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/519877",
+        "info": "Saber Banner (Version 3.8) Banner (Version 3.8) Banner Dates: Jul. 11, 2025 - TBD Featured 5-Star: Saber ( Destruction , Wind ) ( Hunt , Quantum )"
+      },
+      {
+        "label": "Fate Collab Light Cone Banners",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/462460",
+        "info": "(Version 3.8) Banner Dates : Jul. 11, 2025 - TBD Featured 5-Star: A Thankless Coronation ( Destruction ) The Hell Where Ideals Burn ( Hunt )"
+      },
+      {
         "label": "Brilliant Fixation",
         "link": "https://game8.co/games/Honkai-Star-Rail/archives/408767",
-        "info": "The Dahlia's banner will run from December 16, 2025 until January 07, 2026 (UTC-5). Her Light Cone, Never Forget Her Flame , will also be available at the same time through the banner."
+        "info": null
+      },
+      {
+        "label": "Bygone Reminiscence",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/429241",
+        "info": null
       },
       {
         "label": "The Dahlia Banner Schedule and Rates",
@@ -733,14 +728,14 @@
         "info": null
       },
       {
-        "label": "Bygone Reminiscence",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/429241",
-        "info": "Firefly's rerun banner will be available from December 16, 2025 until January 07, 2026 (UTC-5). Her Light Cone, Whereabouts Should Dreams Rest , will also be available through the banner."
-      },
-      {
         "label": "Firefly Rerun Banner Date and Info",
         "link": "https://game8.co/games/Honkai-Star-Rail/archives/451736",
         "info": null
+      },
+      {
+        "label": "Collab Light Cone Banner",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/462460",
+        "info": "Saber's banner has been available since July 11, 2025 , in Phase 1 of Version 3.4. It doesn't have a fixed end date yet. Her Light Cone, A Thankless Coronation , is available at the same time through the ."
       },
       {
         "label": "Fugue Banner",
@@ -761,6 +756,21 @@
         "label": "Scent Alone Stays True Banner",
         "link": "https://game8.co/games/Honkai-Star-Rail/archives/429241",
         "info": "Long Road Leads Home Banner (Ver. 3.8 Phase 2) (Ver. 3.8 Phase 2) Banner Dates : Jan. 07, 2026 - Jan. 28, 2026 Featured 5-Star: Long Road Leads Home ( Nihility ) Scent Alone Stays True ( Abundance ) Featured 4-Star: The Moles Welcome You ( Destruction ) Post-Op Conversation ( Abundance ) Geniuses' Repose ( Erudition )"
+      },
+      {
+        "label": "Bygone Reminiscence",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/429241",
+        "info": "Fugue's rerun banner will be available from January 07, 2026 until January 28, 2026 (Server Time). Her Light Cone, Long Road Leads Home , will also be available through the banner."
+      },
+      {
+        "label": "Fugue Rerun Banner Schedule and Rates",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/477868",
+        "info": null
+      },
+      {
+        "label": "Lingsha Rerun Banner Schedule and Rates",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/462271",
+        "info": null
       },
       {
         "label": "Aglaea Banner",
@@ -785,17 +795,7 @@
       {
         "label": "Bygone Reminiscence",
         "link": "https://game8.co/games/Honkai-Star-Rail/archives/429241",
-        "info": "Fugue's rerun banner will be available from January 07, 2026 until January 28, 2026 (Server Time). Her Light Cone, Long Road Leads Home , will also be available through the banner."
-      },
-      {
-        "label": "Fugue Rerun Banner Schedule and Rates",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/477868",
-        "info": null
-      },
-      {
-        "label": "Lingsha Rerun Banner Schedule and Rates",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/462271",
-        "info": null
+        "info": "Aglaea's rerun banner will be available from January 28, 2026 until February 12, 2026 (Server Time). Her Light Cone, Time Woven in Gold , will also be available through the banner."
       },
       {
         "label": "Aglaea Rerun Banner Schedule and Rates",
