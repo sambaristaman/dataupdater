@@ -250,7 +250,7 @@
     ]
   },
   "wuthering-waves::events": {
-    "last_updated": "December 17, 2025 05:34 AM",
+    "last_updated": "December 18, 2025 04:55 AM",
     "items": [
       {
         "label": "Stranger Things in Honami",
@@ -311,6 +311,21 @@
         "label": "Back to Solaris",
         "link": "https://game8.co/games/Wuthering-Waves/archives/546269",
         "info": "Releases in Version 3.0 Invite your former companions back and complete tasks together to receive Astrite, Shell Credits and more! Returning Rovers who also link their accounts will also receive bonus gifts!"
+      },
+      {
+        "label": "Signs of a Silent Star",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/571687",
+        "info": "Releases in Version 3.0 7 stages will gradually unlock that Rovers must resolve in order to fix and decode a message!"
+      },
+      {
+        "label": "Operation: Frontier Renewal",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/571745",
+        "info": "Releases in Version 3.0 Explore the world of Lahai-Roi and help build road networks for the Spacetrek Collective."
+      },
+      {
+        "label": "Startorch Racing",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/571795",
+        "info": null
       },
       {
         "label": "Lahai-Roi Pioneers",
