@@ -495,8 +495,13 @@
     ]
   },
   "genshin-impact::events": {
-    "last_updated": "December 17, 2025 03:20 AM",
+    "last_updated": "December 19, 2025 04:34 AM",
     "items": [
+      {
+        "label": "Soulblazers' Snowbound Journey",
+        "link": "https://game8.co/games/Genshin-Impact/archives/567326",
+        "info": "December 19, 2025 \u2192 January 5, 2025"
+      },
       {
         "label": "Genshin x Duolingo 2025 Collab",
         "link": null,
@@ -506,11 +511,6 @@
         "label": "To Temper Thyself and Journey Far",
         "link": "https://game8.co/games/Genshin-Impact/archives/546841",
         "info": "December 01, 2025 \u2192 February 23, 2026"
-      },
-      {
-        "label": "Soulblazers' Snowbound Journey",
-        "link": "https://game8.co/games/Genshin-Impact/archives/567326",
-        "info": "December 19, 2025 \u2192 January 5, 2025"
       },
       {
         "label": "Heroic Clash: Saurian Brawl",
