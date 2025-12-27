@@ -250,7 +250,7 @@
     ]
   },
   "wuthering-waves::events": {
-    "last_updated": "December 25, 2025 09:29 PM",
+    "last_updated": "December 27, 2025 04:04 AM",
     "items": [
       {
         "label": "Ascendant Aces",
@@ -293,7 +293,7 @@
         "info": "December 25, 2025 - Permanent Reach Union Level 14 and Activate the Resonance Nexus in Startorch Academy in the Main Quest \u201cWhat Burns Beneath Frostlands\u201d"
       },
       {
-        "label": "Persona Sonic Event",
+        "label": "Persona Sonic Collab",
         "link": "https://game8.co/games/Wuthering-Waves/archives/570896",
         "info": "December 25, 2025 - February 4, 2026 Reach Union level 8 and activate the Startorch Academy Resonance Nexus in Main Quest, What Burns Beneath Frostlands."
       },
@@ -301,11 +301,6 @@
         "label": "Ascendant Aces Event Guide",
         "link": "https://game8.co/games/Wuthering-Waves/archives/456482",
         "info": null
-      },
-      {
-        "label": "Signs of a Silent Star",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/571687",
-        "info": "January 22, 2026 - February 4, 2026 7 stages will gradually unlock that Rovers must resolve in order to fix and decode a message!"
       },
       {
         "label": "Beyond the Waves",
@@ -321,6 +316,11 @@
         "label": "Startorch Racing",
         "link": "https://game8.co/games/Wuthering-Waves/archives/571795",
         "info": "January 15, 2026 - February 4, 2026 Use your Expedition Motorbike and race through 7 gradually unlocking courses and win rewards!"
+      },
+      {
+        "label": "Signs of a Silent Star",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/571687",
+        "info": "January 22, 2026 - February 4, 2026 7 stages will gradually unlock that Rovers must resolve in order to fix and decode a message!"
       },
       {
         "label": "Chord Cleansing",
@@ -540,7 +540,7 @@
     ]
   },
   "wuthering-waves::gacha": {
-    "last_updated": "December 25, 2025 01:56 AM",
+    "last_updated": "December 26, 2025 10:08 PM",
     "items": [
       {
         "label": "Absolute Pulsation (Spectrum Blaster)",
