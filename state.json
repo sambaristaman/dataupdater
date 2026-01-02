@@ -425,7 +425,7 @@
     ]
   },
   "genshin-impact::events": {
-    "last_updated": "December 22, 2025 10:34 PM",
+    "last_updated": "January 2, 2026 03:54 AM",
     "items": [
       {
         "label": "Soulblazers' Snowbound Journey",
@@ -433,9 +433,9 @@
         "info": "December 19, 2025 \u2192 January 5, 2025"
       },
       {
-        "label": "Genshin x Duolingo 2025 Collab",
-        "link": null,
-        "info": "December 8, 2025 \u2192 December 27, 2025"
+        "label": "Heroic Clash: Saurian Brawl",
+        "link": "https://game8.co/games/Genshin-Impact/archives/567327",
+        "info": "December 29, 2025 \u2192 January 7, 2025"
       },
       {
         "label": "To Temper Thyself and Journey Far",
@@ -443,14 +443,34 @@
         "info": "December 01, 2025 \u2192 February 23, 2026"
       },
       {
-        "label": "Heroic Clash: Saurian Brawl",
-        "link": "https://game8.co/games/Genshin-Impact/archives/567327",
-        "info": "December 29, 2025 \u2192 January 7, 2025"
-      },
-      {
         "label": "Marvelous Merchandise 6.2 Rerun",
         "link": "https://game8.co/games/Genshin-Impact/archives/305633",
         "info": "January 5, 2026 \u2192 January 12, 2026"
+      },
+      {
+        "label": "Shutterflash Memory Hunt",
+        "link": "https://game8.co/games/Genshin-Impact/archives/572605",
+        "info": "January 16, 2026 \u2192 January 26, 2026"
+      },
+      {
+        "label": "A Lanternlit Ode to the Silver Moon 2026 Lantern Rite",
+        "link": "https://game8.co/games/Genshin-Impact/archives/572604",
+        "info": "January 30, 2026 \u2192 February 23, 2026"
+      },
+      {
+        "label": "Moonlit Patrol Exercise",
+        "link": "https://game8.co/games/Genshin-Impact/archives/572606",
+        "info": "February 9, 2026 \u2192 February 23, 2026"
+      },
+      {
+        "label": "Ley Line Overflow 6.3 Rerun",
+        "link": "https://game8.co/games/Genshin-Impact/archives/316998",
+        "info": "February 16, 2026 \u2192 February 23, 2026"
+      },
+      {
+        "label": "May Fortune Find You 6.3 Rerun",
+        "link": "https://game8.co/games/Genshin-Impact/archives/311300",
+        "info": null
       },
       {
         "label": "Stygian Onslaught",
@@ -471,71 +491,51 @@
         "label": "Travelers' Tales",
         "link": "https://game8.co/games/Genshin-Impact/archives/495326",
         "info": null
-      },
-      {
-        "label": "Repertoire of Myriad Melodies",
-        "link": "https://game8.co/games/Genshin-Impact/archives/406198",
-        "info": null
-      },
-      {
-        "label": "Daily Check-In",
-        "link": "https://game8.co/games/Genshin-Impact/archives/321404",
-        "info": null
-      },
-      {
-        "label": "Stellar Reunion",
-        "link": "https://game8.co/games/Genshin-Impact/archives/315013",
-        "info": null
-      },
-      {
-        "label": "Fate Foretold",
-        "link": null,
-        "info": null
       }
     ]
   },
   "genshin-impact::gacha": {
-    "last_updated": "December 16, 2025 12:05 AM",
+    "last_updated": "January 2, 2026 04:32 AM",
     "items": [
       {
-        "label": "Rubedo, of White Stone Born",
-        "link": "https://game8.co/games/Genshin-Impact/archives/567332",
+        "label": "Cornucopia of Contention",
+        "link": "https://game8.co/games/Genshin-Impact/archives/504841",
         "info": null
       },
       {
-        "label": "Durin",
-        "link": "https://game8.co/games/Genshin-Impact/archives/462478",
+        "label": "Varesa",
+        "link": "https://game8.co/games/Genshin-Impact/archives/500244",
         "info": null
       },
       {
-        "label": "Jahoda",
-        "link": "https://game8.co/games/Genshin-Impact/archives/538446",
+        "label": "Gaming",
+        "link": "https://game8.co/games/Genshin-Impact/archives/437446",
         "info": null
       },
       {
-        "label": "Bennett",
-        "link": "https://game8.co/games/Genshin-Impact/archives/Bennett-Best-Builds",
+        "label": "Iansan",
+        "link": "https://game8.co/games/Genshin-Impact/archives/345881",
         "info": null
       },
       {
-        "label": "Faruzan",
-        "link": "https://game8.co/games/Genshin-Impact/archives/391897",
+        "label": "Chevreuse",
+        "link": "https://game8.co/games/Genshin-Impact/archives/426201",
         "info": null
       },
       {
-        "label": "Ballad in Goblets",
-        "link": "https://game8.co/games/Genshin-Impact/archives/304798",
+        "label": "Forgefire's Blessing",
+        "link": "https://game8.co/games/Genshin-Impact/archives/475485",
         "info": null
       },
       {
-        "label": "Venti",
-        "link": "https://game8.co/games/Genshin-Impact/archives/Venti-Best-Builds",
+        "label": "Xilonen",
+        "link": "https://game8.co/games/Genshin-Impact/archives/461997",
         "info": null
       },
       {
         "label": "Epitome Invocation",
         "link": "https://game8.co/games/Genshin-Impact/archives/304758",
-        "info": "Start: 2025/12/03 End: 2025/12/23 Athame Artis The Daybreak Chronicles The Alley Flash Prospector's Drill Wine and Song Rainslasher The Stringless"
+        "info": "Start: 2025/12/23 End: 2026/01/13 Vivid Notions Peak Patrol Song Alley Hunter Favonius Sword Favonius Lance The Widsith"
       }
     ]
   },
