@@ -405,7 +405,7 @@
     ]
   },
   "genshin-impact::events": {
-    "last_updated": "January 8, 2026 01:17 AM",
+    "last_updated": "January 11, 2026 11:48 PM",
     "items": [
       {
         "label": "Memories of the Moon Web Event",
@@ -413,14 +413,14 @@
         "info": "December 31, 2025 \u2192 January 13, 2026"
       },
       {
-        "label": "Marvelous Merchandise 6.2 Rerun",
-        "link": "https://game8.co/games/Genshin-Impact/archives/305633",
-        "info": "January 5, 2026 \u2192 January 12, 2026"
-      },
-      {
         "label": "Shutterflash Memory Hunt",
         "link": "https://game8.co/games/Genshin-Impact/archives/572605",
         "info": "January 16, 2026 \u2192 January 26, 2026"
+      },
+      {
+        "label": "May Fortune Find You 6.3 Rerun",
+        "link": "https://game8.co/games/Genshin-Impact/archives/311300",
+        "info": "January 16, 2026 \u2192 February 3, 2026"
       },
       {
         "label": "A Lanternlit Ode to the Silver Moon 2026 Lantern Rite",
@@ -436,11 +436,6 @@
         "label": "Ley Line Overflow 6.3 Rerun",
         "link": "https://game8.co/games/Genshin-Impact/archives/316998",
         "info": "February 16, 2026 \u2192 February 23, 2026"
-      },
-      {
-        "label": "May Fortune Find You 6.3 Rerun",
-        "link": "https://game8.co/games/Genshin-Impact/archives/311300",
-        "info": null
       },
       {
         "label": "To Temper Thyself and Journey Far",
@@ -470,6 +465,11 @@
       {
         "label": "Repertoire of Myriad Melodies",
         "link": "https://game8.co/games/Genshin-Impact/archives/406198",
+        "info": null
+      },
+      {
+        "label": "Daily Check-In",
+        "link": "https://game8.co/games/Genshin-Impact/archives/321404",
         "info": null
       }
     ]
