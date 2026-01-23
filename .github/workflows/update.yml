@@ -65,6 +65,7 @@ jobs:
           WEBHOOK_URL_HSR:     ${{ secrets.WEBHOOK_URL_HSR }}
           WEBHOOK_URL_UMA:     ${{ secrets.WEBHOOK_URL_UMA }}
           WEBHOOK_URL_GI:      ${{ secrets.WEBHOOK_URL_GI }}
+          WEBHOOK_URL_ENDFIELD: ${{ secrets.WEBHOOK_URL_ENDFIELD }}
           # Summary webhook
           WEBHOOK_URL_SUMMARY: ${{ secrets.WEBHOOK_URL_SUMMARY }}
           # Role IDs for summary mentions (Discord roles)
@@ -72,6 +73,7 @@ jobs:
           ROLE_ID_HSR:         ${{ secrets.ROLE_ID_HSR }}
           ROLE_ID_UMA:         ${{ secrets.ROLE_ID_UMA }}
           ROLE_ID_GI:          ${{ secrets.ROLE_ID_GI }}
+          ROLE_ID_ARKNIGHTS_ENDFIELD: ${{ secrets.ROLE_ID_ARKNIGHTS_ENDFIELD }}
           # Toggle: disable Umamusume events scraping (kept ENABLED by default)
           # Set repository/environment variable DISABLE_UMA_EVENTS=true to disable.
           DISABLE_UMA_EVENTS:  ${{ vars.DISABLE_UMA_EVENTS }}
