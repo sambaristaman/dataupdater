@@ -26,6 +26,7 @@ from extractors.uma_extractor import extract_umamusume_events
 from extractors.generic_extractor import extract_events_with_links_generic
 from extractors.wuwa_extractor import extract_wuwa_gachas
 from extractors.hsr_extractor import extract_hsr_gachas
+from extractors.endfield_extractor import extract_endfield_events, extract_endfield_gachas
 
 # --- Config: pages -> (url, secret_name_for_webhook, pretty_title, secret_name_for_role_id) ---
 PAGES = {
@@ -54,6 +55,12 @@ PAGES = {
         "Genshin Impact — Archives & Updates",
         "ROLE_ID_GI",
     ),
+    "arknights-endfield": (
+        "https://game8.co/games/Arknights-Endfield/archives/535443",
+        "WEBHOOK_URL_ENDFIELD",
+        "Arknights: Endfield — Events",
+        "ROLE_ID_ARKNIGHTS_ENDFIELD",
+    ),
 }
 
 # --- Gacha sources (per game) ---
@@ -70,6 +77,10 @@ GACHA_PAGES = {
     "honkai-star-rail": (
         "https://game8.co/games/Honkai-Star-Rail/archives/408381",  # Warp/Banner Schedule
         "hsr",
+    ),
+    "arknights-endfield": (
+        "https://game8.co/games/Arknights-Endfield/archives/524215",  # Banner Schedule
+        "endfield",
     ),
     # Uma deliberately omitted (events already cover banners)
 }
@@ -394,6 +405,10 @@ def extract_events_with_links(soup: BeautifulSoup, base_url: str) -> List[str]:
         uma = extract_umamusume_events(soup, base_url)
         if len(uma) >= 1:
             return uma
+    if "/Arknights-Endfield/" in base_url:
+        endfield = extract_endfield_events(soup, base_url)
+        if len(endfield) >= 1:
+            return endfield
     return extract_events_with_links_generic(soup, base_url)
 
 
@@ -405,6 +420,8 @@ def extract_gacha_for(key: str, soup, url: str) -> list[str]:
         return extract_wuwa_gachas(soup, url)
     if key == "honkai-star-rail":
         return extract_hsr_gachas(soup, url)
+    if key == "arknights-endfield":
+        return extract_endfield_gachas(soup, url)
     return []
 
 
