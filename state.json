@@ -470,12 +470,12 @@
     ]
   },
   "genshin-impact::gacha": {
-    "last_updated": "January 21, 2026 10:37 PM",
+    "last_updated": "January 22, 2026 11:21 PM",
     "items": [
       {
         "label": "Somnias a Luna",
         "link": "https://game8.co/games/Genshin-Impact/archives/572610",
-        "info": "Start: 2026/01/14 End: 2026/02/03 Columbina Fischl Sethos Ifa"
+        "info": null
       },
       {
         "label": "Columbina",
@@ -500,7 +500,7 @@
       {
         "label": "Astral Actuation",
         "link": "https://game8.co/games/Genshin-Impact/archives/538073",
-        "info": "Start: 2026/01/14 End: 2026/02/03 Ineffa Fischl Sethos Ifa"
+        "info": null
       },
       {
         "label": "Ineffa",
