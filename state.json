@@ -713,5 +713,95 @@
         "info": null
       }
     ]
+  },
+  "arknights-endfield::events": {
+    "last_updated": "January 22, 2026 12:32 PM",
+    "items": [
+      {
+        "label": "Final Prep Orders Web Event",
+        "link": "https://game8.co/games/Arknights-Endfield/archives/573069",
+        "info": "01/07 - 02/05"
+      },
+      {
+        "label": "Final Prep Orders Guide",
+        "link": "https://game8.co/games/Arknights-Endfield/archives/573069",
+        "info": null
+      },
+      {
+        "label": "All Web Event Guides",
+        "link": "https://game8.co/games/Arknights-Endfield/archives/574541",
+        "info": null
+      }
+    ]
+  },
+  "arknights-endfield::gacha": {
+    "last_updated": "January 22, 2026 01:08 PM",
+    "items": [
+      {
+        "label": "Laevatain Banner",
+        "link": "https://game8.co/games/Arknights-Endfield/archives/524215#hm_101",
+        "info": "Jan. 22 - Feb. 7, 2026"
+      },
+      {
+        "label": "Smelting Forge Issue",
+        "link": "https://game8.co/games/Arknights-Endfield/archives/524215#hm_102",
+        "info": "= Jan. 22 - After 3 Headhunting Banners"
+      },
+      {
+        "label": "Standard Arsenal Issue Banners",
+        "link": "https://game8.co/games/Arknights-Endfield/archives/524215#hm_103",
+        "info": "Jan. 22 - 7~HH Banners"
+      },
+      {
+        "label": "Laevatain Banner Guide and Release Date",
+        "link": "https://game8.co/games/Arknights-Endfield/archives/524291",
+        "info": null
+      },
+      {
+        "label": "Smelting Forge Banner Guide",
+        "link": "https://game8.co/games/Arknights-Endfield/archives/575492",
+        "info": null
+      },
+      {
+        "label": "Gilberta Banner",
+        "link": "https://game8.co/games/Arknights-Endfield/archives/524215#hm_201",
+        "info": "Feb. 7 - Feb. 24, 2026"
+      },
+      {
+        "label": "Express Delivery Issue",
+        "link": "https://game8.co/games/Arknights-Endfield/archives/524215#hm_202",
+        "info": "= Feb. 7 - After 3 Headhunting Banners"
+      },
+      {
+        "label": "Gilberta Banner Guide and Release Date",
+        "link": "https://game8.co/games/Arknights-Endfield/archives/574856",
+        "info": null
+      },
+      {
+        "label": "Express Delivery Issue Banner Guide",
+        "link": "https://game8.co/games/Arknights-Endfield/archives/575515",
+        "info": null
+      },
+      {
+        "label": "Yvonne Banner",
+        "link": "https://game8.co/games/Arknights-Endfield/archives/524215#hm_301",
+        "info": "Feb. 24 - Mar. 13, 2026"
+      },
+      {
+        "label": "Graffitti Issue",
+        "link": "https://game8.co/games/Arknights-Endfield/archives/524215#hm_302",
+        "info": "= Feb. 24 - After 3 Headhunting Banners"
+      },
+      {
+        "label": "Yvonne Banner Guide and Release Date",
+        "link": "https://game8.co/games/Arknights-Endfield/archives/574953",
+        "info": null
+      },
+      {
+        "label": "Graffiti Issue Banner Guide",
+        "link": "https://game8.co/games/Arknights-Endfield/archives/575516",
+        "info": null
+      }
+    ]
   }
 }
