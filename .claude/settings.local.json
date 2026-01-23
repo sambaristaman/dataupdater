@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(set DRY_RUN=true)",
+      "Bash(set WEBHOOK_URL_CODEX=https://example.com/webhook)",
+      "Bash(python:*)",
+      "Bash($env:DRY_RUN=\"true\")",
+      "Bash($env:WEBHOOK_URL_CODEX=\"https://example.com/webhook\")",
+      "Bash(export DRY_RUN=true)",
+      "Bash(export WEBHOOK_URL_CODEX=https://example.com/webhook)",
+      "WebFetch(domain:game8.co)"
+    ]
+  }
+}
