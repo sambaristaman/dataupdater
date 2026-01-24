@@ -515,12 +515,17 @@
     ]
   },
   "wuthering-waves::gacha": {
-    "last_updated": "January 23, 2026 07:43 AM",
+    "last_updated": "January 23, 2026 08:57 AM",
     "items": [
       {
         "label": "Absolute Pulsation (Starfield Calibrator)",
         "link": "https://game8.co/games/Wuthering-Waves/archives/455400",
         "info": "January 15, 2026 - February 4, 2026"
+      },
+      {
+        "label": "Take Flight in Spring",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/575840",
+        "info": null
       },
       {
         "label": "Aemeath",
@@ -575,11 +580,6 @@
       {
         "label": "Chisa",
         "link": "https://game8.co/games/Wuthering-Waves/archives/524880",
-        "info": null
-      },
-      {
-        "label": "Absolute Pulsation (Kumokiri)",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/455400",
         "info": null
       }
     ]
@@ -715,7 +715,7 @@
     ]
   },
   "arknights-endfield::events": {
-    "last_updated": "January 22, 2026 12:32 PM",
+    "last_updated": "January 23, 2026 11:50 PM",
     "items": [
       {
         "label": "Final Prep Orders Web Event",
@@ -723,19 +723,24 @@
         "info": "01/07 - 02/05"
       },
       {
+        "label": "Voyage to the Stars Web Event",
+        "link": "https://game8.co/games/Arknights-Endfield/archives/575865",
+        "info": "01/16 - 03/04"
+      },
+      {
         "label": "Final Prep Orders Guide",
         "link": "https://game8.co/games/Arknights-Endfield/archives/573069",
         "info": null
       },
       {
-        "label": "All Web Event Guides",
-        "link": "https://game8.co/games/Arknights-Endfield/archives/574541",
+        "label": "Voyage to the Stars Guide",
+        "link": "https://game8.co/games/Arknights-Endfield/archives/575865",
         "info": null
       }
     ]
   },
   "arknights-endfield::gacha": {
-    "last_updated": "January 22, 2026 01:08 PM",
+    "last_updated": "January 23, 2026 09:05 AM",
     "items": [
       {
         "label": "Laevatain Banner",
