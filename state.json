@@ -315,17 +315,12 @@
     ]
   },
   "honkai-star-rail::events": {
-    "last_updated": "January 5, 2026 04:02 AM",
+    "last_updated": "January 25, 2026 08:13 PM",
     "items": [
       {
         "label": "Treasure Hunt",
         "link": "https://game8.co/games/Honkai-Star-Rail/archives/569768",
         "info": "Duration: 01/28 - 02/12/2026 Consume Trailblaze Power to hunt for treasure and obtain valuable rewards like Self-Modeling Resin and Stellar Jades!"
-      },
-      {
-        "label": "3.8 Realm of the Strange",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/417674",
-        "info": "Duration: 01/16 - 02/12/2026 Get double the relics when challenging Caverns of Corrosion!"
       },
       {
         "label": "3.8 Garden of Plenty",
@@ -715,7 +710,7 @@
     ]
   },
   "arknights-endfield::events": {
-    "last_updated": "January 23, 2026 11:50 PM",
+    "last_updated": "January 26, 2026 03:35 AM",
     "items": [
       {
         "label": "Final Prep Orders Web Event",
