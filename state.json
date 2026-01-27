@@ -395,7 +395,7 @@
     ]
   },
   "genshin-impact::events": {
-    "last_updated": "January 15, 2026 08:49 PM",
+    "last_updated": "January 27, 2026 02:05 AM",
     "items": [
       {
         "label": "Where the Moon Returns Web Event",
@@ -710,12 +710,17 @@
     ]
   },
   "arknights-endfield::events": {
-    "last_updated": "January 26, 2026 03:35 AM",
+    "last_updated": "January 26, 2026 11:15 AM",
     "items": [
       {
         "label": "Final Prep Orders Web Event",
         "link": "https://game8.co/games/Arknights-Endfield/archives/573069",
         "info": "01/07 - 02/05"
+      },
+      {
+        "label": "Awakening Sign-In Beginner Event",
+        "link": "https://game8.co/games/Arknights-Endfield/archives/576094",
+        "info": "01/22 \u25c6"
       },
       {
         "label": "Voyage to the Stars Web Event",
