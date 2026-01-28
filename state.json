@@ -315,19 +315,8 @@
     ]
   },
   "honkai-star-rail::events": {
-    "last_updated": "January 25, 2026 08:13 PM",
-    "items": [
-      {
-        "label": "Treasure Hunt",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/569768",
-        "info": "Duration: 01/28 - 02/12/2026 Consume Trailblaze Power to hunt for treasure and obtain valuable rewards like Self-Modeling Resin and Stellar Jades!"
-      },
-      {
-        "label": "3.8 Garden of Plenty",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/413423",
-        "info": "Duration: 01/28 - 02/12/2026 Get double the rewards when completing Crimson and Golden Calyx stages!"
-      }
-    ]
+    "last_updated": "January 27, 2026 11:37 PM",
+    "items": []
   },
   "umamusume::events": {
     "last_updated": "September 8, 2025 05:57 AM",
@@ -580,27 +569,27 @@
     ]
   },
   "honkai-star-rail::gacha": {
-    "last_updated": "January 6, 2026 10:51 PM",
+    "last_updated": "January 27, 2026 11:25 PM",
     "items": [
       {
-        "label": "Fugue Banner",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/477868",
-        "info": "(Ver. 3.8 Phase 2) Lingsha Banner (Ver. 3.8 Phase 2) Banner Dates: Jan. 07, 2026 - Jan. 28, 2026 Featured 5-Star: Fugue ( Nihility , Fire ) Lingsha ( Abundance , Fire ) Featured 4-Star: Sampo ( Nihility , Wind ) Natasha ( Abundance , Physical ) Arlan ( Destruction , Lightning )"
+        "label": "Aglaea Banner",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/485941",
+        "info": "(Ver. 3.8 Phase 3) Sunday Banner (Ver. 3.8 Phase 3) Banner Dates: Jan. 28, 2026 - Feb. 12, 2026 Featured 5-Star: Aglaea ( Remembrance , Lightning ) Sunday ( Harmony , Imaginary ) Featured 4-Star: Tingyun ( Harmony , Lightning ) Yukong ( Harmony , Imaginary ) Dan Heng ( Hunt , Wind )"
       },
       {
-        "label": "Lingsha Banner",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/462271",
-        "info": "Fugue Banner (Ver. 3.8 Phase 2) (Ver. 3.8 Phase 2) Banner Dates: Jan. 07, 2026 - Jan. 28, 2026 Featured 5-Star: Fugue ( Nihility , Fire ) Lingsha ( Abundance , Fire ) Featured 4-Star: Sampo ( Nihility , Wind ) Natasha ( Abundance , Physical ) Arlan ( Destruction , Lightning )"
+        "label": "Sunday Banner",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/477691",
+        "info": "Aglaea Banner (Ver. 3.8 Phase 3) (Ver. 3.8 Phase 3) Banner Dates: Jan. 28, 2026 - Feb. 12, 2026 Featured 5-Star: Aglaea ( Remembrance , Lightning ) Sunday ( Harmony , Imaginary ) Featured 4-Star: Tingyun ( Harmony , Lightning ) Yukong ( Harmony , Imaginary ) Dan Heng ( Hunt , Wind )"
       },
       {
-        "label": "Long Road Leads Home Banner",
+        "label": "Time Woven Into Gold Banner",
         "link": "https://game8.co/games/Honkai-Star-Rail/archives/429241",
-        "info": "(Ver. 3.8 Phase 2) Scent Alone Stays True Banner (Ver. 3.8 Phase 2) Banner Dates : Jan. 07, 2026 - Jan. 28, 2026 Featured 5-Star: Long Road Leads Home ( Nihility ) Scent Alone Stays True ( Abundance ) Featured 4-Star: The Moles Welcome You ( Destruction ) Post-Op Conversation ( Abundance ) Geniuses' Repose ( Erudition )"
+        "info": "(Ver. 3.8 Phase 3) A Grounded Ascent Banner (Ver. 3.8 Phase 3) Banner Dates : Jan. 28, 2026 - Feb. 12, 2026 Featured 5-Star: Time Woven into Gold ( Remembrance ) A Grounded Ascent ( Harmony ) Featured 4-Star: Geniuses' Greetings ( Remembrance ) Trend of the Universal Market ( Preservation ) Dance! Dance! Dance! ( Harmony )"
       },
       {
-        "label": "Scent Alone Stays True Banner",
+        "label": "A Grounded Ascent Banner",
         "link": "https://game8.co/games/Honkai-Star-Rail/archives/429241",
-        "info": "Long Road Leads Home Banner (Ver. 3.8 Phase 2) (Ver. 3.8 Phase 2) Banner Dates : Jan. 07, 2026 - Jan. 28, 2026 Featured 5-Star: Long Road Leads Home ( Nihility ) Scent Alone Stays True ( Abundance ) Featured 4-Star: The Moles Welcome You ( Destruction ) Post-Op Conversation ( Abundance ) Geniuses' Repose ( Erudition )"
+        "info": "Time Woven Into Gold Banner (Ver. 3.8 Phase 3) (Ver. 3.8 Phase 3) Banner Dates : Jan. 28, 2026 - Feb. 12, 2026 Featured 5-Star: Time Woven into Gold ( Remembrance ) A Grounded Ascent ( Harmony ) Featured 4-Star: Geniuses' Greetings ( Remembrance ) Trend of the Universal Market ( Preservation ) Dance! Dance! Dance! ( Harmony )"
       },
       {
         "label": "Saber Banner",
@@ -633,13 +622,13 @@
         "info": null
       },
       {
-        "label": "Fugue Rerun Banner Schedule and Rates",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/477868",
+        "label": "Aglaea Rerun Banner Schedule and Rates",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/485941",
         "info": null
       },
       {
-        "label": "Lingsha Rerun Banner Schedule and Rates",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/462271",
+        "label": "Sunday Rerun Banner Schedule and Rates",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/477691",
         "info": null
       },
       {
@@ -653,54 +642,19 @@
         "info": null
       },
       {
-        "label": "Aglaea Banner",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/485941",
-        "info": "(Ver. 3.8 Phase 3) Sunday Banner (Ver. 3.8 Phase 3) Banner Dates: Jan. 28, 2026 - Feb. 12, 2026 Featured 5-Star: Aglaea ( Remembrance , Lightning ) Sunday ( Harmony , Imaginary ) Featured 4-Star: Tingyun ( Harmony , Lightning ) Yukong ( Harmony , Imaginary ) Dan Heng ( Hunt , Wind )"
-      },
-      {
-        "label": "Sunday Banner",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/477691",
-        "info": "Aglaea Banner (Ver. 3.8 Phase 3) (Ver. 3.8 Phase 3) Banner Dates: Jan. 28, 2026 - Feb. 12, 2026 Featured 5-Star: Aglaea ( Remembrance , Lightning ) Sunday ( Harmony , Imaginary ) Featured 4-Star: Tingyun ( Harmony , Lightning ) Yukong ( Harmony , Imaginary ) Dan Heng ( Hunt , Wind )"
-      },
-      {
-        "label": "Time Woven Into Gold Banner",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/429241",
-        "info": "(Ver. 3.8 Phase 3) A Grounded Ascent Banner (Ver. 3.8 Phase 3) Banner Dates : Jan. 28, 2026 - Feb. 12, 2026 Featured 5-Star: Time Woven into Gold ( Remembrance ) A Grounded Ascent ( Harmony ) Featured 4-Star: Geniuses' Greetings ( Remembrance ) Trend of the Universal Market ( Preservation ) Dance! Dance! Dance! ( Harmony )"
-      },
-      {
-        "label": "A Grounded Ascent Banner",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/429241",
-        "info": "Time Woven Into Gold Banner (Ver. 3.8 Phase 3) (Ver. 3.8 Phase 3) Banner Dates : Jan. 28, 2026 - Feb. 12, 2026 Featured 5-Star: Time Woven into Gold ( Remembrance ) A Grounded Ascent ( Harmony ) Featured 4-Star: Geniuses' Greetings ( Remembrance ) Trend of the Universal Market ( Preservation ) Dance! Dance! Dance! ( Harmony )"
-      },
-      {
-        "label": "Bygone Reminiscence",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/429241",
-        "info": "Aglaea's rerun banner will be available from January 28, 2026 until February 12, 2026 (Server Time). Her Light Cone, Time Woven in Gold , will also be available through the banner."
-      },
-      {
-        "label": "Aglaea Rerun Banner Schedule and Rates",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/485941",
-        "info": null
-      },
-      {
-        "label": "Sunday Rerun Banner Schedule and Rates",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/477691",
-        "info": null
-      },
-      {
         "label": "Yao Guang Banner",
         "link": "https://game8.co/games/Honkai-Star-Rail/archives/572643",
-        "info": "(Ver. 4.0 Phase 1) Banner Dates: Feb. 12, 2026 - Mar. 06, 2026 Featured 5-Star: Yao Guang ( Physical ) Featured 4-Star: TBA TBA TBA"
-      },
-      {
-        "label": "Sparxie Banner",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/572646",
-        "info": "(Ver. 4.0 Phase 2) Banner Dates: Mar. 06, 2026 - Mar. 26, 2026 Featured 5-Star: Sparxie ( Fire ) Featured 4-Star: TBA TBA TBA"
+        "info": "(Ver. 4.0 Phase 1) Banner Dates: Feb. 12, 2026 - Mar. 06, 2026 Featured 5-Star: Yao Guang ( Elation , Physical ) Featured 4-Star: TBA TBA TBA"
       },
       {
         "label": "Yao Guang Banner Schedule and Rates",
         "link": "https://game8.co/games/Honkai-Star-Rail/archives/572643",
         "info": null
+      },
+      {
+        "label": "Sparxie Banner",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/572646",
+        "info": "(Ver. 4.0 Phase 2) Banner Dates: Mar. 06, 2026 - Mar. 26, 2026 Featured 5-Star: Sparxie ( Fire ) Featured 4-Star: TBA TBA TBA"
       },
       {
         "label": "Sparxie Banner Schedule and Rates",
@@ -740,7 +694,7 @@
     ]
   },
   "arknights-endfield::gacha": {
-    "last_updated": "January 23, 2026 09:05 AM",
+    "last_updated": "January 28, 2026 06:48 AM",
     "items": [
       {
         "label": "Laevatain Banner",
@@ -751,11 +705,6 @@
         "label": "Smelting Forge Issue",
         "link": "https://game8.co/games/Arknights-Endfield/archives/524215#hm_102",
         "info": "= Jan. 22 - After 3 Headhunting Banners"
-      },
-      {
-        "label": "Standard Arsenal Issue Banners",
-        "link": "https://game8.co/games/Arknights-Endfield/archives/524215#hm_103",
-        "info": "Jan. 22 - 7~HH Banners"
       },
       {
         "label": "Laevatain Banner Guide and Release Date",
