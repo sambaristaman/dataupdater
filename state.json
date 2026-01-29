@@ -454,46 +454,11 @@
     ]
   },
   "genshin-impact::gacha": {
-    "last_updated": "January 22, 2026 11:21 PM",
+    "last_updated": "January 29, 2026 05:04 AM",
     "items": [
       {
-        "label": "Somnias a Luna",
-        "link": "https://game8.co/games/Genshin-Impact/archives/572610",
-        "info": null
-      },
-      {
-        "label": "Columbina",
-        "link": "https://game8.co/games/Genshin-Impact/archives/382106",
-        "info": null
-      },
-      {
-        "label": "Fischl",
-        "link": "https://game8.co/games/Genshin-Impact/archives/297524",
-        "info": null
-      },
-      {
-        "label": "Sethos",
-        "link": "https://game8.co/games/Genshin-Impact/archives/451024",
-        "info": null
-      },
-      {
-        "label": "Ifa",
-        "link": "https://game8.co/games/Genshin-Impact/archives/472693",
-        "info": null
-      },
-      {
-        "label": "Astral Actuation",
-        "link": "https://game8.co/games/Genshin-Impact/archives/538073",
-        "info": null
-      },
-      {
-        "label": "Ineffa",
-        "link": "https://game8.co/games/Genshin-Impact/archives/531360",
-        "info": null
-      },
-      {
-        "label": "Epitome Invocation",
-        "link": "https://game8.co/games/Genshin-Impact/archives/304758",
+        "label": "_No parseable banners found (layout may have changed)._",
+        "link": null,
         "info": null
       }
     ]
@@ -664,7 +629,7 @@
     ]
   },
   "arknights-endfield::events": {
-    "last_updated": "January 26, 2026 11:15 AM",
+    "last_updated": "January 29, 2026 05:12 AM",
     "items": [
       {
         "label": "Final Prep Orders Web Event",
@@ -672,14 +637,14 @@
         "info": "01/07 - 02/05"
       },
       {
-        "label": "Awakening Sign-In Beginner Event",
-        "link": "https://game8.co/games/Arknights-Endfield/archives/576094",
-        "info": "01/22 \u25c6"
-      },
-      {
         "label": "Voyage to the Stars Web Event",
         "link": "https://game8.co/games/Arknights-Endfield/archives/575865",
         "info": "01/16 - 03/04"
+      },
+      {
+        "label": "Combat Drills Operator Trial",
+        "link": "https://game8.co/games/Arknights-Endfield/archives/577042",
+        "info": "01/22 - 02/07"
       },
       {
         "label": "Final Prep Orders Guide",
