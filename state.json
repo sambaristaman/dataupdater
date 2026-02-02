@@ -250,7 +250,7 @@
     ]
   },
   "wuthering-waves::events": {
-    "last_updated": "January 15, 2026 04:43 AM",
+    "last_updated": "February 2, 2026 05:34 AM",
     "items": [
       {
         "label": "Back to Solaris",
@@ -278,6 +278,11 @@
         "info": "December 25, 2025 - February 4, 2026 Complete Main Quest Chapter III Act I, What Burns Beneath Frostlands, to unlock"
       },
       {
+        "label": "Signs of a Silent Star",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/571687",
+        "info": "January 22, 2026 - February 4, 2026 Log-in during Version 3.0 and use the WavesLine function."
+      },
+      {
         "label": "Operation: Frontier Renewal",
         "link": "https://game8.co/games/Wuthering-Waves/archives/571745",
         "info": "December 25, 2025 - Permanent Reach Union Level 8 and complete Tutorial Quest - Operation: Frontier Renewal."
@@ -293,24 +298,34 @@
         "info": "December 25, 2025 - February 4, 2026 Reach Union level 8 and activate the Startorch Academy Resonance Nexus in Main Quest, What Burns Beneath Frostlands."
       },
       {
-        "label": "Beyond the Waves",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/484720",
-        "info": "January 1, 2026 - January 19, 2026 Reach Union Level 14"
-      },
-      {
         "label": "Ascendant Aces",
         "link": "https://game8.co/games/Wuthering-Waves/archives/456482",
         "info": "January 15, 2026 - February 4, 2026 Unlocked by default"
       },
       {
-        "label": "Signs of a Silent Star",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/571687",
-        "info": "January 22, 2026 - February 4, 2026 7 stages will gradually unlock that Rovers must resolve in order to fix and decode a message!"
+        "label": "Lollo Campaign: Implementation",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/458245",
+        "info": null
       },
       {
-        "label": "Chord Cleansing",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/457211",
-        "info": "January 28, 2026 - February 4, 2026 Earn double echo and echo leveling material drops during this event!"
+        "label": "Where Stars Cascade Down",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/577739",
+        "info": null
+      },
+      {
+        "label": "Unfrozen Traces",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/577784",
+        "info": null
+      },
+      {
+        "label": "Footprints on Frostlands",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/577814",
+        "info": "Releases in Version 3.1 Take photos of special scenarios to receive Astrites and materials as rewards in Roya Frostlands!"
+      },
+      {
+        "label": "Full Throttle! Bolt & Bltiz!",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/577848",
+        "info": "Releases in Version 3.1 Join an attack motorbike minigame to gain rewards such as astrites and a new Title!"
       }
     ]
   },
@@ -384,7 +399,7 @@
     ]
   },
   "genshin-impact::events": {
-    "last_updated": "January 31, 2026 10:34 PM",
+    "last_updated": "February 1, 2026 09:04 PM",
     "items": [
       {
         "label": "Where the Moon Returns Web Event",
