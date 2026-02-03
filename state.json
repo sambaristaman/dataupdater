@@ -250,7 +250,7 @@
     ]
   },
   "wuthering-waves::events": {
-    "last_updated": "February 2, 2026 05:34 AM",
+    "last_updated": "February 3, 2026 04:06 AM",
     "items": [
       {
         "label": "Back to Solaris",
@@ -303,29 +303,54 @@
         "info": "January 15, 2026 - February 4, 2026 Unlocked by default"
       },
       {
-        "label": "Lollo Campaign: Implementation",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/458245",
-        "info": null
-      },
-      {
-        "label": "Where Stars Cascade Down",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/577739",
-        "info": null
+        "label": "Starpaths Intertwined",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/578067",
+        "info": "Releases in Version 3.1 Complete Starpath Tasks to earn Journey Points and win rewards including a new glider, radiant tides and more!"
       },
       {
         "label": "Unfrozen Traces",
         "link": "https://game8.co/games/Wuthering-Waves/archives/577784",
-        "info": null
+        "info": "February 5, 2026 - March 18, 2026 Area exploration event rewarding you with items for exploring Roya Frostlands!"
       },
       {
         "label": "Footprints on Frostlands",
         "link": "https://game8.co/games/Wuthering-Waves/archives/577814",
-        "info": "Releases in Version 3.1 Take photos of special scenarios to receive Astrites and materials as rewards in Roya Frostlands!"
+        "info": "February 5, 2026 - Permanent Take photos of special scenarios to receive Astrites and materials as rewards in Roya Frostlands!"
       },
       {
-        "label": "Full Throttle! Bolt & Bltiz!",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/577848",
-        "info": "Releases in Version 3.1 Join an attack motorbike minigame to gain rewards such as astrites and a new Title!"
+        "label": "Gift of Soft Snow",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/578043",
+        "info": "February 5, 2026 - March 18, 2026 Log-in for 7 days to claim Radiant and Lustrous Tides!"
+      },
+      {
+        "label": "TERM-X Outreach",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/578050",
+        "info": "February 5, 2026 - March 18, 2026 Upgrade Expedition Motorbike Expansion Modules to Obtain Rewards."
+      },
+      {
+        "label": "Moonlit Path",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/578047",
+        "info": "February 5, 2026 - March 18, 2026 Join this spending event to obtain additional milestone rewards when you purchase in-game transactions!"
+      },
+      {
+        "label": "Startorch for You",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/578107",
+        "info": "February 5, 2026 - Permanent Get the new Perpetual Spark series Outfit and Avatar for Rover by progressing the main story!"
+      },
+      {
+        "label": "Where Stars Cascade Down",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/577739",
+        "info": "February 15, 2026 - March 18, 2026 Special event featuring lounges where you can interact with other characters and play fun minigames with them!"
+      },
+      {
+        "label": "Unsigned Good Wishes",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/578113",
+        "info": "February 17, 2026 - March 19, 2026 Log-in from February 17. 2026 to March 19, 2026 to receive 1600 Astrites in stages during this event's period."
+      },
+      {
+        "label": "Blade Hunter: Wilderness",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/578013",
+        "info": "February 26, 2026 - March 16, 2026 Defeat increasingly stronger foes inside a Sonoro Sphere to earn rewards in this event!"
       }
     ]
   },
@@ -399,23 +424,8 @@
     ]
   },
   "genshin-impact::events": {
-    "last_updated": "February 1, 2026 09:04 PM",
+    "last_updated": "February 3, 2026 05:11 AM",
     "items": [
-      {
-        "label": "Where the Moon Returns Web Event",
-        "link": "https://game8.co/games/Genshin-Impact/archives/574530",
-        "info": "January 14, 2026 \u2192 January 28, 2026"
-      },
-      {
-        "label": "May Fortune Find You 6.3 Rerun",
-        "link": "https://game8.co/games/Genshin-Impact/archives/311300",
-        "info": null
-      },
-      {
-        "label": "Shutterflash Memory Hunt",
-        "link": "https://game8.co/games/Genshin-Impact/archives/572605",
-        "info": "January 16, 2026 \u2192 January 26, 2026"
-      },
       {
         "label": "A Lanternlit Ode to the Silver Moon 2026 Lantern Rite",
         "link": "https://game8.co/games/Genshin-Impact/archives/572604",
@@ -465,11 +475,26 @@
         "label": "Daily Check-In",
         "link": "https://game8.co/games/Genshin-Impact/archives/321404",
         "info": null
+      },
+      {
+        "label": "Stellar Reunion",
+        "link": "https://game8.co/games/Genshin-Impact/archives/315013",
+        "info": null
+      },
+      {
+        "label": "Fate Foretold",
+        "link": null,
+        "info": null
+      },
+      {
+        "label": "People's Choice",
+        "link": null,
+        "info": null
       }
     ]
   },
   "genshin-impact::gacha": {
-    "last_updated": "January 30, 2026 12:14 AM",
+    "last_updated": "February 3, 2026 05:36 AM",
     "items": [
       {
         "label": "_No parseable banners found (layout may have changed)._",
