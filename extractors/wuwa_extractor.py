@@ -172,3 +172,115 @@ def extract_wuwa_gachas(soup: BeautifulSoup, base_url: str) -> List[str]:
             bullets.extend(up_items[:12])
 
     return bullets
+
+
+# --- Events extractor for WuWa ---
+
+_WUWA_CURRENT_EVENTS_HINTS = ["ongoing events", "current events", "featured events"]
+_WUWA_UPCOMING_EVENTS_HINTS = ["upcoming events", "future events"]
+_WUWA_STOP_HINTS = ["permanent events", "related guides", "comment", "all events"]
+
+
+def _match_event_header(tag: Tag, hints: list[str]) -> bool:
+    """Check if a header tag matches any of the hint phrases."""
+    t = _clean(tag.get_text(" ", strip=True)).lower()
+    return any(h in t for h in hints)
+
+
+def _collect_events_from_section(head: Tag, base_url: str, stop_on: list[str], max_items: int = 12) -> List[str]:
+    """Walk forward from header, collecting event links from tables and lists."""
+    items: List[str] = []
+    seen = set()
+
+    for sib in head.find_all_next():
+        if sib is head:
+            continue
+
+        # Stop at headers that indicate a different section
+        if getattr(sib, "name", "") in ("h2", "h3", "h4"):
+            t = _clean(sib.get_text(" ", strip=True)).lower()
+            if any(h in t for h in stop_on + _WUWA_STOP_HINTS):
+                break
+
+        # Collect from tables
+        if sib.name == "table":
+            for row in sib.find_all("tr"):
+                for a in row.find_all("a", href=True):
+                    label = _clean(a.get_text(" ", strip=True))
+                    if not label or len(label) < 2:
+                        continue
+                    href = a.get("href", "")
+                    if _bad_href(href):
+                        continue
+                    abs_href = urljoin(base_url, href)
+                    key = (label.lower(), abs_href)
+                    if key in seen:
+                        continue
+                    seen.add(key)
+
+                    # Extract date info from row
+                    info = None
+                    row_text = _clean(row.get_text(" ", strip=True))
+                    if row_text and row_text.lower() != label.lower() and _durationish(row_text):
+                        pruned = _clean(row_text.replace(label, "")).strip(": -—–")
+                        if pruned and len(pruned) < 140:
+                            info = pruned
+
+                    items.append(f"• [{label}]({abs_href})" + (f" — {info}" if info else ""))
+                    if len(items) >= max_items:
+                        return items
+
+        # Collect from lists
+        if sib.name in ("ul", "ol"):
+            for li in sib.find_all("li", recursive=False):
+                for a in li.find_all("a", href=True):
+                    label = _clean(a.get_text(" ", strip=True))
+                    if not label or len(label) < 2:
+                        continue
+                    href = a.get("href", "")
+                    if _bad_href(href):
+                        continue
+                    abs_href = urljoin(base_url, href)
+                    key = (label.lower(), abs_href)
+                    if key in seen:
+                        continue
+                    seen.add(key)
+
+                    # Extract date info from list item
+                    info = None
+                    li_text = _clean(li.get_text(" ", strip=True))
+                    if li_text and li_text.lower() != label.lower() and _durationish(li_text):
+                        pruned = _clean(li_text.replace(label, "")).strip(": -—–")
+                        if pruned and len(pruned) < 140:
+                            info = pruned
+
+                    items.append(f"• [{label}]({abs_href})" + (f" — {info}" if info else ""))
+                    if len(items) >= max_items:
+                        return items
+
+    return items
+
+
+def extract_wuwa_events(soup: BeautifulSoup, base_url: str) -> List[str]:
+    """Parse WuWa events page for ongoing and upcoming events."""
+    bullets: List[str] = []
+    root = _find_article_root(soup)
+    headers = list(root.find_all(["h2", "h3", "h4"]))
+
+    sections = [
+        ("__Ongoing Events__", _WUWA_CURRENT_EVENTS_HINTS, ["upcoming"]),
+        ("__Upcoming Events__", _WUWA_UPCOMING_EVENTS_HINTS, ["ongoing", "permanent"]),
+    ]
+
+    for title, hints, stop_on in sections:
+        head = next((h for h in headers if _match_event_header(h, hints)), None)
+        if head:
+            rows = _collect_events_from_section(head, base_url, stop_on)
+            if rows:
+                bullets.append(title)
+                bullets.extend(rows)
+
+    if not bullets:
+        return ["__Wuthering Waves Events__", "• _No events found._"]
+
+    return bullets

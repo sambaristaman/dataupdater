@@ -186,23 +186,84 @@ def extract_genshin_events(soup: BeautifulSoup, base_url: str) -> List[str]:
     return bullets
 
 # --- Gacha (Banners) ---
+
+# Flexible section hints for Genshin banners (site changed from "Gachas" to "Banners")
+_GACHA_SECTION_HINTS = [
+    "list of current event banners",
+    "list of current event gachas",
+    "genshin impact banners",
+    "current banners",
+    "character event wish",
+]
+
+def _find_gacha_section_root(soup: BeautifulSoup) -> Optional[Tag]:
+    """Find the section header for banners using flexible matching."""
+    for h in soup.find_all(["h2", "h3"]):
+        txt = _clean(h.get_text(" ", strip=True)).lower()
+        if any(hint in txt for hint in _GACHA_SECTION_HINTS):
+            return h
+    return None
+
 def extract_genshin_gachas(soup: BeautifulSoup, base_url: str) -> List[str]:
     """
-    Parse "List of Current Event Gachas" on the main hub page.
+    Parse "List of Current Event Banners" (formerly "Gachas") on the main hub page.
+    Handles both table-based and list-based layouts.
     """
-    bullets: List[str] = ["__List of Current Event Gachas__"]
-    heads = _find_section_roots(soup, ["List of Current Event Gachas"])
-    if not heads:
+    bullets: List[str] = ["__List of Current Event Banners__"]
+    root = _find_gacha_section_root(soup)
+    if not root:
         return bullets + ["• _No parseable banners found (layout may have changed)._"]
-    root = heads[0]
 
     seen = set()
     count = 0
-    for sib in root.find_all_next(limit=120):
+
+    # Stop hints - headers that indicate we've left the banner section
+    stop_hints = ["permanent banner", "standard banner", "related guides", "beginner", "comment"]
+
+    for sib in root.find_all_next(limit=150):
         if sib is root:
             continue
-        if getattr(sib, "name", None) in ["h2","h3"]:
-            break
+        # Stop at next major header that looks like a different section
+        if getattr(sib, "name", None) in ["h2", "h3"]:
+            txt = _clean(sib.get_text(" ", strip=True)).lower()
+            if any(h in txt for h in stop_hints):
+                break
+
+        # Handle table rows (new layout uses tables)
+        if sib.name == "table":
+            for row in sib.find_all("tr"):
+                cells = row.find_all(["td", "th"])
+                if not cells:
+                    continue
+                for a in row.find_all("a", href=True):
+                    label = _clean(a.get_text(" ", strip=True))
+                    if not label or len(label) < 2:
+                        continue
+                    href = urljoin(base_url, a["href"])
+                    if not _is_good_genshin_url(href):
+                        continue
+                    key = (label.lower(), href)
+                    if key in seen:
+                        continue
+                    seen.add(key)
+                    # Extract date info from table row
+                    info = None
+                    row_text = _clean(row.get_text(" ", strip=True))
+                    if len(row_text) < 200:
+                        # Look for date patterns in the row
+                        if (" - " in row_text) or ("–" in row_text) or ("—" in row_text) or re.search(r"\b\d{4}\b", row_text):
+                            pruned = _clean(row_text.replace(label, "")).strip(": -—–")
+                            if pruned and len(pruned) > 3:
+                                info = pruned
+                    bullets.append(f"• [{label}]({href})" + (f" — {info}" if info else ""))
+                    count += 1
+                    if count >= 10:
+                        break
+                if count >= 10:
+                    break
+            continue
+
+        # Handle other containers (lists, divs, etc.)
         for a in getattr(sib, "find_all", lambda *a, **k: [])("a", href=True):
             label = _clean(a.get_text(" ", strip=True))
             if not label or len(label) < 2:
@@ -216,7 +277,7 @@ def extract_genshin_gachas(soup: BeautifulSoup, base_url: str) -> List[str]:
             seen.add(key)
             # pull short info from surrounding text if looks like a date range
             info = None
-            parent = a.find_parent(["li","tr","p","div"])
+            parent = a.find_parent(["li", "tr", "p", "div"])
             if parent:
                 txt = _clean(parent.get_text(" ", strip=True))
                 if len(txt) < 180 and ((" - " in txt) or ("–" in txt) or ("—" in txt) or (" to " in txt.lower()) or re.search(r"\b\d{4}\b", txt)):
@@ -224,9 +285,9 @@ def extract_genshin_gachas(soup: BeautifulSoup, base_url: str) -> List[str]:
                         info = _clean(txt.replace(label, "")).strip(": -—–")
             bullets.append(f"• [{label}]({href})" + (f" — {info}" if info else ""))
             count += 1
-            if count >= 8:
+            if count >= 10:
                 break
-        if count >= 8:
+        if count >= 10:
             break
 
     if len(bullets) == 1:

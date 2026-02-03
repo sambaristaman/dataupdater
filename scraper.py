@@ -24,7 +24,7 @@ from bs4 import BeautifulSoup
 from extractors.genshin_extractor import extract_genshin_events, extract_genshin_gachas
 from extractors.uma_extractor import extract_umamusume_events
 from extractors.generic_extractor import extract_events_with_links_generic
-from extractors.wuwa_extractor import extract_wuwa_gachas
+from extractors.wuwa_extractor import extract_wuwa_gachas, extract_wuwa_events
 from extractors.hsr_extractor import extract_hsr_gachas
 from extractors.endfield_extractor import extract_endfield_events, extract_endfield_gachas
 
@@ -409,6 +409,10 @@ def extract_events_with_links(soup: BeautifulSoup, base_url: str) -> List[str]:
         endfield = extract_endfield_events(soup, base_url)
         if len(endfield) >= 1:
             return endfield
+    if "/Wuthering-Waves/" in base_url:
+        wuwa = extract_wuwa_events(soup, base_url)
+        if len(wuwa) >= 1:
+            return wuwa
     return extract_events_with_links_generic(soup, base_url)
 
 
@@ -477,9 +481,17 @@ def run_flow(*, key: str, url: str, secret_name: str, nice_title: str, role_secr
         if success:
             new_ids = [prev_ids[0]]
             action = "edited"
+            # Clean up extra messages if we went from multiple to 1
+            if CLEANUP_OLD_MESSAGES and len(prev_ids) > 1:
+                for mid in prev_ids[1:]:
+                    webhook_delete(webhook_url, mid)
         else:
             new_ids = [webhook_post(webhook_url, messages[0])]
             action = "created"
+            # Clean up all old messages since we created a new one
+            if CLEANUP_OLD_MESSAGES:
+                for mid in prev_ids:
+                    webhook_delete(webhook_url, mid)
     else:
         for content in messages:
             new_ids.append(webhook_post(webhook_url, content))

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from typing import List, Optional
+from typing import List, Optional, Dict
 import re
 from urllib.parse import urljoin
 from bs4 import BeautifulSoup, Tag
@@ -9,6 +9,22 @@ from bs4 import BeautifulSoup, Tag
 def _clean(s: str) -> str:
     import re as _re
     return _re.sub(r"\s+", " ", (s or "")).strip()
+
+
+def _normalize_banner_name(label: str) -> str:
+    """Normalize to core banner identity for deduplication.
+
+    Strips common suffixes like " Banner", " Rerun", " Schedule and Rates"
+    and version tags like "(Ver. 3.8 Phase 3)" to get the core banner name.
+    """
+    name = label.lower()
+    # Remove common suffixes (order matters - longer first)
+    for suffix in [" banner schedule and rates", " schedule and rates", " rerun banner", " banner", " rerun"]:
+        if name.endswith(suffix):
+            name = name[:-len(suffix)]
+    # Remove version tags like "(ver. 3.8 phase 3)" or "(Ver 3.8)"
+    name = re.sub(r"\s*\(ver\.?\s*[\d.]+[^)]*\)", "", name, flags=re.I)
+    return name.strip()
 
 def _durationish(s: str) -> bool:
     s = s or ""
@@ -52,9 +68,14 @@ def _block_text_without_link(blk: Tag, label: str) -> Optional[str]:
     return pruned or None
 
 def _collect_links_from_section(head: Tag, base_url: str, stop_on: list[str], max_items: int = 14) -> List[str]:
-    """Walk forward from header, collecting banner-ish links + nearby date/info text."""
-    items: List[str] = []
-    seen = set()
+    """Walk forward from header, collecting banner-ish links + nearby date/info text.
+
+    Deduplicates by normalized banner name to avoid listing the same banner multiple times
+    (e.g., "Aglaea Banner" vs "Aglaea Banner Schedule and Rates").
+    """
+    # Collect all potential entries first, then dedupe
+    raw_entries: List[Dict] = []
+    seen_exact = set()
 
     for sib in head.find_all_next():
         if sib is head:
@@ -92,10 +113,10 @@ def _collect_links_from_section(head: Tag, base_url: str, stop_on: list[str], ma
                         continue
 
                 href = urljoin(base_url, a["href"])
-                key = (label.lower(), href)
-                if key in seen:
+                exact_key = (label.lower(), href)
+                if exact_key in seen_exact:
                     continue
-                seen.add(key)
+                seen_exact.add(exact_key)
 
                 info = _block_text_without_link(blk, label)
                 if info and not _durationish(info):
@@ -104,11 +125,40 @@ def _collect_links_from_section(head: Tag, base_url: str, stop_on: list[str], ma
                     m = re.search(r"([A-Za-z]{3,9}\.? \d{1,2}, ?\d{4}.*?\d{4}|\d{1,2}/\d{1,2} ?- ?\d{1,2}/\d{1,2}/\d{2,4}|\d{1,2}/\d{1,2}/\d{2,4})", info)
                     info = m.group(0) if m else info
 
-                line = f"• [{label}]({href})" + (f" — {info}" if info and _durationish(info) else "")
-                items.append(line)
+                raw_entries.append({
+                    "label": label,
+                    "href": href,
+                    "info": info if info and _durationish(info) else None,
+                    "normalized": _normalize_banner_name(label),
+                })
 
-                if len(items) >= max_items:
-                    return items
+    # Deduplicate by normalized name, keeping the entry with the most info
+    by_normalized: Dict[str, Dict] = {}
+    for entry in raw_entries:
+        norm = entry["normalized"]
+        existing = by_normalized.get(norm)
+        if existing is None:
+            by_normalized[norm] = entry
+        else:
+            # Prefer entry with date info, or shorter label (more likely the primary banner page)
+            new_has_info = entry["info"] is not None
+            old_has_info = existing["info"] is not None
+            if new_has_info and not old_has_info:
+                by_normalized[norm] = entry
+            elif new_has_info == old_has_info:
+                # Both have info or both lack it - prefer shorter/cleaner label
+                if len(entry["label"]) < len(existing["label"]):
+                    by_normalized[norm] = entry
+
+    # Build final output
+    items: List[str] = []
+    for entry in by_normalized.values():
+        line = f"• [{entry['label']}]({entry['href']})"
+        if entry["info"]:
+            line += f" — {entry['info']}"
+        items.append(line)
+        if len(items) >= max_items:
+            break
 
     return items
 
