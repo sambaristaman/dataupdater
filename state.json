@@ -285,22 +285,32 @@
       {
         "label": "Operation: Frontier Renewal",
         "link": "https://game8.co/games/Wuthering-Waves/archives/571745",
-        "info": "December 25, 2025 - Permanent Reach Union Level 8 and complete Tutorial Quest - Operation: Frontier Renewal."
+        "info": "December 25, 2025 - Permanent Reach Union Level 8 and complete Tutorial Quest - ."
       },
       {
         "label": "Peaks of Prestige: Rekindled Duel",
         "link": "https://game8.co/games/Wuthering-Waves/archives/572329",
-        "info": "December 25, 2025 - Permanent Reach Union Level 14 and Activate the Resonance Nexus in Startorch Academy in the Main Quest \u201cWhat Burns Beneath Frostlands\u201d"
+        "info": null
       },
       {
         "label": "Persona Sonic Collab",
         "link": "https://game8.co/games/Wuthering-Waves/archives/570896",
-        "info": "December 25, 2025 - February 4, 2026 Reach Union level 8 and activate the Startorch Academy Resonance Nexus in Main Quest, What Burns Beneath Frostlands."
+        "info": null
       },
       {
         "label": "Ascendant Aces",
         "link": "https://game8.co/games/Wuthering-Waves/archives/456482",
         "info": "January 15, 2026 - February 4, 2026 Unlocked by default"
+      },
+      {
+        "label": "Startorch Racing",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/571795",
+        "info": "January 15, 2026 - February 4, 2026 Log-in during Version 3.0."
+      },
+      {
+        "label": "Chord Cleansing",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/457211",
+        "info": "January 28, 2026 - February 4, 2026 Reach Union Level 19"
       },
       {
         "label": "Starpaths Intertwined",
@@ -340,17 +350,27 @@
       {
         "label": "Where Stars Cascade Down",
         "link": "https://game8.co/games/Wuthering-Waves/archives/577739",
-        "info": "February 15, 2026 - March 18, 2026 Special event featuring lounges where you can interact with other characters and play fun minigames with them!"
+        "info": null
       },
       {
         "label": "Unsigned Good Wishes",
         "link": "https://game8.co/games/Wuthering-Waves/archives/578113",
-        "info": "February 17, 2026 - March 19, 2026 Log-in from February 17. 2026 to March 19, 2026 to receive 1600 Astrites in stages during this event's period."
+        "info": null
       },
       {
         "label": "Blade Hunter: Wilderness",
         "link": "https://game8.co/games/Wuthering-Waves/archives/578013",
         "info": "February 26, 2026 - March 16, 2026 Defeat increasingly stronger foes inside a Sonoro Sphere to earn rewards in this event!"
+      },
+      {
+        "label": "Lollo Campaign: Implementation",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/458245",
+        "info": "March 5, 2026 - March 18, 2026 Earn Lollo Stamps daily and spin the roulette in exchange for rewards!"
+      },
+      {
+        "label": "Full Throttle! Bolt & Bltiz!",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/577848",
+        "info": "February 7, 2026 - March 18, 2026 Join an attack motorbike minigame to gain rewards such as astrites and a new Title!"
       }
     ]
   },
@@ -497,9 +517,54 @@
     "last_updated": "February 3, 2026 05:36 AM",
     "items": [
       {
-        "label": "_No parseable banners found (layout may have changed)._",
-        "link": null,
-        "info": null
+        "label": "Harmonious Abundance",
+        "link": "https://game8.co/games/Genshin-Impact/archives/572611",
+        "info": "Start: 2026/02/03 End: 2026/02/24 Zibai Illuga Aino Gorou"
+      },
+      {
+        "label": "Zibai",
+        "link": "https://game8.co/games/Genshin-Impact/archives/570263",
+        "info": "Harmonious Abundance Start: 2026/02/03 End: 2026/02/24 Illuga Aino Gorou"
+      },
+      {
+        "label": "Illuga",
+        "link": "https://game8.co/games/Genshin-Impact/archives/555902",
+        "info": "Harmonious Abundance Start: 2026/02/03 End: 2026/02/24 Zibai Aino Gorou"
+      },
+      {
+        "label": "Aino",
+        "link": "https://game8.co/games/Genshin-Impact/archives/537903",
+        "info": "Harmonious Abundance Start: 2026/02/03 End: 2026/02/24 Zibai Illuga Gorou"
+      },
+      {
+        "label": "Gorou",
+        "link": "https://game8.co/games/Genshin-Impact/archives/336726",
+        "info": "Harmonious Abundance Start: 2026/02/03 End: 2026/02/24 Zibai Illuga Aino"
+      },
+      {
+        "label": "Decree of the Deeps",
+        "link": "https://game8.co/games/Genshin-Impact/archives/426282",
+        "info": "Start: 2026/02/03 End: 2026/02/24 Neuvillette Illuga Aino Gorou"
+      },
+      {
+        "label": "Neuvillette",
+        "link": "https://game8.co/games/Genshin-Impact/archives/Neuvillette-Best-Builds",
+        "info": "Decree of the Deeps Start: 2026/02/03 End: 2026/02/24 Illuga Aino Gorou"
+      },
+      {
+        "label": "Epitome Invocation",
+        "link": "https://game8.co/games/Genshin-Impact/archives/304758",
+        "info": "Start: 2026/02/03 End: 2026/02/24 Lightbearing Moonshard Tome of the Eternal Flow Xiphos' Moonlight Favonius Greatsword Eye of Perception Dragon's Bane Sacrificial Greatsword"
+      },
+      {
+        "label": "Lightbearing Moonshard",
+        "link": "https://game8.co/games/Genshin-Impact/archives/572616",
+        "info": "Epitome Invocation Start: 2026/02/03 End: 2026/02/24 Tome of the Eternal Flow Xiphos' Moonlight Favonius Greatsword Eye of Perception Dragon's Bane Sacrificial Greatsword"
+      },
+      {
+        "label": "Tome of the Eternal Flow",
+        "link": "https://game8.co/games/Genshin-Impact/archives/426289",
+        "info": "Epitome Invocation Start: 2026/02/03 End: 2026/02/24 Lightbearing Moonshard Xiphos' Moonlight Favonius Greatsword Eye of Perception Dragon's Bane Sacrificial Greatsword"
       }
     ]
   },
@@ -597,16 +662,6 @@
         "info": "Time Woven Into Gold Banner (Ver. 3.8 Phase 3) (Ver. 3.8 Phase 3) Banner Dates : Jan. 28, 2026 - Feb. 12, 2026 Featured 5-Star: Time Woven into Gold ( Remembrance ) A Grounded Ascent ( Harmony ) Featured 4-Star: Geniuses' Greetings ( Remembrance ) Trend of the Universal Market ( Preservation ) Dance! Dance! Dance! ( Harmony )"
       },
       {
-        "label": "Saber Banner",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/519871",
-        "info": "(Version 3.8) Archer Banner (Version 3.8) Banner Dates: Jul. 11, 2025 - TBD Featured 5-Star: Saber ( Destruction , Wind ) Archer ( Hunt , Quantum )"
-      },
-      {
-        "label": "Archer Banner",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/519880",
-        "info": "Saber Banner (Version 3.8) (Version 3.8) Banner Dates: Jul. 11, 2025 - TBD Featured 5-Star: Saber ( Destruction , Wind ) Archer ( Hunt , Quantum )"
-      },
-      {
         "label": "Saber",
         "link": "https://game8.co/games/Honkai-Star-Rail/archives/519564",
         "info": "Banner (Version 3.8) Archer Banner (Version 3.8) Banner Dates: Jul. 11, 2025 - TBD Featured 5-Star: ( Destruction , Wind ) Archer ( Hunt , Quantum )"
@@ -627,24 +682,9 @@
         "info": null
       },
       {
-        "label": "Aglaea Rerun Banner Schedule and Rates",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/485941",
-        "info": null
-      },
-      {
-        "label": "Sunday Rerun Banner Schedule and Rates",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/477691",
-        "info": null
-      },
-      {
         "label": "Collab Light Cone Banner",
         "link": "https://game8.co/games/Honkai-Star-Rail/archives/462460",
         "info": "Saber's banner has been available since July 11, 2025 , in Phase 1 of Version 3.4. It doesn't have a fixed end date yet. Her Light Cone, A Thankless Coronation , is available at the same time through the ."
-      },
-      {
-        "label": "Saber Banner Schedule and Rates",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/519871",
-        "info": null
       },
       {
         "label": "Yao Guang Banner",
@@ -652,19 +692,9 @@
         "info": "(Ver. 4.0 Phase 1) Banner Dates: Feb. 12, 2026 - Mar. 06, 2026 Featured 5-Star: Yao Guang ( Elation , Physical ) Featured 4-Star: TBA TBA TBA"
       },
       {
-        "label": "Yao Guang Banner Schedule and Rates",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/572643",
-        "info": null
-      },
-      {
         "label": "Sparxie Banner",
         "link": "https://game8.co/games/Honkai-Star-Rail/archives/572646",
         "info": "(Ver. 4.0 Phase 2) Banner Dates: Mar. 06, 2026 - Mar. 26, 2026 Featured 5-Star: Sparxie ( Fire ) Featured 4-Star: TBA TBA TBA"
-      },
-      {
-        "label": "Sparxie Banner Schedule and Rates",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/572646",
-        "info": null
       }
     ]
   },
