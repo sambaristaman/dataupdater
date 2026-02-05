@@ -1,0 +1,79 @@
+name: Purge Discord Channels
+
+on:
+  schedule:
+    # Daily at 14:00 UTC (11:00 BRT) - 2 hours after main scraper
+    - cron: "0 14 * * *"
+  workflow_dispatch:
+    inputs:
+      DRY_RUN:
+        description: "Preview deletions without actually deleting"
+        type: boolean
+        default: true
+      CHANNEL:
+        description: "Specific channel to purge (e.g., 'honkai-star-rail', leave empty for all)"
+        type: string
+        default: ""
+      CLEAR_STATE:
+        description: "Clear saved state and start fresh"
+        type: boolean
+        default: false
+
+jobs:
+  purge:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30  # Extended timeout for large purges
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install requests
+
+      # Restore state from cache for resumability
+      - name: Restore purge state
+        if: inputs.CLEAR_STATE != true
+        uses: actions/cache/restore@v4
+        with:
+          path: |
+            purge_state.json
+            channel_ids_cache.json
+          key: purge-state-${{ github.run_id }}
+          restore-keys: |
+            purge-state-
+
+      - name: Clear state if requested
+        if: inputs.CLEAR_STATE == true
+        run: rm -f purge_state.json
+
+      - name: Run purge
+        env:
+          DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
+          WEBHOOK_URL_HSR: ${{ secrets.WEBHOOK_URL_HSR }}
+          WEBHOOK_URL_WUWA: ${{ secrets.WEBHOOK_URL_WUWA }}
+          WEBHOOK_URL_GI: ${{ secrets.WEBHOOK_URL_GI }}
+          WEBHOOK_URL_UMA: ${{ secrets.WEBHOOK_URL_UMA }}
+          WEBHOOK_URL_ENDFIELD: ${{ secrets.WEBHOOK_URL_ENDFIELD }}
+          WEBHOOK_URL_LEDGER: ${{ secrets.WEBHOOK_URL_LEDGER }}
+          DRY_RUN: ${{ inputs.DRY_RUN || 'false' }}
+          ONLY_CHANNEL: ${{ inputs.CHANNEL }}
+          LEDGER_MSG_DELETED: ${{ vars.LEDGER_MSG_DELETED }}
+          LEDGER_MSG_CLEAN: ${{ vars.LEDGER_MSG_CLEAN }}
+          LEDGER_MSG_CHANNEL_LINE: ${{ vars.LEDGER_MSG_CHANNEL_LINE }}
+        run: python purge_channels.py
+
+      # Save state for next run (even if purge fails/times out)
+      - name: Save purge state
+        if: always() && inputs.DRY_RUN != true
+        uses: actions/cache/save@v4
+        with:
+          path: |
+            purge_state.json
+            channel_ids_cache.json
+          key: purge-state-${{ github.run_id }}
