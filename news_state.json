@@ -1,0 +1,454 @@
+{
+  "gryphline:endfield:0755": {
+    "last_modified": 1769050800,
+    "last_sent_hash": "3a7173d6af0555f2381e9ec0bcbbc61a9ac18fe55c454d20464022d4c3e544c3"
+  },
+  "gryphline:endfield:1331": {
+    "last_modified": 1768903200,
+    "last_sent_hash": "abbc910a3a1a2ee2652a4fc8c70e79da4f3c5ca69fd7fab2268d2648a65064ce"
+  },
+  "gryphline:endfield:3846": {
+    "last_modified": 1770210000,
+    "last_sent_hash": "d802286b9c9095951712dce2397a5ac38297edd7c9463c7f8dc3db4807181364"
+  },
+  "gryphline:endfield:3847": {
+    "last_modified": 1768969800,
+    "last_sent_hash": "39a7ab8073427bd92104c566238068f36725c67cd3f9de9bd0684528d18011d3"
+  },
+  "gryphline:endfield:5215": {
+    "last_modified": 1770264000,
+    "last_sent_hash": ""
+  },
+  "gryphline:endfield:5216": {
+    "last_modified": 1768971600,
+    "last_sent_hash": "a23294df2c73bbee4ed5787c163c7c1871d96f9e0fd2eec70b1212ae09bc01a4"
+  },
+  "gryphline:endfield:7029": {
+    "last_modified": 1769050800,
+    "last_sent_hash": ""
+  },
+  "gryphline:endfield:9573": {
+    "last_modified": 1768892400,
+    "last_sent_hash": "9af05b1a7a14bff9ea00d2e58eb2693849bacbe827c186ef8eb0617d5e1f755e"
+  },
+  "hoyolab:genshin:42588332": {
+    "last_modified": 1764716405,
+    "last_sent_hash": "a4ab23aeb9853bf4837beac42557f940fbf6268b5c3e0ddb160444a6e47a5228"
+  },
+  "hoyolab:genshin:42595144": {
+    "last_modified": 1764744727,
+    "last_sent_hash": "cbf912075670052b7cae287c0f49c4fc9aa0c662cc4ce7b92ab70b05c6195d1f"
+  },
+  "hoyolab:genshin:43194715": {
+    "last_modified": 1768187404,
+    "last_sent_hash": "3411f91e457e7e15fbb6433369ee03d6cfbd41afd6311f8ab9e18292c24ce32c"
+  },
+  "hoyolab:genshin:43220659": {
+    "last_modified": 1768345205,
+    "last_sent_hash": "fe5ad7770966f3c7aa96b143a9f33f9caa1849f6d12eece77587f62e39eed183"
+  },
+  "hoyolab:genshin:43222182": {
+    "last_modified": 1768357205,
+    "last_sent_hash": "689f1830958e551102919ae5da67a8e84588cbdb00bc458ebee0e05bd9f7b1c0"
+  },
+  "hoyolab:genshin:43224973": {
+    "last_modified": 1768363208,
+    "last_sent_hash": "7d6113535c048ac619e0e14974f73f2ca6fe4ba6b7de9834774eceaf82374965"
+  },
+  "hoyolab:genshin:43224975": {
+    "last_modified": 1768363211,
+    "last_sent_hash": "0c6e0bdb8a97f33d90b19308627deee5dd0994875ce825f4195f44dca5d0714c"
+  },
+  "hoyolab:genshin:43224977": {
+    "last_modified": 1768363214,
+    "last_sent_hash": "2466f6cd743b3a33d90a4de793202fe132bfda6281e3ce7f0d0f66f50e9bd480"
+  },
+  "hoyolab:genshin:43294284": {
+    "last_modified": 1768536006,
+    "last_sent_hash": "86d9ce0599f0fbd958da1bfdd907257d9c48035b80ee13ec341fcb05bc1fc3ad"
+  },
+  "hoyolab:genshin:43583632": {
+    "last_modified": 1770026404,
+    "last_sent_hash": "4af17139929fab1876b11126ec7afd809a15861e345d0ded0c512cece7523795"
+  },
+  "hoyolab:genshin:43595373": {
+    "last_modified": 1770091207,
+    "last_sent_hash": "c6ce8b972b7363bd2dcd82790232d4b1c4a70693652d9aa8dfa939a7da03054b"
+  },
+  "hoyolab:genshin:43599601": {
+    "last_modified": 1770113404,
+    "last_sent_hash": "505732cfb5a4ee548e9be90ddf0c12356bef2f3d27b1759b01c49e3b58819f01"
+  },
+  "hoyolab:genshin:43620321": {
+    "last_modified": 1770199206,
+    "last_sent_hash": "044ef082abff323d29255cae25d14c0b551ef02e416a229808db1ff0a35506fb"
+  },
+  "hoyolab:genshin:43620707": {
+    "last_modified": 1770201007,
+    "last_sent_hash": "e1f7e15c4f17c3aebb2d367826bb049c52efd9c664b1c3cb3f37d36bbc02f4dc"
+  },
+  "hoyolab:genshin:43631587": {
+    "last_modified": 1770264007,
+    "last_sent_hash": "42c006b6d64dd909b64c719e662f75adaf2647858f13f55ece944252f915b444"
+  },
+  "hoyolab:honkai3rd:41865866": {
+    "last_modified": 1761040804,
+    "last_sent_hash": "27813a499fb9fa9ddde5168b51f0c4a4edd6222f7c2935b3116ab6fed46fc0e9"
+  },
+  "hoyolab:honkai3rd:41904942": {
+    "last_modified": 1761188404,
+    "last_sent_hash": "93587299f5512ae885184abb32425402a023764764da210b76143fbec2695ef3"
+  },
+  "hoyolab:honkai3rd:42392019": {
+    "last_modified": 1763476347,
+    "last_sent_hash": "125064bc032682aa8dc2e538df8e9ac0dc7d5a2593081964104246e27bc85cf1"
+  },
+  "hoyolab:honkai3rd:42580948": {
+    "last_modified": 1764669606,
+    "last_sent_hash": "9721c08267650ae111810583d05e046f9919dcc7b623183d5d21afe336ce0434"
+  },
+  "hoyolab:honkai3rd:42665949": {
+    "last_modified": 1765080007,
+    "last_sent_hash": "100fe9bcdfbccd61194b404a03962b32341968407efa5fe6db9c3a6b30009d6b"
+  },
+  "hoyolab:honkai3rd:42863681": {
+    "last_modified": 1766289606,
+    "last_sent_hash": "c9a159325d131f39072348ee24956ba1e870c4213a064743f3bb1a964a0db39c"
+  },
+  "hoyolab:honkai3rd:43001015": {
+    "last_modified": 1767150002,
+    "last_sent_hash": "a867add2921a4d950f5e4a0ed5da48665ca88313c4e43c789430d4f352b72fc9"
+  },
+  "hoyolab:honkai3rd:43006149": {
+    "last_modified": 1767175206,
+    "last_sent_hash": "86eae9e4a7bbc544ba7aa33865b44132cd05fecf4e0d008ae975a00e433ab95c"
+  },
+  "hoyolab:honkai3rd:43006599": {
+    "last_modified": 1767177005,
+    "last_sent_hash": "d15d927571ab5948dd303d6e0d5b07242727ea19d3b5a0d22ab4e5eb77727cbd"
+  },
+  "hoyolab:honkai3rd:43077007": {
+    "last_modified": 1767499206,
+    "last_sent_hash": "2bbe0420bfa17edd83733443bf0d9cb3e8b5d3bca8ae81e7b6dd56ef36164e98"
+  },
+  "hoyolab:honkai3rd:43194646": {
+    "last_modified": 1768186806,
+    "last_sent_hash": "9b81eb1a5cef2a0ac8436f29e438d724c7e8a4d1115000e4df38b042b4872128"
+  },
+  "hoyolab:honkai3rd:43319895": {
+    "last_modified": 1768618807,
+    "last_sent_hash": "3c18f7fc435b70a8ae2ab9364d1c6c429f98278078be48fed8ab3698f256a7c8"
+  },
+  "hoyolab:honkai3rd:43381521": {
+    "last_modified": 1768878006,
+    "last_sent_hash": "9efdb43e4c45c0293fc1f84d66c9e0bf8e31029900f2e4d4882ce926509a556d"
+  },
+  "hoyolab:honkai3rd:43430205": {
+    "last_modified": 1769137208,
+    "last_sent_hash": "02e2542e92cbfd3e23f8d2c1d05c1d5a4722aeb845fe96bc61d885c634863811"
+  },
+  "hoyolab:honkai3rd:43481101": {
+    "last_modified": 1769421606,
+    "last_sent_hash": "3c8e433be4a70f43e857345767b6fe7a8918443225a6d06a18cc8cabf94e7dfd"
+  },
+  "hoyolab:starrail:42400855": {
+    "last_modified": 1763545565,
+    "last_sent_hash": "181caf3c82edfa41a54dd7e71c01c58e0ee30b6dbc3c4c4288f96790ff3f41d6"
+  },
+  "hoyolab:starrail:42424323": {
+    "last_modified": 1763719435,
+    "last_sent_hash": "4780b5d11d1240a16d3d46557eb63b1866a88ad0a2a419537d1fa7470052761e"
+  },
+  "hoyolab:starrail:42442663": {
+    "last_modified": 1763814604,
+    "last_sent_hash": "4f8efd23d882d724a2b8b8ee7aef3c1b76c4c0a5fab14dbc86ffec4b5ffe4237"
+  },
+  "hoyolab:starrail:42638131": {
+    "last_modified": 1764936006,
+    "last_sent_hash": "c7b03cda0b0ac0a090e5c7918cd7aa45044399bfdffb813d8d6b97b625698e1c"
+  },
+  "hoyolab:starrail:42801583": {
+    "last_modified": 1765936807,
+    "last_sent_hash": "b5704efcc49b04e36ff321c6b12296c65f6a43706a60735a87ae62a204275635"
+  },
+  "hoyolab:starrail:43110986": {
+    "last_modified": 1767675605,
+    "last_sent_hash": "333e273e11381e861bd22ce0a1428aa9cd79f253902c5cef06b0e426f397844d"
+  },
+  "hoyolab:starrail:43265412": {
+    "last_modified": 1768446007,
+    "last_sent_hash": "0a9daf21e63e4fc7421cd0349f7f0b1a1e12f7f78bce4dda904d85921314976a"
+  },
+  "hoyolab:starrail:43490158": {
+    "last_modified": 1769482806,
+    "last_sent_hash": "dfdac6d4e1977069a59135b41a3d57a268f815df3cf526db0b0bdcf07845c5f6"
+  },
+  "hoyolab:starrail:43490620": {
+    "last_modified": 1769486407,
+    "last_sent_hash": "d936cba1810bbfa2cd4b81b8e9f80651cfa4f882a4ebff14d929a09730a6ac85"
+  },
+  "hoyolab:starrail:43491055": {
+    "last_modified": 1769490005,
+    "last_sent_hash": "a850e12253b1eda04fa3d5733c3bad8f2a24819e75b0cd84e452ff6d3b206fe5"
+  },
+  "hoyolab:starrail:43562267": {
+    "last_modified": 1769918404,
+    "last_sent_hash": "5390c42ab528c9af815e5d7efbc0ee7b88bc1d8ffa2ee91f652f29ed6a2ba387"
+  },
+  "hoyolab:starrail:43583727": {
+    "last_modified": 1770026790,
+    "last_sent_hash": "57d33237c4effd109794226c1ea80a36ca6448e3b2076d748ef44722f4befa82"
+  },
+  "hoyolab:starrail:43595372": {
+    "last_modified": 1770091205,
+    "last_sent_hash": "cbfb6f441fe83e10378e2bdab467f7981f99cbd3b4787c54dc221909aee3be00"
+  },
+  "hoyolab:starrail:43596054": {
+    "last_modified": 1770094809,
+    "last_sent_hash": "6047d02ce57fe88618aeeb393f4f4623840af5cba5ab001218b9ded8c88146ad"
+  },
+  "hoyolab:starrail:43600673": {
+    "last_modified": 1770116404,
+    "last_sent_hash": "50ce8f989dfa0de0888edc9e07b8ac824e154a1fd506d19fcbd67aa7e028a4fe"
+  },
+  "hoyolab:zzz:42982746": {
+    "last_modified": 1767069007,
+    "last_sent_hash": "a523b1d0dd024294024bf86a7ea661b3f4588923f3e03ad853bf5897c6693c45"
+  },
+  "hoyolab:zzz:43022195": {
+    "last_modified": 1767243607,
+    "last_sent_hash": "2dc3435f28f4958da4e1d48b28298fe1c0f9227604fa5a24de10d5a597fd4285"
+  },
+  "hoyolab:zzz:43227216": {
+    "last_modified": 1768366807,
+    "last_sent_hash": "18d75c8d5966da2bb3cc2194c53218e7e68200a76ad2500730916e9af1ffd644"
+  },
+  "hoyolab:zzz:43530073": {
+    "last_modified": 1769749517,
+    "last_sent_hash": "9fff1c8e542f0a1b9019c0dc316382212c8daffa6abe6f77b4e9a5d8114a46e5"
+  },
+  "hoyolab:zzz:43536005": {
+    "last_modified": 1769778006,
+    "last_sent_hash": "2cabde9ea3d8b06d4466d8ec1e9ff2af822a29f4eb82eb1e3c7afe844750ca45"
+  },
+  "hoyolab:zzz:43620889": {
+    "last_modified": 1770201908,
+    "last_sent_hash": "d5f642e394db46112632e800c27a10fa159d1d02261726281850f6ea6148080d"
+  },
+  "hoyolab:zzz:43621935": {
+    "last_modified": 1770206405,
+    "last_sent_hash": "4cf3e615bc940c4733b8630a9be0d933b0abd998f6ba06769ecdfe0e0a8b6e63"
+  },
+  "hoyolab:zzz:43631586": {
+    "last_modified": 1770264007,
+    "last_sent_hash": "9bc91e2e642e04ab479d6714f4afd6e4b7547c5eb1466d680d4c4572391fbd33"
+  },
+  "hoyolab:zzz:43631838": {
+    "last_modified": 1770265808,
+    "last_sent_hash": "9e3ad3658eb1906d8fad4102821be6b69d5e4162c7a168b72637387f39cc2f0d"
+  },
+  "hoyolab:zzz:43632110": {
+    "last_modified": 1770267903,
+    "last_sent_hash": "c30454a02e0380f92707e8007c7e66697e3e7379dd4dabbfbef68b52f56ef5f9"
+  },
+  "hoyolab:zzz:43632189": {
+    "last_modified": 1770268503,
+    "last_sent_hash": "d0d978c1a41d7a7b22848779dd71b0cfee7f09f3c412e1bc6d717048d7948bc6"
+  },
+  "hoyolab:zzz:43632303": {
+    "last_modified": 1770269403,
+    "last_sent_hash": "5da3e1a4eb9ae0b7fa77ea7e1e53a4979a4ae747d87ecebe8f1f2d92dd201046"
+  },
+  "hoyolab:zzz:43632413": {
+    "last_modified": 1770270304,
+    "last_sent_hash": "46bdf2f446c800d7917218a82bc022905740708952d5019905f9a1405e2b5c60"
+  },
+  "hoyolab:zzz:43634797": {
+    "last_modified": 1770285607,
+    "last_sent_hash": "48123e897465c306f31d26d4c8acc88402ae912e5a79d8604eb622a0d948a9b7"
+  },
+  "hoyolab:zzz:43635440": {
+    "last_modified": 1770289205,
+    "last_sent_hash": "39fa568e29d56c964492bd4ae0131fe4079e269b23dc88625c0f7841a73fea21"
+  },
+  "shadowverse:shadowverse:https://shadowverse.gg/abysscraft-midrange-deck-guide/": {
+    "last_modified": 0,
+    "last_sent_hash": "646c5162a4536c9c3b143cfabe4bbd9e4d8e9d9bda2223673885644fc4937c64"
+  },
+  "shadowverse:shadowverse:https://shadowverse.gg/abysscraft-mode-deck-guide/": {
+    "last_modified": 0,
+    "last_sent_hash": "d9d8b8c9ba3e8706aa53400b68d2f027e8f3b697cd8fe7060f2135b041217aba"
+  },
+  "shadowverse:shadowverse:https://shadowverse.gg/abysscraft/": {
+    "last_modified": 0,
+    "last_sent_hash": "bf145d6a41a85b537588974e46f80507c41de00d9a30c0a2fd049d9cf100a92f"
+  },
+  "shadowverse:shadowverse:https://shadowverse.gg/author/denhs/": {
+    "last_modified": 0,
+    "last_sent_hash": "92bccd49f9fbae26837e67a269708e3e90d54fdc4d280b80f16f5a8b36784f44"
+  },
+  "shadowverse:shadowverse:https://shadowverse.gg/author/michaeljacquat01/": {
+    "last_modified": 0,
+    "last_sent_hash": "5df6b5c310080dd7d5a97892520fb6c8d1f693d9bf9d8043e4587aa6bda6fd99"
+  },
+  "shadowverse:shadowverse:https://shadowverse.gg/author/shadowversegg/": {
+    "last_modified": 0,
+    "last_sent_hash": "2f1bd3bdead33eedc613635bdd18ebbe19e3465a1a59f65afab36b1380182e12"
+  },
+  "shadowverse:shadowverse:https://shadowverse.gg/battle-dungeon-event-guide/": {
+    "last_modified": 0,
+    "last_sent_hash": "f00fbffb73897461742bef34a5e4743ad84f94beb0e2b7f22dd5bfebbcd4e458"
+  },
+  "shadowverse:shadowverse:https://shadowverse.gg/best-day-1-decks-for-each-class-heirs-of-the-omen/": {
+    "last_modified": 0,
+    "last_sent_hash": "174247842857b5f44470c2d7ad22c065c3ba3a3fcc87df4a0e1a86ff53ed9a18"
+  },
+  "shadowverse:shadowverse:https://shadowverse.gg/best-decks-for-patch-1-3-10/": {
+    "last_modified": 0,
+    "last_sent_hash": "2cbfb1c82bc40d68371b8b8edb8c79052a8e88260cbcde8cf9e061504ab410f5"
+  },
+  "shadowverse:shadowverse:https://shadowverse.gg/best-decks-heirs-of-the-omen-meta-tier-list-asian-tournaments/": {
+    "last_modified": 0,
+    "last_sent_hash": "812c6d6c486c48952965598b6ff00af9ef4860028193bee76cfdad0a04a52a57"
+  },
+  "shadowverse:shadowverse:https://shadowverse.gg/best-decks-heirs-of-the-omen-meta-tier-list-balance-heading-into-skybound-dragons/": {
+    "last_modified": 0,
+    "last_sent_hash": "779caf05ba2c0612694476c15ccd529be6769f6243b0ce2d80d2332ebd629cc3"
+  },
+  "shadowverse:shadowverse:https://shadowverse.gg/best-decks-heirs-of-the-omen-meta-tier-list-post-patch-svo-qualifier-4/": {
+    "last_modified": 0,
+    "last_sent_hash": "c9b80d585c395f177d5ab86d8a3b7dcc29ab452b39e34b481fa3ec09dc76cad1"
+  },
+  "shadowverse:shadowverse:https://shadowverse.gg/best-decks-heirs-of-the-omen-meta-tier-list-week-1/": {
+    "last_modified": 0,
+    "last_sent_hash": "081df833503e70c0257e1a1cd177e1880c43522c53271c804b4fe5e6c0473bd7"
+  },
+  "shadowverse:shadowverse:https://shadowverse.gg/best-decks-heirs-of-the-omen-meta-tier-list-week-2-post-svo-qualifier-2/": {
+    "last_modified": 0,
+    "last_sent_hash": "f2d04a8dbcb1aadfef3451fc6812bb3aed1a18a63aa89d3e1d46f212eec1ce61"
+  },
+  "shadowverse:shadowverse:https://shadowverse.gg/best-decks-infinity-evolved-meta-tier-list-week-2/": {
+    "last_modified": 0,
+    "last_sent_hash": "919a4b2e35104dbf50be5a757b87d23b7d0f302c586d43ea12d8ef9463a17feb"
+  },
+  "shadowverse:shadowverse:https://shadowverse.gg/best-decks-infinity-evolved-meta-tier-list-week-4/": {
+    "last_modified": 0,
+    "last_sent_hash": "c38c367f4991002d89e7d82317ccacf12c08760c83f3168c75c30f23728be84d"
+  },
+  "shadowverse:shadowverse:https://shadowverse.gg/best-early-decks-for-every-class-skybound-dragons/": {
+    "last_modified": 0,
+    "last_sent_hash": "e4ca14f06c2b313db655df13742caa2f84884a8ae4aa2bd970178213bf681c23"
+  },
+  "shadowverse:shadowverse:https://shadowverse.gg/blossoming-fate-meta-tier-list-week-1/": {
+    "last_modified": 0,
+    "last_sent_hash": "e4388ae8ce4ed2df1550ca9193b13585424c3f29d34b2b566189f074112a774a"
+  },
+  "shadowverse:shadowverse:https://shadowverse.gg/dragoncraft-aggro/": {
+    "last_modified": 0,
+    "last_sent_hash": "f507ff936a07125392ed31248b0c731c3f7bf0d7920609b8c2d1f2046b8d77cc"
+  },
+  "shadowverse:shadowverse:https://shadowverse.gg/dragoncraft-ramp-deck-guide/": {
+    "last_modified": 0,
+    "last_sent_hash": "2348c76dc62c25f4089af763521e1222469976fde08b380653b7c0ab8c4d0063"
+  },
+  "shadowverse:shadowverse:https://shadowverse.gg/dragoncraft-tablet-disdain-deck-guide/": {
+    "last_modified": 0,
+    "last_sent_hash": "b1043c21d1548c34a5b0f63c103c8d95e1397ce09c4fd1cc13c1bef0b336f863"
+  },
+  "shadowverse:shadowverse:https://shadowverse.gg/dragoncraft/": {
+    "last_modified": 0,
+    "last_sent_hash": "8d6090a740faa5650157864aee1f23aa43b3436f0d1dde4bf2048409fcae4403"
+  },
+  "shadowverse:shadowverse:https://shadowverse.gg/feed/": {
+    "last_modified": 0,
+    "last_sent_hash": "c4b502b078b3fc399bc3b16e50d259865f1b801ea2cba14d5a9a2c6b3f5edda4"
+  },
+  "shadowverse:shadowverse:https://shadowverse.gg/forestcraft-fae-deck-guide/": {
+    "last_modified": 0,
+    "last_sent_hash": "b4dcc9911ace0efd4c9767f3e8fc5faa3b322a0401adea7e207cf191926e7421"
+  },
+  "shadowverse:shadowverse:https://shadowverse.gg/forestcraft-izudia-otk-deck-guide/": {
+    "last_modified": 0,
+    "last_sent_hash": "8fa18b7dc114de7fa8b3d519082330cafa2900d0f4cc41e49d6128752813fa9d"
+  },
+  "shadowverse:shadowverse:https://shadowverse.gg/forestcraft/": {
+    "last_modified": 0,
+    "last_sent_hash": "66cd8cbc0e6ad5ada668261a67c55f8ce93ee94c25c8cdbd8886be852d93ca92"
+  },
+  "shadowverse:shadowverse:https://shadowverse.gg/havencraft-crest-deck-guide/": {
+    "last_modified": 0,
+    "last_sent_hash": "adf6331dc194a12fe84baf5b120b30324a1fbce9728de7a135efa0242c45cfb2"
+  },
+  "shadowverse:shadowverse:https://shadowverse.gg/havencraft-ward-deck-guide/": {
+    "last_modified": 0,
+    "last_sent_hash": "2c41c67f3385548e2746a4812f945545056e8b8994909261138c8bdd7282e612"
+  },
+  "shadowverse:shadowverse:https://shadowverse.gg/havencraft/": {
+    "last_modified": 0,
+    "last_sent_hash": "0c602a6420cf4e36809377ef9e9dd40fe173e061d7bee69e69b8bf090f8f2d46"
+  },
+  "shadowverse:shadowverse:https://shadowverse.gg/heirs-of-the-omen-deck-giveaway-release-events/": {
+    "last_modified": 0,
+    "last_sent_hash": "9bab89e423e4ab829629f05e48a27ed62a77a8a7838bf7293d110693c944ef9a"
+  },
+  "shadowverse:shadowverse:https://shadowverse.gg/heirs-of-the-omen/": {
+    "last_modified": 0,
+    "last_sent_hash": "86bf143b9006018d4e863bb67bec0e72c66736190f4c3293cbc7735aa213f41b"
+  },
+  "shadowverse:shadowverse:https://shadowverse.gg/portalcraft-artifact-deck-guide/": {
+    "last_modified": 0,
+    "last_sent_hash": "fa0232aaaee87eca2c4140df3166a5330b423892604651ca38aee57df5cd6775"
+  },
+  "shadowverse:shadowverse:https://shadowverse.gg/portalcraft-lishenna-puppets-deck-guide/": {
+    "last_modified": 0,
+    "last_sent_hash": "d57dcd81cae0421b43a8d41c5a000353082fc2f339ddf23b01f874fe0a3fbb36"
+  },
+  "shadowverse:shadowverse:https://shadowverse.gg/portalcraft-puppet-deck-guide/": {
+    "last_modified": 0,
+    "last_sent_hash": "c065e8cfb30a2743771723652705f1883b5b6f0dc7a80e06cfbaa1b18df34e83"
+  },
+  "shadowverse:shadowverse:https://shadowverse.gg/portalcraft/": {
+    "last_modified": 0,
+    "last_sent_hash": "b5d3dbdb21f70a062553c2a0fe8fbb0632f6e6cf2ad0321956a531ffc7d498a5"
+  },
+  "shadowverse:shadowverse:https://shadowverse.gg/runecraft-earth-rite-tempo-deck-guide/": {
+    "last_modified": 0,
+    "last_sent_hash": "c60660f6351e012c3bdf02055c422faad4304f9482b2a3951c519bcb97a71b9e"
+  },
+  "shadowverse:shadowverse:https://shadowverse.gg/runecraft-spellboost-deck-guide/": {
+    "last_modified": 0,
+    "last_sent_hash": "de9ee616470acda2e586a97b94e7e2cc9d0311cc3d02331e9b6148e0fdbffb04"
+  },
+  "shadowverse:shadowverse:https://shadowverse.gg/runecraft/": {
+    "last_modified": 0,
+    "last_sent_hash": "28414fb86f16a1cc338c964f1bc26a5889e1a01812272964afa28b7953763dc4"
+  },
+  "shadowverse:shadowverse:https://shadowverse.gg/swordcraft-midrange/": {
+    "last_modified": 0,
+    "last_sent_hash": "aa6183a65242fbea0fbf823be45b8bf06ad559a7d3dd54c3353be991bd2f0acc"
+  },
+  "shadowverse:shadowverse:https://shadowverse.gg/swordcraft/": {
+    "last_modified": 0,
+    "last_sent_hash": "6cbe836f3f6d79771ea0f4409140ba5fe9252311d6178b3c9c7b634a04a1da97"
+  },
+  "shadowverse:shadowverse:https://shadowverse.gg/take-two-class-meta-tier-list-post-havencraft-forestcraft-extra-redraws/": {
+    "last_modified": 0,
+    "last_sent_hash": "be2ea29247608afb40d71570b7ff17254aa7a4c897ff2039578daa62c1d42fa0"
+  },
+  "shadowverse:shadowverse:https://shadowverse.gg/take-two-class-meta-tier-list/": {
+    "last_modified": 0,
+    "last_sent_hash": "ac03c3d3d25ecaab56dc31ec022c8de2875da845953f91b909fc68c5b24ff889"
+  },
+  "shadowverse:shadowverse:https://shadowverse.gg/take-two-draft-strategy-guide-best-cards-to-pick/": {
+    "last_modified": 0,
+    "last_sent_hash": "ed43302da9997b74bd848c3143a6f67d56359392d4e12ee6602c9a9238389f78"
+  },
+  "shadowverse:shadowverse:https://shadowverse.gg/two-decks-bo1-tournaments-what-is-the-best-pair/": {
+    "last_modified": 0,
+    "last_sent_hash": "0f6b9a26a3b0e0febdb5d8cf0f7735fea4a3f1c07d7f7bba537c94cac6b621d3"
+  },
+  "shadowverse:shadowverse:https://shadowverse.gg/wp-json/": {
+    "last_modified": 0,
+    "last_sent_hash": "4267ccbbe86ffb3da202d88bae44e0b285fa81ed948cfe70a587635d486eab92"
+  }
+}

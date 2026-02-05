@@ -1,10 +1,9 @@
-name: Daily Shadowverse News → Discord
+name: Daily News (Honkai 3rd) → Discord
 
 on:
   schedule:
-    # Runs at 08:00 America/Sao_Paulo daily.
-    # GitHub cron is UTC; São Paulo is UTC-03 (no DST), so 11:00 UTC == 08:00 BRT.
-    - cron: "0 11 * * *"
+    # Runs at 13:00 America/Sao_Paulo daily (UTC-03) => 16:00 UTC.
+    - cron: "0 16 * * *"
   workflow_dispatch:
     inputs:
       DRY_RUN:
@@ -14,10 +13,10 @@ on:
         default: false
 
 permissions:
-  contents: write   # allow pushing shadowverse_news_sent.json changes back
+  contents: write
 
 concurrency:
-  group: shadowverse-news-discord
+  group: news-honkai3rd
   cancel-in-progress: false
 
 jobs:
@@ -48,25 +47,25 @@ jobs:
             pip install requests beautifulsoup4
           fi
 
-      - name: Run Shadowverse news scraper
+      - name: Run news scraper
         env:
-          WEBHOOK_URL_NEWS:       ${{ secrets.WEBHOOK_URL_NEWS }}
-          DRY_RUN:                ${{ github.event.inputs.DRY_RUN }}
+          WEBHOOK_URL_NEWS: ${{ secrets.WEBHOOK_URL_NEWS }}
+          ONLY_GAME: honkai3rd
+          DRY_RUN: ${{ github.event.inputs.DRY_RUN }}
         run: |
           set -euo pipefail
-          python shadowverse_news_scraper.py
+          python news_scraper.py
 
       - name: Commit and push state if changed
-        if: ${{ github.event.inputs.DRY_RUN != 'true' }}  # don't commit during dry runs
+        if: ${{ github.event.inputs.DRY_RUN != 'true' }}
         run: |
           set -euo pipefail
           git status --porcelain
-          # Stage the state file (ok if it doesn't exist yet)
-          git add -A -- shadowverse_news_sent.json
+          git add -A -- news_state.json
           if ! git diff --cached --quiet; then
             git config user.name  "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git commit -m "chore: update Shadowverse news scrape state"
+            git commit -m "chore: update news scrape state (honkai3rd)"
             git pull --rebase
             git push
           else

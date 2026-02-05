@@ -1,12 +1,12 @@
 # Game Data Updater
 
-Discord bot that scrapes game events, banners, and redemption codes from various sources and posts updates to Discord channels via webhooks.
+Discord bot that scrapes game events, banners, redemption codes, and news from various sources and posts updates to Discord channels via webhooks.
 
 ## Features
 
 - **Event & Gacha Scraper** (`scraper.py`): Scrapes Game8 for events and banners for multiple gacha games
 - **Code Scrapers**: Individual scrapers for redemption codes (Arknights Endfield, MTG Arena, Disney Speedstorm)
-- **News Scraper**: Shadowverse news from shadowverse.gg
+- **News Scraper**: HoYoLAB + Gryphline + Shadowverse news to a single channel
 - **Channel Purge Bot** (`purge_channels.py`): Cleans up orphaned messages from Discord channels
 
 ## Supported Games
@@ -21,6 +21,8 @@ Discord bot that scrapes game events, banners, and redemption codes from various
 | MTG Arena | - | - | Yes |
 | Disney Speedstorm | - | - | Yes |
 | Shadowverse | - | - | News |
+
+News feeds: Genshin Impact, Honkai: Star Rail, Honkai Impact 3rd, Zenless Zone Zero, Arknights: Endfield, Shadowverse.
 
 ---
 
@@ -53,7 +55,7 @@ Used by the main scraper (`scraper.py`) to post events/gacha updates, and by the
 | `WEBHOOK_URL_SUMMARY` | scraper, codes | Summary/log channel for scraper reports and health pings |
 | `WEBHOOK_URL_LEDGER` | purge | Ledger channel for purge bot summaries |
 | `WEBHOOK_URL_CODEX` | codes | Channel for redemption code alerts (Endfield, MTGA, Speedstorm) |
-| `WEBHOOK_URL_NEWS` | shadowverse | Channel for Shadowverse news posts |
+| `WEBHOOK_URL_NEWS` | news | Channel for HoYoLAB + Gryphline + Shadowverse news posts |
 
 #### Role IDs (Optional)
 
@@ -91,6 +93,14 @@ These are set via workflow dispatch inputs, not as repository secrets.
 | `ONLY_KEY` | _(empty)_ | Run only for specific game key (e.g., `genshin-impact`) |
 | `FORCE_NEW` | `false` | Force posting new messages instead of editing existing |
 | `ONLY_CHANNEL` | _(empty)_ | Purge bot: specific channel to purge |
+
+#### Runtime Flags (News Scraper)
+
+| Variable | Default | Description |
+|----------|---------|-------------|
+| `ONLY_GAME` | _(empty)_ | Run news scraper for a single game (`genshin`, `starrail`, `honkai3rd`, `zzz`, `endfield`, `shadowverse`) |
+| `DRY_RUN` | `false` | Preview mode - no Discord posts, no state writes |
+| `NEWS_STATE_PATH` | `news_state.json` | Override the news state file path (useful for tests) |
 
 ### Variables (Repository Settings > Variables)
 
@@ -144,7 +154,12 @@ This means you only need to configure `WEBHOOK_URL_*` secrets - channel IDs are 
 | `update.yml` | 09:00 | Main scraper (events + gacha) |
 | `daily-arknights-endfield.yml` | 08:30 | Arknights Endfield codes |
 | `daily-mtga.yml` | 08:00 | MTG Arena codes |
-| `daily-shadowverse-news.yml` | 08:00 | Shadowverse news |
+| `daily-news-genshin.yml` | 12:00 | Genshin news |
+| `daily-news-starrail.yml` | 12:30 | Star Rail news |
+| `daily-news-honkai3rd.yml` | 13:00 | Honkai 3rd news |
+| `daily-news-zzz.yml` | 13:30 | ZZZ news |
+| `daily-news-endfield.yml` | 14:00 | Endfield news |
+| `daily-news-shadowverse.yml` | 14:30 | Shadowverse news |
 | `daily-speedstorm.yml` | 10:00 | Disney Speedstorm codes |
 | `purge-channels.yml` | 11:00 | Channel purge bot |
 
@@ -156,11 +171,25 @@ This means you only need to configure `WEBHOOK_URL_*` secrets - channel IDs are 
 # Install dependencies
 pip install -r requirements.txt
 
+# (Optional) Install dev test dependencies
+pip install -r requirements-dev.txt
+
 # Run with dry run mode
 DRY_RUN=true python scraper.py
 
 # Run for specific game only
 ONLY_KEY=genshin-impact DRY_RUN=true python scraper.py
+
+# Run news scraper for a single game
+ONLY_GAME=genshin WEBHOOK_URL_NEWS=... python news_scraper.py
+```
+
+## Tests
+
+News scraper tests run against live sources and mock Discord. They write state to a temp path via `NEWS_STATE_PATH`.
+
+```bash
+pytest -q
 ```
 
 ---
@@ -171,6 +200,10 @@ ONLY_KEY=genshin-impact DRY_RUN=true python scraper.py
 |------|-------------|
 | `message_ids.json` | Tracked Discord message IDs for editing |
 | `state.json` | Scraper state for change detection |
+| `news_scraper.py` | Unified news scraper (HoYoLAB + Gryphline + Shadowverse) |
+| `news_state.json` | News scraper state for change detection |
+| `requirements-dev.txt` | Dev-only dependencies (pytest) |
+| `tests/test_news_scraper_live.py` | Live integration tests for news scraper |
 | `*_state.json` | Per-scraper state files |
 | `channel_ids_cache.json` | Cached channel IDs (purge bot) |
 | `purge_state.json` | Purge bot resumable state |
