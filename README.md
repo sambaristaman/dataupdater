@@ -101,9 +101,23 @@ These are non-sensitive configuration values. Set them in GitHub repository sett
 | Variable | Default | Description |
 |----------|---------|-------------|
 | `LEDGER_MSG_DELETED` | `🧹 **Channel Purge Complete**\n{details}\n\n_Total: {total} messages deleted_` | Template for deletion summary. Placeholders: `{details}`, `{total}`, `{channel_count}` |
-| `LEDGER_MSG_CLEAN` | `✨ **All channels clean** — no orphaned messages found.` | Message when no deletions needed |
+| `LEDGER_MSG_CLEAN` | `✨ **All channels clean** — no orphaned messages found.` | Fallback message when no deletions needed (used if `clean_messages.yaml` is missing) |
 | `LEDGER_MSG_CHANNEL_LINE` | `• {channel}: {count} messages` | Template for each channel line. Placeholders: `{channel}`, `{count}` |
 | `DISABLE_UMA_EVENTS` | `false` | Disable Umamusume events scraping entirely |
+
+#### Clean Messages Configuration (Purge Bot)
+
+When no messages need to be purged, the bot randomly selects a message from `clean_messages.yaml`:
+
+```yaml
+# clean_messages.yaml
+clean_messages:
+  - "✨ **All channels clean** — no orphaned messages found."
+  - "🧹 **Nothing to purge** — everything looks spotless!"
+  - "🎉 **Channels are pristine** — no cleanup needed today."
+```
+
+If the YAML file is missing or invalid, the bot falls back to the `LEDGER_MSG_CLEAN` environment variable.
 
 ---
 
@@ -156,3 +170,4 @@ ONLY_KEY=genshin-impact DRY_RUN=true python scraper.py
 | `*_state.json` | Per-scraper state files |
 | `channel_ids_cache.json` | Cached channel IDs (purge bot) |
 | `purge_state.json` | Purge bot resumable state |
+| `clean_messages.yaml` | Random clean messages for purge bot (optional) |

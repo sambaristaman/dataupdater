@@ -31,12 +31,14 @@ Optional environment variables:
 import json
 import logging
 import os
+import random
 import threading
 import time
 from datetime import datetime, timezone
 from pathlib import Path
 
 import requests
+import yaml
 
 logging.basicConfig(
     level=logging.DEBUG,
@@ -305,6 +307,23 @@ def clear_state():
             logger.info("State file cleared.")
         except IOError as e:
             logger.warning("Could not clear state file: %s", e)
+
+
+def load_clean_messages() -> list[str]:
+    """Load clean messages from YAML file, with fallback to environment variable."""
+    yaml_path = Path(__file__).parent / "clean_messages.yaml"
+    if yaml_path.exists():
+        try:
+            with open(yaml_path, encoding="utf-8") as f:
+                data = yaml.safe_load(f)
+                messages = data.get("clean_messages", [])
+                if messages:
+                    return messages
+        except (yaml.YAMLError, IOError) as e:
+            logger.warning("Could not load clean_messages.yaml: %s", e)
+    # Fallback to environment variable or default
+    default = os.environ.get("LEDGER_MSG_CLEAN", "✨ **All channels clean** — no orphaned messages found.")
+    return [default]
 
 
 def get_messages_to_keep() -> set[str]:
@@ -582,7 +601,8 @@ def post_summary(results: dict[str, int], channel_id: str, bot_token: str, dry_r
     total = sum(results.values())
 
     if total == 0:
-        message = os.environ.get("LEDGER_MSG_CLEAN", "✨ **All channels clean** — no orphaned messages found.")
+        clean_messages = load_clean_messages()
+        message = random.choice(clean_messages)
     else:
         # Get channel line template
         channel_line_template = os.environ.get("LEDGER_MSG_CHANNEL_LINE", "• {channel}: {count} messages")
