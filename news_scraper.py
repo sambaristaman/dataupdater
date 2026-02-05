@@ -19,6 +19,7 @@ from pathlib import Path
 from typing import Dict, List, Optional, Tuple
 
 import requests
+from bs4 import BeautifulSoup, Tag
 
 # ---------------- Config ----------------
 
@@ -51,6 +52,7 @@ GRYPHLINE_GAMES = {
 # Shadowverse
 SHADOWVERSE_GAME = "shadowverse"
 SHADOWVERSE_BASE_URL = "https://shadowverse.gg/"
+SHADOWVERSE_NEWS_URL = "https://shadowverse.gg/news/"
 MIRROR_PREFIX = "https://r.jina.ai/http://"
 
 CATEGORY_MAP_HOYOLAB = {1: "notices", 2: "events", 3: "info"}
@@ -78,6 +80,19 @@ SESSION.headers.update(
 def _retry_sleep(attempt: int, base: float = 2.0) -> None:
     wait = base * attempt + random.uniform(0, 1)
     time.sleep(wait)
+
+
+def log(level: str, msg: str) -> None:
+    ts = datetime.now(timezone.utc).isoformat()
+    print(f"{ts} [{level}] {msg}")
+
+
+def log_item(action: str, reason: str, item: Dict) -> None:
+    title = (item.get("title") or "").strip()
+    url = item.get("url") or ""
+    platform = item.get("platform") or "unknown"
+    game = item.get("game") or "unknown"
+    log("INFO", f"{action} {platform}/{game}: {title} — {url} ({reason})")
 
 
 def load_state() -> Dict[str, Dict]:
@@ -186,7 +201,7 @@ def truncate_description(text: str, url: str, limit: int = 4096) -> str:
 
 def send_embed(webhook_url: str, embed: Dict) -> None:
     if DRY_RUN:
-        print(f"[DRY_RUN] Would send: {embed.get('title')}")
+        log("INFO", f"DRY_RUN would send: {embed.get('title')}")
         return
     payload = {"embeds": [embed]}
     r = SESSION.post(f"{webhook_url}?wait=true", json=payload, timeout=30)
@@ -462,19 +477,20 @@ def gryphline_process(game: str, lang: str, state: Dict[str, Dict]) -> Tuple[Lis
         discovered.append({"key": key, "effective_ts": ts})
         prev = state.get(key)
         if prev is None or ts > int(prev.get("last_modified", 0)):
-            to_fetch.append((cid, {"effective_ts": ts}))
+            to_fetch.append((cid, {"effective_ts": ts, "listing": item}))
     return discovered, to_fetch
 
 
-def gryphline_build_item(game: str, lang: str, cid: str, detail: Dict, effective_ts: int) -> Dict:
+def gryphline_build_item(game: str, lang: str, cid: str, detail: Dict, effective_ts: int, listing: Optional[Dict] = None) -> Dict:
     url = f"https://endfield.gryphline.com/{lang}/news/{cid}"
-    title = detail.get("title") or ""
-    author = detail.get("author") or "Arknights: Endfield"
-    content = detail.get("data") or ""
-    category = detail.get("tab") or "news"
-    published = int(detail.get("displayTime") or effective_ts)
-    image = detail.get("cover") or None
-    summary = detail.get("brief") or None
+    listing = listing or {}
+    title = detail.get("title") or listing.get("title") or ""
+    author = detail.get("author") or listing.get("author") or "Arknights: Endfield"
+    content = detail.get("data") or listing.get("data") or ""
+    category = detail.get("tab") or listing.get("tab") or "news"
+    published = int(detail.get("displayTime") or listing.get("displayTime") or effective_ts)
+    image = detail.get("cover") or listing.get("cover") or None
+    summary = detail.get("brief") or listing.get("brief") or None
     return {
         "id": cid,
         "platform": "gryphline",
@@ -560,26 +576,65 @@ def is_shadowverse_article(url: str) -> bool:
         "terms",
         "login",
         "news",
+        "feed",
+        "wp-json",
     }
     first = path.split("/")[0]
+    if first.startswith("wp-"):
+        return False
     if first in non_articles:
         return False
     return bool(re.match(r"^[a-z0-9-]+(?:/[a-z0-9-]+)?/?$", path))
 
 
-def find_shadowverse_links(content: str, kind: str) -> List[str]:
-    links = []
-    if kind == "html":
-        for m in re.finditer(r'href=["\'](https?://shadowverse\.gg/[^"\']+)["\']', content):
-            url = m.group(1).split("?")[0].split("#")[0]
-            if is_shadowverse_article(url):
-                links.append(url)
+def find_shadowverse_links_from_home_html(html: str) -> List[str]:
+    soup = BeautifulSoup(html, "html.parser")
+    links: List[str] = []
+    news_h = None
+    for h in soup.find_all(["h2", "h3"]):
+        if h.get_text(strip=True).lower() == "news":
+            news_h = h
+            break
+    if news_h:
+        started = False
+        container = news_h.parent
+        for el in container.descendants:
+            if el is news_h:
+                started = True
+                continue
+            if not started:
+                continue
+            if isinstance(el, Tag) and el.name == "a" and el.has_attr("href"):
+                href = el["href"].split("?")[0].split("#")[0]
+                if is_shadowverse_article(href):
+                    links.append(href)
     else:
-        candidates = re.findall(r"\((https?://shadowverse\.gg/[^\s)]+)\)", content)
-        for url in candidates:
-            u = url.split("?")[0].split("#")[0]
-            if is_shadowverse_article(u):
-                links.append(u)
+        for a in soup.find_all("a", href=True):
+            href = a["href"].split("?")[0].split("#")[0]
+            if "/page/" in href:
+                continue
+            if is_shadowverse_article(href):
+                links.append(href)
+    out, seen = [], set()
+    for u in links:
+        if u not in seen:
+            seen.add(u)
+            out.append(u)
+    return out
+
+
+def find_shadowverse_links_from_home_text(txt: str) -> List[str]:
+    content = txt.replace("\r\n", "\n")
+    m = re.search(r"(?im)^##\s*News\s*$", content)
+    if m:
+        start = m.end()
+        n = re.search(r"(?im)^\s*##\s+\S", content[start:])
+        block = content[start:start + n.start()] if n else content[start:]
+    else:
+        block = content
+    candidates = re.findall(r"\((https?://shadowverse\.gg/[^\s)]+)\)", block)
+    cleaned = [u.split("?")[0].split("#")[0] for u in candidates]
+    links = [u for u in cleaned if is_shadowverse_article(u)]
     out, seen = [], set()
     for u in links:
         if u not in seen:
@@ -639,9 +694,31 @@ def shadowverse_extract_article(content: str, kind: str, url: str) -> Dict:
     }
 
 
+def find_shadowverse_links_from_news_html(html: str) -> List[str]:
+    soup = BeautifulSoup(html, "html.parser")
+    links: List[str] = []
+    for article in soup.find_all("article"):
+        a = article.find("a", href=True)
+        if a:
+            href = a["href"].split("?")[0].split("#")[0]
+            if is_shadowverse_article(href):
+                links.append(href)
+    out, seen = [], set()
+    for u in links:
+        if u not in seen:
+            seen.add(u)
+            out.append(u)
+    return out
+
+
 def shadowverse_process(state: Dict[str, Dict]) -> Tuple[List[Dict], List[Tuple[str, Dict]]]:
-    kind, home = fetch_html_or_text(SHADOWVERSE_BASE_URL)
-    links = find_shadowverse_links(home, kind)
+    kind, home = fetch_html_or_text(SHADOWVERSE_NEWS_URL)
+    if kind == "html":
+        links = find_shadowverse_links_from_news_html(home)
+        if not links:
+            links = find_shadowverse_links_from_home_html(home)
+    else:
+        links = find_shadowverse_links_from_home_text(home)
     discovered, to_fetch = [], []
     for url in links:
         key = composite_key("shadowverse", SHADOWVERSE_GAME, url)
@@ -662,6 +739,10 @@ def main() -> None:
     state = load_state()
     first_run_for_game = bool(ONLY_GAME) and is_first_run_for_game(state, ONLY_GAME)
 
+    log("INFO", f"Starting news scraper. ONLY_GAME={ONLY_GAME or 'all'} DRY_RUN={DRY_RUN}")
+    log("INFO", f"State path: {STATE_PATH}")
+    log("INFO", f"Language: {DEFAULT_LANGUAGE}")
+
     target_games = set()
     if ONLY_GAME:
         target_games.add(ONLY_GAME)
@@ -671,12 +752,16 @@ def main() -> None:
         target_games.add(SHADOWVERSE_GAME)
 
     all_items: List[Dict] = []
+    totals = {"discovered": 0, "to_fetch": 0, "sent": 0, "skipped": 0, "failed": 0}
 
     # HoYoLAB
     for game in HOYOLAB_GAMES:
         if game not in target_games:
             continue
         discovered, to_fetch = hoyolab_process(game, DEFAULT_LANGUAGE, state)
+        totals["discovered"] += len(discovered)
+        totals["to_fetch"] += len(to_fetch)
+        log("INFO", f"HoYoLAB/{game}: discovered={len(discovered)} to_fetch={len(to_fetch)}")
         for post_id, meta in to_fetch:
             detail = hoyolab_fetch_detail(HOYOLAB_GAMES[game]["gids"], post_id, DEFAULT_LANGUAGE)
             item = hoyolab_build_item(game, detail, meta["effective_ts"])
@@ -691,11 +776,15 @@ def main() -> None:
         if game not in target_games:
             continue
         discovered, to_fetch = gryphline_process(game, DEFAULT_LANGUAGE, state)
+        totals["discovered"] += len(discovered)
+        totals["to_fetch"] += len(to_fetch)
+        log("INFO", f"Gryphline/{game}: discovered={len(discovered)} to_fetch={len(to_fetch)}")
         for cid, meta in to_fetch:
             detail = gryphline_detail(DEFAULT_LANGUAGE, cid)
             if not detail:
+                log("WARN", f"Gryphline/{game}: detail missing for cid={cid}")
                 continue
-            item = gryphline_build_item(game, DEFAULT_LANGUAGE, cid, detail, meta["effective_ts"])
+            item = gryphline_build_item(game, DEFAULT_LANGUAGE, cid, detail, meta["effective_ts"], meta.get("listing"))
             all_items.append(item)
         for d in discovered:
             if d["key"] not in state:
@@ -704,6 +793,9 @@ def main() -> None:
     # Shadowverse
     if SHADOWVERSE_GAME in target_games:
         discovered, to_fetch = shadowverse_process(state)
+        totals["discovered"] += len(discovered)
+        totals["to_fetch"] += len(to_fetch)
+        log("INFO", f"Shadowverse: discovered={len(discovered)} to_fetch={len(to_fetch)}")
         for url, meta in to_fetch:
             kind, content = fetch_html_or_text(url)
             article = shadowverse_extract_article(content, kind, url)
@@ -729,7 +821,8 @@ def main() -> None:
 
     # Determine per-game first run behavior
     if first_run_for_game:
-        print(f"First run for {ONLY_GAME} — baseline only, no Discord messages sent.")
+        log("INFO", f"First run for {ONLY_GAME} — baseline only, no Discord messages sent.")
+        log("INFO", f"Baseline items recorded: {len(all_items)}")
         save_state(state)
         return
 
@@ -739,17 +832,30 @@ def main() -> None:
         stored = state.get(key, {})
         new_hash = hash_item(item)
         if stored.get("last_sent_hash") == new_hash:
+            totals["skipped"] += 1
+            log_item("skip", "unchanged (hash match)", item)
             continue
         embed = build_embed(item)
         try:
+            log_item("send" if not DRY_RUN else "would-send", "new or updated", item)
             send_embed(webhook_url, embed)
             state[key] = {"last_modified": item["effective_ts"], "last_sent_hash": new_hash}
+            totals["sent"] += 1
             time.sleep(1.5)
         except Exception as e:
-            print(f"Failed to send {item.get('title')}: {e}")
+            totals["failed"] += 1
+            log("ERROR", f"Failed to send {item.get('title')}: {e}")
             time.sleep(1.5)
 
     save_state(state)
+    log(
+        "INFO",
+        "Summary: discovered={discovered} to_fetch={to_fetch} sent={sent} skipped={skipped} failed={failed}".format(
+            **totals
+        ),
+    )
+    if totals["sent"] == 0:
+        log("INFO", "No items sent — all items unchanged or baseline-only.")
 
 
 if __name__ == "__main__":
