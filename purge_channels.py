@@ -13,7 +13,7 @@ Features:
 
 Required environment variables:
 - DISCORD_BOT_TOKEN: Bot token with MANAGE_MESSAGES and READ_MESSAGE_HISTORY permissions
-- WEBHOOK_URL_SUMMARY: Webhook URL for posting purge summary
+- WEBHOOK_URL_SUMMARY: Webhook URL used to resolve summary channel ID (bot posts as itself)
 
 Channel ID resolution (in priority order):
 1. Cached channel ID from channel_ids_cache.json (fastest, no API call)
@@ -570,13 +570,13 @@ def purge_channel(
     return deleted_count
 
 
-def post_ledger_summary(results: dict[str, int], webhook_url: str, dry_run: bool) -> bool:
+def post_summary(results: dict[str, int], channel_id: str, bot_token: str, dry_run: bool) -> bool:
     """
-    Post summary to ledger channel using configured message templates.
-    Returns True if successful (or no webhook configured).
+    Post summary to channel as the bot itself using the Bot API.
+    Returns True if successful (or no channel configured).
     """
-    if not webhook_url:
-        logger.info("No WEBHOOK_URL_SUMMARY configured, skipping summary post")
+    if not channel_id:
+        logger.info("No summary channel configured, skipping summary post")
         return True
 
     total = sum(results.values())
@@ -605,12 +605,17 @@ def post_ledger_summary(results: dict[str, int], webhook_url: str, dry_run: bool
     if dry_run:
         message = f"[DRY RUN]\n{message}"
 
+    headers = {
+        "Authorization": f"Bot {bot_token}",
+        "Content-Type": "application/json",
+    }
+    url = f"{DISCORD_API_BASE}/channels/{channel_id}/messages"
     payload = {"content": message}
 
     try:
-        response = requests.post(webhook_url, json=payload, timeout=10)
-        if response.status_code in (200, 204):
-            logger.info("Posted summary to ledger channel")
+        response = requests.post(url, headers=headers, json=payload, timeout=10)
+        if response.status_code in (200, 201):
+            logger.info("Posted summary to channel %s as bot", channel_id)
             return True
         else:
             logger.error("Failed to post summary: %d - %s", response.status_code, response.text)
@@ -628,7 +633,6 @@ def main():
 
     dry_run = os.environ.get("DRY_RUN", "false").lower() == "true"
     only_channel = os.environ.get("ONLY_CHANNEL", "").strip()
-    webhook_url = os.environ.get("WEBHOOK_URL_SUMMARY", "")
 
     if dry_run:
         logger.info("=== DRY RUN MODE - No messages will be deleted ===")
@@ -653,6 +657,13 @@ def main():
 
     # Load channel IDs cache
     channel_ids_cache = load_channel_ids_cache()
+
+    # Resolve summary channel ID for posting results as the bot
+    summary_channel_id = resolve_channel_id("summary", "CHANNEL_ID_SUMMARY", "WEBHOOK_URL_SUMMARY", channel_ids_cache)
+    if summary_channel_id:
+        logger.info("Summary channel resolved: %s", summary_channel_id)
+    else:
+        logger.warning("No summary channel configured, purge summary will not be posted")
 
     # Track results for this session (merge with previous if resuming)
     session_results = {}
@@ -693,9 +704,9 @@ def main():
         action = "would be deleted" if dry_run else "deleted"
         logger.info("Total: %d messages %s", total, action)
 
-    # Post to ledger (use session results, not cumulative)
+    # Post summary as the bot (use session results, not cumulative)
     # This is done after all deletions, so even if it fails, deletions are saved
-    post_ledger_summary(session_results, webhook_url, dry_run)
+    post_summary(session_results, summary_channel_id, bot_token, dry_run)
 
     # Clear state only if all channels were processed successfully
     # A channel is considered "handled" if it was processed OR if it had no configuration
