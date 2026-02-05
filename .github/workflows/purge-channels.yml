@@ -34,7 +34,7 @@ jobs:
           python-version: "3.11"
 
       - name: Install dependencies
-        run: pip install requests
+        run: pip install -r requirements.txt
 
       # Restore state from cache for resumability
       - name: Restore purge state
