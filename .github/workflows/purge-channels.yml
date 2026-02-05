@@ -60,7 +60,7 @@ jobs:
           WEBHOOK_URL_GI: ${{ secrets.WEBHOOK_URL_GI }}
           WEBHOOK_URL_UMA: ${{ secrets.WEBHOOK_URL_UMA }}
           WEBHOOK_URL_ENDFIELD: ${{ secrets.WEBHOOK_URL_ENDFIELD }}
-          WEBHOOK_URL_LEDGER: ${{ secrets.WEBHOOK_URL_LEDGER }}
+          WEBHOOK_URL_SUMMARY: ${{ secrets.WEBHOOK_URL_SUMMARY }}
           DRY_RUN: ${{ inputs.DRY_RUN || 'false' }}
           ONLY_CHANNEL: ${{ inputs.CHANNEL }}
           LEDGER_MSG_DELETED: ${{ vars.LEDGER_MSG_DELETED }}

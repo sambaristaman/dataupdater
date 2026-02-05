@@ -13,7 +13,7 @@ Features:
 
 Required environment variables:
 - DISCORD_BOT_TOKEN: Bot token with MANAGE_MESSAGES and READ_MESSAGE_HISTORY permissions
-- WEBHOOK_URL_LEDGER: Webhook URL for posting purge summary
+- WEBHOOK_URL_SUMMARY: Webhook URL for posting purge summary
 
 Channel ID resolution (in priority order):
 1. Cached channel ID from channel_ids_cache.json (fastest, no API call)
@@ -576,7 +576,7 @@ def post_ledger_summary(results: dict[str, int], webhook_url: str, dry_run: bool
     Returns True if successful (or no webhook configured).
     """
     if not webhook_url:
-        logger.info("No WEBHOOK_URL_LEDGER configured, skipping summary post")
+        logger.info("No WEBHOOK_URL_SUMMARY configured, skipping summary post")
         return True
 
     total = sum(results.values())
@@ -628,7 +628,7 @@ def main():
 
     dry_run = os.environ.get("DRY_RUN", "false").lower() == "true"
     only_channel = os.environ.get("ONLY_CHANNEL", "").strip()
-    webhook_url = os.environ.get("WEBHOOK_URL_LEDGER", "")
+    webhook_url = os.environ.get("WEBHOOK_URL_SUMMARY", "")
 
     if dry_run:
         logger.info("=== DRY RUN MODE - No messages will be deleted ===")
