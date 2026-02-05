@@ -250,67 +250,42 @@
     ]
   },
   "wuthering-waves::events": {
-    "last_updated": "February 3, 2026 04:06 AM",
+    "last_updated": "February 4, 2026 11:16 PM",
     "items": [
-      {
-        "label": "Back to Solaris",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/546269",
-        "info": "December 25, 2025 - February 4, 2026 Log in during Version 3.0"
-      },
-      {
-        "label": "Lahai-Roi Pioneers",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/571458",
-        "info": "December 25, 2025 - Permanent Reach Union Level 8 and reach the Academy in the Main Quest, What Burns Beneath the Frostlands."
-      },
-      {
-        "label": "Gifts of Freshers Week",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/571436",
-        "info": "December 25, 2025 - February 4, 2026 Log-in during Version 3.0. and reach Union Level 8."
-      },
-      {
-        "label": "Let's Go, to Startorch Academy!",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/571457",
-        "info": "December 25, 2025 - February 4, 2026 Log-in during Version 3.0. and reach Union Level 8."
-      },
-      {
-        "label": "Capturing Starlight",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/571522",
-        "info": "December 25, 2025 - February 4, 2026 Complete Main Quest Chapter III Act I, What Burns Beneath Frostlands, to unlock"
-      },
-      {
-        "label": "Signs of a Silent Star",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/571687",
-        "info": "January 22, 2026 - February 4, 2026 Log-in during Version 3.0 and use the WavesLine function."
-      },
-      {
-        "label": "Operation: Frontier Renewal",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/571745",
-        "info": "December 25, 2025 - Permanent Reach Union Level 8 and complete Tutorial Quest - ."
-      },
-      {
-        "label": "Peaks of Prestige: Rekindled Duel",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/572329",
-        "info": null
-      },
-      {
-        "label": "Persona Sonic Collab",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/570896",
-        "info": null
-      },
       {
         "label": "Ascendant Aces",
         "link": "https://game8.co/games/Wuthering-Waves/archives/456482",
-        "info": "January 15, 2026 - February 4, 2026 Unlocked by default"
+        "info": "February 5, 2026 - March 18, 2026 Unlocked by default"
       },
       {
-        "label": "Startorch Racing",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/571795",
-        "info": "January 15, 2026 - February 4, 2026 Log-in during Version 3.0."
+        "label": "Unfrozen Traces",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/577784",
+        "info": null
       },
       {
-        "label": "Chord Cleansing",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/457211",
-        "info": "January 28, 2026 - February 4, 2026 Reach Union Level 19"
+        "label": "Footprints on Frostlands",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/577814",
+        "info": "February 5, 2026 - Permanent Log-in during Version 3.1 and unlock Roya Frostlands"
+      },
+      {
+        "label": "Gift of Soft Snow",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/578043",
+        "info": "February 5, 2026 - March 18, 2026 Reach Union level 8"
+      },
+      {
+        "label": "TERM-X Outreach",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/578050",
+        "info": "February 5, 2026 - March 18, 2026 Reach Frostlands Surface during Main Quest Chapter III Act III: The Star that Voyages Far to unlock"
+      },
+      {
+        "label": "Moonlit Path",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/578047",
+        "info": "February 5, 2026 - March 18, 2026 Log-in during Version 3.1"
+      },
+      {
+        "label": "Startorch for You",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/578107",
+        "info": "February 5, 2026 - Permanent Complete Main Quest Chapter III Act III: The Star that Voyages Far to unlock"
       },
       {
         "label": "Starpaths Intertwined",
@@ -318,34 +293,14 @@
         "info": "Releases in Version 3.1 Complete Starpath Tasks to earn Journey Points and win rewards including a new glider, radiant tides and more!"
       },
       {
-        "label": "Unfrozen Traces",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/577784",
-        "info": "February 5, 2026 - March 18, 2026 Area exploration event rewarding you with items for exploring Roya Frostlands!"
+        "label": "Bountiful Crescendo",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/458244",
+        "info": "February 19, 2026 - February 26, 2026 Earn double leveling material drops during this event!"
       },
       {
-        "label": "Footprints on Frostlands",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/577814",
-        "info": "February 5, 2026 - Permanent Take photos of special scenarios to receive Astrites and materials as rewards in Roya Frostlands!"
-      },
-      {
-        "label": "Gift of Soft Snow",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/578043",
-        "info": "February 5, 2026 - March 18, 2026 Log-in for 7 days to claim Radiant and Lustrous Tides!"
-      },
-      {
-        "label": "TERM-X Outreach",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/578050",
-        "info": "February 5, 2026 - March 18, 2026 Upgrade Expedition Motorbike Expansion Modules to Obtain Rewards."
-      },
-      {
-        "label": "Moonlit Path",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/578047",
-        "info": "February 5, 2026 - March 18, 2026 Join this spending event to obtain additional milestone rewards when you purchase in-game transactions!"
-      },
-      {
-        "label": "Startorch for You",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/578107",
-        "info": "February 5, 2026 - Permanent Get the new Perpetual Spark series Outfit and Avatar for Rover by progressing the main story!"
+        "label": "Chord Cleansing",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/457211",
+        "info": "March 11, 2026 - March 18, 2026 Earn double echo and echo leveling material drops during this event!"
       },
       {
         "label": "Where Stars Cascade Down",
@@ -371,6 +326,11 @@
         "label": "Full Throttle! Bolt & Bltiz!",
         "link": "https://game8.co/games/Wuthering-Waves/archives/577848",
         "info": "February 7, 2026 - March 18, 2026 Join an attack motorbike minigame to gain rewards such as astrites and a new Title!"
+      },
+      {
+        "label": "Rein Back! Migration Mayhem!",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/454093",
+        "info": null
       }
     ]
   },
@@ -569,71 +529,71 @@
     ]
   },
   "wuthering-waves::gacha": {
-    "last_updated": "January 23, 2026 08:57 AM",
+    "last_updated": "February 4, 2026 09:46 PM",
     "items": [
-      {
-        "label": "Absolute Pulsation (Starfield Calibrator)",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/455400",
-        "info": "January 15, 2026 - February 4, 2026"
-      },
-      {
-        "label": "Take Flight in Spring",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/575840",
-        "info": null
-      },
-      {
-        "label": "Aemeath",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/572587",
-        "info": null
-      },
-      {
-        "label": "Aalto",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/454214",
-        "info": null
-      },
-      {
-        "label": "Mortefi",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/454222",
-        "info": null
-      },
-      {
-        "label": "Taoqi",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/454226",
-        "info": null
-      },
       {
         "label": "Absolute Pulsation (Everbright Polestar)",
         "link": "https://game8.co/games/Wuthering-Waves/archives/455400",
+        "info": "February 5, 2026 - February 26, 2026"
+      },
+      {
+        "label": "When Winter Thaws",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/575845",
         "info": null
       },
       {
-        "label": "Everbright Polestar",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/575684",
+        "label": "Luuk Herssen",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/568210",
         "info": null
       },
       {
-        "label": "Waning Redshift",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/474514",
+        "label": "Sanhua",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/454225",
         "info": null
       },
       {
-        "label": "Cadenza",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/455903",
+        "label": "Lumi",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/473488",
         "info": null
       },
       {
-        "label": "Commando of Conviction",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/455938",
+        "label": "Yuanwu",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/454219",
         "info": null
       },
       {
-        "label": "Horizon of Dawnbreak",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/564697",
+        "label": "Absolute Pulsation (Daybreaker's Spine)",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/455400",
         "info": null
       },
       {
-        "label": "Chisa",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/524880",
+        "label": "Daybreaker's Spine",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/575692",
+        "info": null
+      },
+      {
+        "label": "Overture",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/455935",
+        "info": null
+      },
+      {
+        "label": "Jinzhou Keeper",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/455924",
+        "info": null
+      },
+      {
+        "label": "Hollow Mirage",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/455913",
+        "info": null
+      },
+      {
+        "label": "From Ashes",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/553579",
+        "info": null
+      },
+      {
+        "label": "Galbrena",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/524888",
         "info": null
       }
     ]
@@ -699,7 +659,7 @@
     ]
   },
   "arknights-endfield::events": {
-    "last_updated": "January 29, 2026 05:12 AM",
+    "last_updated": "February 4, 2026 10:58 PM",
     "items": [
       {
         "label": "Final Prep Orders Web Event",
@@ -725,6 +685,16 @@
         "label": "Voyage to the Stars Guide",
         "link": "https://game8.co/games/Arknights-Endfield/archives/575865",
         "info": null
+      },
+      {
+        "label": "Carly's Fairytale of the Valley Camera Event",
+        "link": "https://game8.co/games/Arknights-Endfield/archives/578398",
+        "info": "07/26 - 02/24"
+      },
+      {
+        "label": "Glittering Life at Wuling Guide Event",
+        "link": "https://game8.co/games/Arknights-Endfield/archives/578428",
+        "info": "07/26 - 02/24"
       }
     ]
   },
