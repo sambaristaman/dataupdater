@@ -310,18 +310,17 @@ def clear_state():
 
 
 def load_clean_messages() -> list[str]:
-    """Load clean messages from YAML file, with fallback to environment variable."""
-    yaml_path = Path(__file__).parent / "clean_messages.yaml"
-    if yaml_path.exists():
+    """Load clean messages from YAML env var, with fallback to single message."""
+    yaml_content = os.environ.get("CLEAN_MESSAGES_YAML", "")
+    if yaml_content:
         try:
-            with open(yaml_path, encoding="utf-8") as f:
-                data = yaml.safe_load(f)
-                messages = data.get("clean_messages", [])
-                if messages:
-                    return messages
-        except (yaml.YAMLError, IOError) as e:
-            logger.warning("Could not load clean_messages.yaml: %s", e)
-    # Fallback to environment variable or default
+            data = yaml.safe_load(yaml_content)
+            messages = data.get("clean_messages", [])
+            if messages:
+                return messages
+        except yaml.YAMLError as e:
+            logger.warning("Could not parse CLEAN_MESSAGES_YAML: %s", e)
+    # Fallback to single message environment variable or default
     default = os.environ.get("LEDGER_MSG_CLEAN", "✨ **All channels clean** — no orphaned messages found.")
     return [default]
 

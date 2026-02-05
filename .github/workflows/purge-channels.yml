@@ -66,6 +66,7 @@ jobs:
           LEDGER_MSG_DELETED: ${{ vars.LEDGER_MSG_DELETED }}
           LEDGER_MSG_CLEAN: ${{ vars.LEDGER_MSG_CLEAN }}
           LEDGER_MSG_CHANNEL_LINE: ${{ vars.LEDGER_MSG_CHANNEL_LINE }}
+          CLEAN_MESSAGES_YAML: ${{ vars.CLEAN_MESSAGES_YAML }}
         run: python purge_channels.py
 
       # Save state for next run (even if purge fails/times out)

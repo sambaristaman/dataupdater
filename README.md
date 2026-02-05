@@ -107,17 +107,21 @@ These are non-sensitive configuration values. Set them in GitHub repository sett
 
 #### Clean Messages Configuration (Purge Bot)
 
-When no messages need to be purged, the bot randomly selects a message from `clean_messages.yaml`:
+When no messages need to be purged, the bot randomly selects a message from the `CLEAN_MESSAGES_YAML` variable:
 
+| Variable | Description |
+|----------|-------------|
+| `CLEAN_MESSAGES_YAML` | YAML content with multiple clean messages (see format below) |
+
+Example value for `CLEAN_MESSAGES_YAML`:
 ```yaml
-# clean_messages.yaml
 clean_messages:
   - "✨ **All channels clean** — no orphaned messages found."
   - "🧹 **Nothing to purge** — everything looks spotless!"
   - "🎉 **Channels are pristine** — no cleanup needed today."
 ```
 
-If the YAML file is missing or invalid, the bot falls back to the `LEDGER_MSG_CLEAN` environment variable.
+If `CLEAN_MESSAGES_YAML` is not set or invalid, the bot falls back to the `LEDGER_MSG_CLEAN` environment variable.
 
 ---
 
@@ -170,4 +174,3 @@ ONLY_KEY=genshin-impact DRY_RUN=true python scraper.py
 | `*_state.json` | Per-scraper state files |
 | `channel_ids_cache.json` | Cached channel IDs (purge bot) |
 | `purge_state.json` | Purge bot resumable state |
-| `clean_messages.yaml` | Random clean messages for purge bot (optional) |
