@@ -101,6 +101,7 @@ These are set via workflow dispatch inputs, not as repository secrets.
 | `ONLY_GAME` | _(empty)_ | Run news scraper for a single game (`genshin`, `starrail`, `honkai3rd`, `zzz`, `endfield`, `shadowverse`) |
 | `DRY_RUN` | `false` | Preview mode - no Discord posts, no state writes |
 | `NEWS_STATE_PATH` | `news_state.json` | Override the news state file path (useful for tests) |
+| `RUN_LAST_HOURS` | _(empty)_ | Only send items updated within the last N hours (e.g., `24`). Items within the window are sent even if already tracked. |
 
 ### Variables (Repository Settings > Variables)
 

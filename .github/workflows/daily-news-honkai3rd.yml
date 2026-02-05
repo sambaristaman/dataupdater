@@ -11,6 +11,10 @@ on:
         required: false
         type: boolean
         default: false
+      RUN_LAST_HOURS:
+        description: "Only send items updated within the last N hours (e.g., 24)."
+        required: false
+        default: ""
 
 permissions:
   contents: write
@@ -52,6 +56,7 @@ jobs:
           WEBHOOK_URL_NEWS: ${{ secrets.WEBHOOK_URL_NEWS }}
           ONLY_GAME: honkai3rd
           DRY_RUN: ${{ github.event.inputs.DRY_RUN }}
+          RUN_LAST_HOURS: ${{ github.event.inputs.RUN_LAST_HOURS }}
         run: |
           set -euo pipefail
           python news_scraper.py

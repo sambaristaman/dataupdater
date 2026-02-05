@@ -16,6 +16,7 @@ import re
 import time
 from datetime import datetime, timezone
 from pathlib import Path
+import sys
 from typing import Dict, List, Optional, Tuple
 
 import requests
@@ -23,10 +24,11 @@ from bs4 import BeautifulSoup, Tag
 
 # ---------------- Config ----------------
 
-STATE_PATH = Path(os.getenv("NEWS_STATE_PATH", "news_state.json"))
+STATE_PATH = Path("news_state.json")
 WEBHOOK_ENV = "WEBHOOK_URL_NEWS"
-ONLY_GAME = os.getenv("ONLY_GAME", "").strip().lower()
-DRY_RUN = os.getenv("DRY_RUN", "false").strip().lower() == "true"
+ONLY_GAME = ""
+DRY_RUN = False
+RUN_LAST_HOURS_RAW = ""
 
 DEFAULT_LANGUAGE = "en-us"
 CATEGORY_SIZE = 5
@@ -84,7 +86,17 @@ def _retry_sleep(attempt: int, base: float = 2.0) -> None:
 
 def log(level: str, msg: str) -> None:
     ts = datetime.now(timezone.utc).isoformat()
-    print(f"{ts} [{level}] {msg}")
+    line = f"{ts} [{level}] {msg}"
+    try:
+        print(line)
+    except UnicodeEncodeError:
+        data = (line + "\n").encode("utf-8", errors="replace")
+        try:
+            sys.stdout.buffer.write(data)
+            sys.stdout.buffer.flush()
+        except Exception:
+            # Last-resort fallback
+            print(line.encode("utf-8", errors="replace").decode("utf-8", errors="replace"))
 
 
 def log_item(action: str, reason: str, item: Dict) -> None:
@@ -93,6 +105,14 @@ def log_item(action: str, reason: str, item: Dict) -> None:
     platform = item.get("platform") or "unknown"
     game = item.get("game") or "unknown"
     log("INFO", f"{action} {platform}/{game}: {title} — {url} ({reason})")
+
+
+def refresh_runtime_config() -> None:
+    global ONLY_GAME, DRY_RUN, RUN_LAST_HOURS_RAW, STATE_PATH
+    ONLY_GAME = os.getenv("ONLY_GAME", "").strip().lower()
+    DRY_RUN = os.getenv("DRY_RUN", "false").strip().lower() == "true"
+    RUN_LAST_HOURS_RAW = os.getenv("RUN_LAST_HOURS", "").strip()
+    STATE_PATH = Path(os.getenv("NEWS_STATE_PATH", "news_state.json"))
 
 
 def load_state() -> Dict[str, Dict]:
@@ -127,6 +147,18 @@ def is_first_run_for_game(state: Dict[str, Dict], game: str) -> bool:
 
 def to_iso(ts: int) -> str:
     return datetime.fromtimestamp(ts, tz=timezone.utc).isoformat()
+
+
+def get_last_hours_cutoff() -> Optional[int]:
+    if not RUN_LAST_HOURS_RAW:
+        return None
+    try:
+        hours = int(RUN_LAST_HOURS_RAW)
+    except ValueError:
+        return None
+    if hours <= 0:
+        return None
+    return int(time.time()) - (hours * 3600)
 
 
 # ---------------- HTML to Plain Text ----------------
@@ -679,9 +711,12 @@ def shadowverse_extract_article(content: str, kind: str, url: str) -> Dict:
         body = content.strip()
 
     iso_ts = None
+    published_ts = None
     if date_str:
         try:
-            iso_ts = datetime.strptime(date_str, "%B %d, %Y").replace(tzinfo=timezone.utc).isoformat()
+            dt = datetime.strptime(date_str, "%B %d, %Y").replace(tzinfo=timezone.utc)
+            iso_ts = dt.isoformat()
+            published_ts = int(dt.timestamp())
         except Exception:
             pass
 
@@ -691,6 +726,7 @@ def shadowverse_extract_article(content: str, kind: str, url: str) -> Dict:
         "author": author,
         "summary": summary,
         "published": iso_ts,
+        "published_ts": published_ts,
     }
 
 
@@ -732,6 +768,7 @@ def shadowverse_process(state: Dict[str, Dict]) -> Tuple[List[Dict], List[Tuple[
 
 
 def main() -> None:
+    refresh_runtime_config()
     webhook_url = os.environ.get(WEBHOOK_ENV, "").strip()
     if not webhook_url:
         raise SystemExit("Missing env var WEBHOOK_URL_NEWS")
@@ -739,7 +776,10 @@ def main() -> None:
     state = load_state()
     first_run_for_game = bool(ONLY_GAME) and is_first_run_for_game(state, ONLY_GAME)
 
+    cutoff_ts = get_last_hours_cutoff()
     log("INFO", f"Starting news scraper. ONLY_GAME={ONLY_GAME or 'all'} DRY_RUN={DRY_RUN}")
+    if cutoff_ts:
+        log("INFO", f"Time filter: last {RUN_LAST_HOURS_RAW}h (cutoff={to_iso(cutoff_ts)})")
     log("INFO", f"State path: {STATE_PATH}")
     log("INFO", f"Language: {DEFAULT_LANGUAGE}")
 
@@ -782,9 +822,8 @@ def main() -> None:
         for cid, meta in to_fetch:
             detail = gryphline_detail(DEFAULT_LANGUAGE, cid)
             if not detail:
-                log("WARN", f"Gryphline/{game}: detail missing for cid={cid}")
-                continue
-            item = gryphline_build_item(game, DEFAULT_LANGUAGE, cid, detail, meta["effective_ts"], meta.get("listing"))
+                log("WARN", f"Gryphline/{game}: detail missing for cid={cid}; using listing fallback")
+            item = gryphline_build_item(game, DEFAULT_LANGUAGE, cid, detail or {}, meta["effective_ts"], meta.get("listing"))
             all_items.append(item)
         for d in discovered:
             if d["key"] not in state:
@@ -812,7 +851,7 @@ def main() -> None:
                 "updated": None,
                 "image": None,
                 "summary": article.get("summary") or "",
-                "effective_ts": meta["effective_ts"],
+                "effective_ts": article.get("published_ts") or meta["effective_ts"],
             }
             all_items.append(item)
         for d in discovered:
@@ -828,16 +867,22 @@ def main() -> None:
 
     # Send new/updated items
     for item in all_items:
+        allow_recent_resend = bool(cutoff_ts and item.get("effective_ts", 0) >= cutoff_ts)
+        if cutoff_ts and item.get("effective_ts", 0) < cutoff_ts:
+            totals["skipped"] += 1
+            log_item("skip", f"older than cutoff ({RUN_LAST_HOURS_RAW}h)", item)
+            continue
         key = composite_key(item["platform"], item["game"], item["id"])
         stored = state.get(key, {})
         new_hash = hash_item(item)
-        if stored.get("last_sent_hash") == new_hash:
+        if stored.get("last_sent_hash") == new_hash and not allow_recent_resend:
             totals["skipped"] += 1
             log_item("skip", "unchanged (hash match)", item)
             continue
         embed = build_embed(item)
         try:
-            log_item("send" if not DRY_RUN else "would-send", "new or updated", item)
+            reason = "within cutoff (resend)" if allow_recent_resend else "new or updated"
+            log_item("send" if not DRY_RUN else "would-send", reason, item)
             send_embed(webhook_url, embed)
             state[key] = {"last_modified": item["effective_ts"], "last_sent_hash": new_hash}
             totals["sent"] += 1
