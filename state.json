@@ -250,8 +250,13 @@
     ]
   },
   "wuthering-waves::events": {
-    "last_updated": "February 4, 2026 11:16 PM",
+    "last_updated": "February 6, 2026 05:34 AM",
     "items": [
+      {
+        "label": "Starpaths Intertwined",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/578067",
+        "info": "February 5, 2026 - Permanent Log-in during Version 3.1"
+      },
       {
         "label": "Ascendant Aces",
         "link": "https://game8.co/games/Wuthering-Waves/archives/456482",
@@ -286,11 +291,6 @@
         "label": "Startorch for You",
         "link": "https://game8.co/games/Wuthering-Waves/archives/578107",
         "info": "February 5, 2026 - Permanent Complete Main Quest Chapter III Act III: The Star that Voyages Far to unlock"
-      },
-      {
-        "label": "Starpaths Intertwined",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/578067",
-        "info": "Releases in Version 3.1 Complete Starpath Tasks to earn Journey Points and win rewards including a new glider, radiant tides and more!"
       },
       {
         "label": "Bountiful Crescendo",
@@ -659,7 +659,7 @@
     ]
   },
   "arknights-endfield::events": {
-    "last_updated": "February 4, 2026 10:58 PM",
+    "last_updated": "February 6, 2026 01:53 AM",
     "items": [
       {
         "label": "Final Prep Orders Web Event",
