@@ -9,7 +9,8 @@
       "Bash(export DRY_RUN=true)",
       "Bash(export WEBHOOK_URL_CODEX=https://example.com/webhook)",
       "WebFetch(domain:game8.co)",
-      "Bash(ls:*)"
+      "Bash(ls:*)",
+      "Bash(dir:*)"
     ]
   }
 }

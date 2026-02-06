@@ -588,15 +588,116 @@ def gryphline_list(lang: str) -> List[Dict]:
     return []
 
 
+def _concat_rsc_stream(html: str) -> str:
+    """Concatenate all ``self.__next_f.push([1, "..."])`` string fragments
+    into a single RSC stream.  Push payloads are chunked at ~2 KiB by
+    Next.js, so bulletin JSON may span multiple push calls.
+
+    Fragments are joined *without* extra separators — the T-blob parser
+    in ``_parse_rsc_lines`` handles boundaries correctly.
+    """
+    parts: List[str] = []
+    for p in extract_push_payloads(html):
+        try:
+            data = json.loads(p)
+        except Exception:
+            continue
+        for item in data:
+            if isinstance(item, str):
+                parts.append(item)
+    return "".join(parts)
+
+
+def _resolve_rsc_text_blob(stream: str, ref_id: str) -> str:
+    """Resolve an RSC ``$<ref_id>`` text-blob reference.
+
+    Text blobs are encoded as ``<ref_id>:T<hex_byte_len>,<content>`` where
+    *content* spans exactly *hex_byte_len* **UTF-8 bytes** and may contain
+    newlines.  The blob may also be split across push-payload boundaries,
+    so we search the concatenated stream.
+    """
+    # Look for the marker  ``\n<ref_id>:T``  or at stream start
+    for prefix in (f"\n{ref_id}:T", f"{ref_id}:T"):
+        idx = stream.find(prefix)
+        if idx == -1:
+            continue
+        t_pos = idx + len(prefix) - 1  # position of 'T'
+        after_t = stream[t_pos + 1:]   # after 'T'
+        comma = after_t.find(",")
+        if comma == -1:
+            continue
+        try:
+            byte_len = int(after_t[:comma], 16)
+        except ValueError:
+            continue
+        content_start = t_pos + 1 + comma + 1
+        # Walk chars until we've consumed byte_len UTF-8 bytes
+        byte_count = 0
+        ci = content_start
+        while ci < len(stream) and byte_count < byte_len:
+            byte_count += len(stream[ci].encode("utf-8"))
+            ci += 1
+        return stream[content_start:ci]
+    return ""
+
+
+def _find_rsc_bulletin(stream: str, cid: str) -> Optional[Dict]:
+    """Search the RSC stream for a bulletin matching *cid*.
+
+    Uses a direct regex search for the bulletin wrapper JSON
+    ``{"value":{"bulletin":{..."cid":"<cid>"...}}}`` anywhere in the
+    concatenated stream.
+    """
+    pattern = r'\{"value":\s*\{"bulletin":\s*\{[^}]*"cid"\s*:\s*"' + re.escape(cid) + r'"'
+    m = re.search(pattern, stream)
+    if not m:
+        return None
+    start = m.start()
+    # Extract the full wrapper object by brace-matching
+    depth = 0
+    for i in range(start, len(stream)):
+        if stream[i] == "{":
+            depth += 1
+        elif stream[i] == "}":
+            depth -= 1
+            if depth == 0:
+                try:
+                    wrapper = json.loads(stream[start:i + 1])
+                    return (wrapper.get("value") or {}).get("bulletin")
+                except Exception:
+                    return None
+    return None
+
+
+def _extract_rsc_bulletin(html: str, cid: str) -> Dict:
+    """Parse the RSC stream to find the bulletin dict for *cid*.
+
+    The bulletin lives inside an RSC component array:
+    ``<line_id>:["$","$L<xx>",null,{"value":{"bulletin":{...}}}]``
+
+    For long articles the ``"data"`` field may be an RSC ``$<ref>``
+    reference pointing to a separate text blob in the stream.
+    """
+    stream = _concat_rsc_stream(html)
+
+    bulletin = _find_rsc_bulletin(stream, cid)
+    if not bulletin:
+        return {}
+
+    # Resolve RSC $-reference in 'data' field
+    data = bulletin.get("data") or ""
+    if isinstance(data, str) and re.fullmatch(r"\$[0-9a-f]+", data):
+        resolved = _resolve_rsc_text_blob(stream, data[1:])
+        if resolved:
+            bulletin["data"] = resolved
+    return bulletin
+
+
 def gryphline_detail(lang: str, cid: str) -> Dict:
     url = f"https://endfield.gryphline.com/{lang}/news/{cid}"
     r = SESSION.get(url, timeout=30)
     r.raise_for_status()
-    blocks = extract_json_blocks(r.text, "\"data\"")
-    for b in blocks:
-        if isinstance(b, dict) and str(b.get("cid")) == cid and "data" in b:
-            return b
-    return {}
+    return _extract_rsc_bulletin(r.text, cid)
 
 
 def gryphline_process(game: str, lang: str, state: Dict[str, Dict], cutoff_ts: Optional[int] = None) -> Tuple[List[Dict], List[Tuple[str, Dict]]]:
