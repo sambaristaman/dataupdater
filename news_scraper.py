@@ -363,7 +363,7 @@ def hoyolab_fetch_detail(gids: int, post_id: str, lang: str) -> Dict:
     return data.get("post", {}) or {}
 
 
-def hoyolab_process(game: str, lang: str, state: Dict[str, Dict]) -> Tuple[List[Dict], List[Tuple[str, Dict]]]:
+def hoyolab_process(game: str, lang: str, state: Dict[str, Dict], cutoff_ts: Optional[int] = None) -> Tuple[List[Dict], List[Tuple[str, Dict]]]:
     gids = HOYOLAB_GAMES[game]["gids"]
     categories = HOYOLAB_GAMES[game]["categories"]
 
@@ -381,7 +381,10 @@ def hoyolab_process(game: str, lang: str, state: Dict[str, Dict]) -> Tuple[List[
             discovered.append({"key": key, "effective_ts": effective_ts})
 
             prev = state.get(key)
-            if prev is None or effective_ts > int(prev.get("last_modified", 0)):
+            needs_fetch = prev is None or effective_ts > int(prev.get("last_modified", 0))
+            if not needs_fetch and cutoff_ts and effective_ts >= cutoff_ts:
+                needs_fetch = True
+            if needs_fetch:
                 existing = to_fetch_map.get(post_id)
                 if not existing or effective_ts > existing["effective_ts"]:
                     to_fetch_map[post_id] = {"effective_ts": effective_ts, "gids": gids}
@@ -495,7 +498,7 @@ def gryphline_detail(lang: str, cid: str) -> Dict:
     return {}
 
 
-def gryphline_process(game: str, lang: str, state: Dict[str, Dict]) -> Tuple[List[Dict], List[Tuple[str, Dict]]]:
+def gryphline_process(game: str, lang: str, state: Dict[str, Dict], cutoff_ts: Optional[int] = None) -> Tuple[List[Dict], List[Tuple[str, Dict]]]:
     discovered = []
     to_fetch = []
 
@@ -509,6 +512,8 @@ def gryphline_process(game: str, lang: str, state: Dict[str, Dict]) -> Tuple[Lis
         discovered.append({"key": key, "effective_ts": ts})
         prev = state.get(key)
         if prev is None or ts > int(prev.get("last_modified", 0)):
+            to_fetch.append((cid, {"effective_ts": ts, "listing": item}))
+        elif cutoff_ts and ts >= cutoff_ts:
             to_fetch.append((cid, {"effective_ts": ts, "listing": item}))
     return discovered, to_fetch
 
@@ -747,7 +752,7 @@ def find_shadowverse_links_from_news_html(html: str) -> List[str]:
     return out
 
 
-def shadowverse_process(state: Dict[str, Dict]) -> Tuple[List[Dict], List[Tuple[str, Dict]]]:
+def shadowverse_process(state: Dict[str, Dict], cutoff_ts: Optional[int] = None) -> Tuple[List[Dict], List[Tuple[str, Dict]]]:
     kind, home = fetch_html_or_text(SHADOWVERSE_NEWS_URL)
     if kind == "html":
         links = find_shadowverse_links_from_news_html(home)
@@ -760,6 +765,8 @@ def shadowverse_process(state: Dict[str, Dict]) -> Tuple[List[Dict], List[Tuple[
         key = composite_key("shadowverse", SHADOWVERSE_GAME, url)
         discovered.append({"key": key, "effective_ts": 0})
         if key not in state:
+            to_fetch.append((url, {"effective_ts": 0}))
+        elif cutoff_ts:
             to_fetch.append((url, {"effective_ts": 0}))
     return discovered, to_fetch
 
@@ -798,7 +805,7 @@ def main() -> None:
     for game in HOYOLAB_GAMES:
         if game not in target_games:
             continue
-        discovered, to_fetch = hoyolab_process(game, DEFAULT_LANGUAGE, state)
+        discovered, to_fetch = hoyolab_process(game, DEFAULT_LANGUAGE, state, cutoff_ts)
         totals["discovered"] += len(discovered)
         totals["to_fetch"] += len(to_fetch)
         log("INFO", f"HoYoLAB/{game}: discovered={len(discovered)} to_fetch={len(to_fetch)}")
@@ -815,7 +822,7 @@ def main() -> None:
     for game in GRYPHLINE_GAMES:
         if game not in target_games:
             continue
-        discovered, to_fetch = gryphline_process(game, DEFAULT_LANGUAGE, state)
+        discovered, to_fetch = gryphline_process(game, DEFAULT_LANGUAGE, state, cutoff_ts)
         totals["discovered"] += len(discovered)
         totals["to_fetch"] += len(to_fetch)
         log("INFO", f"Gryphline/{game}: discovered={len(discovered)} to_fetch={len(to_fetch)}")
@@ -831,7 +838,7 @@ def main() -> None:
 
     # Shadowverse
     if SHADOWVERSE_GAME in target_games:
-        discovered, to_fetch = shadowverse_process(state)
+        discovered, to_fetch = shadowverse_process(state, cutoff_ts)
         totals["discovered"] += len(discovered)
         totals["to_fetch"] += len(to_fetch)
         log("INFO", f"Shadowverse: discovered={len(discovered)} to_fetch={len(to_fetch)}")
