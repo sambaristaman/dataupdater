@@ -215,6 +215,91 @@ def html_to_text(html: str) -> str:
     return text.strip()
 
 
+_HEADING_RE = re.compile(r"<h[1-6][^>]*>(.*?)</h[1-6]>", re.IGNORECASE | re.DOTALL)
+_STRONG_RE = re.compile(r"<(strong|b)>(.*?)</\1>", re.IGNORECASE | re.DOTALL)
+_EM_RE = re.compile(r"<(em|i)>(.*?)</\1>", re.IGNORECASE | re.DOTALL)
+
+
+def html_to_discord_md(html: str) -> str:
+    """Convert HTML to Discord-flavored Markdown."""
+    if not html:
+        return ""
+
+    text = html_lib.unescape(html)
+
+    # Headings → bold + newline
+    text = _HEADING_RE.sub(lambda m: f"**{_TAG_RE.sub('', m.group(1)).strip()}**\n", text)
+
+    # Bold
+    text = _STRONG_RE.sub(lambda m: f"**{m.group(2)}**", text)
+
+    # Italic
+    text = _EM_RE.sub(lambda m: f"*{m.group(2)}*", text)
+
+    # Links → [text](url)
+    def _link_md(match: re.Match) -> str:
+        href = match.group(1).strip()
+        label = _TAG_RE.sub("", match.group(2)).strip()
+        if href and label:
+            return f"[{label}]({href})"
+        return href or label
+
+    text = _A_RE.sub(_link_md, text)
+
+    # Images → [alt](url) or just url
+    def _img_md(match: re.Match) -> str:
+        tag = match.group(0)
+        src_m = re.search(r"src=[\"']([^\"']+)[\"']", tag, re.IGNORECASE)
+        alt_m = re.search(r"alt=[\"']([^\"']+)[\"']", tag, re.IGNORECASE)
+        src = src_m.group(1) if src_m else ""
+        alt = alt_m.group(1) if alt_m else ""
+        if alt and src:
+            return f"[{alt}]({src})"
+        return src
+
+    text = _IMG_RE.sub(_img_md, text)
+
+    # Block-level elements
+    text = _BR_RE.sub("\n", text)
+    text = _P_CLOSE_RE.sub("\n\n", text)
+    text = _P_OPEN_RE.sub("", text)
+    text = _LI_OPEN_RE.sub("• ", text)
+    text = _LI_CLOSE_RE.sub("\n", text)
+    text = _ULOL_RE.sub("", text)
+
+    # Strip remaining HTML tags
+    text = _TAG_RE.sub("", text)
+
+    # Normalize whitespace
+    text = text.replace("\r\n", "\n").replace("\r", "\n")
+    text = re.sub(r"\n{3,}", "\n\n", text)
+    text = re.sub(r"[ \t]{2,}", " ", text)
+    return text.strip()
+
+
+def split_content(text: str, limit: int = 4096) -> List[str]:
+    """Split text into chunks at word/newline boundaries."""
+    if len(text) <= limit:
+        return [text]
+    chunks = []
+    remaining = text
+    while len(remaining) > limit:
+        segment = remaining[:limit]
+        # Prefer splitting at last newline
+        nl = segment.rfind("\n")
+        if nl > limit // 4:
+            split_at = nl
+        else:
+            # Fall back to last space
+            sp = segment.rfind(" ")
+            split_at = sp if sp > limit // 4 else limit
+        chunks.append(remaining[:split_at].rstrip())
+        remaining = remaining[split_at:].lstrip("\n")
+    if remaining.strip():
+        chunks.append(remaining.strip())
+    return chunks
+
+
 def truncate_description(text: str, url: str, limit: int = 4096) -> str:
     if len(text) <= limit:
         return text
@@ -231,31 +316,47 @@ def truncate_description(text: str, url: str, limit: int = 4096) -> str:
 # ---------------- Discord ----------------
 
 
-def send_embed(webhook_url: str, embed: Dict) -> None:
-    if DRY_RUN:
-        log("INFO", f"DRY_RUN would send: {embed.get('title')}")
-        return
-    payload = {"embeds": [embed]}
-    r = SESSION.post(f"{webhook_url}?wait=true", json=payload, timeout=30)
-    if r.status_code >= 300:
-        raise RuntimeError(f"Discord webhook error {r.status_code}: {r.text[:300]}")
+def send_embeds(webhook_url: str, embeds: List[Dict]) -> None:
+    for i, embed in enumerate(embeds):
+        if DRY_RUN:
+            log("INFO", f"DRY_RUN would send embed {i+1}/{len(embeds)}: {embed.get('title', '(continuation)')}")
+            continue
+        payload = {"embeds": [embed]}
+        r = SESSION.post(f"{webhook_url}?wait=true", json=payload, timeout=30)
+        if r.status_code >= 300:
+            raise RuntimeError(f"Discord webhook error {r.status_code}: {r.text[:300]}")
+        if i < len(embeds) - 1:
+            time.sleep(0.5)
 
 
-def build_embed(item: Dict) -> Dict:
-    desc = truncate_description(html_to_text(item.get("content", "")), item["url"])
-    embed = {
-        "title": (item.get("title") or item["url"])[:256],
-        "url": item["url"],
-        "description": desc[:4096],
-        "color": COLOR_BY_GAME.get(item["game"], 0x888888),
-        "footer": {"text": f"{item.get('category','news')} · {item['game']}"},
-        "timestamp": item.get("published"),
-    }
-    if item.get("image"):
-        embed["thumbnail"] = {"url": item["image"]}
-    if item.get("author"):
-        embed["author"] = {"name": item["author"][:256]}
-    return embed
+def build_embed(item: Dict) -> List[Dict]:
+    md = html_to_discord_md(item.get("content", ""))
+    color = COLOR_BY_GAME.get(item["game"], 0x888888)
+    footer = {"text": f"{item.get('category','news')} · {item['game']}"}
+    timestamp = item.get("published")
+    chunks = split_content(md)
+
+    embeds: List[Dict] = []
+    for i, chunk in enumerate(chunks):
+        embed: Dict = {"description": chunk, "color": color}
+
+        if i == 0:
+            # First embed: title, url, author, image
+            embed["title"] = (item.get("title") or item["url"])[:256]
+            embed["url"] = item["url"]
+            if item.get("author"):
+                embed["author"] = {"name": item["author"][:256]}
+            if item.get("image"):
+                embed["image"] = {"url": item["image"]}
+
+        if i == len(chunks) - 1:
+            # Last embed (or only embed): footer + timestamp
+            embed["footer"] = footer
+            if timestamp:
+                embed["timestamp"] = timestamp
+
+        embeds.append(embed)
+    return embeds
 
 
 # ---------------- HoYoLAB ----------------
@@ -886,11 +987,11 @@ def main() -> None:
             totals["skipped"] += 1
             log_item("skip", "unchanged (hash match)", item)
             continue
-        embed = build_embed(item)
+        embeds = build_embed(item)
         try:
             reason = "within cutoff (resend)" if allow_recent_resend else "new or updated"
             log_item("send" if not DRY_RUN else "would-send", reason, item)
-            send_embed(webhook_url, embed)
+            send_embeds(webhook_url, embeds)
             state[key] = {"last_modified": item["effective_ts"], "last_sent_hash": new_hash}
             totals["sent"] += 1
             time.sleep(1.5)

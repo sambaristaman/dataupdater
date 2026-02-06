@@ -23,14 +23,14 @@ def _run_live(monkeypatch, tmp_path, game: str) -> None:
 
     sent = []
 
-    def _mock_send(webhook_url, embed):
-        sent.append(embed)
+    def _mock_send(webhook_url, embeds):
+        sent.extend(embeds)
 
     monkeypatch.setenv("WEBHOOK_URL_NEWS", "https://example.invalid/webhook")
     monkeypatch.setenv("ONLY_GAME", game)
     monkeypatch.setenv("NEWS_STATE_PATH", str(state_path))
     monkeypatch.setenv("DRY_RUN", "false")
-    monkeypatch.setattr(news_scraper, "send_embed", _mock_send)
+    monkeypatch.setattr(news_scraper, "send_embeds", _mock_send)
 
     news_scraper.main()
 
