@@ -9,7 +9,7 @@
   },
   "gryphline:endfield:3846": {
     "last_modified": 1770210000,
-    "last_sent_hash": "d802286b9c9095951712dce2397a5ac38297edd7c9463c7f8dc3db4807181364"
+    "last_sent_hash": "bccad34de7da79ba6582a7cb4ce810a79321063deb0f2870152778fbdfe8dc98"
   },
   "gryphline:endfield:3847": {
     "last_modified": 1768969800,
@@ -17,11 +17,19 @@
   },
   "gryphline:endfield:5215": {
     "last_modified": 1770264000,
-    "last_sent_hash": "3a574a7fac2b0d23e408c5a057ea4c6c5ce5e2db925c0178813b9cec813c6c1d"
+    "last_sent_hash": "35fea37ea8bd2bdf50f2663f084999e0d8713b13c474064858705e7978d38f0d"
   },
   "gryphline:endfield:5216": {
     "last_modified": 1768971600,
     "last_sent_hash": "a23294df2c73bbee4ed5787c163c7c1871d96f9e0fd2eec70b1212ae09bc01a4"
+  },
+  "gryphline:endfield:6181": {
+    "last_modified": 1770462900,
+    "last_sent_hash": "1522be9c2a878a8b361ee37746f36f4b9470b5f60b29ed5d24df17cd10ee21b0"
+  },
+  "gryphline:endfield:7028": {
+    "last_modified": 1770350400,
+    "last_sent_hash": "ca4561b8e400bd65b9d85665d2f64d22ff7c1bb7352c1f32d3050555641ec05c"
   },
   "gryphline:endfield:7029": {
     "last_modified": 1769050800,
@@ -90,6 +98,18 @@
   "hoyolab:genshin:43631587": {
     "last_modified": 1770264007,
     "last_sent_hash": "42c006b6d64dd909b64c719e662f75adaf2647858f13f55ece944252f915b444"
+  },
+  "hoyolab:genshin:43645179": {
+    "last_modified": 1770354005,
+    "last_sent_hash": "9f7d73c403c8c68c52b89bfd71e63012588e09a653b83889e4b1def3f7f71575"
+  },
+  "hoyolab:genshin:43665848": {
+    "last_modified": 1770436806,
+    "last_sent_hash": "87bf06ee6d0b5247bc1bd6c291b43e6d85ea6fb13fb85bcfc6ef1aabf673b4b7"
+  },
+  "hoyolab:genshin:43665970": {
+    "last_modified": 1770437405,
+    "last_sent_hash": "6ebcccfd18e0e7384d321b9ffde2280c41893a6837dfe4016204efb1030641d3"
   },
   "hoyolab:honkai3rd:41865866": {
     "last_modified": 1761040804,
@@ -211,6 +231,54 @@
     "last_modified": 1770116404,
     "last_sent_hash": "50ce8f989dfa0de0888edc9e07b8ac824e154a1fd506d19fcbd67aa7e028a4fe"
   },
+  "hoyolab:starrail:43650571": {
+    "last_modified": 1770379207,
+    "last_sent_hash": "ff60245e0e322b29bd2afacaf5d5a112e6e128b4b018ed889c4c346fac23c4af"
+  },
+  "hoyolab:starrail:43651281": {
+    "last_modified": 1770381308,
+    "last_sent_hash": "233b1a92d108127d5a5aac6a77bb920a9ffd366d851af251a3f265a292f52168"
+  },
+  "hoyolab:starrail:43651282": {
+    "last_modified": 1770381311,
+    "last_sent_hash": "92a12938180831987bd2894deb26d8397e39248f1ac8761b96f507b54f20cf17"
+  },
+  "hoyolab:starrail:43651472": {
+    "last_modified": 1770381606,
+    "last_sent_hash": "2e7af44d79038eb9378ceda7f8a623d58071b7ef6900949890d6ab2d2e3f439a"
+  },
+  "hoyolab:starrail:43651474": {
+    "last_modified": 1770381608,
+    "last_sent_hash": "1f2d92f20d9603b6d888beb97560238f0ff5839b3a5f568c58052c7718dd7422"
+  },
+  "hoyolab:starrail:43651663": {
+    "last_modified": 1770381911,
+    "last_sent_hash": "a1be0e02adf57ca9a3494a0972fb1fa6c0c784dcbca7dfdaf732e05e43d5bd7a"
+  },
+  "hoyolab:starrail:43651863": {
+    "last_modified": 1770382208,
+    "last_sent_hash": "9fbecd448ac30c93a83a2eb066ca11c072253f768c1e92683904e4c8178676ff"
+  },
+  "hoyolab:starrail:43652238": {
+    "last_modified": 1770382807,
+    "last_sent_hash": "5b4ad1319a95a13d8eccd5d21458b0a107ccacffd4570c495baa30db0e323a18"
+  },
+  "hoyolab:starrail:43652615": {
+    "last_modified": 1770383404,
+    "last_sent_hash": "69cbeca69340c4cae1272c5c72f10d95044a4ea6ff3a3b0f7488251ee0f0bb3a"
+  },
+  "hoyolab:starrail:43666646": {
+    "last_modified": 1770440407,
+    "last_sent_hash": "a7eefec99d3145053a1ac91dfa806e7a547589a47ba2fb0aca560ad6db984445"
+  },
+  "hoyolab:starrail:43667081": {
+    "last_modified": 1770442209,
+    "last_sent_hash": "36a1bcb58e107ac51afe888914ac197cc720ec20c3e2b18a8716bab56c658092"
+  },
+  "hoyolab:starrail:43667485": {
+    "last_modified": 1770444015,
+    "last_sent_hash": "90d833d5e31fe4dbd79f2ae1fd1aa465e918bea870853a4fb40434117ec0ca63"
+  },
   "hoyolab:zzz:42982746": {
     "last_modified": 1767069007,
     "last_sent_hash": "a523b1d0dd024294024bf86a7ea661b3f4588923f3e03ad853bf5897c6693c45"
@@ -274,6 +342,50 @@
   "hoyolab:zzz:43642066": {
     "last_modified": 1770332408,
     "last_sent_hash": "b3a996bab552d58450a0bfaa08b8249e27312b4d1752b722fb084832594ddffa"
+  },
+  "hoyolab:zzz:43643414": {
+    "last_modified": 1770345006,
+    "last_sent_hash": "408a64f902030237f516d53d0a830361e862cdc4d4722ef38d43b69d035dea93"
+  },
+  "hoyolab:zzz:43643741": {
+    "last_modified": 1770346808,
+    "last_sent_hash": "0966b75b79f61d32606484441a138d88ca419e45cf87380e75b480b1826f2180"
+  },
+  "hoyolab:zzz:43643748": {
+    "last_modified": 1770346857,
+    "last_sent_hash": "93c6aa073764999b4157965a8f66f0dbb65e4cd14042b1cc2e81fc89dd5a074a"
+  },
+  "hoyolab:zzz:43643921": {
+    "last_modified": 1770347708,
+    "last_sent_hash": "f19b0772ac7f4b87a5b0333d23c72d2ed327c72d2f82336166763ca05ffd6874"
+  },
+  "hoyolab:zzz:43644429": {
+    "last_modified": 1770350401,
+    "last_sent_hash": "4e46d1d3073ecca2286e68f0db57b48e60dc3a9fbd8ead7fc1f9872848c9a336"
+  },
+  "hoyolab:zzz:43644635": {
+    "last_modified": 1770351302,
+    "last_sent_hash": "7837eb6881db53b012fe649cd83420f16a27d1749c288da3c488f2f8e3ad32d1"
+  },
+  "hoyolab:zzz:43646208": {
+    "last_modified": 1770358510,
+    "last_sent_hash": "d56771d862660eb3fae6835bd4cabbcf5a44d8d258e8c8c143af5f9aaa829162"
+  },
+  "hoyolab:zzz:43649029": {
+    "last_modified": 1770372006,
+    "last_sent_hash": "16124cc3c36ce08c2544c4020850172e7ae425522709698058f7b1b016e82045"
+  },
+  "hoyolab:zzz:43649201": {
+    "last_modified": 1770372903,
+    "last_sent_hash": "49d796ae8d295b02b12ca31244c8c9025f65cacb68b2507a22fc873a4fc268e4"
+  },
+  "hoyolab:zzz:43665847": {
+    "last_modified": 1770436805,
+    "last_sent_hash": "0a1d705d3eb474021dbf86d51595d3499319ae993cc78449436364201d9188fe"
+  },
+  "hoyolab:zzz:43670672": {
+    "last_modified": 1770459305,
+    "last_sent_hash": "9f08dea7fac201f2337605ce1852d41205c788a47434e6c4c9e1a66de166fd2f"
   },
   "shadowverse:shadowverse:https://shadowverse.gg/10-free-card-pack-tickets-for-top-app-store-and-steam-sales/": {
     "last_modified": 0,
