@@ -8,6 +8,7 @@ Discord bot that scrapes game events, banners, redemption codes, and news from v
 - **Code Scrapers**: Individual scrapers for redemption codes (Arknights Endfield, MTG Arena, Disney Speedstorm)
 - **News Scraper**: HoYoLAB + Gryphline + Shadowverse news to a single channel
 - **Channel Purge Bot** (`purge_channels.py`): Cleans up orphaned messages from Discord channels
+- **Daily Quotes Bot** (`daily_quotes.py`): Posts a daily quote to a configured channel
 
 ## Supported Games
 
@@ -30,11 +31,11 @@ News feeds: Genshin Impact, Honkai: Star Rail, Honkai Impact 3rd, Zenless Zone Z
 
 ### Secrets
 
-#### Discord Bot Token (Purge Bot only)
+#### Discord Bot Token (Purge Bot + Daily Quotes)
 
 | Variable | Required | Description |
 |----------|----------|-------------|
-| `DISCORD_BOT_TOKEN` | Yes* | Bot token with `MANAGE_MESSAGES` and `READ_MESSAGE_HISTORY` permissions. *Only required for the purge bot. |
+| `DISCORD_BOT_TOKEN` | Yes* | Bot token with `MANAGE_MESSAGES` and `READ_MESSAGE_HISTORY` permissions. *Required for purge bot and daily quotes. |
 
 #### Webhooks - Game Channels
 
@@ -82,6 +83,12 @@ The purge bot can automatically derive channel IDs from webhook URLs. These are 
 | `CHANNEL_ID_GI` | Override: Genshin Impact channel ID |
 | `CHANNEL_ID_UMA` | Override: Umamusume channel ID |
 | `CHANNEL_ID_ENDFIELD` | Override: Arknights: Endfield channel ID |
+
+#### Channel IDs (Daily Quotes)
+
+| Variable | Description |
+|----------|-------------|
+| `CHANNEL_ID_QUOTES` | Target channel ID for daily quotes |
 
 #### Runtime Flags (Workflow Inputs)
 
@@ -134,6 +141,26 @@ clean_messages:
 
 If `CLEAN_MESSAGES_YAML` is not set or invalid, the bot falls back to the `LEDGER_MSG_CLEAN` environment variable.
 
+#### Daily Quotes Configuration
+
+| Variable | Required | Description |
+|----------|----------|-------------|
+| `DAILY_QUOTES_YAML` | Yes | YAML list of regular quotes |
+| `MENTION_QUOTES_YAML` | No | YAML list of mention quotes (contain `{user}` placeholder) |
+
+Example value for `DAILY_QUOTES_YAML`:
+```yaml
+- "Consistency beats intensity."
+- "Make it simple, then make it great."
+```
+
+Example value for `MENTION_QUOTES_YAML`:
+```yaml
+- "Keep going, {user}."
+- "{user}, your future self will thank you."
+```
+Note: mention quotes require the Discord Server Members Intent to be enabled for the bot.
+
 ---
 
 ## Channel ID Resolution (Purge Bot)
@@ -162,6 +189,7 @@ This means you only need to configure `WEBHOOK_URL_*` secrets - channel IDs are 
 | `daily-news-endfield.yml` | 14:00 | Endfield news |
 | `daily-news-shadowverse.yml` | 14:30 | Shadowverse news |
 | `daily-speedstorm.yml` | 10:00 | Disney Speedstorm codes |
+| `daily-quotes.yml` | 12:00 | Daily quotes |
 | `purge-channels.yml` | 11:00 | Channel purge bot |
 
 ---

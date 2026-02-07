@@ -1,0 +1,63 @@
+name: Daily Quotes → Discord
+
+on:
+  schedule:
+    # Runs at 09:00 America/Sao_Paulo daily.
+    # GitHub cron uses UTC; São Paulo is UTC-03 (no DST), so 12:00 UTC == 09:00 BRT.
+    - cron: "0 12 * * *"
+  workflow_dispatch:
+    inputs:
+      CHANNEL_ID_QUOTES:
+        description: "Discord channel ID to post the quote to (overrides repo variable)."
+        required: false
+        type: string
+      DRY_RUN:
+        description: "Do not send anything; log what would happen."
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: daily-quotes
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Check out
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install deps
+        run: |
+          set -euo pipefail
+          python -m pip install --upgrade pip
+          if [[ -f requirements.txt ]]; then
+            pip install -r requirements.txt
+          else
+            pip install requests pyyaml
+          fi
+
+      - name: Post daily quote
+        env:
+          DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
+          CHANNEL_ID_QUOTES: ${{ github.event.inputs.CHANNEL_ID_QUOTES || secrets.CHANNEL_ID_QUOTES || vars.CHANNEL_ID_QUOTES }}
+          DAILY_QUOTES_YAML: ${{ vars.DAILY_QUOTES_YAML }}
+          MENTION_QUOTES_YAML: ${{ vars.MENTION_QUOTES_YAML }}
+          DRY_RUN: ${{ github.event.inputs.DRY_RUN }}
+        run: |
+          set -euo pipefail
+          python daily_quotes.py
