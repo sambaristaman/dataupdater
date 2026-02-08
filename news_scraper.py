@@ -391,33 +391,23 @@ def build_embed(item: Dict) -> List[Dict]:
     if cover_image:
         extracted_images = [u for u in extracted_images if u != cover_image]
 
-    # Decide the first image: cover or first extracted
-    first_image = cover_image
-    if not first_image and extracted_images:
-        first_image = extracted_images.pop(0)
+    # Pick one image: cover takes priority, else first extracted
+    image = cover_image
+    if not image and extracted_images:
+        image = extracted_images[0]
 
     chunks = split_content(md)
     embeds = []
 
-    # Build text embeds (one per chunk), each can carry one image
-    image_queue = list(extracted_images)
     for i, chunk in enumerate(chunks):
         embed: Dict = {"description": chunk, "color": color, "url": item_url}
         if i == 0:
             embed["title"] = (item.get("title") or item_url)[:256]
             if item.get("author"):
                 embed["author"] = {"name": item["author"][:256]}
-            if first_image:
-                embed["image"] = {"url": first_image}
-        else:
-            # Continuation text embeds can carry one image from the queue
-            if image_queue:
-                embed["image"] = {"url": image_queue.pop(0)}
+            if image:
+                embed["image"] = {"url": image}
         embeds.append(embed)
-
-    # Image-only embeds for remaining images
-    for img_url in image_queue:
-        embeds.append({"url": item_url, "image": {"url": img_url}, "color": color})
 
     # Footer + timestamp on the very last embed
     if embeds:
