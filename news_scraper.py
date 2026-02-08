@@ -29,6 +29,7 @@ WEBHOOK_ENV = "WEBHOOK_URL_NEWS"
 ONLY_GAME = ""
 DRY_RUN = False
 RUN_LAST_HOURS_RAW = ""
+IMAGE_EMBEDS = True
 
 DEFAULT_LANGUAGE = "en-us"
 CATEGORY_SIZE = 5
@@ -108,11 +109,12 @@ def log_item(action: str, reason: str, item: Dict) -> None:
 
 
 def refresh_runtime_config() -> None:
-    global ONLY_GAME, DRY_RUN, RUN_LAST_HOURS_RAW, STATE_PATH
+    global ONLY_GAME, DRY_RUN, RUN_LAST_HOURS_RAW, STATE_PATH, IMAGE_EMBEDS
     ONLY_GAME = os.getenv("ONLY_GAME", "").strip().lower()
     DRY_RUN = os.getenv("DRY_RUN", "false").strip().lower() == "true"
     RUN_LAST_HOURS_RAW = os.getenv("RUN_LAST_HOURS", "").strip()
     STATE_PATH = Path(os.getenv("NEWS_STATE_PATH", "news_state.json"))
+    IMAGE_EMBEDS = os.getenv("IMAGE_EMBEDS", "true").strip().lower() != "false"
 
 
 def load_state() -> Dict[str, Dict]:
@@ -218,9 +220,24 @@ def html_to_text(html: str) -> str:
 _HEADING_RE = re.compile(r"<h[1-6][^>]*>(.*?)</h[1-6]>", re.IGNORECASE | re.DOTALL)
 _STRONG_RE = re.compile(r"<(strong|b)>(.*?)</\1>", re.IGNORECASE | re.DOTALL)
 _EM_RE = re.compile(r"<(em|i)>(.*?)</\1>", re.IGNORECASE | re.DOTALL)
+_IMG_SRC_RE = re.compile(r"<img[^>]*\ssrc=[\"']([^\"']+)[\"'][^>]*>", re.IGNORECASE)
 
 
-def html_to_discord_md(html: str) -> str:
+def extract_images_from_html(html: str) -> List[str]:
+    """Extract all image URLs from <img> tags in raw HTML, preserving order."""
+    if not html:
+        return []
+    seen: set = set()
+    urls: List[str] = []
+    for m in _IMG_SRC_RE.finditer(html):
+        url = m.group(1)
+        if url not in seen:
+            seen.add(url)
+            urls.append(url)
+    return urls
+
+
+def html_to_discord_md(html: str, strip_images: bool = False) -> str:
     """Convert HTML to Discord-flavored Markdown."""
     if not html:
         return ""
@@ -246,8 +263,10 @@ def html_to_discord_md(html: str) -> str:
 
     text = _A_RE.sub(_link_md, text)
 
-    # Images → [alt](url) or just url
+    # Images → [alt](url) or just url, or stripped entirely
     def _img_md(match: re.Match) -> str:
+        if strip_images:
+            return ""
         tag = match.group(0)
         src_m = re.search(r"src=[\"']([^\"']+)[\"']", tag, re.IGNORECASE)
         alt_m = re.search(r"alt=[\"']([^\"']+)[\"']", tag, re.IGNORECASE)
@@ -317,45 +336,95 @@ def truncate_description(text: str, url: str, limit: int = 4096) -> str:
 
 
 def send_embeds(webhook_url: str, embeds: List[Dict]) -> None:
-    for i, embed in enumerate(embeds):
+    max_per_message = 10
+    batches: List[List[Dict]] = []
+    for i in range(0, len(embeds), max_per_message):
+        batches.append(embeds[i : i + max_per_message])
+
+    for bi, batch in enumerate(batches):
         if DRY_RUN:
-            log("INFO", f"DRY_RUN would send embed {i+1}/{len(embeds)}: {embed.get('title', '(continuation)')}")
+            titles = [e.get("title", "(image/continuation)") for e in batch]
+            log("INFO", f"DRY_RUN would send message {bi+1}/{len(batches)} with {len(batch)} embed(s): {titles}")
             continue
-        payload = {"embeds": [embed]}
+        payload = {"embeds": batch}
         r = SESSION.post(f"{webhook_url}?wait=true", json=payload, timeout=30)
         if r.status_code >= 300:
             raise RuntimeError(f"Discord webhook error {r.status_code}: {r.text[:300]}")
-        if i < len(embeds) - 1:
+        if bi < len(batches) - 1:
             time.sleep(0.5)
 
 
 def build_embed(item: Dict) -> List[Dict]:
-    md = html_to_discord_md(item.get("content", ""))
     color = COLOR_BY_GAME.get(item["game"], 0x888888)
     footer = {"text": f"{item.get('category','news')} · {item['game']}"}
     timestamp = item.get("published")
+    item_url = item["url"]
+    cover_image = item.get("image")
+
+    if not IMAGE_EMBEDS:
+        # Legacy behavior: no image extraction
+        md = html_to_discord_md(item.get("content", ""))
+        chunks = split_content(md)
+        embeds: List[Dict] = []
+        for i, chunk in enumerate(chunks):
+            embed: Dict = {"description": chunk, "color": color}
+            if i == 0:
+                embed["title"] = (item.get("title") or item_url)[:256]
+                embed["url"] = item_url
+                if item.get("author"):
+                    embed["author"] = {"name": item["author"][:256]}
+                if cover_image:
+                    embed["image"] = {"url": cover_image}
+            if i == len(chunks) - 1:
+                embed["footer"] = footer
+                if timestamp:
+                    embed["timestamp"] = timestamp
+            embeds.append(embed)
+        return embeds
+
+    # --- IMAGE_EMBEDS enabled ---
+    content_html = item.get("content", "")
+    extracted_images = extract_images_from_html(content_html)
+    md = html_to_discord_md(content_html, strip_images=True)
+
+    # Deduplicate: remove the cover image from extracted list if present
+    if cover_image:
+        extracted_images = [u for u in extracted_images if u != cover_image]
+
+    # Decide the first image: cover or first extracted
+    first_image = cover_image
+    if not first_image and extracted_images:
+        first_image = extracted_images.pop(0)
+
     chunks = split_content(md)
+    embeds = []
 
-    embeds: List[Dict] = []
+    # Build text embeds (one per chunk), each can carry one image
+    image_queue = list(extracted_images)
     for i, chunk in enumerate(chunks):
-        embed: Dict = {"description": chunk, "color": color}
-
+        embed: Dict = {"description": chunk, "color": color, "url": item_url}
         if i == 0:
-            # First embed: title, url, author, image
-            embed["title"] = (item.get("title") or item["url"])[:256]
-            embed["url"] = item["url"]
+            embed["title"] = (item.get("title") or item_url)[:256]
             if item.get("author"):
                 embed["author"] = {"name": item["author"][:256]}
-            if item.get("image"):
-                embed["image"] = {"url": item["image"]}
-
-        if i == len(chunks) - 1:
-            # Last embed (or only embed): footer + timestamp
-            embed["footer"] = footer
-            if timestamp:
-                embed["timestamp"] = timestamp
-
+            if first_image:
+                embed["image"] = {"url": first_image}
+        else:
+            # Continuation text embeds can carry one image from the queue
+            if image_queue:
+                embed["image"] = {"url": image_queue.pop(0)}
         embeds.append(embed)
+
+    # Image-only embeds for remaining images
+    for img_url in image_queue:
+        embeds.append({"url": item_url, "image": {"url": img_url}, "color": color})
+
+    # Footer + timestamp on the very last embed
+    if embeds:
+        embeds[-1]["footer"] = footer
+        if timestamp:
+            embeds[-1]["timestamp"] = timestamp
+
     return embeds
 
 

@@ -57,6 +57,7 @@ jobs:
           ONLY_GAME: genshin
           DRY_RUN: ${{ github.event.inputs.DRY_RUN }}
           RUN_LAST_HOURS: ${{ github.event.inputs.RUN_LAST_HOURS }}
+          IMAGE_EMBEDS: ${{ vars.IMAGE_EMBEDS }}
         run: |
           set -euo pipefail
           python news_scraper.py
