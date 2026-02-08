@@ -391,23 +391,28 @@ def build_embed(item: Dict) -> List[Dict]:
     if cover_image:
         extracted_images = [u for u in extracted_images if u != cover_image]
 
-    # Pick one image: cover takes priority, else first extracted
-    image = cover_image
-    if not image and extracted_images:
-        image = extracted_images[0]
+    # First image: cover takes priority, else first extracted
+    first_image = cover_image
+    if not first_image and extracted_images:
+        first_image = extracted_images.pop(0)
 
     chunks = split_content(md)
     embeds = []
 
+    # Text embeds — first one gets the cover/first image
     for i, chunk in enumerate(chunks):
         embed: Dict = {"description": chunk, "color": color, "url": item_url}
         if i == 0:
             embed["title"] = (item.get("title") or item_url)[:256]
             if item.get("author"):
                 embed["author"] = {"name": item["author"][:256]}
-            if image:
-                embed["image"] = {"url": image}
+            if first_image:
+                embed["image"] = {"url": first_image}
         embeds.append(embed)
+
+    # One embed per remaining image (same url for gallery grouping)
+    for img_url in extracted_images:
+        embeds.append({"url": item_url, "image": {"url": img_url}, "color": color})
 
     # Footer + timestamp on the very last embed
     if embeds:
