@@ -415,7 +415,7 @@
     ]
   },
   "genshin-impact::events": {
-    "last_updated": "February 13, 2026 03:51 AM",
+    "last_updated": "February 13, 2026 09:32 AM",
     "items": [
       {
         "label": "A Lanternlit Ode to the Silver Moon 2026 Lantern Rite",
@@ -431,6 +431,26 @@
         "label": "Ley Line Overflow 6.3 Rerun",
         "link": "https://game8.co/games/Genshin-Impact/archives/316998",
         "info": "February 16, 2026 \u2192 February 23, 2026"
+      },
+      {
+        "label": "Homeward, He Who Caught the Wind",
+        "link": "https://game8.co/games/Genshin-Impact/archives/580688",
+        "info": "February 27, 2026 \u2192 March 16, 2026"
+      },
+      {
+        "label": "Sightseeing With Friends",
+        "link": "https://game8.co/games/Genshin-Impact/archives/580689",
+        "info": "March 16, 2026 \u2192 March 26, 2026"
+      },
+      {
+        "label": "Operation Stronghold Defense",
+        "link": "https://game8.co/games/Genshin-Impact/archives/580690",
+        "info": "March 23, 2026 \u2192 April 2, 2026"
+      },
+      {
+        "label": "Overflowing Abundance",
+        "link": "https://game8.co/games/Genshin-Impact/archives/491944",
+        "info": "March 30, 2026 \u2192 April 6, 2026"
       },
       {
         "label": "To Temper Thyself and Journey Far",
@@ -461,31 +481,11 @@
         "label": "Repertoire of Myriad Melodies",
         "link": "https://game8.co/games/Genshin-Impact/archives/406198",
         "info": null
-      },
-      {
-        "label": "Daily Check-In",
-        "link": "https://game8.co/games/Genshin-Impact/archives/321404",
-        "info": null
-      },
-      {
-        "label": "Stellar Reunion",
-        "link": "https://game8.co/games/Genshin-Impact/archives/315013",
-        "info": null
-      },
-      {
-        "label": "Fate Foretold",
-        "link": null,
-        "info": null
-      },
-      {
-        "label": "People's Choice",
-        "link": null,
-        "info": null
       }
     ]
   },
   "genshin-impact::gacha": {
-    "last_updated": "February 10, 2026 11:37 PM",
+    "last_updated": "February 13, 2026 10:04 AM",
     "items": [
       {
         "label": "Harmonious Abundance",
