@@ -250,7 +250,7 @@
     ]
   },
   "wuthering-waves::events": {
-    "last_updated": "February 15, 2026 03:34 AM",
+    "last_updated": "February 16, 2026 02:12 AM",
     "items": [
       {
         "label": "Starpaths Intertwined",
@@ -335,7 +335,7 @@
     ]
   },
   "honkai-star-rail::events": {
-    "last_updated": "February 12, 2026 09:23 PM",
+    "last_updated": "February 16, 2026 04:30 AM",
     "items": [
       {
         "label": "4.0 Planar Fissure",
@@ -415,8 +415,13 @@
     ]
   },
   "genshin-impact::events": {
-    "last_updated": "February 13, 2026 09:32 AM",
+    "last_updated": "February 15, 2026 08:23 PM",
     "items": [
+      {
+        "label": "Ley Line Overflow 6.3 Rerun",
+        "link": "https://game8.co/games/Genshin-Impact/archives/316998",
+        "info": "February 16, 2026 \u2192 February 23, 2026"
+      },
       {
         "label": "A Lanternlit Ode to the Silver Moon 2026 Lantern Rite",
         "link": "https://game8.co/games/Genshin-Impact/archives/572604",
@@ -426,11 +431,6 @@
         "label": "Moonlit Patrol Exercise",
         "link": "https://game8.co/games/Genshin-Impact/archives/572606",
         "info": "February 9, 2026 \u2192 February 23, 2026"
-      },
-      {
-        "label": "Ley Line Overflow 6.3 Rerun",
-        "link": "https://game8.co/games/Genshin-Impact/archives/316998",
-        "info": "February 16, 2026 \u2192 February 23, 2026"
       },
       {
         "label": "Homeward, He Who Caught the Wind",
@@ -485,7 +485,7 @@
     ]
   },
   "genshin-impact::gacha": {
-    "last_updated": "February 13, 2026 10:04 AM",
+    "last_updated": "February 15, 2026 09:04 PM",
     "items": [
       {
         "label": "Harmonious Abundance",
@@ -685,7 +685,7 @@
     ]
   },
   "arknights-endfield::events": {
-    "last_updated": "February 7, 2026 01:48 AM",
+    "last_updated": "February 16, 2026 05:07 AM",
     "items": [
       {
         "label": "Voyage to the Stars Web Event",
@@ -708,9 +708,29 @@
         "info": "02/07 - 02/24"
       },
       {
+        "label": "Monumental Etching: Old Wounds Exclusive Event",
+        "link": "https://game8.co/games/Arknights-Endfield/archives/579915",
+        "info": "02/12 - 02/26"
+      },
+      {
+        "label": "Fortune Connect-and-Win Mail Reward Event",
+        "link": "https://game8.co/games/Arknights-Endfield/archives/580718",
+        "info": "02/15 - 02/23"
+      },
+      {
+        "label": "A Spring Note, Warmly Crafted Web Event",
+        "link": "https://game8.co/games/Arknights-Endfield/archives/580727",
+        "info": "02/15 - 03/04"
+      },
+      {
         "label": "Voyage to the Stars Guide",
         "link": "https://game8.co/games/Arknights-Endfield/archives/575865",
         "info": null
+      },
+      {
+        "label": "Steps to Sweet Success Mail Event",
+        "link": "https://game8.co/games/Arknights-Endfield/archives/580771",
+        "info": "16/26 - 03/04"
       }
     ]
   },
