@@ -250,7 +250,7 @@
     ]
   },
   "wuthering-waves::events": {
-    "last_updated": "February 18, 2026 02:04 AM",
+    "last_updated": "February 19, 2026 05:34 AM",
     "items": [
       {
         "label": "Starpaths Intertwined",
@@ -298,24 +298,24 @@
         "info": null
       },
       {
+        "label": "Unsigned Good Wishes",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/578113",
+        "info": "February 17, 2026 - March 19, 2026 Log-in during the aforementioned event times."
+      },
+      {
+        "label": "Bountiful Crescendo",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/458244",
+        "info": "February 19, 2026 - February 26, 2026 Reach Union Level 14"
+      },
+      {
         "label": "Full Throttle! Bolt & Blitz!",
         "link": "https://game8.co/games/Wuthering-Waves/archives/577848",
         "info": "February 7, 2026 - March 18, 2026 Reach Union Level 14 and unlock the Expedition Motorbike"
       },
       {
-        "label": "Bountiful Crescendo",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/458244",
-        "info": "February 19, 2026 - February 26, 2026 Earn double leveling material drops during this event!"
-      },
-      {
         "label": "Chord Cleansing",
         "link": "https://game8.co/games/Wuthering-Waves/archives/457211",
         "info": "March 11, 2026 - March 18, 2026 Earn double echo and echo leveling material drops during this event!"
-      },
-      {
-        "label": "Unsigned Good Wishes",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/578113",
-        "info": null
       },
       {
         "label": "Blade Hunter: Wilderness",
@@ -326,11 +326,6 @@
         "label": "Lollo Campaign: Implementation",
         "link": "https://game8.co/games/Wuthering-Waves/archives/458245",
         "info": "March 5, 2026 - March 18, 2026 Earn Lollo Stamps daily and spin the roulette in exchange for rewards!"
-      },
-      {
-        "label": "Rein Back! Migration Mayhem!",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/454093",
-        "info": null
       }
     ]
   },
