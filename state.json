@@ -410,22 +410,12 @@
     ]
   },
   "genshin-impact::events": {
-    "last_updated": "February 15, 2026 08:23 PM",
+    "last_updated": "February 22, 2026 10:05 PM",
     "items": [
       {
-        "label": "Ley Line Overflow 6.3 Rerun",
-        "link": "https://game8.co/games/Genshin-Impact/archives/316998",
-        "info": "February 16, 2026 \u2192 February 23, 2026"
-      },
-      {
-        "label": "A Lanternlit Ode to the Silver Moon 2026 Lantern Rite",
-        "link": "https://game8.co/games/Genshin-Impact/archives/572604",
-        "info": "January 30, 2026 \u2192 February 23, 2026"
-      },
-      {
-        "label": "Moonlit Patrol Exercise",
-        "link": "https://game8.co/games/Genshin-Impact/archives/572606",
-        "info": "February 9, 2026 \u2192 February 23, 2026"
+        "label": "To Temper Thyself and Journey Far",
+        "link": "https://game8.co/games/Genshin-Impact/archives/546841",
+        "info": "February 23, 2026 \u2192 May 18, 2026"
       },
       {
         "label": "Homeward, He Who Caught the Wind",
@@ -446,11 +436,6 @@
         "label": "Overflowing Abundance",
         "link": "https://game8.co/games/Genshin-Impact/archives/491944",
         "info": "March 30, 2026 \u2192 April 6, 2026"
-      },
-      {
-        "label": "To Temper Thyself and Journey Far",
-        "link": "https://game8.co/games/Genshin-Impact/archives/546841",
-        "info": "December 01, 2025 \u2192 February 23, 2026"
       },
       {
         "label": "Stygian Onslaught",
@@ -476,37 +461,27 @@
         "label": "Repertoire of Myriad Melodies",
         "link": "https://game8.co/games/Genshin-Impact/archives/406198",
         "info": null
+      },
+      {
+        "label": "Daily Check-In",
+        "link": "https://game8.co/games/Genshin-Impact/archives/321404",
+        "info": null
+      },
+      {
+        "label": "Stellar Reunion",
+        "link": "https://game8.co/games/Genshin-Impact/archives/315013",
+        "info": null
+      },
+      {
+        "label": "Fate Foretold",
+        "link": null,
+        "info": null
       }
     ]
   },
   "genshin-impact::gacha": {
-    "last_updated": "February 15, 2026 09:04 PM",
+    "last_updated": "February 22, 2026 11:58 PM",
     "items": [
-      {
-        "label": "Harmonious Abundance",
-        "link": "https://game8.co/games/Genshin-Impact/archives/572611",
-        "info": "Start: 2026/02/03 End: 2026/02/24 Zibai Illuga Aino Gorou"
-      },
-      {
-        "label": "Zibai",
-        "link": "https://game8.co/games/Genshin-Impact/archives/570263",
-        "info": "Harmonious Abundance Start: 2026/02/03 End: 2026/02/24 Illuga Aino Gorou"
-      },
-      {
-        "label": "Illuga",
-        "link": "https://game8.co/games/Genshin-Impact/archives/555902",
-        "info": "Harmonious Abundance Start: 2026/02/03 End: 2026/02/24 Zibai Aino Gorou"
-      },
-      {
-        "label": "Aino",
-        "link": "https://game8.co/games/Genshin-Impact/archives/537903",
-        "info": "Harmonious Abundance Start: 2026/02/03 End: 2026/02/24 Zibai Illuga Gorou"
-      },
-      {
-        "label": "Gorou",
-        "link": "https://game8.co/games/Genshin-Impact/archives/336726",
-        "info": "Harmonious Abundance Start: 2026/02/03 End: 2026/02/24 Zibai Illuga Aino"
-      },
       {
         "label": "Decree of the Deeps",
         "link": "https://game8.co/games/Genshin-Impact/archives/426282",
@@ -518,19 +493,44 @@
         "info": "Decree of the Deeps Start: 2026/02/03 End: 2026/02/24 Illuga Aino Gorou"
       },
       {
+        "label": "Illuga",
+        "link": "https://game8.co/games/Genshin-Impact/archives/555902",
+        "info": "Decree of the Deeps Start: 2026/02/03 End: 2026/02/24 Neuvillette Aino Gorou"
+      },
+      {
+        "label": "Aino",
+        "link": "https://game8.co/games/Genshin-Impact/archives/537903",
+        "info": "Decree of the Deeps Start: 2026/02/03 End: 2026/02/24 Neuvillette Illuga Gorou"
+      },
+      {
+        "label": "Gorou",
+        "link": "https://game8.co/games/Genshin-Impact/archives/336726",
+        "info": "Decree of the Deeps Start: 2026/02/03 End: 2026/02/24 Neuvillette Illuga Aino"
+      },
+      {
         "label": "Epitome Invocation",
         "link": "https://game8.co/games/Genshin-Impact/archives/304758",
-        "info": "Start: 2026/02/03 End: 2026/02/24 Lightbearing Moonshard Tome of the Eternal Flow Xiphos' Moonlight Favonius Greatsword Eye of Perception Dragon's Bane Sacrificial Greatsword"
+        "info": "Start: 2026/02/03 End: 2026/02/24 Gest of the Mighty Wolf Bloodsoaked Ruins Sacrificer's Staff Favonius Greatsword Favonius Sword Sacrificial Fragments Sacrificial Bow"
       },
       {
-        "label": "Lightbearing Moonshard",
-        "link": "https://game8.co/games/Genshin-Impact/archives/572616",
-        "info": "Epitome Invocation Start: 2026/02/03 End: 2026/02/24 Tome of the Eternal Flow Xiphos' Moonlight Favonius Greatsword Eye of Perception Dragon's Bane Sacrificial Greatsword"
+        "label": "Gest of the Mighty Wolf",
+        "link": "https://game8.co/games/Genshin-Impact/archives/580687",
+        "info": "Epitome Invocation Start: 2026/02/03 End: 2026/02/24 Bloodsoaked Ruins Sacrificer's Staff Favonius Greatsword Favonius Sword Sacrificial Fragments Sacrificial Bow"
       },
       {
-        "label": "Tome of the Eternal Flow",
-        "link": "https://game8.co/games/Genshin-Impact/archives/426289",
-        "info": "Epitome Invocation Start: 2026/02/03 End: 2026/02/24 Lightbearing Moonshard Xiphos' Moonlight Favonius Greatsword Eye of Perception Dragon's Bane Sacrificial Greatsword"
+        "label": "Bloodsoaked Ruins",
+        "link": "https://game8.co/games/Genshin-Impact/archives/546785",
+        "info": "Epitome Invocation Start: 2026/02/03 End: 2026/02/24 Gest of the Mighty Wolf Sacrificer's Staff Favonius Greatsword Favonius Sword Sacrificial Fragments Sacrificial Bow"
+      },
+      {
+        "label": "Sacrificer's Staff",
+        "link": "https://game8.co/games/Genshin-Impact/archives/557057",
+        "info": "Epitome Invocation Start: 2026/02/03 End: 2026/02/24 Gest of the Mighty Wolf Bloodsoaked Ruins Favonius Greatsword Favonius Sword Sacrificial Fragments Sacrificial Bow"
+      },
+      {
+        "label": "Favonius Greatsword",
+        "link": "https://game8.co/games/Genshin-Impact/archives/301934",
+        "info": "Epitome Invocation Start: 2026/02/03 End: 2026/02/24 Gest of the Mighty Wolf Bloodsoaked Ruins Sacrificer's Staff Favonius Sword Sacrificial Fragments Sacrificial Bow"
       }
     ]
   },
