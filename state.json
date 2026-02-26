@@ -250,7 +250,7 @@
     ]
   },
   "wuthering-waves::events": {
-    "last_updated": "February 19, 2026 05:34 AM",
+    "last_updated": "February 26, 2026 05:19 AM",
     "items": [
       {
         "label": "Starpaths Intertwined",
@@ -303,24 +303,19 @@
         "info": "February 17, 2026 - March 19, 2026 Log-in during the aforementioned event times."
       },
       {
-        "label": "Bountiful Crescendo",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/458244",
-        "info": "February 19, 2026 - February 26, 2026 Reach Union Level 14"
+        "label": "Blade Hunter: Wilderness",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/578013",
+        "info": null
       },
       {
-        "label": "Full Throttle! Bolt & Blitz!",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/577848",
-        "info": "February 7, 2026 - March 18, 2026 Reach Union Level 14 and unlock the Expedition Motorbike"
+        "label": "Veins of the Frostlands",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/578120",
+        "info": "February 26, 2026 - March 12, 2026 Reach Union level 8"
       },
       {
         "label": "Chord Cleansing",
         "link": "https://game8.co/games/Wuthering-Waves/archives/457211",
         "info": "March 11, 2026 - March 18, 2026 Earn double echo and echo leveling material drops during this event!"
-      },
-      {
-        "label": "Blade Hunter: Wilderness",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/578013",
-        "info": "February 26, 2026 - March 16, 2026 Defeat increasingly stronger foes inside a Sonoro Sphere to earn rewards in this event!"
       },
       {
         "label": "Lollo Campaign: Implementation",
@@ -410,7 +405,7 @@
     ]
   },
   "genshin-impact::events": {
-    "last_updated": "February 25, 2026 01:26 AM",
+    "last_updated": "February 26, 2026 01:04 AM",
     "items": [
       {
         "label": "To Temper Thyself and Journey Far",
@@ -480,126 +475,91 @@
     ]
   },
   "genshin-impact::gacha": {
-    "last_updated": "February 24, 2026 08:15 PM",
+    "last_updated": "February 26, 2026 02:12 AM",
     "items": [
       {
-        "label": "Decree of the Deeps",
-        "link": "https://game8.co/games/Genshin-Impact/archives/426282",
-        "info": "Start: 2026/02/03 End: 2026/02/24 Neuvillette Illuga Aino Gorou"
+        "label": "The Northerly Wind's Song of Triumph",
+        "link": "https://game8.co/games/Genshin-Impact/archives/580694",
+        "info": "Start: 2026/02/25 End: 2026/03/17 Varka Bennett Sucrose Xiangling"
       },
       {
-        "label": "Neuvillette",
-        "link": "https://game8.co/games/Genshin-Impact/archives/Neuvillette-Best-Builds",
-        "info": "Decree of the Deeps Start: 2026/02/03 End: 2026/02/24 Illuga Aino Gorou"
+        "label": "Varka",
+        "link": "https://game8.co/games/Genshin-Impact/archives/314346",
+        "info": "The Northerly Wind's Song of Triumph Start: 2026/02/25 End: 2026/03/17 Bennett Sucrose Xiangling"
       },
       {
-        "label": "Illuga",
-        "link": "https://game8.co/games/Genshin-Impact/archives/555902",
-        "info": "Decree of the Deeps Start: 2026/02/03 End: 2026/02/24 Neuvillette Aino Gorou"
+        "label": "Bennett",
+        "link": "https://game8.co/games/Genshin-Impact/archives/Bennett-Best-Builds",
+        "info": "The Northerly Wind's Song of Triumph Start: 2026/02/25 End: 2026/03/17 Varka Sucrose Xiangling"
       },
       {
-        "label": "Aino",
-        "link": "https://game8.co/games/Genshin-Impact/archives/537903",
-        "info": "Decree of the Deeps Start: 2026/02/03 End: 2026/02/24 Neuvillette Illuga Gorou"
+        "label": "Sucrose",
+        "link": "https://game8.co/games/Genshin-Impact/archives/297525",
+        "info": "The Northerly Wind's Song of Triumph Start: 2026/02/25 End: 2026/03/17 Varka Bennett Xiangling"
       },
       {
-        "label": "Gorou",
-        "link": "https://game8.co/games/Genshin-Impact/archives/336726",
-        "info": "Decree of the Deeps Start: 2026/02/03 End: 2026/02/24 Neuvillette Illuga Aino"
+        "label": "Xiangling",
+        "link": "https://game8.co/games/Genshin-Impact/archives/297530",
+        "info": "The Northerly Wind's Song of Triumph Start: 2026/02/25 End: 2026/03/17 Varka Bennett Sucrose"
       },
       {
-        "label": "Epitome Invocation",
-        "link": "https://game8.co/games/Genshin-Impact/archives/304758",
-        "info": "Start: 2026/02/03 End: 2026/02/24 Gest of the Mighty Wolf Bloodsoaked Ruins Sacrificer's Staff Favonius Greatsword Favonius Sword Sacrificial Fragments Sacrificial Bow"
+        "label": "6.4 Chronicled Wish Mondstadt",
+        "link": "https://game8.co/games/Genshin-Impact/archives/580696",
+        "info": "Start: 2026/02/25 End: 2026/03/17 Eula Albedo Klee Mona Diluc Jean"
       },
       {
-        "label": "Gest of the Mighty Wolf",
-        "link": "https://game8.co/games/Genshin-Impact/archives/580687",
-        "info": "Epitome Invocation Start: 2026/02/03 End: 2026/02/24 Bloodsoaked Ruins Sacrificer's Staff Favonius Greatsword Favonius Sword Sacrificial Fragments Sacrificial Bow"
+        "label": "Eula",
+        "link": "https://game8.co/games/Genshin-Impact/archives/328764",
+        "info": "6.4 Chronicled Wish Mondstadt Start: 2026/02/25 End: 2026/03/17 Albedo Klee Mona Diluc Jean"
       },
       {
-        "label": "Bloodsoaked Ruins",
-        "link": "https://game8.co/games/Genshin-Impact/archives/546785",
-        "info": "Epitome Invocation Start: 2026/02/03 End: 2026/02/24 Gest of the Mighty Wolf Sacrificer's Staff Favonius Greatsword Favonius Sword Sacrificial Fragments Sacrificial Bow"
+        "label": "Albedo",
+        "link": "https://game8.co/games/Genshin-Impact/archives/312182",
+        "info": "6.4 Chronicled Wish Mondstadt Start: 2026/02/25 End: 2026/03/17 Eula Klee Mona Diluc Jean"
       },
       {
-        "label": "Sacrificer's Staff",
-        "link": "https://game8.co/games/Genshin-Impact/archives/557057",
-        "info": "Epitome Invocation Start: 2026/02/03 End: 2026/02/24 Gest of the Mighty Wolf Bloodsoaked Ruins Favonius Greatsword Favonius Sword Sacrificial Fragments Sacrificial Bow"
+        "label": "Klee",
+        "link": "https://game8.co/games/Genshin-Impact/archives/297521",
+        "info": "6.4 Chronicled Wish Mondstadt Start: 2026/02/25 End: 2026/03/17 Eula Albedo Mona Diluc Jean"
       },
       {
-        "label": "Favonius Greatsword",
-        "link": "https://game8.co/games/Genshin-Impact/archives/301934",
-        "info": "Epitome Invocation Start: 2026/02/03 End: 2026/02/24 Gest of the Mighty Wolf Bloodsoaked Ruins Sacrificer's Staff Favonius Sword Sacrificial Fragments Sacrificial Bow"
+        "label": "Mona",
+        "link": "https://game8.co/games/Genshin-Impact/archives/Mona-Best-Builds",
+        "info": "6.4 Chronicled Wish Mondstadt Start: 2026/02/25 End: 2026/03/17 Eula Albedo Klee Diluc Jean"
       }
     ]
   },
   "wuthering-waves::gacha": {
-    "last_updated": "February 4, 2026 09:46 PM",
+    "last_updated": "February 25, 2026 10:09 PM",
     "items": [
-      {
-        "label": "Absolute Pulsation (Everbright Polestar)",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/455400",
-        "info": "February 5, 2026 - February 26, 2026"
-      },
-      {
-        "label": "When Winter Thaws",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/575845",
-        "info": null
-      },
-      {
-        "label": "Luuk Herssen",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/568210",
-        "info": null
-      },
-      {
-        "label": "Sanhua",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/454225",
-        "info": null
-      },
-      {
-        "label": "Lumi",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/473488",
-        "info": null
-      },
-      {
-        "label": "Yuanwu",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/454219",
-        "info": null
-      },
       {
         "label": "Absolute Pulsation (Daybreaker's Spine)",
         "link": "https://game8.co/games/Wuthering-Waves/archives/455400",
+        "info": "February 26, 2026 - March 18, 2026"
+      },
+      {
+        "label": "3.2 Banners, Release Date, and Summary",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/582216",
         "info": null
       },
       {
-        "label": "Daybreaker's Spine",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/575692",
+        "label": "Beginner's Choice Convene Banner",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/453554",
         "info": null
       },
       {
-        "label": "Overture",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/455935",
+        "label": "Utterance of Marvels",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/455422",
         "info": null
       },
       {
-        "label": "Jinzhou Keeper",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/455924",
+        "label": "Tidal Chorus",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/455430",
         "info": null
       },
       {
-        "label": "Hollow Mirage",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/455913",
-        "info": null
-      },
-      {
-        "label": "From Ashes",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/553579",
-        "info": null
-      },
-      {
-        "label": "Galbrena",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/524888",
+        "label": "Weapon Permanent Convene",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/455431",
         "info": null
       }
     ]
