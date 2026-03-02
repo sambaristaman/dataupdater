@@ -640,47 +640,22 @@
     ]
   },
   "arknights-endfield::events": {
-    "last_updated": "February 24, 2026 03:04 AM",
+    "last_updated": "March 1, 2026 12:02 PM",
     "items": [
       {
         "label": "Voyage to the Stars Web Event",
         "link": "https://game8.co/games/Arknights-Endfield/archives/575865",
-        "info": "01/16 - 03/04"
-      },
-      {
-        "label": "Combat Drills Operator Trial",
-        "link": "https://game8.co/games/Arknights-Endfield/archives/577042",
-        "info": "02/07 - 02/24"
-      },
-      {
-        "label": "Carly's Fairytale of the Valley Camera Event",
-        "link": "https://game8.co/games/Arknights-Endfield/archives/578398",
-        "info": "02/07 - 02/24"
-      },
-      {
-        "label": "Glittering Life at Wuling Guide Event",
-        "link": "https://game8.co/games/Arknights-Endfield/archives/578428",
-        "info": "02/07 - 02/24"
-      },
-      {
-        "label": "Monumental Etching: Old Wounds Exclusive Event",
-        "link": "https://game8.co/games/Arknights-Endfield/archives/579915",
-        "info": "02/12 - 02/26"
+        "info": "16/26 - 03/04"
       },
       {
         "label": "Fortune Connect-and-Win Mail Reward Event",
         "link": "https://game8.co/games/Arknights-Endfield/archives/580718",
-        "info": "02/15 - 02/23"
+        "info": "15/26 - 02/23"
       },
       {
         "label": "A Spring Note, Warmly Crafted Web Event",
         "link": "https://game8.co/games/Arknights-Endfield/archives/580727",
-        "info": "02/15 - 03/04"
-      },
-      {
-        "label": "Voyage to the Stars Guide",
-        "link": "https://game8.co/games/Arknights-Endfield/archives/575865",
-        "info": null
+        "info": "15/26 - 03/04"
       },
       {
         "label": "Steps to Sweet Success Mail Event",
@@ -690,7 +665,7 @@
     ]
   },
   "arknights-endfield::gacha": {
-    "last_updated": "March 1, 2026 05:04 AM",
+    "last_updated": "March 1, 2026 11:04 AM",
     "items": [
       {
         "label": "Yvonne Banner",
@@ -718,6 +693,11 @@
         "info": null
       },
       {
+        "label": "Yvonne",
+        "link": "https://game8.co/games/Arknights-Endfield/archives/523664",
+        "info": null
+      },
+      {
         "label": "Graffiti Issue Banner Guide",
         "link": "https://game8.co/games/Arknights-Endfield/archives/575516",
         "info": null
@@ -728,8 +708,18 @@
         "info": null
       },
       {
+        "label": "Gilberta",
+        "link": "https://game8.co/games/Arknights-Endfield/archives/523668",
+        "info": null
+      },
+      {
         "label": "Express Delivery Issue Banner Guide",
         "link": "https://game8.co/games/Arknights-Endfield/archives/575515",
+        "info": null
+      },
+      {
+        "label": "Laevatain",
+        "link": "https://game8.co/games/Arknights-Endfield/archives/523665",
         "info": null
       },
       {
@@ -743,8 +733,18 @@
         "info": "Mar. 12 - Mar. 29, 2026"
       },
       {
-        "label": "Global Release livestream",
-        "link": "https://game8.co/games/Arknights-Endfield/archives/535532",
+        "label": "Budding Anew Issue",
+        "link": "https://game8.co/games/Arknights-Endfield/archives/524215#hm_402",
+        "info": "= Mar. 12 - After 3 HH Banners"
+      },
+      {
+        "label": "Version 1.1",
+        "link": "https://game8.co/games/Arknights-Endfield/archives/582142",
+        "info": null
+      },
+      {
+        "label": "Tangtang",
+        "link": "https://game8.co/games/Arknights-Endfield/archives/579673",
         "info": null
       },
       {
@@ -753,8 +753,33 @@
         "info": null
       },
       {
+        "label": "Rossi Banner",
+        "link": "https://game8.co/games/Arknights-Endfield/archives/524215#hm_403",
+        "info": "Mar. 29 - Apr. 14, 2026"
+      },
+      {
+        "label": "Scarlet Pearl Issue",
+        "link": "https://game8.co/games/Arknights-Endfield/archives/524215#hm_404",
+        "info": "= Mar. 29 - After 3 HH Banners"
+      },
+      {
+        "label": "Likely Banners in Future Updates",
+        "link": "https://game8.co/games/Arknights-Endfield/archives/524215#hm_501",
+        "info": null
+      },
+      {
         "label": "Rossi",
         "link": "https://game8.co/games/Arknights-Endfield/archives/574943",
+        "info": null
+      },
+      {
+        "label": "1.1 Livestream",
+        "link": "https://game8.co/games/Arknights-Endfield/archives/583271",
+        "info": "According to the , Rossi is a Physical Sword-user for the Guard class!"
+      },
+      {
+        "label": "Rossi Banner Schedule and Release Date",
+        "link": "https://game8.co/games/Arknights-Endfield/archives/583771",
         "info": null
       },
       {
@@ -768,8 +793,8 @@
         "info": null
       },
       {
-        "label": "Version 1.1 Release Date and Banners",
-        "link": "https://game8.co/games/Arknights-Endfield/archives/582142",
+        "label": "New and Upcoming Characters",
+        "link": "https://game8.co/games/Arknights-Endfield/archives/529966",
         "info": null
       }
     ]
