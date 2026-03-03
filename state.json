@@ -405,7 +405,7 @@
     ]
   },
   "genshin-impact::events": {
-    "last_updated": "February 28, 2026 11:04 PM",
+    "last_updated": "March 3, 2026 02:04 AM",
     "items": [
       {
         "label": "Homeward, He Who Caught the Wind",
@@ -565,7 +565,7 @@
     ]
   },
   "honkai-star-rail::gacha": {
-    "last_updated": "February 12, 2026 09:54 PM",
+    "last_updated": "March 3, 2026 04:00 AM",
     "items": [
       {
         "label": "Yao Guang Banner",
@@ -573,14 +573,14 @@
         "info": "(Ver. 4.0) Banner Dates : Feb. 12, 2026 - Mar. 24, 2026 Featured 5-Star: Yao Guang ( Elation , Physical ) Featured 4-Star: Pela ( Nihility , Ice ) Hanya ( Harmony , Physical ) Qingque ( Erudition , Quantum )"
       },
       {
-        "label": "Evernight",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/513418",
-        "info": "Indelible Coterie (Ver. 4.0 Phase 1) Banner Dates : Feb. 12, 2026 - Mar. 03, 2026 Featured 5-Star: ( Remembrance , Ice ) Hysilens ( Nihility , Physical ) Black Swan ( Nihility , Wind ) Featured 4-Star: Pela ( Nihility , Ice ) Hanya ( Harmony , Physical ) Qingque ( Erudition , Quantum )"
+        "label": "Sparxie Banner",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/572646",
+        "info": "(Ver. 4.0 Phase 2) Banner Dates: Mar. 03, 2026 - Mar. 24, 2026 Featured 5-Star: Sparxie ( Elation , Fire ) Cerydra ( Harmony , Wind ) Rappa ( Erudition , Imaginary ) Sparkle ( Harmony , Quantum ) Featured 4-Star: Pela ( Nihility , Ice ) Hanya ( Harmony , Physical ) Qingque ( Erudition , Quantum )"
       },
       {
-        "label": "To Evernight's Stars",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/550755",
-        "info": "Coalesced Truths (Ver. 4.0 Phase 1) Banner Dates : Feb. 12, 2026 - Mar. 03, 2026 Featured 5-Star: ( Remembrance ) Why Does the Ocean Sing ( Nihility ) Reforged Remembrance ( Nihility ) Featured 4-Star: Planetary Rendezvous ( Harmony ) Resolution Shines As Pearls of Sweat ( Nihility ) The Story's Next Page ( Remembrance )"
+        "label": "Cerydra",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/530015",
+        "info": "Sparxie Banner (Ver. 4.0 Phase 2) Banner Dates: Mar. 03, 2026 - Mar. 24, 2026 Featured 5-Star: Sparxie ( Elation , Fire ) ( Harmony , Wind ) Rappa ( Erudition , Imaginary ) Sparkle ( Harmony , Quantum ) Featured 4-Star: Pela ( Nihility , Ice ) Hanya ( Harmony , Physical ) Qingque ( Erudition , Quantum )"
       },
       {
         "label": "Saber",
@@ -613,26 +613,6 @@
         "info": "Saber's banner has been available since July 11, 2025 , in Phase 1 of Version 3.4. It doesn't have a fixed end date yet. Her Light Cone, A Thankless Coronation , is available at the same time through the ."
       },
       {
-        "label": "Sparxie Banner",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/572646",
-        "info": "(Ver. 4.0 Phase 2) Banner Dates: Mar. 03, 2026 - Mar. 24, 2026 Featured 5-Star: Sparxie ( Elation , Fire ) Cerydra ( Harmony , Wind ) Rappa ( Erudition , Imaginary ) Sparkle ( Harmony , Quantum ) Featured 4-Star: Pela ( Nihility , Ice ) Hanya ( Harmony , Physical ) Qingque ( Erudition , Quantum )"
-      },
-      {
-        "label": "Cerydra",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/530015",
-        "info": "Sparxie Banner (Ver. 4.0 Phase 2) Banner Dates: Mar. 03, 2026 - Mar. 24, 2026 Featured 5-Star: Sparxie ( Elation , Fire ) ( Harmony , Wind ) Rappa ( Erudition , Imaginary ) Sparkle ( Harmony , Quantum ) Featured 4-Star: Pela ( Nihility , Ice ) Hanya ( Harmony , Physical ) Qingque ( Erudition , Quantum )"
-      },
-      {
-        "label": "Brilliant Fixation",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/408767",
-        "info": "Sparxie's Banner will be available from March 03, 2026 until March 24, 2026 (Server Time). Her Light Cone, Dazzled by a Flowery World , will also be featured at the same time in the banner."
-      },
-      {
-        "label": "Indelible Coterie Banner Schedule and Rates",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/470223",
-        "info": null
-      },
-      {
         "label": "Ashveil Banner",
         "link": "https://game8.co/games/Honkai-Star-Rail/archives/579676",
         "info": "(Ver. 4.1) Banner Dates: Mar. 24, 2026 - Apr. 21, 2026 Featured 5-Star: Ashveil ( Hunt , Lightning ) Featured 4-Star: TBA TBA TBA"
@@ -640,7 +620,7 @@
     ]
   },
   "arknights-endfield::events": {
-    "last_updated": "March 1, 2026 12:02 PM",
+    "last_updated": "March 3, 2026 04:34 AM",
     "items": [
       {
         "label": "Voyage to the Stars Web Event",
@@ -656,6 +636,11 @@
         "label": "A Spring Note, Warmly Crafted Web Event",
         "link": "https://game8.co/games/Arknights-Endfield/archives/580727",
         "info": "15/26 - 03/04"
+      },
+      {
+        "label": "Sanity Discount",
+        "link": "https://game8.co/games/Arknights-Endfield/archives/584397",
+        "info": null
       },
       {
         "label": "Steps to Sweet Success Mail Event",
