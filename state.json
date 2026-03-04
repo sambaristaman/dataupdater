@@ -620,7 +620,7 @@
     ]
   },
   "arknights-endfield::events": {
-    "last_updated": "March 3, 2026 04:34 AM",
+    "last_updated": "March 4, 2026 03:35 AM",
     "items": [
       {
         "label": "Voyage to the Stars Web Event",
@@ -643,14 +643,29 @@
         "info": null
       },
       {
-        "label": "Steps to Sweet Success Mail Event",
-        "link": "https://game8.co/games/Arknights-Endfield/archives/580771",
-        "info": "16/26 - 03/04"
+        "label": "Survival Training",
+        "link": "https://game8.co/games/Arknights-Endfield/archives/584581",
+        "info": null
+      },
+      {
+        "label": "Cleanse and Rinse",
+        "link": "https://game8.co/games/Arknights-Endfield/archives/584565",
+        "info": "Period: 03/29/26 Use a jet drone to cleanse and rinse objectives to get rewards"
+      },
+      {
+        "label": "Supply Exploration Day",
+        "link": "https://game8.co/games/Arknights-Endfield/archives/584448",
+        "info": "Period: 03/19/26 Collect items and exchange them for rewards!"
+      },
+      {
+        "label": "Quietly Flows the Spring",
+        "link": "https://game8.co/games/Arknights-Endfield/archives/584611",
+        "info": null
       }
     ]
   },
   "arknights-endfield::gacha": {
-    "last_updated": "March 1, 2026 11:04 AM",
+    "last_updated": "March 4, 2026 04:42 AM",
     "items": [
       {
         "label": "Yvonne Banner",
@@ -673,7 +688,7 @@
         "info": "= Jan. 22 - After 3 Headhunting Banners"
       },
       {
-        "label": "Yvonne Banner Guide and Release Date",
+        "label": "Yvonne Banner Guide and Dates",
         "link": "https://game8.co/games/Arknights-Endfield/archives/574953",
         "info": null
       },
@@ -738,6 +753,11 @@
         "info": null
       },
       {
+        "label": "Budding Anew Weapon Banner Guide",
+        "link": "https://game8.co/games/Arknights-Endfield/archives/583775",
+        "info": null
+      },
+      {
         "label": "Rossi Banner",
         "link": "https://game8.co/games/Arknights-Endfield/archives/524215#hm_403",
         "info": "Mar. 29 - Apr. 14, 2026"
@@ -765,6 +785,11 @@
       {
         "label": "Rossi Banner Schedule and Release Date",
         "link": "https://game8.co/games/Arknights-Endfield/archives/583771",
+        "info": null
+      },
+      {
+        "label": "Scarlet Pearl Weapon Banner Guide",
+        "link": "https://game8.co/games/Arknights-Endfield/archives/583781",
         "info": null
       },
       {
