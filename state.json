@@ -320,12 +320,27 @@
     ]
   },
   "honkai-star-rail::events": {
-    "last_updated": "March 12, 2026 04:22 AM",
+    "last_updated": "March 13, 2026 11:21 AM",
     "items": [
       {
-        "label": "4.0 Realm of the Strange",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/417674",
-        "info": "Duration: 03/13/26 - 03/23/26 Get double the relics when challenging Caverns of Corrosion!"
+        "label": "Wispae War Saga",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/586428",
+        "info": "Duration: Sometime in 4.1 Strategically rally a Wispae army and emerge victorious against enemy troops to earn various rewards!"
+      },
+      {
+        "label": "4.1 Gift of Odyssey",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/413645",
+        "info": "Duration: Sometime in 4.1 Log in a total of 7 days to claim up 10 Star Rail Special Passes!"
+      },
+      {
+        "label": "4.1 Planar Fissure",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/413440",
+        "info": "Duration: Sometime in 4.1 Get double the planar ornaments when challenging Worlds in the Simulated Universe!"
+      },
+      {
+        "label": "4.1 Garden of Plenty",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/413423",
+        "info": "Duration: Sometime in 4.1 Get double the rewards when challenging Golden and Crimson Calyxes!"
       }
     ]
   },
@@ -520,7 +535,7 @@
     ]
   },
   "wuthering-waves::gacha": {
-    "last_updated": "February 25, 2026 10:09 PM",
+    "last_updated": "March 13, 2026 10:40 AM",
     "items": [
       {
         "label": "Absolute Pulsation (Daybreaker's Spine)",
@@ -528,34 +543,69 @@
         "info": "February 26, 2026 - March 18, 2026"
       },
       {
-        "label": "3.2 Banners, Release Date, and Summary",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/582216",
+        "label": "When the Runes Glitter",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/491395",
         "info": null
       },
       {
-        "label": "Beginner's Choice Convene Banner",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/453554",
+        "label": "Sigrika",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/568208",
         "info": null
       },
       {
-        "label": "Utterance of Marvels",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/455422",
+        "label": "Sanhua",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/454225",
         "info": null
       },
       {
-        "label": "Tidal Chorus",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/455430",
+        "label": "Buling",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/557981",
         "info": null
       },
       {
-        "label": "Weapon Permanent Convene",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/455431",
+        "label": "Yangyang",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/454215",
+        "info": null
+      },
+      {
+        "label": "Absolute Pulsation (Solsworn Ciphers)",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/455400",
+        "info": null
+      },
+      {
+        "label": "Solsworn Ciphers",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/585863",
+        "info": null
+      },
+      {
+        "label": "Overture",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/455935",
+        "info": null
+      },
+      {
+        "label": "Jinzhou Keeper",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/455924",
+        "info": null
+      },
+      {
+        "label": "Hollow Mirage",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/455913",
+        "info": null
+      },
+      {
+        "label": "Wanderer Knows No Far and Near",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/553597",
+        "info": null
+      },
+      {
+        "label": "Qiuyuan",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/524882",
         "info": null
       }
     ]
   },
   "honkai-star-rail::gacha": {
-    "last_updated": "March 11, 2026 12:51 AM",
+    "last_updated": "March 13, 2026 10:25 AM",
     "items": [
       {
         "label": "Yao Guang Banner",
@@ -605,7 +655,32 @@
       {
         "label": "Ashveil Banner",
         "link": "https://game8.co/games/Honkai-Star-Rail/archives/579676",
-        "info": "(Ver. 4.1) Banner Dates: Mar. 24, 2026 - Apr. 21, 2026 Featured 5-Star: Ashveil ( Hunt , Lightning ) Featured 4-Star: TBA TBA TBA"
+        "info": "(Ver. 4.1) Banner Dates : Mar. 24, 2026 - Apr. 21, 2026 Featured 5-Star: Ashveil ( Hunt , Lightning ) Featured 4-Star: Moze ( Hunt , Lightning ) Misha ( Destruction , Ice ) Asta ( Harmony , Fire )"
+      },
+      {
+        "label": "The Finale of a Lie Banner",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/408767",
+        "info": "(Ver. 4.1) Banner Dates : Mar. 24, 2026 - Apr. 21, 2026 Featured 5-Star: The Finale of a Lie ( Hunt ) Featured 4-Star: Make the World Clamor ( Erudition ) Shadowed by Night ( Hunt ) Dream's Montage ( Abundance )"
+      },
+      {
+        "label": "Hyacine Banner",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/506699",
+        "info": "(Ver. 4.1 Phase 1) Banner Dates : Mar. 24, 2026 - Apr. 08, 2026 Featured 5-Star: Hyacine ( Remembrance , Wind ) Featured 4-Star: Moze ( Hunt , Lightning ) Misha ( Destruction , Ice ) Asta ( Harmony , Fire )"
+      },
+      {
+        "label": "Brilliant Fixation",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/408767",
+        "info": "Ashveil's banner will run from March 24, 2026 until April 21, 2026 (UTC-5). His signature Light Cone, The Finale of a Lie , will run at the same time through the banner."
+      },
+      {
+        "label": "Bygone Reminiscence",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/429241",
+        "info": "Hyacine's rerun banner will be available from March 24, 2026 until April 08, 2026 (UTC-5). Her Light Cone, Long May Rainbows Adorn the Sky , will also available through the banner."
+      },
+      {
+        "label": "Boothill Banner",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/447924",
+        "info": "(Ver. 4.1 Phase 2) Banner Dates : Apr. 08, 2026 - Apr. 21, 2026 Featured 5-Star: Boothill ( Hunt , Physical ) Featured 4-Star: Moze ( Hunt , Lightning ) Misha ( Destruction , Ice ) Asta ( Harmony , Fire )"
       },
       {
         "label": "Silver Wolf Lv.999",
@@ -616,6 +691,16 @@
         "label": "Evanescia Banner",
         "link": "https://game8.co/games/Honkai-Star-Rail/archives/585930",
         "info": "(Ver. 4.2 Phase 2) Banner Dates: May 13, 2026 - Jun. 02, 2026 Featured 5-Star: Evanescia ( Elation , Physical ) Featured 4-Star: TBA TBA TBA"
+      },
+      {
+        "label": "Bygone Reminiscence",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/429241",
+        "info": "Boothill's rerun banner will be available from April 08, 2026 until April 21, 2026 (Server Time). His Light Cone, Sailing Towards A Second Life , will also available through the banner."
+      },
+      {
+        "label": "Brilliant Fixation",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/408767",
+        "info": null
       }
     ]
   },
