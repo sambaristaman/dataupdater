@@ -250,7 +250,7 @@
     ]
   },
   "wuthering-waves::events": {
-    "last_updated": "March 4, 2026 10:46 PM",
+    "last_updated": "March 16, 2026 02:16 AM",
     "items": [
       {
         "label": "Starpaths Intertwined",
@@ -261,6 +261,11 @@
         "label": "Ascendant Aces",
         "link": "https://game8.co/games/Wuthering-Waves/archives/456482",
         "info": "February 5, 2026 - March 18, 2026 Unlocked by default"
+      },
+      {
+        "label": "Chord Cleansing",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/457211",
+        "info": "March 11, 2026 - March 18, 2026 Reach Union Level 19"
       },
       {
         "label": "Unfrozen Traces",
@@ -308,39 +313,64 @@
         "info": null
       },
       {
-        "label": "Veins of the Frostlands",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/578120",
-        "info": "February 26, 2026 - March 12, 2026 Reach Union level 8"
+        "label": "Soar to the Beat",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/586621",
+        "info": null
       },
       {
-        "label": "Chord Cleansing",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/457211",
-        "info": "March 11, 2026 - March 18, 2026 Earn double echo and echo leveling material drops during this event!"
+        "label": "Knights of the Wild",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/586651",
+        "info": "Releases in Version 3.2 Defeat the powerful enemy disrupting the Grand Knight and complete its repairs in Zones across Lahai-Roi."
+      },
+      {
+        "label": "Speed up! F.U.E.L. Instrumentality Project!",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/586668",
+        "info": "Releases in Version 3.2 Collect food dropping from above as chibi versions of the Resonators to get rewards."
+      },
+      {
+        "label": "Lahai-Roi Blocks",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/586674",
+        "info": "Releases in Version 3.2 Drag and place geometric blocks of different shapes to fill and clear rows in different levels."
+      },
+      {
+        "label": "Gifts of Solsworn",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/586667",
+        "info": "Releases in Version 3.2 Log-in for 7 days to claim Radiant and Lustrous Tides!"
+      },
+      {
+        "label": "Whispers Between Stars",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/586650",
+        "info": null
+      },
+      {
+        "label": "The Flaming Red in Memory",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/586624",
+        "info": "Releases in Version 3.2 Get rewards for completing tasks related to unveiling who Hiyuki is in this event!"
       }
     ]
   },
   "honkai-star-rail::events": {
-    "last_updated": "March 13, 2026 11:21 AM",
+    "last_updated": "March 15, 2026 11:40 PM",
     "items": [
       {
         "label": "Wispae War Saga",
         "link": "https://game8.co/games/Honkai-Star-Rail/archives/586428",
-        "info": "Duration: Sometime in 4.1 Strategically rally a Wispae army and emerge victorious against enemy troops to earn various rewards!"
+        "info": "Duration: 03/25/26 - 04/20/26 Strategically rally a Wispae army and emerge victorious against enemy troops to earn various rewards!"
       },
       {
         "label": "4.1 Gift of Odyssey",
         "link": "https://game8.co/games/Honkai-Star-Rail/archives/413645",
-        "info": "Duration: Sometime in 4.1 Log in a total of 7 days to claim up 10 Star Rail Special Passes!"
+        "info": "Duration: 03/25/26 - 04/21/26 Log in a total of 7 days to claim up 10 Star Rail Special Passes!"
       },
       {
         "label": "4.1 Planar Fissure",
         "link": "https://game8.co/games/Honkai-Star-Rail/archives/413440",
-        "info": "Duration: Sometime in 4.1 Get double the planar ornaments when challenging Worlds in the Simulated Universe!"
+        "info": "Duration: 03/30/26 - 04/13/26 Get double the planar ornaments when challenging Worlds in the Simulated Universe!"
       },
       {
         "label": "4.1 Garden of Plenty",
         "link": "https://game8.co/games/Honkai-Star-Rail/archives/413423",
-        "info": "Duration: Sometime in 4.1 Get double the rewards when challenging Golden and Crimson Calyxes!"
+        "info": "Duration: 04/10/26 - 04/20/26 Get double the rewards when challenging Golden and Crimson Calyxes!"
       }
     ]
   },
@@ -410,22 +440,17 @@
     ]
   },
   "genshin-impact::events": {
-    "last_updated": "March 3, 2026 02:04 AM",
+    "last_updated": "March 16, 2026 05:21 AM",
     "items": [
       {
-        "label": "Homeward, He Who Caught the Wind",
-        "link": "https://game8.co/games/Genshin-Impact/archives/580688",
-        "info": "February 27, 2026 \u2192 March 16, 2026"
+        "label": "Sightseeing With Friends",
+        "link": "https://game8.co/games/Genshin-Impact/archives/580689",
+        "info": "March 16, 2026 \u2192 March 26, 2026"
       },
       {
         "label": "To Temper Thyself and Journey Far",
         "link": "https://game8.co/games/Genshin-Impact/archives/546841",
         "info": "February 23, 2026 \u2192 May 18, 2026"
-      },
-      {
-        "label": "Sightseeing With Friends",
-        "link": "https://game8.co/games/Genshin-Impact/archives/580689",
-        "info": "March 16, 2026 \u2192 March 26, 2026"
       },
       {
         "label": "Operation Stronghold Defense",
@@ -474,6 +499,11 @@
       },
       {
         "label": "Fate Foretold",
+        "link": null,
+        "info": null
+      },
+      {
+        "label": "People's Choice",
         "link": null,
         "info": null
       }
@@ -535,7 +565,7 @@
     ]
   },
   "wuthering-waves::gacha": {
-    "last_updated": "March 13, 2026 10:40 AM",
+    "last_updated": "March 16, 2026 03:14 AM",
     "items": [
       {
         "label": "Absolute Pulsation (Daybreaker's Spine)",
@@ -578,18 +608,18 @@
         "info": null
       },
       {
-        "label": "Overture",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/455935",
+        "label": "Endless Collapse",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/474515",
         "info": null
       },
       {
-        "label": "Jinzhou Keeper",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/455924",
+        "label": "Celestial Spiral",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/474517",
         "info": null
       },
       {
-        "label": "Hollow Mirage",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/455913",
+        "label": "Lunar Cutter",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/455936",
         "info": null
       },
       {
