@@ -250,7 +250,7 @@
     ]
   },
   "wuthering-waves::events": {
-    "last_updated": "March 16, 2026 11:09 PM",
+    "last_updated": "March 17, 2026 10:48 PM",
     "items": [
       {
         "label": "Starpaths Intertwined",
@@ -318,34 +318,34 @@
         "info": null
       },
       {
-        "label": "Knights of the Wild",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/586651",
-        "info": "Releases in Version 3.2 Defeat the powerful enemy disrupting the Grand Knight and complete its repairs in Zones across Lahai-Roi."
-      },
-      {
-        "label": "Speed up! F.U.E.L. Instrumentality Project!",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/586668",
-        "info": "Releases in Version 3.2 Collect food dropping from above as chibi versions of the Resonators to get rewards."
-      },
-      {
-        "label": "Lahai-Roi Blocks",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/586674",
-        "info": "Releases in Version 3.2 Drag and place geometric blocks of different shapes to fill and clear rows in different levels."
-      },
-      {
         "label": "Gifts of Solsworn",
         "link": "https://game8.co/games/Wuthering-Waves/archives/586667",
-        "info": "Releases in Version 3.2 Log-in for 7 days to claim Radiant and Lustrous Tides!"
+        "info": "March 19, 2026 - April 29, 2026 Log-in for 7 days to claim Radiant and Lustrous Tides!"
       },
       {
         "label": "Whispers Between Stars",
         "link": "https://game8.co/games/Wuthering-Waves/archives/586650",
-        "info": null
+        "info": "March 19, 2026 - Permanent Unlock side stories of several characters and learn more about your Resonator friends!"
+      },
+      {
+        "label": "Lahai-Roi Blocks",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/586674",
+        "info": "March 26, 2026 - April 13, 2026 Drag and place geometric blocks of different shapes to fill and clear rows in different levels."
+      },
+      {
+        "label": "Speed up! F.U.E.L. Instrumentality Project!",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/586668",
+        "info": "April 2, 2026 - April 20, 2026 Collect food dropping from above as chibi versions of the Resonators to get rewards."
+      },
+      {
+        "label": "Knights of the Wild",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/586651",
+        "info": "April 9, 2026 - April 29, 2026 Defeat the powerful enemy disrupting the Grand Knight and complete its repairs in Zones across Lahai-Roi."
       },
       {
         "label": "The Flaming Red in Memory",
         "link": "https://game8.co/games/Wuthering-Waves/archives/586624",
-        "info": "Releases in Version 3.2 Get rewards for completing tasks related to unveiling who Hiyuki is in this event!"
+        "info": "April 16, 2026 - April 29, 2026 Get rewards for completing tasks related to unveiling who Hiyuki is in this event!"
       }
     ]
   },
@@ -510,7 +510,7 @@
     ]
   },
   "genshin-impact::gacha": {
-    "last_updated": "March 7, 2026 11:07 PM",
+    "last_updated": "March 17, 2026 09:58 PM",
     "items": [
       {
         "label": "The Northerly Wind's Song of Triumph",
@@ -538,29 +538,29 @@
         "info": "The Northerly Wind's Song of Triumph Start: 2026/02/25 End: 2026/03/17 Varka Bennett Sucrose"
       },
       {
-        "label": "6.4 Chronicled Wish Mondstadt",
-        "link": "https://game8.co/games/Genshin-Impact/archives/580696",
-        "info": "Start: 2026/02/25 End: 2026/03/17 Eula Albedo Klee Mona Diluc Jean"
+        "label": "The Lone Light Knocks at Night",
+        "link": "https://game8.co/games/Genshin-Impact/archives/546714",
+        "info": "Start: 2026/02/25 End: 2026/03/17 Flins Bennett Sucrose Xiangling"
       },
       {
-        "label": "Eula",
-        "link": "https://game8.co/games/Genshin-Impact/archives/328764",
-        "info": "6.4 Chronicled Wish Mondstadt Start: 2026/02/25 End: 2026/03/17 Albedo Klee Mona Diluc Jean"
+        "label": "Flins",
+        "link": "https://game8.co/games/Genshin-Impact/archives/538451",
+        "info": "The Lone Light Knocks at Night Start: 2026/02/25 End: 2026/03/17 Bennett Sucrose Xiangling"
       },
       {
-        "label": "Albedo",
-        "link": "https://game8.co/games/Genshin-Impact/archives/312182",
-        "info": "6.4 Chronicled Wish Mondstadt Start: 2026/02/25 End: 2026/03/17 Eula Klee Mona Diluc Jean"
+        "label": "Void Star's Advent",
+        "link": "https://game8.co/games/Genshin-Impact/archives/527273",
+        "info": "Start: 2026/03/17 End: 2026/04/07 Skirk Charlotte Dahlia Candace"
       },
       {
-        "label": "Klee",
-        "link": "https://game8.co/games/Genshin-Impact/archives/297521",
-        "info": "6.4 Chronicled Wish Mondstadt Start: 2026/02/25 End: 2026/03/17 Eula Albedo Mona Diluc Jean"
+        "label": "Skirk",
+        "link": "https://game8.co/games/Genshin-Impact/archives/333140",
+        "info": "Void Star's Advent Start: 2026/03/17 End: 2026/04/07 Charlotte Dahlia Candace"
       },
       {
-        "label": "Mona",
-        "link": "https://game8.co/games/Genshin-Impact/archives/Mona-Best-Builds",
-        "info": "6.4 Chronicled Wish Mondstadt Start: 2026/02/25 End: 2026/03/17 Eula Albedo Klee Diluc Jean"
+        "label": "Charlotte",
+        "link": "https://game8.co/games/Genshin-Impact/archives/412428",
+        "info": "Void Star's Advent Start: 2026/03/17 End: 2026/04/07 Skirk Dahlia Candace"
       }
     ]
   },
