@@ -250,87 +250,37 @@
     ]
   },
   "wuthering-waves::events": {
-    "last_updated": "March 17, 2026 10:48 PM",
+    "last_updated": "March 18, 2026 11:37 PM",
     "items": [
-      {
-        "label": "Starpaths Intertwined",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/578067",
-        "info": "February 5, 2026 - Permanent Log-in during Version 3.1"
-      },
       {
         "label": "Ascendant Aces",
         "link": "https://game8.co/games/Wuthering-Waves/archives/456482",
-        "info": "February 5, 2026 - March 18, 2026 Unlocked by default"
-      },
-      {
-        "label": "Chord Cleansing",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/457211",
-        "info": "March 11, 2026 - March 18, 2026 Reach Union Level 19"
-      },
-      {
-        "label": "Unfrozen Traces",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/577784",
-        "info": null
-      },
-      {
-        "label": "Footprints on Frostlands",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/577814",
-        "info": "February 5, 2026 - Permanent Log-in during Version 3.1 and unlock Roya Frostlands"
-      },
-      {
-        "label": "Gift of Soft Snow",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/578043",
-        "info": "February 5, 2026 - March 18, 2026 Reach Union level 8"
-      },
-      {
-        "label": "TERM-X Outreach",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/578050",
-        "info": "February 5, 2026 - March 18, 2026 Reach Frostlands Surface during Main Quest Chapter III Act III: The Star that Voyages Far to unlock"
-      },
-      {
-        "label": "Moonlit Path",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/578047",
-        "info": "February 5, 2026 - March 18, 2026 Log-in during Version 3.1"
-      },
-      {
-        "label": "Startorch for You",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/578107",
-        "info": "February 5, 2026 - Permanent Complete Main Quest Chapter III Act III: The Star that Voyages Far to unlock"
-      },
-      {
-        "label": "Where Stars Cascade Down",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/577739",
-        "info": null
-      },
-      {
-        "label": "Unsigned Good Wishes",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/578113",
-        "info": "February 17, 2026 - March 19, 2026 Log-in during the aforementioned event times."
-      },
-      {
-        "label": "Lollo Campaign: Implementation",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/458245",
-        "info": null
+        "info": "March 19, 2026 - April 29, 2026 Unlocked by default"
       },
       {
         "label": "Soar to the Beat",
         "link": "https://game8.co/games/Wuthering-Waves/archives/586621",
-        "info": null
+        "info": "March 19, 2026 - April 29, 2026 Available after Version 3.2"
       },
       {
         "label": "Gifts of Solsworn",
         "link": "https://game8.co/games/Wuthering-Waves/archives/586667",
-        "info": "March 19, 2026 - April 29, 2026 Log-in for 7 days to claim Radiant and Lustrous Tides!"
+        "info": "March 19, 2026 - April 29, 2026 Log in during Version 3.2 to unlock"
       },
       {
         "label": "Whispers Between Stars",
         "link": "https://game8.co/games/Wuthering-Waves/archives/586650",
-        "info": "March 19, 2026 - Permanent Unlock side stories of several characters and learn more about your Resonator friends!"
+        "info": "March 19, 2026 - Permanent Progress through Gold Suspended in Shadows Main Quest and Reach Lahai-Roi to Unlock"
       },
       {
         "label": "Lahai-Roi Blocks",
         "link": "https://game8.co/games/Wuthering-Waves/archives/586674",
         "info": "March 26, 2026 - April 13, 2026 Drag and place geometric blocks of different shapes to fill and clear rows in different levels."
+      },
+      {
+        "label": "Bountiful Crescendo",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/458244",
+        "info": "April 2, 2026 - April 9, 2026 Earn double leveling material drops during this event!"
       },
       {
         "label": "Speed up! F.U.E.L. Instrumentality Project!",
@@ -346,6 +296,11 @@
         "label": "The Flaming Red in Memory",
         "link": "https://game8.co/games/Wuthering-Waves/archives/586624",
         "info": "April 16, 2026 - April 29, 2026 Get rewards for completing tasks related to unveiling who Hiyuki is in this event!"
+      },
+      {
+        "label": "Chord Cleansing",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/457211",
+        "info": "April 22, 2026 - April 29, 2026 Earn double echo and echo leveling material drops during this event!"
       }
     ]
   },
@@ -565,71 +520,71 @@
     ]
   },
   "wuthering-waves::gacha": {
-    "last_updated": "March 16, 2026 03:14 AM",
+    "last_updated": "March 18, 2026 11:23 PM",
     "items": [
-      {
-        "label": "Absolute Pulsation (Daybreaker's Spine)",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/455400",
-        "info": "February 26, 2026 - March 18, 2026"
-      },
-      {
-        "label": "When the Runes Glitter",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/491395",
-        "info": null
-      },
-      {
-        "label": "Sigrika",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/568208",
-        "info": null
-      },
-      {
-        "label": "Sanhua",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/454225",
-        "info": null
-      },
-      {
-        "label": "Buling",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/557981",
-        "info": null
-      },
-      {
-        "label": "Yangyang",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/454215",
-        "info": null
-      },
       {
         "label": "Absolute Pulsation (Solsworn Ciphers)",
         "link": "https://game8.co/games/Wuthering-Waves/archives/455400",
+        "info": "March 19, 2026 - April 9, 2026"
+      },
+      {
+        "label": "Undefined Spectrum",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/570865",
         "info": null
       },
       {
-        "label": "Solsworn Ciphers",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/585863",
+        "label": "Lynae",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/568211",
         "info": null
       },
       {
-        "label": "Endless Collapse",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/474515",
+        "label": "Danjin",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/454227",
         "info": null
       },
       {
-        "label": "Celestial Spiral",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/474517",
+        "label": "Taoqi",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/454226",
         "info": null
       },
       {
-        "label": "Lunar Cutter",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/455936",
+        "label": "Youhu",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/463668",
         "info": null
       },
       {
-        "label": "Wanderer Knows No Far and Near",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/553597",
+        "label": "Absolute Pulsation (Spectrum Blaster)",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/455400",
         "info": null
       },
       {
-        "label": "Qiuyuan",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/524882",
+        "label": "Spectrum Blaster",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/570863",
+        "info": null
+      },
+      {
+        "label": "Marcato",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/455912",
+        "info": null
+      },
+      {
+        "label": "Variation",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/455923",
+        "info": null
+      },
+      {
+        "label": "Relativistic Jet",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/474513",
+        "info": null
+      },
+      {
+        "label": "Between Light and Shadow",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/514607",
+        "info": null
+      },
+      {
+        "label": "Zani",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/486248",
         "info": null
       }
     ]
