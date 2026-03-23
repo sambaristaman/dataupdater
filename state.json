@@ -395,8 +395,13 @@
     ]
   },
   "genshin-impact::events": {
-    "last_updated": "March 16, 2026 05:21 AM",
+    "last_updated": "March 23, 2026 05:56 AM",
     "items": [
+      {
+        "label": "Operation Stronghold Defense",
+        "link": "https://game8.co/games/Genshin-Impact/archives/580690",
+        "info": "March 23, 2026 \u2192 April 2, 2026"
+      },
       {
         "label": "Sightseeing With Friends",
         "link": "https://game8.co/games/Genshin-Impact/archives/580689",
@@ -406,11 +411,6 @@
         "label": "To Temper Thyself and Journey Far",
         "link": "https://game8.co/games/Genshin-Impact/archives/546841",
         "info": "February 23, 2026 \u2192 May 18, 2026"
-      },
-      {
-        "label": "Operation Stronghold Defense",
-        "link": "https://game8.co/games/Genshin-Impact/archives/580690",
-        "info": "March 23, 2026 \u2192 April 2, 2026"
       },
       {
         "label": "Overflowing Abundance",
@@ -690,12 +690,17 @@
     ]
   },
   "arknights-endfield::events": {
-    "last_updated": "March 12, 2026 05:30 AM",
+    "last_updated": "March 23, 2026 12:04 AM",
     "items": [
       {
         "label": "Gently Flows Qingbo Sign-In",
         "link": "https://game8.co/games/Arknights-Endfield/archives/576094",
         "info": "12/26 - 03/29"
+      },
+      {
+        "label": "Supply Exploration Day Supply Event",
+        "link": "https://game8.co/games/Arknights-Endfield/archives/584448",
+        "info": "19/26 - 04/02"
       },
       {
         "label": "Quietly Flows the Spring Guide Event",
@@ -716,11 +721,6 @@
         "label": "Cleanse and Rinse",
         "link": "https://game8.co/games/Arknights-Endfield/archives/584565",
         "info": "Period: 03/29/26 Use a jet drone to cleanse and rinse objectives to get rewards"
-      },
-      {
-        "label": "Supply Exploration Day",
-        "link": "https://game8.co/games/Arknights-Endfield/archives/584448",
-        "info": "Period: 03/19/26 Collect items and exchange them for rewards!"
       }
     ]
   },
