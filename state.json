@@ -395,17 +395,12 @@
     ]
   },
   "genshin-impact::events": {
-    "last_updated": "March 23, 2026 05:56 AM",
+    "last_updated": "March 27, 2026 05:22 AM",
     "items": [
       {
         "label": "Operation Stronghold Defense",
         "link": "https://game8.co/games/Genshin-Impact/archives/580690",
         "info": "March 23, 2026 \u2192 April 2, 2026"
-      },
-      {
-        "label": "Sightseeing With Friends",
-        "link": "https://game8.co/games/Genshin-Impact/archives/580689",
-        "info": "March 16, 2026 \u2192 March 26, 2026"
       },
       {
         "label": "To Temper Thyself and Journey Far",
@@ -460,6 +455,11 @@
       {
         "label": "People's Choice",
         "link": null,
+        "info": null
+      },
+      {
+        "label": "Curtain of Leaves",
+        "link": "https://game8.co/games/Genshin-Impact/archives/304937",
         "info": null
       }
     ]
