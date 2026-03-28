@@ -395,7 +395,7 @@
     ]
   },
   "genshin-impact::events": {
-    "last_updated": "March 27, 2026 05:22 AM",
+    "last_updated": "March 27, 2026 10:27 AM",
     "items": [
       {
         "label": "Operation Stronghold Defense",
@@ -411,6 +411,26 @@
         "label": "Overflowing Abundance",
         "link": "https://game8.co/games/Genshin-Impact/archives/491944",
         "info": "March 30, 2026 \u2192 April 6, 2026"
+      },
+      {
+        "label": "Surveying & Mapping Studies",
+        "link": "https://game8.co/games/Genshin-Impact/archives/590319",
+        "info": "April 10, 2026 \u2192 April 20, 2026"
+      },
+      {
+        "label": "Where Waves Meet the Reef",
+        "link": "https://game8.co/games/Genshin-Impact/archives/590318",
+        "info": "April 27, 2026 \u2192 May 14, 2026"
+      },
+      {
+        "label": "Rapid Capture",
+        "link": "https://game8.co/games/Genshin-Impact/archives/590320",
+        "info": "May 6, 2026 \u2192 May 18, 2026"
+      },
+      {
+        "label": "Ley Line Overflow",
+        "link": "https://game8.co/games/Genshin-Impact/archives/316998",
+        "info": "May 11, 2026 \u2192 May 18, 2026"
       },
       {
         "label": "Stygian Onslaught",
@@ -441,67 +461,12 @@
         "label": "Daily Check-In",
         "link": "https://game8.co/games/Genshin-Impact/archives/321404",
         "info": null
-      },
-      {
-        "label": "Stellar Reunion",
-        "link": "https://game8.co/games/Genshin-Impact/archives/315013",
-        "info": null
-      },
-      {
-        "label": "Fate Foretold",
-        "link": null,
-        "info": null
-      },
-      {
-        "label": "People's Choice",
-        "link": null,
-        "info": null
-      },
-      {
-        "label": "Curtain of Leaves",
-        "link": "https://game8.co/games/Genshin-Impact/archives/304937",
-        "info": null
       }
     ]
   },
   "genshin-impact::gacha": {
-    "last_updated": "March 26, 2026 12:51 AM",
+    "last_updated": "March 27, 2026 11:14 AM",
     "items": [
-      {
-        "label": "The Northerly Wind's Song of Triumph",
-        "link": "https://game8.co/games/Genshin-Impact/archives/580694",
-        "info": "Start: 2026/02/25 End: 2026/03/17 Varka Bennett Sucrose Xiangling"
-      },
-      {
-        "label": "Varka",
-        "link": "https://game8.co/games/Genshin-Impact/archives/314346",
-        "info": "The Northerly Wind's Song of Triumph Start: 2026/02/25 End: 2026/03/17 Bennett Sucrose Xiangling"
-      },
-      {
-        "label": "Bennett",
-        "link": "https://game8.co/games/Genshin-Impact/archives/Bennett-Best-Builds",
-        "info": "The Northerly Wind's Song of Triumph Start: 2026/02/25 End: 2026/03/17 Varka Sucrose Xiangling"
-      },
-      {
-        "label": "Sucrose",
-        "link": "https://game8.co/games/Genshin-Impact/archives/297525",
-        "info": "The Northerly Wind's Song of Triumph Start: 2026/02/25 End: 2026/03/17 Varka Bennett Xiangling"
-      },
-      {
-        "label": "Xiangling",
-        "link": "https://game8.co/games/Genshin-Impact/archives/297530",
-        "info": "The Northerly Wind's Song of Triumph Start: 2026/02/25 End: 2026/03/17 Varka Bennett Sucrose"
-      },
-      {
-        "label": "The Lone Light Knocks at Night",
-        "link": "https://game8.co/games/Genshin-Impact/archives/546714",
-        "info": "Start: 2026/02/25 End: 2026/03/17 Flins Bennett Sucrose Xiangling"
-      },
-      {
-        "label": "Flins",
-        "link": "https://game8.co/games/Genshin-Impact/archives/538451",
-        "info": "The Lone Light Knocks at Night Start: 2026/02/25 End: 2026/03/17 Bennett Sucrose Xiangling"
-      },
       {
         "label": "Void Star's Advent",
         "link": "https://game8.co/games/Genshin-Impact/archives/527273",
@@ -516,6 +481,41 @@
         "label": "Charlotte",
         "link": "https://game8.co/games/Genshin-Impact/archives/412428",
         "info": "Void Star's Advent Start: 2026/03/17 End: 2026/04/07 Skirk Dahlia Candace"
+      },
+      {
+        "label": "Dahlia",
+        "link": "https://game8.co/games/Genshin-Impact/archives/516026",
+        "info": "Void Star's Advent Start: 2026/03/17 End: 2026/04/07 Skirk Charlotte Candace"
+      },
+      {
+        "label": "Candace",
+        "link": "https://game8.co/games/Genshin-Impact/archives/386384",
+        "info": "Void Star's Advent Start: 2026/03/17 End: 2026/04/07 Skirk Charlotte Dahlia"
+      },
+      {
+        "label": "La Chanson Cerise",
+        "link": "https://game8.co/games/Genshin-Impact/archives/516113",
+        "info": "Start: 2026/03/17 End: 2026/04/07 Escoffier Charlotte Dahlia Candace"
+      },
+      {
+        "label": "Escoffier",
+        "link": "https://game8.co/games/Genshin-Impact/archives/385307",
+        "info": "La Chanson Cerise Start: 2026/03/17 End: 2026/04/07 Charlotte Dahlia Candace"
+      },
+      {
+        "label": "Epitome Invocation",
+        "link": "https://game8.co/games/Genshin-Impact/archives/304758",
+        "info": "Start: 2026/03/17 End: 2026/04/07 Azurelight Symphonist of Scents The Bell The Flute Favonius Lance Favonius Codex Rust"
+      },
+      {
+        "label": "Azurelight",
+        "link": "https://game8.co/games/Genshin-Impact/archives/527284",
+        "info": "Epitome Invocation Start: 2026/03/17 End: 2026/04/07 Symphonist of Scents The Bell The Flute Favonius Lance Favonius Codex Rust"
+      },
+      {
+        "label": "Symphonist of Scents",
+        "link": "https://game8.co/games/Genshin-Impact/archives/516101",
+        "info": "Epitome Invocation Start: 2026/03/17 End: 2026/04/07 Azurelight The Bell The Flute Favonius Lance Favonius Codex Rust"
       }
     ]
   },
