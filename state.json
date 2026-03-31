@@ -395,8 +395,13 @@
     ]
   },
   "genshin-impact::events": {
-    "last_updated": "March 27, 2026 10:27 AM",
+    "last_updated": "March 31, 2026 08:36 AM",
     "items": [
+      {
+        "label": "Overflowing Abundance",
+        "link": "https://game8.co/games/Genshin-Impact/archives/491944",
+        "info": "March 30, 2026 \u2192 April 6, 2026"
+      },
       {
         "label": "Operation Stronghold Defense",
         "link": "https://game8.co/games/Genshin-Impact/archives/580690",
@@ -406,11 +411,6 @@
         "label": "To Temper Thyself and Journey Far",
         "link": "https://game8.co/games/Genshin-Impact/archives/546841",
         "info": "February 23, 2026 \u2192 May 18, 2026"
-      },
-      {
-        "label": "Overflowing Abundance",
-        "link": "https://game8.co/games/Genshin-Impact/archives/491944",
-        "info": "March 30, 2026 \u2192 April 6, 2026"
       },
       {
         "label": "Surveying & Mapping Studies",
@@ -700,7 +700,7 @@
     ]
   },
   "arknights-endfield::gacha": {
-    "last_updated": "March 29, 2026 05:41 AM",
+    "last_updated": "March 31, 2026 07:22 AM",
     "items": [
       {
         "label": "Rossi Banner",
