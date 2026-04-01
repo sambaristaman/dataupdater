@@ -665,12 +665,17 @@
     ]
   },
   "arknights-endfield::events": {
-    "last_updated": "March 23, 2026 12:04 AM",
+    "last_updated": "April 1, 2026 02:34 AM",
     "items": [
       {
-        "label": "Gently Flows Qingbo Sign-In",
+        "label": "Pearl of the Pack Sign-In",
         "link": "https://game8.co/games/Arknights-Endfield/archives/576094",
-        "info": "12/26 - 03/29"
+        "info": "29/26 - 04/17"
+      },
+      {
+        "label": "Cleanse and Rinse Fun and Games Event",
+        "link": "https://game8.co/games/Arknights-Endfield/archives/584565",
+        "info": "29/26 - 04/19"
       },
       {
         "label": "Supply Exploration Day Supply Event",
@@ -683,19 +688,9 @@
         "info": "12/26 - 04/02"
       },
       {
-        "label": "Pearl of the Pack Sign-In",
-        "link": "https://game8.co/games/Arknights-Endfield/archives/576094",
-        "info": "29/26 - 04/14"
-      },
-      {
         "label": "Survival Training",
         "link": "https://game8.co/games/Arknights-Endfield/archives/584581",
         "info": null
-      },
-      {
-        "label": "Cleanse and Rinse",
-        "link": "https://game8.co/games/Arknights-Endfield/archives/584565",
-        "info": "Period: 03/29/26 Use a jet drone to cleanse and rinse objectives to get rewards"
       }
     ]
   },
