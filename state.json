@@ -250,7 +250,7 @@
     ]
   },
   "wuthering-waves::events": {
-    "last_updated": "March 26, 2026 03:44 AM",
+    "last_updated": "April 6, 2026 05:28 AM",
     "items": [
       {
         "label": "Ascendant Aces",
@@ -280,12 +280,12 @@
       {
         "label": "Bountiful Crescendo",
         "link": "https://game8.co/games/Wuthering-Waves/archives/458244",
-        "info": "April 2, 2026 - April 9, 2026 Earn double leveling material drops during this event!"
+        "info": "April 2, 2026 - April 9, 2026 Reach Union Level 14"
       },
       {
         "label": "Speed up! F.U.E.L. Instrumentality Project!",
         "link": "https://game8.co/games/Wuthering-Waves/archives/586668",
-        "info": "April 2, 2026 - April 20, 2026 Collect food dropping from above as chibi versions of the Resonators to get rewards."
+        "info": "April 2, 2026 - April 20, 2026 Reach Lahai-Roi and log in during Version 3.2 to unlock"
       },
       {
         "label": "Knights of the Wild",
@@ -305,23 +305,8 @@
     ]
   },
   "honkai-star-rail::events": {
-    "last_updated": "March 24, 2026 10:23 PM",
+    "last_updated": "April 6, 2026 01:49 AM",
     "items": [
-      {
-        "label": "Wispae War Saga",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/586428",
-        "info": "Duration: 03/25/26 - 04/20/26 Strategically rally a Wispae army and emerge victorious against enemy troops to earn various rewards!"
-      },
-      {
-        "label": "4.1 Gift of Odyssey",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/413645",
-        "info": "Duration: 03/25/26 - 04/21/26 Log in a total of 7 days to claim up 10 Star Rail Special Passes!"
-      },
-      {
-        "label": "4.1 Planar Fissure",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/413440",
-        "info": "Duration: 03/30/26 - 04/13/26 Get double the planar ornaments when challenging Worlds in the Simulated Universe!"
-      },
       {
         "label": "4.1 Garden of Plenty",
         "link": "https://game8.co/games/Honkai-Star-Rail/archives/413423",
@@ -395,18 +380,8 @@
     ]
   },
   "genshin-impact::events": {
-    "last_updated": "March 31, 2026 08:36 AM",
+    "last_updated": "April 5, 2026 09:18 PM",
     "items": [
-      {
-        "label": "Overflowing Abundance",
-        "link": "https://game8.co/games/Genshin-Impact/archives/491944",
-        "info": "March 30, 2026 \u2192 April 6, 2026"
-      },
-      {
-        "label": "Operation Stronghold Defense",
-        "link": "https://game8.co/games/Genshin-Impact/archives/580690",
-        "info": "March 23, 2026 \u2192 April 2, 2026"
-      },
       {
         "label": "To Temper Thyself and Journey Far",
         "link": "https://game8.co/games/Genshin-Impact/archives/546841",
@@ -435,7 +410,7 @@
       {
         "label": "Stygian Onslaught",
         "link": "https://game8.co/games/Genshin-Impact/archives/527266",
-        "info": "March 4, 2026 \u2192 April 7, 2026"
+        "info": "April 15, 2026 \u2192 May 19, 2026"
       },
       {
         "label": "Character Test Runs",
@@ -460,6 +435,16 @@
       {
         "label": "Daily Check-In",
         "link": "https://game8.co/games/Genshin-Impact/archives/321404",
+        "info": null
+      },
+      {
+        "label": "Stellar Reunion",
+        "link": "https://game8.co/games/Genshin-Impact/archives/315013",
+        "info": null
+      },
+      {
+        "label": "Fate Foretold",
+        "link": null,
         "info": null
       }
     ]
@@ -665,7 +650,7 @@
     ]
   },
   "arknights-endfield::events": {
-    "last_updated": "April 1, 2026 02:34 AM",
+    "last_updated": "April 5, 2026 09:37 PM",
     "items": [
       {
         "label": "Pearl of the Pack Sign-In",
@@ -686,6 +671,11 @@
         "label": "Quietly Flows the Spring Guide Event",
         "link": "https://game8.co/games/Arknights-Endfield/archives/584611",
         "info": "12/26 - 04/02"
+      },
+      {
+        "label": "Journey of the Long-Ear Celebration Event",
+        "link": "https://game8.co/games/Arknights-Endfield/archives/591377",
+        "info": null
       },
       {
         "label": "Survival Training",
