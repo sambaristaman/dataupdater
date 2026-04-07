@@ -575,7 +575,7 @@
     ]
   },
   "honkai-star-rail::gacha": {
-    "last_updated": "March 24, 2026 10:48 PM",
+    "last_updated": "April 7, 2026 12:52 AM",
     "items": [
       {
         "label": "Ashveil Banner",
@@ -646,6 +646,11 @@
         "label": "Evanescia Banner",
         "link": "https://game8.co/games/Honkai-Star-Rail/archives/585930",
         "info": "(Ver. 4.2 Phase 2) Banner Dates: May 13, 2026 - Jun. 02, 2026 Featured 5-Star: Evanescia ( Elation , Physical ) Featured 4-Star: TBA TBA TBA"
+      },
+      {
+        "label": "Mortenax Blade Banner",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/591815",
+        "info": "(Ver. 4.3 Phase 1) Banner Dates: Jun. 02, 2026 - Jun. 24, 2026 Featured 5-Star: Mortenax Blade ( Nihility , Fire ) Featured 4-Star: TBA TBA TBA"
       }
     ]
   },
