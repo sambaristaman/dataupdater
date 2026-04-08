@@ -305,7 +305,7 @@
     ]
   },
   "honkai-star-rail::events": {
-    "last_updated": "April 6, 2026 01:49 AM",
+    "last_updated": "April 7, 2026 11:49 PM",
     "items": [
       {
         "label": "4.1 Garden of Plenty",
@@ -450,57 +450,57 @@
     ]
   },
   "genshin-impact::gacha": {
-    "last_updated": "March 27, 2026 11:14 AM",
+    "last_updated": "April 8, 2026 04:44 AM",
     "items": [
       {
-        "label": "Void Star's Advent",
-        "link": "https://game8.co/games/Genshin-Impact/archives/527273",
-        "info": "Start: 2026/03/17 End: 2026/04/07 Skirk Charlotte Dahlia Candace"
+        "label": "Ya-hoho! Compendium",
+        "link": "https://game8.co/games/Genshin-Impact/archives/590325",
+        "info": "Start: 2026/04/08 End: 2026/04/28 Linnea Illuga Aino Noelle"
       },
       {
-        "label": "Skirk",
-        "link": "https://game8.co/games/Genshin-Impact/archives/333140",
-        "info": "Void Star's Advent Start: 2026/03/17 End: 2026/04/07 Charlotte Dahlia Candace"
+        "label": "Linnea",
+        "link": "https://game8.co/games/Genshin-Impact/archives/551088",
+        "info": "Ya-hoho! Compendium Start: 2026/04/08 End: 2026/04/28 Illuga Aino Noelle"
       },
       {
-        "label": "Charlotte",
-        "link": "https://game8.co/games/Genshin-Impact/archives/412428",
-        "info": "Void Star's Advent Start: 2026/03/17 End: 2026/04/07 Skirk Dahlia Candace"
+        "label": "Illuga",
+        "link": "https://game8.co/games/Genshin-Impact/archives/555902",
+        "info": "Ya-hoho! Compendium Start: 2026/04/08 End: 2026/04/28 Linnea Aino Noelle"
       },
       {
-        "label": "Dahlia",
-        "link": "https://game8.co/games/Genshin-Impact/archives/516026",
-        "info": "Void Star's Advent Start: 2026/03/17 End: 2026/04/07 Skirk Charlotte Candace"
+        "label": "Aino",
+        "link": "https://game8.co/games/Genshin-Impact/archives/537903",
+        "info": "Ya-hoho! Compendium Start: 2026/04/08 End: 2026/04/28 Linnea Illuga Noelle"
       },
       {
-        "label": "Candace",
-        "link": "https://game8.co/games/Genshin-Impact/archives/386384",
-        "info": "Void Star's Advent Start: 2026/03/17 End: 2026/04/07 Skirk Charlotte Dahlia"
+        "label": "Noelle",
+        "link": "https://game8.co/games/Genshin-Impact/archives/297523",
+        "info": "Ya-hoho! Compendium Start: 2026/04/08 End: 2026/04/28 Linnea Illuga Aino"
       },
       {
-        "label": "La Chanson Cerise",
-        "link": "https://game8.co/games/Genshin-Impact/archives/516113",
-        "info": "Start: 2026/03/17 End: 2026/04/07 Escoffier Charlotte Dahlia Candace"
+        "label": "Piercing Shot's Crimson Wake",
+        "link": "https://game8.co/games/Genshin-Impact/archives/484198",
+        "info": "Start: 2026/04/08 End: 2026/04/28 Chasca Illuga Aino Noelle"
       },
       {
-        "label": "Escoffier",
-        "link": "https://game8.co/games/Genshin-Impact/archives/385307",
-        "info": "La Chanson Cerise Start: 2026/03/17 End: 2026/04/07 Charlotte Dahlia Candace"
+        "label": "Chasca",
+        "link": "https://game8.co/games/Genshin-Impact/archives/462001",
+        "info": "Piercing Shot's Crimson Wake Start: 2026/04/08 End: 2026/04/28 Illuga Aino Noelle"
       },
       {
         "label": "Epitome Invocation",
         "link": "https://game8.co/games/Genshin-Impact/archives/304758",
-        "info": "Start: 2026/03/17 End: 2026/04/07 Azurelight Symphonist of Scents The Bell The Flute Favonius Lance Favonius Codex Rust"
+        "info": null
       },
       {
-        "label": "Azurelight",
-        "link": "https://game8.co/games/Genshin-Impact/archives/527284",
-        "info": "Epitome Invocation Start: 2026/03/17 End: 2026/04/07 Symphonist of Scents The Bell The Flute Favonius Lance Favonius Codex Rust"
+        "label": "Golden Frostbound Oath",
+        "link": "https://game8.co/games/Genshin-Impact/archives/590317",
+        "info": null
       },
       {
-        "label": "Symphonist of Scents",
-        "link": "https://game8.co/games/Genshin-Impact/archives/516101",
-        "info": "Epitome Invocation Start: 2026/03/17 End: 2026/04/07 Azurelight The Bell The Flute Favonius Lance Favonius Codex Rust"
+        "label": "Astral Vulture's Crimson Plumage",
+        "link": "https://game8.co/games/Genshin-Impact/archives/484205",
+        "info": null
       }
     ]
   },
@@ -575,7 +575,7 @@
     ]
   },
   "honkai-star-rail::gacha": {
-    "last_updated": "April 7, 2026 12:52 AM",
+    "last_updated": "April 8, 2026 12:13 AM",
     "items": [
       {
         "label": "Ashveil Banner",
@@ -588,9 +588,9 @@
         "info": "(Ver. 4.1) Banner Dates : Mar. 24, 2026 - Apr. 21, 2026 Featured 5-Star: The Finale of a Lie ( Hunt ) Featured 4-Star: Make the World Clamor ( Erudition ) Shadowed by Night ( Hunt ) Dream's Montage ( Abundance )"
       },
       {
-        "label": "Hyacine Banner",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/506699",
-        "info": "(Ver. 4.1 Phase 1) Banner Dates : Mar. 24, 2026 - Apr. 08, 2026 Featured 5-Star: Hyacine ( Remembrance , Wind ) Featured 4-Star: Moze ( Hunt , Lightning ) Misha ( Destruction , Ice ) Asta ( Harmony , Fire )"
+        "label": "Boothill Banner",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/447924",
+        "info": "(Ver. 4.1 Phase 2) Banner Dates : Apr. 08, 2026 - Apr. 21, 2026 Featured 5-Star: Boothill ( Hunt , Physical ) Featured 4-Star: Moze ( Hunt , Lightning ) Misha ( Destruction , Ice ) Asta ( Harmony , Fire )"
       },
       {
         "label": "Saber",
@@ -621,21 +621,6 @@
         "label": "Collab Light Cone Banner",
         "link": "https://game8.co/games/Honkai-Star-Rail/archives/462460",
         "info": "Saber's banner has been available since July 11, 2025 , in Phase 1 of Version 3.4. It doesn't have a fixed end date yet. Her Light Cone, A Thankless Coronation , is available at the same time through the ."
-      },
-      {
-        "label": "Boothill Banner",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/447924",
-        "info": "(Ver. 4.1 Phase 2) Banner Dates : Apr. 08, 2026 - Apr. 21, 2026 Featured 5-Star: Boothill ( Hunt , Physical ) Featured 4-Star: Moze ( Hunt , Lightning ) Misha ( Destruction , Ice ) Asta ( Harmony , Fire )"
-      },
-      {
-        "label": "Bygone Reminiscence",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/429241",
-        "info": "Boothill's rerun banner will be available from April 08, 2026 until April 21, 2026 (Server Time). His Light Cone, Sailing Towards A Second Life , will also available through the banner."
-      },
-      {
-        "label": "Brilliant Fixation",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/408767",
-        "info": null
       },
       {
         "label": "Silver Wolf Lv.999",
@@ -690,7 +675,7 @@
     ]
   },
   "arknights-endfield::gacha": {
-    "last_updated": "March 31, 2026 07:22 AM",
+    "last_updated": "April 7, 2026 11:09 PM",
     "items": [
       {
         "label": "Rossi Banner",
