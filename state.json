@@ -250,7 +250,7 @@
     ]
   },
   "wuthering-waves::events": {
-    "last_updated": "April 6, 2026 05:28 AM",
+    "last_updated": "April 9, 2026 04:26 AM",
     "items": [
       {
         "label": "Ascendant Aces",
@@ -278,11 +278,6 @@
         "info": "March 26, 2026 - April 13, 2026 Reach Lahai-Roi and log in during Version 3.2 to unlock"
       },
       {
-        "label": "Bountiful Crescendo",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/458244",
-        "info": "April 2, 2026 - April 9, 2026 Reach Union Level 14"
-      },
-      {
         "label": "Speed up! F.U.E.L. Instrumentality Project!",
         "link": "https://game8.co/games/Wuthering-Waves/archives/586668",
         "info": "April 2, 2026 - April 20, 2026 Reach Lahai-Roi and log in during Version 3.2 to unlock"
@@ -290,7 +285,12 @@
       {
         "label": "Knights of the Wild",
         "link": "https://game8.co/games/Wuthering-Waves/archives/586651",
-        "info": "April 9, 2026 - April 29, 2026 Defeat the powerful enemy disrupting the Grand Knight and complete its repairs in Zones across Lahai-Roi."
+        "info": "April 9, 2026 - April 29, 2026 Reach Lahai-Roi and log in during Version 3.2 to unlock"
+      },
+      {
+        "label": "Persona Collab Part 2",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/593742",
+        "info": "April 9, 2026 - April 29, 2026 Log in during Version 3.2 to unlock"
       },
       {
         "label": "The Flaming Red in Memory",
@@ -380,12 +380,17 @@
     ]
   },
   "genshin-impact::events": {
-    "last_updated": "April 5, 2026 09:18 PM",
+    "last_updated": "April 8, 2026 11:36 PM",
     "items": [
       {
         "label": "To Temper Thyself and Journey Far",
         "link": "https://game8.co/games/Genshin-Impact/archives/546841",
         "info": "February 23, 2026 \u2192 May 18, 2026"
+      },
+      {
+        "label": "Trail of Footsteps Web Event",
+        "link": "https://game8.co/games/Genshin-Impact/archives/592492",
+        "info": "April 8, 2026 \u2192 April 21, 2026"
       },
       {
         "label": "Surveying & Mapping Studies",
@@ -418,7 +423,7 @@
         "info": null
       },
       {
-        "label": "Battle Pass - Northerly Winds",
+        "label": "Battle Pass - Homecoming Chronicle",
         "link": "https://game8.co/games/Genshin-Impact/archives/301612",
         "info": null
       },
@@ -441,16 +446,11 @@
         "label": "Stellar Reunion",
         "link": "https://game8.co/games/Genshin-Impact/archives/315013",
         "info": null
-      },
-      {
-        "label": "Fate Foretold",
-        "link": null,
-        "info": null
       }
     ]
   },
   "genshin-impact::gacha": {
-    "last_updated": "April 8, 2026 04:44 AM",
+    "last_updated": "April 8, 2026 11:51 AM",
     "items": [
       {
         "label": "Ya-hoho! Compendium",
@@ -505,71 +505,36 @@
     ]
   },
   "wuthering-waves::gacha": {
-    "last_updated": "March 18, 2026 11:23 PM",
+    "last_updated": "April 8, 2026 11:45 PM",
     "items": [
-      {
-        "label": "Absolute Pulsation (Solsworn Ciphers)",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/455400",
-        "info": "March 19, 2026 - April 9, 2026"
-      },
-      {
-        "label": "Undefined Spectrum",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/570865",
-        "info": null
-      },
-      {
-        "label": "Lynae",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/568211",
-        "info": null
-      },
-      {
-        "label": "Danjin",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/454227",
-        "info": null
-      },
-      {
-        "label": "Taoqi",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/454226",
-        "info": null
-      },
-      {
-        "label": "Youhu",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/463668",
-        "info": null
-      },
       {
         "label": "Absolute Pulsation (Spectrum Blaster)",
         "link": "https://game8.co/games/Wuthering-Waves/archives/455400",
+        "info": "April 9, 2026 - April 29, 2026"
+      },
+      {
+        "label": "3.3 Release Date, Banners, and Details",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/585664",
         "info": null
       },
       {
-        "label": "Spectrum Blaster",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/570863",
+        "label": "Beginner's Choice Convene Banner",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/453554",
         "info": null
       },
       {
-        "label": "Marcato",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/455912",
+        "label": "Utterance of Marvels",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/455422",
         "info": null
       },
       {
-        "label": "Variation",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/455923",
+        "label": "Tidal Chorus",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/455430",
         "info": null
       },
       {
-        "label": "Relativistic Jet",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/474513",
-        "info": null
-      },
-      {
-        "label": "Between Light and Shadow",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/514607",
-        "info": null
-      },
-      {
-        "label": "Zani",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/486248",
+        "label": "Weapon Permanent Convene",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/455431",
         "info": null
       }
     ]
@@ -640,12 +605,17 @@
     ]
   },
   "arknights-endfield::events": {
-    "last_updated": "April 5, 2026 09:37 PM",
+    "last_updated": "April 9, 2026 01:52 AM",
     "items": [
       {
         "label": "Pearl of the Pack Sign-In",
         "link": "https://game8.co/games/Arknights-Endfield/archives/576094",
         "info": "29/26 - 04/17"
+      },
+      {
+        "label": "Survival Training Challenge Event",
+        "link": "https://game8.co/games/Arknights-Endfield/archives/584581",
+        "info": "09/26 - 04/30"
       },
       {
         "label": "Cleanse and Rinse Fun and Games Event",
@@ -665,11 +635,6 @@
       {
         "label": "Journey of the Long-Ear Celebration Event",
         "link": "https://game8.co/games/Arknights-Endfield/archives/591377",
-        "info": null
-      },
-      {
-        "label": "Survival Training",
-        "link": "https://game8.co/games/Arknights-Endfield/archives/584581",
         "info": null
       }
     ]
