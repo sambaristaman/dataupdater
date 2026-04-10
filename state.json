@@ -305,14 +305,8 @@
     ]
   },
   "honkai-star-rail::events": {
-    "last_updated": "April 7, 2026 11:49 PM",
-    "items": [
-      {
-        "label": "4.1 Garden of Plenty",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/413423",
-        "info": "Duration: 04/10/26 - 04/20/26 Get double the rewards when challenging Golden and Crimson Calyxes!"
-      }
-    ]
+    "last_updated": "April 10, 2026 08:03 AM",
+    "items": []
   },
   "umamusume::events": {
     "last_updated": "September 8, 2025 05:57 AM",
@@ -380,12 +374,12 @@
     ]
   },
   "genshin-impact::events": {
-    "last_updated": "April 8, 2026 11:36 PM",
+    "last_updated": "April 9, 2026 11:30 PM",
     "items": [
       {
-        "label": "To Temper Thyself and Journey Far",
-        "link": "https://game8.co/games/Genshin-Impact/archives/546841",
-        "info": "February 23, 2026 \u2192 May 18, 2026"
+        "label": "Surveying & Mapping Studies",
+        "link": "https://game8.co/games/Genshin-Impact/archives/590319",
+        "info": "April 10, 2026 \u2192 April 20, 2026"
       },
       {
         "label": "Trail of Footsteps Web Event",
@@ -393,9 +387,9 @@
         "info": "April 8, 2026 \u2192 April 21, 2026"
       },
       {
-        "label": "Surveying & Mapping Studies",
-        "link": "https://game8.co/games/Genshin-Impact/archives/590319",
-        "info": "April 10, 2026 \u2192 April 20, 2026"
+        "label": "To Temper Thyself and Journey Far",
+        "link": "https://game8.co/games/Genshin-Impact/archives/546841",
+        "info": "February 23, 2026 \u2192 May 18, 2026"
       },
       {
         "label": "Where Waves Meet the Reef",
@@ -450,7 +444,7 @@
     ]
   },
   "genshin-impact::gacha": {
-    "last_updated": "April 8, 2026 11:51 AM",
+    "last_updated": "April 9, 2026 10:33 PM",
     "items": [
       {
         "label": "Ya-hoho! Compendium",
