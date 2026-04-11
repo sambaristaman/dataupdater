@@ -305,8 +305,59 @@
     ]
   },
   "honkai-star-rail::events": {
-    "last_updated": "April 10, 2026 08:03 AM",
-    "items": []
+    "last_updated": "April 10, 2026 01:03 PM",
+    "items": [
+      {
+        "label": "Cosmicon, Roll On Again!",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/594117",
+        "info": "Duration: Sometime in 4.2 The Cosmicon, Roll On dice game returns with new gameplay that involves teaming up to defeat the boss!"
+      },
+      {
+        "label": "4.2",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/585934",
+        "info": "Express Renovation Escapade Duration: Sometime in 4.2 Spruce up the Party Car with new decorations and Cat Cake pets, then invite other Trailblazers over to visit!"
+      },
+      {
+        "label": "Cosmic Data Roaming",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/594115",
+        "info": "Start: 04/22/2026 - 06/01/2026 Become a game streamer and broadcast the Astral Express' trailblazing journey to earn various rewards, including a 4-star Light Cone!"
+      },
+      {
+        "label": "Festive Gifts",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/448217",
+        "info": "Start: 04/22/2026 - 06/01/2026 Log in for 7 days during Version 4.2 to obtain 20 Star Rail Special Passes!"
+      },
+      {
+        "label": "Stellar Companion",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/592091",
+        "info": "Start: 04/22/2026 - End of 4.4 Log in from 4.2 to the end of 4.4 to get a Golden Companion Spirit, which can be exchanged for a free 5-Star!"
+      },
+      {
+        "label": "Annual Trailblaze Report",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/452063",
+        "info": "Start: 04/26/2026 - 05/07/2026 View your 3rd Anniversary Data Review Report to get 180 Stellar Jades!"
+      },
+      {
+        "label": "Cherished Recollection",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/507548",
+        "info": "Start: 04/22/2026 - 06/01/2026 Reach milestones by purchasing Oneiric Shards to obtain special rewards!"
+      },
+      {
+        "label": "Novaflare",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/531216",
+        "info": "Duration: Sometime in 4.2 Test out the buffed kits of Welt, Huohuo, Seele, and Firefly to get Stellar Jades!"
+      },
+      {
+        "label": "Relic Recon",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/560903",
+        "info": "Duration: Sometime in 4.2 Complete missions to open chests containing Relics and Planar Ornaments for a target character!"
+      },
+      {
+        "label": "300% Planar Fissure",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/413440",
+        "info": "Start: 05/04/26 - 05/18/26 Get triple the planar ornaments when challenging Worlds in the Simulated Universe!"
+      }
+    ]
   },
   "umamusume::events": {
     "last_updated": "September 8, 2025 05:57 AM",
@@ -534,7 +585,7 @@
     ]
   },
   "honkai-star-rail::gacha": {
-    "last_updated": "April 8, 2026 12:13 AM",
+    "last_updated": "April 10, 2026 11:50 AM",
     "items": [
       {
         "label": "Ashveil Banner",
@@ -554,17 +605,17 @@
       {
         "label": "Saber",
         "link": "https://game8.co/games/Honkai-Star-Rail/archives/519564",
-        "info": "Banner (Version 3.8) Archer Banner (Version 3.8) Banner Dates: Jul. 11, 2025 - TBD Featured 5-Star: ( Destruction , Wind ) Archer ( Hunt , Quantum )"
+        "info": "Banner (Ver. 4.1) Archer Banner (Ver. 4.1) Banner Dates: Jul. 11, 2025 - TBD Featured 5-Star: ( Destruction , Wind ) Archer ( Hunt , Quantum )"
       },
       {
         "label": "Archer",
         "link": "https://game8.co/games/Honkai-Star-Rail/archives/519877",
-        "info": "Saber Banner (Version 3.8) Banner (Version 3.8) Banner Dates: Jul. 11, 2025 - TBD Featured 5-Star: Saber ( Destruction , Wind ) ( Hunt , Quantum )"
+        "info": "Saber Banner (Ver. 4.1) Banner (Ver. 4.1) Banner Dates: Jul. 11, 2025 - TBD Featured 5-Star: Saber ( Destruction , Wind ) ( Hunt , Quantum )"
       },
       {
         "label": "Fate Collab Light Cone Banners",
         "link": "https://game8.co/games/Honkai-Star-Rail/archives/462460",
-        "info": "(Version 3.8) Banner Dates : Jul. 11, 2025 - TBD Featured 5-Star: A Thankless Coronation ( Destruction ) The Hell Where Ideals Burn ( Hunt )"
+        "info": "(Ver 4.1) Banner Dates : Jul. 11, 2025 - TBD Featured 5-Star: A Thankless Coronation ( Destruction ) The Hell Where Ideals Burn ( Hunt )"
       },
       {
         "label": "Brilliant Fixation",
@@ -584,17 +635,47 @@
       {
         "label": "Silver Wolf Lv.999",
         "link": "https://game8.co/games/Honkai-Star-Rail/archives/574749",
-        "info": "Banner (Ver. 4.2 Phase 1) Banner Dates: Apr. 21, 2026 - May 13, 2026 Featured 5-Star: ( Elation , Imaginary ) Featured 4-Star: TBA TBA TBA"
+        "info": "Banner (Ver. 4.2 Phase 1) Indelible Coterie (Ver. 4.2 Phase 1) Banner Dates: Apr. 21, 2026 - May 13, 2026 Featured 5-Star: ( Elation , Imaginary ) The Dahlia ( Nihility , Fire ) Castorice ( Remembrance , Quantum ) Firefly ( Destruction , Fire ) Featured 4-Star: Gallagher ( Abundance , Fire ) Xueyi ( Destruction , Quantum ) Hook ( Destruction , Fire )"
+      },
+      {
+        "label": "Welcome to the Cosmic City Banner",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/408767",
+        "info": "(Ver. 4.2 Phase 1) Coalesced Truths (Ver. 4.2 Phase 1) Banner Dates : Apr. 21, 2026 - May 13, 2026 Featured 5-Star: Welcome to the Cosmic City ( Elation ) Never Forget Her Flame ( Nihility ) Make Farewells More Beautiful ( Remembrance ) Whereabouts Should Dreams Rest ( Destruction ) Featured 4-Star: Poised to Bloom ( Harmony ) Indelible Promise ( Destruction ) Eyes of the Prey ( Nihility )"
+      },
+      {
+        "label": "Brilliant Fixation",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/408767",
+        "info": "Silver Wolf Lv.999's banner will run from April 21, 2026 (UTC-5) until May 13, 2026 (Server Time) . Her Light Cone, Welcome to the Cosmic City , will be available at the same time through the banner."
+      },
+      {
+        "label": "Indelible Coterie Banner Schedule and Rates",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/470223",
+        "info": null
       },
       {
         "label": "Evanescia Banner",
         "link": "https://game8.co/games/Honkai-Star-Rail/archives/585930",
-        "info": "(Ver. 4.2 Phase 2) Banner Dates: May 13, 2026 - Jun. 02, 2026 Featured 5-Star: Evanescia ( Elation , Physical ) Featured 4-Star: TBA TBA TBA"
+        "info": "(Ver. 4.2 Phase 2) Indelible Coterie (Ver. 4.2 Phase 2) Banner Dates: May 13, 2026 - Jun. 01, 2026 Featured 5-Star: Evanescia ( Elation , Physical ) Tribbie ( Harmony , Quantum ) Sunday ( Harmony , Imaginary ) Feixiao ( Hunt , Wind ) Featured 4-Star: Guinaifen ( Nihility , Fire ) Lynx ( Abundance , Quantum ) Sushang ( Hunt , Physical )"
+      },
+      {
+        "label": "Until the Flowers Bloom Again Banner",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/408767",
+        "info": "(Ver. 4.2 Phase 2) Coalesced Truths (Ver. 4.2 Phase 2) Banner Dates : May 13, 2026 - Jun. 01, 2026 Featured 5-Star: Until the Flowers Bloom Again ( Elation ) If Time Were a Flower ( Harmony ) A Grounded Ascent ( Harmony ) I Venture Forth to Hunt ( Hunt ) Featured 4-Star: Swordplay ( Hunt ) Shared Feeling ( Abundance ) Memories of the Past ( Harmony )"
       },
       {
         "label": "Mortenax Blade Banner",
         "link": "https://game8.co/games/Honkai-Star-Rail/archives/591815",
         "info": "(Ver. 4.3 Phase 1) Banner Dates: Jun. 02, 2026 - Jun. 24, 2026 Featured 5-Star: Mortenax Blade ( Nihility , Fire ) Featured 4-Star: TBA TBA TBA"
+      },
+      {
+        "label": "Brilliant Fixation",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/408767",
+        "info": "Evanescia's banner will be available from May 13, 2026 until June 01, 2026 (Sever Time) . Her Light Cone, Until the Flowers Bloom Again , will be available at the same time through the banner."
+      },
+      {
+        "label": "Indelible Coterie Banner Schedule and Rates",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/470223",
+        "info": null
       }
     ]
   },
