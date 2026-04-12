@@ -680,7 +680,7 @@
     ]
   },
   "arknights-endfield::events": {
-    "last_updated": "April 9, 2026 01:52 AM",
+    "last_updated": "April 11, 2026 12:34 PM",
     "items": [
       {
         "label": "Pearl of the Pack Sign-In",
@@ -715,7 +715,7 @@
     ]
   },
   "arknights-endfield::gacha": {
-    "last_updated": "April 7, 2026 11:09 PM",
+    "last_updated": "April 11, 2026 11:41 AM",
     "items": [
       {
         "label": "Rossi Banner",
@@ -768,9 +768,14 @@
         "info": null
       },
       {
-        "label": "Mi Fu",
-        "link": "https://game8.co/games/Arknights-Endfield/archives/574944",
-        "info": null
+        "label": "Zhuang Fangyi",
+        "link": "https://game8.co/games/Arknights-Endfield/archives/524215#hm_101",
+        "info": "Apr. 17 - May 22, 2026"
+      },
+      {
+        "label": "Drifting Raft",
+        "link": "https://game8.co/games/Arknights-Endfield/archives/524215#hm_102",
+        "info": "= Apr. 17 - Until 3 HH Banners"
       },
       {
         "label": "Zhuang Fangyi",
@@ -778,23 +783,88 @@
         "info": null
       },
       {
-        "label": "Likely Banners in Future Updates",
+        "label": "Version 1.2",
+        "link": "https://game8.co/games/Arknights-Endfield/archives/590774",
+        "info": null
+      },
+      {
+        "label": "Tangtang",
+        "link": "https://game8.co/games/Arknights-Endfield/archives/574942",
+        "info": null
+      },
+      {
+        "label": "Rossi",
+        "link": "https://game8.co/games/Arknights-Endfield/archives/574943",
+        "info": null
+      },
+      {
+        "label": "Zhuang Fangyi Banner Release Date",
+        "link": "https://game8.co/games/Arknights-Endfield/archives/594158",
+        "info": null
+      },
+      {
+        "label": "Lone Barge",
+        "link": "https://game8.co/games/Arknights-Endfield/archives/594162",
+        "info": null
+      },
+      {
+        "label": "Drifting Raft Issue Banner Schedule",
+        "link": "https://game8.co/games/Arknights-Endfield/archives/594161",
+        "info": null
+      },
+      {
+        "label": "Fest of Brilliance Banner",
         "link": "https://game8.co/games/Arknights-Endfield/archives/524215#hm_501",
+        "info": "= May. 14, 2026 - Until the end of 1.2"
+      },
+      {
+        "label": "Smelting Fire Arsenal Issue",
+        "link": "https://game8.co/games/Arknights-Endfield/archives/524215#hm_502",
+        "info": "= May. 14, 2026 - Until the end of 1.2"
+      },
+      {
+        "label": "Swift Walker Arsenal Issue",
+        "link": "https://game8.co/games/Arknights-Endfield/archives/524215#hm_502",
+        "info": "= May. 14, 2026 - Until the end of 1.2"
+      },
+      {
+        "label": "Pogranichnik",
+        "link": "https://game8.co/games/Arknights-Endfield/archives/562205",
         "info": null
       },
       {
-        "label": "Zhuang Fangyi",
-        "link": "https://game8.co/games/Arknights-Endfield/archives/574945",
+        "label": "Gilberta",
+        "link": "https://game8.co/games/Arknights-Endfield/archives/523668",
         "info": null
       },
       {
-        "label": "Mi Fu",
-        "link": "https://game8.co/games/Arknights-Endfield/archives/574944",
+        "label": "Laevatain",
+        "link": "https://game8.co/games/Arknights-Endfield/archives/523665",
         "info": null
       },
       {
-        "label": "New and Upcoming Characters",
-        "link": "https://game8.co/games/Arknights-Endfield/archives/529966",
+        "label": "Ardelia",
+        "link": "https://game8.co/games/Arknights-Endfield/archives/562199",
+        "info": null
+      },
+      {
+        "label": "Fest of Brilliance Banner Schedule",
+        "link": "https://game8.co/games/Arknights-Endfield/archives/594159",
+        "info": null
+      },
+      {
+        "label": "Smelting Fire",
+        "link": "https://game8.co/games/Arknights-Endfield/archives/575492",
+        "info": null
+      },
+      {
+        "label": "Swift Walker",
+        "link": "https://game8.co/games/Arknights-Endfield/archives/575515",
+        "info": null
+      },
+      {
+        "label": "Arsenal Exchange Weapon Banner Guide",
+        "link": "https://game8.co/games/Arknights-Endfield/archives/569127",
         "info": null
       }
     ]
