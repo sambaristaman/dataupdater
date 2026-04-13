@@ -305,7 +305,7 @@
     ]
   },
   "honkai-star-rail::events": {
-    "last_updated": "April 10, 2026 01:03 PM",
+    "last_updated": "April 13, 2026 01:36 AM",
     "items": [
       {
         "label": "Cosmicon, Roll On Again!",
@@ -313,14 +313,19 @@
         "info": "Duration: Sometime in 4.2 The Cosmicon, Roll On dice game returns with new gameplay that involves teaming up to defeat the boss!"
       },
       {
-        "label": "4.2",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/585934",
-        "info": "Express Renovation Escapade Duration: Sometime in 4.2 Spruce up the Party Car with new decorations and Cat Cake pets, then invite other Trailblazers over to visit!"
+        "label": "Express Renovation Escapade",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/594118",
+        "info": "Duration: Sometime in 4.2 Spruce up the Party Car with new decorations and Cat Cake pets, then invite other Trailblazers over to visit!"
       },
       {
         "label": "Cosmic Data Roaming",
         "link": "https://game8.co/games/Honkai-Star-Rail/archives/594115",
         "info": "Start: 04/22/2026 - 06/01/2026 Become a game streamer and broadcast the Astral Express' trailblazing journey to earn various rewards, including a 4-star Light Cone!"
+      },
+      {
+        "label": "Phantasmoon New Game",
+        "link": "https://game8.co/games/Honkai-Star-Rail/archives/594195",
+        "info": "Start: 04/23/2026 - 05/06/2026 Complete web event missions as they gradually roll out to get up to 800 Stellar Jades!"
       },
       {
         "label": "Festive Gifts",
@@ -351,11 +356,6 @@
         "label": "Relic Recon",
         "link": "https://game8.co/games/Honkai-Star-Rail/archives/560903",
         "info": "Duration: Sometime in 4.2 Complete missions to open chests containing Relics and Planar Ornaments for a target character!"
-      },
-      {
-        "label": "300% Planar Fissure",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/413440",
-        "info": "Start: 05/04/26 - 05/18/26 Get triple the planar ornaments when challenging Worlds in the Simulated Universe!"
       }
     ]
   },
@@ -680,7 +680,7 @@
     ]
   },
   "arknights-endfield::events": {
-    "last_updated": "April 11, 2026 12:34 PM",
+    "last_updated": "April 13, 2026 05:34 AM",
     "items": [
       {
         "label": "Pearl of the Pack Sign-In",
