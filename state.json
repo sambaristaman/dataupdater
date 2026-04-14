@@ -495,7 +495,7 @@
     ]
   },
   "genshin-impact::gacha": {
-    "last_updated": "April 9, 2026 10:33 PM",
+    "last_updated": "April 14, 2026 06:18 AM",
     "items": [
       {
         "label": "Ya-hoho! Compendium",
@@ -680,7 +680,7 @@
     ]
   },
   "arknights-endfield::events": {
-    "last_updated": "April 13, 2026 05:34 AM",
+    "last_updated": "April 14, 2026 05:15 AM",
     "items": [
       {
         "label": "Pearl of the Pack Sign-In",
@@ -711,6 +711,36 @@
         "label": "Journey of the Long-Ear Celebration Event",
         "link": "https://game8.co/games/Arknights-Endfield/archives/591377",
         "info": null
+      },
+      {
+        "label": "Subduer of the Blighted Sea Guide Event",
+        "link": "https://game8.co/games/Arknights-Endfield/archives/594224",
+        "info": null
+      },
+      {
+        "label": "Curious Use of Xiranite Guide Event",
+        "link": "https://game8.co/games/Arknights-Endfield/archives/594312",
+        "info": null
+      },
+      {
+        "label": "Operator Progression Booster Beginner Event",
+        "link": "https://game8.co/games/Arknights-Endfield/archives/594314",
+        "info": null
+      },
+      {
+        "label": "AIC Support - Palm-Top Savior AIC Production Event",
+        "link": "https://game8.co/games/Arknights-Endfield/archives/594205",
+        "info": null
+      },
+      {
+        "label": "Supply - Wuling Super Chef Fun and Games Event",
+        "link": "https://game8.co/games/Arknights-Endfield/archives/594215",
+        "info": null
+      },
+      {
+        "label": "Etchings of Our Cosmic Dreams Space Exploration Event",
+        "link": "https://game8.co/games/Arknights-Endfield/archives/594217",
+        "info": "Period: 04/24/206 - TBD Explore space with Perlica!"
       }
     ]
   },
