@@ -59,6 +59,10 @@
     "last_modified": 1776049200,
     "last_sent_hash": ""
   },
+  "gryphline:endfield:5212": {
+    "last_modified": 1776313800,
+    "last_sent_hash": "ee90964fce5ac6a49da6f7ab9a7bf3bf8418049a5ff894547db33278a87fde79"
+  },
   "gryphline:endfield:5213": {
     "last_modified": 1773205200,
     "last_sent_hash": "9b7d0375d08ff72374ca23af8ef6adf6378aaeff7ae2920643a168a50ed40f4d"
@@ -114,6 +118,10 @@
   "gryphline:endfield:9573": {
     "last_modified": 1768892400,
     "last_sent_hash": "9af05b1a7a14bff9ea00d2e58eb2693849bacbe827c186ef8eb0617d5e1f755e"
+  },
+  "gryphline:endfield:9579": {
+    "last_modified": 1776312000,
+    "last_sent_hash": "2a63944800638ccda5d73856397f8a087d08c8ec8093a213e82915890110f71a"
   },
   "hoyolab:genshin:42588332": {
     "last_modified": 1764716405,
