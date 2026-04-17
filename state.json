@@ -680,132 +680,72 @@
     ]
   },
   "arknights-endfield::events": {
-    "last_updated": "April 14, 2026 05:15 AM",
+    "last_updated": "April 17, 2026 07:22 AM",
     "items": [
       {
-        "label": "Pearl of the Pack Sign-In",
-        "link": "https://game8.co/games/Arknights-Endfield/archives/576094",
-        "info": "29/26 - 04/17"
-      },
-      {
-        "label": "Survival Training Challenge Event",
-        "link": "https://game8.co/games/Arknights-Endfield/archives/584581",
-        "info": "09/26 - 04/30"
-      },
-      {
-        "label": "Cleanse and Rinse Fun and Games Event",
-        "link": "https://game8.co/games/Arknights-Endfield/archives/584565",
-        "info": "29/26 - 04/19"
-      },
-      {
-        "label": "Supply Exploration Day Supply Event",
-        "link": "https://game8.co/games/Arknights-Endfield/archives/584448",
-        "info": "19/26 - 04/02"
-      },
-      {
-        "label": "Quietly Flows the Spring Guide Event",
-        "link": "https://game8.co/games/Arknights-Endfield/archives/584611",
-        "info": "12/26 - 04/02"
-      },
-      {
-        "label": "Journey of the Long-Ear Celebration Event",
-        "link": "https://game8.co/games/Arknights-Endfield/archives/591377",
-        "info": null
-      },
-      {
-        "label": "Subduer of the Blighted Sea Guide Event",
+        "label": "Subduer of the Blighted Sea",
         "link": "https://game8.co/games/Arknights-Endfield/archives/594224",
-        "info": null
+        "info": "17/26 - 05/14"
       },
       {
-        "label": "Curious Use of Xiranite Guide Event",
-        "link": "https://game8.co/games/Arknights-Endfield/archives/594312",
-        "info": null
-      },
-      {
-        "label": "Operator Progression Booster Beginner Event",
+        "label": "Operator Progression Booster",
         "link": "https://game8.co/games/Arknights-Endfield/archives/594314",
         "info": null
       },
       {
-        "label": "AIC Support - Palm-Top Savior AIC Production Event",
-        "link": "https://game8.co/games/Arknights-Endfield/archives/594205",
-        "info": null
+        "label": "Survival Training",
+        "link": "https://game8.co/games/Arknights-Endfield/archives/584581",
+        "info": "09/26 - 04/30"
       },
       {
-        "label": "Supply - Wuling Super Chef Fun and Games Event",
+        "label": "Cleanse and Rinse",
+        "link": "https://game8.co/games/Arknights-Endfield/archives/584565",
+        "info": "29/26 - 04/19"
+      },
+      {
+        "label": "Curious Use of Xiranite",
+        "link": "https://game8.co/games/Arknights-Endfield/archives/594312",
+        "info": "Period: 05/14/26 - TBD Clear missions and explore the Test Area to get rewards!"
+      },
+      {
+        "label": "AIC Support - Palm-Top Savior",
+        "link": "https://game8.co/games/Arknights-Endfield/archives/594205",
+        "info": "28/26 - 05/13"
+      },
+      {
+        "label": "Supply - Wuling Super Chef",
         "link": "https://game8.co/games/Arknights-Endfield/archives/594215",
         "info": null
       },
       {
-        "label": "Etchings of Our Cosmic Dreams Space Exploration Event",
+        "label": "Etchings of Our Cosmic Dreams",
         "link": "https://game8.co/games/Arknights-Endfield/archives/594217",
-        "info": "Period: 04/24/206 - TBD Explore space with Perlica!"
+        "info": "Period: 04/24/26 - TBD Explore space with Perlica!"
       }
     ]
   },
   "arknights-endfield::gacha": {
-    "last_updated": "April 11, 2026 11:41 AM",
+    "last_updated": "April 16, 2026 11:30 PM",
     "items": [
       {
-        "label": "Rossi Banner",
+        "label": "Zhuang Fangyi Banner",
         "link": "https://game8.co/games/Arknights-Endfield/archives/524215#hm_403",
-        "info": "Mar. 29 - Apr. 17, 2026"
+        "info": "Apr. 17 - May. 22, 2026"
+      },
+      {
+        "label": "Drifting Raft Issue",
+        "link": "https://game8.co/games/Arknights-Endfield/archives/524215#hm_404",
+        "info": "= Apr. 17 - TBD"
       },
       {
         "label": "Scarlet Pearl Issue",
-        "link": "https://game8.co/games/Arknights-Endfield/archives/524215#hm_404",
-        "info": "Mar. 29 - May. 23, 2026"
+        "link": "https://game8.co/games/Arknights-Endfield/archives/524215#hm_405",
+        "info": "= Mar. 29 - TBD"
       },
       {
         "label": "Budding Anew Issue",
-        "link": "https://game8.co/games/Arknights-Endfield/archives/524215#hm_402",
-        "info": "Mar. 12 - May. 04, 2026"
-      },
-      {
-        "label": "Graffiti Issue",
-        "link": "https://game8.co/games/Arknights-Endfield/archives/524215#hm_302",
-        "info": "Feb. 24 - Apr. 17, 2026"
-      },
-      {
-        "label": "Rossi",
-        "link": "https://game8.co/games/Arknights-Endfield/archives/574943",
-        "info": null
-      },
-      {
-        "label": "Rossi Banner Schedule and Release Date",
-        "link": "https://game8.co/games/Arknights-Endfield/archives/583771",
-        "info": null
-      },
-      {
-        "label": "Scarlet Pearl Weapon Banner Guide",
-        "link": "https://game8.co/games/Arknights-Endfield/archives/583781",
-        "info": null
-      },
-      {
-        "label": "Budding Anew Weapon Banner Guide",
-        "link": "https://game8.co/games/Arknights-Endfield/archives/583775",
-        "info": null
-      },
-      {
-        "label": "Yvonne",
-        "link": "https://game8.co/games/Arknights-Endfield/archives/523664",
-        "info": null
-      },
-      {
-        "label": "Graffiti Issue Banner Guide",
-        "link": "https://game8.co/games/Arknights-Endfield/archives/575516",
-        "info": null
-      },
-      {
-        "label": "Zhuang Fangyi",
-        "link": "https://game8.co/games/Arknights-Endfield/archives/524215#hm_101",
-        "info": "Apr. 17 - May 22, 2026"
-      },
-      {
-        "label": "Drifting Raft",
-        "link": "https://game8.co/games/Arknights-Endfield/archives/524215#hm_102",
-        "info": "= Apr. 17 - Until 3 HH Banners"
+        "link": "https://game8.co/games/Arknights-Endfield/archives/524215#hm_406",
+        "info": "Mar. 12 - May. 22, 2026"
       },
       {
         "label": "Zhuang Fangyi",
@@ -843,17 +783,17 @@
         "info": null
       },
       {
+        "label": "Scarlet Pearl Weapon Banner Guide",
+        "link": "https://game8.co/games/Arknights-Endfield/archives/583781",
+        "info": null
+      },
+      {
         "label": "Fest of Brilliance Banner",
         "link": "https://game8.co/games/Arknights-Endfield/archives/524215#hm_501",
         "info": "= May. 14, 2026 - Until the end of 1.2"
       },
       {
-        "label": "Smelting Fire Arsenal Issue",
-        "link": "https://game8.co/games/Arknights-Endfield/archives/524215#hm_502",
-        "info": "= May. 14, 2026 - Until the end of 1.2"
-      },
-      {
-        "label": "Swift Walker Arsenal Issue",
+        "label": "Phase 2 Arsenal Issue",
         "link": "https://game8.co/games/Arknights-Endfield/archives/524215#hm_502",
         "info": "= May. 14, 2026 - Until the end of 1.2"
       },
@@ -895,6 +835,11 @@
       {
         "label": "Arsenal Exchange Weapon Banner Guide",
         "link": "https://game8.co/games/Arknights-Endfield/archives/569127",
+        "info": null
+      },
+      {
+        "label": "Likely Banners in Future Updates",
+        "link": "https://game8.co/games/Arknights-Endfield/archives/524215#hm_601",
         "info": null
       }
     ]
