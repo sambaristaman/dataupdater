@@ -250,7 +250,7 @@
     ]
   },
   "wuthering-waves::events": {
-    "last_updated": "April 9, 2026 04:26 AM",
+    "last_updated": "April 20, 2026 02:41 AM",
     "items": [
       {
         "label": "Ascendant Aces",
@@ -295,7 +295,7 @@
       {
         "label": "The Flaming Red in Memory",
         "link": "https://game8.co/games/Wuthering-Waves/archives/586624",
-        "info": "April 16, 2026 - April 29, 2026 Get rewards for completing tasks related to unveiling who Hiyuki is in this event!"
+        "info": "April 16, 2026 - April 29, 2026 Log in during Version 3.2 to unlock"
       },
       {
         "label": "Chord Cleansing",
@@ -305,7 +305,7 @@
     ]
   },
   "honkai-star-rail::events": {
-    "last_updated": "April 16, 2026 12:11 AM",
+    "last_updated": "April 19, 2026 11:27 PM",
     "items": [
       {
         "label": "Express Renovation Escapade",
@@ -723,9 +723,9 @@
         "info": "17/26 - 05/14"
       },
       {
-        "label": "Operator Progression Booster",
-        "link": "https://game8.co/games/Arknights-Endfield/archives/594314",
-        "info": null
+        "label": "Blitz of Verdance Sign-In",
+        "link": "https://game8.co/games/Arknights-Endfield/archives/576094",
+        "info": "17/26 - 05/22"
       },
       {
         "label": "Survival Training",
@@ -756,6 +756,11 @@
         "label": "Etchings of Our Cosmic Dreams",
         "link": "https://game8.co/games/Arknights-Endfield/archives/594217",
         "info": "Period: 04/24/26 - TBD Explore space with Perlica!"
+      },
+      {
+        "label": "Shimmering Moment Sign-In",
+        "link": "https://game8.co/games/Arknights-Endfield/archives/576094",
+        "info": "Period: 05/14/26 - TBD Sign-in to get extra pulls for the Fest of Brilliance!"
       }
     ]
   },
