@@ -495,7 +495,7 @@
     ]
   },
   "genshin-impact::gacha": {
-    "last_updated": "April 14, 2026 06:18 AM",
+    "last_updated": "April 21, 2026 05:42 AM",
     "items": [
       {
         "label": "Ya-hoho! Compendium",
@@ -588,6 +588,11 @@
         "info": null
       },
       {
+        "label": "Frostburn",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/595087",
+        "info": null
+      },
+      {
         "label": "Lunar Cutter",
         "link": "https://game8.co/games/Wuthering-Waves/archives/455936",
         "info": null
@@ -610,11 +615,6 @@
       {
         "label": "Mornye",
         "link": "https://game8.co/games/Wuthering-Waves/archives/568193",
-        "info": null
-      },
-      {
-        "label": "Absolute Pulsation (Starfield Calibrator)",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/455400",
         "info": null
       }
     ]
@@ -715,7 +715,7 @@
     ]
   },
   "arknights-endfield::events": {
-    "last_updated": "April 17, 2026 07:22 AM",
+    "last_updated": "April 21, 2026 03:02 AM",
     "items": [
       {
         "label": "Subduer of the Blighted Sea",
@@ -731,11 +731,6 @@
         "label": "Survival Training",
         "link": "https://game8.co/games/Arknights-Endfield/archives/584581",
         "info": "09/26 - 04/30"
-      },
-      {
-        "label": "Cleanse and Rinse",
-        "link": "https://game8.co/games/Arknights-Endfield/archives/584565",
-        "info": "29/26 - 04/19"
       },
       {
         "label": "Curious Use of Xiranite",
