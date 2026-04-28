@@ -250,7 +250,7 @@
     ]
   },
   "wuthering-waves::events": {
-    "last_updated": "April 23, 2026 05:33 AM",
+    "last_updated": "April 28, 2026 06:41 AM",
     "items": [
       {
         "label": "Ascendant Aces",
@@ -271,6 +271,16 @@
         "label": "Whispers Between Stars",
         "link": "https://game8.co/games/Wuthering-Waves/archives/586650",
         "info": "March 19, 2026 - Permanent Progress through Gold Suspended in Shadows Main Quest and Reach Lahai-Roi to Unlock"
+      },
+      {
+        "label": "Lahai-Roi Blocks",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/586674",
+        "info": "March 26, 2026 - April 13, 2026 Reach Lahai-Roi and log in during Version 3.2 to unlock"
+      },
+      {
+        "label": "Speed up! F.U.E.L. Instrumentality Project!",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/586668",
+        "info": "April 2, 2026 - April 20, 2026 Reach Lahai-Roi and log in during Version 3.2 to unlock"
       },
       {
         "label": "Knights of the Wild",
@@ -295,7 +305,32 @@
       {
         "label": "2nd Anniversary Rally",
         "link": "https://game8.co/games/Wuthering-Waves/archives/596304",
-        "info": "April 22, 2026 - June 7, 2026 Log in to the site with your WuWa Account"
+        "info": "April 22, 2026 - June 7, 2026 Log in with your WuWa Account"
+      },
+      {
+        "label": "Dimmr Travelogue",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/597243",
+        "info": "Releases in Version 3.3 Use your Trace Scale to record memories and gain rewards!"
+      },
+      {
+        "label": "Dimmr Traces",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/597234",
+        "info": "Releases in Version 3.3 Explore Dimmr Plains to get rewards!"
+      },
+      {
+        "label": "Gifts of Starlight",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/597247",
+        "info": "Releases in Version 3.3 Log-in during the event's duration to get daily rewards."
+      },
+      {
+        "label": "Bountiful Waves",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/597250",
+        "info": "Releases in Version 3.3 Complete Convene Tasks and Activity Tasks to get Spindrifts and gain rewards!"
+      },
+      {
+        "label": "Gifts of Grand Celebration 2026",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/515330",
+        "info": "Releases in Version 3.3 Log-in during the event's duration for pulls and additional rewards!"
       }
     ]
   },
@@ -400,27 +435,17 @@
     ]
   },
   "genshin-impact::events": {
-    "last_updated": "April 27, 2026 06:04 AM",
+    "last_updated": "April 28, 2026 04:04 AM",
     "items": [
       {
-        "label": "Surveying & Mapping Studies",
-        "link": "https://game8.co/games/Genshin-Impact/archives/590319",
-        "info": "April 10, 2026 \u2192 April 20, 2026"
-      },
-      {
-        "label": "Trail of Footsteps Web Event",
-        "link": "https://game8.co/games/Genshin-Impact/archives/592492",
-        "info": "April 8, 2026 \u2192 April 21, 2026"
+        "label": "Where Waves Meet the Reef",
+        "link": "https://game8.co/games/Genshin-Impact/archives/590318",
+        "info": "April 27, 2026 \u2192 May 14, 2026"
       },
       {
         "label": "To Temper Thyself and Journey Far",
         "link": "https://game8.co/games/Genshin-Impact/archives/546841",
         "info": "February 23, 2026 \u2192 May 18, 2026"
-      },
-      {
-        "label": "Where Waves Meet the Reef",
-        "link": "https://game8.co/games/Genshin-Impact/archives/590318",
-        "info": "April 27, 2026 \u2192 May 14, 2026"
       },
       {
         "label": "Rapid Capture",
@@ -465,6 +490,16 @@
       {
         "label": "Stellar Reunion",
         "link": "https://game8.co/games/Genshin-Impact/archives/315013",
+        "info": null
+      },
+      {
+        "label": "Fate Foretold",
+        "link": null,
+        "info": null
+      },
+      {
+        "label": "People's Choice",
+        "link": null,
         "info": null
       }
     ]
@@ -665,12 +700,17 @@
     ]
   },
   "arknights-endfield::events": {
-    "last_updated": "April 21, 2026 03:02 AM",
+    "last_updated": "April 28, 2026 03:16 AM",
     "items": [
       {
         "label": "Subduer of the Blighted Sea",
         "link": "https://game8.co/games/Arknights-Endfield/archives/594224",
         "info": "17/26 - 05/14"
+      },
+      {
+        "label": "AIC Support - Palm-Top Savior",
+        "link": "https://game8.co/games/Arknights-Endfield/archives/594205",
+        "info": "28/26 - 05/13"
       },
       {
         "label": "Blitz of Verdance Sign-In",
@@ -686,11 +726,6 @@
         "label": "Curious Use of Xiranite",
         "link": "https://game8.co/games/Arknights-Endfield/archives/594312",
         "info": "Period: 05/14/26 - TBD Clear missions and explore the Test Area to get rewards!"
-      },
-      {
-        "label": "AIC Support - Palm-Top Savior",
-        "link": "https://game8.co/games/Arknights-Endfield/archives/594205",
-        "info": "28/26 - 05/13"
       },
       {
         "label": "Supply - Wuling Super Chef",
