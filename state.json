@@ -335,13 +335,8 @@
     ]
   },
   "honkai-star-rail::events": {
-    "last_updated": "April 27, 2026 12:34 AM",
+    "last_updated": "April 29, 2026 05:48 AM",
     "items": [
-      {
-        "label": "Cosmicon, Roll On Again!",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/594117",
-        "info": "Start: 04/29/2026 - 06/01/2026 The Cosmicon, Roll On dice game returns with new gameplay that involves teaming up to defeat the boss!"
-      },
       {
         "label": "300% Planar Fissure",
         "link": "https://game8.co/games/Honkai-Star-Rail/archives/413440",
@@ -435,7 +430,7 @@
     ]
   },
   "genshin-impact::events": {
-    "last_updated": "April 28, 2026 04:04 AM",
+    "last_updated": "April 28, 2026 11:34 PM",
     "items": [
       {
         "label": "Where Waves Meet the Reef",
@@ -505,57 +500,57 @@
     ]
   },
   "genshin-impact::gacha": {
-    "last_updated": "April 24, 2026 08:54 AM",
+    "last_updated": "April 29, 2026 04:13 AM",
     "items": [
       {
-        "label": "Ya-hoho! Compendium",
-        "link": "https://game8.co/games/Genshin-Impact/archives/590325",
-        "info": "Start: 2026/04/08 End: 2026/04/28 Linnea Illuga Aino Noelle"
+        "label": "6.5 Chronicled Wish Fontaine",
+        "link": "https://game8.co/games/Genshin-Impact/archives/590323",
+        "info": "Start: 2026/04/28 End: 2026/05/19 Emilie Clorinde Navia Sigewinne Lyney"
       },
       {
-        "label": "Linnea",
-        "link": "https://game8.co/games/Genshin-Impact/archives/551088",
-        "info": "Ya-hoho! Compendium Start: 2026/04/08 End: 2026/04/28 Illuga Aino Noelle"
+        "label": "Emilie",
+        "link": "https://game8.co/games/Genshin-Impact/archives/422493",
+        "info": "6.5 Chronicled Wish Fontaine Start: 2026/04/28 End: 2026/05/19 Clorinde Navia Sigewinne Lyney"
       },
       {
-        "label": "Illuga",
-        "link": "https://game8.co/games/Genshin-Impact/archives/555902",
-        "info": "Ya-hoho! Compendium Start: 2026/04/08 End: 2026/04/28 Linnea Aino Noelle"
+        "label": "Clorinde",
+        "link": "https://game8.co/games/Genshin-Impact/archives/417218",
+        "info": "6.5 Chronicled Wish Fontaine Start: 2026/04/28 End: 2026/05/19 Emilie Navia Sigewinne Lyney"
       },
       {
-        "label": "Aino",
-        "link": "https://game8.co/games/Genshin-Impact/archives/537903",
-        "info": "Ya-hoho! Compendium Start: 2026/04/08 End: 2026/04/28 Linnea Illuga Noelle"
+        "label": "Navia",
+        "link": "https://game8.co/games/Genshin-Impact/archives/417194",
+        "info": "6.5 Chronicled Wish Fontaine Start: 2026/04/28 End: 2026/05/19 Emilie Clorinde Sigewinne Lyney"
       },
       {
-        "label": "Noelle",
-        "link": "https://game8.co/games/Genshin-Impact/archives/297523",
-        "info": "Ya-hoho! Compendium Start: 2026/04/08 End: 2026/04/28 Linnea Illuga Aino"
+        "label": "Sigewinne",
+        "link": "https://game8.co/games/Genshin-Impact/archives/352956",
+        "info": "6.5 Chronicled Wish Fontaine Start: 2026/04/28 End: 2026/05/19 Emilie Clorinde Navia Lyney"
       },
       {
-        "label": "Piercing Shot's Crimson Wake",
-        "link": "https://game8.co/games/Genshin-Impact/archives/484198",
-        "info": "Start: 2026/04/08 End: 2026/04/28 Chasca Illuga Aino Noelle"
+        "label": "Lyney",
+        "link": "https://game8.co/games/Genshin-Impact/archives/345540",
+        "info": "6.5 Chronicled Wish Fontaine Start: 2026/04/28 End: 2026/05/19 Emilie Clorinde Navia Sigewinne"
       },
       {
-        "label": "Chasca",
-        "link": "https://game8.co/games/Genshin-Impact/archives/462001",
-        "info": "Piercing Shot's Crimson Wake Start: 2026/04/08 End: 2026/04/28 Illuga Aino Noelle"
+        "label": "Temptation of the Crimson Sands",
+        "link": "https://game8.co/games/Genshin-Impact/archives/557053",
+        "info": "Start: 2026/04/28 End: 2026/05/19 Nefer Jahoda Kirara Xingqiu"
       },
       {
-        "label": "Epitome Invocation",
-        "link": "https://game8.co/games/Genshin-Impact/archives/304758",
-        "info": null
+        "label": "Nefer",
+        "link": "https://game8.co/games/Genshin-Impact/archives/538448",
+        "info": "Temptation of the Crimson Sands Start: 2026/04/28 End: 2026/05/19 Jahoda Kirara Xingqiu"
       },
       {
-        "label": "Golden Frostbound Oath",
-        "link": "https://game8.co/games/Genshin-Impact/archives/590317",
-        "info": null
+        "label": "Jahoda",
+        "link": "https://game8.co/games/Genshin-Impact/archives/538446",
+        "info": "Temptation of the Crimson Sands Start: 2026/04/28 End: 2026/05/19 Nefer Kirara Xingqiu"
       },
       {
-        "label": "Astral Vulture's Crimson Plumage",
-        "link": "https://game8.co/games/Genshin-Impact/archives/484205",
-        "info": null
+        "label": "Kirara",
+        "link": "https://game8.co/games/Genshin-Impact/archives/409556",
+        "info": "Temptation of the Crimson Sands Start: 2026/04/28 End: 2026/05/19 Nefer Jahoda Xingqiu"
       }
     ]
   },
@@ -700,7 +695,7 @@
     ]
   },
   "arknights-endfield::events": {
-    "last_updated": "April 28, 2026 03:16 AM",
+    "last_updated": "April 28, 2026 10:34 PM",
     "items": [
       {
         "label": "Subduer of the Blighted Sea",
