@@ -430,7 +430,7 @@
     ]
   },
   "genshin-impact::events": {
-    "last_updated": "April 28, 2026 11:34 PM",
+    "last_updated": "April 30, 2026 06:33 AM",
     "items": [
       {
         "label": "Where Waves Meet the Reef",
@@ -555,71 +555,71 @@
     ]
   },
   "wuthering-waves::gacha": {
-    "last_updated": "April 17, 2026 11:00 AM",
+    "last_updated": "April 29, 2026 09:53 PM",
     "items": [
-      {
-        "label": "Absolute Pulsation (Spectrum Blaster)",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/455400",
-        "info": "April 9, 2026 - April 29, 2026"
-      },
-      {
-        "label": "Thousand Futures Mirrored In Snow",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/595037",
-        "info": null
-      },
-      {
-        "label": "Hiyuki",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/586421",
-        "info": null
-      },
-      {
-        "label": "Baizhi",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/454224",
-        "info": null
-      },
-      {
-        "label": "Aalto",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/454214",
-        "info": null
-      },
-      {
-        "label": "Yuanwu",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/454219",
-        "info": null
-      },
       {
         "label": "Absolute Pulsation (Frostburn)",
         "link": "https://game8.co/games/Wuthering-Waves/archives/455400",
+        "info": "April 30, 2026 - May 21, 2026"
+      },
+      {
+        "label": "False Promise For Tomorrow",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/595039",
         "info": null
       },
       {
-        "label": "Frostburn",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/595087",
+        "label": "Denia",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/585681",
         "info": null
       },
       {
-        "label": "Lunar Cutter",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/455936",
+        "label": "Chixia",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/454220",
         "info": null
       },
       {
-        "label": "Discord",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/455948",
+        "label": "Buling",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/557981",
         "info": null
       },
       {
-        "label": "Undying Flame",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/455900",
+        "label": "Yangyang",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/454215",
         "info": null
       },
       {
-        "label": "Distant May the Starlights Be",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/570877",
+        "label": "Absolute Pulsation (Forged Dwarf Star)",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/455400",
         "info": null
       },
       {
-        "label": "Mornye",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/568193",
+        "label": "Forged Dwarf Star",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/595088",
+        "info": null
+      },
+      {
+        "label": "Fusion Accretion",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/474512",
+        "info": null
+      },
+      {
+        "label": "Waning Redshift",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/474514",
+        "info": null
+      },
+      {
+        "label": "Novaburst",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/455902",
+        "info": null
+      },
+      {
+        "label": "Horizon of Dawnbreak",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/564697",
+        "info": null
+      },
+      {
+        "label": "Chisa",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/524880",
         "info": null
       }
     ]
@@ -695,7 +695,7 @@
     ]
   },
   "arknights-endfield::events": {
-    "last_updated": "April 28, 2026 10:34 PM",
+    "last_updated": "April 30, 2026 06:30 AM",
     "items": [
       {
         "label": "Subduer of the Blighted Sea",
