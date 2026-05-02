@@ -250,8 +250,13 @@
     ]
   },
   "wuthering-waves::events": {
-    "last_updated": "May 1, 2026 08:08 AM",
+    "last_updated": "May 2, 2026 04:34 AM",
     "items": [
+      {
+        "label": "Into the Land of Paradox",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/597909",
+        "info": "April 30, 2026 - Permanent Finish Chapter 3 Act 3 - Starlights From Yesterdays"
+      },
       {
         "label": "Dimmr Travelogue",
         "link": "https://game8.co/games/Wuthering-Waves/archives/597243",
@@ -545,7 +550,7 @@
     ]
   },
   "wuthering-waves::gacha": {
-    "last_updated": "April 29, 2026 09:53 PM",
+    "last_updated": "May 1, 2026 11:49 AM",
     "items": [
       {
         "label": "Absolute Pulsation (Frostburn)",
@@ -685,7 +690,7 @@
     ]
   },
   "arknights-endfield::events": {
-    "last_updated": "April 30, 2026 06:30 AM",
+    "last_updated": "May 1, 2026 09:15 AM",
     "items": [
       {
         "label": "Subduer of the Blighted Sea",
@@ -701,6 +706,11 @@
         "label": "Blitz of Verdance Sign-In",
         "link": "https://game8.co/games/Arknights-Endfield/archives/576094",
         "info": "17/26 - 05/22"
+      },
+      {
+        "label": "Party Together Pastry Tower",
+        "link": "https://game8.co/games/Arknights-Endfield/archives/597681",
+        "info": "1/26 - 06/5"
       },
       {
         "label": "Survival Training",
