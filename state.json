@@ -250,7 +250,7 @@
     ]
   },
   "wuthering-waves::events": {
-    "last_updated": "May 2, 2026 04:34 AM",
+    "last_updated": "May 4, 2026 07:04 AM",
     "items": [
       {
         "label": "Into the Land of Paradox",
@@ -298,6 +298,11 @@
         "info": "April 30, 2026 - June 7, 2026 Log in during Version 3.3 to unlock"
       },
       {
+        "label": "Star Bouncing",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/597898",
+        "info": "May 2, 2026 - June 7, 2026 Log in during Version 3.3 to unlock"
+      },
+      {
         "label": "Into the Memory Program",
         "link": "https://game8.co/games/Wuthering-Waves/archives/597867",
         "info": "April 30, 2026 - June 7, 2026 Log in with your WuWa Account during Version 3.3"
@@ -306,11 +311,6 @@
         "label": "Ascendant Aces",
         "link": "https://game8.co/games/Wuthering-Waves/archives/456482",
         "info": "April 30, 2026 - May 21, 2026 Unlocked by default"
-      },
-      {
-        "label": "Crossworld Sync: Part 1",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/597843",
-        "info": "April 30, 2026 - May 21, 2026 Log in during Version 3.3 to unlock"
       },
       {
         "label": "Bountiful Crescendo",
@@ -330,13 +330,8 @@
     ]
   },
   "honkai-star-rail::events": {
-    "last_updated": "April 29, 2026 05:48 AM",
+    "last_updated": "May 3, 2026 10:04 PM",
     "items": [
-      {
-        "label": "300% Planar Fissure",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/413440",
-        "info": "Start: 05/04/2026 - 05/18/2026 Get triple the planar ornaments when challenging Worlds in the Simulated Universe!"
-      },
       {
         "label": "300% Garden of Plenty",
         "link": "https://game8.co/games/Honkai-Star-Rail/archives/413423",
