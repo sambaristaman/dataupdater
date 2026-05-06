@@ -250,7 +250,7 @@
     ]
   },
   "wuthering-waves::events": {
-    "last_updated": "May 5, 2026 06:08 AM",
+    "last_updated": "May 6, 2026 04:34 AM",
     "items": [
       {
         "label": "Into the Land of Paradox",
@@ -420,7 +420,7 @@
     ]
   },
   "genshin-impact::events": {
-    "last_updated": "May 4, 2026 11:08 PM",
+    "last_updated": "May 5, 2026 10:41 PM",
     "items": [
       {
         "label": "Where Waves Meet the Reef",
@@ -428,14 +428,14 @@
         "info": "April 27, 2026 \u2192 May 14, 2026"
       },
       {
-        "label": "To Temper Thyself and Journey Far",
-        "link": "https://game8.co/games/Genshin-Impact/archives/546841",
-        "info": "February 23, 2026 \u2192 May 18, 2026"
-      },
-      {
         "label": "Rapid Capture",
         "link": "https://game8.co/games/Genshin-Impact/archives/590320",
         "info": "May 6, 2026 \u2192 May 18, 2026"
+      },
+      {
+        "label": "To Temper Thyself and Journey Far",
+        "link": "https://game8.co/games/Genshin-Impact/archives/546841",
+        "info": "February 23, 2026 \u2192 May 18, 2026"
       },
       {
         "label": "Ley Line Overflow",
@@ -490,7 +490,7 @@
     ]
   },
   "genshin-impact::gacha": {
-    "last_updated": "May 5, 2026 03:37 AM",
+    "last_updated": "May 6, 2026 04:08 AM",
     "items": [
       {
         "label": "6.5 Chronicled Wish Fontaine",
