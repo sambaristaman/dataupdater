@@ -250,7 +250,7 @@
     ]
   },
   "wuthering-waves::events": {
-    "last_updated": "May 6, 2026 04:34 AM",
+    "last_updated": "May 7, 2026 06:08 AM",
     "items": [
       {
         "label": "Into the Land of Paradox",
@@ -303,14 +303,14 @@
         "info": "May 2, 2026 - June 7, 2026 Log in during Version 3.3 to unlock"
       },
       {
+        "label": "Lollo Express: Promise Delivered",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/598785",
+        "info": "May 7, 2026 - June 7, 2026 Log in during Version 3.3 to unlock"
+      },
+      {
         "label": "Into the Memory Program",
         "link": "https://game8.co/games/Wuthering-Waves/archives/597867",
         "info": "April 30, 2026 - June 7, 2026 Log in with your WuWa Account during Version 3.3"
-      },
-      {
-        "label": "Ascendant Aces",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/456482",
-        "info": "April 30, 2026 - May 21, 2026 Unlocked by default"
       },
       {
         "label": "Bountiful Crescendo",
@@ -330,7 +330,7 @@
     ]
   },
   "honkai-star-rail::events": {
-    "last_updated": "May 3, 2026 10:04 PM",
+    "last_updated": "May 6, 2026 10:00 PM",
     "items": [
       {
         "label": "300% Garden of Plenty",
@@ -420,7 +420,7 @@
     ]
   },
   "genshin-impact::events": {
-    "last_updated": "May 5, 2026 10:41 PM",
+    "last_updated": "May 7, 2026 05:56 AM",
     "items": [
       {
         "label": "Where Waves Meet the Reef",
