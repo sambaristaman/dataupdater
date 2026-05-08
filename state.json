@@ -261,7 +261,13 @@
   },
   "honkai-star-rail::events": {
     "last_updated": "unknown",
-    "items": []
+    "items": [
+      {
+        "label": "_No parseable events found (layout may have changed)._",
+        "link": null,
+        "info": null
+      }
+    ]
   },
   "umamusume::events": {
     "last_updated": "September 8, 2025 05:57 AM",
