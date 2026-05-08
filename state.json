@@ -250,124 +250,18 @@
     ]
   },
   "wuthering-waves::events": {
-    "last_updated": "February 7, 2026 03:34 AM",
+    "last_updated": "unknown",
     "items": [
       {
-        "label": "Starpaths Intertwined",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/578067",
-        "info": "February 5, 2026 - Permanent Log-in during Version 3.1"
-      },
-      {
-        "label": "Ascendant Aces",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/456482",
-        "info": "February 5, 2026 - March 18, 2026 Unlocked by default"
-      },
-      {
-        "label": "Unfrozen Traces",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/577784",
-        "info": null
-      },
-      {
-        "label": "Footprints on Frostlands",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/577814",
-        "info": "February 5, 2026 - Permanent Log-in during Version 3.1 and unlock Roya Frostlands"
-      },
-      {
-        "label": "Gift of Soft Snow",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/578043",
-        "info": "February 5, 2026 - March 18, 2026 Reach Union level 8"
-      },
-      {
-        "label": "TERM-X Outreach",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/578050",
-        "info": "February 5, 2026 - March 18, 2026 Reach Frostlands Surface during Main Quest Chapter III Act III: The Star that Voyages Far to unlock"
-      },
-      {
-        "label": "Moonlit Path",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/578047",
-        "info": "February 5, 2026 - March 18, 2026 Log-in during Version 3.1"
-      },
-      {
-        "label": "Startorch for You",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/578107",
-        "info": "February 5, 2026 - Permanent Complete Main Quest Chapter III Act III: The Star that Voyages Far to unlock"
-      },
-      {
-        "label": "Full Throttle! Bolt & Blitz!",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/577848",
-        "info": "February 7, 2026 - March 18, 2026 Reach Union Level 14 and unlock the Expedition Motorbike"
-      },
-      {
-        "label": "Bountiful Crescendo",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/458244",
-        "info": "February 19, 2026 - February 26, 2026 Earn double leveling material drops during this event!"
-      },
-      {
-        "label": "Chord Cleansing",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/457211",
-        "info": "March 11, 2026 - March 18, 2026 Earn double echo and echo leveling material drops during this event!"
-      },
-      {
-        "label": "Where Stars Cascade Down",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/577739",
-        "info": null
-      },
-      {
-        "label": "Unsigned Good Wishes",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/578113",
-        "info": null
-      },
-      {
-        "label": "Blade Hunter: Wilderness",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/578013",
-        "info": "February 26, 2026 - March 16, 2026 Defeat increasingly stronger foes inside a Sonoro Sphere to earn rewards in this event!"
-      },
-      {
-        "label": "Lollo Campaign: Implementation",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/458245",
-        "info": "March 5, 2026 - March 18, 2026 Earn Lollo Stamps daily and spin the roulette in exchange for rewards!"
-      },
-      {
-        "label": "Rein Back! Migration Mayhem!",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/454093",
+        "label": "_No events found._",
+        "link": null,
         "info": null
       }
     ]
   },
   "honkai-star-rail::events": {
-    "last_updated": "February 6, 2026 11:42 AM",
-    "items": [
-      {
-        "label": "4.0",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/570248",
-        "info": "Cosmicon, Roll On! Duration: Sometime in 4.0 Face off against other opponents with cards and dice to win various rewards!"
-      },
-      {
-        "label": "Free 5-Star Character Selector in 4.0",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/579606",
-        "info": "Duration: Start of 4.0 - Before 4.2 Ends Log in during the event period to choose and claim a free 5-star character!"
-      },
-      {
-        "label": "4.0 Gift of Odyssey",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/413645",
-        "info": "Duration: Sometime in 4.0 Log in a total of 7 days to claim up 10 Star Rail Special Passes!"
-      },
-      {
-        "label": "Novaflare",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/531216",
-        "info": "Duration: Sometime in 4.0 Test out Sparkle and Black Swan's new buffs to earn Stellar Jades!"
-      },
-      {
-        "label": "4.0 Planar Fissure",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/413440",
-        "info": "Duration: Sometime in 4.0 Get double the planar ornaments when challenging Worlds in the Simulated Universe!"
-      },
-      {
-        "label": "4.0 Realm of the Strange",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/417674",
-        "info": "Duration: Sometime in 4.0 Get double the relics when challenging Caverns of Corrosion!"
-      }
-    ]
+    "last_updated": "unknown",
+    "items": []
   },
   "umamusume::events": {
     "last_updated": "September 8, 2025 05:57 AM",
@@ -435,401 +329,55 @@
     ]
   },
   "genshin-impact::events": {
-    "last_updated": "February 3, 2026 10:04 PM",
-    "items": [
-      {
-        "label": "A Lanternlit Ode to the Silver Moon 2026 Lantern Rite",
-        "link": "https://game8.co/games/Genshin-Impact/archives/572604",
-        "info": "January 30, 2026 \u2192 February 23, 2026"
-      },
-      {
-        "label": "Moonlit Patrol Exercise",
-        "link": "https://game8.co/games/Genshin-Impact/archives/572606",
-        "info": "February 9, 2026 \u2192 February 23, 2026"
-      },
-      {
-        "label": "Ley Line Overflow 6.3 Rerun",
-        "link": "https://game8.co/games/Genshin-Impact/archives/316998",
-        "info": "February 16, 2026 \u2192 February 23, 2026"
-      },
-      {
-        "label": "To Temper Thyself and Journey Far",
-        "link": "https://game8.co/games/Genshin-Impact/archives/546841",
-        "info": "December 01, 2025 \u2192 February 23, 2026"
-      },
-      {
-        "label": "Stygian Onslaught",
-        "link": "https://game8.co/games/Genshin-Impact/archives/527266",
-        "info": "January 21, 2026 \u2192 February 24, 2026"
-      },
-      {
-        "label": "Character Test Runs",
-        "link": null,
-        "info": null
-      },
-      {
-        "label": "Battle Pass - Lanternlit Ode",
-        "link": "https://game8.co/games/Genshin-Impact/archives/301612",
-        "info": null
-      },
-      {
-        "label": "Travelers' Tales",
-        "link": "https://game8.co/games/Genshin-Impact/archives/495326",
-        "info": null
-      },
-      {
-        "label": "Repertoire of Myriad Melodies",
-        "link": "https://game8.co/games/Genshin-Impact/archives/406198",
-        "info": null
-      },
-      {
-        "label": "Daily Check-In",
-        "link": "https://game8.co/games/Genshin-Impact/archives/321404",
-        "info": null
-      },
-      {
-        "label": "Stellar Reunion",
-        "link": "https://game8.co/games/Genshin-Impact/archives/315013",
-        "info": null
-      },
-      {
-        "label": "Fate Foretold",
-        "link": null,
-        "info": null
-      },
-      {
-        "label": "People's Choice",
-        "link": null,
-        "info": null
-      }
-    ]
+    "last_updated": "unknown",
+    "items": []
   },
   "genshin-impact::gacha": {
-    "last_updated": "February 3, 2026 05:36 AM",
+    "last_updated": "unknown",
     "items": [
       {
-        "label": "Harmonious Abundance",
-        "link": "https://game8.co/games/Genshin-Impact/archives/572611",
-        "info": "Start: 2026/02/03 End: 2026/02/24 Zibai Illuga Aino Gorou"
-      },
-      {
-        "label": "Zibai",
-        "link": "https://game8.co/games/Genshin-Impact/archives/570263",
-        "info": "Harmonious Abundance Start: 2026/02/03 End: 2026/02/24 Illuga Aino Gorou"
-      },
-      {
-        "label": "Illuga",
-        "link": "https://game8.co/games/Genshin-Impact/archives/555902",
-        "info": "Harmonious Abundance Start: 2026/02/03 End: 2026/02/24 Zibai Aino Gorou"
-      },
-      {
-        "label": "Aino",
-        "link": "https://game8.co/games/Genshin-Impact/archives/537903",
-        "info": "Harmonious Abundance Start: 2026/02/03 End: 2026/02/24 Zibai Illuga Gorou"
-      },
-      {
-        "label": "Gorou",
-        "link": "https://game8.co/games/Genshin-Impact/archives/336726",
-        "info": "Harmonious Abundance Start: 2026/02/03 End: 2026/02/24 Zibai Illuga Aino"
-      },
-      {
-        "label": "Decree of the Deeps",
-        "link": "https://game8.co/games/Genshin-Impact/archives/426282",
-        "info": "Start: 2026/02/03 End: 2026/02/24 Neuvillette Illuga Aino Gorou"
-      },
-      {
-        "label": "Neuvillette",
-        "link": "https://game8.co/games/Genshin-Impact/archives/Neuvillette-Best-Builds",
-        "info": "Decree of the Deeps Start: 2026/02/03 End: 2026/02/24 Illuga Aino Gorou"
-      },
-      {
-        "label": "Epitome Invocation",
-        "link": "https://game8.co/games/Genshin-Impact/archives/304758",
-        "info": "Start: 2026/02/03 End: 2026/02/24 Lightbearing Moonshard Tome of the Eternal Flow Xiphos' Moonlight Favonius Greatsword Eye of Perception Dragon's Bane Sacrificial Greatsword"
-      },
-      {
-        "label": "Lightbearing Moonshard",
-        "link": "https://game8.co/games/Genshin-Impact/archives/572616",
-        "info": "Epitome Invocation Start: 2026/02/03 End: 2026/02/24 Tome of the Eternal Flow Xiphos' Moonlight Favonius Greatsword Eye of Perception Dragon's Bane Sacrificial Greatsword"
-      },
-      {
-        "label": "Tome of the Eternal Flow",
-        "link": "https://game8.co/games/Genshin-Impact/archives/426289",
-        "info": "Epitome Invocation Start: 2026/02/03 End: 2026/02/24 Lightbearing Moonshard Xiphos' Moonlight Favonius Greatsword Eye of Perception Dragon's Bane Sacrificial Greatsword"
+        "label": "_No parseable banners found (layout may have changed)._",
+        "link": null,
+        "info": null
       }
     ]
   },
   "wuthering-waves::gacha": {
-    "last_updated": "February 4, 2026 09:46 PM",
+    "last_updated": "unknown",
     "items": [
       {
-        "label": "Absolute Pulsation (Everbright Polestar)",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/455400",
-        "info": "February 5, 2026 - February 26, 2026"
-      },
-      {
-        "label": "When Winter Thaws",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/575845",
-        "info": null
-      },
-      {
-        "label": "Luuk Herssen",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/568210",
-        "info": null
-      },
-      {
-        "label": "Sanhua",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/454225",
-        "info": null
-      },
-      {
-        "label": "Lumi",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/473488",
-        "info": null
-      },
-      {
-        "label": "Yuanwu",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/454219",
-        "info": null
-      },
-      {
-        "label": "Absolute Pulsation (Daybreaker's Spine)",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/455400",
-        "info": null
-      },
-      {
-        "label": "Daybreaker's Spine",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/575692",
-        "info": null
-      },
-      {
-        "label": "Overture",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/455935",
-        "info": null
-      },
-      {
-        "label": "Jinzhou Keeper",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/455924",
-        "info": null
-      },
-      {
-        "label": "Hollow Mirage",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/455913",
-        "info": null
-      },
-      {
-        "label": "From Ashes",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/553579",
-        "info": null
-      },
-      {
-        "label": "Galbrena",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/524888",
+        "label": "_No parseable banners found (layout may have changed)._",
+        "link": null,
         "info": null
       }
     ]
   },
   "honkai-star-rail::gacha": {
-    "last_updated": "February 7, 2026 03:42 AM",
+    "last_updated": "unknown",
     "items": [
       {
-        "label": "Aglaea Banner",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/485941",
-        "info": "(Ver. 3.8 Phase 3) Sunday Banner (Ver. 3.8 Phase 3) Banner Dates: Jan. 28, 2026 - Feb. 12, 2026 Featured 5-Star: Aglaea ( Remembrance , Lightning ) Sunday ( Harmony , Imaginary ) Featured 4-Star: Tingyun ( Harmony , Lightning ) Yukong ( Harmony , Imaginary ) Dan Heng ( Hunt , Wind )"
-      },
-      {
-        "label": "Sunday Banner",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/477691",
-        "info": "Aglaea Banner (Ver. 3.8 Phase 3) (Ver. 3.8 Phase 3) Banner Dates: Jan. 28, 2026 - Feb. 12, 2026 Featured 5-Star: Aglaea ( Remembrance , Lightning ) Sunday ( Harmony , Imaginary ) Featured 4-Star: Tingyun ( Harmony , Lightning ) Yukong ( Harmony , Imaginary ) Dan Heng ( Hunt , Wind )"
-      },
-      {
-        "label": "Time Woven Into Gold Banner",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/429241",
-        "info": "(Ver. 3.8 Phase 3) A Grounded Ascent Banner (Ver. 3.8 Phase 3) Banner Dates : Jan. 28, 2026 - Feb. 12, 2026 Featured 5-Star: Time Woven into Gold ( Remembrance ) A Grounded Ascent ( Harmony ) Featured 4-Star: Geniuses' Greetings ( Remembrance ) Trend of the Universal Market ( Preservation ) Dance! Dance! Dance! ( Harmony )"
-      },
-      {
-        "label": "A Grounded Ascent Banner",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/429241",
-        "info": "Time Woven Into Gold Banner (Ver. 3.8 Phase 3) (Ver. 3.8 Phase 3) Banner Dates : Jan. 28, 2026 - Feb. 12, 2026 Featured 5-Star: Time Woven into Gold ( Remembrance ) A Grounded Ascent ( Harmony ) Featured 4-Star: Geniuses' Greetings ( Remembrance ) Trend of the Universal Market ( Preservation ) Dance! Dance! Dance! ( Harmony )"
-      },
-      {
-        "label": "Saber",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/519564",
-        "info": "Banner (Version 3.8) Archer Banner (Version 3.8) Banner Dates: Jul. 11, 2025 - TBD Featured 5-Star: ( Destruction , Wind ) Archer ( Hunt , Quantum )"
-      },
-      {
-        "label": "Archer",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/519877",
-        "info": "Saber Banner (Version 3.8) Banner (Version 3.8) Banner Dates: Jul. 11, 2025 - TBD Featured 5-Star: Saber ( Destruction , Wind ) ( Hunt , Quantum )"
-      },
-      {
-        "label": "Fate Collab Light Cone Banners",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/462460",
-        "info": "(Version 3.8) Banner Dates : Jul. 11, 2025 - TBD Featured 5-Star: A Thankless Coronation ( Destruction ) The Hell Where Ideals Burn ( Hunt )"
-      },
-      {
-        "label": "Bygone Reminiscence",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/429241",
-        "info": null
-      },
-      {
-        "label": "Collab Light Cone Banner",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/462460",
-        "info": "Saber's banner has been available since July 11, 2025 , in Phase 1 of Version 3.4. It doesn't have a fixed end date yet. Her Light Cone, A Thankless Coronation , is available at the same time through the ."
-      },
-      {
-        "label": "Yao Guang Banner",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/572643",
-        "info": "(Ver. 4.0) Banner Dates : Feb. 12, 2026 - Mar. 24, 2026 Featured 5-Star: Yao Guang ( Elation , Physical ) Featured 4-Star: Pela ( Nihility , Ice ) Hanya ( Harmony , Physical ) Qingque ( Erudition , Quantum )"
-      },
-      {
-        "label": "Evernight",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/513418",
-        "info": "Indelible Coterie (Ver. 4.0 Phase 1) Banner Dates : Feb. 12, 2026 - Mar. 03, 2026 Featured 5-Star: ( Remembrance , Ice ) Hysilens ( Nihility , Physical ) Black Swan ( Nihility , Wind ) Featured 4-Star: Pela ( Nihility , Ice ) Hanya ( Harmony , Physical ) Qingque ( Erudition , Quantum )"
-      },
-      {
-        "label": "To Evernight's Stars",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/550755",
-        "info": "Coalesced Truths (Ver. 4.0 Phase 1) Banner Dates : Feb. 12, 2026 - Mar. 03, 2026 Featured 5-Star: ( Remembrance ) Why Does the Ocean Sing ( Nihility ) Reforged Remembrance ( Nihility ) Featured 4-Star: Planetary Rendezvous ( Harmony ) Resolution Shines As Pearls of Sweat ( Nihility ) The Story's Next Page ( Remembrance )"
-      },
-      {
-        "label": "Brilliant Fixation",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/408767",
-        "info": "Yao Guang's Banner will be available from February 12, 2026 until March 24, 2026 (UTC-5). Her Light Cone, When She Decided to See , will also be available at the same time through the banner."
-      },
-      {
-        "label": "Indelible Coterie Banner Schedule and Rates",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/470223",
-        "info": null
-      },
-      {
-        "label": "Sparxie Banner",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/572646",
-        "info": "(Ver. 4.0 Phase 2) Indelible Coterie (Ver. 4.0 Phase 2) Banner Dates: Mar. 03, 2026 - Mar. 24, 2026 Featured 5-Star: Sparxie ( Elation , Fire ) Cerydra ( Harmony , Wind ) Rappa ( Erudition , Imaginary ) Sparkle ( Harmony , Quantum ) Featured 4-Star: Pela ( Nihility , Ice ) Hanya ( Harmony , Physical ) Qingque ( Erudition , Quantum )"
-      },
-      {
-        "label": "Cerydra",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/530015",
-        "info": "Sparxie Banner (Ver. 4.0 Phase 2) Indelible Coterie (Ver. 4.0 Phase 2) Banner Dates: Mar. 03, 2026 - Mar. 24, 2026 Featured 5-Star: Sparxie ( Elation , Fire ) ( Harmony , Wind ) Rappa ( Erudition , Imaginary ) Sparkle ( Harmony , Quantum ) Featured 4-Star: Pela ( Nihility , Ice ) Hanya ( Harmony , Physical ) Qingque ( Erudition , Quantum )"
-      },
-      {
-        "label": "Ashveil Banner",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/574746",
-        "info": "(Ver. 4.1 Phase 1) Banner Dates : Mar. 03, 2026 - Mar. 24, 2026 Featured 5-Star: Ashveil ( Hunt , Lightning )"
-      },
-      {
-        "label": "Brilliant Fixation",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/408767",
-        "info": "Sparxie's Banner will be available from March 03, 2026 until March 24, 2026 (Server Time). Her Light Cone, Dazzled by a Flowery World , will also be featured at the same time in the banner."
-      },
-      {
-        "label": "Indelible Coterie Banner Schedule and Rates",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/470223",
+        "label": "_No headers found (layout may have changed)._",
+        "link": null,
         "info": null
       }
     ]
   },
   "arknights-endfield::events": {
-    "last_updated": "February 7, 2026 01:48 AM",
+    "last_updated": "unknown",
     "items": [
       {
-        "label": "Voyage to the Stars Web Event",
-        "link": "https://game8.co/games/Arknights-Endfield/archives/575865",
-        "info": "01/16 - 03/04"
-      },
-      {
-        "label": "Combat Drills Operator Trial",
-        "link": "https://game8.co/games/Arknights-Endfield/archives/577042",
-        "info": "02/07 - 02/24"
-      },
-      {
-        "label": "Carly's Fairytale of the Valley Camera Event",
-        "link": "https://game8.co/games/Arknights-Endfield/archives/578398",
-        "info": "02/07 - 02/24"
-      },
-      {
-        "label": "Glittering Life at Wuling Guide Event",
-        "link": "https://game8.co/games/Arknights-Endfield/archives/578428",
-        "info": "02/07 - 02/24"
-      },
-      {
-        "label": "Voyage to the Stars Guide",
-        "link": "https://game8.co/games/Arknights-Endfield/archives/575865",
+        "label": "_No headers found (layout may have changed)._",
+        "link": null,
         "info": null
       }
     ]
   },
   "arknights-endfield::gacha": {
-    "last_updated": "February 7, 2026 12:42 AM",
+    "last_updated": "unknown",
     "items": [
       {
-        "label": "Gilberta Banner",
-        "link": "https://game8.co/games/Arknights-Endfield/archives/524215#hm_201",
-        "info": "Feb. 7 - Feb. 24, 2026"
-      },
-      {
-        "label": "Express Delivery Issue",
-        "link": "https://game8.co/games/Arknights-Endfield/archives/524215#hm_202",
-        "info": "= Feb. 7 - After 3 Headhunting Banners"
-      },
-      {
-        "label": "Smelting Forge Issue",
-        "link": "https://game8.co/games/Arknights-Endfield/archives/524215#hm_102",
-        "info": "= Jan. 22 - After 3 Headhunting Banners"
-      },
-      {
-        "label": "Gilberta Banner Guide and Release Date",
-        "link": "https://game8.co/games/Arknights-Endfield/archives/574856",
-        "info": null
-      },
-      {
-        "label": "Delivery Guaranteed",
-        "link": "https://game8.co/games/Arknights-Endfield/archives/575591",
-        "info": null
-      },
-      {
-        "label": "Express Delivery Issue Banner Guide",
-        "link": "https://game8.co/games/Arknights-Endfield/archives/575515",
-        "info": null
-      },
-      {
-        "label": "Smelting Forge Banner Guide",
-        "link": "https://game8.co/games/Arknights-Endfield/archives/575492",
-        "info": null
-      },
-      {
-        "label": "Yvonne Banner",
-        "link": "https://game8.co/games/Arknights-Endfield/archives/524215#hm_301",
-        "info": "Feb. 24 - Mar. 13, 2026"
-      },
-      {
-        "label": "Graffitti Issue",
-        "link": "https://game8.co/games/Arknights-Endfield/archives/524215#hm_302",
-        "info": "= Feb. 24 - After 3 Headhunting Banners"
-      },
-      {
-        "label": "Yvonne Banner Guide and Release Date",
-        "link": "https://game8.co/games/Arknights-Endfield/archives/574953",
-        "info": null
-      },
-      {
-        "label": "Graffiti Issue Banner Guide",
-        "link": "https://game8.co/games/Arknights-Endfield/archives/575516",
-        "info": null
-      },
-      {
-        "label": "Tangtang Banner",
-        "link": "https://game8.co/games/Arknights-Endfield/archives/524215#hm_401",
-        "info": "Mar. 13 - Mar. 29, 2026"
-      },
-      {
-        "label": "Global Release livestream",
-        "link": "https://game8.co/games/Arknights-Endfield/archives/535532",
-        "info": null
-      },
-      {
-        "label": "Tangtang Banner Schedule and Release Date",
-        "link": "https://game8.co/games/Arknights-Endfield/archives/579673",
+        "label": "_No headers found (layout may have changed)._",
+        "link": null,
         "info": null
       }
     ]
