@@ -17,7 +17,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Dict, List, Optional, Tuple, Union
 
-import requests
+import cloudscraper
 from bs4 import BeautifulSoup
 
 # --- Import extractors ---
@@ -25,7 +25,7 @@ from extractors.genshin_extractor import extract_genshin_events, extract_genshin
 from extractors.uma_extractor import extract_umamusume_events
 from extractors.generic_extractor import extract_events_with_links_generic
 from extractors.wuwa_extractor import extract_wuwa_gachas, extract_wuwa_events
-from extractors.hsr_extractor import extract_hsr_gachas
+from extractors.hsr_extractor import extract_hsr_gachas, extract_hsr_events
 from extractors.endfield_extractor import extract_endfield_events, extract_endfield_gachas
 
 # --- Config: pages -> (url, secret_name_for_webhook, pretty_title, secret_name_for_role_id) ---
@@ -102,9 +102,10 @@ DISABLE_UMA_EVENTS = os.getenv("DISABLE_UMA_EVENTS", "false").strip().lower() ==
 # Whether to delete old messages if we decide to re-post new chunked ones
 CLEANUP_OLD_MESSAGES = True
 
-# --- HTTP session (reuse connection) ---
-SESSION = requests.Session()
-SESSION.headers.update({"User-Agent": "game8-discord-updater/1.5 (+github-actions)"})
+# --- HTTP session (cloudscraper bypasses Cloudflare bot protection) ---
+SESSION = cloudscraper.create_scraper(
+    browser={"browser": "chrome", "platform": "windows", "mobile": False}
+)
 
 
 # --- Discord webhook helpers ---
@@ -360,7 +361,8 @@ def make_summary_embed(results: List[Dict]) -> Dict:
     skipped = sum(1 for r in results if r["status"] == "skipped")
     ok = sum(1 for r in results if r["status"] == "ok")
 
-    color = 0x2ECC71 if ok else 0xE67E22
+    any_suspect = any(r.get("suspect") for r in results if r["status"] == "ok")
+    color = 0xE74C3C if any_suspect else (0x2ECC71 if ok else 0xE67E22)
 
     fields = []
     for r in results:
@@ -370,11 +372,16 @@ def make_summary_embed(results: List[Dict]) -> Dict:
         else:
             msginfo = f"Messages: **{r.get('messages', 1)}**"
             delta_line = r.get("delta_summary", "No detected changes")
+            suspect_prefix = "🚨 **Suspect result**\n" if r.get("suspect") else ""
+            h_tags_line = f"Items: **{r['items']}** | h-tags: **{r.get('h_tags_found', '?')}**\n"
+            diag_line = f"Reason: `{r['diag_reason']}`\n" if r.get("diag_reason") else ""
             value = (
+                f"{suspect_prefix}"
                 f"**{r['action'].capitalize()}** {msginfo}\n"
-                f"Items: **{r['items']}**\n"
+                f"{h_tags_line}"
                 f"Last updated: `{r['last_updated']}`\n"
                 f"{delta_line}\n"
+                f"{diag_line}"
                 f"[Source]({r['url']})"
             )
         fields.append({"name": name, "value": value, "inline": True})
@@ -409,6 +416,10 @@ def extract_events_with_links(soup: BeautifulSoup, base_url: str) -> List[str]:
         endfield = extract_endfield_events(soup, base_url)
         if len(endfield) >= 1:
             return endfield
+    if "/Honkai-Star-Rail/" in base_url:
+        hsr = extract_hsr_events(soup, base_url)
+        if len(hsr) >= 1:
+            return hsr
     if "/Wuthering-Waves/" in base_url:
         wuwa = extract_wuwa_events(soup, base_url)
         if len(wuwa) >= 1:
@@ -454,8 +465,24 @@ def run_flow(*, key: str, url: str, secret_name: str, nice_title: str, role_secr
     html = fetch(url)
     soup = BeautifulSoup(html, "html.parser")
 
+    h_count = len(soup.find_all(["h2", "h3", "h4"]))
+    snippet = html[:2000].lower()
+    is_challenge = any(x in snippet for x in [
+        "checking your browser", "just a moment", "ddos protection by cloudflare",
+        "cf-browser-verification", "ray id",
+    ])
+
     last_updated = extract_last_updated(soup)
     bullets = extractor(soup, url)
+
+    raw_bullet_count = sum(1 for b in bullets if b.strip().startswith("•"))
+    suspect = last_updated == "unknown" or raw_bullet_count == 0 or h_count == 0
+    diag_reason: Optional[str] = None
+    if suspect:
+        diag_reason = "cloudflare_challenge" if is_challenge else ("no_h_tags" if h_count == 0 else "no_bullets")
+        print(f"[WARN] {key}::{section_tag} — h_tags={h_count}, bullets={raw_bullet_count}, page_len={len(html)}, reason={diag_reason}")
+        if h_count == 0 or is_challenge:
+            print(f"[DIAG] HTML[:400]: {html[:400].replace(chr(10), ' ')!r}")
 
     normalized_now = normalize_bullets(bullets)
     state_key = f"{key}::{section_tag}"
@@ -522,6 +549,9 @@ def run_flow(*, key: str, url: str, secret_name: str, nice_title: str, role_secr
         "delta_summary": delta_summary,
         "has_changes": has_changes,
         "role_mention": role_mention,
+        "suspect": suspect,
+        "h_tags_found": h_count,
+        "diag_reason": diag_reason,
         "_normalized_now": normalized_now,
     }
     return result

@@ -203,3 +203,74 @@ def extract_hsr_gachas(soup: BeautifulSoup, base_url: str) -> List[str]:
         bullets = ["__Honkai: Star Rail Banners__", "• _No parseable banners found (layout may have changed)._"]
 
     return bullets
+
+
+# ---------- events ----------
+
+_HSR_CURRENT_EVENTS_HINTS = ["honkai: star rail current events", "current events"]
+_HSR_UPCOMING_EVENTS_HINTS = ["upcoming event schedule", "upcoming events"]
+_HSR_SKIP_H3_PATTERN = re.compile(r"\d+\.\d+|schedule$|^star rail \d", re.I)
+
+
+def _is_hsr_archive_url(url: str) -> bool:
+    return "honkai-star-rail" in url.lower() and "/archives/" in url
+
+
+def extract_hsr_events(soup: BeautifulSoup, base_url: str) -> List[str]:
+    """
+    Parses HSR events page for current and upcoming events.
+    The page uses H3-per-event structure under H2 section headers,
+    which the generic extractor cannot handle (it stops at the first H3).
+    """
+    bullets: List[str] = []
+    all_headers = list(soup.find_all(["h2", "h3", "h4"]))
+
+    sections = [
+        ("__Current Events__", _HSR_CURRENT_EVENTS_HINTS),
+        ("__Upcoming Events__", _HSR_UPCOMING_EVENTS_HINTS),
+    ]
+
+    for section_title, hints in sections:
+        section_head = next(
+            (h for h in all_headers if h.name == "h2" and any(hint in _header_text(h) for hint in hints)),
+            None,
+        )
+        if not section_head:
+            continue
+
+        event_bullets: List[str] = []
+        seen: set = set()
+
+        for sib in section_head.find_all_next():
+            if sib.name == "h2" and sib is not section_head:
+                break
+            if sib.name == "h3":
+                event_name = _clean(sib.get_text(" ", strip=True))
+                if not event_name or _HSR_SKIP_H3_PATTERN.search(event_name):
+                    continue
+                key = event_name.lower()
+                if key in seen:
+                    continue
+                seen.add(key)
+                link: Optional[str] = None
+                for elem in sib.find_all_next(limit=40):
+                    if elem.name in ("h3", "h2"):
+                        break
+                    if elem.name == "a" and elem.get("href"):
+                        href = urljoin(base_url, elem["href"])
+                        if _is_hsr_archive_url(href):
+                            link = href
+                            break
+                if link:
+                    event_bullets.append(f"• [{event_name}]({link})")
+                else:
+                    event_bullets.append(f"• {event_name}")
+
+        if event_bullets:
+            bullets.append(section_title)
+            bullets.extend(event_bullets)
+
+    if not bullets:
+        bullets = ["__Honkai: Star Rail Events__", "• _No parseable events found (layout may have changed)._"]
+
+    return bullets

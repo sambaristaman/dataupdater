@@ -148,10 +148,7 @@ def extract_wuwa_gachas(soup: BeautifulSoup, base_url: str) -> List[str]:
     if current_head:
         shared_dates = _gather_date_near(current_head)
         items = _collect_links_in_section(current_head, base_url, max_items=12)
-
-        # Prefer likely banner titles
-        NICE = [line for line in items if any(k in line.lower() for k in ["banner", "convene", "pulsation", "waxes", "rhythms"])]
-        chosen = NICE or items
+        chosen = items
 
         if shared_dates:
             fixed = []
