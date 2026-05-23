@@ -250,131 +250,21 @@
     ]
   },
   "wuthering-waves::events": {
-    "last_updated": "May 21, 2026 12:34 PM",
+    "last_updated": "unknown",
     "items": [
       {
-        "label": "Into the Land of Paradox",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/597909",
-        "info": "April 30, 2026 - Permanent Finish Chapter 3 Act 3 - Starlights From Yesterdays"
-      },
-      {
-        "label": "Dimmr Travelogue",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/597243",
-        "info": "April 30, 2026 - Permanent Log in during Version 3.3 to unlock"
-      },
-      {
-        "label": "2nd Anniversary Rally",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/596304",
-        "info": "April 22, 2026 - June 7, 2026 Log in with your WuWa Account"
-      },
-      {
-        "label": "Back to Solaris",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/546269",
-        "info": "April 30, 2026 - June 7, 2026 Log in during Version 3.3"
-      },
-      {
-        "label": "Dimmr Traces",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/597234",
-        "info": "April 30, 2026 - June 7, 2026 Log in during Version 3.3 to unlock"
-      },
-      {
-        "label": "Gifts of Starlight",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/597247",
-        "info": "April 30, 2026 - June 7, 2026 Log in during Version 3.3 to unlock"
-      },
-      {
-        "label": "Second Coming of Solaris: Collab Season",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/597900",
-        "info": "April 30, 2026 - June 7, 2026 Log in during Version 3.3 to unlock"
-      },
-      {
-        "label": "Bountiful Waves",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/597250",
-        "info": "April 30, 2026 - June 7, 2026 Log in during Version 3.3 to unlock"
-      },
-      {
-        "label": "2026 Gifts of Grand Celebration",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/515330",
-        "info": "April 30, 2026 - June 7, 2026 Log in during Version 3.3 to unlock"
-      },
-      {
-        "label": "Star Bouncing",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/597898",
-        "info": "May 2, 2026 - June 7, 2026 Log in during Version 3.3 to unlock"
-      },
-      {
-        "label": "Lollo Express: Promise Delivered",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/598785",
-        "info": "May 7, 2026 - June 7, 2026 Log in during Version 3.3 to unlock"
-      },
-      {
-        "label": "Ascendant Aces",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/456482",
-        "info": "May 21, 2026 - June 7, 2026 Unlocked by default"
-      },
-      {
-        "label": "Chord Cleansing",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/457211",
-        "info": "May 31, 2026 - June 7, 2026 Earn double echo and echo leveling material drops during this event!"
+        "label": "_No events found._",
+        "link": null,
+        "info": null
       }
     ]
   },
   "honkai-star-rail::events": {
-    "last_updated": "May 19, 2026 09:04 PM",
+    "last_updated": "unknown",
     "items": [
       {
-        "label": "Cosmicon, Roll On Again!",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/594117",
-        "info": null
-      },
-      {
-        "label": "Cosmic Data Roaming",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/594115",
-        "info": null
-      },
-      {
-        "label": "Express Renovation Escapade",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/585934",
-        "info": null
-      },
-      {
-        "label": "Relic Recon",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/560903",
-        "info": null
-      },
-      {
-        "label": "300% Garden of Plenty",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/413423",
-        "info": null
-      },
-      {
-        "label": "Come With Me, Take the Journey",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/424031",
-        "info": null
-      },
-      {
-        "label": "Cherished Recollection",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/507548",
-        "info": null
-      },
-      {
-        "label": "Novaflare",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/531216",
-        "info": null
-      },
-      {
-        "label": "Festive Gifts",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/448217",
-        "info": null
-      },
-      {
-        "label": "Stellar Companion",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/592091",
-        "info": null
-      },
-      {
-        "label": "Free 5-Star Character Selector",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/579606",
+        "label": "_No parseable events found (layout may have changed)._",
+        "link": null,
         "info": null
       }
     ]
@@ -445,381 +335,55 @@
     ]
   },
   "genshin-impact::events": {
-    "last_updated": "May 22, 2026 06:07 AM",
-    "items": [
-      {
-        "label": "Phantasmal Pals",
-        "link": "https://game8.co/games/Genshin-Impact/archives/598978",
-        "info": "May 22, 2026 \u2192 June 8, 2026"
-      },
-      {
-        "label": "Mage Nicole's Tea Party Web Event",
-        "link": "https://game8.co/games/Genshin-Impact/archives/600996",
-        "info": "May 20, 2026 \u2192 June 2, 2026"
-      },
-      {
-        "label": "To Temper Thyself and Journey Far",
-        "link": "https://game8.co/games/Genshin-Impact/archives/546841",
-        "info": "May 18, 2026 \u2192 August 10, 2026"
-      },
-      {
-        "label": "Trials of the Brave Warrior",
-        "link": "https://game8.co/games/Genshin-Impact/archives/598980",
-        "info": "June 8, 2026 \u2192 June 18, 2026"
-      },
-      {
-        "label": "Miliastral Gifts",
-        "link": "https://game8.co/games/Genshin-Impact/archives/598997",
-        "info": "June 10, 2026 \u2192 June 24, 2026"
-      },
-      {
-        "label": "Kaleidoscopic Color Chase",
-        "link": "https://game8.co/games/Genshin-Impact/archives/598979",
-        "info": "June 18, 2026 \u2192 June 29, 2026"
-      },
-      {
-        "label": "Stygian Onslaught",
-        "link": "https://game8.co/games/Genshin-Impact/archives/527266",
-        "info": "May 27, 2026 \u2192 June 30, 2026"
-      },
-      {
-        "label": "Character Test Runs",
-        "link": null,
-        "info": null
-      },
-      {
-        "label": "Battle Pass - Gift of Splendor",
-        "link": "https://game8.co/games/Genshin-Impact/archives/301612",
-        "info": null
-      },
-      {
-        "label": "Travelers' Tales",
-        "link": "https://game8.co/games/Genshin-Impact/archives/495326",
-        "info": null
-      },
-      {
-        "label": "Repertoire of Myriad Melodies",
-        "link": "https://game8.co/games/Genshin-Impact/archives/406198",
-        "info": null
-      },
-      {
-        "label": "Daily Check-In",
-        "link": "https://game8.co/games/Genshin-Impact/archives/321404",
-        "info": null
-      },
-      {
-        "label": "Stellar Reunion",
-        "link": "https://game8.co/games/Genshin-Impact/archives/315013",
-        "info": null
-      }
-    ]
+    "last_updated": "unknown",
+    "items": []
   },
   "genshin-impact::gacha": {
-    "last_updated": "May 21, 2026 08:55 PM",
+    "last_updated": "unknown",
     "items": [
       {
-        "label": "Angel's Reverie",
-        "link": "https://game8.co/games/Genshin-Impact/archives/598986",
-        "info": "Start: 2026/05/20 End: 2026/06/09 Nicole Prune Razor Fischl"
-      },
-      {
-        "label": "Nicole",
-        "link": "https://game8.co/games/Genshin-Impact/archives/406932",
-        "info": "Angel's Reverie Start: 2026/05/20 End: 2026/06/09 Prune Razor Fischl"
-      },
-      {
-        "label": "Prune",
-        "link": "https://game8.co/games/Genshin-Impact/archives/590328",
-        "info": "Angel's Reverie Start: 2026/05/20 End: 2026/06/09 Nicole Razor Fischl"
-      },
-      {
-        "label": "Razor",
-        "link": "https://game8.co/games/Genshin-Impact/archives/297519",
-        "info": "Angel's Reverie Start: 2026/05/20 End: 2026/06/09 Nicole Prune Fischl"
-      },
-      {
-        "label": "Fischl",
-        "link": "https://game8.co/games/Genshin-Impact/archives/297524",
-        "info": "Angel's Reverie Start: 2026/05/20 End: 2026/06/09 Nicole Prune Razor"
-      },
-      {
-        "label": "Rubedo, of White Stone Born",
-        "link": "https://game8.co/games/Genshin-Impact/archives/567332",
-        "info": "Start: 2026/05/20 End: 2026/06/09 Durin Prune Razor Fischl"
-      },
-      {
-        "label": "Durin",
-        "link": "https://game8.co/games/Genshin-Impact/archives/462478",
-        "info": "Rubedo, of White Stone Born Start: 2026/05/20 End: 2026/06/09 Prune Razor Fischl"
-      },
-      {
-        "label": "Epitome Invocation",
-        "link": "https://game8.co/games/Genshin-Impact/archives/304758",
-        "info": "Start: 2026/05/20 End: 2026/06/09 Angelos' Heptades Athame Artis Moonweaver's Dawn Mitternachts Waltz The Bell Dragon's Bane The Widsith"
-      },
-      {
-        "label": "Angelos' Heptades",
-        "link": "https://game8.co/games/Genshin-Impact/archives/598987",
-        "info": "Epitome Invocation Start: 2026/05/20 End: 2026/06/09 Athame Artis Moonweaver's Dawn Mitternachts Waltz The Bell Dragon's Bane The Widsith"
-      },
-      {
-        "label": "Athame Artis",
-        "link": "https://game8.co/games/Genshin-Impact/archives/567340",
-        "info": "Epitome Invocation Start: 2026/05/20 End: 2026/06/09 Angelos' Heptades Moonweaver's Dawn Mitternachts Waltz The Bell Dragon's Bane The Widsith"
+        "label": "_No parseable banners found (layout may have changed)._",
+        "link": null,
+        "info": null
       }
     ]
   },
   "wuthering-waves::gacha": {
-    "last_updated": "May 20, 2026 10:37 PM",
+    "last_updated": "unknown",
     "items": [
       {
-        "label": "False Promise For Tomorrow",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/595039",
-        "info": "May 21, 2026 - June 7, 2026"
-      },
-      {
-        "label": "Horizon of Dawnbreak",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/564697",
-        "info": "May 21, 2026 - June 7, 2026"
-      },
-      {
-        "label": "Requiem Without End",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/537901",
-        "info": "May 21, 2026 - June 7, 2026"
-      },
-      {
-        "label": "Denia",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/585681",
-        "info": "May 21, 2026 - June 7, 2026"
-      },
-      {
-        "label": "Chisa",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/524880",
-        "info": "May 21, 2026 - June 7, 2026"
-      },
-      {
-        "label": "Phrolova",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/524877",
-        "info": "May 21, 2026 - June 7, 2026"
-      },
-      {
-        "label": "Chixia",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/454220",
-        "info": "May 21, 2026 - June 7, 2026"
-      },
-      {
-        "label": "Buling",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/557981",
-        "info": "May 21, 2026 - June 7, 2026"
-      },
-      {
-        "label": "Yangyang",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/454215",
-        "info": "May 21, 2026 - June 7, 2026"
-      },
-      {
-        "label": "Absolute Pulsation",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/455400",
-        "info": "May 21, 2026 - June 7, 2026"
-      },
-      {
-        "label": "Forged Dwarf Star",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/595088",
-        "info": "May 21, 2026 - June 7, 2026"
-      },
-      {
-        "label": "Kumokiri",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/565517",
-        "info": "May 21, 2026 - June 7, 2026"
-      },
-      {
-        "label": "Lucy",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/598702",
-        "info": null
-      },
-      {
-        "label": "Rebecca",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/598700",
-        "info": null
-      },
-      {
-        "label": "Lucilla",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/568207",
-        "info": null
-      },
-      {
-        "label": "Beginner's Choice Convene Banner",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/453554",
-        "info": null
-      },
-      {
-        "label": "Utterance of Marvels",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/455422",
-        "info": null
-      },
-      {
-        "label": "Tidal Chorus",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/455430",
-        "info": null
-      },
-      {
-        "label": "Weapon Permanent Convene",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/455431",
+        "label": "_No parseable banners found (layout may have changed)._",
+        "link": null,
         "info": null
       }
     ]
   },
   "honkai-star-rail::gacha": {
-    "last_updated": "May 22, 2026 10:04 AM",
+    "last_updated": "unknown",
     "items": [
       {
-        "label": "Evanescia Banner",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/585930",
-        "info": "(Ver. 4.2 Phase 2) Indelible Coterie (Ver. 4.2 Phase 2) Banner Dates: May 13, 2026 - Jun. 01, 2026 Featured 5-Star: Evanescia ( Elation , Physical ) Tribbie ( Harmony , Quantum ) Sunday ( Harmony , Imaginary ) Feixiao ( Hunt , Wind ) Featured 4-Star: Guinaifen ( Nihility , Fire ) Lynx ( Abundance , Quantum ) Sushang ( Hunt , Physical )"
-      },
-      {
-        "label": "Until the Flowers Bloom Again Banner",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/408767",
-        "info": "(Ver. 4.2 Phase 2) Coalesced Truths (Ver. 4.2 Phase 2) Banner Dates : May 13, 2026 - Jun. 01, 2026 Featured 5-Star: Until the Flowers Bloom Again ( Elation ) If Time Were a Flower ( Harmony ) A Grounded Ascent ( Harmony ) I Venture Forth to Hunt ( Hunt ) Featured 4-Star: Swordplay ( Hunt ) Shared Feeling ( Abundance ) Memories of the Past ( Harmony )"
-      },
-      {
-        "label": "Saber",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/519564",
-        "info": "Banner (Ver. 4.2) Archer Banner (Ver. 4.2) Banner Dates: Jul. 11, 2025 - TBD Featured 5-Star: ( Destruction , Wind ) Archer ( Hunt , Quantum )"
-      },
-      {
-        "label": "Archer",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/519877",
-        "info": "Saber Banner (Ver. 4.2) Banner (Ver. 4.2) Banner Dates: Jul. 11, 2025 - TBD Featured 5-Star: Saber ( Destruction , Wind ) ( Hunt , Quantum )"
-      },
-      {
-        "label": "Fate Collab Light Cone Banners",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/462460",
-        "info": "(Ver 4.2) Banner Dates : Jul. 11, 2025 - TBD Featured 5-Star: A Thankless Coronation ( Destruction ) The Hell Where Ideals Burn ( Hunt )"
-      },
-      {
-        "label": "Brilliant Fixation",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/408767",
+        "label": "_No headers found (layout may have changed)._",
+        "link": null,
         "info": null
-      },
-      {
-        "label": "Indelible Coterie Banner Schedule and Rates",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/470223",
-        "info": null
-      },
-      {
-        "label": "Collab Light Cone Banner",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/462460",
-        "info": "Saber's banner has been available since July 11, 2025 , in Phase 1 of Version 3.4. It doesn't have a fixed end date yet. Her Light Cone, A Thankless Coronation , is available at the same time through the ."
-      },
-      {
-        "label": "Mortenax Blade Banner",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/591815",
-        "info": "(Ver. 4.3 Phase 1) Banner Dates: May 31, 2026 - Jun. 24, 2026 Featured 5-Star: Mortenax Blade ( Nihility , Fire ) Yao Guang ( Elation , Physical ) Featured 4-Star: Sampo ( Nihility , Wind ) Luka ( Nihility , Physical ) Tingyun ( Harmony , Lightning )"
-      },
-      {
-        "label": "Himeko - Nova Banner",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/601027",
-        "info": "(Ver. 4.4 Phase 1) Banner Dates: Jul. 14, 2026 - Aug. 05, 2026 Featured 5-Star: Nova ( Erudition , Fire ) Rin Tohsaka ( Erudition , Quantum ) Gilgamesh ( Destruction , Lightning ) Featured 4-Star: TBA TBA TBA"
       }
     ]
   },
   "arknights-endfield::events": {
-    "last_updated": "May 15, 2026 01:54 AM",
+    "last_updated": "unknown",
     "items": [
       {
-        "label": "Curious Use of Xiranite",
-        "link": "https://game8.co/games/Arknights-Endfield/archives/594312",
-        "info": "14/26 - 06/05"
-      },
-      {
-        "label": "Supply - Wuling Super Chef",
-        "link": "https://game8.co/games/Arknights-Endfield/archives/594215",
-        "info": "14/26 - 06/05"
-      },
-      {
-        "label": "Etchings of Our Cosmic Dreams",
-        "link": "https://game8.co/games/Arknights-Endfield/archives/594217",
-        "info": "24/26 - 06/05"
-      },
-      {
-        "label": "Shimmering Moment Sign-In",
-        "link": "https://game8.co/games/Arknights-Endfield/archives/576094",
-        "info": "14/26 - 06/05"
-      },
-      {
-        "label": "Party Together Pastry Tower",
-        "link": "https://game8.co/games/Arknights-Endfield/archives/597681",
-        "info": "1/26 - 06/5"
-      },
-      {
-        "label": "Sanity Supply",
-        "link": "https://game8.co/games/Arknights-Endfield/archives/588363",
+        "label": "_No headers found (layout may have changed)._",
+        "link": null,
         "info": null
       }
     ]
   },
   "arknights-endfield::gacha": {
-    "last_updated": "May 22, 2026 07:04 AM",
+    "last_updated": "unknown",
     "items": [
       {
-        "label": "Pogranichnik",
-        "link": "https://game8.co/games/Arknights-Endfield/archives/562205",
-        "info": null
-      },
-      {
-        "label": "Gilberta",
-        "link": "https://game8.co/games/Arknights-Endfield/archives/523668",
-        "info": null
-      },
-      {
-        "label": "Laevatain",
-        "link": "https://game8.co/games/Arknights-Endfield/archives/523665",
-        "info": null
-      },
-      {
-        "label": "Ardelia",
-        "link": "https://game8.co/games/Arknights-Endfield/archives/562199",
-        "info": null
-      },
-      {
-        "label": "Fest of Brilliance Banner Schedule",
-        "link": "https://game8.co/games/Arknights-Endfield/archives/594159",
-        "info": null
-      },
-      {
-        "label": "Smelting Fire Issue Rerun Banner Schedule",
-        "link": "https://game8.co/games/Arknights-Endfield/archives/575492",
-        "info": null
-      },
-      {
-        "label": "Swift Walker Issue Rerun Banner Schedule",
-        "link": "https://game8.co/games/Arknights-Endfield/archives/575515",
-        "info": null
-      },
-      {
-        "label": "Zhuang Fangyi",
-        "link": "https://game8.co/games/Arknights-Endfield/archives/574945",
-        "info": null
-      },
-      {
-        "label": "Version 1.2",
-        "link": "https://game8.co/games/Arknights-Endfield/archives/590774",
-        "info": null
-      },
-      {
-        "label": "Tangtang",
-        "link": "https://game8.co/games/Arknights-Endfield/archives/574942",
-        "info": null
-      },
-      {
-        "label": "Rossi",
-        "link": "https://game8.co/games/Arknights-Endfield/archives/574943",
-        "info": null
-      },
-      {
-        "label": "Zhuang Fangyi Banner Release Date",
-        "link": "https://game8.co/games/Arknights-Endfield/archives/594158",
+        "label": "_No headers found (layout may have changed)._",
+        "link": null,
         "info": null
       }
     ]
