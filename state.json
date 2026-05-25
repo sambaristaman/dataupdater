@@ -320,7 +320,7 @@
     ]
   },
   "honkai-star-rail::events": {
-    "last_updated": "May 22, 2026 01:00 PM",
+    "last_updated": "May 24, 2026 11:45 PM",
     "items": [
       {
         "label": "Cosmicon, Roll On Again!",
@@ -340,11 +340,6 @@
       {
         "label": "Relic Recon",
         "link": "https://game8.co/games/Honkai-Star-Rail/archives/560903",
-        "info": null
-      },
-      {
-        "label": "300% Garden of Plenty",
-        "link": "https://game8.co/games/Honkai-Star-Rail/archives/413423",
         "info": null
       },
       {
@@ -450,7 +445,7 @@
     ]
   },
   "genshin-impact::events": {
-    "last_updated": "May 23, 2026 11:34 PM",
+    "last_updated": "May 24, 2026 09:34 PM",
     "items": [
       {
         "label": "Phantasmal Pals",
@@ -520,7 +515,7 @@
     ]
   },
   "genshin-impact::gacha": {
-    "last_updated": "May 21, 2026 08:55 PM",
+    "last_updated": "May 25, 2026 12:47 AM",
     "items": [
       {
         "label": "Angel's Reverie",
@@ -795,7 +790,7 @@
     ]
   },
   "arknights-endfield::events": {
-    "last_updated": "May 15, 2026 01:54 AM",
+    "last_updated": "May 25, 2026 04:34 AM",
     "items": [
       {
         "label": "Curious Use of Xiranite",
@@ -813,6 +808,11 @@
         "info": "24/26 - 06/05"
       },
       {
+        "label": "Sanity Supply",
+        "link": "https://game8.co/games/Arknights-Endfield/archives/588363",
+        "info": "24/26 - 06/05"
+      },
+      {
         "label": "Shimmering Moment Sign-In",
         "link": "https://game8.co/games/Arknights-Endfield/archives/576094",
         "info": "14/26 - 06/05"
@@ -820,7 +820,32 @@
       {
         "label": "Party Together Pastry Tower",
         "link": "https://game8.co/games/Arknights-Endfield/archives/597681",
-        "info": "1/26 - 06/5"
+        "info": "14/26 - 06/05"
+      },
+      {
+        "label": "Curious Use of Xiranite Guide",
+        "link": "https://game8.co/games/Arknights-Endfield/archives/594312",
+        "info": null
+      },
+      {
+        "label": "Supply - Wuling Super Chef Guide",
+        "link": "https://game8.co/games/Arknights-Endfield/archives/594215",
+        "info": null
+      },
+      {
+        "label": "Etchings of Our Cosmic Dreams Guide",
+        "link": "https://game8.co/games/Arknights-Endfield/archives/594217",
+        "info": null
+      },
+      {
+        "label": "Shimmering Moment Sign-In Guide",
+        "link": "https://game8.co/games/Arknights-Endfield/archives/576094",
+        "info": null
+      },
+      {
+        "label": "Party Together Pastry Tower Guide",
+        "link": "https://game8.co/games/Arknights-Endfield/archives/597681",
+        "info": null
       },
       {
         "label": "Sanity Supply",
