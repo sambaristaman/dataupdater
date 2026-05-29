@@ -570,7 +570,7 @@
     ]
   },
   "wuthering-waves::gacha": {
-    "last_updated": "May 28, 2026 06:44 AM",
+    "last_updated": "May 29, 2026 10:02 AM",
     "items": [
       {
         "label": "False Promise For Tomorrow",
@@ -634,6 +634,26 @@
       },
       {
         "label": "Lucy",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/453303#hm_2",
+        "info": "June 8, 2026 July 9, 2026"
+      },
+      {
+        "label": "Rebecca",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/453303#hm_2",
+        "info": "June 8, 2026 July 9, 2026"
+      },
+      {
+        "label": "Lucilla",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/453303#hm_3",
+        "info": "June 13, 2026 July 9, 2026"
+      },
+      {
+        "label": "Cartethyia",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/453303#hm_4",
+        "info": "June 18, 2026 July 9, 2026"
+      },
+      {
+        "label": "Lucy",
         "link": "https://game8.co/games/Wuthering-Waves/archives/598702",
         "info": null
       },
@@ -643,28 +663,33 @@
         "info": null
       },
       {
+        "label": "Cyberpunk Collab",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/514612",
+        "info": null
+      },
+      {
+        "label": "Lucy Banner Release Date and Characters",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/602619",
+        "info": null
+      },
+      {
+        "label": "events",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/453473",
+        "info": null
+      },
+      {
+        "label": "Astrites",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/454235",
+        "info": null
+      },
+      {
+        "label": "Rebecca Banner Release Date and Characters",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/602623",
+        "info": null
+      },
+      {
         "label": "Lucilla",
         "link": "https://game8.co/games/Wuthering-Waves/archives/568207",
-        "info": null
-      },
-      {
-        "label": "Beginner's Choice Convene Banner",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/453554",
-        "info": null
-      },
-      {
-        "label": "Utterance of Marvels",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/455422",
-        "info": null
-      },
-      {
-        "label": "Tidal Chorus",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/455430",
-        "info": null
-      },
-      {
-        "label": "Weapon Permanent Convene",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/455431",
         "info": null
       }
     ]
@@ -790,7 +815,7 @@
     ]
   },
   "arknights-endfield::events": {
-    "last_updated": "May 28, 2026 05:04 AM",
+    "last_updated": "May 29, 2026 01:04 AM",
     "items": [
       {
         "label": "Curious Use of Xiranite",
@@ -848,7 +873,7 @@
         "info": null
       },
       {
-        "label": "Sanity Supply",
+        "label": "Sanity Supply Guide",
         "link": "https://game8.co/games/Arknights-Endfield/archives/588363",
         "info": null
       },
