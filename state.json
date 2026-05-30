@@ -250,7 +250,7 @@
     ]
   },
   "wuthering-waves::events": {
-    "last_updated": "May 26, 2026 04:39 AM",
+    "last_updated": "May 29, 2026 11:27 AM",
     "items": [
       {
         "label": "Into the Land of Paradox",
@@ -570,7 +570,7 @@
     ]
   },
   "wuthering-waves::gacha": {
-    "last_updated": "May 29, 2026 10:02 AM",
+    "last_updated": "May 30, 2026 08:26 AM",
     "items": [
       {
         "label": "False Promise For Tomorrow",
@@ -653,6 +653,16 @@
         "info": "June 18, 2026 July 9, 2026"
       },
       {
+        "label": "Dreaming Upon the Moon",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/602619",
+        "info": "Rekindled Embers of Rage 5\u2605 Limited Rate-Up: Lucy (Spectro) Rebecca (Electro) 4\u2605 Rate-Up: Lumi (Electro) Youhu (Glacio) Taoqi (Havoc)"
+      },
+      {
+        "label": "Rekindled Embers of Rage",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/602623",
+        "info": "Dreaming Upon the Moon 5\u2605 Limited Rate-Up: Lucy (Spectro) Rebecca (Electro) 4\u2605 Rate-Up: Lumi (Electro) Youhu (Glacio) Taoqi (Havoc)"
+      },
+      {
         "label": "Lucy",
         "link": "https://game8.co/games/Wuthering-Waves/archives/598702",
         "info": null
@@ -663,33 +673,23 @@
         "info": null
       },
       {
-        "label": "Cyberpunk Collab",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/514612",
+        "label": "Lumi",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/473488",
         "info": null
       },
       {
-        "label": "Lucy Banner Release Date and Characters",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/602619",
+        "label": "Youhu",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/463668",
         "info": null
       },
       {
-        "label": "events",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/453473",
+        "label": "Taoqi",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/454226",
         "info": null
       },
       {
-        "label": "Astrites",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/454235",
-        "info": null
-      },
-      {
-        "label": "Rebecca Banner Release Date and Characters",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/602623",
-        "info": null
-      },
-      {
-        "label": "Lucilla",
-        "link": "https://game8.co/games/Wuthering-Waves/archives/568207",
+        "label": "Absolute Pulsation",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/455400",
         "info": null
       }
     ]
