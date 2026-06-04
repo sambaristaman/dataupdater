@@ -6,26 +6,13 @@
   "honkai-star-rail": "1419148469934882827",
   "umamusume": "1419148473881591851",
   "genshin-impact": "1419148476574470285",
-  "wuthering-waves::events": [
-    "1511763633967861974",
-    "1511763634748002376"
-  ],
+  "wuthering-waves::events": "1511763633967861974",
   "honkai-star-rail::events": "1496131867525513297",
   "umamusume::events": "1419811648373395456",
   "genshin-impact::events": "1419811650193588224",
   "genshin-impact::gacha": "1476195480491786364",
-  "wuthering-waves::gacha": [
-    "1511763654868074546",
-    "1511763656331890898"
-  ],
-  "honkai-star-rail::gacha": [
-    "1511763658764451960",
-    "1511763666285101074",
-    "1511763666566119495"
-  ],
+  "wuthering-waves::gacha": "1511763654868074546",
+  "honkai-star-rail::gacha": "1511763658764451960",
   "arknights-endfield::events": "1464248951027929121",
-  "arknights-endfield::gacha": [
-    "1511763669027913749",
-    "1511763669967438016"
-  ]
+  "arknights-endfield::gacha": "1511763669027913749"
 }
