@@ -250,7 +250,7 @@
     ]
   },
   "wuthering-waves::events": {
-    "last_updated": "June 30, 2026 02:26 AM",
+    "last_updated": "July 1, 2026 06:34 AM",
     "items": [
       {
         "label": "Matrix Reform",
@@ -318,9 +318,24 @@
         "info": "Releases in Version 3.5 Log-in during the event's duration for pulls and additional rewards!"
       },
       {
+        "label": "Virtual Crisis: Quadrant Trials",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/607412",
+        "info": "Releases in Version 3.5 Return of the boss event with the escalating challenges! Prepare your strongest characters to advance."
+      },
+      {
+        "label": "Lollo Campaign: New Journey",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/458245",
+        "info": null
+      },
+      {
         "label": "Chord Cleansing",
         "link": "https://game8.co/games/Wuthering-Waves/archives/457211",
         "info": "July 2, 2026 - July 9, 2026 Earn double echo and echo leveling material drops during this event!"
+      },
+      {
+        "label": "Gifts of Starpath",
+        "link": "https://game8.co/games/Wuthering-Waves/archives/607465",
+        "info": null
       }
     ]
   },
@@ -410,17 +425,17 @@
     ]
   },
   "genshin-impact::events": {
-    "last_updated": "June 29, 2026 02:06 AM",
+    "last_updated": "July 1, 2026 04:34 AM",
     "items": [
-      {
-        "label": "To Temper Thyself and Journey Far",
-        "link": "https://game8.co/games/Genshin-Impact/archives/546841",
-        "info": "May 18, 2026 \u2192 August 10, 2026"
-      },
       {
         "label": "Sunny Summer Fontinalia",
         "link": "https://game8.co/games/Genshin-Impact/archives/605802",
         "info": "July 1, 2026 \u2192 August 11, 2026"
+      },
+      {
+        "label": "To Temper Thyself and Journey Far",
+        "link": "https://game8.co/games/Genshin-Impact/archives/546841",
+        "info": "May 18, 2026 \u2192 August 10, 2026"
       },
       {
         "label": "Final Long-Range Sightlines",
@@ -440,7 +455,7 @@
       {
         "label": "Stygian Onslaught",
         "link": "https://game8.co/games/Genshin-Impact/archives/527266",
-        "info": "May 27, 2026 \u2192 June 30, 2026"
+        "info": "July 8, 2026 \u2192 August 11, 2026"
       },
       {
         "label": "Character Test Runs",
@@ -448,7 +463,7 @@
         "info": null
       },
       {
-        "label": "Battle Pass - Gift of Splendor",
+        "label": "Battle Pass - Sunny Summer",
         "link": "https://game8.co/games/Genshin-Impact/archives/301612",
         "info": null
       },
@@ -480,57 +495,57 @@
     ]
   },
   "genshin-impact::gacha": {
-    "last_updated": "June 29, 2026 06:14 AM",
+    "last_updated": "June 30, 2026 10:16 PM",
     "items": [
       {
-        "label": "Frostedge Nocturne",
-        "link": "https://game8.co/games/Genshin-Impact/archives/598989",
-        "info": "Start: 2026/06/09 End: 2026/06/30 Lohen Xiangling Bennett Mika"
+        "label": "Lightrace Wish",
+        "link": "https://game8.co/games/Genshin-Impact/archives/605807",
+        "info": "Start: 2026/07/01 End: 2026/07/21 Yae Miko Cyno Wriothesley Qiqi Mizuki"
       },
       {
-        "label": "Lohen",
-        "link": "https://game8.co/games/Genshin-Impact/archives/580697",
-        "info": "Frostedge Nocturne Start: 2026/06/09 End: 2026/06/30 Xiangling Bennett Mika"
+        "label": "Yae Miko",
+        "link": "https://game8.co/games/Genshin-Impact/archives/327533",
+        "info": "Lightrace Wish Start: 2026/07/01 End: 2026/07/21 Cyno Wriothesley Qiqi Mizuki"
       },
       {
-        "label": "Xiangling",
-        "link": "https://game8.co/games/Genshin-Impact/archives/297530",
-        "info": "Frostedge Nocturne Start: 2026/06/09 End: 2026/06/30 Lohen Bennett Mika"
+        "label": "Cyno",
+        "link": "https://game8.co/games/Genshin-Impact/archives/315233",
+        "info": "Lightrace Wish Start: 2026/07/01 End: 2026/07/21 Yae Miko Wriothesley Qiqi Mizuki"
       },
       {
-        "label": "Bennett",
-        "link": "https://game8.co/games/Genshin-Impact/archives/Bennett-Best-Builds",
-        "info": "Frostedge Nocturne Start: 2026/06/09 End: 2026/06/30 Lohen Xiangling Mika"
+        "label": "Wriothesley",
+        "link": "https://game8.co/games/Genshin-Impact/archives/Wriothesley-Best-Builds",
+        "info": "Lightrace Wish Start: 2026/07/01 End: 2026/07/21 Yae Miko Cyno Qiqi Mizuki"
       },
       {
-        "label": "Mika",
-        "link": "https://game8.co/games/Genshin-Impact/archives/390096",
-        "info": "Frostedge Nocturne Start: 2026/06/09 End: 2026/06/30 Lohen Xiangling Bennett"
+        "label": "Qiqi",
+        "link": "https://game8.co/games/Genshin-Impact/archives/297533",
+        "info": "Lightrace Wish Start: 2026/07/01 End: 2026/07/21 Yae Miko Cyno Wriothesley Mizuki"
       },
       {
-        "label": "Ancient Flame Ablaze",
-        "link": "https://game8.co/games/Genshin-Impact/archives/491928",
-        "info": "Start: 2026/06/09 End: 2026/06/30 Mavuika Xiangling Bennett Mika"
+        "label": "Mizuki",
+        "link": "https://game8.co/games/Genshin-Impact/archives/492414",
+        "info": "Lightrace Wish Start: 2026/07/01 End: 2026/07/21 Yae Miko Cyno Wriothesley Qiqi"
       },
       {
-        "label": "Mavuika",
-        "link": "https://game8.co/games/Genshin-Impact/archives/461999",
-        "info": "Ancient Flame Ablaze Start: 2026/06/09 End: 2026/06/30 Xiangling Bennett Mika"
+        "label": "To the Looking-Glass the Mademoiselle Said",
+        "link": "https://game8.co/games/Genshin-Impact/archives/605457",
+        "info": "Start: 2026/07/01 End: 2026/07/21 Sandrone Beidou Diona Freminet"
       },
       {
-        "label": "Epitome Invocation",
-        "link": "https://game8.co/games/Genshin-Impact/archives/304758",
-        "info": "Start: 2026/06/09 End: 2026/07/01 Disaster and Remorse A Thousand Blazing Suns The Alley Flash Alley Hunter Wine and Song Rainslasher Favonius Lance"
+        "label": "Sandrone",
+        "link": "https://game8.co/games/Genshin-Impact/archives/382107",
+        "info": "To the Looking-Glass the Mademoiselle Said Start: 2026/07/01 End: 2026/07/21 Beidou Diona Freminet"
       },
       {
-        "label": "Disaster and Remorse",
-        "link": "https://game8.co/games/Genshin-Impact/archives/598991",
-        "info": "Epitome Invocation Start: 2026/06/09 End: 2026/07/01 A Thousand Blazing Suns The Alley Flash Alley Hunter Wine and Song Rainslasher Favonius Lance"
+        "label": "Beidou",
+        "link": "https://game8.co/games/Genshin-Impact/archives/297528",
+        "info": "To the Looking-Glass the Mademoiselle Said Start: 2026/07/01 End: 2026/07/21 Sandrone Diona Freminet"
       },
       {
-        "label": "A Thousand Blazing Suns",
-        "link": "https://game8.co/games/Genshin-Impact/archives/491933",
-        "info": "Epitome Invocation Start: 2026/06/09 End: 2026/07/01 Disaster and Remorse The Alley Flash Alley Hunter Wine and Song Rainslasher Favonius Lance"
+        "label": "Diona",
+        "link": "https://game8.co/games/Genshin-Impact/archives/305872",
+        "info": "To the Looking-Glass the Mademoiselle Said Start: 2026/07/01 End: 2026/07/21 Sandrone Beidou Freminet"
       }
     ]
   },
@@ -780,7 +795,7 @@
     ]
   },
   "arknights-endfield::gacha": {
-    "last_updated": "June 26, 2026 02:33 AM",
+    "last_updated": "June 30, 2026 10:51 PM",
     "items": [
       {
         "label": "Camille Banner",
