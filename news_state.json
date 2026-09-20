@@ -4051,6 +4051,42 @@
     "last_modified": 1789617606,
     "last_sent_hash": "a38120a4f4fe555b908708e3981108165f53436c8d9f77c213998a62b470e31a"
   },
+  "hoyolab:starrail:46763047": {
+    "last_modified": 1789905603,
+    "last_sent_hash": "b8601a35dddbe59d6556b2d4547dc065647eb12dd5055fb3a820e0f09966650e"
+  },
+  "hoyolab:starrail:46763050": {
+    "last_modified": 1789905606,
+    "last_sent_hash": "824597de5e5c2bd354f8c15c27554faab769fe42c871a17d44637d51fe7b766f"
+  },
+  "hoyolab:starrail:46763108": {
+    "last_modified": 1789905904,
+    "last_sent_hash": ""
+  },
+  "hoyolab:starrail:46763110": {
+    "last_modified": 1789905905,
+    "last_sent_hash": "289fe5189770dd0c0b909f7d30cc5cfa2b04f9e749499a0fafd28b90a4f2338a"
+  },
+  "hoyolab:starrail:46763206": {
+    "last_modified": 1789906204,
+    "last_sent_hash": "9031e2a65c53e05a57ba0a93a0f7a62582bb40074431ddd8044ee209b621b92b"
+  },
+  "hoyolab:starrail:46763312": {
+    "last_modified": 1789906504,
+    "last_sent_hash": "867ae30e7c53d6e4cd882d8e827c0c20e251614a91637c50e18713d85f8c3db5"
+  },
+  "hoyolab:starrail:46763314": {
+    "last_modified": 1789906508,
+    "last_sent_hash": "5149fbe258c0d7d099b63be84178fc2b5ca516c07d385eccdbd5f6a0bb193a35"
+  },
+  "hoyolab:starrail:46763509": {
+    "last_modified": 1789907106,
+    "last_sent_hash": "df21b1bc0641724660a0818c5121ccbaa7e301211b26c448bc8607b3e12c2d7e"
+  },
+  "hoyolab:starrail:46763700": {
+    "last_modified": 1789907704,
+    "last_sent_hash": "a2cac93c2de4cd2ebe36f8ad43c12ac94343d573bc9430bb29c71274a3311a2f"
+  },
   "hoyolab:zzz:42982746": {
     "last_modified": 1767069007,
     "last_sent_hash": "a523b1d0dd024294024bf86a7ea661b3f4588923f3e03ad853bf5897c6693c45"
