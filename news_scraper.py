@@ -63,6 +63,11 @@ NTE_GAME = "nte"
 NTE_BASE = "https://nte.perfectworld.com"
 NTE_CATEGORY_MAP = {"gamenews": "news", "gamebroad": "notices", "gameevent": "events"}
 
+# Aniimo
+ANIIMO_GAME = "aniimo"
+ANIIMO_API = "https://worldx-office-api.aniimo.com/api/information"
+ANIIMO_CATEGORY_MAP = {"new": "news", "announcement": "notices"}
+
 # Titles that are never worth posting (e.g. ban lists), shared by NTE and Aniimo
 NEWS_SKIP_TITLE_RE = re.compile(r"^Account Action Notice|Violation Ban Notice", re.I)
 
@@ -76,6 +81,7 @@ COLOR_BY_GAME = {
     "endfield": 0xFF6347,
     "shadowverse": 0x7E57C2,
     "nte": 0x8A2BE2,
+    "aniimo": 0x7CCD7C,
 }
 
 SESSION = requests.Session()
@@ -922,6 +928,73 @@ def nte_build_item(listing: Dict, article_html: str, effective_ts: int) -> Dict:
     }
 
 
+# ---------------- Aniimo ----------------
+
+
+def aniimo_parse_list(payload: Dict) -> List[Dict]:
+    # The API answers msg="Article Query Failed" even on success: trust only code and the list.
+    if payload.get("code") != 200:
+        raise RuntimeError(f"Aniimo: unexpected code {payload.get('code')!r}")
+    items = (payload.get("data") or {}).get("list") or []
+    if not items:
+        raise RuntimeError("Aniimo: empty news list")
+    return items
+
+
+def aniimo_list() -> List[Dict]:
+    r = SESSION.get(f"{ANIIMO_API}/list", params={"region": "en", "pageNum": 1, "pageSize": 20}, timeout=30)
+    r.raise_for_status()
+    return aniimo_parse_list(r.json())
+
+
+def aniimo_detail(item_id: str) -> Dict:
+    r = SESSION.get(f"{ANIIMO_API}/new", params={"id": item_id}, timeout=30)
+    r.raise_for_status()
+    return r.json().get("data") or {}
+
+
+def _aniimo_ts(value: str) -> int:
+    return int(datetime.strptime(value, "%Y-%m-%d %H:%M:%S").replace(tzinfo=_UTC8).timestamp())
+
+
+def aniimo_process(state: Dict[str, Dict], cutoff_ts: Optional[int] = None) -> Tuple[List[Dict], List[Tuple[str, Dict]]]:
+    discovered = []
+    to_fetch = []
+    for item in aniimo_list():
+        if NEWS_SKIP_TITLE_RE.search(item.get("title") or ""):
+            continue
+        item_id = str(item["id"])
+        ts = _aniimo_ts(item["publishTime"])
+        key = composite_key("aniimo", ANIIMO_GAME, item_id)
+        discovered.append({"key": key, "effective_ts": ts})
+        prev = state.get(key)
+        if prev is None or ts > int(prev.get("last_modified", 0)):
+            to_fetch.append((item_id, {"effective_ts": ts, "listing": item}))
+        elif cutoff_ts and ts >= cutoff_ts:
+            to_fetch.append((item_id, {"effective_ts": ts, "listing": item}))
+    return discovered, to_fetch
+
+
+def aniimo_build_item(listing: Dict, detail: Dict, effective_ts: int) -> Dict:
+    item_id = str(listing["id"])
+    kind = detail.get("informationType") or listing.get("informationType") or "new"
+    return {
+        "id": item_id,
+        "platform": "aniimo",
+        "game": ANIIMO_GAME,
+        "url": f"https://aniimo.com/en/newslist/detail/{item_id}",
+        "title": detail.get("title") or listing.get("title") or "",
+        "author": "Aniimo",
+        "content": detail.get("content") or "",
+        "category": ANIIMO_CATEGORY_MAP.get(kind, "news"),
+        "published": to_iso(effective_ts),
+        "updated": None,
+        "image": detail.get("mainPic") or listing.get("mainPic") or None,
+        "summary": None,
+        "effective_ts": effective_ts,
+    }
+
+
 # ---------------- Shadowverse ----------------
 
 
@@ -1174,6 +1247,7 @@ def main() -> None:
         target_games.update(HOYOLAB_GAMES.keys())
         target_games.update(GRYPHLINE_GAMES.keys())
         target_games.add(NTE_GAME)
+        target_games.add(ANIIMO_GAME)
         target_games.add(SHADOWVERSE_GAME)
 
     all_items: List[Dict] = []
@@ -1224,6 +1298,19 @@ def main() -> None:
             listing = meta["listing"]
             article_html = nte_fetch_article(listing["url"])
             all_items.append(nte_build_item(listing, article_html, meta["effective_ts"]))
+        for d in discovered:
+            if d["key"] not in state:
+                state[d["key"]] = {"last_modified": d["effective_ts"], "last_sent_hash": ""}
+
+    # Aniimo
+    if ANIIMO_GAME in target_games:
+        discovered, to_fetch = aniimo_process(state, cutoff_ts)
+        totals["discovered"] += len(discovered)
+        totals["to_fetch"] += len(to_fetch)
+        log("INFO", f"Aniimo: discovered={len(discovered)} to_fetch={len(to_fetch)}")
+        for item_id, meta in to_fetch:
+            detail = aniimo_detail(item_id)
+            all_items.append(aniimo_build_item(meta["listing"], detail, meta["effective_ts"]))
         for d in discovered:
             if d["key"] not in state:
                 state[d["key"]] = {"last_modified": d["effective_ts"], "last_sent_hash": ""}
