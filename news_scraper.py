@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Unified News Scraper → Discord (HoYoLAB + Gryphline + Shadowverse)
+Unified News Scraper → Discord (HoYoLAB + Gryphline + NTE/Perfect World + Aniimo + Shadowverse)
 
 Posts to WEBHOOK_URL_NEWS only, with per-game scheduling via ONLY_GAME env.
 State is stored in news_state.json.
