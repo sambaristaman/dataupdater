@@ -84,3 +84,17 @@ def test_nte_parse_listing_only_english_even_if_indentation_differs():
     js = fx("nte_newsData.js").replace("\n    \"", "\n  \"")
     items = nte_parse_listing(js)
     assert len(items) == 15 and all("/en/" in i["url"] for i in items)
+
+
+def test_nte_fetch_article_decodes_utf8_without_charset(monkeypatch):
+    class Resp:
+        headers = {"content-type": "text/html"}
+        encoding = "ISO-8859-1"  # what requests assumes when no charset is sent
+        content = "• New Bond quests".encode("utf-8")
+        text = content.decode("latin-1")
+
+        def raise_for_status(self):
+            pass
+
+    monkeypatch.setattr(news_scraper.SESSION, "get", lambda *a, **k: Resp())
+    assert news_scraper.nte_fetch_article("https://x") == "• New Bond quests"

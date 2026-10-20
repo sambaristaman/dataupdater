@@ -887,12 +887,18 @@ def nte_parse_listing(js: str) -> List[Dict]:
     return items
 
 
+def _utf8_text(r: requests.Response) -> str:
+    # NTE serves text/html without a charset, so requests falls back to ISO-8859-1
+    # and mangles non-ASCII characters (e.g. "•" -> "â\x80¢").
+    return r.content.decode("utf-8", errors="replace")
+
+
 def nte_list() -> List[Dict]:
     r = SESSION.get(f"{NTE_BASE}/en/main.html", timeout=30)
     r.raise_for_status()
-    r = SESSION.get(nte_discover_data_url(r.text), timeout=30)
+    r = SESSION.get(nte_discover_data_url(_utf8_text(r)), timeout=30)
     r.raise_for_status()
-    items = nte_parse_listing(r.text)
+    items = nte_parse_listing(_utf8_text(r))
     if not items:
         raise RuntimeError("NTE: empty news listing")
     return items
@@ -901,7 +907,7 @@ def nte_list() -> List[Dict]:
 def nte_fetch_article(url: str) -> str:
     r = SESSION.get(url, timeout=30)
     r.raise_for_status()
-    return r.text
+    return _utf8_text(r)
 
 
 def nte_effective_ts(day: str) -> int:
