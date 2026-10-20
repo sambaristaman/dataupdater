@@ -4,7 +4,13 @@ Discord bot that scrapes game events, banners, redemption codes, and news from v
 
 ## Features
 
-- **Event & Gacha Scraper** (`scraper.py`): Scrapes Game8 for events and banners for multiple gacha games
+- **Event & Gacha Scraper** (`scraper.py`, per-game sources in `sources/`):
+  - Genshin Impact / Honkai: Star Rail: ennead.cc calendar API (events + banners), fallback to official HoYoverse `getAnnList` announcements (events only)
+  - Wuthering Waves: Fandom wiki (Events + Featured Resonator/Weapon Convenes)
+  - Arknights: Endfield: endfield.wiki.gg Cargo tables (Events, Banners, Issues)
+  - Umamusume: GameTora (Champions Meeting, Legend Race, standard character/support gacha)
+  - Neverness to Everness: official site notices (events) + Fandom wiki (banners)
+  - Aniimo: official API "Update Notice" posts (events only, no gacha banners)
 - **Code Scrapers**: Redemption codes for NTE, Aniimo and Arknights Endfield (`game_codes_scraper.py`, Pocket Tactics with PocketGamer as fallback), plus individual scrapers for MTG Arena and Disney Speedstorm
 - **News Scraper**: HoYoLAB + Gryphline + NTE (official Perfect World site) + Aniimo (official site) + Shadowverse news to a single channel
 - **Channel Purge Bot** (`purge_channels.py`): Cleans up orphaned messages from Discord channels
@@ -17,12 +23,12 @@ Discord bot that scrapes game events, banners, redemption codes, and news from v
 | Genshin Impact | Yes | Yes | - |
 | Honkai: Star Rail | Yes | Yes | - |
 | Wuthering Waves | Yes | Yes | - |
-| Umamusume | Yes | - | - |
+| Umamusume | Yes | Yes | - |
 | Arknights: Endfield | Yes | Yes | Yes |
 | MTG Arena | - | - | Yes |
 | Disney Speedstorm | - | - | Yes |
-| Neverness to Everness (NTE) | - | - | Yes (+ News) |
-| Aniimo | - | - | Yes (+ News) |
+| Neverness to Everness (NTE) | Yes | Yes | Yes (+ News) |
+| Aniimo | Yes | - | Yes (+ News) |
 | Shadowverse | - | - | News |
 
 News feeds: Genshin Impact, Honkai: Star Rail, Honkai Impact 3rd, Zenless Zone Zero, Arknights: Endfield, Neverness to Everness, Aniimo, Shadowverse.
@@ -50,6 +56,8 @@ Used by the main scraper (`scraper.py`) to post events/gacha updates, and by the
 | `WEBHOOK_URL_GI` | scraper, purge | Genshin Impact channel webhook |
 | `WEBHOOK_URL_UMA` | scraper, purge | Umamusume channel webhook |
 | `WEBHOOK_URL_ENDFIELD` | scraper, purge | Arknights: Endfield channel webhook |
+| `WEBHOOK_URL_NTE` | scraper | Neverness to Everness channel webhook (events + banners) |
+| `WEBHOOK_URL_ANIIMO` | scraper | Aniimo channel webhook (events) |
 
 #### Webhooks - Special Channels
 
@@ -101,7 +109,7 @@ These are set via workflow dispatch inputs, not as repository secrets.
 | Variable | Default | Description |
 |----------|---------|-------------|
 | `DRY_RUN` | `false` | Preview mode - no messages sent, no files written |
-| `ONLY_KEY` | _(empty)_ | Run only for specific game key (e.g., `genshin-impact`) |
+| `ONLY_KEY` | _(empty)_ | Run only for specific game key: `wuthering-waves`, `honkai-star-rail`, `umamusume`, `genshin-impact`, `arknights-endfield`, `nte`, `aniimo` |
 | `FORCE_NEW` | `false` | Force posting new messages instead of editing existing |
 | `ONLY_CHANNEL` | _(empty)_ | Purge bot: specific channel to purge |
 
