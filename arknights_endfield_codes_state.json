@@ -1,5 +1,6 @@
 {
   "seen_codes": [
+    "AKENDFIELDSUB",
     "ALLFIELD",
     "ENDFIELD4PC",
     "ENDFIELDGIFT",
@@ -7,5 +8,11 @@
     "RETURNOFALL",
     "ZAU2SYXHWX5L4ZH"
   ],
-  "last_health_ping_iso": "2026-10-12T17:21:04.997054-03:00"
+  "last_health_ping_iso": "2026-10-12T17:21:04.997054-03:00",
+  "last_source": "primary",
+  "fallback_baseline": [
+    "ENDFIELD4PC",
+    "ENDFIELDGIFT",
+    "ZAU2SYXHWX5L4ZH"
+  ]
 }
