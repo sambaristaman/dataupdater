@@ -250,22 +250,52 @@
     ]
   },
   "wuthering-waves::events": {
-    "last_updated": "unknown",
+    "last_updated": "wutheringwaves.fandom.com",
     "items": [
       {
-        "label": "_No events found._",
-        "link": null,
-        "info": null
+        "label": "Artisan's Search",
+        "link": "https://x.com/Wuthering_Waves/status/2107652131511509056",
+        "info": "<t:1791403200:d> \u2192 <t:1792958340:d> (ends <t:1792958340:R>)"
       }
     ]
   },
   "honkai-star-rail::events": {
-    "last_updated": "unknown",
+    "last_updated": "ennead.cc",
     "items": [
       {
-        "label": "_No parseable events found (layout may have changed)._",
+        "label": "Planar Fissure",
         "link": null,
-        "info": null
+        "info": "<t:1791774000:d> \u2192 <t:1792897199:d> (ends <t:1792897199:R>)"
+      },
+      {
+        "label": "Gift of Odyssey",
+        "link": null,
+        "info": "<t:1790478000:d> \u2192 <t:1794279599:d> (ends <t:1794279599:R>)"
+      },
+      {
+        "label": "Love, Ghosts & Robots",
+        "link": null,
+        "info": "<t:1790305200:d> \u2192 <t:1794340799:d> (ends <t:1794340799:R>)"
+      },
+      {
+        "label": "Wishpower UP! Down with Voracity!",
+        "link": null,
+        "info": "<t:1790550000:d> \u2192 <t:1794348000:d> (ends <t:1794348000:R>)"
+      },
+      {
+        "label": "Astral Imagea Park",
+        "link": null,
+        "info": "<t:1790305200:d> \u2192 <t:1794348000:d> (ends <t:1794348000:R>)"
+      },
+      {
+        "label": "Interastral Peace Gala: One Take",
+        "link": null,
+        "info": "<t:1792580400:d> \u2192 <t:1794340799:d> (ends <t:1794340799:R>)"
+      },
+      {
+        "label": "Garden of Plenty",
+        "link": null,
+        "info": "<t:1793329200:d> \u2192 <t:1794340799:d> (ends <t:1794340799:R>)"
       }
     ]
   },
@@ -335,56 +365,312 @@
     ]
   },
   "genshin-impact::events": {
-    "last_updated": "unknown",
-    "items": []
-  },
-  "genshin-impact::gacha": {
-    "last_updated": "unknown",
+    "last_updated": "ennead.cc",
     "items": [
       {
-        "label": "_No parseable banners found (layout may have changed)._",
+        "label": "Predictive Victory Dynamics",
         "link": null,
-        "info": null
+        "info": "<t:1791770400:d> \u2192 <t:1792720799:d> (ends <t:1792720799:R>)"
+      },
+      {
+        "label": "Heated Battle Mode: Automatic Artistry",
+        "link": null,
+        "info": "<t:1791597600:d> \u2192 <t:1792958399:d> (ends <t:1792958399:R>)"
+      },
+      {
+        "label": "Stygian Onslaught",
+        "link": null,
+        "info": "<t:1790733600:d> \u2192 <t:1793649599:d> (ends <t:1793649599:R>)"
+      },
+      {
+        "label": "Across the Frozen Wilds, Honing One's Edge",
+        "link": null,
+        "info": "<t:1790118000:d> \u2192 <t:1793689199:d> (ends <t:1793689199:R>)"
+      },
+      {
+        "label": "Tabletop Troupe: A Gathering on Adventure's Eve",
+        "link": null,
+        "info": "<t:1790118000:d> \u2192 <t:1793689199:d> (ends <t:1793689199:R>)"
+      },
+      {
+        "label": "The Forge Realm's Temper: Clever Stratagems",
+        "link": null,
+        "info": "<t:1790118000:d> \u2192 <t:1793746800:d> (ends <t:1793746800:R>)"
+      }
+    ]
+  },
+  "genshin-impact::gacha": {
+    "last_updated": "ennead.cc",
+    "items": [
+      {
+        "label": "Character Event Wish: Skirk",
+        "link": null,
+        "info": "<t:1791885600:d> \u2192 <t:1793689199:d> (ends <t:1793689199:R>) \u00b7 5\u2605 Skirk \u00b7 4\u2605 Dahlia, Candace, Mika"
+      },
+      {
+        "label": "Character Event Wish 2: Escoffier",
+        "link": null,
+        "info": "<t:1791885600:d> \u2192 <t:1793689199:d> (ends <t:1793689199:R>) \u00b7 5\u2605 Escoffier \u00b7 4\u2605 Dahlia, Candace, Mika"
+      },
+      {
+        "label": "Weapon Event Wish: Azurelight, Symphonist of Scents",
+        "link": null,
+        "info": "<t:1791885600:d> \u2192 <t:1793689199:d> (ends <t:1793689199:R>) \u00b7 5\u2605 Azurelight, Symphonist of Scents \u00b7 4\u2605 Sturdy Bone, Sacrificial Greatsword, Favonius Lance, The Widsith, Sacrificial Bow"
       }
     ]
   },
   "wuthering-waves::gacha": {
-    "last_updated": "unknown",
+    "last_updated": "wutheringwaves.fandom.com",
     "items": [
       {
-        "label": "_No parseable banners found (layout may have changed)._",
-        "link": null,
-        "info": null
+        "label": "As Full as Tonight, Forever",
+        "link": "https://wutheringwaves.fandom.com/wiki/As_Full_as_Tonight,_Forever/2026-09-30",
+        "info": "<t:1790737200:d> \u2192 <t:1792634340:d> (ends <t:1792634340:R>) \u00b7 5\u2605 Hsin \u00b7 4\u2605 Buling, Taoqi, Youhu"
+      },
+      {
+        "label": "Absolute Pulsation: Blooming Jadehaven",
+        "link": "https://wutheringwaves.fandom.com/wiki/Absolute_Pulsation:_Blooming_Jadehaven/2026-09-30",
+        "info": "<t:1790737200:d> \u2192 <t:1792634340:d> (ends <t:1792634340:R>) \u00b7 5\u2605 Blooming Jadehaven \u00b7 4\u2605 Fusion Accretion, Commando of Conviction, Dauntless Evernight"
+      },
+      {
+        "label": "Horizon of Dawnbreak",
+        "link": "https://wutheringwaves.kurogames.com/en/main/news/detail/5546",
+        "info": "<t:1790737200:d> \u2192 <t:1792634340:d> (ends <t:1792634340:R>) \u00b7 5\u2605 Chisa \u00b7 4\u2605 Buling, Taoqi, Youhu"
+      },
+      {
+        "label": "Absolute Pulsation: Kumokiri",
+        "link": "https://wutheringwaves.kurogames.com/en/main/news/detail/5546",
+        "info": "<t:1790737200:d> \u2192 <t:1792634340:d> (ends <t:1792634340:R>) \u00b7 5\u2605 Kumokiri \u00b7 4\u2605 Fusion Accretion, Commando of Conviction, Dauntless Evernight"
+      },
+      {
+        "label": "Across Time's Waxes and Wanes",
+        "link": "https://wutheringwaves.kurogames.com/en/main/news/detail/5546",
+        "info": "<t:1790737200:d> \u2192 <t:1792634340:d> (ends <t:1792634340:R>) \u00b7 5\u2605 Iuno \u00b7 4\u2605 Buling, Taoqi, Youhu"
+      },
+      {
+        "label": "Absolute Pulsation: Moongazer's Sigil",
+        "link": "https://wutheringwaves.kurogames.com/en/main/news/detail/5546",
+        "info": "<t:1790737200:d> \u2192 <t:1792634340:d> (ends <t:1792634340:R>) \u00b7 5\u2605 Moongazer's Sigil \u00b7 4\u2605 Fusion Accretion, Commando of Conviction, Dauntless Evernight"
       }
     ]
   },
   "honkai-star-rail::gacha": {
-    "last_updated": "unknown",
+    "last_updated": "ennead.cc",
     "items": [
       {
-        "label": "_No headers found (layout may have changed)._",
+        "label": "Event Warp: Evanescia",
         "link": null,
-        "info": null
+        "info": "<t:1790560800:d> \u2192 <t:1792580340:d> (ends <t:1792580340:R>) \u00b7 5\u2605 Evanescia \u00b7 4\u2605 Qingque, Xueyi, Misha"
+      },
+      {
+        "label": "Light Cone Warp: Until the Flowers Bloom Again",
+        "link": null,
+        "info": "<t:1790560800:d> \u2192 <t:1792580340:d> (ends <t:1792580340:R>) \u00b7 5\u2605 Until the Flowers Bloom Again \u00b7 4\u2605 Post-Op Conversation, Planetary Rendezvous, Boundless Choreo"
+      },
+      {
+        "label": "Event Warp: Pearl",
+        "link": null,
+        "info": "<t:1790560800:d> \u2192 <t:1794319200:d> (ends <t:1794319200:R>) \u00b7 5\u2605 Pearl \u00b7 4\u2605 Qingque, Xueyi, Misha"
+      },
+      {
+        "label": "Light Cone Warp: Colors for Tomorrow",
+        "link": null,
+        "info": "<t:1790560800:d> \u2192 <t:1794319200:d> (ends <t:1794319200:R>) \u00b7 5\u2605 Colors for Tomorrow \u00b7 4\u2605 Post-Op Conversation, Planetary Rendezvous, Boundless Choreo"
+      },
+      {
+        "label": "Event Warp: Mortenax Blade",
+        "link": null,
+        "info": "<t:1792580400:d> \u2192 <t:1794319200:d> (ends <t:1794319200:R>) \u00b7 5\u2605 Mortenax Blade \u00b7 4\u2605 Qingque, Xueyi, Misha"
+      },
+      {
+        "label": "Light Cone Warp: Reforged in Hellfire",
+        "link": null,
+        "info": "<t:1792580400:d> \u2192 <t:1794319200:d> (ends <t:1794319200:R>) \u00b7 5\u2605 Reforged in Hellfire \u00b7 4\u2605 Post-Op Conversation, Planetary Rendezvous, Boundless Choreo"
       }
     ]
   },
   "arknights-endfield::events": {
-    "last_updated": "unknown",
+    "last_updated": "endfield.wiki.gg",
     "items": [
       {
-        "label": "_No headers found (layout may have changed)._",
-        "link": null,
-        "info": null
+        "label": "Season of Phantasia",
+        "link": "https://endfield.wiki.gg/wiki/Season_of_Phantasia",
+        "info": "<t:1792008000:d> \u2192 <t:1793822340:d> (ends <t:1793822340:R>)"
+      },
+      {
+        "label": "Spirit's Restoration",
+        "link": "https://endfield.wiki.gg/wiki/Spirit's_Restoration",
+        "info": "<t:1792008000:d> \u2192 <t:1793822340:d> (ends <t:1793822340:R>)"
+      },
+      {
+        "label": "All the Inky Hues",
+        "link": "https://endfield.wiki.gg/wiki/All_the_Inky_Hues",
+        "info": "<t:1792008000:d> \u2192 <t:1793822400:d> (ends <t:1793822400:R>)"
+      },
+      {
+        "label": "Yuanyuan's Blazing Stoves",
+        "link": "https://endfield.wiki.gg/wiki/Yuanyuan's_Blazing_Stoves",
+        "info": "<t:1792008000:d> \u2192 <t:1795615200:d> (ends <t:1795615200:R>)"
+      },
+      {
+        "label": "Carly's Verdant Anthology",
+        "link": "https://endfield.wiki.gg/wiki/Carly's_Verdant_Anthology",
+        "info": "<t:1792612800:d> \u2192 <t:1793793600:d> (ends <t:1793793600:R>)"
+      },
+      {
+        "label": "Monumental Etching: Forest of Maras",
+        "link": "https://endfield.wiki.gg/wiki/Monumental_Etching:_Forest_of_Maras",
+        "info": "<t:1792612800:d> \u2192 <t:1793800800:d> (ends <t:1793800800:R>)"
+      },
+      {
+        "label": "Arena of Games",
+        "link": "https://endfield.wiki.gg/wiki/Arena_of_Games",
+        "info": "<t:1793217600:d> \u2192 <t:1795003200:d> (ends <t:1795003200:R>)"
+      },
+      {
+        "label": "New Era for the Myriad Souls",
+        "link": "https://endfield.wiki.gg/wiki/New_Era_for_the_Myriad_Souls",
+        "info": "<t:1793390400:d> \u2192 <t:1794571200:d> (ends <t:1794571200:R>)"
+      },
+      {
+        "label": "Season of Fervor",
+        "link": "https://endfield.wiki.gg/wiki/Season_of_Fervor",
+        "info": "<t:1793822400:d> \u2192 <t:1795636740:d> (ends <t:1795636740:R>)"
+      },
+      {
+        "label": "Back to the Rustics",
+        "link": "https://endfield.wiki.gg/wiki/Back_to_the_Rustics",
+        "info": "<t:1793822400:d> \u2192 <t:1795608000:d> (ends <t:1795608000:R>)"
+      },
+      {
+        "label": "The Stars Are With Me",
+        "link": "https://endfield.wiki.gg/wiki/The_Stars_Are_With_Me",
+        "info": "<t:1793822400:d> \u2192 <t:1795550340:d> (ends <t:1795550340:R>)"
+      },
+      {
+        "label": "Contingency Contract: Indigo Experimental Operation",
+        "link": "https://endfield.wiki.gg/wiki/Contingency_Contract:_Indigo_Experimental_Operation",
+        "info": "from <t:1793822400:d>"
       }
     ]
   },
   "arknights-endfield::gacha": {
-    "last_updated": "unknown",
+    "last_updated": "endfield.wiki.gg",
     "items": [
       {
-        "label": "_No headers found (layout may have changed)._",
-        "link": null,
-        "info": null
+        "label": "Rejuvenation",
+        "link": "https://endfield.wiki.gg/wiki/Rejuvenation",
+        "info": "<t:1792008000:d> \u2192 <t:1793822399:d> (ends <t:1793822399:R>) \u00b7 Rate-up: Si"
+      },
+      {
+        "label": "Arsenal: Bedazzled",
+        "link": "https://endfield.wiki.gg/wiki/Bedazzled",
+        "info": "<t:1786219200:d> \u2192 <t:1793822399:d> (ends <t:1793822399:R>) \u00b7 Rate-up: Bedazzling Night Debut"
+      },
+      {
+        "label": "Arsenal: Deep Cold",
+        "link": "https://endfield.wiki.gg/wiki/Deep_Cold",
+        "info": "<t:1788292800:d> \u2192 <t:1795615199:d> (ends <t:1795615199:R>) \u00b7 Rate-up: Umbra of Frigid Eventide"
+      },
+      {
+        "label": "Arsenal: Seal of Jade",
+        "link": "https://endfield.wiki.gg/wiki/Seal_of_Jade",
+        "info": "<t:1792008000:d> \u2192 <t:1797451199:d> (ends <t:1797451199:R>) \u00b7 Rate-up: Jade Vessel"
+      },
+      {
+        "label": "Ancestral Spring Flows Anew",
+        "link": "https://endfield.wiki.gg/wiki/Ancestral_Spring_Flows_Anew",
+        "info": "<t:1793217600:d> \u2192 <t:1795031999:d> (ends <t:1795031999:R>) \u00b7 Limited: Tangtang"
+      },
+      {
+        "label": "Arsenal: Tender Sprig",
+        "link": "https://endfield.wiki.gg/wiki/Tender_Sprig",
+        "info": "<t:1793217600:d> \u2192 <t:1795096799:d> (ends <t:1795096799:R>) \u00b7 Rate-up: Brigand's Calling"
+      },
+      {
+        "label": "The Hearth Fire Beckons the Starry Flow",
+        "link": "https://endfield.wiki.gg/wiki/The_Hearth_Fire_Beckons_the_Starry_Flow",
+        "info": "<t:1793822400:d> \u2192 <t:1795636799:d> (ends <t:1795636799:R>) \u00b7 Rate-up: Argent Flow"
+      },
+      {
+        "label": "Arsenal: Moongleam",
+        "link": "https://endfield.wiki.gg/wiki/Moongleam",
+        "info": "<t:1793822400:d> \u2192 <t:1799243999:d> (ends <t:1799243999:R>) \u00b7 Rate-up: Lunar Calling"
+      }
+    ]
+  },
+  "nte::events": {
+    "last_updated": "nte.perfectworld.com",
+    "items": [
+      {
+        "label": "Pixel Surge",
+        "link": "https://nte.perfectworld.com/en/article/news/gamenews/20260929/264409.html",
+        "info": "<t:1792357200:d> \u2192 <t:1792961940:d> (ends <t:1792961940:R>)"
+      },
+      {
+        "label": "Pukaland Travelogue",
+        "link": "https://nte.perfectworld.com/en/article/news/gamenews/20260929/264409.html",
+        "info": "<t:1790737200:d> \u2192 <t:1794347940:d> (ends <t:1794347940:R>)"
+      },
+      {
+        "label": "Terminal Depths",
+        "link": "https://nte.perfectworld.com/en/article/news/gamenews/20260929/264409.html",
+        "info": "<t:1790737200:d> \u2192 <t:1794347940:d> (ends <t:1794347940:R>)"
+      },
+      {
+        "label": "Coal Lump's Treasure",
+        "link": "https://nte.perfectworld.com/en/article/news/gamenews/20260929/264409.html",
+        "info": "<t:1791424800:d> \u2192 <t:1794347940:d> (ends <t:1794347940:R>)"
+      },
+      {
+        "label": "Snap! Golden Crackshot",
+        "link": "https://nte.perfectworld.com/en/article/news/gamenews/20261019/264675.html",
+        "info": "<t:1792551600:d> \u2192 <t:1794347940:d> (ends <t:1794347940:R>)"
+      },
+      {
+        "label": "Gold Clash",
+        "link": "https://nte.perfectworld.com/en/article/news/gamenews/20261019/264675.html",
+        "info": "<t:1792962000:d> \u2192 <t:1794171540:d> (ends <t:1794171540:R>)"
+      },
+      {
+        "label": "Puka Lucky Flip",
+        "link": "https://nte.perfectworld.com/en/article/news/gamenews/20261019/264675.html",
+        "info": "<t:1793221200:d> \u2192 <t:1794347940:d> (ends <t:1794347940:R>)"
+      }
+    ]
+  },
+  "nte::gacha": {
+    "last_updated": "neverness-to-everness.fandom.com",
+    "items": [
+      {
+        "label": "Foretold Finale",
+        "link": "https://neverness-to-everness.fandom.com/wiki/Foretold_Finale/2026-09-30",
+        "info": "<t:1790737200:d> \u2192 <t:1792533599:d> (ends <t:1792533599:R>) \u00b7 S: Blackbird"
+      },
+      {
+        "label": "Fading Reverie",
+        "link": "https://neverness-to-everness.fandom.com/wiki/Fading_Reverie/2026-09-30",
+        "info": "<t:1790737200:d> \u2192 <t:1792533599:d> (ends <t:1792533599:R>) \u00b7 S: Lacrimosa"
+      },
+      {
+        "label": "Dazzling Star",
+        "link": "https://neverness-to-everness.fandom.com/wiki/Dazzling_Star/2026-10-21",
+        "info": "<t:1792551600:d> \u2192 <t:1794347999:d> (ends <t:1794347999:R>) \u00b7 S: Akane Rin"
+      }
+    ]
+  },
+  "aniimo::events": {
+    "last_updated": "aniimo.com",
+    "items": [
+      {
+        "label": "Journey Chronicles",
+        "link": "https://aniimo.com/en/newslist/detail/100145",
+        "info": "<t:1790841600:d> \u2192 <t:1793260740:d> (ends <t:1793260740:R>)"
+      },
+      {
+        "label": "Legendary Aniimo \"\"Irisalis\"\" Debuts",
+        "link": "https://aniimo.com/en/newslist/detail/100145",
+        "info": "<t:1790344800:d> \u2192 <t:1796860740:d> (ends <t:1796860740:R>)"
       }
     ]
   }
