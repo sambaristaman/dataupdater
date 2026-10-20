@@ -50,16 +50,17 @@ jobs:
 
       - name: Run Arknights Endfield scraper
         env:
+          GAME:                       endfield
           WEBHOOK_URL_CODEX:          ${{ secrets.WEBHOOK_URL_CODEX }}
           WEBHOOK_URL_SUMMARY:        ${{ secrets.WEBHOOK_URL_SUMMARY }}
           ROLE_ID_ARKNIGHTS_ENDFIELD: ${{ secrets.ROLE_ID_ARKNIGHTS_ENDFIELD }}
           DRY_RUN:                    ${{ github.event.inputs.DRY_RUN }}
         run: |
           set -euo pipefail
-          python arknights_endfield_codes_scraper.py
+          python game_codes_scraper.py
 
       - name: Commit and push state if changed
-        if: ${{ github.event.inputs.DRY_RUN != 'true' }}  # don't commit during dry runs
+        if: ${{ !cancelled() && github.event.inputs.DRY_RUN != 'true' }}  # run even if the scraper exited 1 (persists last_source); skip on dry runs
         run: |
           set -euo pipefail
           git status --porcelain

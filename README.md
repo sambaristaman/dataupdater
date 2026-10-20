@@ -5,8 +5,8 @@ Discord bot that scrapes game events, banners, redemption codes, and news from v
 ## Features
 
 - **Event & Gacha Scraper** (`scraper.py`): Scrapes Game8 for events and banners for multiple gacha games
-- **Code Scrapers**: Individual scrapers for redemption codes (Arknights Endfield, MTG Arena, Disney Speedstorm)
-- **News Scraper**: HoYoLAB + Gryphline + Shadowverse news to a single channel
+- **Code Scrapers**: Redemption codes for NTE, Aniimo and Arknights Endfield (`game_codes_scraper.py`, Pocket Tactics with PocketGamer as fallback), plus individual scrapers for MTG Arena and Disney Speedstorm
+- **News Scraper**: HoYoLAB + Gryphline + NTE (official Perfect World site) + Aniimo (official site) + Shadowverse news to a single channel
 - **Channel Purge Bot** (`purge_channels.py`): Cleans up orphaned messages from Discord channels
 - **Daily Quotes Bot** (`daily_quotes.py`): Posts a daily quote to a configured channel
 
@@ -21,9 +21,11 @@ Discord bot that scrapes game events, banners, redemption codes, and news from v
 | Arknights: Endfield | Yes | Yes | Yes |
 | MTG Arena | - | - | Yes |
 | Disney Speedstorm | - | - | Yes |
+| Neverness to Everness (NTE) | - | - | Yes (+ News) |
+| Aniimo | - | - | Yes (+ News) |
 | Shadowverse | - | - | News |
 
-News feeds: Genshin Impact, Honkai: Star Rail, Honkai Impact 3rd, Zenless Zone Zero, Arknights: Endfield, Shadowverse.
+News feeds: Genshin Impact, Honkai: Star Rail, Honkai Impact 3rd, Zenless Zone Zero, Arknights: Endfield, Neverness to Everness, Aniimo, Shadowverse.
 
 ---
 
@@ -55,8 +57,8 @@ Used by the main scraper (`scraper.py`) to post events/gacha updates, and by the
 |----------|---------|-------------|
 | `WEBHOOK_URL_SUMMARY` | scraper, codes | Summary/log channel for scraper reports and health pings |
 | `WEBHOOK_URL_LEDGER` | purge | Ledger channel for purge bot summaries |
-| `WEBHOOK_URL_CODEX` | codes | Channel for redemption code alerts (Endfield, MTGA, Speedstorm) |
-| `WEBHOOK_URL_NEWS` | news | Channel for HoYoLAB + Gryphline + Shadowverse news posts |
+| `WEBHOOK_URL_CODEX` | codes | Channel for redemption code alerts (NTE, Aniimo, Endfield, MTGA, Speedstorm) |
+| `WEBHOOK_URL_NEWS` | news | Channel for HoYoLAB + Gryphline + NTE + Aniimo + Shadowverse news posts |
 
 #### Role IDs (Optional)
 
@@ -69,6 +71,8 @@ Used for @mentioning Discord roles when new content is detected.
 | `ROLE_ID_GI` | Genshin Impact role ID |
 | `ROLE_ID_UMA` | Umamusume role ID |
 | `ROLE_ID_ARKNIGHTS_ENDFIELD` | Arknights: Endfield role ID |
+| `ROLE_ID_NTE` | Neverness to Everness role ID |
+| `ROLE_ID_ANIIMO` | Aniimo role ID |
 | `ROLE_ID_MTGA` | MTG Arena role ID |
 | `ROLE_ID_SPEEDSTORM` | Disney Speedstorm role ID |
 
@@ -105,7 +109,7 @@ These are set via workflow dispatch inputs, not as repository secrets.
 
 | Variable | Default | Description |
 |----------|---------|-------------|
-| `ONLY_GAME` | _(empty)_ | Run news scraper for a single game (`genshin`, `starrail`, `honkai3rd`, `zzz`, `endfield`, `shadowverse`) |
+| `ONLY_GAME` | _(empty)_ | Run news scraper for a single game (`genshin`, `starrail`, `honkai3rd`, `zzz`, `endfield`, `nte`, `aniimo`, `shadowverse`) |
 | `DRY_RUN` | `false` | Preview mode - no Discord posts, no state writes |
 | `NEWS_STATE_PATH` | `news_state.json` | Override the news state file path (useful for tests) |
 | `RUN_LAST_HOURS` | _(empty)_ | Only send items updated within the last N hours (e.g., `24`). Items within the window are sent even if already tracked. |
@@ -181,6 +185,8 @@ This means you only need to configure `WEBHOOK_URL_*` secrets - channel IDs are 
 |----------|----------------|-------------|
 | `update.yml` | 09:00 | Main scraper (events + gacha) |
 | `daily-arknights-endfield.yml` | 08:30 | Arknights Endfield codes |
+| `daily-nte-codes.yml` | 08:45 | NTE codes |
+| `daily-aniimo-codes.yml` | 09:15 | Aniimo codes |
 | `daily-mtga.yml` | 08:00 | MTG Arena codes |
 | `daily-news-genshin.yml` | 12:00 | Genshin news |
 | `daily-news-starrail.yml` | 12:30 | Star Rail news |
@@ -188,6 +194,8 @@ This means you only need to configure `WEBHOOK_URL_*` secrets - channel IDs are 
 | `daily-news-zzz.yml` | 13:30 | ZZZ news |
 | `daily-news-endfield.yml` | 14:00 | Endfield news |
 | `daily-news-shadowverse.yml` | 14:30 | Shadowverse news |
+| `daily-news-nte.yml` | 15:00 | NTE news |
+| `daily-news-aniimo.yml` | 15:30 | Aniimo news |
 | `daily-speedstorm.yml` | 10:00 | Disney Speedstorm codes |
 | `daily-quotes.yml` | 12:00 | Daily quotes |
 | `purge-channels.yml` | 11:00 | Channel purge bot |
@@ -229,7 +237,7 @@ pytest -q
 |------|-------------|
 | `message_ids.json` | Tracked Discord message IDs for editing |
 | `state.json` | Scraper state for change detection |
-| `news_scraper.py` | Unified news scraper (HoYoLAB + Gryphline + Shadowverse) |
+| `news_scraper.py` | Unified news scraper (HoYoLAB + Gryphline + NTE + Aniimo + Shadowverse) |
 | `news_state.json` | News scraper state for change detection |
 | `requirements-dev.txt` | Dev-only dependencies (pytest) |
 | `tests/test_news_scraper_live.py` | Live integration tests for news scraper |
