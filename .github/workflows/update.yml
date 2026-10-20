@@ -1,4 +1,4 @@
-name: Daily Game8 → Discord
+name: Daily Banners & Events → Discord
 
 on:
   schedule:
@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
     inputs:
       ONLY_KEY:
-        description: "Run only for this key (e.g. genshin-impact). Leave blank for all."
+        description: "Run only for this key: wuthering-waves, honkai-star-rail, umamusume, genshin-impact, arknights-endfield, nte, aniimo. Leave blank for all."
         required: false
         default: ""
       FORCE_NEW:
@@ -26,7 +26,7 @@ permissions:
   contents: write   # allow pushing message_ids.json/state.json changes back
 
 concurrency:
-  group: game8-discord
+  group: banners-events-discord
   cancel-in-progress: false
 
 jobs:
@@ -66,6 +66,8 @@ jobs:
           WEBHOOK_URL_UMA:     ${{ secrets.WEBHOOK_URL_UMA }}
           WEBHOOK_URL_GI:      ${{ secrets.WEBHOOK_URL_GI }}
           WEBHOOK_URL_ENDFIELD: ${{ secrets.WEBHOOK_URL_ENDFIELD }}
+          WEBHOOK_URL_NTE:     ${{ secrets.WEBHOOK_URL_NTE }}
+          WEBHOOK_URL_ANIIMO:  ${{ secrets.WEBHOOK_URL_ANIIMO }}
           # Summary webhook
           WEBHOOK_URL_SUMMARY: ${{ secrets.WEBHOOK_URL_SUMMARY }}
           # Role IDs for summary mentions (Discord roles)
@@ -74,10 +76,14 @@ jobs:
           ROLE_ID_UMA:         ${{ secrets.ROLE_ID_UMA }}
           ROLE_ID_GI:          ${{ secrets.ROLE_ID_GI }}
           ROLE_ID_ARKNIGHTS_ENDFIELD: ${{ secrets.ROLE_ID_ARKNIGHTS_ENDFIELD }}
+          ROLE_ID_NTE:         ${{ secrets.ROLE_ID_NTE }}
+          ROLE_ID_ANIIMO:      ${{ secrets.ROLE_ID_ANIIMO }}
           # Toggle: disable Umamusume events scraping (kept ENABLED by default)
           # Set repository/environment variable DISABLE_UMA_EVENTS=true to disable.
           DISABLE_UMA_EVENTS:  ${{ vars.DISABLE_UMA_EVENTS }}
           # Optional runtime flags
+          # ONLY_KEY: wuthering-waves | honkai-star-rail | umamusume | genshin-impact |
+          #           arknights-endfield | nte | aniimo (blank = all)
           ONLY_KEY:  ${{ github.event.inputs.ONLY_KEY }}
           FORCE_NEW: ${{ github.event.inputs.FORCE_NEW }}
           DRY_RUN:   ${{ github.event.inputs.DRY_RUN }}
@@ -86,7 +92,8 @@ jobs:
           python scraper.py
 
       - name: Commit and push state if changed
-        if: ${{ github.event.inputs.DRY_RUN != 'true' }}  # don't commit during dry runs
+        # always(): keep the state of the games that worked even when another source failed (exit 1)
+        if: ${{ always() && github.event.inputs.DRY_RUN != 'true' }}  # don't commit during dry runs
         run: |
           set -euo pipefail
 

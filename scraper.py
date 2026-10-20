@@ -1,89 +1,76 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Game8 → Discord daily scraper with per-game channels and a summary channel.
+Banners & events → Discord daily scraper with per-game channels and a summary channel.
 
-Split architecture:
-- main.py (this file): orchestration, Discord I/O, state/diffing, and routing
-- extractors/genshin_extractor.py: Genshin-specific extraction
-- extractors/uma_extractor.py: Umamusume-specific extraction
-- extractors/generic_extractor.py: Fallback extraction used by other games
+Architecture:
+- scraper.py (this file): orchestration, Discord I/O, state/diffing and summary
+- sources/: per-game sources that return structured Items (see sources/common.py)
 """
 
 import json
 import os
 import re
+import sys
+from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Dict, List, Optional, Tuple, Union
+from typing import Dict, List, Optional, Union
 
-import cloudscraper
-from bs4 import BeautifulSoup
+import requests
 
-# --- Import extractors ---
-from extractors.genshin_extractor import extract_genshin_events, extract_genshin_gachas
-from extractors.uma_extractor import extract_umamusume_events
-from extractors.generic_extractor import extract_events_with_links_generic
-from extractors.wuwa_extractor import extract_wuwa_gachas, extract_wuwa_events
-from extractors.hsr_extractor import extract_hsr_gachas, extract_hsr_events
-from extractors.endfield_extractor import extract_endfield_events, extract_endfield_gachas
+from sources.aniimo import aniimo_events
+from sources.common import Source, SourceResult, build_bullets
+from sources.endfield import endfield_events, endfield_gacha
+from sources.gametora import uma_events, uma_gacha
+from sources.hoyo import genshin_events, genshin_gacha, hsr_events, hsr_gacha
+from sources.nte import nte_events, nte_gacha
+from sources.wuwa import wuwa_events, wuwa_gacha
 
-# --- Config: pages -> (url, secret_name_for_webhook, pretty_title, secret_name_for_role_id) ---
-PAGES = {
-    "wuthering-waves": (
-        "https://game8.co/games/Wuthering-Waves/archives/453473",
-        "WEBHOOK_URL_WUWA",
-        "Wuthering Waves — Events & Schedule",
-        "ROLE_ID_WUWA",
+
+# --- Config: one entry per game (key -> webhook/role secrets, title and sources) ---
+
+@dataclass
+class GameConfig:
+    secret_name: str
+    title: str
+    role_secret: str
+    events: Optional[Source]
+    gacha: Optional[Source]
+
+
+GAMES: Dict[str, GameConfig] = {
+    "wuthering-waves": GameConfig(
+        "WEBHOOK_URL_WUWA", "Wuthering Waves — Events & Banners", "ROLE_ID_WUWA",
+        wuwa_events, wuwa_gacha,
     ),
-    "honkai-star-rail": (
-        "https://game8.co/games/Honkai-Star-Rail/archives/408749",
-        "WEBHOOK_URL_HSR",
-        "Honkai: Star Rail — Events & Schedule",
-        "ROLE_ID_HSR",
+    "honkai-star-rail": GameConfig(
+        "WEBHOOK_URL_HSR", "Honkai: Star Rail — Events & Banners", "ROLE_ID_HSR",
+        hsr_events, hsr_gacha,
     ),
-    "umamusume": (
-        # UPDATED to the page you specified
-        "https://game8.co/games/Umamusume-Pretty-Derby/archives/549992",
-        "WEBHOOK_URL_UMA",
-        "Umamusume: Pretty Derby — Events & Choices",
-        "ROLE_ID_UMA",
+    "umamusume": GameConfig(
+        "WEBHOOK_URL_UMA", "Umamusume: Pretty Derby — Events & Banners", "ROLE_ID_UMA",
+        uma_events, uma_gacha,
     ),
-    "genshin-impact": (
-        "https://game8.co/games/Genshin-Impact/archives/301601",
-        "WEBHOOK_URL_GI",
-        "Genshin Impact — Archives & Updates",
-        "ROLE_ID_GI",
+    "genshin-impact": GameConfig(
+        "WEBHOOK_URL_GI", "Genshin Impact — Events & Banners", "ROLE_ID_GI",
+        genshin_events, genshin_gacha,
     ),
-    "arknights-endfield": (
-        "https://game8.co/games/Arknights-Endfield/archives/535443",
-        "WEBHOOK_URL_ENDFIELD",
-        "Arknights: Endfield — Events",
-        "ROLE_ID_ARKNIGHTS_ENDFIELD",
+    "arknights-endfield": GameConfig(
+        "WEBHOOK_URL_ENDFIELD", "Arknights: Endfield — Events & Banners", "ROLE_ID_ARKNIGHTS_ENDFIELD",
+        endfield_events, endfield_gacha,
+    ),
+    "nte": GameConfig(
+        "WEBHOOK_URL_NTE", "Neverness to Everness — Events & Banners", "ROLE_ID_NTE",
+        nte_events, nte_gacha,
+    ),
+    "aniimo": GameConfig(
+        "WEBHOOK_URL_ANIIMO", "Aniimo — Events", "ROLE_ID_ANIIMO",
+        aniimo_events, None,
     ),
 }
 
-# --- Gacha sources (per game) ---
-# key matches PAGES key for channel/webhook routing.
-GACHA_PAGES = {
-    "genshin-impact": (
-        "https://game8.co/games/Genshin-Impact",  # List of Current Event Gachas on main hub
-        "genshin",  # type tag for router
-    ),
-    "wuthering-waves": (
-        "https://game8.co/games/Wuthering-Waves/archives/453303",  # Wish/Banner Schedule
-        "wuwa",
-    ),
-    "honkai-star-rail": (
-        "https://game8.co/games/Honkai-Star-Rail/archives/408381",  # Warp/Banner Schedule
-        "hsr",
-    ),
-    "arknights-endfield": (
-        "https://game8.co/games/Arknights-Endfield/archives/524215",  # Banner Schedule
-        "endfield",
-    ),
-    # Uma deliberately omitted (events already cover banners)
-}
+NO_ITEMS_LINE = "_No current or upcoming items._"
 
 MESSAGE_IDS_PATH = Path("message_ids.json")
 STATE_PATH = Path("state.json")  # persisted scrape state (for change tracking)
@@ -102,10 +89,8 @@ DISABLE_UMA_EVENTS = os.getenv("DISABLE_UMA_EVENTS", "false").strip().lower() ==
 # Whether to delete old messages if we decide to re-post new chunked ones
 CLEANUP_OLD_MESSAGES = True
 
-# --- HTTP session (cloudscraper bypasses Cloudflare bot protection) ---
-SESSION = cloudscraper.create_scraper(
-    browser={"browser": "chrome", "platform": "windows", "mobile": False}
-)
+# --- HTTP session for Discord webhooks ---
+SESSION = requests.Session()
 
 
 # --- Discord webhook helpers ---
@@ -167,29 +152,10 @@ def discord_webhook_post_embed(webhook_url: str, embed: Dict, content: Optional[
     r.raise_for_status()
 
 
-# --- Scraping helpers ---
-
-def fetch(url: str) -> str:
-    r = SESSION.get(url, timeout=30)
-    r.raise_for_status()
-    return r.text
-
-
-def extract_last_updated(soup: BeautifulSoup) -> str:
-    # Try precise form first
-    text = soup.get_text(" ", strip=True)
-    m = re.search(r"Last updated on:\s*([A-Za-z]+\s+\d{1,2},\s*\d{4}\s+\d{1,2}:\d{2}\s*[AP]M)", text)
-    if m:
-        return m.group(1)
-    # Fallback: line after label (matches also "Last updated on Game8:")
-    m2 = re.search(r"Last updated on:\s*([^|]+?)(?=\s{2,}|$)", text)
-    return m2.group(1).strip() if m2 else "unknown"
-
-
 # --- Message building & chunking ---
 
-def build_header(title: str, url: str, last_updated: str) -> str:
-    return f"**{title}**\n<{url}>\n_Last updated on Game8: **{last_updated}**_\n"
+def build_header(title: str, url: str, source_name: str) -> str:
+    return f"**{title}**\n<{url}>\n_Source: **{source_name}**_\n"
 
 
 def chunk_lines_to_messages(header: str, lines: List[str], limit: int = DISCORD_LIMIT) -> List[str]:
@@ -231,9 +197,9 @@ def chunk_lines_to_messages(header: str, lines: List[str], limit: int = DISCORD_
     return messages
 
 
-def build_messages(title: str, url: str, last_updated: str, bullets: List[str]) -> List[str]:
-    header = build_header(title, url, last_updated)
-    body_lines = bullets if bullets else ["_No parseable items found today (site layout may have changed)._"]
+def build_messages(title: str, url: str, source_name: str, bullets: List[str]) -> List[str]:
+    header = build_header(title, url, source_name)
+    body_lines = bullets if bullets else [NO_ITEMS_LINE]
     return chunk_lines_to_messages(header, body_lines, DISCORD_LIMIT)
 
 
@@ -338,7 +304,7 @@ def format_delta(delta: Dict, last_updated_changed: bool) -> str:
         if a or r or m:
             parts.append(f"Δ Items: +{a} / −{r} / ~{m}")
         if last_updated_changed:
-            parts.append("Game8 timestamp changed")
+            parts.append("Source changed")
         notable = []
         for it in delta["added"][:2]:
             notable.append(f"+ {it['label']}")
@@ -359,36 +325,39 @@ def make_summary_embed(results: List[Dict]) -> Dict:
     created = sum(1 for r in results if r.get("action") == "created")
     edited = sum(1 for r in results if r.get("action") == "edited")
     skipped = sum(1 for r in results if r["status"] == "skipped")
+    errors = sum(1 for r in results if r["status"] == "error")
     ok = sum(1 for r in results if r["status"] == "ok")
 
-    any_suspect = any(r.get("suspect") for r in results if r["status"] == "ok")
-    color = 0xE74C3C if any_suspect else (0x2ECC71 if ok else 0xE67E22)
+    color = 0xE74C3C if errors else (0x2ECC71 if ok else 0xE67E22)
 
     fields = []
     for r in results:
         name = r["title"]
         if r["status"] == "skipped":
             value = f"⚠️ Skipped (missing secret `{r['secret']}`)"
+        elif r["status"] == "error":
+            reason = str(r.get("diag_reason") or "unknown")[:200]
+            value = f"❌ Error: `{reason}`"
+            if r.get("url"):
+                value += f"\n[Source]({r['url']})"
         else:
             msginfo = f"Messages: **{r.get('messages', 1)}**"
             delta_line = r.get("delta_summary", "No detected changes")
-            suspect_prefix = "🚨 **Suspect result**\n" if r.get("suspect") else ""
-            h_tags_line = f"Items: **{r['items']}** | h-tags: **{r.get('h_tags_found', '?')}**\n"
-            diag_line = f"Reason: `{r['diag_reason']}`\n" if r.get("diag_reason") else ""
             value = (
-                f"{suspect_prefix}"
                 f"**{r['action'].capitalize()}** {msginfo}\n"
-                f"{h_tags_line}"
-                f"Last updated: `{r['last_updated']}`\n"
+                f"Items: **{r['items']}**\n"
+                f"Source: `{r['last_updated']}`\n"
                 f"{delta_line}\n"
-                f"{diag_line}"
                 f"[Source]({r['url']})"
             )
         fields.append({"name": name, "value": value, "inline": True})
 
     embed = {
         "title": "The Mimicky, The Librarian Updates",
-        "description": f"✅ OK: **{ok}** · 🆕 Created: **{created}** · ✏️ Edited: **{edited}** · ⏭️ Skipped: **{skipped}** · Total: **{total}**",
+        "description": (
+            f"✅ OK: **{ok}** · 🆕 Created: **{created}** · ✏️ Edited: **{edited}** · "
+            f"⏭️ Skipped: **{skipped}** · ❌ Errors: **{errors}** · Total: **{total}**"
+        ),
         "color": color,
         "fields": fields[:25],
         "footer": {"text": ""},  # only timestamp in Discord UI
@@ -397,107 +366,70 @@ def make_summary_embed(results: List[Dict]) -> Dict:
     return embed
 
 
-# --- Router ---
+# --- Flow ---
 
-def extract_events_with_links(soup: BeautifulSoup, base_url: str) -> List[str]:
-    """
-    Router: use game-specific logic when needed, else generic.
-    Order matters: check Genshin and Umamusume first; others fall back.
-    """
-    if "/Genshin-Impact/" in base_url:
-        gs = extract_genshin_events(soup, base_url)
-        if len(gs) >= 3:
-            return gs
-    if "/Umamusume-Pretty-Derby/" in base_url:
-        uma = extract_umamusume_events(soup, base_url)
-        if len(uma) >= 1:
-            return uma
-    if "/Arknights-Endfield/" in base_url:
-        endfield = extract_endfield_events(soup, base_url)
-        if len(endfield) >= 1:
-            return endfield
-    if "/Honkai-Star-Rail/" in base_url:
-        hsr = extract_hsr_events(soup, base_url)
-        if len(hsr) >= 1:
-            return hsr
-    if "/Wuthering-Waves/" in base_url:
-        wuwa = extract_wuwa_events(soup, base_url)
-        if len(wuwa) >= 1:
-            return wuwa
-    return extract_events_with_links_generic(soup, base_url)
+def _error_result(base: Dict, reason: str, url: str = "") -> Dict:
+    print(f"[ERROR] {base['key']}: {reason}")
+    return {
+        **base,
+        "url": url,
+        "status": "error",
+        "action": "none",
+        "items": 0,
+        "last_updated": "n/a",
+        "delta_summary": "n/a",
+        "has_changes": False,
+        "diag_reason": reason,
+    }
 
 
-def extract_gacha_for(key: str, soup, url: str) -> list[str]:
-    """Route to the correct gacha extractor for a game key."""
-    if key == "genshin-impact":
-        return extract_genshin_gachas(soup, url)
-    if key == "wuthering-waves":
-        return extract_wuwa_gachas(soup, url)
-    if key == "honkai-star-rail":
-        return extract_hsr_gachas(soup, url)
-    if key == "arknights-endfield":
-        return extract_endfield_gachas(soup, url)
-    return []
-
-
-def run_flow(*, key: str, url: str, secret_name: str, nice_title: str, role_secret: str, ids: Dict, state: Dict, extractor, section_tag: str) -> Dict:
-    """Generic runner for either events or gacha. section_tag is used to namespace message IDs and state keys."""
-    webhook_url = os.environ.get(secret_name, "").strip()
-    role_id = os.environ.get(role_secret, "").strip() if role_secret else ""
+def run_flow(*, key: str, cfg: GameConfig, source: Source, section_tag: str, ids: Dict, state: Dict, now: datetime) -> Dict:
+    """Generic runner for either events or gacha. section_tag namespaces message IDs and state keys."""
+    webhook_url = os.environ.get(cfg.secret_name, "").strip()
+    role_id = os.environ.get(cfg.role_secret, "").strip() if cfg.role_secret else ""
     role_mention = f"<@&{role_id}>" if role_id else ""
+    ids_key = f"{key}::{section_tag}"
+    title = f"{cfg.title} — {section_tag.capitalize()}"
+    base = {"key": ids_key, "title": title, "secret": cfg.secret_name, "role_mention": role_mention}
 
     if not webhook_url:
-        print(f"Missing webhook for {key} (env {secret_name}); skipping {section_tag}.")
+        print(f"Missing webhook for {key} (env {cfg.secret_name}); skipping {section_tag}.")
         return {
-            "key": f"{key}::{section_tag}",
-            "title": f"{nice_title} — {section_tag.capitalize()}",
-            "url": url,
-            "secret": secret_name,
+            **base,
+            "url": "",
             "status": "skipped",
             "action": "none",
             "items": 0,
             "last_updated": "n/a",
             "delta_summary": "n/a",
             "has_changes": False,
-            "role_mention": role_mention,
         }
 
-    html = fetch(url)
-    soup = BeautifulSoup(html, "html.parser")
+    try:
+        result: SourceResult = source(now)
+    except Exception as e:
+        return _error_result(base, f"{type(e).__name__}: {e}")
+    if not result.items:
+        return _error_result(base, "no_items", result.source_url)
 
-    h_count = len(soup.find_all(["h2", "h3", "h4"]))
-    snippet = html[:2000].lower()
-    is_challenge = any(x in snippet for x in [
-        "checking your browser", "just a moment", "ddos protection by cloudflare",
-        "cf-browser-verification", "ray id",
-    ])
-
-    last_updated = extract_last_updated(soup)
-    bullets = extractor(soup, url)
-
-    raw_bullet_count = sum(1 for b in bullets if b.strip().startswith("•"))
-    suspect = last_updated == "unknown" or raw_bullet_count == 0 or h_count == 0
-    diag_reason: Optional[str] = None
-    if suspect:
-        diag_reason = "cloudflare_challenge" if is_challenge else ("no_h_tags" if h_count == 0 else "no_bullets")
-        print(f"[WARN] {key}::{section_tag} — h_tags={h_count}, bullets={raw_bullet_count}, page_len={len(html)}, reason={diag_reason}")
-        if h_count == 0 or is_challenge:
-            print(f"[DIAG] HTML[:400]: {html[:400].replace(chr(10), ' ')!r}")
+    url = result.source_url
+    source_name = result.source_name
+    bullets = build_bullets(result.items, now)
+    print(f"{ids_key}: {source_name} → {len(result.items)} items, "
+          f"{sum(1 for b in bullets if b.startswith('•'))} shown")
 
     normalized_now = normalize_bullets(bullets)
-    state_key = f"{key}::{section_tag}"
-    prev_state = state.get(state_key, {"last_updated": None, "items": []})
+    prev_state = state.get(ids_key, {"last_updated": None, "items": []})
     prev_items = prev_state.get("items", [])
     prev_last = prev_state.get("last_updated")
 
     delta = diff_items(prev_items, normalized_now)
-    last_updated_changed = (str(prev_last) != str(last_updated))
+    last_updated_changed = (str(prev_last) != str(source_name))
     delta_summary = format_delta(delta, last_updated_changed)
     has_changes = bool(delta["added"] or delta["removed"] or delta["modified"] or last_updated_changed)
 
-    messages = build_messages(f"{nice_title} — {section_tag.capitalize()}", url, last_updated, bullets)
+    messages = build_messages(title, url, source_name, bullets)
 
-    ids_key = f"{key}::{section_tag}"
     prev_ids_raw = ids.get(ids_key, [])
     prev_ids = [prev_ids_raw] if isinstance(prev_ids_raw, str) else list(prev_ids_raw)
 
@@ -532,29 +464,35 @@ def run_flow(*, key: str, url: str, secret_name: str, nice_title: str, role_secr
     if store_value != ids.get(ids_key):
         ids[ids_key] = store_value
 
-    items_count = len(bullets)
-    if items_count and bullets and bullets[0].startswith("__"):
-        items_count -= 1
-
-    result = {
-        "key": ids_key,
-        "title": f"{nice_title} — {section_tag.capitalize()}",
+    return {
+        **base,
         "url": url,
-        "secret": secret_name,
         "status": "ok",
         "action": action,
         "messages": len(new_ids),
-        "items": max(0, items_count),
-        "last_updated": last_updated,
+        "items": sum(1 for b in bullets if b.strip().startswith("•")),
+        "last_updated": source_name,
         "delta_summary": delta_summary,
         "has_changes": has_changes,
-        "role_mention": role_mention,
-        "suspect": suspect,
-        "h_tags_found": h_count,
-        "diag_reason": diag_reason,
         "_normalized_now": normalized_now,
     }
-    return result
+
+
+def _safe_run_flow(**kwargs) -> Dict:
+    """run_flow, but an unexpected failure (e.g. Discord error) only fails this flow."""
+    try:
+        return run_flow(**kwargs)
+    except Exception as e:
+        cfg = kwargs["cfg"]
+        key = f"{kwargs['key']}::{kwargs['section_tag']}"
+        base = {
+            "key": key,
+            "title": f"{cfg.title} — {kwargs['section_tag'].capitalize()}",
+            "secret": cfg.secret_name,
+            "role_mention": "",
+        }
+        return _error_result(base, f"{type(e).__name__}: {e}")
+
 
 # --- Main flow ---
 
@@ -563,46 +501,31 @@ def main():
     state = load_state()
     state_changed = False
     results: List[Dict] = []
+    now = datetime.now(timezone.utc)
 
     # Filter by ONLY_KEY if provided
-    items = [(k, v) for k, v in PAGES.items() if not ONLY_KEY or k.lower() == ONLY_KEY]
-
-    # Apply DISABLE_UMA_EVENTS: remove 'umamusume' events entirely so it doesn't appear in updates
-    if DISABLE_UMA_EVENTS:
-        # If the user explicitly asked ONLY_KEY=umamusume, inform and return early (no results added).
-        if ONLY_KEY == "umamusume":
-            print("Umamusume events scraping is disabled via DISABLE_UMA_EVENTS; skipping 'umamusume'.")
-            # Still allow gacha for other keys if ONLY_KEY strictly equals 'umamusume'—there are none, so exit.
-            # No summary entry will be created.
-            return
-        # Otherwise, drop 'umamusume' from the items list.
-        items = [(k, v) for (k, v) in items if k != "umamusume"]
-
-    if not items:
-        print(f"No matching keys for ONLY_KEY='{ONLY_KEY}'. Valid keys:", ", ".join(PAGES.keys()))
+    games = [(k, cfg) for k, cfg in GAMES.items() if not ONLY_KEY or k.lower() == ONLY_KEY]
+    if not games:
+        print(f"No matching keys for ONLY_KEY='{ONLY_KEY}'. Valid keys:", ", ".join(GAMES.keys()))
         return
 
-    # EVENTS
-    for key, (url, secret_name, nice_title, role_secret) in items:
-        res = run_flow(
-            key=key, url=url, secret_name=secret_name, nice_title=nice_title, role_secret=role_secret,
-            ids=ids, state=state, extractor=lambda soup, u: extract_events_with_links(soup, u), section_tag="events"
-        )
-        results.append(res)
+    # DISABLE_UMA_EVENTS only drops the Umamusume events flow; its gacha flow still runs.
+    if DISABLE_UMA_EVENTS:
+        print("Umamusume events scraping is disabled via DISABLE_UMA_EVENTS; skipping 'umamusume::events'.")
 
-    # GACHAS
-    gacha_items = [(k, v) for k, v in GACHA_PAGES.items() if not ONLY_KEY or k.lower() == ONLY_KEY]
-    for key, (url, type_tag) in gacha_items:
-        if key not in PAGES:
-            continue
-        _, secret_name, nice_title, role_secret = PAGES[key]
-        res = run_flow(
-            key=key, url=url, secret_name=secret_name, nice_title=nice_title, role_secret=role_secret,
-            ids=ids, state=state, extractor=lambda soup, u, _k=key: extract_gacha_for(_k, soup, u), section_tag="gacha"
-        )
-        results.append(res)
+    for key, cfg in games:
+        flows = [("events", cfg.events), ("gacha", cfg.gacha)]
+        for section_tag, source in flows:
+            if source is None:
+                continue
+            if section_tag == "events" and key == "umamusume" and DISABLE_UMA_EVENTS:
+                continue
+            results.append(_safe_run_flow(
+                key=key, cfg=cfg, source=source, section_tag=section_tag,
+                ids=ids, state=state, now=now,
+            ))
 
-    # Persist IDs/state
+    # Persist IDs/state (only successful flows touch state)
     save_ids(ids) if not DRY_RUN else None
     for r in results:
         if r.get("status") != "ok":
@@ -617,14 +540,26 @@ def main():
         save_state(state)
 
     # Summary
+    summary_failed = False
     summary_url = os.environ.get(SUMMARY_WEBHOOK_ENV, "").strip()
     if summary_url:
         embed = make_summary_embed(results)
         mentions = sorted({r["role_mention"] for r in results if r.get("has_changes") and r.get("role_mention")})
         mention_content = " ".join(mentions) if mentions else None
-        discord_webhook_post_embed(summary_url, embed, mention_content)
+        try:
+            discord_webhook_post_embed(summary_url, embed, mention_content)
+        except Exception as e:
+            print(f"[ERROR] summary post failed: {type(e).__name__}: {e}")
+            summary_failed = True
     else:
         print(f"No summary webhook found in env {SUMMARY_WEBHOOK_ENV}; skipping summary.")
+
+    errors = [r["key"] for r in results if r.get("status") == "error"]
+    if errors:
+        print(f"[ERROR] {len(errors)} flow(s) failed: {', '.join(errors)}")
+    if errors or summary_failed:
+        sys.exit(1)
+
 
 if __name__ == "__main__":
     main()

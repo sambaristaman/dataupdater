@@ -1,5 +1,4 @@
 requests
-cloudscraper
 beautifulsoup4
 websocket-client
 PyYAML
