@@ -32,48 +32,58 @@ def _lines(content_html: str) -> List[str]:
     return [ln.strip() for ln in soup.get_text("\n").split("\n") if ln.strip()]
 
 
+def _is_prose(line: str) -> bool:
+    return len(line) > 100 or line.endswith((".", "!", "?", "。"))
+
+
+def _title_before(lines: List[str], idx: int) -> Optional[str]:
+    """Nearest previous line not starting with '[' or '>>', skipping flavour prose when a title exists."""
+    candidates = [ln for ln in reversed(lines[:idx]) if not ln.startswith("[") and not ln.startswith(">")]
+    for ln in candidates:
+        if not _is_prose(ln):
+            return ln
+    return candidates[0] if candidates else None
+
+
 def aniimo_parse_events(content_html: str) -> List[Item]:
     lines = _lines(content_html)
     items: List[Item] = []
     for idx, line in enumerate(lines):
         if not _HEADER_RE.match(line):
             continue
-        name: Optional[str] = None
-        for prev in reversed(lines[:idx]):
-            if not prev.startswith("[") and not prev.startswith(">>"):
-                name = prev
-                break
-        regions: List[re.Match] = []
-        has_region_line = False
-        subtitle: Optional[str] = None
-        for nxt in lines[idx + 1 :]:
-            if nxt.startswith("[") and not _REGION_PREFIX_RE.match(nxt):
-                break
-            if _REGION_PREFIX_RE.match(nxt):
-                has_region_line = True
-                m = _REGION_RE.search(nxt)
+        name = _title_before(lines, idx)
+        # groups of (subtitle, region matches); a plain line right before region lines names a sub-block
+        groups: List[tuple] = []
+        j = idx + 1
+        while j < len(lines):
+            cur = lines[j]
+            if _REGION_PREFIX_RE.match(cur):
+                m = _REGION_RE.search(cur)
+                if not groups:
+                    groups.append((None, []))
                 if m:
-                    regions.append(m)
-            elif has_region_line or regions:
+                    groups[-1][1].append(m)
+            elif cur.startswith("[") or not (
+                j + 1 < len(lines) and _REGION_PREFIX_RE.match(lines[j + 1])
+            ):
                 break
-            elif subtitle is None:
-                subtitle = nxt
             else:
-                break
-        if not regions:
-            continue  # recurring, unlock-only or start-only blocks
-        chosen = next((m for m in regions if m["region"] == PREFERRED_REGION), regions[0])
-        # a subtitle line before the region lines is the specific event name
-        label = subtitle or name
-        if not label:
-            continue
-        try:
-            offset = parse_offset(chosen["tz"], default=0)
-            items.append(
-                Item(label=label, start=parse_local(chosen["s"], offset), end=parse_local(chosen["e"], offset))
-            )
-        except ValueError:
-            continue
+                groups.append((cur, []))
+            j += 1
+        for subtitle, regions in groups:
+            if not regions:
+                continue  # recurring, unlock-only or start-only blocks
+            chosen = next((m for m in regions if m["region"] == PREFERRED_REGION), regions[0])
+            label = subtitle or name
+            if not label:
+                continue
+            try:
+                offset = parse_offset(chosen["tz"], default=0)
+                items.append(
+                    Item(label=label, start=parse_local(chosen["s"], offset), end=parse_local(chosen["e"], offset))
+                )
+            except ValueError:
+                continue
     return items
 
 

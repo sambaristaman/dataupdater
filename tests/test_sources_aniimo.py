@@ -46,6 +46,19 @@ def test_aniimo_subtitle_line_before_region():
     assert v.start == parse_local("2026/09/28 04:00", -4)
 
 
+def test_aniimo_title_not_flavour_prose():
+    items = by_label(aniimo.aniimo_parse_events(content(100145)))
+    assert 'Legendary Aniimo ""Irisalis"" Debuts' in items
+    assert not any(k.startswith("Legend has it") for k in items)
+
+
+def test_aniimo_second_subblock_kept():
+    items = by_label(aniimo.aniimo_parse_events(content(100145)))
+    b = items["Vein Abundance: Berylline Vale"]
+    assert b.start == parse_local("2026/10/05 04:00", -4)
+    assert b.end == parse_local("2026/10/12 03:59", -4)
+
+
 def test_aniimo_europe_only_uses_utc():
     html = "<p>Foo</p><p>[Event Period]</p><p>「Aniimo-Europe」2026/09/28 04:00 - 2026/10/05 03:59 UTC</p>"
     (it,) = aniimo.aniimo_parse_events(html)
