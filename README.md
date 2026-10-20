@@ -133,7 +133,7 @@ These are non-sensitive configuration values. Set them in GitHub repository sett
 | `LEDGER_MSG_DELETED` | `🧹 **Channel Purge Complete**\n{details}\n\n_Total: {total} messages deleted_` | Template for deletion summary. Placeholders: `{details}`, `{total}`, `{channel_count}` |
 | `LEDGER_MSG_CLEAN` | `✨ **All channels clean** — no orphaned messages found.` | Fallback message when no deletions needed (used if `clean_messages.yaml` is missing) |
 | `LEDGER_MSG_CHANNEL_LINE` | `• {channel}: {count} messages` | Template for each channel line. Placeholders: `{channel}`, `{count}` |
-| `DISABLE_UMA_EVENTS` | `false` | Disable Umamusume events scraping entirely |
+| `DISABLE_UMA_EVENTS` | `false` | Disable all Umamusume scraping (events and banners) |
 
 #### Clean Messages Configuration (Purge Bot)
 

@@ -83,7 +83,7 @@ DRY_RUN = os.getenv("DRY_RUN", "false").lower() == "true"
 FORCE_NEW = os.getenv("FORCE_NEW", "false").lower() == "true"
 
 # New: disable Umamusume events entirely (won't appear in updates/summary when disabled)
-# Set DISABLE_UMA_EVENTS=true to skip scraping and reporting Uma events.
+# Set DISABLE_UMA_EVENTS=true to skip scraping and reporting every Uma flow (events and gacha).
 DISABLE_UMA_EVENTS = os.getenv("DISABLE_UMA_EVENTS", "false").strip().lower() == "true"
 
 # Whether to delete old messages if we decide to re-post new chunked ones
@@ -522,16 +522,17 @@ def main():
         print(f"No matching keys for ONLY_KEY='{ONLY_KEY}'. Valid keys:", ", ".join(GAMES.keys()))
         return
 
-    # DISABLE_UMA_EVENTS only drops the Umamusume events flow; its gacha flow still runs.
+    # DISABLE_UMA_EVENTS drops every Umamusume flow (events and gacha).
     if DISABLE_UMA_EVENTS:
-        print("Umamusume events scraping is disabled via DISABLE_UMA_EVENTS; skipping 'umamusume::events'.")
+        print("Umamusume scraping is disabled via DISABLE_UMA_EVENTS; skipping 'umamusume'.")
+        games = [(k, cfg) for k, cfg in games if k != "umamusume"]
+        if not games:
+            return
 
     for key, cfg in games:
         flows = [("events", cfg.events), ("gacha", cfg.gacha)]
         for section_tag, source in flows:
             if source is None:
-                continue
-            if section_tag == "events" and key == "umamusume" and DISABLE_UMA_EVENTS:
                 continue
             results.append(_safe_run_flow(
                 key=key, cfg=cfg, source=source, section_tag=section_tag,

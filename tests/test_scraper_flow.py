@@ -209,16 +209,15 @@ def test_disable_uma_events(calls, monkeypatch):
     monkeypatch.setattr(scraper, "DISABLE_UMA_EVENTS", True)
     scraper.main()
     state = json.loads(scraper.STATE_PATH.read_text())
-    assert set(state) == {"genshin-impact::events", "umamusume::gacha"}
+    assert set(state) == {"genshin-impact::events"}
 
 
-def test_disable_uma_events_with_only_key_keeps_gacha(calls, monkeypatch):
+def test_disable_uma_events_with_only_key_does_nothing(calls, monkeypatch):
     monkeypatch.setattr(scraper, "GAMES", _uma_games())
     monkeypatch.setattr(scraper, "DISABLE_UMA_EVENTS", True)
     monkeypatch.setattr(scraper, "ONLY_KEY", "umamusume")
     scraper.main()
-    state = json.loads(scraper.STATE_PATH.read_text())
-    assert set(state) == {"umamusume::gacha"}
+    assert calls["post"] == [] and calls["embed"] == []
 
 
 def test_games_config_keys_and_titles():
