@@ -5,7 +5,7 @@ Discord bot that scrapes game events, banners, redemption codes, and news from v
 ## Features
 
 - **Event & Gacha Scraper** (`scraper.py`): Scrapes Game8 for events and banners for multiple gacha games
-- **Code Scrapers**: Individual scrapers for redemption codes (Arknights Endfield, MTG Arena, Disney Speedstorm)
+- **Code Scrapers**: Redemption codes for NTE, Aniimo and Arknights Endfield (`game_codes_scraper.py`, Pocket Tactics with PocketGamer as fallback), plus individual scrapers for MTG Arena and Disney Speedstorm
 - **News Scraper**: HoYoLAB + Gryphline + Shadowverse news to a single channel
 - **Channel Purge Bot** (`purge_channels.py`): Cleans up orphaned messages from Discord channels
 - **Daily Quotes Bot** (`daily_quotes.py`): Posts a daily quote to a configured channel
@@ -21,6 +21,8 @@ Discord bot that scrapes game events, banners, redemption codes, and news from v
 | Arknights: Endfield | Yes | Yes | Yes |
 | MTG Arena | - | - | Yes |
 | Disney Speedstorm | - | - | Yes |
+| Neverness to Everness (NTE) | - | - | Yes |
+| Aniimo | - | - | Yes |
 | Shadowverse | - | - | News |
 
 News feeds: Genshin Impact, Honkai: Star Rail, Honkai Impact 3rd, Zenless Zone Zero, Arknights: Endfield, Shadowverse.
@@ -55,7 +57,7 @@ Used by the main scraper (`scraper.py`) to post events/gacha updates, and by the
 |----------|---------|-------------|
 | `WEBHOOK_URL_SUMMARY` | scraper, codes | Summary/log channel for scraper reports and health pings |
 | `WEBHOOK_URL_LEDGER` | purge | Ledger channel for purge bot summaries |
-| `WEBHOOK_URL_CODEX` | codes | Channel for redemption code alerts (Endfield, MTGA, Speedstorm) |
+| `WEBHOOK_URL_CODEX` | codes | Channel for redemption code alerts (NTE, Aniimo, Endfield, MTGA, Speedstorm) |
 | `WEBHOOK_URL_NEWS` | news | Channel for HoYoLAB + Gryphline + Shadowverse news posts |
 
 #### Role IDs (Optional)
@@ -69,6 +71,8 @@ Used for @mentioning Discord roles when new content is detected.
 | `ROLE_ID_GI` | Genshin Impact role ID |
 | `ROLE_ID_UMA` | Umamusume role ID |
 | `ROLE_ID_ARKNIGHTS_ENDFIELD` | Arknights: Endfield role ID |
+| `ROLE_ID_NTE` | Neverness to Everness role ID |
+| `ROLE_ID_ANIIMO` | Aniimo role ID |
 | `ROLE_ID_MTGA` | MTG Arena role ID |
 | `ROLE_ID_SPEEDSTORM` | Disney Speedstorm role ID |
 
@@ -181,6 +185,8 @@ This means you only need to configure `WEBHOOK_URL_*` secrets - channel IDs are 
 |----------|----------------|-------------|
 | `update.yml` | 09:00 | Main scraper (events + gacha) |
 | `daily-arknights-endfield.yml` | 08:30 | Arknights Endfield codes |
+| `daily-nte-codes.yml` | 08:45 | NTE codes |
+| `daily-aniimo-codes.yml` | 09:15 | Aniimo codes |
 | `daily-mtga.yml` | 08:00 | MTG Arena codes |
 | `daily-news-genshin.yml` | 12:00 | Genshin news |
 | `daily-news-starrail.yml` | 12:30 | Star Rail news |
