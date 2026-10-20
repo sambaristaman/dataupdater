@@ -67,7 +67,7 @@ O que é preciso saber:
 **Aniimo**: API JSON pública do site oficial, sem autenticação.
 - Listagem: `GET https://worldx-office-api.aniimo.com/api/information/list?region=en&pageNum=1&pageSize=20`, resposta em `data.list[]` com `id`, `title`, `informationType` (`new` ou `announcement`), `mainPic`, `showTime`, `publishTime`. Atenção: o campo `msg` vem "Article Query Failed" mesmo quando dá certo. Use `code == 200` e a lista.
 - Detalhe: `GET https://worldx-office-api.aniimo.com/api/information/new?id=<id>` traz `data.content` em HTML. Às vezes vem vazio, por exemplo no id 100219, que é só a imagem de destaque. Nesse caso use `mainPic` e o título.
-- Link público: `https://aniimo.com/en/newslist/detail/<id>`. **Ainda não foi verificado**: o builder deve confirmar que o caminho abre a notícia. O sitemap (`https://aniimo.com/api/__sitemap__/urls`) lista o formato `/<lang>/newslist/detail/<id>`, e para inglês provavelmente é `/newslist/detail/<id>` sem prefixo.
+- Link público: `https://aniimo.com/en/newslist/detail/<id>`. Verificado: responde 200 com o título da notícia.
 
 Nenhum dos dois sites oficiais publica códigos de resgate. Isso foi conferido em todas as notícias do NTE e nas 20 mais recentes do Aniimo.
 
