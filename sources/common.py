@@ -161,5 +161,7 @@ def http_get_json(url: str, params: Optional[dict] = None) -> Any:
 def http_get_text(url: str, params: Optional[dict] = None) -> str:
     r = SESSION.get(url, params=params, timeout=TIMEOUT)
     r.raise_for_status()
-    r.encoding = r.encoding or "utf-8"
+    # requests defaults text/* without a charset to ISO-8859-1 (mojibake for UTF-8 pages).
+    if "charset" not in r.headers.get("Content-Type", "").lower():
+        return r.content.decode("utf-8", errors="replace")
     return r.text

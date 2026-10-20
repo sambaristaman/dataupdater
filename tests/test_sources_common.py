@@ -1,4 +1,7 @@
 import sys
+
+import pytest
+import requests
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
@@ -7,11 +10,13 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 import scraper
+from sources import common
 from sources.common import (
     Item,
     SourceResult,
     build_bullets,
     format_bullet,
+    http_get_text,
     parse_local,
     parse_offset,
     with_fallback,
@@ -80,3 +85,43 @@ def test_with_fallback_primary_raises_uses_fallback():
         raise RuntimeError("boom")
     f = lambda now: SourceResult([Item("X", None, NOW)], "f", "u2")
     assert with_fallback(p, f)(NOW).source_name == "f"
+
+
+def _fake_response(body: bytes, content_type: str):
+    r = requests.Response()
+    r.status_code = 200
+    r._content = body
+    r.headers["Content-Type"] = content_type
+    r.encoding = requests.utils.get_encoding_from_headers(r.headers)
+    return r
+
+
+def test_http_get_text_utf8_without_charset(monkeypatch):
+    resp = _fake_response("Café — 日本".encode("utf-8"), "text/html")
+    monkeypatch.setattr(common.SESSION, "get", lambda *a, **k: resp)
+    assert http_get_text("http://x") == "Café — 日本"
+
+
+def test_http_get_text_honors_explicit_charset(monkeypatch):
+    resp = _fake_response("Café".encode("latin-1"), "text/html; charset=iso-8859-1")
+    monkeypatch.setattr(common.SESSION, "get", lambda *a, **k: resp)
+    assert http_get_text("http://x") == "Café"
+
+
+def test_parse_offset_utc_zero():
+    assert parse_offset("UTC+0") == 0
+
+
+def test_build_bullets_item_without_dates_is_current():
+    lines = build_bullets([Item("Evergreen", None, None)], NOW)
+    assert lines == ["__Current__", "• Evergreen"]
+
+
+def test_with_fallback_propagates_fallback_exception():
+    def p(now):
+        raise RuntimeError("p")
+
+    def f(now):
+        raise ValueError("f")
+    with pytest.raises(ValueError):
+        with_fallback(p, f)(NOW)
