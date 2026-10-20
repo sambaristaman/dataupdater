@@ -1,0 +1,582 @@
+[
+ {
+  "support_id": 20022,
+  "char_name": "Tamamo Cross",
+  "title_en": "[Now Dat's What I Call Grilled Squid!]"
+ },
+ {
+  "support_id": 20023,
+  "char_name": "Sweep Tosho",
+  "title_en": "[Lamplit Training of a Witch-to-Be]"
+ },
+ {
+  "support_id": 20024,
+  "char_name": "Daitaku Helios",
+  "title_en": "[Let's Get This Party Lit!]"
+ },
+ {
+  "support_id": 20025,
+  "char_name": "Ikuno Dictus",
+  "title_en": "[Never Skip Warm-Ups]"
+ },
+ {
+  "support_id": 20027,
+  "char_name": "Nishino Flower",
+  "title_en": "[Lifting Your Spirits]"
+ },
+ {
+  "support_id": 20028,
+  "char_name": "Zenno Rob Roy",
+  "title_en": "[The Perfect Book for You]"
+ },
+ {
+  "support_id": 20029,
+  "char_name": "Seeking the Pearl",
+  "title_en": "[The World's My Oyster]"
+ },
+ {
+  "support_id": 20030,
+  "char_name": "Ines Fujin",
+  "title_en": "[You Earned It!]"
+ },
+ {
+  "support_id": 20031,
+  "char_name": "Shinko Windy",
+  "title_en": "[///WARNING GATE///]"
+ },
+ {
+  "support_id": 20032,
+  "char_name": "Inari One",
+  "title_en": "[Laughing through the Mud]"
+ },
+ {
+  "support_id": 20033,
+  "char_name": "El Condor Pasa",
+  "title_en": "[Mud-Caked Compañero]"
+ },
+ {
+  "support_id": 20034,
+  "char_name": "Mejiro Ardan",
+  "title_en": "[My Heart Will Go On]"
+ },
+ {
+  "support_id": 20035,
+  "char_name": "Tosen Jordan",
+  "title_en": "[Turf as Nails]"
+ },
+ {
+  "support_id": 20037,
+  "char_name": "Fine Motion",
+  "title_en": "[Grma, Ramen ♪]"
+ },
+ {
+  "support_id": 20038,
+  "char_name": "Sirius Symboli",
+  "title_en": "[The Brightest Star Shines On]"
+ },
+ {
+  "support_id": 20039,
+  "char_name": "Vodka",
+  "title_en": "[An Annoying Supervisor]"
+ },
+ {
+  "support_id": 20040,
+  "char_name": "Mejiro Ryan",
+  "title_en": "[Hot Hearts and Cool Drinks]"
+ },
+ {
+  "support_id": 20041,
+  "char_name": "Admire Vega",
+  "title_en": "[Aim for the Brightest]"
+ },
+ {
+  "support_id": 20042,
+  "char_name": "Sakura Bakushin O",
+  "title_en": "[The Perfect Morning Greeting!]"
+ },
+ {
+  "support_id": 20044,
+  "char_name": "Curren Chan",
+  "title_en": "[Cozy Cute Memory ♪]"
+ },
+ {
+  "support_id": 20046,
+  "char_name": "Sweep Tosho",
+  "title_en": "[Reckless Witch Training]"
+ },
+ {
+  "support_id": 20047,
+  "char_name": "Tokai Teio",
+  "title_en": "[Step! Smile! Wink!]"
+ },
+ {
+  "support_id": 20048,
+  "char_name": "Oguri Cap",
+  "title_en": "[I Love You... Dear Food]"
+ },
+ {
+  "support_id": 20049,
+  "char_name": "Gold City",
+  "title_en": "[Going for Gold]"
+ },
+ {
+  "support_id": 20050,
+  "char_name": "Seiun Sky",
+  "title_en": "[Bobbing with the Waves]"
+ },
+ {
+  "support_id": 20051,
+  "char_name": "K.S.Miracle",
+  "title_en": "[The 3rd Miracle]"
+ },
+ {
+  "support_id": 20052,
+  "char_name": "Tsurumaru Tsuyoshi",
+  "title_en": "[Go, Go! Tsuyoshi!]"
+ },
+ {
+  "support_id": 20053,
+  "char_name": "Narita Top Road",
+  "title_en": "[Stop, Prez!]"
+ },
+ {
+  "support_id": 20054,
+  "char_name": "TM Opera O",
+  "title_en": "[Mighty Fotografia]"
+ },
+ {
+  "support_id": 30001,
+  "char_name": "Special Week",
+  "title_en": "[The Brightest Star in Japan!]"
+ },
+ {
+  "support_id": 30002,
+  "char_name": "Silence Suzuka",
+  "title_en": "[Beyond This Shining Moment]"
+ },
+ {
+  "support_id": 30003,
+  "char_name": "Tokai Teio",
+  "title_en": "[Dream Big!]"
+ },
+ {
+  "support_id": 30004,
+  "char_name": "Gold Ship",
+  "title_en": "[Breakaway Battleship]"
+ },
+ {
+  "support_id": 30005,
+  "char_name": "Vodka",
+  "title_en": "[Wild Rider]"
+ },
+ {
+  "support_id": 30006,
+  "char_name": "Grass Wonder",
+  "title_en": "[Fairest Fleur]"
+ },
+ {
+  "support_id": 30007,
+  "char_name": "El Condor Pasa",
+  "title_en": "[Champion's Passion]"
+ },
+ {
+  "support_id": 30008,
+  "char_name": "Seiun Sky",
+  "title_en": "[Foolproof Plan]"
+ },
+ {
+  "support_id": 30009,
+  "char_name": "Tamamo Cross",
+  "title_en": "[Split the Sky, White Lightning!]"
+ },
+ {
+  "support_id": 30010,
+  "char_name": "Fine Motion",
+  "title_en": "[Wave of Gratitude]"
+ },
+ {
+  "support_id": 30011,
+  "char_name": "Ines Fujin",
+  "title_en": "[Watch My Star Fly!]"
+ },
+ {
+  "support_id": 30012,
+  "char_name": "Winning Ticket",
+  "title_en": "[BNWinner!]"
+ },
+ {
+  "support_id": 30013,
+  "char_name": "Air Shakur",
+  "title_en": "[7 More Centimeters]"
+ },
+ {
+  "support_id": 30014,
+  "char_name": "Gold City",
+  "title_en": "[Run(my)way]"
+ },
+ {
+  "support_id": 30015,
+  "char_name": "Sakura Bakushin O",
+  "title_en": "[Eat Fast! Yum Fast!]"
+ },
+ {
+  "support_id": 30016,
+  "char_name": "Super Creek",
+  "title_en": "[Piece of Mind]"
+ },
+ {
+  "support_id": 30017,
+  "char_name": "Smart Falcon",
+  "title_en": "[My Umadol Way! ☆]"
+ },
+ {
+  "support_id": 30018,
+  "char_name": "Nishino Flower",
+  "title_en": "[Even the Littlest Bud]"
+ },
+ {
+  "support_id": 30020,
+  "char_name": "Biko Pegasus",
+  "title_en": "[Double Carrot Punch!]"
+ },
+ {
+  "support_id": 30021,
+  "char_name": "Tazuna Hayakawa",
+  "title_en": "[Tracen Reception]"
+ },
+ {
+  "support_id": 30024,
+  "char_name": "Oguri Cap",
+  "title_en": "[Get Lots of Hugs for Me]"
+ },
+ {
+  "support_id": 30026,
+  "char_name": "Twin Turbo",
+  "title_en": "[Turbo Booooost!]"
+ },
+ {
+  "support_id": 30027,
+  "char_name": "Mejiro Palmer",
+  "title_en": "[Go Ahead and Laugh]"
+ },
+ {
+  "support_id": 30028,
+  "char_name": "Kitasan Black",
+  "title_en": "[Fire at My Heels]"
+ },
+ {
+  "support_id": 30029,
+  "char_name": "Satono Diamond",
+  "title_en": "[The Will to Overtake]"
+ },
+ {
+  "support_id": 30031,
+  "char_name": "Yukino Bijin",
+  "title_en": "[Hometown Cheers]"
+ },
+ {
+  "support_id": 30032,
+  "char_name": "Yaeno Muteki",
+  "title_en": "[Fiery Discipline]"
+ },
+ {
+  "support_id": 30034,
+  "char_name": "Rice Shower",
+  "title_en": "[Happiness Just around the Bend]"
+ },
+ {
+  "support_id": 30036,
+  "char_name": "Riko Kashimoto",
+  "title_en": "[Planned Perfection]"
+ },
+ {
+  "support_id": 30038,
+  "char_name": "Sakura Chiyono O",
+  "title_en": "[Peak Sakura Season]"
+ },
+ {
+  "support_id": 30039,
+  "char_name": "Kawakami Princess",
+  "title_en": "[Princess Bride]"
+ },
+ {
+  "support_id": 30040,
+  "char_name": "Hishi Akebono",
+  "title_en": "[Who Wants the First Bite?]"
+ },
+ {
+  "support_id": 30042,
+  "char_name": "Bamboo Memory",
+  "title_en": "[Head-on Fight!]"
+ },
+ {
+  "support_id": 30043,
+  "char_name": "Nakayama Festa",
+  "title_en": "[43, 8, 1]"
+ },
+ {
+  "support_id": 30045,
+  "char_name": "Sweep Tosho",
+  "title_en": "[It's All Mine!]"
+ },
+ {
+  "support_id": 30046,
+  "char_name": "Winning Ticket",
+  "title_en": "[Full-Blown Tantrum]"
+ },
+ {
+  "support_id": 30048,
+  "char_name": "Mejiro Ryan",
+  "title_en": "[Winning Pitch]"
+ },
+ {
+  "support_id": 30052,
+  "char_name": "Light Hello",
+  "title_en": "[From the Ground Up]"
+ },
+ {
+  "support_id": 30053,
+  "char_name": "Taiki Shuttle",
+  "title_en": "[Hands Up, Crook!]"
+ },
+ {
+  "support_id": 30054,
+  "char_name": "Nice Nature",
+  "title_en": "[Daring to Dream]"
+ },
+ {
+  "support_id": 30055,
+  "char_name": "Seiun Sky",
+  "title_en": "[Paint the Sky Red]"
+ },
+ {
+  "support_id": 30056,
+  "char_name": "King Halo",
+  "title_en": "[Tonight, We Waltz]"
+ },
+ {
+  "support_id": 30063,
+  "char_name": "Ikuno Dictus",
+  "title_en": "[Warm Heart, Soft Steps]"
+ },
+ {
+  "support_id": 30064,
+  "char_name": "Tamamo Cross",
+  "title_en": "[Beware! Halloween Night!]"
+ },
+ {
+  "support_id": 30065,
+  "char_name": "Zenno Rob Roy",
+  "title_en": "[Magical Heroine]"
+ },
+ {
+  "support_id": 30067,
+  "char_name": "The Throne's Assemblage",
+  "title_en": "[Esteemed and Adored]"
+ },
+ {
+  "support_id": 30068,
+  "char_name": "Curren Chan",
+  "title_en": "[Cutie Pie with Shining Eyes]"
+ },
+ {
+  "support_id": 30069,
+  "char_name": "Narita Brian",
+  "title_en": "[The Whistling Arrow's Taunt]"
+ },
+ {
+  "support_id": 30071,
+  "char_name": "Daitaku Helios",
+  "title_en": "[Make! Some! NOISE!]"
+ },
+ {
+  "support_id": 30072,
+  "char_name": "Mayano Top Gun",
+  "title_en": "[Party Formation]"
+ },
+ {
+  "support_id": 30073,
+  "char_name": "Narita Taishin",
+  "title_en": "[Strict Shopper]"
+ },
+ {
+  "support_id": 30075,
+  "char_name": "Manhattan Cafe",
+  "title_en": "[My Solo Spun in Spiraling Runs]"
+ },
+ {
+  "support_id": 30077,
+  "char_name": "Admire Vega",
+  "title_en": "[Lucky Star in the Sky]"
+ },
+ {
+  "support_id": 30078,
+  "char_name": "Matikanefukukitaru",
+  "title_en": "[Touching Sleeves Is Good Luck! ♪]"
+ },
+ {
+  "support_id": 30080,
+  "char_name": "Sasami Anshinzawa",
+  "title_en": "[This Might Sting!]"
+ },
+ {
+  "support_id": 30082,
+  "char_name": "Nishino Flower",
+  "title_en": "[Little Cupcakes, Big Emotions]"
+ },
+ {
+  "support_id": 30083,
+  "char_name": "Sakura Bakushin O",
+  "title_en": "[Super! Sonic! Flower Power!]"
+ },
+ {
+  "support_id": 30085,
+  "char_name": "Agnes Digital",
+  "title_en": "[A Fan's Joy]"
+ },
+ {
+  "support_id": 30086,
+  "char_name": "Narita Top Road",
+  "title_en": "[Peachy Silhouette]"
+ },
+ {
+  "support_id": 30089,
+  "char_name": "Marvelous Sunday",
+  "title_en": "[A MORE MARVELOUS WORLD! ☆]"
+ },
+ {
+  "support_id": 30090,
+  "char_name": "Symboli Rudolf",
+  "title_en": "[Enchaînement]"
+ },
+ {
+  "support_id": 30091,
+  "char_name": "Sirius Symboli",
+  "title_en": "[Escorte Étoile]"
+ },
+ {
+  "support_id": 30093,
+  "char_name": "Daiwa Scarlet",
+  "title_en": "[Number 1 Outfit]"
+ },
+ {
+  "support_id": 30094,
+  "char_name": "Bamboo Memory",
+  "title_en": "[Make These Feelings Reach You!]"
+ },
+ {
+  "support_id": 30095,
+  "char_name": "Seeking the Pearl",
+  "title_en": "[Cheer that Changed the World]"
+ },
+ {
+  "support_id": 30097,
+  "char_name": "Mr. C.B.",
+  "title_en": "[Dear Mr. C.B.]"
+ },
+ {
+  "support_id": 30098,
+  "char_name": "Haru Urara",
+  "title_en": "[Sunny Passion ♪]"
+ },
+ {
+  "support_id": 30099,
+  "char_name": "Ikuno Dictus",
+  "title_en": "[Beloved Orchid Bouquet]"
+ },
+ {
+  "support_id": 30101,
+  "char_name": "Agnes Tachyon",
+  "title_en": "[Q≠0]"
+ },
+ {
+  "support_id": 30102,
+  "char_name": "El Condor Pasa",
+  "title_en": "[Twinkle in Your Eyes ∞]"
+ },
+ {
+  "support_id": 30103,
+  "char_name": "Matikanetannhauser",
+  "title_en": "[Machitan☆Adventure]"
+ },
+ {
+  "support_id": 30106,
+  "char_name": "Air Groove",
+  "title_en": "[Tailwind to My Goals]"
+ },
+ {
+  "support_id": 30107,
+  "char_name": "Maruzensky",
+  "title_en": "[Sentimental Flare ♪]"
+ },
+ {
+  "support_id": 30108,
+  "char_name": "Nakayama Festa",
+  "title_en": "[Trusting the Dice]"
+ },
+ {
+  "support_id": 30110,
+  "char_name": "Manhattan Cafe",
+  "title_en": "[It's on the House]"
+ },
+ {
+  "support_id": 30111,
+  "char_name": "Tokai Teio",
+  "title_en": "[Teio-Oo-Oo!!!]"
+ },
+ {
+  "support_id": 30112,
+  "char_name": "Twin Turbo",
+  "title_en": "[TT Ignition!]"
+ },
+ {
+  "support_id": 30114,
+  "char_name": "Daiichi Ruby",
+  "title_en": "[Ah, Such Majesty]"
+ },
+ {
+  "support_id": 30115,
+  "char_name": "Mejiro Palmer",
+  "title_en": "[Moonlit Devil ♪]"
+ },
+ {
+  "support_id": 30116,
+  "char_name": "Daitaku Helios",
+  "title_en": "[Sunlit Angel ♪]"
+ },
+ {
+  "support_id": 30118,
+  "char_name": "Symboli Kris S",
+  "title_en": "[A Win Foreshadowed]"
+ },
+ {
+  "support_id": 30120,
+  "char_name": "Yaeno Muteki",
+  "title_en": "[Pious Flame, Heavens Scorcher]"
+ },
+ {
+  "support_id": 30122,
+  "char_name": "Eishin Flash",
+  "title_en": "[Danke Schön]"
+ },
+ {
+  "support_id": 30123,
+  "char_name": "Narita Brian",
+  "title_en": "[Glad Tidings]"
+ },
+ {
+  "support_id": 30124,
+  "char_name": "Air Groove",
+  "title_en": "[Are You Merry?]"
+ },
+ {
+  "support_id": 30126,
+  "char_name": "Yamanin Zephyr",
+  "title_en": "[To Winds Untraveled]"
+ },
+ {
+  "support_id": 30146,
+  "char_name": "Oguri Cap",
+  "title_en": "[Run Forth! Dash On! Ever Forward!]"
+ }
+]

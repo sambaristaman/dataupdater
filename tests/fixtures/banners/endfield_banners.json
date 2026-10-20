@@ -1,0 +1,202 @@
+{
+ "cargoquery": [
+  {
+   "title": {
+    "Banner": "The Hearth Fire Beckons the Starry Flow",
+    "RateUpOperator": "Argent Flow",
+    "LimitedOperators": "Argent Flow;Si;Typhoeus",
+    "AsiaStartTime": "2026-11-05 04:00:00",
+    "AsiaEndTime": "2026-11-26 03:59:59",
+    "AsiaStartTime__precision": "0",
+    "AsiaEndTime__precision": "0"
+   }
+  },
+  {
+   "title": {
+    "Banner": "Ancestral Spring Flows Anew",
+    "RateUpOperator": "",
+    "LimitedOperators": "Tangtang",
+    "AsiaStartTime": "2026-10-29 04:00:00",
+    "AsiaEndTime": "2026-11-19 03:59:59",
+    "AsiaStartTime__precision": "0",
+    "AsiaEndTime__precision": "0"
+   }
+  },
+  {
+   "title": {
+    "Banner": "Rejuvenation",
+    "RateUpOperator": "Si",
+    "LimitedOperators": "Si;Typhoeus;Liino",
+    "AsiaStartTime": "2026-10-15 04:00:00",
+    "AsiaEndTime": "2026-11-05 03:59:59",
+    "AsiaStartTime__precision": "0",
+    "AsiaEndTime__precision": "0"
+   }
+  },
+  {
+   "title": {
+    "Banner": "Resplendent Spectrum",
+    "RateUpOperator": "",
+    "LimitedOperators": "Yvonne",
+    "AsiaStartTime": "2026-09-24 04:00:00",
+    "AsiaEndTime": "2026-10-14 21:59:59",
+    "AsiaStartTime__precision": "0",
+    "AsiaEndTime__precision": "0"
+   }
+  },
+  {
+   "title": {
+    "Banner": "Winter Hunt",
+    "RateUpOperator": "Typhoeus",
+    "LimitedOperators": "Typhoeus;Liino;Arcane",
+    "AsiaStartTime": "2026-09-02 04:00:00",
+    "AsiaEndTime": "2026-09-30 03:59:59",
+    "AsiaStartTime__precision": "0",
+    "AsiaEndTime__precision": "0"
+   }
+  },
+  {
+   "title": {
+    "Banner": "Good Morning from Your Dawnstar",
+    "RateUpOperator": "Liino",
+    "LimitedOperators": "Liino;Arcane;Camille",
+    "AsiaStartTime": "2026-08-09 04:00:00",
+    "AsiaEndTime": "2026-09-01 21:59:59",
+    "AsiaStartTime__precision": "0",
+    "AsiaEndTime__precision": "0"
+   }
+  },
+  {
+   "title": {
+    "Banner": "North Yearns the Rift Vigile",
+    "RateUpOperator": "Arcane",
+    "LimitedOperators": "Arcane;Camille;Mi Fu",
+    "AsiaStartTime": "2026-07-16 04:00:00",
+    "AsiaEndTime": "2026-08-09 03:59:59",
+    "AsiaStartTime__precision": "0",
+    "AsiaEndTime__precision": "0"
+   }
+  },
+  {
+   "title": {
+    "Banner": "Expunger of Sin",
+    "RateUpOperator": "Camille",
+    "LimitedOperators": "Camille;Mi Fu;Zhuang Fangyi",
+    "AsiaStartTime": "2026-06-26 04:00:00",
+    "AsiaEndTime": "2026-07-15 21:59:59",
+    "AsiaStartTime__precision": "0",
+    "AsiaEndTime__precision": "0"
+   }
+  },
+  {
+   "title": {
+    "Banner": "Fists of No Regrets",
+    "RateUpOperator": "Mi Fu",
+    "LimitedOperators": "Mi Fu;Zhuang Fangyi;Rossi",
+    "AsiaStartTime": "2026-06-05 04:00:00",
+    "AsiaEndTime": "2026-06-26 03:59:59",
+    "AsiaStartTime__precision": "0",
+    "AsiaEndTime__precision": "0"
+   }
+  },
+  {
+   "title": {
+    "Banner": "Fest of Brilliance",
+    "RateUpOperator": "",
+    "LimitedOperators": "Laevatain;Gilberta;Ardelia;Pogranichnik",
+    "AsiaStartTime": "2026-05-14 04:00:00",
+    "AsiaEndTime": "2026-06-04 21:59:59",
+    "AsiaStartTime__precision": "0",
+    "AsiaEndTime__precision": "0"
+   }
+  },
+  {
+   "title": {
+    "Banner": "Thunder of Renewal",
+    "RateUpOperator": "Zhuang Fangyi",
+    "LimitedOperators": "Zhuang Fangyi;Rossi;Tangtang",
+    "AsiaStartTime": "2026-04-17 04:00:00",
+    "AsiaEndTime": "2026-05-22 03:59:59",
+    "AsiaStartTime__precision": "0",
+    "AsiaEndTime__precision": "0"
+   }
+  },
+  {
+   "title": {
+    "Banner": "Wolf Pearl",
+    "RateUpOperator": "Rossi",
+    "LimitedOperators": "Rossi;Tangtang;Yvonne",
+    "AsiaStartTime": "2026-03-29 04:00:00",
+    "AsiaEndTime": "2026-04-16 21:59:59",
+    "AsiaStartTime__precision": "0",
+    "AsiaEndTime__precision": "0"
+   }
+  },
+  {
+   "title": {
+    "Banner": "River's Daughter",
+    "RateUpOperator": "Tangtang",
+    "LimitedOperators": "Tangtang;Yvonne;Gilberta",
+    "AsiaStartTime": "2026-03-12 04:00:00",
+    "AsiaEndTime": "2026-03-29 03:59:59",
+    "AsiaStartTime__precision": "0",
+    "AsiaEndTime__precision": "0"
+   }
+  },
+  {
+   "title": {
+    "Banner": "Hues of Passion",
+    "RateUpOperator": "Yvonne",
+    "LimitedOperators": "Yvonne;Laevatain;Gilberta",
+    "AsiaStartTime": "2026-02-24 04:00:00",
+    "AsiaEndTime": "2026-03-11 21:59:59",
+    "AsiaStartTime__precision": "0",
+    "AsiaEndTime__precision": "0"
+   }
+  },
+  {
+   "title": {
+    "Banner": "The Floaty Messenger",
+    "RateUpOperator": "Gilberta",
+    "LimitedOperators": "Gilberta;Yvonne;Laevatain",
+    "AsiaStartTime": "2026-02-07 04:00:00",
+    "AsiaEndTime": "2026-02-24 03:59:59",
+    "AsiaStartTime__precision": "0",
+    "AsiaEndTime__precision": "0"
+   }
+  },
+  {
+   "title": {
+    "Banner": "Scars of the Forge",
+    "RateUpOperator": "Laevatain",
+    "LimitedOperators": "Laevatain;Gilberta;Yvonne",
+    "AsiaStartTime": "2026-01-22 03:00:00",
+    "AsiaEndTime": "2026-02-07 03:59:59",
+    "AsiaStartTime__precision": "0",
+    "AsiaEndTime__precision": "0"
+   }
+  },
+  {
+   "title": {
+    "Banner": "Basic Headhunting",
+    "RateUpOperator": "",
+    "LimitedOperators": "Ardelia;Pogranichnik;Last Rite;Ember;Lifeng",
+    "AsiaStartTime": "2026-01-22 03:00:00",
+    "AsiaEndTime": "",
+    "AsiaStartTime__precision": "0",
+    "AsiaEndTime__precision": ""
+   }
+  },
+  {
+   "title": {
+    "Banner": "New Horizons Headhunting",
+    "RateUpOperator": "",
+    "LimitedOperators": "Ardelia;Pogranichnik;Last Rite;Ember;Lifeng",
+    "AsiaStartTime": "2026-01-22 03:00:00",
+    "AsiaEndTime": "",
+    "AsiaStartTime__precision": "0",
+    "AsiaEndTime__precision": ""
+   }
+  }
+ ]
+}

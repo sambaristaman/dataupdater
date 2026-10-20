@@ -1,0 +1,246 @@
+{
+ "cargoquery": [
+  {
+   "title": {
+    "Issue": "Moongleam",
+    "RateUpWeapon": "Lunar Calling",
+    "Weapons": "Lunar Calling",
+    "AsiaStartTime": "2026-11-05 04:00:00",
+    "AsiaEndTime": "2027-01-06 21:59:59",
+    "AsiaStartTime__precision": "0",
+    "AsiaEndTime__precision": "0"
+   }
+  },
+  {
+   "title": {
+    "Issue": "Tender Sprig",
+    "RateUpWeapon": "Brigand's Calling",
+    "Weapons": "Brigand's Calling",
+    "AsiaStartTime": "2026-10-29 04:00:00",
+    "AsiaEndTime": "2026-11-19 21:59:59",
+    "AsiaStartTime__precision": "0",
+    "AsiaEndTime__precision": "0"
+   }
+  },
+  {
+   "title": {
+    "Issue": "Seal of Jade",
+    "RateUpWeapon": "Jade Vessel",
+    "Weapons": "Jade Vessel;Former Finery;Wedge;JET;Chivalric Virtues;Sundered Prince;Eminent Repute",
+    "AsiaStartTime": "2026-10-15 04:00:00",
+    "AsiaEndTime": "2026-12-17 03:59:59",
+    "AsiaStartTime__precision": "0",
+    "AsiaEndTime__precision": "0"
+   }
+  },
+  {
+   "title": {
+    "Issue": "Tag Artist",
+    "RateUpWeapon": "Artzy Tyrannical",
+    "Weapons": "Artzy Tyrannical;Wedge;Rapid Ascent;White Night Nova;JET;Chivalric Virtues;Sundered Prince",
+    "AsiaStartTime": "2026-09-24 04:00:00",
+    "AsiaEndTime": "2026-10-14 21:59:59",
+    "AsiaStartTime__precision": "0",
+    "AsiaEndTime__precision": "0"
+   }
+  },
+  {
+   "title": {
+    "Issue": "Deep Cold",
+    "RateUpWeapon": "Umbra of Frigid Eventide",
+    "Weapons": "Umbra of Frigid Eventide;Exemplar;Clannibal;Valiant;Oblivion;Detonation Unit;Rapid Ascent",
+    "AsiaStartTime": "2026-09-02 04:00:00",
+    "AsiaEndTime": "2026-11-25 21:59:59",
+    "AsiaStartTime__precision": "0",
+    "AsiaEndTime__precision": "0"
+   }
+  },
+  {
+   "title": {
+    "Issue": "Bedazzled",
+    "RateUpWeapon": "Bedazzling Night Debut",
+    "Weapons": "Bedazzling Night Debut;Sundered Prince;Clannibal;Valiant;JET;Detonation Unit;Thermite Cutter",
+    "AsiaStartTime": "2026-08-09 04:00:00",
+    "AsiaEndTime": "2026-11-05 03:59:59",
+    "AsiaStartTime__precision": "0",
+    "AsiaEndTime__precision": "0"
+   }
+  },
+  {
+   "title": {
+    "Issue": "Military Grade",
+    "RateUpWeapon": "Type 42: Solemn Phalanx",
+    "Weapons": "Type 42: Solemn Phalanx;Former Finery;Wedge;Eminent Repute;JET;Detonation Unit;Oblivion",
+    "AsiaStartTime": "2026-07-16 04:00:00",
+    "AsiaEndTime": "2026-09-30 03:59:59",
+    "AsiaStartTime__precision": "0",
+    "AsiaEndTime__precision": "0"
+   }
+  },
+  {
+   "title": {
+    "Issue": "Crimson Hued",
+    "RateUpWeapon": "Blessing of Lustrous Carmine",
+    "Weapons": "Blessing of Lustrous Carmine;Valiant;JET;Clannibal;Thermite Cutter;Oblivion;Exemplar",
+    "AsiaStartTime": "2026-06-26 04:00:00",
+    "AsiaEndTime": "2026-09-01 21:59:59",
+    "AsiaStartTime__precision": "0",
+    "AsiaEndTime__precision": "0"
+   }
+  },
+  {
+   "title": {
+    "Issue": "Scarlet Knot",
+    "RateUpWeapon": "Amaranthine Tassel",
+    "Weapons": "Amaranthine Tassel;Former Finery;Sundered Prince;Clannibal;Rapid Ascent;Detonation Unit;Valiant",
+    "AsiaStartTime": "2026-06-05 04:00:00",
+    "AsiaEndTime": "2026-08-09 03:59:59",
+    "AsiaStartTime__precision": "0",
+    "AsiaEndTime__precision": "0"
+   }
+  },
+  {
+   "title": {
+    "Issue": "Swift Walker",
+    "RateUpWeapon": "Delivery Guaranteed",
+    "Weapons": "Delivery Guaranteed;Oblivion;Detonation Unit;Wedge;White Night Nova;Exemplar;Valiant",
+    "AsiaStartTime": "2026-05-14 04:00:00",
+    "AsiaEndTime": "2026-06-04 21:59:59",
+    "AsiaStartTime__precision": "0",
+    "AsiaEndTime__precision": "0"
+   }
+  },
+  {
+   "title": {
+    "Issue": "Smelting Fire",
+    "RateUpWeapon": "Forgeborn Scathe",
+    "Weapons": "Forgeborn Scathe;Thermite Cutter;White Night Nova;Clannibal;Detonation Unit;Valiant;Former Finery",
+    "AsiaStartTime": "2026-05-14 04:00:00",
+    "AsiaEndTime": "2026-06-04 21:59:59",
+    "AsiaStartTime__precision": "0",
+    "AsiaEndTime__precision": "0"
+   }
+  },
+  {
+   "title": {
+    "Issue": "Drifting Raft",
+    "RateUpWeapon": "Lone Barge",
+    "Weapons": "Lone Barge;Oblivion;Chivalric Virtues;Eminent Repute;JET;Wedge;Exemplar",
+    "AsiaStartTime": "2026-04-16 13:00:00",
+    "AsiaEndTime": "2026-07-15 21:59:59",
+    "AsiaStartTime__precision": "0",
+    "AsiaEndTime__precision": "0"
+   }
+  },
+  {
+   "title": {
+    "Issue": "Scarlet Pearl",
+    "RateUpWeapon": "Lupine Scarlet",
+    "Weapons": "Lupine Scarlet;Rapid Ascent;Eminent Repute;Wedge;Former Finery;Detonation Unit;Valiant",
+    "AsiaStartTime": "2026-03-29 04:00:00",
+    "AsiaEndTime": "2026-06-26 03:59:59",
+    "AsiaStartTime__precision": "0",
+    "AsiaEndTime__precision": "0"
+   }
+  },
+  {
+   "title": {
+    "Issue": "Budding Anew",
+    "RateUpWeapon": "Brigand's Calling",
+    "Weapons": "Brigand's Calling;Clannibal;Wedge;Chivalric Virtues;Thermite Cutter;Sundered Prince;JET",
+    "AsiaStartTime": "2026-03-11 15:00:00",
+    "AsiaEndTime": "2026-05-22 03:59:59",
+    "AsiaStartTime__precision": "0",
+    "AsiaEndTime__precision": "0"
+   }
+  },
+  {
+   "title": {
+    "Issue": "Graffiti",
+    "RateUpWeapon": "Artzy Tyrannical",
+    "Weapons": "Artzy Tyrannical;Sundered Prince;Wedge;Chivalric Virtues;Rapid Ascent;White Night Nova;JET",
+    "AsiaStartTime": "2026-02-23 20:00:00",
+    "AsiaEndTime": "2026-04-16 09:00:00",
+    "AsiaStartTime__precision": "0",
+    "AsiaEndTime__precision": "0"
+   }
+  },
+  {
+   "title": {
+    "Issue": "Express Delivery",
+    "RateUpWeapon": "Delivery Guaranteed",
+    "Weapons": "Delivery Guaranteed;Thermite Cutter;Wedge;Chivalric Virtues;Oblivion;White Night Nova;Exemplar",
+    "AsiaStartTime": "2026-02-07 04:00:00",
+    "AsiaEndTime": "2026-03-28 03:59:59",
+    "AsiaStartTime__precision": "0",
+    "AsiaEndTime__precision": "0"
+   }
+  },
+  {
+   "title": {
+    "Issue": "Smelting Forge",
+    "RateUpWeapon": "Forgeborn Scathe",
+    "Weapons": "Forgeborn Scathe;Former Finery;Valiant;Wedge;Chivalric Virtues;White Night Nova;Clannibal",
+    "AsiaStartTime": "2026-01-22 03:00:00",
+    "AsiaEndTime": "2026-03-11 08:59:59",
+    "AsiaStartTime__precision": "0",
+    "AsiaEndTime__precision": "0"
+   }
+  },
+  {
+   "title": {
+    "Issue": "Solid Ice",
+    "RateUpWeapon": "Khravengger",
+    "Weapons": "Khravengger;Exemplar;Sundered Prince;Detonation Unit;JET;White Night Nova;Clannibal",
+    "AsiaStartTime": "2026-01-22 03:00:00",
+    "AsiaEndTime": "",
+    "AsiaStartTime__precision": "0",
+    "AsiaEndTime__precision": ""
+   }
+  },
+  {
+   "title": {
+    "Issue": "Cosmic Voice",
+    "RateUpWeapon": "Dreams of the Starry Beach",
+    "Weapons": "Dreams of the Starry Beach;Detonation Unit;Oblivion;JET;Thermite Cutter;Former Finery;Wedge",
+    "AsiaStartTime": "2026-01-22 03:00:00",
+    "AsiaEndTime": "",
+    "AsiaStartTime__precision": "0",
+    "AsiaEndTime__precision": ""
+   }
+  },
+  {
+   "title": {
+    "Issue": "Far Expedition",
+    "RateUpWeapon": "Never Rest",
+    "Weapons": "Never Rest;Grand Vision;Rapid Ascent;Exemplar;Valiant;Oblivion;Wedge",
+    "AsiaStartTime": "2026-01-22 03:00:00",
+    "AsiaEndTime": "",
+    "AsiaStartTime__precision": "0",
+    "AsiaEndTime__precision": ""
+   }
+  },
+  {
+   "title": {
+    "Issue": "Rising Mount",
+    "RateUpWeapon": "Mountain Bearer",
+    "Weapons": "Mountain Bearer;Valiant;JET;Eminent Repute;Exemplar;Chivalric Virtues;Clannibal",
+    "AsiaStartTime": "2026-01-22 03:00:00",
+    "AsiaEndTime": "",
+    "AsiaStartTime__precision": "0",
+    "AsiaEndTime__precision": ""
+   }
+  },
+  {
+   "title": {
+    "Issue": "Thunderous Peal",
+    "RateUpWeapon": "Thunderberge",
+    "Weapons": "Thunderberge;Former Finery;Sundered Prince;Chivalric Virtues;Valiant;Eminent Repute;Wedge",
+    "AsiaStartTime": "2026-01-22 03:00:00",
+    "AsiaEndTime": "",
+    "AsiaStartTime__precision": "0",
+    "AsiaEndTime__precision": ""
+   }
+  }
+ ]
+}

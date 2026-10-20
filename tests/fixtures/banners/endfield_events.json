@@ -1,0 +1,304 @@
+{
+ "cargoquery": [
+  {
+   "title": {
+    "Event": "The Stars Are With Me",
+    "Type": "Sign-In",
+    "AsiaStartTime": "2026-11-05 04:00:00",
+    "AsiaEndTime": "2026-11-25 03:59:00",
+    "AsiaStartTime__precision": "0",
+    "AsiaEndTime__precision": "0"
+   }
+  },
+  {
+   "title": {
+    "Event": "Contingency Contract: Indigo Experimental Operation",
+    "Type": "Challenge",
+    "AsiaStartTime": "2026-11-05 04:00:00",
+    "AsiaEndTime": "",
+    "AsiaStartTime__precision": "0",
+    "AsiaEndTime__precision": ""
+   }
+  },
+  {
+   "title": {
+    "Event": "Season of Fervor",
+    "Type": "Echoes of War",
+    "AsiaStartTime": "2026-11-05 04:00:00",
+    "AsiaEndTime": "2026-11-26 03:59:00",
+    "AsiaStartTime__precision": "0",
+    "AsiaEndTime__precision": "0"
+   }
+  },
+  {
+   "title": {
+    "Event": "Back to the Rustics",
+    "Type": "Narrative",
+    "AsiaStartTime": "2026-11-05 04:00:00",
+    "AsiaEndTime": "2026-11-25 20:00:00",
+    "AsiaStartTime__precision": "0",
+    "AsiaEndTime__precision": "0"
+   }
+  },
+  {
+   "title": {
+    "Event": "New Era for the Myriad Souls",
+    "Type": "Fun & Games",
+    "AsiaStartTime": "2026-10-31 04:00:00",
+    "AsiaEndTime": "2026-11-13 20:00:00",
+    "AsiaStartTime__precision": "0",
+    "AsiaEndTime__precision": "0"
+   }
+  },
+  {
+   "title": {
+    "Event": "Arena of Games",
+    "Type": "Challenge",
+    "AsiaStartTime": "2026-10-29 04:00:00",
+    "AsiaEndTime": "2026-11-18 20:00:00",
+    "AsiaStartTime__precision": "0",
+    "AsiaEndTime__precision": "0"
+   }
+  },
+  {
+   "title": {
+    "Event": "Monumental Etching: Forest of Maras",
+    "Type": "Challenge",
+    "AsiaStartTime": "2026-10-22 04:00:00",
+    "AsiaEndTime": "2026-11-04 22:00:00",
+    "AsiaStartTime__precision": "0",
+    "AsiaEndTime__precision": "0"
+   }
+  },
+  {
+   "title": {
+    "Event": "Carly's Verdant Anthology",
+    "Type": "Camera",
+    "AsiaStartTime": "2026-10-22 04:00:00",
+    "AsiaEndTime": "2026-11-04 20:00:00",
+    "AsiaStartTime__precision": "0",
+    "AsiaEndTime__precision": "0"
+   }
+  },
+  {
+   "title": {
+    "Event": "Spirit's Restoration",
+    "Type": "Sign-In",
+    "AsiaStartTime": "2026-10-15 04:00:00",
+    "AsiaEndTime": "2026-11-05 03:59:00",
+    "AsiaStartTime__precision": "0",
+    "AsiaEndTime__precision": "0"
+   }
+  },
+  {
+   "title": {
+    "Event": "Season of Phantasia",
+    "Type": "Echoes of War",
+    "AsiaStartTime": "2026-10-15 04:00:00",
+    "AsiaEndTime": "2026-11-05 03:59:00",
+    "AsiaStartTime__precision": "0",
+    "AsiaEndTime__precision": "0"
+   }
+  },
+  {
+   "title": {
+    "Event": "Yuanyuan's Blazing Stoves",
+    "Type": "Fun & Games",
+    "AsiaStartTime": "2026-10-15 04:00:00",
+    "AsiaEndTime": "2026-11-25 22:00:00",
+    "AsiaStartTime__precision": "0",
+    "AsiaEndTime__precision": "0"
+   }
+  },
+  {
+   "title": {
+    "Event": "All the Inky Hues",
+    "Type": "Guide",
+    "AsiaStartTime": "2026-10-15 04:00:00",
+    "AsiaEndTime": "2026-11-05 04:00:00",
+    "AsiaStartTime__precision": "0",
+    "AsiaEndTime__precision": "0"
+   }
+  },
+  {
+   "title": {
+    "Event": "Inkwashed World",
+    "Type": "Sign-In",
+    "AsiaStartTime": "2026-10-08 04:00:00",
+    "AsiaEndTime": "2026-10-14 22:00:00",
+    "AsiaStartTime__precision": "0",
+    "AsiaEndTime__precision": "0"
+   }
+  },
+  {
+   "title": {
+    "Event": "Sanity Supply",
+    "Type": "Limited-Time",
+    "AsiaStartTime": "2026-10-07 20:00:00",
+    "AsiaEndTime": "2026-10-14 19:59:00",
+    "AsiaStartTime__precision": "0",
+    "AsiaEndTime__precision": "0"
+   }
+  },
+  {
+   "title": {
+    "Event": "Monumental Etching: Shadow Marked",
+    "Type": "Challenge",
+    "AsiaStartTime": "2026-10-05 04:00:00",
+    "AsiaEndTime": "2026-10-18 20:00:00",
+    "AsiaStartTime__precision": "0",
+    "AsiaEndTime__precision": "0"
+   }
+  },
+  {
+   "title": {
+    "Event": "Runners' Steeplechase",
+    "Type": "Fun & Games",
+    "AsiaStartTime": "2026-10-01 04:00:00",
+    "AsiaEndTime": "2026-10-14 22:00:00",
+    "AsiaStartTime__precision": "0",
+    "AsiaEndTime__precision": "0"
+   }
+  },
+  {
+   "title": {
+    "Event": "Ridgeline Flows of Autumn",
+    "Type": "Sign-In",
+    "AsiaStartTime": "2026-10-01 04:00:00",
+    "AsiaEndTime": "2026-10-14 22:00:00",
+    "AsiaStartTime__precision": "0",
+    "AsiaEndTime__precision": "0"
+   }
+  },
+  {
+   "title": {
+    "Event": "OrbiPom! MERGE!",
+    "Type": "Fun & Games",
+    "AsiaStartTime": "2026-10-01 04:00:00",
+    "AsiaEndTime": "2026-10-14 22:00:00",
+    "AsiaStartTime__precision": "0",
+    "AsiaEndTime__precision": "0"
+   }
+  },
+  {
+   "title": {
+    "Event": "Season of Illusion",
+    "Type": "Echoes of War",
+    "AsiaStartTime": "2026-09-24 04:00:00",
+    "AsiaEndTime": "2026-10-14 22:00:00",
+    "AsiaStartTime__precision": "0",
+    "AsiaEndTime__precision": "0"
+   }
+  },
+  {
+   "title": {
+    "Event": "Purry Big Feline! RAWR!",
+    "Type": "Giveaway",
+    "AsiaStartTime": "2026-09-24 04:00:00",
+    "AsiaEndTime": "2026-10-14 22:00:00",
+    "AsiaStartTime__precision": "0",
+    "AsiaEndTime__precision": "0"
+   }
+  },
+  {
+   "title": {
+    "Event": "Echoing Bell of an Old City",
+    "Type": "Guide",
+    "AsiaStartTime": "2026-09-24 04:00:00",
+    "AsiaEndTime": "2026-10-14 22:00:00",
+    "AsiaStartTime__precision": "0",
+    "AsiaEndTime__precision": "0"
+   }
+  },
+  {
+   "title": {
+    "Event": "Sanity Supply",
+    "Type": "Limited-Time",
+    "AsiaStartTime": "2026-09-16 20:00:00",
+    "AsiaEndTime": "2026-09-23 19:59:00",
+    "AsiaStartTime__precision": "0",
+    "AsiaEndTime__precision": "0"
+   }
+  },
+  {
+   "title": {
+    "Event": "AIC Support: Chubby Lung Attacks",
+    "Type": "AIC Production",
+    "AsiaStartTime": "2026-09-16 04:00:00",
+    "AsiaEndTime": "2026-09-30 08:00:00",
+    "AsiaStartTime__precision": "0",
+    "AsiaEndTime__precision": "0"
+   }
+  },
+  {
+   "title": {
+    "Event": "Trial of the Bow",
+    "Type": "Challenge",
+    "AsiaStartTime": "2026-09-09 04:00:00",
+    "AsiaEndTime": "2026-10-14 22:00:00",
+    "AsiaStartTime__precision": "0",
+    "AsiaEndTime__precision": "0"
+   }
+  },
+  {
+   "title": {
+    "Event": "A Winter Dream Fogged Deep in the Woods",
+    "Type": "Narrative",
+    "AsiaStartTime": "2026-09-02 04:00:00",
+    "AsiaEndTime": "2026-10-14 22:00:00",
+    "AsiaStartTime__precision": "0",
+    "AsiaEndTime__precision": "0"
+   }
+  },
+  {
+   "title": {
+    "Event": "Fletched Irontip",
+    "Type": "Sign-In",
+    "AsiaStartTime": "2026-09-02 04:00:00",
+    "AsiaEndTime": "2026-09-30 04:00:00",
+    "AsiaStartTime__precision": "0",
+    "AsiaEndTime__precision": "0"
+   }
+  },
+  {
+   "title": {
+    "Event": "Snow Over Deep Woods",
+    "Type": "Guide",
+    "AsiaStartTime": "2026-09-02 04:00:00",
+    "AsiaEndTime": "2026-09-30 03:59:00",
+    "AsiaStartTime__precision": "0",
+    "AsiaEndTime__precision": "0"
+   }
+  },
+  {
+   "title": {
+    "Event": "Season of Virtuality",
+    "Type": "Echoes of War",
+    "AsiaStartTime": "2026-09-02 04:00:00",
+    "AsiaEndTime": "2026-09-24 03:59:00",
+    "AsiaStartTime__precision": "0",
+    "AsiaEndTime__precision": "0"
+   }
+  },
+  {
+   "title": {
+    "Event": "A Forest Mantled in Snow",
+    "Type": "Sign-In",
+    "AsiaStartTime": "2026-08-26 04:00:00",
+    "AsiaEndTime": "2026-09-01 22:00:00",
+    "AsiaStartTime__precision": "0",
+    "AsiaEndTime__precision": "0"
+   }
+  },
+  {
+   "title": {
+    "Event": "Sanity Supply",
+    "Type": "Limited-Time",
+    "AsiaStartTime": "2026-08-25 20:00:00",
+    "AsiaEndTime": "2026-09-01 19:59:00",
+    "AsiaStartTime__precision": "0",
+    "AsiaEndTime__precision": "0"
+   }
+  }
+ ]
+}
