@@ -78,3 +78,9 @@ def test_nte_main_first_run_baseline(monkeypatch, tmp_path):
     assert sent == []
     state = json.loads(state_path.read_text(encoding="utf-8"))
     assert state and all(k.startswith("perfectworld:nte:") for k in state)
+
+
+def test_nte_parse_listing_only_english_even_if_indentation_differs():
+    js = fx("nte_newsData.js").replace("\n    \"", "\n  \"")
+    items = nte_parse_listing(js)
+    assert len(items) == 15 and all("/en/" in i["url"] for i in items)

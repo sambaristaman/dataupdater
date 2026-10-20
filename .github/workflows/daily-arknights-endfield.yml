@@ -60,7 +60,7 @@ jobs:
           python game_codes_scraper.py
 
       - name: Commit and push state if changed
-        if: ${{ github.event.inputs.DRY_RUN != 'true' }}  # don't commit during dry runs
+        if: ${{ !cancelled() && github.event.inputs.DRY_RUN != 'true' }}  # run even if the scraper exited 1 (persists last_source); skip on dry runs
         run: |
           set -euo pipefail
           git status --porcelain

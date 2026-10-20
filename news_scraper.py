@@ -855,7 +855,7 @@ def nte_parse_listing(js: str) -> List[Dict]:
         except ValueError:
             continue
         m = re.search(r"/(\d+)\.html$", obj.get("url", ""))
-        if not m or m.group(1) in seen:
+        if not obj.get("url", "").startswith("/en/") or not m or m.group(1) in seen:
             continue
         seen.add(m.group(1))
         items.append({

@@ -91,9 +91,13 @@ def parse_codes(html: str) -> List[Dict[str, Optional[str]]]:
 
     items: List[Dict[str, Optional[str]]] = []
     seen = set()
-    for el in root.find_all(["h2", "h3", "h4", "li"]):
+    for el in root.find_all(["h2", "h3", "h4", "p", "li"]):
         if el.name != "li":
-            if "expired" in el.get_text(" ").lower():
+            text = el.get_text(" ").strip().lower()
+            if el.name == "p":
+                if text.startswith("expired"):
+                    break
+            elif "expired" in text:
                 break
             continue
         if el.find_parent(["s", "del"]) or el.find(["s", "del"]):
@@ -236,6 +240,7 @@ def run(game: str) -> int:
     state_path = Path(cfg["state_path"])
     state = load_state(state_path)
     seen_codes = {normalize_code(c) for c in state.get("seen_codes", [])}
+    baseline = {normalize_code(c) for c in state.get("fallback_baseline", [])}
     first_run = not seen_codes
 
     items, primary_err = _try_source(cfg["primary"])
@@ -258,7 +263,9 @@ def run(game: str) -> int:
             warning = f"**{display} codes:** primary source failed ({primary_err}); using fallback {cfg['fallback']}"
         else:
             reasons = f"primary: {primary_err}"
-            if fallback_err:
+            if first_run:
+                reasons += "; first run, fallback not tried"
+            elif fallback_err:
                 reasons += f"; fallback: {fallback_err}"
             warning = f"**{display} codes:** no source available ({reasons})"
         print(f"[WARN] {warning}")
@@ -272,7 +279,14 @@ def run(game: str) -> int:
         return 1
 
     print(f"[Info] Found {len(items)} active codes on page ({status}).")
-    new_items = [it for it in items if normalize_code(it["code"]) not in seen_codes]
+    if status == "primary":
+        # Remember what the fallback lists while the primary is healthy: codes only the
+        # fallback has are most likely expired, and must not be posted as new later.
+        fb_items, _ = _try_source(cfg["fallback"])
+        baseline.update(normalize_code(it["code"]) for it in fb_items)
+        state["fallback_baseline"] = sorted(baseline)
+    known = seen_codes | baseline if status == "fallback" else seen_codes
+    new_items = [it for it in items if normalize_code(it["code"]) not in known]
 
     ping_available = bool(role_mention)
     posted = []

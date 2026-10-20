@@ -55,3 +55,9 @@ def test_dedupes_case_insensitive():
 
 def test_no_list_returns_empty():
     assert parse_codes("<html><body>Just a moment...</body></html>") == []
+
+
+def test_stops_at_expired_paragraph():
+    html = "<article><ul><li><strong>NEWONE</strong> - 10 gems</li></ul>" \
+           "<p>Expired codes:</p><ul><li><strong>OLDONE</strong> - 5 gems</li></ul></article>"
+    assert [c["code"] for c in parse_codes(html)] == ["NEWONE"]

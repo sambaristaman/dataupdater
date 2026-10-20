@@ -160,3 +160,15 @@ def test_dry_run_does_not_write_state(aniimo, monkeypatch):
     monkeypatch.setenv("DRY_RUN", "true")
     assert run("aniimo") == 0
     assert not aniimo.state_path.exists()
+
+
+def test_nte_fallback_does_not_post_codes_missing_from_primary(monkeypatch, tmp_path):
+    env = Env(monkeypatch, tmp_path, "nte")
+    env.set_pages(_fx("pockettactics_nte"), _fx("pocketgamer_nte"))
+    primary_codes = [c["code"] for c in gcs.parse_codes(_fx("pockettactics_nte"))]
+    env.write_state({"seen_codes": sorted(c.upper() for c in primary_codes), "last_source": "primary"})
+    assert run("nte") == 0 and env.codex() == []
+    # a later day: primary is down, fallback lists many codes the primary treats as expired
+    env.pages[GAMES["nte"]["primary"]] = RuntimeError("blocked")
+    assert run("nte") == 0
+    assert env.codex() == []
