@@ -350,11 +350,30 @@ def truncate_description(text: str, url: str, limit: int = 4096) -> str:
 # ---------------- Discord ----------------
 
 
+def _embed_text_size(embed: Dict) -> int:
+    return (
+        len(embed.get("title") or "")
+        + len(embed.get("description") or "")
+        + len((embed.get("author") or {}).get("name") or "")
+        + len((embed.get("footer") or {}).get("text") or "")
+    )
+
+
 def send_embeds(webhook_url: str, embeds: List[Dict]) -> None:
     max_per_message = 10
+    max_chars_per_message = 6000  # Discord limit on the combined text of all embeds in a message
     batches: List[List[Dict]] = []
-    for i in range(0, len(embeds), max_per_message):
-        batches.append(embeds[i : i + max_per_message])
+    current: List[Dict] = []
+    current_size = 0
+    for e in embeds:
+        size = _embed_text_size(e)
+        if current and (len(current) >= max_per_message or current_size + size > max_chars_per_message):
+            batches.append(current)
+            current, current_size = [], 0
+        current.append(e)
+        current_size += size
+    if current:
+        batches.append(current)
 
     for bi, batch in enumerate(batches):
         if DRY_RUN:
