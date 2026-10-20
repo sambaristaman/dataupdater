@@ -125,3 +125,36 @@ def test_with_fallback_propagates_fallback_exception():
         raise ValueError("f")
     with pytest.raises(ValueError):
         with_fallback(p, f)(NOW)
+
+
+def test_build_bullets_drops_stale_start_only_items():
+    stale = Item("Stale", NOW - timedelta(days=46), None)
+    recent = Item("Recent", NOW - timedelta(days=44), None)
+    old_but_bounded = Item("Bounded", NOW - timedelta(days=90), NOW + timedelta(days=1))
+    lines = build_bullets([stale, recent, old_but_bounded], NOW)
+    labels = [scraper.parse_bullet(l)[0] for l in lines if l.startswith("•")]
+    assert labels == ["Bounded", "Recent"]
+
+
+class _RecordingSession:
+    def __init__(self):
+        self.kwargs = []
+
+    def get(self, url, **kw):
+        self.kwargs.append(kw)
+        r = requests.Response()
+        r.status_code = 200
+        r._content = b"{}"
+        r.headers["Content-Type"] = "application/json; charset=utf-8"
+        return r
+
+
+def test_http_get_headers_optional(monkeypatch):
+    rec = _RecordingSession()
+    monkeypatch.setattr(common, "SESSION", rec)
+    common.http_get_json("http://x", {"a": 1})
+    common.http_get_text("http://x")
+    common.http_get_json("http://x", headers={"User-Agent": "bot"})
+    common.http_get_text("http://x", headers={"User-Agent": "bot"})
+    assert [k.get("headers") for k in rec.kwargs] == [None, None, {"User-Agent": "bot"}, {"User-Agent": "bot"}]
+    assert rec.kwargs[0]["params"] == {"a": 1}

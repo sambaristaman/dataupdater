@@ -84,6 +84,21 @@ def test_official_items_strips_html():
     assert items[0].end == parse_local("2026-10-30 00:00:00", 8)
 
 
+def test_official_items_drop_undated_and_long_running():
+    labels = [i.label for i in official_items(load("hoyo_ann_starrail.json"))]
+    assert "Honkai: Star Rail Fair Gaming Declaration" not in labels  # 12 years
+    assert "Fate(UBW) Collaboration Warp Details" not in labels and not any("Fate[UBW]" in l for l in labels)
+    assert "Invitation to join Project Astro-Warp" not in labels
+    assert "Version 4.6 Event Warp: Phase II" in labels  # ~3 weeks
+    assert "Astral Imagea Park: Obtain your very own Imageas and set up your Imagea Park" in labels  # ~52 days
+    payload = {"retcode": 0, "data": {"timezone": 8, "list": [{"list": [
+        {"title": "No end", "start_time": "2026-10-01 00:00:00", "end_time": ""},
+        {"title": "No start", "start_time": "", "end_time": "2026-10-30 00:00:00"},
+        {"title": "Ok", "start_time": "2026-10-01 00:00:00", "end_time": "2026-10-30 00:00:00"},
+    ]}]}}
+    assert [i.label for i in official_items(payload)] == ["Ok"]
+
+
 def test_wrappers_use_ennead_and_fallback(monkeypatch):
     def fake(url, params=None):
         if "ennead" in url:

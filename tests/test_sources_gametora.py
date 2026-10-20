@@ -99,3 +99,18 @@ def test_uma_events_champions_and_legend(monkeypatch):
     text = "\n".join(build_bullets(res.items, NOW))
     assert "Shuka Sho" not in text
     assert "Arima Kinen" in text
+
+
+def test_uma_drops_items_without_any_dates(monkeypatch):
+    data = {
+        "en/events/champions-meeting": [{"name": "Undated Cup"}, {"name": "Dated Cup", "end": 1792187999}],
+        "en/events/legend-race": [{"name_en": "Undated Race", "start": 0, "end": None}],
+        "en/gacha/char-standard": [{"pickups": [[1]]}, {"pickups": [[1]], "start": 1791669600}],
+        "en/gacha/support-standard": [],
+        "character-cards": [{"card_id": 1, "name_en": "A"}],
+        "support-cards": [],
+    }
+    monkeypatch.setattr(gametora, "gametora_file", lambda key: data[key])
+    assert [i.label for i in gametora.uma_events(NOW).items] == ["Champions Meeting: Dated Cup"]
+    gacha = gametora.uma_gacha(NOW).items
+    assert len(gacha) == 1 and gacha[0].start is not None

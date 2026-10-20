@@ -26,8 +26,8 @@ def fake_http(calls):
         "Events": "endfield_events.json",
     }
 
-    def fake(url, params=None):
-        calls.append((url, params))
+    def fake(url, params=None, headers=None):
+        calls.append((url, params, headers))
         return load(tables[params["tables"]])
 
     return fake
@@ -69,6 +69,74 @@ def test_endfield_where_clause(monkeypatch):
     endfield.endfield_events(NOW)
     endfield.endfield_gacha(NOW)
     assert calls
-    for url, params in calls:
+    for url, params, headers in calls:
         assert url == "https://endfield.wiki.gg/api.php"
         assert params["where"] == "AsiaEndTime >= '2026-10-20 20:00:00' OR AsiaEndTime IS NULL"
+
+
+def test_endfield_sends_descriptive_bot_user_agent(monkeypatch):
+    calls = []
+    monkeypatch.setattr(endfield, "http_get_json", fake_http(calls))
+    endfield.endfield_events(NOW)
+    endfield.endfield_gacha(NOW)
+    assert calls
+    for _, _, headers in calls:
+        ua = headers["User-Agent"]
+        assert ua == endfield.BOT_USER_AGENT
+        assert ua.startswith("dataupdater-bot/") and "Mozilla" not in ua and "@" not in ua
+
+
+def test_other_sources_keep_default_user_agent(monkeypatch):
+    """Only Endfield overrides the UA; other sources go through the shared session as-is."""
+    from sources import common, hoyo
+
+    seen = []
+
+    class Rec:
+        def get(self, url, **kw):
+            seen.append(kw.get("headers"))
+            raise RuntimeError("stop")
+
+    monkeypatch.setattr(common, "SESSION", Rec())
+    try:
+        hoyo.genshin_gacha(NOW)
+    except RuntimeError:
+        pass
+    assert seen == [None]
+    assert "Chrome" in common.USER_AGENT
+
+
+def test_endfield_gacha_skips_permanent_blank_end_rows(monkeypatch):
+    monkeypatch.setattr(endfield, "http_get_json", fake_http([]))
+    labels = [i.label for i in endfield.endfield_gacha(NOW).items]
+    for permanent in (
+        "Basic Headhunting", "New Horizons Headhunting", "Arsenal: Solid Ice",
+        "Arsenal: Cosmic Voice", "Arsenal: Far Expedition", "Arsenal: Rising Mount",
+        "Arsenal: Thunderous Peal",
+    ):
+        assert permanent not in labels
+    assert "The Hearth Fire Beckons the Starry Flow" in labels
+
+
+def test_endfield_gacha_keeps_recent_blank_end_row(monkeypatch):
+    rows = {"cargoquery": [{"title": {
+        "Banner": "Fresh", "RateUpOperator": "X", "LimitedOperators": "",
+        "AsiaStartTime": "2026-10-10 04:00:00", "AsiaEndTime": "",
+    }}]}
+    monkeypatch.setattr(
+        endfield, "http_get_json",
+        lambda url, params=None, headers=None: rows if params["tables"] == "Banners" else {"cargoquery": []},
+    )
+    items = endfield.endfield_gacha(NOW).items
+    assert [(i.label, i.end) for i in items] == [("Fresh", None)]
+
+
+def test_endfield_gacha_fits_one_message(monkeypatch):
+    import scraper
+    from sources.common import build_bullets
+
+    monkeypatch.setattr(endfield, "http_get_json", fake_http([]))
+    res = endfield.endfield_gacha(NOW)
+    msgs = scraper.build_messages("Arknights: Endfield — Events & Banners — Gacha",
+                                  res.source_url, res.source_name, build_bullets(res.items, NOW))
+    assert len(msgs) == 1

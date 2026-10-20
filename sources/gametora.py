@@ -39,15 +39,9 @@ def uma_events(now: datetime) -> SourceResult:
     ):
         for ev in gametora_file(key):
             name = (ev.get(name_field) or "").strip()
-            if name:
-                items.append(
-                    Item(
-                        label=f"{prefix}: {name}",
-                        start=_dt(ev.get("start")),
-                        end=_dt(ev.get("end")),
-                        link=EVENTS_LINK,
-                    )
-                )
+            start, end = _dt(ev.get("start")), _dt(ev.get("end"))
+            if name and (start or end):
+                items.append(Item(label=f"{prefix}: {name}", start=start, end=end, link=EVENTS_LINK))
     return _result(items, EVENTS_LINK)
 
 
@@ -69,13 +63,14 @@ def uma_gacha(now: datetime) -> SourceResult:
     ):
         for banner in gametora_file(key):
             pickups = banner.get("pickups") or []
-            if not pickups:
+            start, end = _dt(banner.get("start")), _dt(banner.get("end"))
+            if not pickups or (start is None and end is None):
                 continue
             items.append(
                 Item(
                     label=f"{prefix}: {_names(pickups, names)}",
-                    start=_dt(banner.get("start")),
-                    end=_dt(banner.get("end")),
+                    start=start,
+                    end=end,
                     link=GACHA_LINK,
                 )
             )

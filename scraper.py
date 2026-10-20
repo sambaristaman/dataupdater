@@ -95,6 +95,18 @@ SESSION = requests.Session()
 
 # --- Discord webhook helpers ---
 
+# Wiki-sourced labels must never ping anyone; only the summary may mention roles.
+NO_MENTIONS = {"parse": []}
+ROLE_MENTIONS = {"parse": ["roles"]}
+
+_WEBHOOK_TOKEN_RE = re.compile(r"webhooks/\d+/[\w-]+")
+
+
+def redact(text: str) -> str:
+    """Hide webhook id/token (e.g. inside requests' error messages)."""
+    return _WEBHOOK_TOKEN_RE.sub("webhooks/***", str(text))
+
+
 def webhook_edit(webhook_url: str, message_id: str, content: str) -> bool:
     """Try to edit a single existing message. Return True if edited."""
     if DRY_RUN:
@@ -103,12 +115,12 @@ def webhook_edit(webhook_url: str, message_id: str, content: str) -> bool:
     r = SESSION.patch(
         f"{webhook_url}/messages/{message_id}",
         headers={"Content-Type": "application/json"},
-        json={"content": content},
+        json={"content": content, "allowed_mentions": NO_MENTIONS},
         timeout=30,
     )
     if r.status_code == 200:
         return True
-    print(f"[WARN] Edit failed (status {r.status_code}): {r.text[:200]}")
+    print(f"[WARN] Edit failed (status {r.status_code}): {redact(r.text[:200])}")
     return False
 
 
@@ -120,7 +132,7 @@ def webhook_post(webhook_url: str, content: str) -> str:
     r = SESSION.post(
         f"{webhook_url}?wait=true",
         headers={"Content-Type": "application/json"},
-        json={"content": content},
+        json={"content": content, "allowed_mentions": NO_MENTIONS},
         timeout=30,
     )
     r.raise_for_status()
@@ -137,7 +149,7 @@ def webhook_delete(webhook_url: str, message_id: str) -> None:
         if r.status_code not in (200, 204):
             print(f"[WARN] Delete {message_id[:6]} returned status {r.status_code}")
     except Exception as e:
-        print(f"[WARN] Delete failed for {message_id[:6]}: {e}")
+        print(f"[WARN] Delete failed for {message_id[:6]}: {redact(e)}")
 
 
 def discord_webhook_post_embed(webhook_url: str, embed: Dict, content: Optional[str] = None):
@@ -145,7 +157,7 @@ def discord_webhook_post_embed(webhook_url: str, embed: Dict, content: Optional[
     if DRY_RUN:
         print("[DRY_RUN] Would send summary embed." + (f" Content: {content}" if content else ""))
         return
-    payload: Dict = {"embeds": [embed]}
+    payload: Dict = {"embeds": [embed], "allowed_mentions": ROLE_MENTIONS}
     if content:
         payload["content"] = content
     r = SESSION.post(f"{webhook_url}?wait=true", headers={"Content-Type": "application/json"}, json=payload, timeout=30)
@@ -336,7 +348,7 @@ def make_summary_embed(results: List[Dict]) -> Dict:
         if r["status"] == "skipped":
             value = f"⚠️ Skipped (missing secret `{r['secret']}`)"
         elif r["status"] == "error":
-            reason = str(r.get("diag_reason") or "unknown")[:200]
+            reason = redact(r.get("diag_reason") or "unknown")[:200]
             value = f"❌ Error: `{reason}`"
             if r.get("url"):
                 value += f"\n[Source]({r['url']})"
@@ -369,6 +381,7 @@ def make_summary_embed(results: List[Dict]) -> Dict:
 # --- Flow ---
 
 def _error_result(base: Dict, reason: str, url: str = "") -> Dict:
+    reason = redact(reason)
     print(f"[ERROR] {base['key']}: {reason}")
     return {
         **base,
@@ -549,7 +562,7 @@ def main():
         try:
             discord_webhook_post_embed(summary_url, embed, mention_content)
         except Exception as e:
-            print(f"[ERROR] summary post failed: {type(e).__name__}: {e}")
+            print(f"[ERROR] summary post failed: {type(e).__name__}: {redact(e)}")
             summary_failed = True
     else:
         print(f"No summary webhook found in env {SUMMARY_WEBHOOK_ENV}; skipping summary.")

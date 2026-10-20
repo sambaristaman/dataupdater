@@ -3,7 +3,7 @@
 
 import html
 import re
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from typing import List, Optional
 
 from sources.common import (
@@ -27,6 +27,8 @@ SR_ANN = (
     "?game=hkrpg&game_biz=hkrpg_global&lang=en&bundle_id=hkrpg_global&platform=pc"
     "&region=prod_official_usa&level=70&uid=600000000&authkey_ver=1&sign_type=2&channel_id=1"
 )
+
+MAX_OFFICIAL_DURATION = timedelta(days=60)
 
 _TAG_RE = re.compile(r"<[^>]+>")
 _WS_RE = re.compile(r"\s+")
@@ -101,13 +103,12 @@ def official_items(payload: dict) -> List[Item]:
         title = _clean(a.get("title"))
         if not title:
             continue
-        items.append(
-            Item(
-                label=title,
-                start=parse_local(a.get("start_time") or "", offset),
-                end=parse_local(a.get("end_time") or "", offset),
-            )
-        )
+        start = parse_local(a.get("start_time") or "", offset)
+        end = parse_local(a.get("end_time") or "", offset)
+        # Undated or years-long notices (fair-use statement, top-up center...) aren't events.
+        if start is None or end is None or end - start > MAX_OFFICIAL_DURATION:
+            continue
+        items.append(Item(label=title, start=start, end=end))
     return items
 
 

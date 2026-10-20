@@ -235,3 +235,84 @@ def test_games_config_keys_and_titles():
     assert scraper.GAMES["aniimo"].gacha is None
     assert sum(1 for c in scraper.GAMES.values() if c.events) == 7
     assert sum(1 for c in scraper.GAMES.values() if c.gacha) == 6
+
+
+# --- Webhook token redaction ---
+
+TOKEN_URL = "https://discord.com/api/webhooks/123456789012345678/AbC-def_GhI123tokenXYZ"
+
+
+def test_webhook_error_does_not_leak_token(calls, monkeypatch, capsys):
+    import requests
+
+    def post(url, content):
+        raise requests.HTTPError(f"404 Client Error: Not Found for url: {TOKEN_URL}?wait=true")
+
+    monkeypatch.setattr(scraper, "webhook_post", post)
+    result = scraper._safe_run_flow(
+        key="genshin-impact", cfg=gi_cfg(), source=ok_source, section_tag="events",
+        ids={}, state={}, now=NOW,
+    )
+    assert result["status"] == "error"
+    assert "AbC-def_GhI123tokenXYZ" not in result["diag_reason"]
+    assert "123456789012345678" not in result["diag_reason"]
+    assert "webhooks/***" in result["diag_reason"]
+    embed = scraper.make_summary_embed([result])
+    assert "AbC-def_GhI123tokenXYZ" not in json.dumps(embed)
+    assert "AbC-def_GhI123tokenXYZ" not in capsys.readouterr().out
+
+
+def test_redact_leaves_other_text():
+    assert scraper.redact("plain error") == "plain error"
+    assert scraper.redact(f"x {TOKEN_URL}/messages/1 y") == (
+        "x https://discord.com/api/webhooks/***/messages/1 y"
+    )
+
+
+# --- allowed_mentions ---
+
+class _Resp:
+    status_code = 200
+    text = ""
+
+    def raise_for_status(self):
+        pass
+
+    def json(self):
+        return {"id": "42"}
+
+
+class _Session:
+    def __init__(self):
+        self.calls = []
+
+    def post(self, url, **kw):
+        self.calls.append(("post", url, kw))
+        return _Resp()
+
+    def patch(self, url, **kw):
+        self.calls.append(("patch", url, kw))
+        return _Resp()
+
+
+@pytest.fixture
+def session(monkeypatch):
+    s = _Session()
+    monkeypatch.setattr(scraper, "SESSION", s)
+    monkeypatch.setattr(scraper, "DRY_RUN", False)
+    return s
+
+
+def test_webhook_post_and_edit_suppress_mentions(session):
+    assert scraper.webhook_post("https://d/w", "hi @everyone") == "42"
+    assert scraper.webhook_edit("https://d/w", "42", "hi @everyone") is True
+    assert [c[0] for c in session.calls] == ["post", "patch"]
+    for _, _, kw in session.calls:
+        assert kw["json"]["allowed_mentions"] == {"parse": []}
+
+
+def test_summary_embed_allows_role_mentions(session):
+    scraper.discord_webhook_post_embed("https://d/s", {"title": "t"}, "<@&1> <@&2>")
+    payload = session.calls[0][2]["json"]
+    assert payload["content"] == "<@&1> <@&2>"
+    assert payload["allowed_mentions"] == {"parse": ["roles"]}

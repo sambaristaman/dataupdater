@@ -101,13 +101,20 @@ def format_bullet(item: Item) -> str:
     return line
 
 
+STALE_START_ONLY_DAYS = 45
+
+
 def build_bullets(items: List[Item], now: datetime, upcoming_days: int = 21) -> List[str]:
     horizon = now + timedelta(days=upcoming_days)
+    # Start-only items this old are almost certainly permanent content, not a live event.
+    stale_before = now - timedelta(days=STALE_START_ONLY_DAYS)
     seen = set()
     current: List[Item] = []
     upcoming: List[Item] = []
     for it in items:
         if it.end is not None and it.end < now:
+            continue
+        if it.end is None and it.start is not None and it.start < stale_before:
             continue
         key = it.label.lower()
         if key in seen:
@@ -152,14 +159,15 @@ def with_fallback(primary: Source, fallback: Source) -> Source:
 
 # --- HTTP ---
 
-def http_get_json(url: str, params: Optional[dict] = None) -> Any:
-    r = SESSION.get(url, params=params, timeout=TIMEOUT)
+def http_get_json(url: str, params: Optional[dict] = None, headers: Optional[dict] = None) -> Any:
+    """GET JSON; `headers` (optional) are merged over the session defaults for this request."""
+    r = SESSION.get(url, params=params, headers=headers, timeout=TIMEOUT)
     r.raise_for_status()
     return r.json()
 
 
-def http_get_text(url: str, params: Optional[dict] = None) -> str:
-    r = SESSION.get(url, params=params, timeout=TIMEOUT)
+def http_get_text(url: str, params: Optional[dict] = None, headers: Optional[dict] = None) -> str:
+    r = SESSION.get(url, params=params, headers=headers, timeout=TIMEOUT)
     r.raise_for_status()
     # requests defaults text/* without a charset to ISO-8859-1 (mojibake for UTF-8 pages).
     if "charset" not in r.headers.get("Content-Type", "").lower():

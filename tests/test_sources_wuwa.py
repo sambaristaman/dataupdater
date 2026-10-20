@@ -76,16 +76,34 @@ def test_wuwa_events_skip_blank_dates(monkeypatch):
     assert it.start == parse_local("2026-10-08 04:00", 8)
     assert it.link == "https://x.com/Wuthering_Waves/status/2107652131511509056"  # from |link
     # no |link: falls back to the wiki page URL
-    assert by_label(res.items, "Shape of Yesterday").link == (
-        "https://wutheringwaves.fandom.com/wiki/Shape_of_Yesterday"
+    assert by_label(res.items, "Lament Recon: Tacet Crisis").link == (
+        "https://wutheringwaves.fandom.com/wiki/Lament_Recon:_Tacet_Crisis"
     )
     # blank |name falls back to the page title
     assert "If Dreams Still Reverberate" in labels
-    # "none"/"no" end markers mean open-ended, not a crash
-    assert by_label(res.items, "Shape of Yesterday").end is None
     # explicit UTC-7 offset is honoured
     battle = by_label(res.items, "Wuthering Waves Battle Rush 2026-07-10")
     assert battle.start == parse_local("2026-07-10", -7)
+
+
+def test_wuwa_events_skip_permanent_and_recurring(monkeypatch):
+    patch(monkeypatch, {"Category:Events": ("wuwa_cat_events.json", "wuwa_pages_events.json")})
+    labels = [i.label for i in wuwa.wuwa_events(NOW).items]
+    assert "Next Stop: Mengzhou" not in labels  # time_end = none
+    assert "Shape of Yesterday" not in labels  # time_end = none
+    assert not any(l.startswith("Endstate Matrix") for l in labels)  # time_known = no, time_end = no
+
+
+def test_wuwa_permanent_markers_and_blank_end(monkeypatch):
+    pages = {
+        "Perm": "{{Event|name=Perm|time_start=2026-10-01 04:00|time_end=Permanent}}",
+        "Rec": "{{Event|name=Rec|time_known=no|time_start=2026-10-01 04:00|time_end=2026-10-30}}",
+        "Blank": "{{Event|name=Blank|time_known=yes|time_start=2026-10-15 04:00|time_end=}}",
+    }
+    monkeypatch.setattr(wuwa, "category_members", lambda api, category, limit=20: list(pages))
+    monkeypatch.setattr(wuwa, "page_wikitexts", lambda api, titles: pages)
+    items = wuwa.wuwa_events(NOW).items
+    assert [(i.label, i.end) for i in items] == [("Blank", None)]
 
 
 def test_wuwa_events_ignores_pages_without_event(monkeypatch):

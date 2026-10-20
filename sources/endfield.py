@@ -11,6 +11,11 @@ WIKI = "https://endfield.wiki.gg/wiki/"
 SOURCE_NAME = "endfield.wiki.gg"
 OFFSET = 8
 LIMIT = 30
+# Blank-end rows starting longer ago than this are permanent banners (Basic Headhunting,
+# launch Arsenal issues), not a live banner whose end the wiki hasn't filled in yet.
+PERMANENT_AFTER_DAYS = 60
+# wiki.gg answers 403 to browser-like UAs from CI; a descriptive bot UA is allowed.
+BOT_USER_AGENT = "dataupdater-bot/1.0 (https://github.com/sambaristaman/dataupdater)"
 
 
 def cargo_query(table: str, fields: List[str], where: str, order_by: str) -> List[dict]:
@@ -26,6 +31,7 @@ def cargo_query(table: str, fields: List[str], where: str, order_by: str) -> Lis
             "order_by": order_by,
             "format": "json",
         },
+        headers={"User-Agent": BOT_USER_AGENT},
     )
     return [row["title"] for row in data.get("cargoquery", [])]
 
@@ -81,13 +87,19 @@ def endfield_events(now: datetime) -> SourceResult:
     return _result(items)
 
 
+def _skip_banner(name: str, start: Optional[datetime], end: Optional[datetime], now: datetime) -> bool:
+    if not name or (start is None and end is None):
+        return True
+    return end is None and start < now - timedelta(days=PERMANENT_AFTER_DAYS)
+
+
 def endfield_gacha(now: datetime) -> SourceResult:
     items: List[Item] = []
 
     for row in _query("Banners", ["Banner", "RateUpOperator", "LimitedOperators"], now):
         name = (row.get("Banner") or "").strip()
         start, end = _date(row.get("AsiaStartTime")), _date(row.get("AsiaEndTime"))
-        if not name or (start is None and end is None):
+        if _skip_banner(name, start, end, now):
             continue
         details = _details(row.get("RateUpOperator"), row.get("LimitedOperators"))
         items.append(Item(label=name, start=start, end=end, link=_link(name), details=details))
@@ -95,7 +107,7 @@ def endfield_gacha(now: datetime) -> SourceResult:
     for row in _query("Issues", ["Issue", "RateUpWeapon", "Weapons"], now):
         name = (row.get("Issue") or "").strip()
         start, end = _date(row.get("AsiaStartTime")), _date(row.get("AsiaEndTime"))
-        if not name or (start is None and end is None):
+        if _skip_banner(name, start, end, now):
             continue
         details = _details(row.get("RateUpWeapon"), row.get("Weapons"))
         items.append(

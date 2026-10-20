@@ -40,6 +40,18 @@ def _date(value: Optional[str], offset: float) -> Optional[datetime]:
         return None
 
 
+# |time_end=none/permanent marks permanent content; |time_known=no or |time_end=no marks
+# recurring content without a fixed window. Neither is a dated event. (A genuinely blank
+# |time_end= just means the wiki hasn't filled it in yet and is kept as start-only.)
+_PERMANENT_END = {"none", "permanent", "no"}
+
+
+def _undated(params: Dict[str, str]) -> bool:
+    known = (params.get("time_known") or "").strip().lower()
+    end = (params.get("time_end") or "").strip().lower()
+    return known == "no" or end in _PERMANENT_END
+
+
 def _dates(params: Dict[str, str]):
     start_off = _offset(params.get("time_start_offset"))
     end_off = _offset(params.get("time_end_offset"))
@@ -70,7 +82,7 @@ def wuwa_events(now: datetime) -> SourceResult:
     items: List[Item] = []
     for title, text in _fetch([CAT_EVENTS]).items():
         ev = parse_template(text, "Event")
-        if ev is None:
+        if ev is None or _undated(ev):
             continue
         start, end = _dates(ev)
         if start is None and end is None:
@@ -85,7 +97,7 @@ def wuwa_gacha(now: datetime) -> SourceResult:
     items: List[Item] = []
     for title, text in _fetch([CAT_RESONATOR, CAT_WEAPON]).items():
         conv = parse_template(text, "Convene")
-        if conv is None:
+        if conv is None or _undated(conv):
             continue
         pool = parse_template(text, "Convene/Pool") or {}
         five = _split(pool.get("resonator_5_F")) + _split(pool.get("weapon_5_F"))
