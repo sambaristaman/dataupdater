@@ -273,6 +273,11 @@
         "info": "<t:1790478000:d> \u2192 <t:1794279599:d> (ends <t:1794279599:R>)"
       },
       {
+        "label": "Interastral Peace Gala: One Take",
+        "link": null,
+        "info": "<t:1792580400:d> \u2192 <t:1794340799:d> (ends <t:1794340799:R>)"
+      },
+      {
         "label": "Love, Ghosts & Robots",
         "link": null,
         "info": "<t:1790305200:d> \u2192 <t:1794340799:d> (ends <t:1794340799:R>)"
@@ -286,11 +291,6 @@
         "label": "Astral Imagea Park",
         "link": null,
         "info": "<t:1790305200:d> \u2192 <t:1794348000:d> (ends <t:1794348000:R>)"
-      },
-      {
-        "label": "Interastral Peace Gala: One Take",
-        "link": null,
-        "info": "<t:1792580400:d> \u2192 <t:1794340799:d> (ends <t:1794340799:R>)"
       },
       {
         "label": "Garden of Plenty",
@@ -378,6 +378,11 @@
         "info": "<t:1791597600:d> \u2192 <t:1792958399:d> (ends <t:1792958399:R>)"
       },
       {
+        "label": "Carefree Snowball Fight",
+        "link": null,
+        "info": "<t:1792548000:d> \u2192 <t:1793563199:d> (ends <t:1793563199:R>)"
+      },
+      {
         "label": "Stygian Onslaught",
         "link": null,
         "info": "<t:1790733600:d> \u2192 <t:1793649599:d> (ends <t:1793649599:R>)"
@@ -458,14 +463,9 @@
     "last_updated": "ennead.cc",
     "items": [
       {
-        "label": "Event Warp: Evanescia",
+        "label": "Event Warp: Mortenax Blade",
         "link": null,
-        "info": "<t:1790560800:d> \u2192 <t:1792580340:d> (ends <t:1792580340:R>) \u00b7 5\u2605 Evanescia \u00b7 4\u2605 Qingque, Xueyi, Misha"
-      },
-      {
-        "label": "Light Cone Warp: Until the Flowers Bloom Again",
-        "link": null,
-        "info": "<t:1790560800:d> \u2192 <t:1792580340:d> (ends <t:1792580340:R>) \u00b7 5\u2605 Until the Flowers Bloom Again \u00b7 4\u2605 Post-Op Conversation, Planetary Rendezvous, Boundless Choreo"
+        "info": "<t:1792580400:d> \u2192 <t:1794319200:d> (ends <t:1794319200:R>) \u00b7 5\u2605 Mortenax Blade \u00b7 4\u2605 Qingque, Xueyi, Misha"
       },
       {
         "label": "Event Warp: Pearl",
@@ -473,19 +473,14 @@
         "info": "<t:1790560800:d> \u2192 <t:1794319200:d> (ends <t:1794319200:R>) \u00b7 5\u2605 Pearl \u00b7 4\u2605 Qingque, Xueyi, Misha"
       },
       {
-        "label": "Light Cone Warp: Colors for Tomorrow",
-        "link": null,
-        "info": "<t:1790560800:d> \u2192 <t:1794319200:d> (ends <t:1794319200:R>) \u00b7 5\u2605 Colors for Tomorrow \u00b7 4\u2605 Post-Op Conversation, Planetary Rendezvous, Boundless Choreo"
-      },
-      {
-        "label": "Event Warp: Mortenax Blade",
-        "link": null,
-        "info": "<t:1792580400:d> \u2192 <t:1794319200:d> (ends <t:1794319200:R>) \u00b7 5\u2605 Mortenax Blade \u00b7 4\u2605 Qingque, Xueyi, Misha"
-      },
-      {
         "label": "Light Cone Warp: Reforged in Hellfire",
         "link": null,
         "info": "<t:1792580400:d> \u2192 <t:1794319200:d> (ends <t:1794319200:R>) \u00b7 5\u2605 Reforged in Hellfire \u00b7 4\u2605 Post-Op Conversation, Planetary Rendezvous, Boundless Choreo"
+      },
+      {
+        "label": "Light Cone Warp: Colors for Tomorrow",
+        "link": null,
+        "info": "<t:1790560800:d> \u2192 <t:1794319200:d> (ends <t:1794319200:R>) \u00b7 5\u2605 Colors for Tomorrow \u00b7 4\u2605 Post-Op Conversation, Planetary Rendezvous, Boundless Choreo"
       }
     ]
   },
@@ -642,16 +637,6 @@
   "nte::gacha": {
     "last_updated": "neverness-to-everness.fandom.com",
     "items": [
-      {
-        "label": "Foretold Finale",
-        "link": "https://neverness-to-everness.fandom.com/wiki/Foretold_Finale/2026-09-30",
-        "info": "<t:1790737200:d> \u2192 <t:1792533599:d> (ends <t:1792533599:R>) \u00b7 S: Blackbird"
-      },
-      {
-        "label": "Fading Reverie",
-        "link": "https://neverness-to-everness.fandom.com/wiki/Fading_Reverie/2026-09-30",
-        "info": "<t:1790737200:d> \u2192 <t:1792533599:d> (ends <t:1792533599:R>) \u00b7 S: Lacrimosa"
-      },
       {
         "label": "Dazzling Star",
         "link": "https://neverness-to-everness.fandom.com/wiki/Dazzling_Star/2026-10-21",
