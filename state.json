@@ -426,38 +426,7 @@
   },
   "wuthering-waves::gacha": {
     "last_updated": "wutheringwaves.fandom.com",
-    "items": [
-      {
-        "label": "As Full as Tonight, Forever",
-        "link": "https://wutheringwaves.fandom.com/wiki/As_Full_as_Tonight,_Forever/2026-09-30",
-        "info": "<t:1790737200:d> \u2192 <t:1792634340:d> (ends <t:1792634340:R>) \u00b7 5\u2605 Hsin \u00b7 4\u2605 Buling, Taoqi, Youhu"
-      },
-      {
-        "label": "Absolute Pulsation: Blooming Jadehaven",
-        "link": "https://wutheringwaves.fandom.com/wiki/Absolute_Pulsation:_Blooming_Jadehaven/2026-09-30",
-        "info": "<t:1790737200:d> \u2192 <t:1792634340:d> (ends <t:1792634340:R>) \u00b7 5\u2605 Blooming Jadehaven \u00b7 4\u2605 Fusion Accretion, Commando of Conviction, Dauntless Evernight"
-      },
-      {
-        "label": "Horizon of Dawnbreak",
-        "link": "https://wutheringwaves.kurogames.com/en/main/news/detail/5546",
-        "info": "<t:1790737200:d> \u2192 <t:1792634340:d> (ends <t:1792634340:R>) \u00b7 5\u2605 Chisa \u00b7 4\u2605 Buling, Taoqi, Youhu"
-      },
-      {
-        "label": "Absolute Pulsation: Kumokiri",
-        "link": "https://wutheringwaves.kurogames.com/en/main/news/detail/5546",
-        "info": "<t:1790737200:d> \u2192 <t:1792634340:d> (ends <t:1792634340:R>) \u00b7 5\u2605 Kumokiri \u00b7 4\u2605 Fusion Accretion, Commando of Conviction, Dauntless Evernight"
-      },
-      {
-        "label": "Across Time's Waxes and Wanes",
-        "link": "https://wutheringwaves.kurogames.com/en/main/news/detail/5546",
-        "info": "<t:1790737200:d> \u2192 <t:1792634340:d> (ends <t:1792634340:R>) \u00b7 5\u2605 Iuno \u00b7 4\u2605 Buling, Taoqi, Youhu"
-      },
-      {
-        "label": "Absolute Pulsation: Moongazer's Sigil",
-        "link": "https://wutheringwaves.kurogames.com/en/main/news/detail/5546",
-        "info": "<t:1790737200:d> \u2192 <t:1792634340:d> (ends <t:1792634340:R>) \u00b7 5\u2605 Moongazer's Sigil \u00b7 4\u2605 Fusion Accretion, Commando of Conviction, Dauntless Evernight"
-      }
-    ]
+    "items": []
   },
   "honkai-star-rail::gacha": {
     "last_updated": "ennead.cc",
@@ -488,13 +457,23 @@
     "last_updated": "endfield.wiki.gg",
     "items": [
       {
-        "label": "Season of Phantasia",
-        "link": "https://endfield.wiki.gg/wiki/Season_of_Phantasia",
-        "info": "<t:1792008000:d> \u2192 <t:1793822340:d> (ends <t:1793822340:R>)"
+        "label": "Carly's Verdant Anthology",
+        "link": "https://endfield.wiki.gg/wiki/Carly's_Verdant_Anthology",
+        "info": "<t:1792612800:d> \u2192 <t:1793793600:d> (ends <t:1793793600:R>)"
+      },
+      {
+        "label": "Monumental Etching: Forest of Maras",
+        "link": "https://endfield.wiki.gg/wiki/Monumental_Etching:_Forest_of_Maras",
+        "info": "<t:1792612800:d> \u2192 <t:1793800800:d> (ends <t:1793800800:R>)"
       },
       {
         "label": "Spirit's Restoration",
         "link": "https://endfield.wiki.gg/wiki/Spirit's_Restoration",
+        "info": "<t:1792008000:d> \u2192 <t:1793822340:d> (ends <t:1793822340:R>)"
+      },
+      {
+        "label": "Season of Phantasia",
+        "link": "https://endfield.wiki.gg/wiki/Season_of_Phantasia",
         "info": "<t:1792008000:d> \u2192 <t:1793822340:d> (ends <t:1793822340:R>)"
       },
       {
@@ -506,16 +485,6 @@
         "label": "Yuanyuan's Blazing Stoves",
         "link": "https://endfield.wiki.gg/wiki/Yuanyuan's_Blazing_Stoves",
         "info": "<t:1792008000:d> \u2192 <t:1795615200:d> (ends <t:1795615200:R>)"
-      },
-      {
-        "label": "Carly's Verdant Anthology",
-        "link": "https://endfield.wiki.gg/wiki/Carly's_Verdant_Anthology",
-        "info": "<t:1792612800:d> \u2192 <t:1793793600:d> (ends <t:1793793600:R>)"
-      },
-      {
-        "label": "Monumental Etching: Forest of Maras",
-        "link": "https://endfield.wiki.gg/wiki/Monumental_Etching:_Forest_of_Maras",
-        "info": "<t:1792612800:d> \u2192 <t:1793800800:d> (ends <t:1793800800:R>)"
       },
       {
         "label": "Arena of Games",
