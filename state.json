@@ -368,11 +368,6 @@
     "last_updated": "ennead.cc",
     "items": [
       {
-        "label": "Predictive Victory Dynamics",
-        "link": null,
-        "info": "<t:1791770400:d> \u2192 <t:1792720799:d> (ends <t:1792720799:R>)"
-      },
-      {
         "label": "Heated Battle Mode: Automatic Artistry",
         "link": null,
         "info": "<t:1791597600:d> \u2192 <t:1792958399:d> (ends <t:1792958399:R>)"
@@ -426,7 +421,38 @@
   },
   "wuthering-waves::gacha": {
     "last_updated": "wutheringwaves.fandom.com",
-    "items": []
+    "items": [
+      {
+        "label": "Nine Deaths, One Unbent Heart",
+        "link": "https://wutheringwaves.fandom.com/wiki/Nine_Deaths,_One_Unbent_Heart/2026-10-22",
+        "info": "<t:1792634400:d> \u2192 <t:1794369540:d> (ends <t:1794369540:R>) \u00b7 5\u2605 Suoming \u00b7 4\u2605 Lumi, Danjin, Chixia"
+      },
+      {
+        "label": "Undefined Spectrum",
+        "link": "https://wutheringwaves.kurogames.com/en/main/news/detail/5668",
+        "info": "<t:1792634400:d> \u2192 <t:1794369540:d> (ends <t:1794369540:R>) \u00b7 5\u2605 Lynae \u00b7 4\u2605 Lumi, Danjin, Chixia"
+      },
+      {
+        "label": "Tomorrow in the Frame",
+        "link": "https://wutheringwaves.kurogames.com/en/main/news/detail/5668",
+        "info": "<t:1792634400:d> \u2192 <t:1794369540:d> (ends <t:1794369540:R>) \u00b7 5\u2605 Lucilla \u00b7 4\u2605 Lumi, Danjin, Chixia"
+      },
+      {
+        "label": "Absolute Pulsation: Unspoken Rue",
+        "link": "https://wutheringwaves.fandom.com/wiki/Absolute_Pulsation:_Unspoken_Rue/2026-10-22",
+        "info": "<t:1792634400:d> \u2192 <t:1794369540:d> (ends <t:1794369540:R>) \u00b7 5\u2605 Unspoken Rue \u00b7 4\u2605 Overture, Relativistic Jet, Amity Accord"
+      },
+      {
+        "label": "Absolute Pulsation: Spectrum Blaster",
+        "link": "https://wutheringwaves.kurogames.com/en/main/news/detail/5668",
+        "info": "<t:1792634400:d> \u2192 <t:1794369540:d> (ends <t:1794369540:R>) \u00b7 5\u2605 Spectrum Blaster \u00b7 4\u2605 Overture, Relativistic Jet, Amity Accord"
+      },
+      {
+        "label": "Absolute Pulsation: Freeze Frame",
+        "link": "https://wutheringwaves.kurogames.com/en/main/news/detail/5668",
+        "info": "<t:1792634400:d> \u2192 <t:1794369540:d> (ends <t:1794369540:R>) \u00b7 5\u2605 Freeze Frame \u00b7 4\u2605 Overture, Relativistic Jet, Amity Accord"
+      }
+    ]
   },
   "honkai-star-rail::gacha": {
     "last_updated": "ennead.cc",
