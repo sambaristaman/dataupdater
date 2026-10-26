@@ -251,13 +251,7 @@
   },
   "wuthering-waves::events": {
     "last_updated": "wutheringwaves.fandom.com",
-    "items": [
-      {
-        "label": "Artisan's Search",
-        "link": "https://x.com/Wuthering_Waves/status/2107652131511509056",
-        "info": "<t:1791403200:d> \u2192 <t:1792958340:d> (ends <t:1792958340:R>)"
-      }
-    ]
+    "items": []
   },
   "honkai-star-rail::events": {
     "last_updated": "ennead.cc",
@@ -363,14 +357,14 @@
     "last_updated": "ennead.cc",
     "items": [
       {
-        "label": "Heated Battle Mode: Automatic Artistry",
-        "link": null,
-        "info": "<t:1791597600:d> \u2192 <t:1792958399:d> (ends <t:1792958399:R>)"
-      },
-      {
         "label": "Carefree Snowball Fight",
         "link": null,
         "info": "<t:1792548000:d> \u2192 <t:1793563199:d> (ends <t:1793563199:R>)"
+      },
+      {
+        "label": "Overflowing Favor",
+        "link": null,
+        "info": "<t:1792958400:d> \u2192 <t:1793563199:d> (ends <t:1793563199:R>)"
       },
       {
         "label": "Stygian Onslaught",
@@ -588,9 +582,9 @@
     "last_updated": "nte.perfectworld.com",
     "items": [
       {
-        "label": "Pixel Surge",
-        "link": "https://nte.perfectworld.com/en/article/news/gamenews/20260929/264409.html",
-        "info": "<t:1792357200:d> \u2192 <t:1792961940:d> (ends <t:1792961940:R>)"
+        "label": "Gold Clash",
+        "link": "https://nte.perfectworld.com/en/article/news/gamenews/20261019/264675.html",
+        "info": "<t:1792962000:d> \u2192 <t:1794171540:d> (ends <t:1794171540:R>)"
       },
       {
         "label": "Pukaland Travelogue",
@@ -611,11 +605,6 @@
         "label": "Snap! Golden Crackshot",
         "link": "https://nte.perfectworld.com/en/article/news/gamenews/20261019/264675.html",
         "info": "<t:1792551600:d> \u2192 <t:1794347940:d> (ends <t:1794347940:R>)"
-      },
-      {
-        "label": "Gold Clash",
-        "link": "https://nte.perfectworld.com/en/article/news/gamenews/20261019/264675.html",
-        "info": "<t:1792962000:d> \u2192 <t:1794171540:d> (ends <t:1794171540:R>)"
       },
       {
         "label": "Puka Lucky Flip",
