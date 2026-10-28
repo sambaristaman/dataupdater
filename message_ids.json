@@ -13,7 +13,10 @@
   "genshin-impact::gacha": "1476195480491786364",
   "wuthering-waves::gacha": "1525136892641673227",
   "honkai-star-rail::gacha": "1525136896316014703",
-  "arknights-endfield::events": "1464248951027929121",
+  "arknights-endfield::events": [
+    "1565054813190750300",
+    "1565054816160325642"
+  ],
   "arknights-endfield::gacha": "1517176536724275385",
   "nte::events": "1562122145470087220",
   "nte::gacha": "1562122148787650617",

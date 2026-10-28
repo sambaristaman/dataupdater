@@ -472,6 +472,11 @@
     "last_updated": "endfield.wiki.gg",
     "items": [
       {
+        "label": "Contingency Readiness",
+        "link": "https://endfield.wiki.gg/wiki/Contingency_Readiness",
+        "info": "<t:1793188800:d> \u2192 <t:1793793600:d> (ends <t:1793793600:R>)"
+      },
+      {
         "label": "Carly's Verdant Anthology",
         "link": "https://endfield.wiki.gg/wiki/Carly's_Verdant_Anthology",
         "info": "<t:1792612800:d> \u2192 <t:1793793600:d> (ends <t:1793793600:R>)"
@@ -499,7 +504,7 @@
       {
         "label": "Yuanyuan's Blazing Stoves",
         "link": "https://endfield.wiki.gg/wiki/Yuanyuan's_Blazing_Stoves",
-        "info": "<t:1792008000:d> \u2192 <t:1795615200:d> (ends <t:1795615200:R>)"
+        "info": "<t:1792008000:d> \u2192 <t:1795528800:d> (ends <t:1795528800:R>)"
       },
       {
         "label": "Arena of Games",
