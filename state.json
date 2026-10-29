@@ -502,14 +502,14 @@
         "info": "<t:1792008000:d> \u2192 <t:1793822400:d> (ends <t:1793822400:R>)"
       },
       {
-        "label": "Yuanyuan's Blazing Stoves",
-        "link": "https://endfield.wiki.gg/wiki/Yuanyuan's_Blazing_Stoves",
-        "info": "<t:1792008000:d> \u2192 <t:1795528800:d> (ends <t:1795528800:R>)"
-      },
-      {
         "label": "Arena of Games",
         "link": "https://endfield.wiki.gg/wiki/Arena_of_Games",
         "info": "<t:1793217600:d> \u2192 <t:1795003200:d> (ends <t:1795003200:R>)"
+      },
+      {
+        "label": "Yuanyuan's Blazing Stoves",
+        "link": "https://endfield.wiki.gg/wiki/Yuanyuan's_Blazing_Stoves",
+        "info": "<t:1792008000:d> \u2192 <t:1795528800:d> (ends <t:1795528800:R>)"
       },
       {
         "label": "New Era for the Myriad Souls",
@@ -552,16 +552,6 @@
         "info": "<t:1786219200:d> \u2192 <t:1793822399:d> (ends <t:1793822399:R>) \u00b7 Rate-up: Bedazzling Night Debut"
       },
       {
-        "label": "Arsenal: Deep Cold",
-        "link": "https://endfield.wiki.gg/wiki/Deep_Cold",
-        "info": "<t:1788292800:d> \u2192 <t:1795615199:d> (ends <t:1795615199:R>) \u00b7 Rate-up: Umbra of Frigid Eventide"
-      },
-      {
-        "label": "Arsenal: Seal of Jade",
-        "link": "https://endfield.wiki.gg/wiki/Seal_of_Jade",
-        "info": "<t:1792008000:d> \u2192 <t:1797451199:d> (ends <t:1797451199:R>) \u00b7 Rate-up: Jade Vessel"
-      },
-      {
         "label": "Ancestral Spring Flows Anew",
         "link": "https://endfield.wiki.gg/wiki/Ancestral_Spring_Flows_Anew",
         "info": "<t:1793217600:d> \u2192 <t:1795031999:d> (ends <t:1795031999:R>) \u00b7 Limited: Tangtang"
@@ -570,6 +560,16 @@
         "label": "Arsenal: Tender Sprig",
         "link": "https://endfield.wiki.gg/wiki/Tender_Sprig",
         "info": "<t:1793217600:d> \u2192 <t:1795096799:d> (ends <t:1795096799:R>) \u00b7 Rate-up: Brigand's Calling"
+      },
+      {
+        "label": "Arsenal: Deep Cold",
+        "link": "https://endfield.wiki.gg/wiki/Deep_Cold",
+        "info": "<t:1788292800:d> \u2192 <t:1795615199:d> (ends <t:1795615199:R>) \u00b7 Rate-up: Umbra of Frigid Eventide"
+      },
+      {
+        "label": "Arsenal: Seal of Jade",
+        "link": "https://endfield.wiki.gg/wiki/Seal_of_Jade",
+        "info": "<t:1792008000:d> \u2192 <t:1797451199:d> (ends <t:1797451199:R>) \u00b7 Rate-up: Jade Vessel"
       },
       {
         "label": "The Hearth Fire Beckons the Starry Flow",
@@ -631,11 +631,6 @@
   "aniimo::events": {
     "last_updated": "aniimo.com",
     "items": [
-      {
-        "label": "Journey Chronicles",
-        "link": "https://aniimo.com/en/newslist/detail/100145",
-        "info": "<t:1790841600:d> \u2192 <t:1793260740:d> (ends <t:1793260740:R>)"
-      },
       {
         "label": "Legendary Aniimo \"\"Irisalis\"\" Debuts",
         "link": "https://aniimo.com/en/newslist/detail/100145",
