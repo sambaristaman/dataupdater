@@ -64,12 +64,12 @@
     "last_sent_hash": ""
   },
   "aniimo:aniimo:100198": {
-    "last_modified": 1792156268,
-    "last_sent_hash": ""
+    "last_modified": 1793265137,
+    "last_sent_hash": "d1a6e46b242f6850c6d20267f936a50cd6a33e0e933e77e77d44fab878e7ecfa"
   },
   "aniimo:aniimo:100208": {
-    "last_modified": 1792159241,
-    "last_sent_hash": ""
+    "last_modified": 1793265144,
+    "last_sent_hash": "47c78243e9ff4dd351872a8d7ea21f9aeeda050bbfdb492b5711ccb6e7509419"
   },
   "aniimo:aniimo:100219": {
     "last_modified": 1792160684,
@@ -90,6 +90,10 @@
   "aniimo:aniimo:100263": {
     "last_modified": 1793154217,
     "last_sent_hash": "1474c200fc9435b4aff0801099572749945c5ef4eab6e1a7b713f7a56a57cae2"
+  },
+  "aniimo:aniimo:100275": {
+    "last_modified": 1793261667,
+    "last_sent_hash": "21278de24134f62fd380f46a22f8fb7b08342d4a90421a71eb91631d96eff7c1"
   },
   "gryphline:endfield:0744": {
     "last_modified": 1791864000,
