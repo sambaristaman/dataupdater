@@ -251,7 +251,13 @@
   },
   "wuthering-waves::events": {
     "last_updated": "wutheringwaves.fandom.com",
-    "items": []
+    "items": [
+      {
+        "label": "Pioneer Podcast 2026-09-30",
+        "link": "https://wutheringwaves.fandom.com/wiki/Pioneer_Podcast/2026-09-30",
+        "info": "<t:1790737200:d> \u2192 <t:1794340740:d> (ends <t:1794340740:R>)"
+      }
+    ]
   },
   "honkai-star-rail::events": {
     "last_updated": "ennead.cc",
