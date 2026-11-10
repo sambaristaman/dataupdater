@@ -1160,21 +1160,64 @@ def shadowverse_extract_article(content: str, kind: str, url: str) -> Dict:
     date_str = None
     author = None
     body = ""
+    iso_ts = None
+    published_ts = None
     if kind == "html":
-        m = re.search(r"<h1[^>]*>(.*?)</h1>", content, re.IGNORECASE | re.DOTALL)
-        if m:
-            title = re.sub(r"<[^>]+>", "", m.group(1)).strip() or url
-        text_for_date = re.sub(r"<[^>]+>", " ", content)
-        dm = re.search(
-            r"(January|February|March|April|May|June|July|August|September|October|November|December)\s+\d{1,2},\s+\d{4}",
-            text_for_date,
-        )
-        if dm:
-            date_str = dm.group(0)
-        am = re.search(r"\bBy\s+([A-Za-z0-9_.\- ]{2,})\b", text_for_date)
-        if am:
-            author = am.group(1).strip()
-        body = text_for_date.strip()
+        soup = BeautifulSoup(content, "html.parser")
+        for junk in soup(["script", "style", "noscript", "template", "svg", "iframe", "nav"]):
+            junk.decompose()
+        h1 = soup.find("h1")
+        if h1:
+            title = h1.get_text(" ", strip=True) or url
+        meta_date = soup.find("meta", attrs={"property": "article:published_time"})
+        if meta_date and meta_date.get("content"):
+            try:
+                dt = datetime.fromisoformat(meta_date["content"].strip())
+                if dt.tzinfo is None:
+                    dt = dt.replace(tzinfo=timezone.utc)
+                iso_ts = dt.isoformat()
+                published_ts = int(dt.timestamp())
+            except ValueError:
+                pass
+        meta_author = soup.find("meta", attrs={"name": "author"})
+        if meta_author and meta_author.get("content", "").strip():
+            author = meta_author["content"].strip()
+        # Body: the post's own content container, never the whole page (whose
+        # related-post cards, author box and nav would otherwise leak in).
+        root = soup.select_one(".entry-content") or soup.find("article") or soup.body or soup
+        for junk in root.select("[class*='dotgg-toc'], .ez-toc-container, .news-source-top, .dbs-source"):
+            junk.decompose()
+        for br in root.find_all("br"):
+            br.replace_with(" ")
+
+        def _flat(el) -> str:
+            return re.sub(r"\s+", " ", el.get_text()).strip()
+
+        blocks = []
+        block_tags = ["p", "h2", "h3", "h4", "h5", "h6", "li", "tr", "blockquote"]
+        for el in root.find_all(block_tags):
+            if el.find_parent(block_tags) is not None:
+                continue
+            if el.name == "tr":
+                text = " | ".join(_flat(c) for c in el.find_all(["td", "th"]))
+            else:
+                text = _flat(el)
+            if text:
+                blocks.append(f"• {text}" if el.name == "li" else text)
+        body = "\n".join(blocks) if blocks else root.get_text("\n", strip=True)
+        if published_ts is None:
+            # Fallback when there is no article:published_time meta: first date on the page.
+            page_text = soup.get_text(" ", strip=True)
+            dm = re.search(
+                r"(January|February|March|April|May|June|July|August|September|October|November|December)\s+\d{1,2},\s+\d{4}",
+                page_text,
+            )
+            if dm:
+                date_str = dm.group(0)
+        if not author:
+            am = re.search(r"\bBy\s+([A-Za-z0-9_.\- ]{2,})\b", body)
+            if am:
+                author = am.group(1).strip()
     else:
         m = re.search(r"(?m)^#\s+(.+)$", content)
         if m:
@@ -1188,11 +1231,28 @@ def shadowverse_extract_article(content: str, kind: str, url: str) -> Dict:
         am = re.search(r"\bBy\s+([A-Za-z0-9_.\- ]{2,})\b", content)
         if am:
             author = am.group(1).strip()
-        body = content.strip()
+        start = m.end() if m else 0
+        end_m = re.search(
+            r"(?m)^\[Read the full article|^#{1,3}\s+(Comments|More Articles|Latest Articles)\b",
+            content[start:],
+        )
+        body = content[start : start + end_m.start()] if end_m else content[start:]
+        body = re.sub(r"!\[[^\]]*\]\([^)]*\)", "", body)
+        body = re.sub(r"\[([^\]]*)\]\([^)]*\)", r"\1", body)
+        body = re.sub(r"(?m)^(Contents Hide Show|Contents)\s*$", "", body)
+        body = re.sub(r"\n{3,}", "\n\n", body).strip()
+        pm = re.search(r"(?m)^Published Time:\s*(\S+)", content)
+        if pm:
+            try:
+                dt = datetime.fromisoformat(pm.group(1).replace("Z", "+00:00"))
+                if dt.tzinfo is None:
+                    dt = dt.replace(tzinfo=timezone.utc)
+                iso_ts = dt.isoformat()
+                published_ts = int(dt.timestamp())
+            except ValueError:
+                pass
 
-    iso_ts = None
-    published_ts = None
-    if date_str:
+    if date_str and published_ts is None:
         try:
             dt = datetime.strptime(date_str, "%B %d, %Y").replace(tzinfo=timezone.utc)
             iso_ts = dt.isoformat()
