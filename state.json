@@ -263,11 +263,6 @@
     "last_updated": "ennead.cc",
     "items": [
       {
-        "label": "Gift of Odyssey",
-        "link": null,
-        "info": "<t:1790478000:d> \u2192 <t:1794279599:d> (ends <t:1794279599:R>)"
-      },
-      {
         "label": "Interastral Peace Gala: One Take",
         "link": null,
         "info": "<t:1792580400:d> \u2192 <t:1794340799:d> (ends <t:1794340799:R>)"
@@ -429,34 +424,39 @@
       },
       {
         "label": "Bloom of Yesterday's Dreamsoil",
-        "link": "https://wutheringwaves.kurogames.com/en/main/#news <!--End date is prediction based on typical banner length. Please fact-check and/or replace once we have official banner timeline with updated link-->",
-        "info": "<t:1794448800:d> \u2192 <t:1796270340:d> (ends <t:1796270340:R>) \u00b7 5\u2605 Lily \u00b7 4\u2605 Aalto, Youhu, Yangyang"
+        "link": "https://wutheringwaves.kurogames.com/en/main/news/detail/5736",
+        "info": "<t:1794452400:d> \u2192 <t:1796263140:d> (ends <t:1796263140:R>) \u00b7 5\u2605 Lily \u00b7 4\u2605 Aalto, Youhu, Yangyang"
+      },
+      {
+        "label": "Absolute Pulsation: Lullaby",
+        "link": "https://wutheringwaves.kurogames.com/en/main/news/detail/5736",
+        "info": "<t:1794452400:d> \u2192 <t:1796263140:d> (ends <t:1796263140:R>) \u00b7 5\u2605 Lullaby \u00b7 4\u2605 Cadenza, Celestial Spiral, Comet Flare"
+      },
+      {
+        "label": "When the Runes Glitter",
+        "link": "https://wutheringwaves.kurogames.com/en/main/news/detail/5736",
+        "info": "<t:1794452400:d> \u2192 <t:1796263140:d> (ends <t:1796263140:R>) \u00b7 5\u2605 Sigrika \u00b7 4\u2605 Aalto, Youhu, Yangyang"
+      },
+      {
+        "label": "Wanderer Knows No Far and Near",
+        "link": "https://wutheringwaves.kurogames.com/en/main/news/detail/5736",
+        "info": "<t:1794452400:d> \u2192 <t:1796263140:d> (ends <t:1796263140:R>) \u00b7 5\u2605 Qiuyuan \u00b7 4\u2605 Aalto, Youhu, Yangyang"
+      },
+      {
+        "label": "Absolute Pulsation: Solsworn Ciphers",
+        "link": "https://wutheringwaves.kurogames.com/en/main/news/detail/5736",
+        "info": "<t:1794452400:d> \u2192 <t:1796263140:d> (ends <t:1796263140:R>) \u00b7 5\u2605 Solsworn Ciphers \u00b7 4\u2605 Cadenza, Celestial Spiral, Comet Flare"
+      },
+      {
+        "label": "Absolute Pulsation: Emerald Sentence",
+        "link": "https://wutheringwaves.kurogames.com/en/main/news/detail/5736",
+        "info": "<t:1794452400:d> \u2192 <t:1796263140:d> (ends <t:1796263140:R>) \u00b7 5\u2605 Emerald Sentence \u00b7 4\u2605 Cadenza, Celestial Spiral, Comet Flare"
       }
     ]
   },
   "honkai-star-rail::gacha": {
     "last_updated": "ennead.cc",
     "items": [
-      {
-        "label": "Event Warp: Mortenax Blade",
-        "link": null,
-        "info": "<t:1792580400:d> \u2192 <t:1794319200:d> (ends <t:1794319200:R>) \u00b7 5\u2605 Mortenax Blade \u00b7 4\u2605 Qingque, Xueyi, Misha"
-      },
-      {
-        "label": "Event Warp: Pearl",
-        "link": null,
-        "info": "<t:1790560800:d> \u2192 <t:1794319200:d> (ends <t:1794319200:R>) \u00b7 5\u2605 Pearl \u00b7 4\u2605 Qingque, Xueyi, Misha"
-      },
-      {
-        "label": "Light Cone Warp: Reforged in Hellfire",
-        "link": null,
-        "info": "<t:1792580400:d> \u2192 <t:1794319200:d> (ends <t:1794319200:R>) \u00b7 5\u2605 Reforged in Hellfire \u00b7 4\u2605 Post-Op Conversation, Planetary Rendezvous, Boundless Choreo"
-      },
-      {
-        "label": "Light Cone Warp: Colors for Tomorrow",
-        "link": null,
-        "info": "<t:1790560800:d> \u2192 <t:1794319200:d> (ends <t:1794319200:R>) \u00b7 5\u2605 Colors for Tomorrow \u00b7 4\u2605 Post-Op Conversation, Planetary Rendezvous, Boundless Choreo"
-      },
       {
         "label": "Event Warp: Aeon \u2605 Aha",
         "link": null,
@@ -591,6 +591,11 @@
         "label": "Dazzling Star",
         "link": "https://neverness-to-everness.fandom.com/wiki/Dazzling_Star/2026-10-21",
         "info": "<t:1792551600:d> \u2192 <t:1794347999:d> (ends <t:1794347999:R>) \u00b7 S: Akane Rin"
+      },
+      {
+        "label": "Android Dreams",
+        "link": "https://neverness-to-everness.fandom.com/wiki/Android_Dreams/2026-11-11",
+        "info": "<t:1794366000:d> \u2192 <t:1794347999:d> (ends <t:1794347999:R>) \u00b7 S: Elyms"
       }
     ]
   },
