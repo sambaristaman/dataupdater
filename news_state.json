@@ -7655,6 +7655,22 @@
     "last_modified": 0,
     "last_sent_hash": "bf145d6a41a85b537588974e46f80507c41de00d9a30c0a2fd049d9cf100a92f"
   },
+  "shadowverse:shadowverse:https://shadowverse.gg/actions-taken-towards-players-who-have-violated-the-terms-of-service/": {
+    "last_modified": 1792713600,
+    "last_sent_hash": "aaceb052a2e696e1e2a94876d5f0b96dffaa06483662e13317ea9794da638a2e"
+  },
+  "shadowverse:shadowverse:https://shadowverse.gg/an-apology-for-issues-surrounding-the-transfer-of-unused-crystals/": {
+    "last_modified": 1793145600,
+    "last_sent_hash": "82dad27287f4a87b8714e6e8ddefcda44f8ad98debf56454416c5ce9e183bc42"
+  },
+  "shadowverse:shadowverse:https://shadowverse.gg/announcing-the-revenants-of-azvaldt-cup-vol-2/": {
+    "last_modified": 1792368000,
+    "last_sent_hash": "6dff0941f10fc56ff9cb7e806a87082bf7869bceeb7aea88a1194f5b73ca75f8"
+  },
+  "shadowverse:shadowverse:https://shadowverse.gg/attention-players-considering-switching-to-the-iphone-duo/": {
+    "last_modified": 1792454400,
+    "last_sent_hash": "67979833c12aaa4ffefed986be5e99bc2936b1a7be7eccd9bd9d35c19e03f459"
+  },
   "shadowverse:shadowverse:https://shadowverse.gg/author/apraphael/": {
     "last_modified": 1750377600,
     "last_sent_hash": "b2dfa0623349576725e76d3f4425a477b5d0615e8d2f68ba674d10bbc67c56f4"
@@ -7674,6 +7690,14 @@
   "shadowverse:shadowverse:https://shadowverse.gg/battle-dungeon-event-guide/": {
     "last_modified": 0,
     "last_sent_hash": "f00fbffb73897461742bef34a5e4743ad84f94beb0e2b7f22dd5bfebbcd4e458"
+  },
+  "shadowverse:shadowverse:https://shadowverse.gg/battle-dungeon/": {
+    "last_modified": 1793145600,
+    "last_sent_hash": "b1fdd1aec2fd680c2cc5d761d30bb7dc5b235ca96411514b4dd803149509af1c"
+  },
+  "shadowverse:shadowverse:https://shadowverse.gg/battle-pass-season-17/": {
+    "last_modified": 1793145600,
+    "last_sent_hash": "f488d77f9a9665a9dc618f939f5b34da72821f34de57d101b67d9ef65d89ea92"
   },
   "shadowverse:shadowverse:https://shadowverse.gg/best-day-1-decks-for-each-class-heirs-of-the-omen/": {
     "last_modified": 0,
@@ -7719,6 +7743,42 @@
     "last_modified": 0,
     "last_sent_hash": "e4388ae8ce4ed2df1550ca9193b13585424c3f29d34b2b566189f074112a774a"
   },
+  "shadowverse:shadowverse:https://shadowverse.gg/card-set-release-giveaway/": {
+    "last_modified": 1793145600,
+    "last_sent_hash": "ada5e0c1902d4467c18522b46d47027d70ed4e9ef3be19f0a4aacb11818fc122"
+  },
+  "shadowverse:shadowverse:https://shadowverse.gg/changes-to-take-two-october-28/": {
+    "last_modified": 1793059200,
+    "last_sent_hash": "d5c18c1eb736c7132322cea97e94fe931422240677b460a235cd071f750e09c1"
+  },
+  "shadowverse:shadowverse:https://shadowverse.gg/deicide-in-nacreheim-card-set-10-now-available/": {
+    "last_modified": 1793145600,
+    "last_sent_hash": "37c19c18957067b1d8d2243cfb32f145ee9dc156bdb0a09ef5f14fb8fc68981d"
+  },
+  "shadowverse:shadowverse:https://shadowverse.gg/deicide-in-nacreheim-crystal-top-up-bonuses/": {
+    "last_modified": 1793145600,
+    "last_sent_hash": "551c77b1f4d5356acbfe095837938f0177ee88d83623ab1a0a79a11429cbc641"
+  },
+  "shadowverse:shadowverse:https://shadowverse.gg/deicide-in-nacreheim-deck-giveaway/": {
+    "last_modified": 1793145600,
+    "last_sent_hash": "cf6d43a4774f1ace4fd293c8b6aa11ff20741940780e9e967ac5660ccbf5bfd0"
+  },
+  "shadowverse:shadowverse:https://shadowverse.gg/deicide-in-nacreheim-deckboost-bundle/": {
+    "last_modified": 1793145600,
+    "last_sent_hash": "2036f26633995a81ab213d6dd6d63d09b1a2e5ed4cf2e6bbf2a7110ddb769b13"
+  },
+  "shadowverse:shadowverse:https://shadowverse.gg/deicide-in-nacreheim-purchase-bonus-bundles/": {
+    "last_modified": 1793145600,
+    "last_sent_hash": "416fc06ccf005f53f7120cebfac458be576ca94d9c4efbc79176c48d9ca0b564"
+  },
+  "shadowverse:shadowverse:https://shadowverse.gg/deicide-in-nacreheim-release-celebration-missions/": {
+    "last_modified": 1793145600,
+    "last_sent_hash": "7837ad9ae8408f67e264a3e401566497dd0b54e14d749246e4a5d92b86016132"
+  },
+  "shadowverse:shadowverse:https://shadowverse.gg/deicide-in-nacreheim-theme-song-now-streaming/": {
+    "last_modified": 1793145600,
+    "last_sent_hash": "4bbbe26266f016415d8dad4db565d5a731c5149f1691858e9b2a717d53850ec4"
+  },
   "shadowverse:shadowverse:https://shadowverse.gg/differences-from-shadowverse-og/": {
     "last_modified": 0,
     "last_sent_hash": "4d530991845ce27931ee00f1afbdd5477e753205adcee73a79d773aa56d1e5ae"
@@ -7739,9 +7799,21 @@
     "last_modified": 0,
     "last_sent_hash": "8d6090a740faa5650157864aee1f23aa43b3436f0d1dde4bf2048409fcae4403"
   },
+  "shadowverse:shadowverse:https://shadowverse.gg/emergency-maintenance-updated/": {
+    "last_modified": 1792540800,
+    "last_sent_hash": "03cd41704218c69fee87ad46e1a6dd497eeb616bc463634fd0dea414c69a340d"
+  },
+  "shadowverse:shadowverse:https://shadowverse.gg/error-102-displaying-on-decks-screen/": {
+    "last_modified": 1791504000,
+    "last_sent_hash": "f740c7ef60c8c0808202102fb237d48c70e74041c3b3804958775db82d6d66df"
+  },
   "shadowverse:shadowverse:https://shadowverse.gg/event-schedule-and-rewards/": {
     "last_modified": 0,
     "last_sent_hash": "9b05996be18bf0242d9711b99a89c2d71e5933f6f4cc580b83d15d02e5f31add"
+  },
+  "shadowverse:shadowverse:https://shadowverse.gg/evolving-guild-chest-event/": {
+    "last_modified": 1791504000,
+    "last_sent_hash": "2fe7db5db7dfeeecdbc7656ba81cd76f6a1c47292fd092a6f147cb32f34353f0"
   },
   "shadowverse:shadowverse:https://shadowverse.gg/feed/": {
     "last_modified": 0,
@@ -7767,6 +7839,30 @@
     "last_modified": 0,
     "last_sent_hash": "a1e48924400a0dd44ff539e48e4bef2c8fe525e96f674ae5b833fade5eb87cbb"
   },
+  "shadowverse:shadowverse:https://shadowverse.gg/godzilla-collab-dungeon/": {
+    "last_modified": 1793923200,
+    "last_sent_hash": "530994e9522ef372731c94f144b45093a5b9ca075262dbfd899cb48f3a7ba713"
+  },
+  "shadowverse:shadowverse:https://shadowverse.gg/godzilla-mini-collab-card-style-set-now-available/": {
+    "last_modified": 1793923200,
+    "last_sent_hash": "d6c8ec88a6ce33d7c0f15ed66c7e2a397b62b513c5656c20703c8d4f961dfd8e"
+  },
+  "shadowverse:shadowverse:https://shadowverse.gg/godzilla-mini-collab-giveaway/": {
+    "last_modified": 1793923200,
+    "last_sent_hash": "72a9fa594c6542512df32c3ddbfa501487e275f3d6ce45ecd61883687476e94d"
+  },
+  "shadowverse:shadowverse:https://shadowverse.gg/godzilla-mini-collab-special-login-bonus/": {
+    "last_modified": 1793923200,
+    "last_sent_hash": "d5b6055a001dfcf870c03a411ff11ca68b6f48fcb1bf128ff46c63820cebe9ed"
+  },
+  "shadowverse:shadowverse:https://shadowverse.gg/godzilla-mini-collab/": {
+    "last_modified": 1793923200,
+    "last_sent_hash": "7eddab283a35edc2764871efaf45d4f84a05ed4003c14cc5f64f3e71e6c0f970"
+  },
+  "shadowverse:shadowverse:https://shadowverse.gg/halloween-treat-from-eudie/": {
+    "last_modified": 1793318400,
+    "last_sent_hash": "704826bb56e2a9270eb124d67540da663142ca0b8465f617c5184e0b19a9b41e"
+  },
   "shadowverse:shadowverse:https://shadowverse.gg/havencraft-crest-deck-guide/": {
     "last_modified": 0,
     "last_sent_hash": "adf6331dc194a12fe84baf5b120b30324a1fbce9728de7a135efa0242c45cfb2"
@@ -7779,6 +7875,10 @@
     "last_modified": 0,
     "last_sent_hash": "0c602a6420cf4e36809377ef9e9dd40fe173e061d7bee69e69b8bf090f8f2d46"
   },
+  "shadowverse:shadowverse:https://shadowverse.gg/heartening-hyphae-gremory-and-lineage-card-style-set-now-available/": {
+    "last_modified": 1793145600,
+    "last_sent_hash": "e9bfb2f437c0e8e43bcc4d4b4389721ddd7f2d4eea7b0970f1727fe160d50bc7"
+  },
   "shadowverse:shadowverse:https://shadowverse.gg/heirs-of-the-omen-deck-giveaway-release-events/": {
     "last_modified": 0,
     "last_sent_hash": "9bab89e423e4ab829629f05e48a27ed62a77a8a7838bf7293d110693c944ef9a"
@@ -7787,9 +7887,37 @@
     "last_modified": 0,
     "last_sent_hash": "86bf143b9006018d4e863bb67bec0e72c66736190f4c3293cbc7735aa213f41b"
   },
+  "shadowverse:shadowverse:https://shadowverse.gg/known-issues-updated-1000-a-m-november-4-utc/": {
+    "last_modified": 1793750400,
+    "last_sent_hash": "45bd5f4833329935cb52f02fd9fc96e873ec0b2f8754d20629248c097f4b491b"
+  },
+  "shadowverse:shadowverse:https://shadowverse.gg/latin-american-version-out-now-carefree-caramelos-set-giveaway/": {
+    "last_modified": 1791504000,
+    "last_sent_hash": "1fd91bd82d94feed1c92d51b109b37beab33a39eed9e8fa8b34579c6812db7df"
+  },
   "shadowverse:shadowverse:https://shadowverse.gg/linking-data-to-shadowverse-worlds-beyond/": {
     "last_modified": 0,
     "last_sent_hash": "d56380df573b1a01c327e183091f7792f3886288cf12050707ba5f9568598a90"
+  },
+  "shadowverse:shadowverse:https://shadowverse.gg/minor-update-2/": {
+    "last_modified": 1791504000,
+    "last_sent_hash": "0ed78701e72b9a59da9989c3dc754b6c7f05d4ce01ef7ffd8f02cc9dc59d7209"
+  },
+  "shadowverse:shadowverse:https://shadowverse.gg/minor-update-3/": {
+    "last_modified": 1790899200,
+    "last_sent_hash": "c79d4db8b8408d36c86f5cc02d836a293be4384877e2b2a41f9d4605e120663c"
+  },
+  "shadowverse:shadowverse:https://shadowverse.gg/minor-update/": {
+    "last_modified": 1792800000,
+    "last_sent_hash": "228f98e9a73ad766d700b615245124914d2cebb369fdb3aab6a718f8fcb40885"
+  },
+  "shadowverse:shadowverse:https://shadowverse.gg/new-private-lobby-features/": {
+    "last_modified": 1792800000,
+    "last_sent_hash": "caa8df9ad742f98ce0a8c1518fb2855fa1f61c7d28b521b8ee8ebea7fd824a77"
+  },
+  "shadowverse:shadowverse:https://shadowverse.gg/past-rewards-available-in-the-shop/": {
+    "last_modified": 1793059200,
+    "last_sent_hash": "2b9a7b40a6270f3fdb96848f01b269cf123af3c9e8855ecef417ca2f5aebe287"
   },
   "shadowverse:shadowverse:https://shadowverse.gg/portalcraft-artifact-deck-guide/": {
     "last_modified": 0,
@@ -7826,6 +7954,10 @@
   "shadowverse:shadowverse:https://shadowverse.gg/set-release-and-season-schedule/": {
     "last_modified": 0,
     "last_sent_hash": "ed4423f1961dc90b8e58f16ee9c555989250ec37d319dbd48a38c93579ff9d5b"
+  },
+  "shadowverse:shadowverse:https://shadowverse.gg/shadowverse-channel-beyond-livestream-card-set-10/": {
+    "last_modified": 1792108800,
+    "last_sent_hash": "e34c7d469645fb1dad6bff8a4a78b0b146b5f2a507bab303430437ae3f1c98b2"
   },
   "shadowverse:shadowverse:https://shadowverse.gg/shadowverse-channel-beyond-prerelease-special-livestream/": {
     "last_modified": 0,
@@ -7867,6 +7999,10 @@
     "last_modified": 0,
     "last_sent_hash": "6cbe836f3f6d79771ea0f4409140ba5fe9252311d6178b3c9c7b634a04a1da97"
   },
+  "shadowverse:shadowverse:https://shadowverse.gg/take-two-balance-adjustments/": {
+    "last_modified": 1791331200,
+    "last_sent_hash": "593c3485bc01b9d8cdbd96f11df8508bbf5262230769f2416e40b2af472f8272"
+  },
   "shadowverse:shadowverse:https://shadowverse.gg/take-two-class-meta-tier-list-post-havencraft-forestcraft-extra-redraws/": {
     "last_modified": 0,
     "last_sent_hash": "be2ea29247608afb40d71570b7ff17254aa7a4c897ff2039578daa62c1d42fa0"
@@ -7879,6 +8015,10 @@
     "last_modified": 0,
     "last_sent_hash": "ed43302da9997b74bd848c3143a6f67d56359392d4e12ee6602c9a9238389f78"
   },
+  "shadowverse:shadowverse:https://shadowverse.gg/the-nacreheim-case-files-website-now-live/": {
+    "last_modified": 1792800000,
+    "last_sent_hash": "df3b8f64af724eb5279c6dbfc3be3c9d144bde05d7a18364269b044a09a56a41"
+  },
   "shadowverse:shadowverse:https://shadowverse.gg/two-decks-bo1-tournaments-what-is-the-best-pair/": {
     "last_modified": 0,
     "last_sent_hash": "0f6b9a26a3b0e0febdb5d8cf0f7735fea4a3f1c07d7f7bba537c94cac6b621d3"
@@ -7886,6 +8026,18 @@
   "shadowverse:shadowverse:https://shadowverse.gg/umamusume-pretty-derby/": {
     "last_modified": 0,
     "last_sent_hash": "ba2cdf3fffb83db6012d2d5e3976ab872b640910401f9110b7724481bae54e60"
+  },
+  "shadowverse:shadowverse:https://shadowverse.gg/update-to-version-1-10-0-new-card-set-updated/": {
+    "last_modified": 1792108800,
+    "last_sent_hash": "4b7790fe46dce3abb38e5bed6a4205a645f7299614e38f65dd2717a96a2c5ac2"
+  },
+  "shadowverse:shadowverse:https://shadowverse.gg/update-to-version-1-10-5-updated/": {
+    "last_modified": 1793318400,
+    "last_sent_hash": "940bf72895c35717acffc14fc2399a78da1e2fc5544ce42c08a8c6023d541736"
+  },
+  "shadowverse:shadowverse:https://shadowverse.gg/update-to-version-1-9-11/": {
+    "last_modified": 1790899200,
+    "last_sent_hash": "c8109c8f1d3dfcaeda2a16da982476b217e040225d0ff97af1b566c821c0b53d"
   },
   "shadowverse:shadowverse:https://shadowverse.gg/version-1-1-3-patch-notes/": {
     "last_modified": 0,
@@ -7895,9 +8047,17 @@
     "last_modified": 0,
     "last_sent_hash": "b0938a08dd1ce16d46f7e96cae4adf7f3759f36eca442d722b7e9216ff86d55b"
   },
+  "shadowverse:shadowverse:https://shadowverse.gg/victory-rewards/": {
+    "last_modified": 1793404800,
+    "last_sent_hash": "cc4b4475bcb4201dbe54f432bf7be6b74e908aad1337e4bef3919ae117ffd29a"
+  },
   "shadowverse:shadowverse:https://shadowverse.gg/weekend-lobby-tournament-compensation/": {
     "last_modified": 0,
     "last_sent_hash": "23f59e1f50b86832b122196f59670586fdcba4ebc869929c293ac02467287cab"
+  },
+  "shadowverse:shadowverse:https://shadowverse.gg/wgp-2026-celebration-giveaway/": {
+    "last_modified": 1792800000,
+    "last_sent_hash": "3b03e6438c7a31923d57d231a180e50746aafa6904c3fbd76769aa01f34731c6"
   },
   "shadowverse:shadowverse:https://shadowverse.gg/wp-json/": {
     "last_modified": 0,
