@@ -251,41 +251,50 @@
   },
   "wuthering-waves::events": {
     "last_updated": "wutheringwaves.fandom.com",
-    "items": [
-      {
-        "label": "Pioneer Podcast 2026-09-30",
-        "link": "https://wutheringwaves.fandom.com/wiki/Pioneer_Podcast/2026-09-30",
-        "info": "<t:1790737200:d> \u2192 <t:1794340740:d> (ends <t:1794340740:R>)"
-      }
-    ]
+    "items": []
   },
   "honkai-star-rail::events": {
     "last_updated": "ennead.cc",
     "items": [
       {
-        "label": "Interastral Peace Gala: One Take",
+        "label": "The Fluffy Movie: Overheated",
         "link": null,
-        "info": "<t:1792580400:d> \u2192 <t:1794340799:d> (ends <t:1794340799:R>)"
+        "info": "<t:1794193200:d> \u2192 <t:1797969599:d> (ends <t:1797969599:R>)"
       },
       {
-        "label": "Garden of Plenty",
+        "label": "Interastral Peace Gala: Road to Fame",
         "link": null,
-        "info": "<t:1793329200:d> \u2192 <t:1794340799:d> (ends <t:1794340799:R>)"
+        "info": "<t:1794351600:d> \u2192 <t:1797969599:d> (ends <t:1797969599:R>)"
       },
       {
-        "label": "Love, Ghosts & Robots",
+        "label": "Relic Recon",
         "link": null,
-        "info": "<t:1790305200:d> \u2192 <t:1794340799:d> (ends <t:1794340799:R>)"
+        "info": "<t:1794193200:d> \u2192 <t:1797969599:d> (ends <t:1797969599:R>)"
       },
       {
-        "label": "Wishpower UP! Down with Voracity!",
+        "label": "Aha Reckons You Need This",
         "link": null,
-        "info": "<t:1790550000:d> \u2192 <t:1794348000:d> (ends <t:1794348000:R>)"
+        "info": "<t:1794351600:d> \u2192 <t:1797976740:d> (ends <t:1797976740:R>)"
       },
       {
-        "label": "Astral Imagea Park",
+        "label": "Magic Invitation",
         "link": null,
-        "info": "<t:1790305200:d> \u2192 <t:1794348000:d> (ends <t:1794348000:R>)"
+        "info": "<t:1794351600:d> \u2192 <t:1797976740:d> (ends <t:1797976740:R>)"
+      },
+      {
+        "label": "Affinitive Starveil",
+        "link": null,
+        "info": "<t:1794351600:d> \u2192 <t:1797976740:d> (ends <t:1797976740:R>)"
+      },
+      {
+        "label": "Stellar Companions",
+        "link": null,
+        "info": "<t:1794351600:d> \u2192 <t:1797976800:d> (ends <t:1797976800:R>)"
+      },
+      {
+        "label": "Planar Fissure",
+        "link": null,
+        "info": "<t:1795402800:d> \u2192 <t:1796612399:d> (ends <t:1796612399:R>)"
       }
     ]
   },
@@ -358,6 +367,11 @@
     "last_updated": "ennead.cc",
     "items": [
       {
+        "label": "Stygian Onslaught",
+        "link": null,
+        "info": "<t:1794362400:d> \u2192 <t:1797278399:d> (ends <t:1797278399:R>)"
+      },
+      {
         "label": "The Grand Defense: Defy the Unjust Judgment",
         "link": null,
         "info": "<t:1793746800:d> \u2192 <t:1797375600:d> (ends <t:1797375600:R>)"
@@ -392,36 +406,6 @@
   "wuthering-waves::gacha": {
     "last_updated": "wutheringwaves.fandom.com",
     "items": [
-      {
-        "label": "Nine Deaths, One Unbent Heart",
-        "link": "https://wutheringwaves.fandom.com/wiki/Nine_Deaths,_One_Unbent_Heart/2026-10-22",
-        "info": "<t:1792634400:d> \u2192 <t:1794369540:d> (ends <t:1794369540:R>) \u00b7 5\u2605 Suoming \u00b7 4\u2605 Lumi, Danjin, Chixia"
-      },
-      {
-        "label": "Undefined Spectrum",
-        "link": "https://wutheringwaves.kurogames.com/en/main/news/detail/5668",
-        "info": "<t:1792634400:d> \u2192 <t:1794369540:d> (ends <t:1794369540:R>) \u00b7 5\u2605 Lynae \u00b7 4\u2605 Lumi, Danjin, Chixia"
-      },
-      {
-        "label": "Tomorrow in the Frame",
-        "link": "https://wutheringwaves.kurogames.com/en/main/news/detail/5668",
-        "info": "<t:1792634400:d> \u2192 <t:1794369540:d> (ends <t:1794369540:R>) \u00b7 5\u2605 Lucilla \u00b7 4\u2605 Lumi, Danjin, Chixia"
-      },
-      {
-        "label": "Absolute Pulsation: Unspoken Rue",
-        "link": "https://wutheringwaves.fandom.com/wiki/Absolute_Pulsation:_Unspoken_Rue/2026-10-22",
-        "info": "<t:1792634400:d> \u2192 <t:1794369540:d> (ends <t:1794369540:R>) \u00b7 5\u2605 Unspoken Rue \u00b7 4\u2605 Overture, Relativistic Jet, Amity Accord"
-      },
-      {
-        "label": "Absolute Pulsation: Spectrum Blaster",
-        "link": "https://wutheringwaves.kurogames.com/en/main/news/detail/5668",
-        "info": "<t:1792634400:d> \u2192 <t:1794369540:d> (ends <t:1794369540:R>) \u00b7 5\u2605 Spectrum Blaster \u00b7 4\u2605 Overture, Relativistic Jet, Amity Accord"
-      },
-      {
-        "label": "Absolute Pulsation: Freeze Frame",
-        "link": "https://wutheringwaves.kurogames.com/en/main/news/detail/5668",
-        "info": "<t:1792634400:d> \u2192 <t:1794369540:d> (ends <t:1794369540:R>) \u00b7 5\u2605 Freeze Frame \u00b7 4\u2605 Overture, Relativistic Jet, Amity Accord"
-      },
       {
         "label": "Bloom of Yesterday's Dreamsoil",
         "link": "https://wutheringwaves.kurogames.com/en/main/news/detail/5736",
@@ -458,14 +442,19 @@
     "last_updated": "ennead.cc",
     "items": [
       {
-        "label": "Event Warp: Aeon \u2605 Aha",
-        "link": null,
-        "info": "<t:1794362400:d> \u2192 <t:1797948000:d> (ends <t:1797948000:R>) \u00b7 5\u2605 Aeon \u2605 Aha \u00b7 4\u2605 Asta, Lynx, Yukong"
-      },
-      {
         "label": "Event Warp: Silver Wolf LV.999, Sparxie, Yao Guang",
         "link": null,
         "info": "<t:1794362400:d> \u2192 <t:1796209140:d> (ends <t:1796209140:R>) \u00b7 5\u2605 Silver Wolf LV.999, Sparxie, Yao Guang \u00b7 4\u2605 Asta, Lynx, Yukong"
+      },
+      {
+        "label": "Light Cone Warp: Welcome to the Cosmic City, Dazzled by a Flowery World, When She Decided to See",
+        "link": null,
+        "info": "<t:1794362400:d> \u2192 <t:1796209140:d> (ends <t:1796209140:R>) \u00b7 5\u2605 Welcome to the Cosmic City, Dazzled by a Flowery World, When She Decided to See \u00b7 4\u2605 Trend of the Universal Market, Geniuses' Repose, Shadowed by Night"
+      },
+      {
+        "label": "Event Warp: Aeon \u2605 Aha",
+        "link": null,
+        "info": "<t:1794362400:d> \u2192 <t:1797948000:d> (ends <t:1797948000:R>) \u00b7 5\u2605 Aeon \u2605 Aha \u00b7 4\u2605 Asta, Lynx, Yukong"
       },
       {
         "label": "Light Cone Warp: Upon the First Echo of \"Aha\"",
@@ -473,9 +462,14 @@
         "info": "<t:1794362400:d> \u2192 <t:1797948000:d> (ends <t:1797948000:R>) \u00b7 5\u2605 Upon the First Echo of \"Aha\" \u00b7 4\u2605 Trend of the Universal Market, Geniuses' Repose, Shadowed by Night"
       },
       {
-        "label": "Light Cone Warp: Welcome to the Cosmic City, Dazzled by a Flowery World, When She Decided to See",
+        "label": "Event Warp: Acheron, Dan Heng \u2022 Imbibitor Lunae, Jing Yuan",
         "link": null,
-        "info": "<t:1794362400:d> \u2192 <t:1796209140:d> (ends <t:1796209140:R>) \u00b7 5\u2605 Welcome to the Cosmic City, Dazzled by a Flowery World, When She Decided to See \u00b7 4\u2605 Trend of the Universal Market, Geniuses' Repose, Shadowed by Night"
+        "info": "<t:1796209200:d> \u2192 <t:1797948000:d> (ends <t:1797948000:R>) \u00b7 5\u2605 Acheron, Dan Heng \u2022 Imbibitor Lunae, Jing Yuan \u00b7 4\u2605 Asta, Lynx, Yukong"
+      },
+      {
+        "label": "Light Cone Warp: Along the Passing Shore, Brighter Than the Sun, Before Dawn",
+        "link": null,
+        "info": "<t:1796209200:d> \u2192 <t:1797948000:d> (ends <t:1797948000:R>) \u00b7 5\u2605 Along the Passing Shore, Brighter Than the Sun, Before Dawn \u00b7 4\u2605 Trend of the Universal Market, Geniuses' Repose, Shadowed by Night"
       }
     ]
   },
@@ -556,46 +550,15 @@
   },
   "nte::events": {
     "last_updated": "nte.perfectworld.com",
-    "items": [
-      {
-        "label": "Pukaland Travelogue",
-        "link": "https://nte.perfectworld.com/en/article/news/gamenews/20260929/264409.html",
-        "info": "<t:1790737200:d> \u2192 <t:1794347940:d> (ends <t:1794347940:R>)"
-      },
-      {
-        "label": "Terminal Depths",
-        "link": "https://nte.perfectworld.com/en/article/news/gamenews/20260929/264409.html",
-        "info": "<t:1790737200:d> \u2192 <t:1794347940:d> (ends <t:1794347940:R>)"
-      },
-      {
-        "label": "Coal Lump's Treasure",
-        "link": "https://nte.perfectworld.com/en/article/news/gamenews/20260929/264409.html",
-        "info": "<t:1791424800:d> \u2192 <t:1794347940:d> (ends <t:1794347940:R>)"
-      },
-      {
-        "label": "Snap! Golden Crackshot",
-        "link": "https://nte.perfectworld.com/en/article/news/gamenews/20261019/264675.html",
-        "info": "<t:1792551600:d> \u2192 <t:1794347940:d> (ends <t:1794347940:R>)"
-      },
-      {
-        "label": "Puka Lucky Flip",
-        "link": "https://nte.perfectworld.com/en/article/news/gamenews/20261019/264675.html",
-        "info": "<t:1793221200:d> \u2192 <t:1794347940:d> (ends <t:1794347940:R>)"
-      }
-    ]
+    "items": []
   },
   "nte::gacha": {
     "last_updated": "neverness-to-everness.fandom.com",
     "items": [
       {
-        "label": "Dazzling Star",
-        "link": "https://neverness-to-everness.fandom.com/wiki/Dazzling_Star/2026-10-21",
-        "info": "<t:1792551600:d> \u2192 <t:1794347999:d> (ends <t:1794347999:R>) \u00b7 S: Akane Rin"
-      },
-      {
         "label": "Android Dreams",
         "link": "https://neverness-to-everness.fandom.com/wiki/Android_Dreams/2026-11-11",
-        "info": "<t:1794366000:d> \u2192 <t:1794347999:d> (ends <t:1794347999:R>) \u00b7 S: Elyms"
+        "info": "<t:1794366000:d> \u2192 <t:1796162399:d> (ends <t:1796162399:R>) \u00b7 S: Elyms"
       }
     ]
   },
