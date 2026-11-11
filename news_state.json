@@ -5191,6 +5191,34 @@
     "last_modified": 1794304805,
     "last_sent_hash": "5844147a4d4d7b75c55d32a01c97abb35bf50c4f2f2ffa9ccd9a3c7eed151205"
   },
+  "hoyolab:starrail:47394097": {
+    "last_modified": 1794351603,
+    "last_sent_hash": "ee38c70dab107aed6d73e8f6d6aedf450d76a1273f9be023f8d391b0e59eb0ba"
+  },
+  "hoyolab:starrail:47395082": {
+    "last_modified": 1794362407,
+    "last_sent_hash": "702a44d43b51d5539a03e1f9846ea48aadcdb8f86bd8e72ce4eecad0636be828"
+  },
+  "hoyolab:starrail:47396370": {
+    "last_modified": 1794369603,
+    "last_sent_hash": "60399e24304243a532af5cd543fd7fe13393b097981c2959e6eff252a6e15155"
+  },
+  "hoyolab:starrail:47396790": {
+    "last_modified": 1794371405,
+    "last_sent_hash": "ae3753e57c15489a30ecce8e2126d425293d8b9b1839b505c3c6acd9e5ca866a"
+  },
+  "hoyolab:starrail:47398071": {
+    "last_modified": 1794376804,
+    "last_sent_hash": "a54fd7169e805f49bd20ff46d54493f6876554a40fb3ec53dc2fb6b13791d675"
+  },
+  "hoyolab:starrail:47399652": {
+    "last_modified": 1794384008,
+    "last_sent_hash": "79c6731d45dc836471cbd884dd45bd57101791ad75bf6895e7721ce3d500767c"
+  },
+  "hoyolab:starrail:47401368": {
+    "last_modified": 1794391206,
+    "last_sent_hash": "37199a7c1de1df7caeaaf3215d25e7c79f27450459ca3f05c9d65bfbf0877b60"
+  },
   "hoyolab:zzz:42982746": {
     "last_modified": 1767069007,
     "last_sent_hash": "a523b1d0dd024294024bf86a7ea661b3f4588923f3e03ad853bf5897c6693c45"
