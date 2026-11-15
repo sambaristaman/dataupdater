@@ -518,6 +518,11 @@
         "info": "<t:1793217600:d> \u2192 <t:1795003200:d> (ends <t:1795003200:R>)"
       },
       {
+        "label": "Contingency Contract: Indigo Experimental Operation",
+        "link": "https://endfield.wiki.gg/wiki/Contingency_Contract:_Indigo_Experimental_Operation",
+        "info": "<t:1793822400:d> \u2192 <t:1795528800:d> (ends <t:1795528800:R>)"
+      },
+      {
         "label": "Season of Fervor",
         "link": "https://endfield.wiki.gg/wiki/Season_of_Fervor",
         "info": "<t:1793822400:d> \u2192 <t:1795528800:d> (ends <t:1795528800:R>)"
@@ -525,11 +530,6 @@
       {
         "label": "Back to the Rustics",
         "link": "https://endfield.wiki.gg/wiki/Back_to_the_Rustics",
-        "info": "<t:1793822400:d> \u2192 <t:1795528800:d> (ends <t:1795528800:R>)"
-      },
-      {
-        "label": "Contingency Contract: Indigo Experimental Operation",
-        "link": "https://endfield.wiki.gg/wiki/Contingency_Contract:_Indigo_Experimental_Operation",
         "info": "<t:1793822400:d> \u2192 <t:1795528800:d> (ends <t:1795528800:R>)"
       },
       {
@@ -590,6 +590,11 @@
         "label": "Android Dreams",
         "link": "https://neverness-to-everness.fandom.com/wiki/Android_Dreams/2026-11-11",
         "info": "<t:1794366000:d> \u2192 <t:1796162399:d> (ends <t:1796162399:R>) \u00b7 S: Elyms"
+      },
+      {
+        "label": "Before the Dawn",
+        "link": "https://neverness-to-everness.fandom.com/wiki/Before_the_Dawn/2026-11-11",
+        "info": "<t:1794366000:d> \u2192 <t:1796162399:d> (ends <t:1796162399:R>) \u00b7 S: Shinku"
       }
     ]
   },
