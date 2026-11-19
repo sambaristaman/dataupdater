@@ -518,6 +518,11 @@
         "info": "<t:1794916800:d> \u2192 <t:1795521540:d> (ends <t:1795521540:R>)"
       },
       {
+        "label": "Back to the Rustics",
+        "link": "https://endfield.wiki.gg/wiki/Back_to_the_Rustics",
+        "info": "<t:1793822400:d> \u2192 <t:1795528800:d> (ends <t:1795528800:R>)"
+      },
+      {
         "label": "Contingency Contract: Indigo Experimental Operation",
         "link": "https://endfield.wiki.gg/wiki/Contingency_Contract:_Indigo_Experimental_Operation",
         "info": "<t:1793822400:d> \u2192 <t:1795528800:d> (ends <t:1795528800:R>)"
@@ -525,11 +530,6 @@
       {
         "label": "Season of Fervor",
         "link": "https://endfield.wiki.gg/wiki/Season_of_Fervor",
-        "info": "<t:1793822400:d> \u2192 <t:1795528800:d> (ends <t:1795528800:R>)"
-      },
-      {
-        "label": "Back to the Rustics",
-        "link": "https://endfield.wiki.gg/wiki/Back_to_the_Rustics",
         "info": "<t:1793822400:d> \u2192 <t:1795528800:d> (ends <t:1795528800:R>)"
       },
       {
@@ -547,16 +547,6 @@
   "arknights-endfield::gacha": {
     "last_updated": "endfield.wiki.gg",
     "items": [
-      {
-        "label": "Ancestral Spring Flows Anew",
-        "link": "https://endfield.wiki.gg/wiki/Ancestral_Spring_Flows_Anew",
-        "info": "<t:1793217600:d> \u2192 <t:1795031999:d> (ends <t:1795031999:R>) \u00b7 Limited: Tangtang"
-      },
-      {
-        "label": "Arsenal: Tender Sprig",
-        "link": "https://endfield.wiki.gg/wiki/Tender_Sprig",
-        "info": "<t:1793217600:d> \u2192 <t:1795096799:d> (ends <t:1795096799:R>) \u00b7 Rate-up: Brigand's Calling"
-      },
       {
         "label": "The Hearth Fire Beckons the Starry Flow",
         "link": "https://endfield.wiki.gg/wiki/The_Hearth_Fire_Beckons_the_Starry_Flow",
