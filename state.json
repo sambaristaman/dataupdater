@@ -301,6 +301,11 @@
         "label": "Planar Fissure",
         "link": null,
         "info": "<t:1795402800:d> \u2192 <t:1796612399:d> (ends <t:1796612399:R>)"
+      },
+      {
+        "label": "Realm of the Strange",
+        "link": null,
+        "info": "<t:1796958000:d> \u2192 <t:1797969599:d> (ends <t:1797969599:R>)"
       }
     ]
   },
@@ -372,6 +377,11 @@
   "genshin-impact::events": {
     "last_updated": "ennead.cc",
     "items": [
+      {
+        "label": "Stress Block Smashing Project",
+        "link": null,
+        "info": "<t:1795140000:d> \u2192 <t:1795982399:d> (ends <t:1795982399:R>)"
+      },
       {
         "label": "Stygian Onslaught",
         "link": null,
