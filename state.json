@@ -383,6 +383,11 @@
         "info": "<t:1795140000:d> \u2192 <t:1795982399:d> (ends <t:1795982399:R>)"
       },
       {
+        "label": "Heated Battle Mode: Sprinting Stratagems",
+        "link": null,
+        "info": "<t:1795226400:d> \u2192 <t:1796587199:d> (ends <t:1796587199:R>)"
+      },
+      {
         "label": "Stygian Onslaught",
         "link": null,
         "info": "<t:1794362400:d> \u2192 <t:1797278399:d> (ends <t:1797278399:R>)"
@@ -528,13 +533,13 @@
         "info": "<t:1794916800:d> \u2192 <t:1795521540:d> (ends <t:1795521540:R>)"
       },
       {
-        "label": "Back to the Rustics",
-        "link": "https://endfield.wiki.gg/wiki/Back_to_the_Rustics",
+        "label": "Contingency Contract: Indigo Experimental Operation",
+        "link": "https://endfield.wiki.gg/wiki/Contingency_Contract:_Indigo_Experimental_Operation",
         "info": "<t:1793822400:d> \u2192 <t:1795528800:d> (ends <t:1795528800:R>)"
       },
       {
-        "label": "Contingency Contract: Indigo Experimental Operation",
-        "link": "https://endfield.wiki.gg/wiki/Contingency_Contract:_Indigo_Experimental_Operation",
+        "label": "Back to the Rustics",
+        "link": "https://endfield.wiki.gg/wiki/Back_to_the_Rustics",
         "info": "<t:1793822400:d> \u2192 <t:1795528800:d> (ends <t:1795528800:R>)"
       },
       {
@@ -551,6 +556,11 @@
         "label": "Yuanyuan's Blazing Stoves",
         "link": "https://endfield.wiki.gg/wiki/Yuanyuan's_Blazing_Stoves",
         "info": "<t:1792008000:d> \u2192 <t:1795528800:d> (ends <t:1795528800:R>)"
+      },
+      {
+        "label": "Caps! Shrooms! FUNGI!",
+        "link": "https://endfield.wiki.gg/wiki/Caps!_Shrooms!_FUNGI!",
+        "info": "until <t:1797969600:d> (ends <t:1797969600:R>)"
       }
     ]
   },
