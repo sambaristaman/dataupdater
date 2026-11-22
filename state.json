@@ -533,6 +533,11 @@
         "info": "<t:1794916800:d> \u2192 <t:1795521540:d> (ends <t:1795521540:R>)"
       },
       {
+        "label": "Shroomy Gathering",
+        "link": "https://endfield.wiki.gg/wiki/Shroomy_Gathering",
+        "info": "<t:1795232400:d> \u2192 <t:1795528800:d> (ends <t:1795528800:R>)"
+      },
+      {
         "label": "Contingency Contract: Indigo Experimental Operation",
         "link": "https://endfield.wiki.gg/wiki/Contingency_Contract:_Indigo_Experimental_Operation",
         "info": "<t:1793822400:d> \u2192 <t:1795528800:d> (ends <t:1795528800:R>)"
@@ -561,6 +566,11 @@
         "label": "Caps! Shrooms! FUNGI!",
         "link": "https://endfield.wiki.gg/wiki/Caps!_Shrooms!_FUNGI!",
         "info": "until <t:1797969600:d> (ends <t:1797969600:R>)"
+      },
+      {
+        "label": "Season of Scattering",
+        "link": "https://endfield.wiki.gg/wiki/Season_of_Scattering",
+        "info": "<t:1795550400:d> \u2192 <t:1797256800:d> (ends <t:1797256800:R>)"
       }
     ]
   },
@@ -586,6 +596,26 @@
         "label": "Arsenal: Moongleam",
         "link": "https://endfield.wiki.gg/wiki/Moongleam",
         "info": "<t:1793822400:d> \u2192 <t:1799243999:d> (ends <t:1799243999:R>) \u00b7 Rate-up: Lunar Calling"
+      },
+      {
+        "label": "To Every Wish Adrift",
+        "link": "https://endfield.wiki.gg/wiki/To_Every_Wish_Adrift",
+        "info": "<t:1795550400:d> \u2192 <t:1797364799:d> (ends <t:1797364799:R>) \u00b7 Limited: Gilberta"
+      },
+      {
+        "label": "Anvil, Backpack, Plus A Pot o'Honey",
+        "link": "https://endfield.wiki.gg/wiki/Anvil,_Backpack,_Plus_A_Pot_o'Honey",
+        "info": "<t:1795550400:d> \u2192 <t:1797969599:d> (ends <t:1797969599:R>) \u00b7 Rate-up: Kay"
+      },
+      {
+        "label": "Arsenal: Floaty Traveler",
+        "link": "https://endfield.wiki.gg/wiki/Floaty_Traveler",
+        "info": "<t:1795550400:d> \u2192 <t:1797364799:d> (ends <t:1797364799:R>) \u00b7 Rate-up: Delivery Guaranteed"
+      },
+      {
+        "label": "Arsenal: Casual Roamer",
+        "link": "https://endfield.wiki.gg/wiki/Casual_Roamer",
+        "info": "<t:1795550400:d> \u2192 <t:1799243999:d> (ends <t:1799243999:R>) \u00b7 Rate-up: Sweet Deal"
       }
     ]
   },
