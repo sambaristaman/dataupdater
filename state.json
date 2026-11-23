@@ -263,6 +263,11 @@
     "last_updated": "ennead.cc",
     "items": [
       {
+        "label": "Planar Fissure",
+        "link": null,
+        "info": "<t:1795402800:d> \u2192 <t:1796612399:d> (ends <t:1796612399:R>)"
+      },
+      {
         "label": "The Fluffy Movie: Overheated",
         "link": null,
         "info": "<t:1794193200:d> \u2192 <t:1797969599:d> (ends <t:1797969599:R>)"
@@ -296,11 +301,6 @@
         "label": "Stellar Companions",
         "link": null,
         "info": "<t:1794351600:d> \u2192 <t:1797976800:d> (ends <t:1797976800:R>)"
-      },
-      {
-        "label": "Planar Fissure",
-        "link": null,
-        "info": "<t:1795402800:d> \u2192 <t:1796612399:d> (ends <t:1796612399:R>)"
       },
       {
         "label": "Realm of the Strange",
@@ -538,6 +538,11 @@
         "info": "<t:1795232400:d> \u2192 <t:1795528800:d> (ends <t:1795528800:R>)"
       },
       {
+        "label": "The Stars Are With Me",
+        "link": "https://endfield.wiki.gg/wiki/The_Stars_Are_With_Me",
+        "info": "<t:1793822400:d> \u2192 <t:1795528800:d> (ends <t:1795528800:R>)"
+      },
+      {
         "label": "Contingency Contract: Indigo Experimental Operation",
         "link": "https://endfield.wiki.gg/wiki/Contingency_Contract:_Indigo_Experimental_Operation",
         "info": "<t:1793822400:d> \u2192 <t:1795528800:d> (ends <t:1795528800:R>)"
@@ -553,19 +558,24 @@
         "info": "<t:1793822400:d> \u2192 <t:1795528800:d> (ends <t:1795528800:R>)"
       },
       {
-        "label": "The Stars Are With Me",
-        "link": "https://endfield.wiki.gg/wiki/The_Stars_Are_With_Me",
-        "info": "<t:1793822400:d> \u2192 <t:1795528800:d> (ends <t:1795528800:R>)"
-      },
-      {
         "label": "Yuanyuan's Blazing Stoves",
         "link": "https://endfield.wiki.gg/wiki/Yuanyuan's_Blazing_Stoves",
         "info": "<t:1792008000:d> \u2192 <t:1795528800:d> (ends <t:1795528800:R>)"
       },
       {
+        "label": "I Dream of Honey Waffles",
+        "link": "https://endfield.wiki.gg/wiki/I_Dream_of_Honey_Waffles",
+        "info": "<t:1795550400:d> \u2192 <t:1799244000:d> (ends <t:1799244000:R>)"
+      },
+      {
+        "label": "Array Building: Mend the Old Gash",
+        "link": "https://endfield.wiki.gg/wiki/Array_Building:_Mend_the_Old_Gash",
+        "info": "<t:1795550400:d> \u2192 <t:1799244000:d> (ends <t:1799244000:R>)"
+      },
+      {
         "label": "Caps! Shrooms! FUNGI!",
         "link": "https://endfield.wiki.gg/wiki/Caps!_Shrooms!_FUNGI!",
-        "info": "until <t:1797969600:d> (ends <t:1797969600:R>)"
+        "info": "<t:1795550400:d> \u2192 <t:1797969600:d> (ends <t:1797969600:R>)"
       },
       {
         "label": "Season of Scattering",
