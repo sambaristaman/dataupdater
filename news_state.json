@@ -8227,6 +8227,10 @@
     "last_modified": 0,
     "last_sent_hash": "8d6090a740faa5650157864aee1f23aa43b3436f0d1dde4bf2048409fcae4403"
   },
+  "shadowverse:shadowverse:https://shadowverse.gg/dungeon-crawl-2/": {
+    "last_modified": 1795597200,
+    "last_sent_hash": "9360f540808887604e2eec5f4a61b9ed0b6a1eda07828442ab3fd5a4bd097e65"
+  },
   "shadowverse:shadowverse:https://shadowverse.gg/emergency-maintenance-updated/": {
     "last_modified": 1792540800,
     "last_sent_hash": "03cd41704218c69fee87ad46e1a6dd497eeb616bc463634fd0dea414c69a340d"
@@ -8343,9 +8347,21 @@
     "last_modified": 1792800000,
     "last_sent_hash": "228f98e9a73ad766d700b615245124914d2cebb369fdb3aab6a718f8fcb40885"
   },
+  "shadowverse:shadowverse:https://shadowverse.gg/new-card-set-prerelease-campaign-2/": {
+    "last_modified": 1795597200,
+    "last_sent_hash": "7480b74b1c52ff13355691b56ed1f307ee3b6f2aff41a892f331171481485ee7"
+  },
   "shadowverse:shadowverse:https://shadowverse.gg/new-private-lobby-features/": {
     "last_modified": 1792800000,
     "last_sent_hash": "caa8df9ad742f98ce0a8c1518fb2855fa1f61c7d28b521b8ee8ebea7fd824a77"
+  },
+  "shadowverse:shadowverse:https://shadowverse.gg/new-shadowverse-evolve-combined-set/": {
+    "last_modified": 1795683600,
+    "last_sent_hash": "a9ff8923729755e4f8de18fbc677ae9853ed5ad15dcc3d37c8cee88767296c19"
+  },
+  "shadowverse:shadowverse:https://shadowverse.gg/past-rewards-available-in-the-shop-4/": {
+    "last_modified": 1795597200,
+    "last_sent_hash": "ef5df0d8393507512c2c862eab929c514b72eca6116ece266ad869084f05910b"
   },
   "shadowverse:shadowverse:https://shadowverse.gg/past-rewards-available-in-the-shop/": {
     "last_modified": 1793059200,
