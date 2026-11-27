@@ -383,6 +383,11 @@
         "info": "<t:1795140000:d> \u2192 <t:1795982399:d> (ends <t:1795982399:R>)"
       },
       {
+        "label": "Frames of Fierce Splendor",
+        "link": null,
+        "info": "<t:1795744800:d> \u2192 <t:1796587199:d> (ends <t:1796587199:R>)"
+      },
+      {
         "label": "Heated Battle Mode: Sprinting Stratagems",
         "link": null,
         "info": "<t:1795226400:d> \u2192 <t:1796587199:d> (ends <t:1796587199:R>)"
@@ -543,6 +548,11 @@
         "info": "<t:1795550400:d> \u2192 <t:1797969600:d> (ends <t:1797969600:R>)"
       },
       {
+        "label": "Roaming Wilderpaw",
+        "link": "https://endfield.wiki.gg/wiki/Roaming_Wilderpaw",
+        "info": "<t:1795550400:d> \u2192 <t:1799244000:d> (ends <t:1799244000:R>)"
+      },
+      {
         "label": "I Dream of Honey Waffles",
         "link": "https://endfield.wiki.gg/wiki/I_Dream_of_Honey_Waffles",
         "info": "<t:1795550400:d> \u2192 <t:1799244000:d> (ends <t:1799244000:R>)"
@@ -640,6 +650,11 @@
         "label": "Echo Special",
         "link": "https://neverness-to-everness.fandom.com/wiki/Echo_Special/2026-11-11",
         "info": "<t:1794366000:d> \u2192 <t:1796162399:d> (ends <t:1796162399:R>) \u00b7 S: Echoes on Hold"
+      },
+      {
+        "label": "Offline Equations",
+        "link": "https://neverness-to-everness.fandom.com/wiki/Offline_Equations/2026-12-02",
+        "info": "<t:1796180400:d> \u2192 <t:1797976799:d> (ends <t:1797976799:R>) \u00b7 S: Exe"
       }
     ]
   },
